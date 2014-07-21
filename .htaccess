@@ -1,0 +1,28 @@
+RewriteEngine On
+RewriteRule ^lastfm(/)?$ http://www.last.fm/user/sam___d/ [R,L]
+RewriteRule ^muziek(/)?$ http://www.last.fm/user/sam___d/ [R,L]
+RewriteRule ^spotify(/)?$ https://play.spotify.com/user/indiewokker [R,L]
+RewriteRule ^vcf(/)?$ https://onedrive.live.com/redir?resid=B5240A36EC9AE039%2149503 [R,L]
+RewriteRule ^contact(/)?$ https://onedrive.live.com/redir?resid=B5240A36EC9AE039%2149503 [R,L]
+RewriteRule ^cv(/)?$ https://onedrive.live.com/redir?resid=B5240A36EC9AE039%21165 [R,L]
+RewriteRule ^linkedin(/)?$ http://be.linkedin.com/in/samueldebruyn/ [R,L]
+RewriteRule ^github(/)?$ http://github.com/SamuelDebruyn/ [R,L]
+
+<ifModule mod_expires.c>
+
+ExpiresDefault A86400
+ExpiresByType image/x-icon A2592000
+ExpiresByType application/x-javascript A2592000
+ExpiresByType text/css A2592000
+ExpiresByType image/jpeg A604800
+ExpiresByType text/html A900
+
+</ifModule>
+ 
+<ifModule mod_headers.c>
+
+<FilesMatch "\.(css|js)$">
+Header set Cache-Control "max-age=2592000, proxy-revalidate"
+</FilesMatch>
+
+</ifModule>
