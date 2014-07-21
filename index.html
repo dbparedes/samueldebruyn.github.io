@@ -1,20 +1,462 @@
 ---
-layout: default
+posts_page: posts
+id: home
 ---
+<!DOCTYPE html>
+<html lang="en" class="uk-height-1-1" prefix="og: http://ogp.me/ns/#">
+<head>
+	<meta charset="utf-8"/>
+	<title>Samuel Debruyn</title>
+	<link rel="stylesheet" href="css/uikit.almost-flat.min.css" />
+	<link rel="stylesheet" href="css/addons/uikit.almost-flat.addons.min.css" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/uikit.min.js"></script>
+	<script type="text/javascript" src="js/addons/sticky.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<meta property="og:title" content="Samuel Debruyn" />
+	<meta property="og:image" content="avatar.jpg" />
+	<meta property="og:type" content="profile" />
+	<meta property="og:url" content="http://sa.muel.be" />
+	<meta property="og:first_name" content="Samuel" />
+	<meta property="og:last_name" content="Debruyn" />
+	<meta property="og:gender" content="male" />
+	<meta property="og:username" content="SamuelDebruyn" />
+	<meta property="og:description" content="Hi there, you can call me Sam. On this page you can find out everything about me." />
+	<meta name="description" content="Hi there, you can call me Sam. On this page you can find out everything about me." />
+	<meta name="twitter:description" content="Hi there, you can call me Sam. On this page you can find out everything about me." />
+	<meta name="twitter:card" content="summary_large_image"/>
+	<meta name="twitter:title" content="Samuel Debruyn"/>
+	<meta name="twitter:site" content="@SamuelDebruyn"/>
+	<meta name="twitter:creator" content="@SamuelDebruyn"/>
+	<meta property="twitter:image:src" content="avatar.jpg" />
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-<div class="home">
+	ga('create', 'UA-51718684-1', 'muel.be');
+	ga('send', 'pageview');
 
-  <h1>Posts</h1>
-
-  <ul class="posts">
-    {% for post in site.posts %}
-      <li>
-        <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-        <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-
-  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
-
-</div>
+	</script>
+</head>
+<body class="uk-height-1-1" id="top" itemscope itemtype="http://schema.org/Person">
+	<div class="uk-vertical-align uk-text-center">
+		<div class="uk-vertical-align-middle uk-container-center">
+			<div class="uk-button-dropdown uk-visible-small uk-sticky uk-align-right" data-uk-dropdown="{mode:'click'}" data-uk-sticky>
+				<button class="uk-button">
+					<i class="uk-icon-bars"></i> menu
+				</button>
+				<div class="uk-dropdown">
+					<ul class="uk-nav uk-nav-dropdown">
+						<li>
+							<a href="#top" data-uk-smooth-scroll>Intro</a>
+						</li>
+						<li>
+							<a href="#education" data-uk-smooth-scroll><i class="uk-icon-book"></i> Education</a>
+						</li>
+						<li>
+							<a href="#certifications" data-uk-smooth-scroll><i class="uk-icon-certificate"></i> Certifications</a>
+						</li>
+						<li>
+							<a href="#skills" data-uk-smooth-scroll><i class="uk-icon-lightbulb-o"></i> Skills</a>
+						</li>
+						<li>
+							<a href="#work" data-uk-smooth-scroll><i class="uk-icon-briefcase"></i> Work</a>
+						</li>
+						<li>
+							<a href="#experience" data-uk-smooth-scroll><i class="uk-icon-trophy"></i> Experience</a>
+						</li>
+            <li>
+              <a href="{{ "/posts.html" | prepend: site.baseurl }}"><i class="uk-icon-pencil"></i> Blog</a>
+            </li>
+						<li>
+							<a href="#social" data-uk-smooth-scroll><i class="uk-icon-globe"></i> On the web</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<nav class="uk-navbar uk-navbar-attached uk-sticky uk-hidden-small" data-uk-sticky>
+				<div class="uk-navbar-flip">
+					<ul class="uk-navbar-nav">
+						<li>
+							<a href="#top" data-uk-smooth-scroll><i class="uk-icon-angle-up"></i>Top</a>
+						</li>
+						<li>
+							<a href="#education" data-uk-smooth-scroll><i class="uk-icon-book"></i> Education</a>
+						</li>
+						<li>
+							<a href="#certifications" data-uk-smooth-scroll><i class="uk-icon-certificate"></i> Certifications</a>
+						</li>
+						<li>
+							<a href="#skills" data-uk-smooth-scroll><i class="uk-icon-lightbulb-o"></i> Skills</a>
+						</li>
+						<li>
+							<a href="#work" data-uk-smooth-scroll><i class="uk-icon-briefcase"></i> Work</a>
+						</li>
+						<li>
+							<a href="#experience" data-uk-smooth-scroll><i class="uk-icon-trophy"></i> Experience</a>
+						</li>
+            <li>
+              <a href="{{ "/posts.html" | prepend: site.baseurl }}"><i class="uk-icon-pencil"></i> Blog</a>
+            </li>
+						<li>
+							<a href="#social" data-uk-smooth-scroll><i class="uk-icon-globe"></i> On the web</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="uk-grid">
+				<header class="uk-width-medium-1-1">
+					<div class="uk-panel uk-animation-fade">
+						<h1 class="uk-margin-top uk-heading-large" itemprop="name">Samuel Debruyn</h1>
+					</div>
+				</header>
+			</div>
+			<div class="uk-grid">
+				<section id="intro" class="uk-width-medium-1-1">
+					<div class="uk-panel uk-animation-slide-top">
+						<div class="uk-clearfix">
+							<img class="uk-align-medium-left uk-border-rounded uk-thumbnail" width="300" itemprop="image" src="avatar.jpg" alt="me" />
+							<p itemprop="description">
+								Hi there, you can call me Sam. On this page you can find out everything about me.
+							</p>
+							<p>
+								<abbr title="Too long; didn't read">TL;DR</abbr>: I really love <i class="uk-icon-laptop"></i> software development and at the moment I'm studying Applied Informatics in Brussels, Belgium.
+							</p>
+							<p>
+								Don't hesitate to <a href="#social"><i class="uk-icon-comment"></i> contact</a> me for general questions, internships, (summer) job offers, project offers...
+							</p>
+							<blockquote>
+								<p>
+									<i class="uk-icon-quote-left"></i> Computer programming is an art,
+									<br/>
+									because it applies accumulated knowledge to the world,
+									<br/>
+									because it requires skill and ingenuity,
+									<br/>
+									and especially because it produces objects of beauty.
+									<br/>
+									A programmer who subconsciously views himself as an artist
+									<br/>
+									will enjoy what he does and will do it better. <i class="uk-icon-quote-right"></i>
+								</p>
+								<footer>
+									<small>Donald Knuth in <cite>Computer Programming as an Art (1974)</cite></small>
+								</footer>
+							</blockquote>
+						</div>
+					</div>
+				</section>
+			</div>
+			<div class="uk-grid">
+				<div class="uk-width-medium-1-2">
+					<div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-left">
+						<section id="education">
+							<header>
+								<h2 class="uk-panel-title"><i class="uk-icon-book"></i> Education</h2>
+							</header>
+							<div class="uk-margin-bottom">
+								<header>
+									<h3>Bachelor of Applied Informatics</h3>
+								</header>
+								<address>
+									Odisee campus Brussels (HUB-EHSAL), Brussels, Belgium
+								</address>
+								<p>
+									2013-2016
+								</p>
+								<i>I am the student representative for Applied Informatics in 2014-2015.</i>
+							</div>
+							<div class="uk-margin edu-toggle uk-hidden">
+								<header>
+									<h3>Bachelor of Science in Computer Science (not completed)</h3>
+								</header>
+								<address>
+									University of Leuven, Leuven, Belgium
+								</address>
+								<p>
+									2011-2013
+								</p>
+							</div>
+							<div class="uk-margin edu-toggle uk-hidden">
+								<header>
+									<h3>Secondary education: Latin-Mathematics</h3>
+								</header>
+								<address>
+									Regina Caelilyceum, Dilbeek, Belgium
+								</address>
+								<p>
+									2009-2011
+								</p>
+								<i>I was a member of the SOS committee (supporting charity).</i>
+							</div>
+							<div class="uk-margin-top edu-toggle uk-hidden">
+								<header>
+									<h3>Secondary education: Latin-Mathematics</h3>
+								</header>
+								<address>
+									Sint-Jan Berchmanscollege, Brussels, Belgium
+								</address>
+								<p>
+									2004-2009
+								</p>
+							</div>
+							<button class="uk-button" data-uk-toggle="{target:'.edu-toggle'}">
+								Less is more <i class="uk-icon-expand edu-toggle"></i><i class="uk-icon-compress edu-toggle uk-hidden"></i>
+							</button>
+						</section>
+					</div>
+					<div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-left">
+						<section id="certifications">
+							<header>
+								<h2 class="uk-panel-title"><i class="uk-icon-certificate"></i> Certifications</h2>
+							</header>
+							<div>
+								<header>
+									<h3>Cisco CCNA Discovery</h3>
+								</header>
+								<ul class="uk-list">
+									<li>
+										Introduction to Networks
+									</li>
+									<li>
+										Routing and Switching Essentials
+									</li>
+								</ul>
+							</div>
+							<div>
+								<header>
+									<h3>Oracle</h3>
+								</header>
+								<ul class="uk-list">
+									<li>
+										Database Design and Programming with SQL
+									</li>
+								</ul>
+							</div>
+						</section>
+					</div>
+					<div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-left">
+						<section id="skills">
+							<header>
+								<h2 class="uk-panel-title"><i class="uk-icon-lightbulb-o"></i> Skills</h2>
+							</header>
+							<div class="skills-toggle">
+								<ul class="uk-list uk-list-line">
+									<li>C# &amp; Java</li>
+									<li>HTML5 &amp; PHP</li>
+									<li>database management &amp; SQL</li>
+									<li>system &amp; network management</li>
+								</ul>
+							</div>
+							<div class="skills-toggle uk-hidden">
+								<div>
+									<header>
+										<h3>desktop</h3>
+									</header>
+									<ul class="uk-list">
+										<li>
+											Java, Spring, Hibernate
+										</li>
+										<li>
+											C#, WinForms, Windows Store apps (C# / HTML 5), WPF, XAML
+										</li>
+										<li>
+											MS Access, VBA
+										</li>
+									</ul>
+								</div>
+								<div>
+									<header>
+										<h3>back-end</h3>
+									</header>
+									<ul class="uk-list">
+										<li>
+											MySQL, Oracle SQL, T-SQL
+										</li>
+										<li>
+											Python, bash
+										</li>
+										<li>
+											Linux, Windows Server, Cisco IOS
+										</li>
+									</ul>
+								</div>
+								<div>
+									<header>
+										<h3>mobile</h3>
+									</header>
+									<ul class="uk-list">
+										<li>
+											Android
+										</li>
+										<li>
+											Windows Phone (C# / HTML 5)
+										</li>
+										<li>
+											responsive web apps
+										</li>
+									</ul>
+								</div>
+								<div>
+									<header>
+										<h3>web</h3>
+									</header>
+									<ul class="uk-list">
+										<li>
+											HTML 5, CSS 3
+										</li>
+										<li>
+											JavaScript, jQuery
+										</li>
+										<li>
+											PHP 5, CakePHP, Laravel
+										</li>
+									</ul>
+								</div>
+							</div>
+							<button class="uk-button" data-uk-toggle="{target:'.skills-toggle'}">
+								Less is more <i class="uk-icon-expand skills-toggle"></i><i class="uk-icon-compress skills-toggle uk-hidden"></i>
+							</button>
+						</section>
+					</div>
+				</div>
+				<div class="uk-visible-small uk-margin"></div>
+				<div class="uk-width-medium-1-2">
+					<div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-right">
+						<section id="work">
+							<header>
+								<h2 class="uk-panel-title"><i class="uk-icon-briefcase"></i> Work</h2>
+							</header>
+							<div>
+								<header>
+									<h3><a href="http://www.comm-it.be/" target="_blank">Comm-IT</a></h3>
+								</header>
+								<ul class="uk-list">
+									<li>
+										July 2014
+									</li>
+									<li>
+										April 2014
+									</li>
+								</ul>
+								<p>
+									C# .NET Developer, Windows Store app
+								</p>
+							</div>
+							<div class="work-toggle uk-hidden">
+								<header>
+									<h3><a href="https://web.archive.org/web/20111219012617/http://www.themobilerevolution.be/" target="_blank">The Mobile Revolution</a></h3>
+								</header>
+								<span>May 2011 - January 2012</span>
+								<p>
+									Contributing editor
+								</p>
+							</div>
+							<div class="work-toggle uk-hidden">
+								<header>
+									<h3><a href="http://www.colruyt.be/" target="_blank">Colruyt NV</a></h3>
+								</header>
+								<ul class="uk-list">
+									<li>
+										August 2011
+									</li>
+									<li>
+										August 2010
+									</li>
+									<li>
+										August 2009
+									</li>
+									<li>
+										July 2007 - August 2007
+									</li>
+								</ul>
+								<p>
+									stock control &amp; order picker
+								</p>
+							</div>
+							<button class="uk-button" data-uk-toggle="{target:'.work-toggle'}">
+								Less is more <i class="uk-icon-expand work-toggle"></i><i class="uk-icon-compress work-toggle uk-hidden"></i>
+							</button>
+						</section>
+					</div>
+					<div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-right">
+						<section id="experience">
+							<header>
+								<h2 class="uk-panel-title"><i class="uk-icon-trophy"></i> Experience</h2>
+							</header>
+							<div>
+								<header>
+									<h3>Microsoft Developer Camps</h3>
+								</header>
+								<ul class="uk-list">
+									<li>
+										The Ins and Outs of Windows Phone apps (C#, 2013)
+									</li>
+									<li>
+										Create your Windows Store app (HTML 5, 2013)
+									</li>
+								</ul>
+							</div>
+							<div>
+								<header>
+									<h3>Other</h3>
+								</header>
+								<ul class="uk-list">
+									<li>
+										Realdolmen Microsoft Community Christmas Hackathon 2013
+									</li>
+									<li>
+										Microsoft Windows 8 Super Hackathon 2013
+									</li>
+								</ul>
+							</div>
+						</section>
+					</div>
+					<div class="uk-panel uk-animation-slide-right">
+						<section id="social">
+							<header>
+								<h2 class="uk-panel-title"><i class="uk-icon-globe"></i> On the web</h2>
+							</header>
+							<ul class="uk-list uk-list-striped">
+								<li>
+									<a href="mailto:s@muel.be"><i class="uk-icon-envelope"></i> s@muel.be</a>
+								</li>
+								<li>
+									<a href="https://github.com/SamuelDebruyn" target="_blank"><i class="uk-icon-github"></i> GitHub</a>
+								</li>
+								<li>
+									<a href="https://twitter.com/intent/user?screen_name=SamuelDebruyn" target="_blank"><i class="uk-icon-twitter"></i> @SamuelDebruyn</a>
+								</li>
+								<li class="soc-toggle uk-hidden">
+									<a href="https://plus.google.com/+SamuelDebruyn?rel=author" target="_blank"><i class="uk-icon-google-plus"></i> +SamuelDebruyn</a>
+								</li>
+								<li class="soc-toggle uk-hidden">
+									<a href="http://be.linkedin.com/in/samueldebruyn/" target="_blank"><i class="uk-icon-linkedin"></i> LinkedIn</a>
+								</li>
+								<li class="soc-toggle uk-hidden">
+									<a href="http://blog.sa.muel.be"><i class="uk-icon-pencil"></i> Blog</a>
+								</li>
+								<li class="soc-toggle uk-hidden">
+									<a href="https://play.google.com/store/apps/developer?id=Samuel+Debruyn" target="_blank"><i class="uk-icon-android"></i> Apps on Google Play</a>
+								</li>
+							</ul>
+							<button class="uk-button" data-uk-toggle="{target:'.soc-toggle'}">
+								Less is more <i class="uk-icon-expand soc-toggle"></i><i class="uk-icon-compress soc-toggle uk-hidden"></i>
+							</button>
+						</section>
+					</div>
+				</div>
+			</div>
+			<div class="uk-grid">
+				<footer class="uk-width-medium-1-1">
+					<div class="uk-panel uk-text-small">
+						&copy; Samuel Debruyn 2014. All rights reserved. <a href="{{ site.github_repo }}" target="_blank">Source code available for your inspiration.</a>
+					</div>
+				</footer>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -6,6 +6,7 @@ baseurl: ""
 permalink: /:year/:month/:title/
 twitter_username: SamuelDebruyn
 github_username:  SamuelDebruyn
+github_repo: https://github.com/SamuelDebruyn/samueldebruyn.github.io
 limit_posts: 0
 
 # Build settings
