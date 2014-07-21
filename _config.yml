@@ -15,6 +15,7 @@ show_drafts: false
 limit_posts: 0
 highlighter: pygments
 pygments: true
+exclude: [vendor]
 
 # Kramdown settings
 kramdown:
