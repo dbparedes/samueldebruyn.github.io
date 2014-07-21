@@ -1,0 +1,21 @@
+{% capture navlist %}
+<li><a href="{{ '/posts.html' | prepend: site.baseurl }}"><i class="uk-icon-pencil"></i> Blog home</a></li>
+<li><a href="{{ '/' | prepend: site.baseurl }}"><i class="uk-icon-user"></i> About me</a></li>
+{% endcapture %}
+<div class="uk-button-dropdown uk-visible-small uk-sticky uk-align-right" data-uk-dropdown="{mode:'click'}" data-uk-sticky>
+  <button class="uk-button">
+    <i class="uk-icon-bars"></i> menu
+  </button>
+  <div class="uk-dropdown">
+    <ul class="uk-nav uk-nav-dropdown">
+      {{ navlist }}
+    </ul>
+  </div>
+</div>
+<nav class="uk-navbar uk-navbar-attached uk-sticky uk-hidden-small" data-uk-sticky>
+  <div class="uk-navbar-flip">
+    <ul class="uk-navbar-nav">
+      {{ navlist }}
+    </ul>
+  </div>
+</nav>
