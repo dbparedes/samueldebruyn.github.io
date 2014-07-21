@@ -1,17 +1,10 @@
 ---
 author: Sam
-comments: true
-date: 2013-12-22 19:28:48+00:00
 layout: post
-slug: wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi
 title: Wake up your computer(s) with a simple email using a Raspberry Pi
-wordpress_id: 35
-categories:
-- Linux
 ---
 
-# Introduction
-
+## Introduction
 
 I have a [Spotify Premium subscription](https://www.spotify.com/be-nl/get-spotify/go/premium/) but I also have a few CDs which are not available on streaming services. I don't like the whole process of syncing files, that's why I took a Spotify subscription in the first place.  Google offers a solution with [Play Music](https://play.google.com/about/music/): you can upload up to 20,000 songs to their servers for free and stream them to all of your devices. I didn't use this because the Google Play Music app was too slow for my previous phone ([Google Nexus S](http://www.android.com/devices/detail/nexus-s)). So I decided to put my CDs on a computer and use that computer as a server with [Tonido](http://www.tonido.com/tonidodesktop/). This way I could stream my music over the Internet to all of my devices. As a plus I could also put all my photos on this device so that I could show them to friends or family wherever I am.
 
@@ -28,13 +21,13 @@ I want my computer to be available when I need it and to be in standby mode when
 
 
 
-	
+
   * working Raspberry Pi (or similar device with Linux and python) with a constant connection to the Internet
 
-	
+
   * the computer you want to wake up and your Raspberry Pi need to be in the same local network
 
-	
+
   * Email account (preferable Gmail or an unused mailbox)
 
 
@@ -51,13 +44,13 @@ I want my computer to be available when I need it and to be in standby mode when
 
 
 
-	
+
   1. Make sure the computer goes to sleep when you don't use it. In Windows you can find this setting by searching for _power_. I have my computer set to go to sleep after 3 hours of inactivity. If you have trouble putting your computer to sleep you can analyze the problems [using the powercfg command](http://technet.microsoft.com/en-us/library/cc748940(v=ws.10).aspx).
 
-	
+
   2. Make sure the computer wakes upon receiving a magic packet. This is a special type of TCP or UDP unicast packet that is processed by the BIOS and wakes up a computer. This also works if the computer is not in standby mode. You probably have to change [a setting in your BIOS](http://www.tomshardware.com/reviews/bios-beginners,1126-8.html) (press one of the F-buttons at boot time) and in your NIC's settings. You can view your NIC's settings in Windows using [Device Management](http://windows.microsoft.com/en-us/windows-vista/open-device-manager).
 
-	
+
   3. [Find the MAC address](http://technet.microsoft.com/en-us/library/gg252549(v=ws.10).aspx) of the connected network adapter.
 
 
@@ -71,19 +64,19 @@ Create a new filter for a specific email address. You can use _yourusername_+any
 
 
 
-	
+
   1. Search for _to:theaddressyouchoose_
 
-	
+
   2. Click on the little arrow left to the search button
 
-	
+
   3. Click on the link to create a new filter in the pop-up that appears
 
-	
+
   4. Check the following options: skip inbox, mark as read, label 'new label', never send to spam, never mark as important
 
-	
+
   5. Enable IMAP (Settings > Forwarding & POP/IMAP > Enable IMAP)
 
 
@@ -96,18 +89,18 @@ I assume you know how to log in to your Raspberry Pi in command line, over SSH o
 
 
 
-	
+
   1. Install the [wakeonlan](https://wiki.debian.org/WakeOnLan) package using the following command:
 [code lang="bash"]sudo apt-get update && sudo apt-get -y install wakeonlan[/code]
 
-	
+
   2. Use nano or another text editor to create the following file:
 [code lang="bash"]wakeonlan 01:23:45:67:89:AB[/code]
 
 01:23:45:67:89:AB being the MAC address of the computer you want to wake up with your email
 Name the file anynameyouwant.sh
 
-	
+
   3. Create another file:
 [code lang="python"]import imaplib
 import os
@@ -122,7 +115,7 @@ mail.logout()[/code]
 
 Replace all the words in capitals and name the file anythingyouwant.py
 
-	
+
   4. Use[code lang="bash"]crontab -e[/code]
 
 to edit the crontab file. Scroll to the bottom and add the following line:
@@ -130,7 +123,7 @@ to edit the crontab file. Scroll to the bottom and add the following line:
 [code lang="bash"]* * * * * /usr/bin/python PATH TO THE FILE YOU CREATED IN STEP 3
 [/code]
 
-	
+
   5. Save the file using CTRL+X
 
 

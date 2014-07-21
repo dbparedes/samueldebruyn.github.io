@@ -14,15 +14,9 @@ future: false
 show_drafts: false
 limit_posts: 0
 highlighter: pygments
+pygments: true
 
 # Kramdown settings
 kramdown:
  input: GFM
-
-# Default settings
-defaults:
- -
-  scope:
-   path: ""
-  values:
-   author: "Sam"
+ coderay_line_numbers: inline
