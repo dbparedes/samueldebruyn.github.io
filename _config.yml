@@ -8,16 +8,14 @@ github_username:  SamuelDebruyn
 
 # Build settings
 markdown: kramdown
+encoding: utf-8
 permalink: pretty
 future: false
 show_drafts: false
 limit_posts: 0
-pygments: false
+pygments: true
 exclude: [vendor]
 
 # Kramdown settings
 kramdown:
-  use_coderay: true
-  coderay:
-    coderay_line_numbers: table
-    coderay_css: class
+  use_coderay: false

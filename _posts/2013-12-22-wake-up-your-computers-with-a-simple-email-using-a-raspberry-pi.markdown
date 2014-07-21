@@ -41,14 +41,14 @@ Create a new filter for a specific email address. You can use *yourusername**+an
 
 I assume you know how to log in to your Raspberry Pi in command line, over SSH or directly. There is a lot of documentation [available](http://elinux.org/RPi_Remote_Access){:target="_blank"} on their website.
 
-  1.  Install the [wakeonlan](https://wiki.debian.org/WakeOnLan){:target="_blank"} package using the following command:
+  *  Install the [wakeonlan](https://wiki.debian.org/WakeOnLan){:target="_blank"} package using the following command:
       ``` sudo apt-get update && sudo apt-get -y install wakeonlan```
 
-  1.  Use nano or another text editor to create the following file:
+  *  Use nano or another text editor to create the following file:
       ```wakeonlan 01:23:45:67:89:AB```
       *01:23:45:67:89:AB* being the MAC address of the computer you want to wake up with your email. Name the file **anynameyouwant***.sh*.
 
-  1.  Create another file:
+  *  Create another file:
 
 {% highlight python %}
 import imaplib
@@ -63,10 +63,10 @@ mail.close()
 mail.logout()
 {% endhighlight %}
 
-  1.  Replace all the words in capitals and name the file **anythingyouwant***.py*
-  1.  Use `crontab -e` to edit the crontab file. Scroll to the bottom and add the following line:
+  *  Replace all the words in capitals and name the file **anythingyouwant***.py*
+  *  Use `crontab -e` to edit the crontab file. Scroll to the bottom and add the following line:
       ```* * * * * /usr/bin/python PATH TO THE FILE YOU CREATED IN STEP 3```
-  1. Save the file using CTRL+X
+  * Save the file using CTRL+X
 
 ## Done!
 

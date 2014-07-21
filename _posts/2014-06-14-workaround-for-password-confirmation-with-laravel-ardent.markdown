@@ -8,12 +8,12 @@ While I was working on a website made with Laravel and Ardent I has to validate 
 
 This is how your [validation rules](http://laravel.com/docs/validation){:target="_blank"} in your [Ardent](https://github.com/laravelbook/ardent){:target="_blank"} model should look like (users only have an email address and a password):
 
-~~~ php
+{% highlight php %}
 public static $rules = array(
 'email' => 'required|email|max:100|unique:users',
 'password' => 'required|min:6|confirmed',
 );
-~~~
+{% endhighlight %}
 
 Your model should also have the following line somewhere:
 
