@@ -50,7 +50,7 @@ I assume you know how to log in to your Raspberry Pi in command line, over SSH o
 
   *  Create another file:
 
-{% highlight python %}
+{% highlight python linenos=table %}
 import imaplib
 import os
 mail = imaplib.IMAP4_SSL('imap.gmail.com')

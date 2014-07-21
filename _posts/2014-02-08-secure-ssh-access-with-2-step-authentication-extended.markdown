@@ -41,7 +41,7 @@ Now create the file */etc/security/access-local.conf*:
 
 and add the following:
 
-{% highlight bash %}
+{% highlight bash linenos=table %}
 + : ALL : ????
 + : ALL : LOCAL
 - : ALL : ALL
