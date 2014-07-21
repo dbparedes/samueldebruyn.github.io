@@ -3,17 +3,17 @@ title: new Blog();
 email: s@muel.be
 description: "A blog by Samuel Debruyn where he posts about his daily life as a software developer."
 baseurl: ""
+permalink: /:year/:month/:title/
 twitter_username: SamuelDebruyn
 github_username:  SamuelDebruyn
+limit_posts: 0
 
 # Build settings
 markdown: kramdown
 encoding: utf-8
-permalink: pretty
 future: false
 show_drafts: false
-limit_posts: 0
-pygments: true
+highlighter: pygments
 exclude: [vendor]
 
 # Kramdown settings
