@@ -3,7 +3,6 @@ title: new Blog();
 email: s@muel.be
 description: "A blog by Samuel Debruyn where he posts about his daily life as a software developer."
 baseurl: ""
-url: "http://blog.sa.muel.be"
 twitter_username: SamuelDebruyn
 github_username:  SamuelDebruyn
 
