@@ -1,6 +1,7 @@
 language: ruby
 rvm:
 - 2.1
+before-script: chmod a+x ./script/cibuild
 script: ./script/cibuild
 
 env:
