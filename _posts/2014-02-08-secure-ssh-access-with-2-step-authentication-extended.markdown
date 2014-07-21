@@ -52,17 +52,17 @@ Replace the *????* with the subnet or the IP that should be allowed to access SS
 
 Now edit the file _/etc/ssh/sshd_config_:
 
-[code]sudo nano /etc/ssh/sshd_config[/code]
+    sudo nano /etc/ssh/sshd_config
 
 and make sure it says
 
-[code]ChallengeResponseAuthentication yes[/code]
+    ChallengeResponseAuthentication yes
 
 By default it says _no_.
 
 Now restart the SSH service and you should be good!
 
-[code]sudo service ssh restart[/code]
+    sudo service ssh restart
 
 
 ## NTP
