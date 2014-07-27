@@ -1,0 +1,7 @@
+{% assign simple_title   = site.display_name %}
+{% if page.title %}
+{% assign simple_title = page.title %}
+{% endif %}
+<header>
+  <h1>{{ simple_title }}</h1>
+</header>

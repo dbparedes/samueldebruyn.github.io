@@ -3,91 +3,77 @@ description: Hi there, you can call me Sam. On this page you can find out everyt
 first_name: Samuel
 last_name: Debruyn
 gender: male
-layout: bs_container
+layout: container
 ---
 
-<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-  <div class="container">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-pers-overview-nav">
-        <span class="sr-only">menu</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
+{% capture navlist %}
+<li><a href="#education" data-uk-smooth-scroll><i class="uk-icon-book"></i> Education</a></li>
+<li><a href="#certifications" data-uk-smooth-scroll><i class="uk-icon-certificate"></i> Certifications</a></li>
+<li><a href="#skills" data-uk-smooth-scroll><i class="uk-icon-lightbulb-o"></i> Skills</a></li>
+<li><a href="#work" data-uk-smooth-scroll><i class="uk-icon-briefcase"></i> Work</a></li>
+<li><a href="#experience" data-uk-smooth-scroll><i class="uk-icon-trophy"></i> Experience</a></li>
+<li><a href="{{ "/posts.html" | prepend: site.baseurl }}"><i class="uk-icon-pencil"></i> Blog</a></li>
+<li><a href="#social" data-uk-smooth-scroll><i class="uk-icon-globe"></i> On the web</a></li>
+{% endcapture %}
 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-pers-overview-nav">
-      <ul class="nav navbar-nav">
-        <li class="visible-lg-block"><a href="#top"><span class="glyphicon glyphicon-chevron-up"></span> top</a></li>
-        <li><a href="#education"><span class="glyphicon glyphicon-book"></span> Education</a></li>
-        <li><a href="#certifications"><span class="glyphicon glyphicon-certificate"></span> Certifications</a></li>
-        <li><a href="#skills"><span class="glyphicon glyphicon-hand-up"></span> Skills</a></li>
-        <li><a href="#work"><span class="glyphicon glyphicon-briefcase"></span> Work</a></li>
-        <li><a href="#experience"><span class="glyphicon glyphicon-star"></span> Experience</a></li>
-        <li><a href="{{ "/posts.html" | prepend: site.baseurl }}"><span class="glyphicon glyphicon-pencil"></span> Blog</a></li>
-        <li><a href="#social"><span class="glyphicon glyphicon-globe"></span> On the web</a></li>
-      </ul>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-
-  <style type="text/css" scoped>
-    @media (min-width: 768px) {
-    .navbar .navbar-nav {
-        display: inline-block;
-        float: none;
-    }
-
-    .navbar .navbar-collapse {
-        text-align: center;
-    }
-}
-  </style>
-
+<div class="uk-button-dropdown uk-visible-small uk-sticky uk-align-right" data-uk-dropdown="{mode:'click'}" data-uk-sticky>
+  <button class="uk-button">
+    <i class="uk-icon-bars"></i> menu
+  </button>
+  <div class="uk-dropdown">
+    <ul class="uk-nav uk-nav-dropdown">
+      <li><a href="#top" data-uk-smooth-scroll>Intro</a></li>
+      {{ navlist }}
+    </ul>
+  </div>
+</div>
+<nav class="uk-navbar uk-navbar-attached uk-sticky uk-hidden-small" data-uk-sticky>
+  <div class="uk-navbar-flip">
+    <ul class="uk-navbar-nav">
+      <li><a href="#top" data-uk-smooth-scroll><i class="uk-icon-angle-up"></i> Top</a></li>
+      {{ navlist }}
+    </ul>
+  </div>
 </nav>
 
-<div class="jumbotron" id="top">
-  <h1>Samuel Debruyn</h1>
-  <p>{{ page.description }}</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="old.html">Click here</a></p>
-</div>
+{% include header.html %}
 
-<div class="row">
-  <div class="col-sm-4 center-block text-center">
-    <img class="img-circle img-responsive text-center center-block" width="300" src="avatar.jpg" alt="me" />
-  </div>
-  <div class="col-sm-4 vcenter">
-    <p>
-      <abbr title="Too long; didn't read">TL;DR</abbr>: I really love software development and at the moment I'm studying Applied Informatics in Brussels, Belgium.
-    </p>
-    <p>
-      Don't hesitate to <a href="#social"><span class="glyphicon glyphicon-comment"></span> contact</a> me for general questions, internships, (summer) job offers, project offers...
-    </p>
-  </div>
-  <div class="col-sm-4">
-    <blockquote>
-      <p>
-        Computer programming is an art,
-        <br/>
-        because it applies accumulated knowledge to the world,
-        <br/>
-        because it requires skill and ingenuity,
-        <br/>
-        and especially because it produces objects of beauty.
-        <br/>
-        A programmer who subconsciously views himself as an artist
-        <br/>
-        will enjoy what he does and will do it better.
-      </p>
-      <footer>
-        <small>Donald Knuth in <cite>Computer Programming as an Art (1974)</cite></small>
-      </footer>
-    </blockquote>
-  </div>
+<div class="uk-grid">
+  <section id="intro" class="uk-width-medium-1-1">
+    <div class="uk-panel uk-animation-slide-top">
+      <div class="uk-clearfix">
+        <img class="uk-align-medium-left uk-border-rounded uk-thumbnail" width="300" src="avatar.jpg" alt="me" />
+        <p itemprop="description">
+          Hi there, you can call me Sam. On this page you can find out everything about me.
+        </p>
+        <p>
+          <abbr title="Too long; didn't read">TL;DR</abbr>: I really love <i class="uk-icon-laptop"></i> software development and at the moment I'm studying Applied Informatics in Brussels, Belgium.
+        </p>
+        <p>
+          Don't hesitate to <a href="#social"><i class="uk-icon-comment"></i> contact</a> me for general questions, internships, (summer) job offers, project offers...
+        </p>
+        <blockquote>
+          <p>
+            <i class="uk-icon-quote-left"></i> Computer programming is an art,
+            <br/>
+            because it applies accumulated knowledge to the world,
+            <br/>
+            because it requires skill and ingenuity,
+            <br/>
+            and especially because it produces objects of beauty.
+            <br/>
+            A programmer who subconsciously views himself as an artist
+            <br/>
+            will enjoy what he does and will do it better. <i class="uk-icon-quote-right"></i>
+          </p>
+          <footer>
+            <small>Donald Knuth in <cite>Computer Programming as an Art (1974)</cite></small>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
 </div>
-
 <div class="uk-grid">
   <div class="uk-width-medium-1-2">
     <div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-left">
@@ -392,7 +378,4 @@ layout: bs_container
   </div>
 </div>
 
-
-
-
-{% include bs_footer.html %}
+{% include footer.html %}
