@@ -7,6 +7,20 @@ layout: bs_container
 ---
 
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+
+  <style type="text/css" scoped>
+  @media (min-width: 768px) {
+    .navbar .navbar-nav {
+      display: inline-block;
+      float: none;
+    }
+
+    .navbar .navbar-collapse {
+      text-align: center;
+    }
+  }
+  </style>
+
   <div class="container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -31,27 +45,13 @@ layout: bs_container
         <li><a href="#social"><span class="glyphicon glyphicon-globe"></span> On the web</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-
-  <style type="text/css" scoped>
-    @media (min-width: 768px) {
-    .navbar .navbar-nav {
-        display: inline-block;
-        float: none;
-    }
-
-    .navbar .navbar-collapse {
-        text-align: center;
-    }
-}
-  </style>
+  </div><!-- /.container -->
 
 </nav>
 
 <div class="jumbotron" id="top">
   <h1>Samuel Debruyn</h1>
   <p>{{ page.description }}</p>
-  <p><a class="btn btn-primary btn-lg" role="button" href="old.html">Click here</a></p>
 </div>
 
 <div class="row">
@@ -88,14 +88,15 @@ layout: bs_container
   </div>
 </div>
 
-<div class="uk-grid">
-  <div class="uk-width-medium-1-2">
-    <div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-left">
-      <section id="education">
-        <header>
-          <h2 class="uk-panel-title"><i class="uk-icon-book"></i> Education</h2>
-        </header>
-        <div class="uk-margin-bottom">
+<div class="row">
+
+  <div class="col-sm-6">
+    <section id="education" class="panel panel-default">
+      <header class="panel-heading">
+        <h2 class="panel-title">Education</h2>
+      </header>
+      <div class="panel-body">
+        <div>
           <header>
             <h3>Bachelor of Applied Informatics</h3>
           </header>
@@ -105,9 +106,9 @@ layout: bs_container
           <p>
             2013-2016
           </p>
-          <i>I am the student representative for Applied Informatics in 2014-2015.</i>
+          <em>I am the student representative for Applied Informatics in 2014-2015.</em>
         </div>
-        <div class="uk-margin edu-toggle uk-hidden">
+        <div>
           <header>
             <h3>Bachelor of Science in Computer Science (not completed)</h3>
           </header>
@@ -118,7 +119,7 @@ layout: bs_container
             2011-2013
           </p>
         </div>
-        <div class="uk-margin edu-toggle uk-hidden">
+        <div>
           <header>
             <h3>Secondary education: Latin-Mathematics</h3>
           </header>
@@ -128,9 +129,9 @@ layout: bs_container
           <p>
             2009-2011
           </p>
-          <i>I was a member of the SOS committee (supporting charity).</i>
+          <em>I was a member of the SOS committee (supporting charity).</em>
         </div>
-        <div class="uk-margin-top edu-toggle uk-hidden">
+        <div>
           <header>
             <h3>Secondary education: Latin-Mathematics</h3>
           </header>
@@ -141,141 +142,21 @@ layout: bs_container
             2004-2009
           </p>
         </div>
-        <button class="uk-button" data-uk-toggle="{target:'.edu-toggle'}">
-          Less is more <i class="uk-icon-expand edu-toggle"></i><i class="uk-icon-compress edu-toggle uk-hidden"></i>
-        </button>
-      </section>
-    </div>
-    <div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-left">
-      <section id="certifications">
-        <header>
-          <h2 class="uk-panel-title"><i class="uk-icon-certificate"></i> Certifications</h2>
-        </header>
-        <div>
-          <header>
-            <h3>Cisco CCNA Discovery</h3>
-          </header>
-          <ul class="uk-list">
-            <li>
-              Introduction to Networks
-            </li>
-            <li>
-              Routing and Switching Essentials
-            </li>
-          </ul>
-        </div>
-        <div>
-          <header>
-            <h3>Oracle</h3>
-          </header>
-          <ul class="uk-list">
-            <li>
-              Database Design and Programming with SQL
-            </li>
-          </ul>
-        </div>
-      </section>
-    </div>
-    <div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-left">
-      <section id="skills">
-        <header>
-          <h2 class="uk-panel-title"><i class="uk-icon-lightbulb-o"></i> Skills</h2>
-        </header>
-        <div class="skills-toggle">
-          <ul class="uk-list uk-list-line">
-            <li>C# &amp; Java</li>
-            <li>HTML5 &amp; PHP</li>
-            <li>database management &amp; SQL</li>
-            <li>system &amp; network management</li>
-          </ul>
-        </div>
-        <div class="skills-toggle uk-hidden">
-          <div>
-            <header>
-              <h3>desktop</h3>
-            </header>
-            <ul class="uk-list">
-              <li>
-                Java, Spring, Hibernate
-              </li>
-              <li>
-                C#, WinForms, Windows Store apps (C# / HTML 5), WPF, XAML
-              </li>
-              <li>
-                MS Access, VBA
-              </li>
-            </ul>
-          </div>
-          <div>
-            <header>
-              <h3>back-end</h3>
-            </header>
-            <ul class="uk-list">
-              <li>
-                MySQL, Oracle SQL, T-SQL
-              </li>
-              <li>
-                Python, Ruby, bash
-              </li>
-              <li>
-                Linux, Windows Server, Cisco IOS
-              </li>
-            </ul>
-          </div>
-          <div>
-            <header>
-              <h3>mobile</h3>
-            </header>
-            <ul class="uk-list">
-              <li>
-                Android
-              </li>
-              <li>
-                Windows Phone (C# / HTML 5)
-              </li>
-              <li>
-                responsive web apps
-              </li>
-            </ul>
-          </div>
-          <div>
-            <header>
-              <h3>web</h3>
-            </header>
-            <ul class="uk-list">
-              <li>
-                HTML 5, CSS 3
-              </li>
-              <li>
-                JavaScript, jQuery
-              </li>
-              <li>
-                PHP 5, CakePHP, Laravel
-              </li>
-              <li>
-                Blade (Laravel), Liquid (Shopify)
-              </li>
-            </ul>
-          </div>
-        </div>
-        <button class="uk-button" data-uk-toggle="{target:'.skills-toggle'}">
-          Less is more <i class="uk-icon-expand skills-toggle"></i><i class="uk-icon-compress skills-toggle uk-hidden"></i>
-        </button>
-      </section>
-    </div>
+      </div>
+    </section>
   </div>
-  <div class="uk-visible-small uk-margin"></div>
-  <div class="uk-width-medium-1-2">
-    <div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-right">
-      <section id="work">
-        <header>
-          <h2 class="uk-panel-title"><i class="uk-icon-briefcase"></i> Work</h2>
-        </header>
+
+  <div class="col-sm-6">
+    <section id="work" class="panel panel-default">
+      <header class="panel-heading">
+        <h2 class="panel-title">Work</h2>
+      </header>
+      <div class="panel-body">
         <div>
           <header>
             <h3><a href="http://www.comm-it.be/" target="_blank">Comm-IT</a></h3>
           </header>
-          <ul class="uk-list">
+          <ul>
             <li>
               July 2014
             </li>
@@ -287,7 +168,7 @@ layout: bs_container
             C# .NET Developer, Windows Store app
           </p>
         </div>
-        <div class="work-toggle uk-hidden">
+        <div>
           <header>
             <h3><a href="https://web.archive.org/web/20111219012617/http://www.themobilerevolution.be/" target="_blank">The Mobile Revolution</a></h3>
           </header>
@@ -296,11 +177,11 @@ layout: bs_container
             Contributing editor
           </p>
         </div>
-        <div class="work-toggle uk-hidden">
+        <div>
           <header>
             <h3><a href="http://www.colruyt.be/" target="_blank">Colruyt NV</a></h3>
           </header>
-          <ul class="uk-list">
+          <ul>
             <li>
               August 2011
             </li>
@@ -318,21 +199,58 @@ layout: bs_container
             stock control &amp; order picker
           </p>
         </div>
-        <button class="uk-button" data-uk-toggle="{target:'.work-toggle'}">
-          Less is more <i class="uk-icon-expand work-toggle"></i><i class="uk-icon-compress work-toggle uk-hidden"></i>
-        </button>
-      </section>
-    </div>
-    <div class="uk-panel uk-panel-box uk-panel-header uk-animation-slide-right">
-      <section id="experience">
-        <header>
-          <h2 class="uk-panel-title"><i class="uk-icon-trophy"></i> Experience</h2>
-        </header>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6">
+    <section id="certifications" class="panel panel-default">
+      <header class="panel-heading">
+        <h2 class="panel-title">Certifications</h2>
+      </header>
+      <div class="panel-body">
+        <div>
+          <header>
+            <h3>Cisco CCNA Discovery</h3>
+          </header>
+          <ul>
+            <li>
+              Introduction to Networks
+            </li>
+            <li>
+              Routing and Switching Essentials
+            </li>
+          </ul>
+        </div>
+        <div>
+          <header>
+            <h3>Oracle</h3>
+          </header>
+          <ul>
+            <li>
+              Database Design and Programming with SQL
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="col-sm-6">
+    <section id="experience" class="panel panel-default">
+      <header class="panel-heading">
+        <h2 class="panel-title">Experience</h2>
+      </header>
+      <div class="panel-body">
         <div>
           <header>
             <h3>Microsoft Developer Camps</h3>
           </header>
-          <ul class="uk-list">
+          <ul>
             <li>
               The Ins and Outs of Windows Phone apps (C#, 2013)
             </li>
@@ -345,7 +263,7 @@ layout: bs_container
           <header>
             <h3>Other</h3>
           </header>
-          <ul class="uk-list">
+          <ul>
             <li>
               Realdolmen Microsoft Community Christmas Hackathon 2013
             </li>
@@ -354,45 +272,124 @@ layout: bs_container
             </li>
           </ul>
         </div>
-      </section>
-    </div>
-    <div class="uk-panel uk-animation-slide-right">
-      <section id="social">
-        <header>
-          <h2 class="uk-panel-title"><i class="uk-icon-globe"></i> On the web</h2>
-        </header>
-        <ul class="uk-list uk-list-striped">
-          <li>
-            <a href="mailto:s@muel.be"><i class="uk-icon-envelope"></i> s@muel.be</a>
-          </li>
-          <li>
-            <a href="https://github.com/SamuelDebruyn" target="_blank"><i class="uk-icon-github"></i> GitHub</a>
-          </li>
-          <li>
-            <a href="https://twitter.com/intent/user?screen_name=SamuelDebruyn" target="_blank"><i class="uk-icon-twitter"></i> @SamuelDebruyn</a>
-          </li>
-          <li class="soc-toggle uk-hidden">
-            <a href="https://plus.google.com/+SamuelDebruyn?rel=author" target="_blank"><i class="uk-icon-google-plus"></i> +SamuelDebruyn</a>
-          </li>
-          <li class="soc-toggle uk-hidden">
-            <a href="http://be.linkedin.com/in/samueldebruyn/" target="_blank"><i class="uk-icon-linkedin"></i> LinkedIn</a>
-          </li>
-          <li class="soc-toggle uk-hidden">
-            <a href="http://blog.sa.muel.be"><i class="uk-icon-pencil"></i> Blog</a>
-          </li>
-          <li class="soc-toggle uk-hidden">
-            <a href="https://play.google.com/store/apps/developer?id=Samuel+Debruyn" target="_blank"><i class="uk-icon-android"></i> Apps on Google Play</a>
-          </li>
-        </ul>
-        <button class="uk-button" data-uk-toggle="{target:'.soc-toggle'}">
-          Less is more <i class="uk-icon-expand soc-toggle"></i><i class="uk-icon-compress soc-toggle uk-hidden"></i>
-        </button>
-      </section>
-    </div>
+      </div>
+    </section>
   </div>
+
 </div>
 
+<div class="row">
 
+  <div class="col-sm-6">
+    <section id="skills" class="panel panel-default">
+      <header class="panel-heading">
+        <h2 class="panel-title">Skills</h2>
+      </header>
+      <div class="panel-body">
+        <div>
+          <header>
+            <h3>desktop</h3>
+          </header>
+          <ul>
+            <li>
+              Java, Spring, Hibernate
+            </li>
+            <li>
+              C#, WinForms, Windows Store apps (C# / HTML 5), WPF, XAML
+            </li>
+            <li>
+              MS Access, VBA
+            </li>
+          </ul>
+        </div>
+        <div>
+          <header>
+            <h3>back-end</h3>
+          </header>
+          <ul>
+            <li>
+              MySQL, Oracle SQL, T-SQL
+            </li>
+            <li>
+              Python, Ruby, bash
+            </li>
+            <li>
+              Linux, Windows Server, Cisco IOS
+            </li>
+          </ul>
+        </div>
+        <div>
+          <header>
+            <h3>mobile</h3>
+          </header>
+          <ul>
+            <li>
+              Android
+            </li>
+            <li>
+              Windows Phone (C# / HTML 5)
+            </li>
+            <li>
+              responsive web apps
+            </li>
+          </ul>
+        </div>
+        <div>
+          <header>
+            <h3>web</h3>
+          </header>
+          <ul>
+            <li>
+              HTML 5, CSS 3
+            </li>
+            <li>
+              JavaScript, jQuery
+            </li>
+            <li>
+              PHP 5, CakePHP, Laravel
+            </li>
+            <li>
+              Blade (Laravel), Liquid (Shopify)
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
 
+  <div class="col-sm-6">
+    <section id="social" class="panel panel-default">
+      <header class="panel-heading">
+        <h2 class="panel-title">On the web</h2>
+      </header>
+      <div class="panel-body">
+        <ul>
+          <li>
+            <a href="mailto:s@muel.be">s@muel.be</a>
+          </li>
+          <li>
+            <a href="https://github.com/SamuelDebruyn" target="_blank">GitHub</a>
+          </li>
+          <li>
+            <a href="https://twitter.com/intent/user?screen_name=SamuelDebruyn" target="_blank">@SamuelDebruyn</a>
+          </li>
+          <li>
+            <a href="https://plus.google.com/+SamuelDebruyn?rel=author" target="_blank">+SamuelDebruyn</a>
+          </li>
+          <li>
+            <a href="http://be.linkedin.com/in/samueldebruyn/" target="_blank">LinkedIn</a>
+          </li>
+          <li>
+            <a href="http://blog.sa.muel.be">Blog</a>
+          </li>
+          <li>
+            <a href="https://play.google.com/store/apps/developer?id=Samuel+Debruyn" target="_blank">Apps on Google Play</a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+</div>
 
 {% include bs_footer.html %}
