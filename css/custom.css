@@ -11,3 +11,7 @@
   overflow-x: auto;
   word-wrap: normal;
 }
+
+body{
+  padding-top: 70px;
+}
