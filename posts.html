@@ -1,15 +1,14 @@
 ---
-layout: default
+layout: page
 title: Posts
 ---
-
-<ul class="posts">
+<ul class="list-group">
   {% for post in site.posts %}
-  <li>
-    <span class="post-date">{{ post.date | date: "%b %-d, %Y" }}</span>
-    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+  <li class="list-group-item">
+    <h4 class="list-group-item-heading"><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h4>
+    <span>{{ post.date | date: "%b %-d, %Y" }}</span>
   </li>
   {% endfor %}
 </ul>
 
-<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+<div class="well well-sm text-center"><p>subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p></div>
