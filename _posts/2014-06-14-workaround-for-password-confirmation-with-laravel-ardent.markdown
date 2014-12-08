@@ -3,7 +3,7 @@ title: Workaround for password confirmation with Laravel & Ardent
 layout: post
 ---
 
-While I was working on a website made with Laravel and Ardent I has to validate a password confirmation field for a user registration. This will not work if you follow the standard documentation.
+While I was working on a website made with Laravel and Ardent I had to validate a password confirmation field for a user registration. This will not work if you follow the standard documentation.
 
 This is how your [validation rules](http://laravel.com/docs/validation){:target="_blank"} in your [Ardent](https://github.com/laravelbook/ardent){:target="_blank"} model should look like (users only have an email address and a password):
 
