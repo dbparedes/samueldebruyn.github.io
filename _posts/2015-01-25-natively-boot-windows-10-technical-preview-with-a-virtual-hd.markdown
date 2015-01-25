@@ -5,6 +5,7 @@ title: Natively boot Windows 10 Technical Preview with a virtual HD
 ---
 
 A few days ago [Microsoft released a new build for Windows 10](https://insider.windows.com){:target="_blank"} and I wanted to give it a try. However, I didn't want to resize my partitions or overwrite my Windows 8.1 partition.
+
 >Well, then install it in a VM!
 
 Then I wouldn't have access to all of my RAM and CPU, so that wasn't a solution either. However, I found the ideal solution.
