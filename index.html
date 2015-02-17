@@ -38,9 +38,9 @@ layout: bs_container
       <ul class="nav navbar-nav">
         <li class="visible-lg-block"><a href="#top"><span class="glyphicon glyphicon-chevron-up"></span> top</a></li>
         <li><a href="#education"><span class="glyphicon glyphicon-book"></span> Education</a></li>
+        <li><a href="#work"><span class="glyphicon glyphicon-briefcase"></span> Work</a></li>
         <li><a href="#certifications"><span class="glyphicon glyphicon-certificate"></span> Certifications</a></li>
         <li><a href="#skills"><span class="glyphicon glyphicon-hand-up"></span> Skills</a></li>
-        <li><a href="#work"><span class="glyphicon glyphicon-briefcase"></span> Work</a></li>
         <li><a href="#experience"><span class="glyphicon glyphicon-star"></span> Experience</a></li>
         <li><a href="{{ "/posts.html" | prepend: site.baseurl }}"><span class="glyphicon glyphicon-pencil"></span> Blog</a></li>
         <li><a href="#social"><span class="glyphicon glyphicon-globe"></span> On the web</a></li>
@@ -237,6 +237,52 @@ layout: bs_container
   </div>
 
   <div class="col-sm-6">
+    <section id="skills" class="panel panel-default">
+      <header class="panel-heading">
+        <h2 class="panel-title"><span class="glyphicon glyphicon-hand-up"></span> Skills</h2>
+      </header>
+      <div class="panel-body">
+        <div>
+          <p>
+            I love building <a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank"><abbr title="representational state transfer">REST</abbr>ful APIs</a> and applications, class libraries and SDKs consuming RESTful APIs.
+          </p>
+        </div>
+        <div>
+          <header>
+            <h3>Software development</h3>
+          </header>
+          <ul>
+            <li>
+              Java, Spring, Hibernate
+            </li>
+            <li>
+              C#, XAML, WinForms, Windows Store/Windows Phone/Windows Universal apps
+            </li>
+            <li>RESTful APIs</li>
+          </ul>
+        </div>
+        <div>
+          <header>
+            <h3>Information management & database development</h3>
+          </header>
+          <ul>
+            <li>
+              Oracle SQL, T-SQL, MySQL, SQLite, Base SAS
+            </li>
+            <li>
+              Datawarehousing, data visualisation, business analytics & business intelligence
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</div>
+
+<div class="row">
+
+  <div class="col-sm-6">
     <section id="experience" class="panel panel-default">
       <header class="panel-heading">
         <h2 class="panel-title"><span class="glyphicon glyphicon-star"></span> Experience</h2>
@@ -267,58 +313,6 @@ layout: bs_container
               Microsoft Windows 8 Super Hackathon 2013
             </li>
           </ul>
-        </div>
-      </div>
-    </section>
-  </div>
-
-</div>
-
-<div class="row">
-
-  <div class="col-sm-6">
-    <section id="skills" class="panel panel-default">
-      <header class="panel-heading">
-        <h2 class="panel-title"><span class="glyphicon glyphicon-hand-up"></span> Skills</h2>
-      </header>
-      <div class="panel-body">
-        <div>
-          <p>
-            I love building <a href="http://en.wikipedia.org/wiki/Representational_state_transfer" target="_blank"><abbr title="representational state transfer">REST</abbr>ful APIs</a> and applications, class libraries and SDKs consuming RESTful APIs.
-          </p>
-        </div>
-        <div class="collapse skills-collapse">
-          <header>
-            <h3>Software development</h3>
-          </header>
-          <ul>
-            <li>
-              Java, Spring, Hibernate
-            </li>
-            <li>
-              C#, XAML, WinForms, Windows Store/Windows Phone/Windows Universal apps
-            </li>
-            <li>RESTful APIs</li>
-          </ul>
-        </div>
-        <div class="collapse skills-collapse">
-          <header>
-            <h3>Information management & database development</h3>
-          </header>
-          <ul>
-            <li>
-              Oracle SQL, T-SQL, MySQL, SQLite, Base SAS
-            </li>
-            <li>
-              Datawarehousing, data visualisation, business analytics & business intelligence
-            </li>
-          </ul>
-        </div>
-        <div class="collapse in skills-collapse text-right">
-          <button type="button" class="btn btn-primary btn-xs" data-toggle="collapse" data-target=".skills-collapse"><span class="glyphicon glyphicon-resize-full"></span> Show more</button>
-        </div>
-        <div class="collapse skills-collapse text-right">
-          <button type="button" class="btn btn-info btn-xs" data-toggle="collapse" data-target=".skills-collapse"><span class="glyphicon glyphicon-resize-small"></span> Show less</button>
         </div>
       </div>
     </section>
