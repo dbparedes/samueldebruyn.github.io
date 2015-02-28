@@ -28,3 +28,12 @@ sitemap:
   include_posts:
       - "index.html"
       - "posts.html"
+
+# Rakefile settings
+post:
+  template: _post.txt
+  extension: md
+page:
+  template: _page.txt
+  extension: html
+editor: nano
