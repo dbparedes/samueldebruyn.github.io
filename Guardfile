@@ -23,7 +23,7 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard 'jekyll_plus', :serve => true do
+guard 'jekyll_plus', :serve => true, :drafts => true, :future => true do
   watch /.*/
   ignore /^_site/
 end
