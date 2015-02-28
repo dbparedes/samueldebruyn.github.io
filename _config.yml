@@ -1,5 +1,5 @@
 # Site settings
-title: new Blog();
+title: Sam's blog
 email: s@muel.be
 description: "A blog by Samuel Debruyn where he posts about his daily life as a software developer."
 baseurl: ""
@@ -8,6 +8,7 @@ display_name: Samuel Debruyn
 twitter_username: SamuelDebruyn
 github_username:  SamuelDebruyn
 github_repo: https://github.com/SamuelDebruyn/samueldebruyn.github.io
+url: http://sa.muel.be
 limit_posts: 0
 
 # Build settings
@@ -21,3 +22,9 @@ exclude: [vendor]
 # Kramdown settings
 kramdown:
   use_coderay: false
+
+# Sitemap settings
+sitemap:
+  include_posts:
+      - "index.html"
+      - "posts.html"
