@@ -8,6 +8,7 @@ gem 'guard'
 gem 'guard-jekyll-plus'
 gem 'guard-livereload'
 gem 'rake'
+gem 'less'
 
 require 'rbconfig'
 gem 'wdm', '~> 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
