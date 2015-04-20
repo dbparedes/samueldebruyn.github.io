@@ -20,7 +20,7 @@ I experienced problems when I tried to download some plugins from Talend Exchang
 
             https://maps.googleapis.com/maps/api/geocode/json?address= + ((String)globalMap.get("LocConcatOut.LOCATION_CONCAT_ADDRESS"))
 
-          Add `+ "&key=YourAPIkey"` if you would like to use your own API key for the [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/).
+          Add `+ "&key=YourAPIkey"` if you would like to use your own API key for the [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/){:target="_blank"}.
 
           Edit the schema for this component and make sure it contains 2 columns: *LATITUDE* and *LONGITUDE*. Their type should be float, nullable.
 
