@@ -6,7 +6,7 @@ author: Sam
 
 A few weeks ago I had to submit the contents of a GitHub repository to my teacher for grading. I wanted to use my readme.md-file while my teacher asked for a Word or a PDF document. Then I discovered this amazing program which converts Markdown to any desirable format!
 
-Almost every programmer knows Markdown, right? The Markdown syntax is widely used on [GitHub](https://github.com/){:target="_blank"} and in [readme-files](https://github.com/github/markup/blob/master/README.md){:target="_blank"}.  Markdown was developed by [John Gruber](http://daringfireball.net/projects/markdown/){:target="_blank"} and [Aaron Swartz](http://www.aaronsw.com/weblog/001189){:target="_blank"} as a tool to convert plain text files in the syntactic language with the same name to HTML.
+Almost every programmer knows Markdown, right? The Markdown syntax is widely used on [GitHub](https://github.com/){:target="_blank"} and in [readme-files](https://github.com/github/markup/blob/master/README.md){:target="_blank"}.  Markdown was developed by [John Gruber](http://daringfireball.net/projects/markdown/){:target="_blank"} and Aaron Swartz as a tool to convert plain text files in the syntactic language with the same name to HTML.
 
 The complete Markdown syntax and more information is available on [John Gruber's website](http://daringfireball.net/projects/markdown/syntax){:target="_blank"}.
 
