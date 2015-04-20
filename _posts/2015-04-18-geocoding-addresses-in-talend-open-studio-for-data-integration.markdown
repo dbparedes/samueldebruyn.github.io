@@ -6,7 +6,7 @@ author: Sam
 
 Last week I had to geocode the addresses in a dataset using Talend. Geocoding is adding coordinates to addresses. This way you can easily visualize your data on a map.
 
-I experienced problems when I tried to download some plugins from Talend Exchange but I found [this blog post](http://datacatalyst.blogspot.be/2011/01/custom-google-geocoder-using-talend.html) about geocoding without the use of a plugin. The blogpost wasn't very clear so I decided to write a step-by-step explanation which you can find below. In this guide, we will be using the [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/).
+I experienced problems when I tried to download some plugins from Talend Exchange but I found [this blog post](http://datacatalyst.blogspot.be/2011/01/custom-google-geocoder-using-talend.html){:target="_blank"} about geocoding without the use of a plugin. The blogpost wasn't very clear so I decided to write a step-by-step explanation which you can find below. In this guide, we will be using the [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/){:target="_blank"}.
 
   1.	Map your location dataset (with a *tMap*) to 2 columns: an unique ID of your location and a concatenated string containing the location address. I used one of Talend's built-in *StringHandling*-functions.
 
@@ -34,4 +34,4 @@ I experienced problems when I tried to download some plugins from Talend Exchang
 
   1.	The previously mentioned components should all be put in the same subjob. Use a trigger like *OnSubjobOk* to start your next job after this one is completed. You can find all the location identifiers with their coordinates in the *tBufferInput* component. This is easily mapped (joined) to the original locations dataset using a *tMap*. Make sure to set the correct data types in the mapping (1 integer and 2 floats) for the *tBufferInput* component.
 
-I hope my guide is clear, but you can always [tweet me](https://twitter.com/intent/tweet?text=@SamuelDebruyn%20) with any further questions.
+I hope my guide is clear, but you can always [tweet me](https://twitter.com/intent/tweet?text=@SamuelDebruyn%20){:target="_blank"} with any further questions.
