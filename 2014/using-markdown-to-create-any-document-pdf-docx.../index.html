@@ -7,27 +7,27 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" Natively boot Windows 10 Technical Preview with a virtual HDD &middot;  Samuel Debruyn" />
+        <meta property="og:title" content=" Using markdown to create any document (pdf, docx...) &middot;  Samuel Debruyn" />
         <meta property="og:site_name" content="Samuel Debruyn" />
-        <meta property="og:url" content="http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/" />
+        <meta property="og:url" content="http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../" />
 
     
         <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2015-01-25T00:00:00Z" />
+        <meta property="og:article:published_time" content="2014-02-10T00:00:00Z" />
         
 
         <meta name="twitter:card" content="summary" />
-        <meta name="twitter:site" content="@" />
-        <meta name="twitter:creator" content="@" />
-        <meta name="twitter:title" content="Natively boot Windows 10 Technical Preview with a virtual HDD" />
+        <meta name="twitter:site" content="@SamuelDebruyn" />
+        <meta name="twitter:creator" content="@SamuelDebruyn" />
+        <meta name="twitter:title" content="Using markdown to create any document (pdf, docx...)" />
         <meta name="twitter:description" content="" />
-        <meta name="twitter:url" content="http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/" />
+        <meta name="twitter:url" content="http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../" />
     
 
-        <title> Natively boot Windows 10 Technical Preview with a virtual HDD &middot;  Samuel Debruyn</title>
+        <title> Using markdown to create any document (pdf, docx...) &middot;  Samuel Debruyn</title>
 
     
-        <meta name="description" content="" />
+        <meta name="description" content="personal website and blog of Samuel Debruyn" />
     
         
         <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
@@ -43,21 +43,21 @@
     
 
     
-        <link rel="canonical" href="http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/" />
+        <link rel="canonical" href="http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../" />
 
     
     <script type="application/ld+json">
     { 
         "@context": "http://schema.org",
         "@type": "Article",
-        "headline": "Natively boot Windows 10 Technical Preview with a virtual HDD",
+        "headline": "Using markdown to create any document (pdf, docx...)",
         "author": {
             "@type": "Person",
             "name": "http://profiles.google.com/?rel=author"
         },
-        "datePublished": "2015-01-25",
+        "datePublished": "2014-02-10",
         "description": "",
-        "wordCount":  250 
+        "wordCount":  235 
     }
     </script>
     
@@ -84,39 +84,30 @@
 
 <article id="" class="post">
     <div class="post-stamp">
-        <time datetime="2015-01-25T00:00:00Z">
-            25 Jan 2015
+        <time datetime="2014-02-10T00:00:00Z">
+            10 Feb 2014
         </time>
     </div>
-    <h1 class="post-title">Natively boot Windows 10 Technical Preview with a virtual HDD</h1>
-    <p>A few days ago <a href="https://insider.windows.com">Microsoft released a new build for Windows 10</a> and I wanted to give it a try. However, I didn&rsquo;t want to resize my partitions or overwrite my Windows 8.1 partition.</p>
+    <h1 class="post-title">Using markdown to create any document (pdf, docx...)</h1>
+    <p>A few weeks ago I had to submit the contents of a GitHub repository to my teacher for grading. I wanted to use my readme.md-file while my teacher asked for a Word or a PDF document. Then I discovered this amazing program which converts Markdown to any desirable format!</p>
 
-<blockquote>
-<p>Well, then install it in a VM!</p>
-</blockquote>
+<p>Almost every programmer knows Markdown, right? The Markdown syntax is widely used on <a href="https://github.com/">GitHub</a> and in <a href="https://github.com/github/markup/blob/master/README.md">readme-files</a>.  Markdown was developed by <a href="http://daringfireball.net/projects/markdown/">John Gruber</a> and Aaron Swartz as a tool to convert plain text files in the syntactic language with the same name to HTML.</p>
 
-<p>Then I wouldn&rsquo;t have access to all of my RAM and CPU, so that wasn&rsquo;t a solution either. However, I found the ideal solution.</p>
+<p>The complete Markdown syntax and more information is available on <a href="http://daringfireball.net/projects/markdown/syntax">John Gruber&rsquo;s website</a>.</p>
 
-<p>Apparently you can <strong>install Windows in a virtual hard drive</strong>. Let me guide you through:</p>
+<p>As you&rsquo;ve seen / will see, writing texts with Markdown is pretty easy and structured. It&rsquo;s quite easy to convert this text into another format than HTML. For that purpose, I&rsquo;ve found <a href="http://johnmacfarlane.net/pandoc/">pandoc</a>. Pandoc <a href="http://johnmacfarlane.net/pandoc/installing.html">packages are available</a> for almost every operating system. I recommend <a href="http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx">adding it to your path</a> if the installer didn&rsquo;t do that automatically.</p>
 
-<ol>
-<li>Create a new VHD-file and remember the path to it. You can use <em>Disk Management</em> (run <code>diskmgmt.msc</code>) and click <em>Action</em> and <em>Create VHD</em>. I made it about 70 GB big with a dynamic size.</li>
-<li>Boot into the Windows installation (use <a href="https://rufus.akeo.ie/">Rufus</a> or something similar to create a bootable USB stick).</li>
-<li>Select <em>Custom: Install Windows only (Advanced)</em>, not an <em>Upgrade</em>.</li>
-<li>Now you have to select the partition on which you want to install Windows. Press <em>SHIFT+F10</em> to open a command prompt instead.</li>
-<li>Enter <code>diskpart</code> to open the DiskPart utility.</li>
-<li>In DiskPart enter <code>select vdisk file=C:\Windows10.vhd</code> with the correct path to your VHD to select the VHD.</li>
-<li>Now enter <code>attach vdisk</code> and close the command prompt.</li>
-<li>If you now press <em>Refresh</em> you will see unallocated space on a newly added disk station, that is your virtual hard drive. Select it.</li>
-<li>You can now continue installing Windows as usual.</li>
-</ol>
+<p>It&rsquo;s quite simple to start using Pandoc. They have some great documentation <a href="http://johnmacfarlane.net/pandoc/README.html">available on their website</a> and basically all you have to type is the following:</p>
 
-<p>I was surprised to find out about this possibility. This way you can try the new Windows <em>in full</em> without compromising your production environment.</p>
+<pre><code>pandoc -o thefileyouwant.ext thefileyouhave.otherext
+</code></pre>
+
+<p>The output is very clean and structured and the list of supported formats is endless. This way you can write everything in Markdown and convert your text to the desired format afterwards. I hope you&rsquo;ll enjoy using pandoc as much as I do!</p>
 
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
-          <a href="mailto:?subject=Natively%20boot%20Windows%2010%20Technical%20Preview%20with%20a%20virtual%20HDD&amp;body=http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/">
+          <a href="mailto:?subject=Using%20markdown%20to%20create%20any%20document%20%28pdf%2c%20docx...%29&amp;body=http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
@@ -126,7 +117,7 @@
           </a>
       </li>
       <li class="facebook">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/" class="popup">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
@@ -136,7 +127,7 @@
           </a>
       </li>
 			<li class="twitter">
-          <a href="http://twitter.com/home?status=Natively%20boot%20Windows%2010%20Technical%20Preview%20with%20a%20virtual%20HDD%20http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/" class="popup">
+          <a href="http://twitter.com/home?status=Using%20markdown%20to%20create%20any%20document%20%28pdf%2c%20docx...%29%20http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
@@ -146,7 +137,7 @@
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/&amp;title=Natively%20boot%20Windows%2010%20Technical%20Preview%20with%20a%20virtual%20HDD&amp;summary=A%20few%20days%20ago%20Microsoft%20released%20a%20new%20build%20for%20Windows%2010%20and%20I%20wanted%20to%20give%20it%20a%20try.%20However%2c%20I%20didn%26rsquo%3bt%20want%20to%20resize%20my%20partitions%20or%20overwrite%20my%20Windows%208.1%20partition.%20Well%2c%20then%20install%20it%20in%20a%20VM%21%20Then%20I%20wouldn%26rsquo%3bt%20have%20access%20to%20all%20of%20my%20RAM%20and%20CPU%2c%20so%20that%20wasn%26rsquo%3bt%20a%20solution%20either.%20However%2c%20I%20found%20the%20ideal%20solution.%20Apparently%20you%20can%20install%20Windows%20in%20a%20virtual%20hard%20drive...." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../&amp;title=Using%20markdown%20to%20create%20any%20document%20%28pdf%2c%20docx...%29&amp;summary=A%20few%20weeks%20ago%20I%20had%20to%20submit%20the%20contents%20of%20a%20GitHub%20repository%20to%20my%20teacher%20for%20grading.%20I%20wanted%20to%20use%20my%20readme.md-file%20while%20my%20teacher%20asked%20for%20a%20Word%20or%20a%20PDF%20document.%20Then%20I%20discovered%20this%20amazing%20program%20which%20converts%20Markdown%20to%20any%20desirable%20format%21%20Almost%20every%20programmer%20knows%20Markdown%2c%20right%3f%20The%20Markdown%20syntax%20is%20widely%20used%20on%20GitHub%20and%20in%20readme-files.%20Markdown%20was%20developed%20by%20John%20Gruber%20and%20Aaron%20Swartz%20as%20a%20tool%20to%20convert%20plain%20text%20files%20in%20the%20syntactic%20language%20with%20the%20same%20name%20to%20HTML...." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
@@ -157,7 +148,7 @@
       </li>
       <li class="tumblr">
 					<script>
-						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/sa.muel.be\/post\/natively-boot-windows-10-technical-preview-with-a-virtual-hdd\/') + '&amp;t=Natively boot Windows 10 Technical Preview with a virtual HDD" class="popup">');
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/sa.muel.be\/2014\/using-markdown-to-create-any-document-pdf-docx...\/') + '&amp;t=Using markdown to create any document (pdf, docx...)" class="popup">');
 					</script>
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -168,7 +159,7 @@
           <script>document.write('</a>');</script>
       </li>
       <li class="reddit">
-          <a href="http://www.reddit.com/submit?url=http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/">
+          <a href="http://www.reddit.com/submit?url=http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../">
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 											<g>
@@ -183,7 +174,7 @@
           </a>
       </li>
       <li class="googleplus">
-          <a href="https://plus.google.com/share?url=http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/" class="popup">
+          <a href="https://plus.google.com/share?url=http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <g>
@@ -202,7 +193,7 @@
 						if (firstimg !== undefined) {
 							imgurl = firstimg.src;
 						}
-						document.write('<a href="http://pinterest.com/pin/create/button/?url=http:\/\/sa.muel.be\/post\/natively-boot-windows-10-technical-preview-with-a-virtual-hdd\/&amp;media=' + imgurl + '&amp;description=Natively boot Windows 10 Technical Preview with a virtual HDD" class="popup">');
+						document.write('<a href="http://pinterest.com/pin/create/button/?url=http:\/\/sa.muel.be\/2014\/using-markdown-to-create-any-document-pdf-docx...\/&amp;media=' + imgurl + '&amp;description=Using markdown to create any document (pdf, docx...)" class="popup">');
 					</script>
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -213,7 +204,7 @@
           <script>document.write('</a>');</script>
       </li>
       <li class="pocket">
-          <a href="https://getpocket.com/save?url=http://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/"  class="popup">
+          <a href="https://getpocket.com/save?url=http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../"  class="popup">
               <span class="icon">
                   <svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
                       <path d="M28.7817528,0.00172488695 C30.8117487,0.00431221738 31.9749312,1.12074529 31.9644402,3.10781507 C31.942147,6.67703739 32.1336065,10.2669583 31.8057648,13.8090137 C30.7147076,25.5813672 17.2181194,31.8996281 7.20714461,25.3808491 C2.71833574,22.4571656 0.196577202,18.3122624 0.0549495772,12.9357897 C-0.0342233715,9.5774348 0.00642900214,6.21519891 0.0300336062,2.85555035 C0.0405245414,1.1129833 1.21157517,0.0146615391 3.01995012,0.00819321302 C7.34746087,-0.00603710433 11.6775944,0.00431221738 16.0064164,0.00172488695 C20.2644248,0.00172488695 24.5237444,-0.00215610869 28.7817528,0.00172488695 L28.7817528,0.00172488695 Z M8.64885184,7.85611511 C7.38773662,7.99113854 6.66148108,8.42606978 6.29310958,9.33228474 C5.90114134,10.2969233 6.17774769,11.1421181 6.89875951,11.8276216 C9.35282156,14.161969 11.8108164,16.4924215 14.2976518,18.7943114 C15.3844131,19.7966007 16.5354102,19.7836177 17.6116843,18.7813283 C20.0185529,16.5495467 22.4070683,14.2982907 24.7824746,12.0327533 C25.9845979,10.8850542 26.1012707,9.56468083 25.1469132,8.60653379 C24.1361858,7.59255976 22.8449191,7.6743528 21.5890476,8.85191291 C19.9936451,10.3488554 18.3680912,11.8172352 16.8395462,13.3777945 C16.1342655,14.093159 15.7200114,14.0048744 15.0566806,13.3440386 C13.4599671,11.7484252 11.8081945,10.2060421 10.1262706,8.70001155 C9.65564653,8.27936164 9.00411403,8.05345704 8.64885184,7.85611511 L8.64885184,7.85611511 L8.64885184,7.85611511 Z"></path>
