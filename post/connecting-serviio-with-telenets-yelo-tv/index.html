@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Connecting Serviio with Telenet&#39;s Yelo TV &middot;  Samuel Debruyn" />
+        <meta property="og:site_name" content="Samuel Debruyn" />
+        <meta property="og:url" content="https://sa.muel.be/post/connecting-serviio-with-telenets-yelo-tv/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2013-12-09T00:00:00Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Connecting Serviio with Telenet&#39;s Yelo TV" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://sa.muel.be/post/connecting-serviio-with-telenets-yelo-tv/" />
+    
+
+        <title> Connecting Serviio with Telenet&#39;s Yelo TV &middot;  Samuel Debruyn</title>
+
+    
+        <meta name="description" content="" />
+    
+        
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+          
+
+    
+        <link href="https://sa.muel.beindex.xml" rel="alternate" type="application/rss+xml" title="Samuel Debruyn" />
+    
+
+    
+        <link rel="canonical" href="https://sa.muel.be/post/connecting-serviio-with-telenets-yelo-tv/" />
+
+    
+    <script type="application/ld+json">
+    { 
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Connecting Serviio with Telenet\x27s Yelo TV",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2013-12-09",
+        "description": "",
+        "wordCount":  326 
+    }
+    </script>
+    
+    
+    
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="https://sa.muel.be"><img src="https://sa.muel.beavatar.jpg" alt="Samuel Debruyn" /></a>
+            <h1><a href="https://sa.muel.be">Samuel Debruyn</a></h1>
+            <p></p>
+
+            <div id="follow-icons">
+	<a href="http://twitter.com/samueldebruyn" rel="me"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="http://linkedin.com/in/samueldebruyn" rel="me"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	<a href="http://github.com/samueldebruyn" rel="me"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="https://sa.muel.beindex.xml" rel="me"><i class="fa fa-rss-square fa-2x"></i></a> 
+</div>  
+            <h6><a href="https://sa.muel.beabout">About me</a></h6>
+        </header>
+<main id="content">
+
+<article id="" class="post">
+    <div class="post-stamp">
+        <time datetime="2013-12-09T00:00:00Z">
+            9 Dec 2013
+        </time>
+    </div>
+    <h1 class="post-title">Connecting Serviio with Telenet&#39;s Yelo TV</h1>
+    
+
+<h2 id="introduction:cbb446150464ea4f77ca50373417b3af">Introduction</h2>
+
+<p>Recently Belgian ISP Telenet <a href="http://snap.telenet.be/nieuw/artikel/yelo-tv-getest-en-gekeurd">introduced</a> <a href="http://telenet.be/nl/yelo-tv">Yelo TV</a>. It&rsquo;s the new brand for all of their efforts <del>to </del><del>innovate</del> with television. Yelo TV includes a series of apps for almost every device (except for Windows Phone) and a <a href="http://yelotv.be/">website </a>on which you can watch live television, watch recordings or schedule recordings. </p>
+
+<p>During the coming weeks Telenet is also updating their <a href="http://telenet.be/nl/digitale-tv">DigiCorders</a> to a new software version called Yelo TV. Most of the changes are in design but the new firmware will include a <a href="http://en.wikipedia.org/wiki/Digital_Living_Network_Alliance">DLNA</a> renderer. This means that you can use any device with a DLNA server to stream music, photos and videos to a television connected to a Telenet DigiCorder.</p>
+
+<p>I have a computer with <a href="http://www.serviio.org/">Serviio</a> on it. Serviio is a free DLNA server (a Pro version with more features is available) and in my opinion it&rsquo;s the best available. Serviio includes support for transcoding. This way Serviio will convert every media file in a format which the DLNA renderer is able to play if necessary.</p>
+
+<p>DLNA has its advantages and disadvantages, one of the latter is difficulties to detect compatible media formats. That&rsquo;s why Serviio uses <em>profiles</em> which define the compatible media formats for each type of DLNA renderer.</p>
+
+<p>There wasn&rsquo;t one for Telenet Yelo TV yet so I wrote one. This profile will convert every incompatible media file so that you can stream it to your DigiCorder. You&rsquo;ll need a fast computer to transcode files. This profile includes support for subtitles if you enabled it in Serviio&rsquo;s Console.</p>
+
+<h3 id="update-plex:cbb446150464ea4f77ca50373417b3af">Update: Plex</h3>
+
+<p>I recently switched to Plex. A profile for Plex is available here:</p>
+
+<p><script src="https://gist.github.com/SamuelDebruyn/5f6a7b3669706153f868.js"></script></p>
+
+<h2 id="the-profile:cbb446150464ea4f77ca50373417b3af">The profile:</h2>
+
+<p><script src="https://gist.github.com/SamuelDebruyn/7944739.js"></script></p>
+
+<h2 id="installation:cbb446150464ea4f77ca50373417b3af">Installation</h2>
+
+<p>This profile is included in Serviio 1.4 or newer. You don&rsquo;t need to change anything.</p>
+
+<h2 id="nb-further-optimizations:cbb446150464ea4f77ca50373417b3af">NB: Further optimizations</h2>
+
+<p>Tips to get a <strong>higher video quality</strong> (only works for videos that have to be transcoded because of incompatibility or that include subtitles):</p>
+
+<ul>
+<li>For technical users only: you could force Serviio to always transcode videos, look at <a href="http://www.serviio.org/index.php?option=com_content&amp;view=article&amp;id=24"><em>forceVTranscoding</em></a> and <a href="http://www.serviio.org/index.php?option=com_content&amp;view=article&amp;id=16"><em>alwaysEnableTranscoding</em></a>.</li>
+</ul>
+
+    
+    <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <h5>About the author</h5>
+  <section>
+    <p>Samuel Debruyn is a C# developer who builds RESTful APIs and cross platform apps. <a href="https://sa.muel.beabout">More info</a></p>
+  </section>
+</div>
+</article>  
+
+</main>
+		<footer id="footer">
+			<section id="footer-message">&copy; Samuel Debruyn. All rights reserved. Source code available on <a href="https://github.com/SamuelDebruyn/samueldebruyn.github.io" target="_blank">GitHub</a>. Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>. <a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "https:\/\/sa.muel.becss/rrssb.css",
+            "https:\/\/sa.muel.bejs/gist.min.js", 
+            "https:\/\/sa.muel.bejs/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+          }});
+        }
+      });
+    </script>
+	
+	</body>
+</html>

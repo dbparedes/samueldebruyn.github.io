@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Workaround for password confirmation with Laravel &amp; Ardent &middot;  Samuel Debruyn" />
+        <meta property="og:site_name" content="Samuel Debruyn" />
+        <meta property="og:url" content="https://sa.muel.be/post/workaround-for-password-confirmation-with-laravel-ardent/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2014-06-14T00:00:00Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Workaround for password confirmation with Laravel &amp; Ardent" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://sa.muel.be/post/workaround-for-password-confirmation-with-laravel-ardent/" />
+    
+
+        <title> Workaround for password confirmation with Laravel &amp; Ardent &middot;  Samuel Debruyn</title>
+
+    
+        <meta name="description" content="" />
+    
+        
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+          
+
+    
+        <link href="https://sa.muel.beindex.xml" rel="alternate" type="application/rss+xml" title="Samuel Debruyn" />
+    
+
+    
+        <link rel="canonical" href="https://sa.muel.be/post/workaround-for-password-confirmation-with-laravel-ardent/" />
+
+    
+    <script type="application/ld+json">
+    { 
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Workaround for password confirmation with Laravel \x26 Ardent",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2014-06-14",
+        "description": "",
+        "wordCount":  135 
+    }
+    </script>
+    
+    
+    
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="https://sa.muel.be"><img src="https://sa.muel.beavatar.jpg" alt="Samuel Debruyn" /></a>
+            <h1><a href="https://sa.muel.be">Samuel Debruyn</a></h1>
+            <p></p>
+
+            <div id="follow-icons">
+	<a href="http://twitter.com/samueldebruyn" rel="me"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="http://linkedin.com/in/samueldebruyn" rel="me"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	<a href="http://github.com/samueldebruyn" rel="me"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="https://sa.muel.beindex.xml" rel="me"><i class="fa fa-rss-square fa-2x"></i></a> 
+</div>  
+            <h6><a href="https://sa.muel.beabout">About me</a></h6>
+        </header>
+<main id="content">
+
+<article id="" class="post">
+    <div class="post-stamp">
+        <time datetime="2014-06-14T00:00:00Z">
+            14 Jun 2014
+        </time>
+    </div>
+    <h1 class="post-title">Workaround for password confirmation with Laravel &amp; Ardent</h1>
+    <p>While I was working on a website made with Laravel and Ardent I had to validate a password confirmation field for a user registration. This will not work if you follow the standard documentation.</p>
+
+<p>This is how your <a href="http://laravel.com/docs/validation">validation rules</a> in your <a href="https://github.com/laravelbook/ardent">Ardent</a> model should look like (users only have an email address and a password):</p>
+
+<pre><code>public static $rules = array(
+  'email' =&gt; 'required|email|max:100|unique:users',
+  'password' =&gt; 'required|min:6|confirmed',
+);
+</code></pre>
+
+<p>Your model should also have the following line somewhere:</p>
+
+<pre><code>public $autoPurgeRedundantAttributes = true;
+</code></pre>
+
+<p>Now, if you follow the documentation and include every database field in the <em>fillable</em> array, validation will always fail on the password confirmation.</p>
+
+<p>The workaround is to include the password confirmation field in the fillable array, even if it isn&rsquo;t a column in your database.</p>
+
+<pre><code>protected $fillable = array('email', 'password', 'activation_code', 'confirmed', 'reset_password', 'password_confirmation');
+</code></pre>
+
+    
+    <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <h5>About the author</h5>
+  <section>
+    <p>Samuel Debruyn is a C# developer who builds RESTful APIs and cross platform apps. <a href="https://sa.muel.beabout">More info</a></p>
+  </section>
+</div>
+</article>  
+
+</main>
+		<footer id="footer">
+			<section id="footer-message">&copy; Samuel Debruyn. All rights reserved. Source code available on <a href="https://github.com/SamuelDebruyn/samueldebruyn.github.io" target="_blank">GitHub</a>. Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>. <a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "https:\/\/sa.muel.becss/rrssb.css",
+            "https:\/\/sa.muel.bejs/gist.min.js", 
+            "https:\/\/sa.muel.bejs/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+          }});
+        }
+      });
+    </script>
+	
+	</body>
+</html>

@@ -1,0 +1,587 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Samuel Debruyn</title>
+    <link>https://sa.muel.be/</link>
+    <description>Recent content on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Apr 2015 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Geocoding addresses in Talend Open Studio for Data Integration</title>
+      <link>https://sa.muel.be/post/geocoding-addresses-in-talend-open-studio-for-data-integration/</link>
+      <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/geocoding-addresses-in-talend-open-studio-for-data-integration/</guid>
+      <description>&lt;p&gt;Last week I had to geocode the addresses in a dataset using Talend. Geocoding is adding coordinates to addresses. This way you can easily visualize your data on a map.&lt;/p&gt;
+
+&lt;p&gt;I experienced problems when I tried to download some plugins from Talend Exchange but I found &lt;a href=&#34;http://datacatalyst.blogspot.be/2011/01/custom-google-geocoder-using-talend.html&#34;&gt;this blog post&lt;/a&gt; about geocoding without the use of a plugin. The blogpost wasn&amp;rsquo;t very clear so I decided to write a step-by-step explanation which you can find below. In this guide, we will be using the &lt;a href=&#34;https://developers.google.com/maps/documentation/geocoding/&#34;&gt;Google Geocoding API&lt;/a&gt;.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Map your location dataset (with a &lt;em&gt;tMap&lt;/em&gt;) to 2 columns: an unique ID of your location and a concatenated string containing the location address. I used one of Talend&amp;rsquo;s built-in &lt;em&gt;StringHandling&lt;/em&gt;-functions.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    StringHandling.CHANGE(LOCATIONS.STREET_ADDRESS + LOCATIONS.POSTAL_CODE + LOCATIONS.CITY,&amp;quot; &amp;quot;,&amp;quot;+&amp;quot;)
+
+
+  My first column was called *LOCATION_ID* and my second column was called *LOCATION_CONCAT_ADDRESS*. Make sure to remember the name of your output. I named mine *LocConcatOut*.
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Next, connect your output from the &lt;em&gt;tMap&lt;/em&gt; to a &lt;em&gt;tFlowToIterate&lt;/em&gt; component to start processing all records one by one.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The output from the &lt;em&gt;tFlowToIterate&lt;/em&gt; has to be connected to a new &lt;em&gt;tFileInputJson&lt;/em&gt; component. You can change the number of parallel iterations to speed up the geocoding. In the &lt;em&gt;tFileInputJson&lt;/em&gt; component, check the &lt;em&gt;Use Url&lt;/em&gt; option and enter the following URL:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    https://maps.googleapis.com/maps/api/geocode/json?address= + ((String)globalMap.get(&amp;quot;LocConcatOut.LOCATION_CONCAT_ADDRESS&amp;quot;))
+
+
+  Add `+ &amp;quot;&amp;amp;key=YourAPIkey&amp;quot;` if you would like to use your own API key for the [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/).
+
+
+  Edit the schema for this component and make sure it contains 2 columns: *LATITUDE* and *LONGITUDE*. Their type should be float, nullable.
+
+
+  In the mapping, *LATITUDE* should be set to `&amp;quot;$.results[0].geometry.location.lat&amp;quot;` and *LONGITUDE* should be set to `&amp;quot;$.results[0].geometry.location.lng&amp;quot;`.
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Now we&amp;rsquo;re going to map the coordinates back to the UIDs. Add another &lt;em&gt;tMap&lt;/em&gt; component at the end. Create a new output, map the 2 coordinates from the &lt;em&gt;tFileInputJson&lt;/em&gt; to identical columns in the new &lt;em&gt;tMap&lt;/em&gt; and create a new column with a primary key. Enter the following for the value of this key (my keys are integers):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    ((Integer)globalMap.get(&amp;quot;LocConcatOut.LOCATION_ID&amp;quot;)).intValue()
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Finally connect the output from the &lt;em&gt;tMap&lt;/em&gt; component to a &lt;em&gt;tBufferOutput&lt;/em&gt;. That ends the loop started with the &lt;em&gt;tFlowToIterate&lt;/em&gt; component.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;The previously mentioned components should all be put in the same subjob. Use a trigger like &lt;em&gt;OnSubjobOk&lt;/em&gt; to start your next job after this one is completed. You can find all the location identifiers with their coordinates in the &lt;em&gt;tBufferInput&lt;/em&gt; component. This is easily mapped (joined) to the original locations dataset using a &lt;em&gt;tMap&lt;/em&gt;. Make sure to set the correct data types in the mapping (1 integer and 2 floats) for the &lt;em&gt;tBufferInput&lt;/em&gt; component.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I hope my guide is clear, but you can always &lt;a href=&#34;https://twitter.com/intent/tweet?text=@SamuelDebruyn%20&#34;&gt;tweet me&lt;/a&gt; with any further questions.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How Google cripples outdated Android devices</title>
+      <link>https://sa.muel.be/post/how-google-cripples-outdated-android-devices/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/how-google-cripples-outdated-android-devices/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-i-downgraded-my-nexus-5:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;Why I downgraded my Nexus 5&lt;/h2&gt;
+
+&lt;p&gt;About a year ago Google released &lt;a href=&#34;http://developer.android.com/preview/index.html&#34;&gt;Android L Developer Preview&lt;/a&gt;. This preview of the upcoming Android Lollipop (5.0) release contained a lot of bugs and was definitely not &lt;em&gt;daily driver&lt;/em&gt; material.&lt;/p&gt;
+
+&lt;p&gt;When Google started updating Nexus devices to the &lt;a href=&#34;http://officialandroid.blogspot.be/2014/10/android-be-together-not-same.html&#34;&gt;final version of Android Lollipop&lt;/a&gt; last autumn, it was clear that not all bugs were gone. Users noticed several bugs of which the &lt;a href=&#34;https://code.google.com/p/android/issues/detail?id=79729&#34;&gt;memory leak on the Nexus 5&lt;/a&gt; was the worst. Power users had to reboot their device every 2 days and other users could go half a week without rebooting. Without a reboot, apps closed automatically a few seconds after opening and background services like Spotify shut down the moment you opened a memory intensive app.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://www.androidpolice.com/2014/12/15/nexus-5-receive-android-5-0-1-today-according-sprint-t-mobile/&#34;&gt;Android 5.0.1 update&lt;/a&gt; came and went while fixing a few bugs, but the memory leak was still there. Apparently it had something to do with the fade out animation when you turned off your screen.&lt;/p&gt;
+
+&lt;p&gt;Then, a few weeks back, Google released Android 5.1. It contained some UI and functional improvements and the memory leak was gone, at last! But don’t start cheering too soon. &lt;a href=&#34;http://www.androidpolice.com/2015/03/15/google-android-5-1-memory-leak-has-been-fixed-internally-no-timeline-for-release-yet/&#34;&gt;Android 5.1 contained another memory leak&lt;/a&gt;. The Android developers already fixed it, but at the time of writing, they still don’t have a timeframe for a release of this fix. The rebooting went on, every other day.&lt;/p&gt;
+
+&lt;p&gt;What if you have a car accident and you need to call emergency services?&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Oh no, wait, I have to reboot my phone first.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This drives me nuts. This seems a critical bug to me. A (smart)phone mustto be able to perform its most basic function all the time: calling.&lt;/p&gt;
+
+&lt;p&gt;I considered downgrading while I was on Android 5.0.1, but I quickly delayed this decision when I heard about the upcoming 5.1 update that would fix this memory leak. However, when I started noticing the second memory leak, I had it. Time to go back to the latest stable version: Android 4.4.4 KitKat.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-i-downgraded:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;How I downgraded&lt;/h2&gt;
+
+&lt;p&gt;The downgrade was quite simple: I unlocked my phone and flashed the 4.4.4 &lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;factory image&lt;/a&gt;. The next thing I did was rooting my phone, which later turned out to be necessary.&lt;/p&gt;
+
+&lt;h2 id=&#34;and-then-it-all-started:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;And then it all started&lt;/h2&gt;
+
+&lt;p&gt;One of the reasons why I downgraded, was that Android 4.4.4 has remarkably better battery life than Android Lollipop. So when my battery started draining at more than 20% an hour, I knew that something was wrong. Also, the notification about the system update was impossible to remove.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Yes, Google, I know. Now let me go on with my life, I don’t want your update.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;digging-a-little-deeper:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;Digging a little deeper&lt;/h2&gt;
+
+&lt;p&gt;Android used to have a service called SystemUpdateService in the Google Services Framework (preinstalled system app) that would handle OS updates. It seems like this was replaced by Google Play Services. The &lt;a href=&#34;https://developer.android.com/google/play-services/index.html&#34;&gt;Google Play Services&lt;/a&gt; app is updated automatically via the Google &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.gms&#34;&gt;Play Store&lt;/a&gt;. This app contains another SystemUpdateService and disables the SystemUpdateService in the Google Services Framework mentioned earlier.&lt;/p&gt;
+
+&lt;p&gt;This service seems to cause a &lt;a href=&#34;http://developer.android.com/reference/android/os/PowerManager.WakeLock.html&#34;&gt;wakelock&lt;/a&gt;, which makes sure that my Nexus 5 never goes to deep sleep. (Deep sleep is like a standby mode with very low power usage.) So there’s my battery drain. But how to stop it? Disabling this service doesn’t help at all. The notification disappears but the wakelock is still there.&lt;/p&gt;
+
+&lt;p&gt;Next step: Google and &lt;a href=&#34;http://forum.xda-developers.com/google-nexus-5/general/how-to-disable-ota-lollipop-wakelock-t2952845&#34;&gt;XDA&lt;/a&gt;. I found out about the 3 receivers that trigger this service. Disabling these receivers would make sure that SystemUpdateService never runs and the wakelock is gone.&lt;/p&gt;
+
+&lt;p&gt;The receivers are to be found in 3 categories:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;After startup (runs after booting your device, obviously)&lt;/li&gt;
+&lt;li&gt;Connectivity changed (runs when the status of your Wi-Fi or cellular data connections change)&lt;/li&gt;
+&lt;li&gt;Secret code entered (runs when you enter a secret code into the dialer)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So yeah, it’s quite impossible to escape from this service. The commands I listed below correctly disable these receivers and related activities. It doesn’t disable the SystemUpdateService itself as this would cause wakelocks. Run them in a terminal on your device or on your PC connected with your phone over &lt;a href=&#34;http://developer.android.com/tools/help/adb.html&#34;&gt;ADB&lt;/a&gt;. Did I mention you need to be &lt;em&gt;rooted&lt;/em&gt; to run it?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateActivity
+adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateService$ActiveReceiver
+adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateService$Receiver
+adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver
+adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateActivity
+adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdatePanoActivity
+adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Receiver
+adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;wow-that-was-complicated:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;Wow, that was complicated&lt;/h2&gt;
+
+&lt;p&gt;For power users this probably wasn’t a lot of work, but this is a real annoyance for regular users. But regular users don’t buy Nexus devices, don’t they?&lt;/p&gt;
+
+&lt;p&gt;For years, we all &lt;a href=&#34;http://www.google.com/trends/explore#q=android%20fragmentation&amp;amp;cmpt=q&#34;&gt;complained about fragmentation&lt;/a&gt; and a lack of OS updates. Today it has become impossible to ignore an OS update due to the immense battery drain and the frustrating persistent notification.&lt;/p&gt;
+
+&lt;h2 id=&#34;this-post-is-all-about-nexus-devices-what-about-my-device:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;This post is all about Nexus devices, what about my device?&lt;/h2&gt;
+
+&lt;p&gt;Most Android devices come with Google services like the Google Play Store. This means they also come with Google Play Services or the Google Services Framework or both. So, if you ever want to downgrade your Android device to a stock image, be sure to disable those pesky receivers…&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Natively boot Windows 10 Technical Preview with a virtual HDD</title>
+      <link>https://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/</link>
+      <pubDate>Sun, 25 Jan 2015 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/</guid>
+      <description>&lt;p&gt;A few days ago &lt;a href=&#34;https://insider.windows.com&#34;&gt;Microsoft released a new build for Windows 10&lt;/a&gt; and I wanted to give it a try. However, I didn&amp;rsquo;t want to resize my partitions or overwrite my Windows 8.1 partition.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Well, then install it in a VM!&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Then I wouldn&amp;rsquo;t have access to all of my RAM and CPU, so that wasn&amp;rsquo;t a solution either. However, I found the ideal solution.&lt;/p&gt;
+
+&lt;p&gt;Apparently you can &lt;strong&gt;install Windows in a virtual hard drive&lt;/strong&gt;. Let me guide you through:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a new VHD-file and remember the path to it. You can use &lt;em&gt;Disk Management&lt;/em&gt; (run &lt;code&gt;diskmgmt.msc&lt;/code&gt;) and click &lt;em&gt;Action&lt;/em&gt; and &lt;em&gt;Create VHD&lt;/em&gt;. I made it about 70 GB big with a dynamic size.&lt;/li&gt;
+&lt;li&gt;Boot into the Windows installation (use &lt;a href=&#34;https://rufus.akeo.ie/&#34;&gt;Rufus&lt;/a&gt; or something similar to create a bootable USB stick).&lt;/li&gt;
+&lt;li&gt;Select &lt;em&gt;Custom: Install Windows only (Advanced)&lt;/em&gt;, not an &lt;em&gt;Upgrade&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Now you have to select the partition on which you want to install Windows. Press &lt;em&gt;SHIFT+F10&lt;/em&gt; to open a command prompt instead.&lt;/li&gt;
+&lt;li&gt;Enter &lt;code&gt;diskpart&lt;/code&gt; to open the DiskPart utility.&lt;/li&gt;
+&lt;li&gt;In DiskPart enter &lt;code&gt;select vdisk file=C:\Windows10.vhd&lt;/code&gt; with the correct path to your VHD to select the VHD.&lt;/li&gt;
+&lt;li&gt;Now enter &lt;code&gt;attach vdisk&lt;/code&gt; and close the command prompt.&lt;/li&gt;
+&lt;li&gt;If you now press &lt;em&gt;Refresh&lt;/em&gt; you will see unallocated space on a newly added disk station, that is your virtual hard drive. Select it.&lt;/li&gt;
+&lt;li&gt;You can now continue installing Windows as usual.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I was surprised to find out about this possibility. This way you can try the new Windows &lt;em&gt;in full&lt;/em&gt; without compromising your production environment.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Queue for MessageDialog in Windows RT</title>
+      <link>https://sa.muel.be/post/queue-for-messagedialog-in-windows-rt/</link>
+      <pubDate>Wed, 20 Aug 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/queue-for-messagedialog-in-windows-rt/</guid>
+      <description>&lt;p&gt;When I write Windows Store applications, I use MessageDialog a lot.
+It&amp;rsquo;s the easiest way to show a quick informative pop-up message or a question to the user.
+However, when you tend to use this quite often, you&amp;rsquo;ll probably run into a problem.&lt;/p&gt;
+
+&lt;p&gt;The Windows Runtime framework doesn&amp;rsquo;t allow you to stack MessageDialogs, queue them etc.
+So if you need to display one, you&amp;rsquo;ll have to make sure that no other MessageDialog is already open.
+Checking if there is an open MessageDialog is not that easy unless you keep references to all the MessageDialogs you create.
+There are a few cases in which this would be annoying.&lt;/p&gt;
+
+&lt;p&gt;The singleton class below will make sure that you can queue MessageDialogs and that this problem will never occur.&lt;/p&gt;
+
+&lt;p&gt;Instead of using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;myDialog.ShowAsync()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;use&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;MessageDialogQueue.PushMessageDialog(myDialog)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The dialog will be displayed after all previous MessageDialogs are closed. Do this for all your MessageDialogs or you&amp;rsquo;ll still run into the problem I mentioned.&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/efaf5ae8e0af3ac2e0d9.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Workaround for password confirmation with Laravel &amp; Ardent</title>
+      <link>https://sa.muel.be/post/workaround-for-password-confirmation-with-laravel-ardent/</link>
+      <pubDate>Sat, 14 Jun 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/workaround-for-password-confirmation-with-laravel-ardent/</guid>
+      <description>&lt;p&gt;While I was working on a website made with Laravel and Ardent I had to validate a password confirmation field for a user registration. This will not work if you follow the standard documentation.&lt;/p&gt;
+
+&lt;p&gt;This is how your &lt;a href=&#34;http://laravel.com/docs/validation&#34;&gt;validation rules&lt;/a&gt; in your &lt;a href=&#34;https://github.com/laravelbook/ardent&#34;&gt;Ardent&lt;/a&gt; model should look like (users only have an email address and a password):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public static $rules = array(
+  &#39;email&#39; =&amp;gt; &#39;required|email|max:100|unique:users&#39;,
+  &#39;password&#39; =&amp;gt; &#39;required|min:6|confirmed&#39;,
+);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your model should also have the following line somewhere:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public $autoPurgeRedundantAttributes = true;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, if you follow the documentation and include every database field in the &lt;em&gt;fillable&lt;/em&gt; array, validation will always fail on the password confirmation.&lt;/p&gt;
+
+&lt;p&gt;The workaround is to include the password confirmation field in the fillable array, even if it isn&amp;rsquo;t a column in your database.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;protected $fillable = array(&#39;email&#39;, &#39;password&#39;, &#39;activation_code&#39;, &#39;confirmed&#39;, &#39;reset_password&#39;, &#39;password_confirmation&#39;);
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Quick tips for problems with Windows Store and Windows 8 apps</title>
+      <link>https://sa.muel.be/post/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</link>
+      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</guid>
+      <description>
+
+&lt;p&gt;These are a few quick tips for when you&amp;rsquo;re experiencing problems with the Windows Store in Windows 8(.1)/9 and opening apps in Windows 8(.1)/9.&lt;/p&gt;
+
+&lt;h2 id=&#34;symptoms:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;Symptoms:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;clicking on a link to a Windows Store app shows a page telling you that the app could not be found&lt;/li&gt;
+&lt;li&gt;clicking on a tile in the Windows Store doesn&amp;rsquo;t do anything&lt;/li&gt;
+&lt;li&gt;the Windows Store doesn&amp;rsquo;t open&lt;/li&gt;
+&lt;li&gt;an installed app doesn&amp;rsquo;t open&lt;/li&gt;
+&lt;li&gt;an installed app tells you that you have to buy this app while you&amp;rsquo;ve already bought it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;solutions:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;Solutions:&lt;/h2&gt;
+
+&lt;h3 id=&#34;for-problems-solely-related-to-the-windows-store:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;For problems solely related to the Windows Store&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Click on the Windows Store tile.&lt;/li&gt;
+&lt;li&gt;Touch the top of the screen and swipe it down (the gesture to close an app) and hold your mouse/finger at the bottom of the screen for at least 5 seconds.&lt;/li&gt;
+&lt;li&gt;After 5 seconds, release your mouse/finger.&lt;/li&gt;
+&lt;li&gt;Make sure you&amp;rsquo;re connected to the Internet.&lt;/li&gt;
+&lt;li&gt;Press R while holding the Windows key on your keyboard.&lt;/li&gt;
+&lt;li&gt;Type &lt;em&gt;wsreset&lt;/em&gt; and press enter.&lt;/li&gt;
+&lt;li&gt;The Windows Store should now pop up. Wait for it to load, this can take up to a minute.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;for-everything-else:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;For everything else&lt;/h3&gt;
+
+&lt;p&gt;Make sure you&amp;rsquo;ve done the above solution for problems related to the Windows Store.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open the Windows Store.&lt;/li&gt;
+&lt;li&gt;Open the right charms bar (move your mouse to the bottom right corner of your screen).&lt;/li&gt;
+&lt;li&gt;Click on &lt;em&gt;app updates&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Press the &lt;em&gt;sync licenses&lt;/em&gt; button.&lt;/li&gt;
+&lt;li&gt;Press the &lt;em&gt;search updates&lt;/em&gt; button.&lt;/li&gt;
+&lt;li&gt;Now update all your apps.&lt;/li&gt;
+&lt;li&gt;Repeat this process once more if the problems persist.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If this didn&amp;rsquo;t fix the problems you&amp;rsquo;re experiencing, you should &lt;a href=&#34;https://twitter.com/intent/tweet?text=@WindowsSupport%20&#34;&gt;contact Microsoft&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Using markdown to create any document (pdf, docx...)</title>
+      <link>https://sa.muel.be/post/using-markdown-to-create-any-document/</link>
+      <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/using-markdown-to-create-any-document/</guid>
+      <description>&lt;p&gt;A few weeks ago I had to submit the contents of a GitHub repository to my teacher for grading. I wanted to use my readme.md-file while my teacher asked for a Word or a PDF document. Then I discovered this amazing program which converts Markdown to any desirable format!&lt;/p&gt;
+
+&lt;p&gt;Almost every programmer knows Markdown, right? The Markdown syntax is widely used on &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; and in &lt;a href=&#34;https://github.com/github/markup/blob/master/README.md&#34;&gt;readme-files&lt;/a&gt;.  Markdown was developed by &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;John Gruber&lt;/a&gt; and Aaron Swartz as a tool to convert plain text files in the syntactic language with the same name to HTML.&lt;/p&gt;
+
+&lt;p&gt;The complete Markdown syntax and more information is available on &lt;a href=&#34;http://daringfireball.net/projects/markdown/syntax&#34;&gt;John Gruber&amp;rsquo;s website&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As you&amp;rsquo;ve seen / will see, writing texts with Markdown is pretty easy and structured. It&amp;rsquo;s quite easy to convert this text into another format than HTML. For that purpose, I&amp;rsquo;ve found &lt;a href=&#34;http://johnmacfarlane.net/pandoc/&#34;&gt;pandoc&lt;/a&gt;. Pandoc &lt;a href=&#34;http://johnmacfarlane.net/pandoc/installing.html&#34;&gt;packages are available&lt;/a&gt; for almost every operating system. I recommend &lt;a href=&#34;http://geekswithblogs.net/renso/archive/2009/10/21/how-to-set-the-windows-path-in-windows-7.aspx&#34;&gt;adding it to your path&lt;/a&gt; if the installer didn&amp;rsquo;t do that automatically.&lt;/p&gt;
+
+&lt;p&gt;It&amp;rsquo;s quite simple to start using Pandoc. They have some great documentation &lt;a href=&#34;http://johnmacfarlane.net/pandoc/README.html&#34;&gt;available on their website&lt;/a&gt; and basically all you have to type is the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;pandoc -o thefileyouwant.ext thefileyouhave.otherext
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The output is very clean and structured and the list of supported formats is endless. This way you can write everything in Markdown and convert your text to the desired format afterwards. I hope you&amp;rsquo;ll enjoy using pandoc as much as I do!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Secure SSH access with 2-step authentication (extended)</title>
+      <link>https://sa.muel.be/post/secure-ssh-access-with-2-step-authentication-extended/</link>
+      <pubDate>Sat, 08 Feb 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/secure-ssh-access-with-2-step-authentication-extended/</guid>
+      <description>
+
+&lt;p&gt;In this quick tutorial I&amp;rsquo;ll show you how to secure SSH access to your Linux server with 2-step authentication. Why did I call this post &amp;lsquo;extended&amp;rsquo;? Because I&amp;rsquo;ll show you how to add extra rules so you don&amp;rsquo;t have to use 2-step authentication from certain locations.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not going to explain &lt;a href=&#34;https://support.google.com/accounts/answer/180744&#34;&gt;what 2-step authentication is&lt;/a&gt;. You&amp;rsquo;ll need SSH or CLI access to your Linux device with root rights and a 2-step authentication app on your phone, tablet or PC:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&#34;&gt;Android&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/nl/app/google-authenticator/id388497605&#34;&gt;iOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.windowsphone.com/en-us/store/app/authenticator/021dd79f-0598-e011-986b-78e7d1fa76f8&#34;&gt;Windows Phone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://m.google.com/authenticator&#34;&gt;BlackBerry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.howtogeek.com/129014/how-to-use-google-authenticator-and-other-two-factor-authentication-apps-without-a-smartphone/&#34;&gt;more&amp;hellip;.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The PAM-module that we need is called &lt;em&gt;libpam-google-authenticator&lt;/em&gt; so on Debian/Ubuntu/&amp;hellip; you can use the following command to install this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y libpam-google-authenticator
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;google-authenticator
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to set this up for your account. Do not use &lt;em&gt;sudo&lt;/em&gt; or something like that, use your own account!&lt;/p&gt;
+
+&lt;p&gt;Now open the file &lt;em&gt;/etc/pam.d/sshd&lt;/em&gt;, you &lt;a href=&#34;https://help.ubuntu.com/community/Nano&#34;&gt;can do this&lt;/a&gt; with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/pam.d/sshd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and add the following at the end of the file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;auth [success=1 default=ignore] pam_access.so accessfile=/etc/security/access-local.conf
+auth required pam_google_authenticator.so
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now create the file &lt;em&gt;/etc/security/access-local.conf&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/security/access-local.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and add the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ : ALL : ????
++ : ALL : LOCAL
+- : ALL : ALL
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Replace the &lt;em&gt;????&lt;/em&gt; with the subnet or the IP that should be allowed to access SSH without the second verification step. &lt;a href=&#34;http://linux.die.net/man/5/access.conf&#34;&gt;You could enter&lt;/a&gt; an IP like &lt;em&gt;192.168.0.5&lt;/em&gt; or a subnet like &lt;em&gt;192.168.0.0/24&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now edit the file &lt;em&gt;/etc/ssh/sshd_config&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/ssh/sshd_config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and make sure it says&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ChallengeResponseAuthentication yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By default it says &lt;em&gt;no&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now restart the SSH service and you should be good!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service ssh restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ntp:6e32e61779277bb1314177f85388b247&#34;&gt;NTP&lt;/h2&gt;
+
+&lt;p&gt;Ahtanu has &lt;a href=&#34;https://twitter.com/ahtanu/status/432092745348677632&#34;&gt;let me know&lt;/a&gt; via Twitter that you&amp;rsquo;d better make sure your device is properly configured as an NTP client. Most desktop Linux distributions have this already in order but here are the instructions for Debian-based distributions to make sure NTP is configured properly.&lt;/p&gt;
+
+&lt;p&gt;First, update or install the NTP client.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y ntp ntp-simple ntpdate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, set the timezone and the date on your device:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo tzselect
+sudo date --set 2014-12-31
+sudo date --set 20:20:20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now edit the file ntp.conf:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/ntp.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and make sure it has 2 NTP-servers:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server 0.be.pool.ntp.org
+server 1.be.pool.ntp.org
+server 2.be.pool.ntp.org
+server 3.be.pool.ntp.org
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Eventually restart the NTP service:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service ntpd restart
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Wake up your computer(s) with a simple email using a Raspberry Pi</title>
+      <link>https://sa.muel.be/post/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</link>
+      <pubDate>Sun, 22 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;I have a &lt;a href=&#34;https://www.spotify.com/be-nl/get-spotify/go/premium/&#34;&gt;Spotify Premium subscription&lt;/a&gt; but I also have a few CDs which are not available on streaming services. I don&amp;rsquo;t like the whole process of syncing files, that&amp;rsquo;s why I took a Spotify subscription in the first place.  Google offers a solution with &lt;a href=&#34;https://play.google.com/about/music/&#34;&gt;Play Music&lt;/a&gt;: you can upload up to 20,000 songs to their servers for free and stream them to all of your devices. I didn&amp;rsquo;t use this because the Google Play Music app was too slow for my previous phone (&lt;a href=&#34;http://www.android.com/devices/detail/nexus-s&#34;&gt;Google Nexus S&lt;/a&gt;). So I decided to put my CDs on a computer and use that computer as a server with &lt;a href=&#34;http://www.tonido.com/tonidodesktop/&#34;&gt;Tonido&lt;/a&gt;. This way I could stream my music over the Internet to all of my devices. As a plus I could also put all my photos on this device so that I could show them to friends or family wherever I am.&lt;/p&gt;
+
+&lt;p&gt;Because this was just a standard computer this would cost a lot of electricity while I wouldn&amp;rsquo;t use it 90% of the time. I would only need it when I wanted to listen to a song I own which isn&amp;rsquo;t available on Spotify. That&amp;rsquo;s why I came up with this idea.&lt;/p&gt;
+
+&lt;p&gt;I want my computer to be available when I need it and to be in standby mode when I don&amp;rsquo;t need it. This way the computer boots up in a few seconds when I wake it up. I want to be able to wake it up from all over the world. I have a &lt;a href=&#34;http://www.raspberrypi.org/faqs#introWhatIs&#34;&gt;Raspberry Pi&lt;/a&gt; which is always on and &lt;a href=&#34;http://www.raspberrypi.org/faqs#power&#34;&gt;doesn&amp;rsquo;t require much power&lt;/a&gt;. So I created a way to send an &lt;strong&gt;email to a certain address which then wakes up my computer&lt;/strong&gt; within the minute.&lt;/p&gt;
+
+&lt;h2 id=&#34;requirements:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Requirements&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;working Raspberry Pi (or similar device with Linux and python) with a constant connection to the Internet&lt;/li&gt;
+&lt;li&gt;the computer you want to wake up and your Raspberry Pi need to be in the same local network&lt;/li&gt;
+&lt;li&gt;Email account (preferably Gmail or an unused mailbox)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;setup:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Setup&lt;/h2&gt;
+
+&lt;h3 id=&#34;on-the-computer:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;On the computer&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Make sure the computer goes to sleep when you don&amp;rsquo;t use it. In Windows you can find this setting by searching for &lt;em&gt;power&lt;/em&gt;. I have my computer set to go to sleep after 3 hours of inactivity. If you have trouble putting your computer to sleep you can analyze the problems &lt;a href=&#34;http://technet.microsoft.com/en-us/library/cc748940(v=ws.10&#34;&gt;using the powercfg command&lt;/a&gt;.aspx).&lt;/li&gt;
+&lt;li&gt;Make sure the computer wakes upon receiving a magic packet. This is a special type of TCP or UDP unicast packet that is processed by the BIOS and wakes up a computer. This also works if the computer is not in standby mode. You probably have to change &lt;a href=&#34;http://www.tomshardware.com/reviews/bios-beginners,1126-8.html&#34;&gt;a setting in your BIOS&lt;/a&gt; (press one of the F-buttons at boot time) and in your NIC&amp;rsquo;s settings. You can view your NIC&amp;rsquo;s settings in Windows using &lt;a href=&#34;http://windows.microsoft.com/en-us/windows-vista/open-device-manager&#34;&gt;Device Management&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://technet.microsoft.com/en-us/library/gg252549(v=ws.10&#34;&gt;Find the MAC address&lt;/a&gt;.aspx) of the connected network adapter.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;in-your-gmail-http-www-gmail-com-account:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;In your &lt;a href=&#34;http://www.gmail.com&#34;&gt;Gmail&lt;/a&gt; account&lt;/h3&gt;
+
+&lt;p&gt;Create a new filter for a specific email address. You can use &lt;em&gt;yourusername&lt;strong&gt;+anythingyouwant&lt;/strong&gt;@gmail.com&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Search for &lt;em&gt;to:theaddressyouchoose&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;Click on the little arrow left to the search button&lt;/li&gt;
+&lt;li&gt;Click on the link to create a new filter in the pop-up that appears&lt;/li&gt;
+&lt;li&gt;Check the following options: skip inbox, mark as read, label &lt;em&gt;new label&lt;/em&gt;, never send to spam, never mark as important&lt;/li&gt;
+&lt;li&gt;Enable IMAP (Settings &amp;gt; Forwarding &amp;amp; POP/IMAP &amp;gt; Enable IMAP)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;on-your-raspberry-pi:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;On your Raspberry Pi&lt;/h3&gt;
+
+&lt;p&gt;I assume you know how to log in to your Raspberry Pi in command line, over SSH or directly. There is a lot of documentation &lt;a href=&#34;http://elinux.org/RPi_Remote_Access&#34;&gt;available&lt;/a&gt; on their website.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;Install the &lt;a href=&#34;https://wiki.debian.org/WakeOnLan&#34;&gt;wakeonlan&lt;/a&gt; package using the following command:
+  &lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get -y install wakeonlan&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use nano or another text editor to create the following file:
+  &lt;code&gt;wakeonlan 01:23:45:67:89:AB&lt;/code&gt;
+  &lt;em&gt;01:23:45:67:89:AB&lt;/em&gt; being the MAC address of the computer you want to wake up with your email. Name the file &lt;strong&gt;anynameyouwant&lt;/strong&gt;&lt;em&gt;.sh&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Create another file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;import imaplib
+import os
+mail = imaplib.IMAP4_SSL(&#39;imap.gmail.com&#39;)
+mail.login(&#39;YOUR USERNAME@gmail.com&#39;, &#39;YOUR PASSWORD&#39;)
+answer = mail.select(&#39;THE LABEL YOU CHOOSE&#39;)
+if int(answer[1][0]) &amp;gt; 0:
+  os.system(&#39;THE PATH TO THE FILE YOU CREATED IN STEP 2&#39;)
+  mail.store(&amp;quot;1:*&amp;quot;,&#39;+X-GM-LABELS&#39;, &#39;\\Trash&#39;)
+mail.close()
+mail.logout()
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Replace all the words in capitals and name the file &lt;strong&gt;anythingyouwant&lt;/strong&gt;&lt;em&gt;.py&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Use &lt;code&gt;crontab -e&lt;/code&gt; to edit the crontab file. Scroll to the bottom and add the following line:
+  &lt;code&gt;* * * * * /usr/bin/python PATH TO THE FILE YOU CREATED IN STEP 3&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;Save the file using CTRL+X&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;done:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Done!&lt;/h2&gt;
+
+&lt;p&gt;Now you can send an email to the address you choose in the Gmail part above and your computer will wake up within the minute!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Connecting Serviio with Telenet&#39;s Yelo TV</title>
+      <link>https://sa.muel.be/post/connecting-serviio-with-telenets-yelo-tv/</link>
+      <pubDate>Mon, 09 Dec 2013 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/post/connecting-serviio-with-telenets-yelo-tv/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction:cbb446150464ea4f77ca50373417b3af&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Recently Belgian ISP Telenet &lt;a href=&#34;http://snap.telenet.be/nieuw/artikel/yelo-tv-getest-en-gekeurd&#34;&gt;introduced&lt;/a&gt; &lt;a href=&#34;http://telenet.be/nl/yelo-tv&#34;&gt;Yelo TV&lt;/a&gt;. It&amp;rsquo;s the new brand for all of their efforts &lt;del&gt;to &lt;/del&gt;&lt;del&gt;innovate&lt;/del&gt; with television. Yelo TV includes a series of apps for almost every device (except for Windows Phone) and a &lt;a href=&#34;http://yelotv.be/&#34;&gt;website &lt;/a&gt;on which you can watch live television, watch recordings or schedule recordings. &lt;/p&gt;
+
+&lt;p&gt;During the coming weeks Telenet is also updating their &lt;a href=&#34;http://telenet.be/nl/digitale-tv&#34;&gt;DigiCorders&lt;/a&gt; to a new software version called Yelo TV. Most of the changes are in design but the new firmware will include a &lt;a href=&#34;http://en.wikipedia.org/wiki/Digital_Living_Network_Alliance&#34;&gt;DLNA&lt;/a&gt; renderer. This means that you can use any device with a DLNA server to stream music, photos and videos to a television connected to a Telenet DigiCorder.&lt;/p&gt;
+
+&lt;p&gt;I have a computer with &lt;a href=&#34;http://www.serviio.org/&#34;&gt;Serviio&lt;/a&gt; on it. Serviio is a free DLNA server (a Pro version with more features is available) and in my opinion it&amp;rsquo;s the best available. Serviio includes support for transcoding. This way Serviio will convert every media file in a format which the DLNA renderer is able to play if necessary.&lt;/p&gt;
+
+&lt;p&gt;DLNA has its advantages and disadvantages, one of the latter is difficulties to detect compatible media formats. That&amp;rsquo;s why Serviio uses &lt;em&gt;profiles&lt;/em&gt; which define the compatible media formats for each type of DLNA renderer.&lt;/p&gt;
+
+&lt;p&gt;There wasn&amp;rsquo;t one for Telenet Yelo TV yet so I wrote one. This profile will convert every incompatible media file so that you can stream it to your DigiCorder. You&amp;rsquo;ll need a fast computer to transcode files. This profile includes support for subtitles if you enabled it in Serviio&amp;rsquo;s Console.&lt;/p&gt;
+
+&lt;h3 id=&#34;update-plex:cbb446150464ea4f77ca50373417b3af&#34;&gt;Update: Plex&lt;/h3&gt;
+
+&lt;p&gt;I recently switched to Plex. A profile for Plex is available here:&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/5f6a7b3669706153f868.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-profile:cbb446150464ea4f77ca50373417b3af&#34;&gt;The profile:&lt;/h2&gt;
+
+&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/7944739.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;installation:cbb446150464ea4f77ca50373417b3af&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;This profile is included in Serviio 1.4 or newer. You don&amp;rsquo;t need to change anything.&lt;/p&gt;
+
+&lt;h2 id=&#34;nb-further-optimizations:cbb446150464ea4f77ca50373417b3af&#34;&gt;NB: Further optimizations&lt;/h2&gt;
+
+&lt;p&gt;Tips to get a &lt;strong&gt;higher video quality&lt;/strong&gt; (only works for videos that have to be transcoded because of incompatibility or that include subtitles):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For technical users only: you could force Serviio to always transcode videos, look at &lt;a href=&#34;http://www.serviio.org/index.php?option=com_content&amp;amp;view=article&amp;amp;id=24&#34;&gt;&lt;em&gt;forceVTranscoding&lt;/em&gt;&lt;/a&gt; and &lt;a href=&#34;http://www.serviio.org/index.php?option=com_content&amp;amp;view=article&amp;amp;id=16&#34;&gt;&lt;em&gt;alwaysEnableTranscoding&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About me</title>
+      <link>https://sa.muel.be/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://sa.muel.be/about/</guid>
+      <description>
+
+&lt;h2 id=&#34;who-am-i:862328fccd96fe2fc80a1d6febe1b62b&#34;&gt;Who am I?&lt;/h2&gt;
+
+&lt;p&gt;Hi there, you can call me Sam. I am an IT student by day and software development tinkerer by night. I&amp;rsquo;ll soon graduate so job offers are welcome. My resume is available on &lt;a href=&#34;http://linkedin.com/in/samueldebruyn&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;what-do-i-do:862328fccd96fe2fc80a1d6febe1b62b&#34;&gt;What do I do?&lt;/h2&gt;
+
+&lt;p&gt;When I&amp;rsquo;m not reading up on the newest programming languages, development frameworks etc. I&amp;rsquo;m probably busy playing with them. My interests lie in (RESTful) APIs and cross platform apps. I especially like building complete SaaS solutions.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-can-you-contact-me:862328fccd96fe2fc80a1d6febe1b62b&#34;&gt;How can you contact me?&lt;/h2&gt;
+
+&lt;p&gt;You should send me an email at &lt;a href=&#34;mailto:s@muel.be&#34;&gt;s@muel.be&lt;/a&gt; or a tweet at &lt;a href=&#34;https://twitter.com/intent/user?screen_name=SamuelDebruyn&#34;&gt;@SamuelDebruyn&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-about-a-nice-quote:862328fccd96fe2fc80a1d6febe1b62b&#34;&gt;How about a nice quote?&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Computer programming is an art,
+because it applies accumulated knowledge to the world,
+because it requires skill and ingenuity,
+and especially because it produces objects of beauty.
+A programmer who subconsciously views himself as an artist
+will enjoy what he does and will do it better.&lt;/p&gt;
+
+&lt;p&gt;&amp;ndash; &lt;cite&gt;Donald Knuth&lt;/cite&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

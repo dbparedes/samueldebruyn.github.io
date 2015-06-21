@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Geocoding addresses in Talend Open Studio for Data Integration &middot;  Samuel Debruyn" />
+        <meta property="og:site_name" content="Samuel Debruyn" />
+        <meta property="og:url" content="https://sa.muel.be/post/geocoding-addresses-in-talend-open-studio-for-data-integration/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2015-04-18T00:00:00Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Geocoding addresses in Talend Open Studio for Data Integration" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://sa.muel.be/post/geocoding-addresses-in-talend-open-studio-for-data-integration/" />
+    
+
+        <title> Geocoding addresses in Talend Open Studio for Data Integration &middot;  Samuel Debruyn</title>
+
+    
+        <meta name="description" content="" />
+    
+        
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+          
+
+    
+        <link href="https://sa.muel.beindex.xml" rel="alternate" type="application/rss+xml" title="Samuel Debruyn" />
+    
+
+    
+        <link rel="canonical" href="https://sa.muel.be/post/geocoding-addresses-in-talend-open-studio-for-data-integration/" />
+
+    
+    <script type="application/ld+json">
+    { 
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Geocoding addresses in Talend Open Studio for Data Integration",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2015-04-18",
+        "description": "",
+        "wordCount":  437 
+    }
+    </script>
+    
+    
+    
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="https://sa.muel.be"><img src="https://sa.muel.beavatar.jpg" alt="Samuel Debruyn" /></a>
+            <h1><a href="https://sa.muel.be">Samuel Debruyn</a></h1>
+            <p></p>
+
+            <div id="follow-icons">
+	<a href="http://twitter.com/samueldebruyn" rel="me"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="http://linkedin.com/in/samueldebruyn" rel="me"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	<a href="http://github.com/samueldebruyn" rel="me"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="https://sa.muel.beindex.xml" rel="me"><i class="fa fa-rss-square fa-2x"></i></a> 
+</div>  
+            <h6><a href="https://sa.muel.beabout">About me</a></h6>
+        </header>
+<main id="content">
+
+<article id="" class="post">
+    <div class="post-stamp">
+        <time datetime="2015-04-18T00:00:00Z">
+            18 Apr 2015
+        </time>
+    </div>
+    <h1 class="post-title">Geocoding addresses in Talend Open Studio for Data Integration</h1>
+    <p>Last week I had to geocode the addresses in a dataset using Talend. Geocoding is adding coordinates to addresses. This way you can easily visualize your data on a map.</p>
+
+<p>I experienced problems when I tried to download some plugins from Talend Exchange but I found <a href="http://datacatalyst.blogspot.be/2011/01/custom-google-geocoder-using-talend.html">this blog post</a> about geocoding without the use of a plugin. The blogpost wasn&rsquo;t very clear so I decided to write a step-by-step explanation which you can find below. In this guide, we will be using the <a href="https://developers.google.com/maps/documentation/geocoding/">Google Geocoding API</a>.</p>
+
+<ol>
+<li><p>Map your location dataset (with a <em>tMap</em>) to 2 columns: an unique ID of your location and a concatenated string containing the location address. I used one of Talend&rsquo;s built-in <em>StringHandling</em>-functions.</p>
+
+<pre><code>    StringHandling.CHANGE(LOCATIONS.STREET_ADDRESS + LOCATIONS.POSTAL_CODE + LOCATIONS.CITY,&quot; &quot;,&quot;+&quot;)
+
+
+  My first column was called *LOCATION_ID* and my second column was called *LOCATION_CONCAT_ADDRESS*. Make sure to remember the name of your output. I named mine *LocConcatOut*.
+</code></pre></li>
+
+<li><p>Next, connect your output from the <em>tMap</em> to a <em>tFlowToIterate</em> component to start processing all records one by one.</p></li>
+
+<li><p>The output from the <em>tFlowToIterate</em> has to be connected to a new <em>tFileInputJson</em> component. You can change the number of parallel iterations to speed up the geocoding. In the <em>tFileInputJson</em> component, check the <em>Use Url</em> option and enter the following URL:</p>
+
+<pre><code>    https://maps.googleapis.com/maps/api/geocode/json?address= + ((String)globalMap.get(&quot;LocConcatOut.LOCATION_CONCAT_ADDRESS&quot;))
+
+
+  Add `+ &quot;&amp;key=YourAPIkey&quot;` if you would like to use your own API key for the [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/).
+
+
+  Edit the schema for this component and make sure it contains 2 columns: *LATITUDE* and *LONGITUDE*. Their type should be float, nullable.
+
+
+  In the mapping, *LATITUDE* should be set to `&quot;$.results[0].geometry.location.lat&quot;` and *LONGITUDE* should be set to `&quot;$.results[0].geometry.location.lng&quot;`.
+</code></pre></li>
+
+<li><p>Now we&rsquo;re going to map the coordinates back to the UIDs. Add another <em>tMap</em> component at the end. Create a new output, map the 2 coordinates from the <em>tFileInputJson</em> to identical columns in the new <em>tMap</em> and create a new column with a primary key. Enter the following for the value of this key (my keys are integers):</p>
+
+<pre><code>    ((Integer)globalMap.get(&quot;LocConcatOut.LOCATION_ID&quot;)).intValue()
+</code></pre></li>
+
+<li><p>Finally connect the output from the <em>tMap</em> component to a <em>tBufferOutput</em>. That ends the loop started with the <em>tFlowToIterate</em> component.</p></li>
+
+<li><p>The previously mentioned components should all be put in the same subjob. Use a trigger like <em>OnSubjobOk</em> to start your next job after this one is completed. You can find all the location identifiers with their coordinates in the <em>tBufferInput</em> component. This is easily mapped (joined) to the original locations dataset using a <em>tMap</em>. Make sure to set the correct data types in the mapping (1 integer and 2 floats) for the <em>tBufferInput</em> component.</p></li>
+</ol>
+
+<p>I hope my guide is clear, but you can always <a href="https://twitter.com/intent/tweet?text=@SamuelDebruyn%20">tweet me</a> with any further questions.</p>
+
+    
+    <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <h5>About the author</h5>
+  <section>
+    <p>Samuel Debruyn is a C# developer who builds RESTful APIs and cross platform apps. <a href="https://sa.muel.beabout">More info</a></p>
+  </section>
+</div>
+</article>  
+
+</main>
+		<footer id="footer">
+			<section id="footer-message">&copy; Samuel Debruyn. All rights reserved. Source code available on <a href="https://github.com/SamuelDebruyn/samueldebruyn.github.io" target="_blank">GitHub</a>. Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>. <a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "https:\/\/sa.muel.becss/rrssb.css",
+            "https:\/\/sa.muel.bejs/gist.min.js", 
+            "https:\/\/sa.muel.bejs/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+          }});
+        }
+      });
+    </script>
+	
+	</body>
+</html>

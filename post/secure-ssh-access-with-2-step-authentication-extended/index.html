@@ -1,0 +1,230 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Secure SSH access with 2-step authentication (extended) &middot;  Samuel Debruyn" />
+        <meta property="og:site_name" content="Samuel Debruyn" />
+        <meta property="og:url" content="https://sa.muel.be/post/secure-ssh-access-with-2-step-authentication-extended/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2014-02-08T00:00:00Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Secure SSH access with 2-step authentication (extended)" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://sa.muel.be/post/secure-ssh-access-with-2-step-authentication-extended/" />
+    
+
+        <title> Secure SSH access with 2-step authentication (extended) &middot;  Samuel Debruyn</title>
+
+    
+        <meta name="description" content="" />
+    
+        
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+          
+
+    
+        <link href="https://sa.muel.beindex.xml" rel="alternate" type="application/rss+xml" title="Samuel Debruyn" />
+    
+
+    
+        <link rel="canonical" href="https://sa.muel.be/post/secure-ssh-access-with-2-step-authentication-extended/" />
+
+    
+    <script type="application/ld+json">
+    { 
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Secure SSH access with 2-step authentication (extended)",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2014-02-08",
+        "description": "",
+        "wordCount":  377 
+    }
+    </script>
+    
+    
+    
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="https://sa.muel.be"><img src="https://sa.muel.beavatar.jpg" alt="Samuel Debruyn" /></a>
+            <h1><a href="https://sa.muel.be">Samuel Debruyn</a></h1>
+            <p></p>
+
+            <div id="follow-icons">
+	<a href="http://twitter.com/samueldebruyn" rel="me"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="http://linkedin.com/in/samueldebruyn" rel="me"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	<a href="http://github.com/samueldebruyn" rel="me"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="https://sa.muel.beindex.xml" rel="me"><i class="fa fa-rss-square fa-2x"></i></a> 
+</div>  
+            <h6><a href="https://sa.muel.beabout">About me</a></h6>
+        </header>
+<main id="content">
+
+<article id="" class="post">
+    <div class="post-stamp">
+        <time datetime="2014-02-08T00:00:00Z">
+            8 Feb 2014
+        </time>
+    </div>
+    <h1 class="post-title">Secure SSH access with 2-step authentication (extended)</h1>
+    
+
+<p>In this quick tutorial I&rsquo;ll show you how to secure SSH access to your Linux server with 2-step authentication. Why did I call this post &lsquo;extended&rsquo;? Because I&rsquo;ll show you how to add extra rules so you don&rsquo;t have to use 2-step authentication from certain locations.</p>
+
+<p>I&rsquo;m not going to explain <a href="https://support.google.com/accounts/answer/180744">what 2-step authentication is</a>. You&rsquo;ll need SSH or CLI access to your Linux device with root rights and a 2-step authentication app on your phone, tablet or PC:</p>
+
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2">Android</a></li>
+<li><a href="https://itunes.apple.com/nl/app/google-authenticator/id388497605">iOS</a></li>
+<li><a href="http://www.windowsphone.com/en-us/store/app/authenticator/021dd79f-0598-e011-986b-78e7d1fa76f8">Windows Phone</a></li>
+<li><a href="http://m.google.com/authenticator">BlackBerry</a></li>
+<li><a href="http://www.howtogeek.com/129014/how-to-use-google-authenticator-and-other-two-factor-authentication-apps-without-a-smartphone/">more&hellip;.</a></li>
+</ul>
+
+<p>The PAM-module that we need is called <em>libpam-google-authenticator</em> so on Debian/Ubuntu/&hellip; you can use the following command to install this:</p>
+
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get install -y libpam-google-authenticator
+</code></pre>
+
+<p>Next, run</p>
+
+<pre><code>google-authenticator
+</code></pre>
+
+<p>to set this up for your account. Do not use <em>sudo</em> or something like that, use your own account!</p>
+
+<p>Now open the file <em>/etc/pam.d/sshd</em>, you <a href="https://help.ubuntu.com/community/Nano">can do this</a> with</p>
+
+<pre><code>sudo nano /etc/pam.d/sshd
+</code></pre>
+
+<p>and add the following at the end of the file:</p>
+
+<pre><code>auth [success=1 default=ignore] pam_access.so accessfile=/etc/security/access-local.conf
+auth required pam_google_authenticator.so
+</code></pre>
+
+<p>Now create the file <em>/etc/security/access-local.conf</em>:</p>
+
+<pre><code>sudo nano /etc/security/access-local.conf
+</code></pre>
+
+<p>and add the following:</p>
+
+<pre><code>+ : ALL : ????
++ : ALL : LOCAL
+- : ALL : ALL
+</code></pre>
+
+<p>Replace the <em>????</em> with the subnet or the IP that should be allowed to access SSH without the second verification step. <a href="http://linux.die.net/man/5/access.conf">You could enter</a> an IP like <em>192.168.0.5</em> or a subnet like <em>192.168.0.0/24</em>.</p>
+
+<p>Now edit the file <em>/etc/ssh/sshd_config</em>:</p>
+
+<pre><code>sudo nano /etc/ssh/sshd_config
+</code></pre>
+
+<p>and make sure it says</p>
+
+<pre><code>ChallengeResponseAuthentication yes
+</code></pre>
+
+<p>By default it says <em>no</em>.</p>
+
+<p>Now restart the SSH service and you should be good!</p>
+
+<pre><code>sudo service ssh restart
+</code></pre>
+
+<h2 id="ntp:6e32e61779277bb1314177f85388b247">NTP</h2>
+
+<p>Ahtanu has <a href="https://twitter.com/ahtanu/status/432092745348677632">let me know</a> via Twitter that you&rsquo;d better make sure your device is properly configured as an NTP client. Most desktop Linux distributions have this already in order but here are the instructions for Debian-based distributions to make sure NTP is configured properly.</p>
+
+<p>First, update or install the NTP client.</p>
+
+<pre><code>sudo apt-get update &amp;&amp; sudo apt-get install -y ntp ntp-simple ntpdate
+</code></pre>
+
+<p>Next, set the timezone and the date on your device:</p>
+
+<pre><code>sudo tzselect
+sudo date --set 2014-12-31
+sudo date --set 20:20:20
+</code></pre>
+
+<p>Now edit the file ntp.conf:</p>
+
+<pre><code>sudo nano /etc/ntp.conf
+</code></pre>
+
+<p>and make sure it has 2 NTP-servers:</p>
+
+<pre><code>server 0.be.pool.ntp.org
+server 1.be.pool.ntp.org
+server 2.be.pool.ntp.org
+server 3.be.pool.ntp.org
+</code></pre>
+
+<p>Eventually restart the NTP service:</p>
+
+<pre><code>sudo service ntpd restart
+</code></pre>
+
+    
+    <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <h5>About the author</h5>
+  <section>
+    <p>Samuel Debruyn is a C# developer who builds RESTful APIs and cross platform apps. <a href="https://sa.muel.beabout">More info</a></p>
+  </section>
+</div>
+</article>  
+
+</main>
+		<footer id="footer">
+			<section id="footer-message">&copy; Samuel Debruyn. All rights reserved. Source code available on <a href="https://github.com/SamuelDebruyn/samueldebruyn.github.io" target="_blank">GitHub</a>. Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>. <a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "https:\/\/sa.muel.becss/rrssb.css",
+            "https:\/\/sa.muel.bejs/gist.min.js", 
+            "https:\/\/sa.muel.bejs/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+          }});
+        }
+      });
+    </script>
+	
+	</body>
+</html>

@@ -1,0 +1,206 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Wake up your computer(s) with a simple email using a Raspberry Pi &middot;  Samuel Debruyn" />
+        <meta property="og:site_name" content="Samuel Debruyn" />
+        <meta property="og:url" content="https://sa.muel.be/post/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/" />
+
+    
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2013-12-22T00:00:00Z" />
+        
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:site" content="@" />
+        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:title" content="Wake up your computer(s) with a simple email using a Raspberry Pi" />
+        <meta name="twitter:description" content="" />
+        <meta name="twitter:url" content="https://sa.muel.be/post/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/" />
+    
+
+        <title> Wake up your computer(s) with a simple email using a Raspberry Pi &middot;  Samuel Debruyn</title>
+
+    
+        <meta name="description" content="" />
+    
+        
+        <meta name="p:domain_verify" content="fc173d84e3a4de948ed4bda2908afd3e"/>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        
+          
+
+    
+        <link href="https://sa.muel.beindex.xml" rel="alternate" type="application/rss+xml" title="Samuel Debruyn" />
+    
+
+    
+        <link rel="canonical" href="https://sa.muel.be/post/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/" />
+
+    
+    <script type="application/ld+json">
+    { 
+        "@context": "http://schema.org",
+        "@type": "Article",
+        "headline": "Wake up your computer(s) with a simple email using a Raspberry Pi",
+        "author": {
+            "@type": "Person",
+            "name": "http://profiles.google.com/?rel=author"
+        },
+        "datePublished": "2013-12-22",
+        "description": "",
+        "wordCount":  745 
+    }
+    </script>
+    
+    
+    
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="https://sa.muel.be"><img src="https://sa.muel.beavatar.jpg" alt="Samuel Debruyn" /></a>
+            <h1><a href="https://sa.muel.be">Samuel Debruyn</a></h1>
+            <p></p>
+
+            <div id="follow-icons">
+	<a href="http://twitter.com/samueldebruyn" rel="me"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="http://linkedin.com/in/samueldebruyn" rel="me"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	<a href="http://github.com/samueldebruyn" rel="me"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="https://sa.muel.beindex.xml" rel="me"><i class="fa fa-rss-square fa-2x"></i></a> 
+</div>  
+            <h6><a href="https://sa.muel.beabout">About me</a></h6>
+        </header>
+<main id="content">
+
+<article id="" class="post">
+    <div class="post-stamp">
+        <time datetime="2013-12-22T00:00:00Z">
+            22 Dec 2013
+        </time>
+    </div>
+    <h1 class="post-title">Wake up your computer(s) with a simple email using a Raspberry Pi</h1>
+    
+
+<h2 id="introduction:dbf9f36c9e2d4d6df9807892c287268d">Introduction</h2>
+
+<p>I have a <a href="https://www.spotify.com/be-nl/get-spotify/go/premium/">Spotify Premium subscription</a> but I also have a few CDs which are not available on streaming services. I don&rsquo;t like the whole process of syncing files, that&rsquo;s why I took a Spotify subscription in the first place.  Google offers a solution with <a href="https://play.google.com/about/music/">Play Music</a>: you can upload up to 20,000 songs to their servers for free and stream them to all of your devices. I didn&rsquo;t use this because the Google Play Music app was too slow for my previous phone (<a href="http://www.android.com/devices/detail/nexus-s">Google Nexus S</a>). So I decided to put my CDs on a computer and use that computer as a server with <a href="http://www.tonido.com/tonidodesktop/">Tonido</a>. This way I could stream my music over the Internet to all of my devices. As a plus I could also put all my photos on this device so that I could show them to friends or family wherever I am.</p>
+
+<p>Because this was just a standard computer this would cost a lot of electricity while I wouldn&rsquo;t use it 90% of the time. I would only need it when I wanted to listen to a song I own which isn&rsquo;t available on Spotify. That&rsquo;s why I came up with this idea.</p>
+
+<p>I want my computer to be available when I need it and to be in standby mode when I don&rsquo;t need it. This way the computer boots up in a few seconds when I wake it up. I want to be able to wake it up from all over the world. I have a <a href="http://www.raspberrypi.org/faqs#introWhatIs">Raspberry Pi</a> which is always on and <a href="http://www.raspberrypi.org/faqs#power">doesn&rsquo;t require much power</a>. So I created a way to send an <strong>email to a certain address which then wakes up my computer</strong> within the minute.</p>
+
+<h2 id="requirements:dbf9f36c9e2d4d6df9807892c287268d">Requirements</h2>
+
+<ul>
+<li>working Raspberry Pi (or similar device with Linux and python) with a constant connection to the Internet</li>
+<li>the computer you want to wake up and your Raspberry Pi need to be in the same local network</li>
+<li>Email account (preferably Gmail or an unused mailbox)</li>
+</ul>
+
+<h2 id="setup:dbf9f36c9e2d4d6df9807892c287268d">Setup</h2>
+
+<h3 id="on-the-computer:dbf9f36c9e2d4d6df9807892c287268d">On the computer</h3>
+
+<ol>
+<li>Make sure the computer goes to sleep when you don&rsquo;t use it. In Windows you can find this setting by searching for <em>power</em>. I have my computer set to go to sleep after 3 hours of inactivity. If you have trouble putting your computer to sleep you can analyze the problems <a href="http://technet.microsoft.com/en-us/library/cc748940(v=ws.10">using the powercfg command</a>.aspx).</li>
+<li>Make sure the computer wakes upon receiving a magic packet. This is a special type of TCP or UDP unicast packet that is processed by the BIOS and wakes up a computer. This also works if the computer is not in standby mode. You probably have to change <a href="http://www.tomshardware.com/reviews/bios-beginners,1126-8.html">a setting in your BIOS</a> (press one of the F-buttons at boot time) and in your NIC&rsquo;s settings. You can view your NIC&rsquo;s settings in Windows using <a href="http://windows.microsoft.com/en-us/windows-vista/open-device-manager">Device Management</a>.</li>
+<li><a href="http://technet.microsoft.com/en-us/library/gg252549(v=ws.10">Find the MAC address</a>.aspx) of the connected network adapter.</li>
+</ol>
+
+<h3 id="in-your-gmail-http-www-gmail-com-account:dbf9f36c9e2d4d6df9807892c287268d">In your <a href="http://www.gmail.com">Gmail</a> account</h3>
+
+<p>Create a new filter for a specific email address. You can use <em>yourusername<strong>+anythingyouwant</strong>@gmail.com</em></p>
+
+<ol>
+<li>Search for <em>to:theaddressyouchoose</em></li>
+<li>Click on the little arrow left to the search button</li>
+<li>Click on the link to create a new filter in the pop-up that appears</li>
+<li>Check the following options: skip inbox, mark as read, label <em>new label</em>, never send to spam, never mark as important</li>
+<li>Enable IMAP (Settings &gt; Forwarding &amp; POP/IMAP &gt; Enable IMAP)</li>
+</ol>
+
+<h3 id="on-your-raspberry-pi:dbf9f36c9e2d4d6df9807892c287268d">On your Raspberry Pi</h3>
+
+<p>I assume you know how to log in to your Raspberry Pi in command line, over SSH or directly. There is a lot of documentation <a href="http://elinux.org/RPi_Remote_Access">available</a> on their website.</p>
+
+<ul>
+<li><p>Install the <a href="https://wiki.debian.org/WakeOnLan">wakeonlan</a> package using the following command:
+  <code>sudo apt-get update &amp;&amp; sudo apt-get -y install wakeonlan</code></p></li>
+
+<li><p>Use nano or another text editor to create the following file:
+  <code>wakeonlan 01:23:45:67:89:AB</code>
+  <em>01:23:45:67:89:AB</em> being the MAC address of the computer you want to wake up with your email. Name the file <strong>anynameyouwant</strong><em>.sh</em>.</p></li>
+
+<li><p>Create another file:</p>
+
+<pre><code>import imaplib
+import os
+mail = imaplib.IMAP4_SSL('imap.gmail.com')
+mail.login('YOUR USERNAME@gmail.com', 'YOUR PASSWORD')
+answer = mail.select('THE LABEL YOU CHOOSE')
+if int(answer[1][0]) &gt; 0:
+  os.system('THE PATH TO THE FILE YOU CREATED IN STEP 2')
+  mail.store(&quot;1:*&quot;,'+X-GM-LABELS', '\\Trash')
+mail.close()
+mail.logout()
+</code></pre></li>
+
+<li><p>Replace all the words in capitals and name the file <strong>anythingyouwant</strong><em>.py</em></p></li>
+
+<li><p>Use <code>crontab -e</code> to edit the crontab file. Scroll to the bottom and add the following line:
+  <code>* * * * * /usr/bin/python PATH TO THE FILE YOU CREATED IN STEP 3</code></p></li>
+
+<li><p>Save the file using CTRL+X</p></li>
+</ul>
+
+<h2 id="done:dbf9f36c9e2d4d6df9807892c287268d">Done!</h2>
+
+<p>Now you can send an email to the address you choose in the Gmail part above and your computer will wake up within the minute!</p>
+
+    
+    <div itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <h5>About the author</h5>
+  <section>
+    <p>Samuel Debruyn is a C# developer who builds RESTful APIs and cross platform apps. <a href="https://sa.muel.beabout">More info</a></p>
+  </section>
+</div>
+</article>  
+
+</main>
+		<footer id="footer">
+			<section id="footer-message">&copy; Samuel Debruyn. All rights reserved. Source code available on <a href="https://github.com/SamuelDebruyn/samueldebruyn.github.io" target="_blank">GitHub</a>. Powered by <a href="http://gohugo.io" target="_blank">Hugo</a>. <a href="https://github.com/kathyqian/crisp-ghost-theme" target="_blank">Crisp</a> theme by <a href="http://kathyqian.com" target="_blank">Kathy Qian</a>.</section>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Open Sans:300italic,700italic,300,700","Bree+Serif"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "https:\/\/sa.muel.becss/rrssb.css",
+            "https:\/\/sa.muel.bejs/gist.min.js", 
+            "https:\/\/sa.muel.bejs/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+          }});
+        }
+      });
+    </script>
+	
+	</body>
+</html>
