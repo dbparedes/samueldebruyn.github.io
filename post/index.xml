@@ -6,6 +6,8 @@
     <description>Recent content in Posts on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Sat, 18 Apr 2015 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -13,7 +15,7 @@
       <title>Geocoding addresses in Talend Open Studio for Data Integration</title>
       <link>http://sa.muel.be/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</link>
       <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</guid>
       <description>&lt;p&gt;Last week I had to geocode the addresses in a dataset using Talend. Geocoding is adding coordinates to addresses. This way you can easily visualize your data on a map.&lt;/p&gt;
 
@@ -58,7 +60,7 @@
       <title>How Google cripples outdated Android devices</title>
       <link>http://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</guid>
       <description>
 
@@ -138,7 +140,7 @@ adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Se
       <title>Natively boot Windows 10 Technical Preview with a virtual HDD</title>
       <link>http://sa.muel.be/2015/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/</link>
       <pubDate>Sun, 25 Jan 2015 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2015/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/</guid>
       <description>&lt;p&gt;A few days ago &lt;a href=&#34;https://insider.windows.com&#34;&gt;Microsoft released a new build for Windows 10&lt;/a&gt; and I wanted to give it a try. However, I didn&amp;rsquo;t want to resize my partitions or overwrite my Windows 8.1 partition.&lt;/p&gt;
 
@@ -170,7 +172,7 @@ adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Se
       <title>Queue for MessageDialog in Windows RT</title>
       <link>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</link>
       <pubDate>Wed, 20 Aug 2014 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</guid>
       <description>&lt;p&gt;When I write Windows Store applications, I use MessageDialog a lot.
 It&amp;rsquo;s the easiest way to show a quick informative pop-up message or a question to the user.
@@ -203,7 +205,7 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
       <title>Workaround for password confirmation with Laravel &amp; Ardent</title>
       <link>http://sa.muel.be/2014/workaround-for-password-confirmation-with-laravel--ardent/</link>
       <pubDate>Sat, 14 Jun 2014 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2014/workaround-for-password-confirmation-with-laravel--ardent/</guid>
       <description>&lt;p&gt;While I was working on a website made with Laravel and Ardent I had to validate a password confirmation field for a user registration. This will not work if you follow the standard documentation.&lt;/p&gt;
 
@@ -233,7 +235,7 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
       <title>Quick tips for problems with Windows Store and Windows 8 apps</title>
       <link>http://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</link>
       <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</guid>
       <description>
 
@@ -285,7 +287,7 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
       <title>Using markdown to create any document (pdf, docx...)</title>
       <link>http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../</link>
       <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../</guid>
       <description>&lt;p&gt;A few weeks ago I had to submit the contents of a GitHub repository to my teacher for grading. I wanted to use my readme.md-file while my teacher asked for a Word or a PDF document. Then I discovered this amazing program which converts Markdown to any desirable format!&lt;/p&gt;
 
@@ -308,7 +310,7 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
       <title>Secure SSH access with 2-step authentication (extended)</title>
       <link>http://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</link>
       <pubDate>Sat, 08 Feb 2014 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</guid>
       <description>
 
@@ -418,7 +420,7 @@ server 3.be.pool.ntp.org
       <title>Wake up your computer(s) with a simple email using a Raspberry Pi</title>
       <link>http://sa.muel.be/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</link>
       <pubDate>Sun, 22 Dec 2013 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</guid>
       <description>
 
@@ -504,7 +506,7 @@ mail.logout()
       <title>Connecting Serviio with Telenet&#39;s Yelo TV</title>
       <link>http://sa.muel.be/2013/connecting-serviio-with-telenets-yelo-tv/</link>
       <pubDate>Mon, 09 Dec 2013 00:00:00 +0000</pubDate>
-      
+      <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2013/connecting-serviio-with-telenets-yelo-tv/</guid>
       <description>
 
