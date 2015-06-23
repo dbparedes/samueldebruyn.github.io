@@ -86,6 +86,9 @@
 </div>  
             <h6><a href="http://sa.muel.be/">Home</a></h6>
 <h6><a href="http://sa.muel.be/about">About me</a></h6>
+            
+            <gcse:searchbox-only enableAutoComplete="true" resultsUrl="http://sa.muel.be/search/"></gcse:searchbox-only>
+            
         </header>
 		<main id="content">
 
@@ -216,7 +219,12 @@
 		"https://github.com/SamuelDebruyn"
 	]
     },
-    "dateModified": "2015-04-18"
+    "dateModified": "2015-04-18",
+    "potentialAction": {
+    	 "@type": "SearchAction",
+    	 "target": "http:\/\/sa.muel.be\/search/?q={search_term_string}",
+    	 "query-input": "required name=search_term_string"
+    }
 }
 </script>
         
@@ -256,5 +264,20 @@
       	ga('send', 'pageview');
     </script>
   
+  
+    <script>
+  (function() {
+    var cx = '008574538854808371368:vdbkljdpip8';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+
+
 	</body>
 </html>

@@ -61,4 +61,8 @@
     <loc>http://sa.muel.be/about/</loc>
   </url>
   
+  <url>
+    <loc>http://sa.muel.be/search/</loc>
+  </url>
+  
 </urlset>
