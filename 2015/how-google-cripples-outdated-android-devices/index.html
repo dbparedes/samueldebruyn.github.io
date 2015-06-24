@@ -124,7 +124,7 @@
         </header>
 <main id="content">
 
-<article id="" class="post">
+<article class="post">
     <div class="post-stamp">
         <time datetime="2015-03-23T00:00:00Z">
             23 Mar 2015
@@ -347,6 +347,12 @@ adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Se
           ], { callback:function() {
               hljs.initHighlighting();
               
+              
+                var isMobile = window.matchMedia("only screen and (max-width: 320px)");
+                if(isMobile.matches) {
+                    $("html, body").animate({scrollTop: $('#content').offset().top }, 1000);
+                }
+              
           }});
         }
       });
@@ -374,6 +380,6 @@ adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Se
         s.parentNode.insertBefore(gcse, s);
       })();
     </script>
-
+    
 	</body>
 </html>

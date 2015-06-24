@@ -124,7 +124,7 @@
         </header>
 <main id="content">
 
-<article id="" class="page">
+<article class="page">
     <h1 class="post-title">Search results</h1>
     <gcse:searchresults-only linktarget="_parent"></gcse:searchresults-only>
 </article>
@@ -156,6 +156,12 @@
           ], { callback:function() {
               hljs.initHighlighting();
               
+              
+                var isMobile = window.matchMedia("only screen and (max-width: 320px)");
+                if(isMobile.matches) {
+                    $("html, body").animate({scrollTop: $('#content').offset().top }, 1000);
+                }
+              
           }});
         }
       });
@@ -183,6 +189,6 @@
         s.parentNode.insertBefore(gcse, s);
       })();
     </script>
-
+    
 	</body>
 </html>

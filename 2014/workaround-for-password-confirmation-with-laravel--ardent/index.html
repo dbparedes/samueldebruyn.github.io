@@ -124,7 +124,7 @@
         </header>
 <main id="content">
 
-<article id="" class="post">
+<article class="post">
     <div class="post-stamp">
         <time datetime="2014-06-14T00:00:00Z">
             14 Jun 2014
@@ -297,6 +297,12 @@
           ], { callback:function() {
               hljs.initHighlighting();
               
+              
+                var isMobile = window.matchMedia("only screen and (max-width: 320px)");
+                if(isMobile.matches) {
+                    $("html, body").animate({scrollTop: $('#content').offset().top }, 1000);
+                }
+              
           }});
         }
       });
@@ -324,6 +330,6 @@
         s.parentNode.insertBefore(gcse, s);
       })();
     </script>
-
+    
 	</body>
 </html>

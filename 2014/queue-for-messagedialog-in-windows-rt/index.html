@@ -124,7 +124,7 @@
         </header>
 <main id="content">
 
-<article id="" class="post">
+<article class="post">
     <div class="post-stamp">
         <time datetime="2014-08-20T00:00:00Z">
             20 Aug 2014
@@ -300,6 +300,12 @@ There are a few cases in which this would be annoying.</p>
           ], { callback:function() {
               hljs.initHighlighting();
               
+              
+                var isMobile = window.matchMedia("only screen and (max-width: 320px)");
+                if(isMobile.matches) {
+                    $("html, body").animate({scrollTop: $('#content').offset().top }, 1000);
+                }
+              
           }});
         }
       });
@@ -327,6 +333,6 @@ There are a few cases in which this would be annoying.</p>
         s.parentNode.insertBefore(gcse, s);
       })();
     </script>
-
+    
 	</body>
 </html>

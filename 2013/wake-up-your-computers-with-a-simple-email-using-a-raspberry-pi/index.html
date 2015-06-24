@@ -124,7 +124,7 @@
         </header>
 <main id="content">
 
-<article id="" class="post">
+<article class="post">
     <div class="post-stamp">
         <time datetime="2013-12-22T00:00:00Z">
             22 Dec 2013
@@ -353,6 +353,12 @@ mail.logout()
           ], { callback:function() {
               hljs.initHighlighting();
               
+              
+                var isMobile = window.matchMedia("only screen and (max-width: 320px)");
+                if(isMobile.matches) {
+                    $("html, body").animate({scrollTop: $('#content').offset().top }, 1000);
+                }
+              
           }});
         }
       });
@@ -380,6 +386,6 @@ mail.logout()
         s.parentNode.insertBefore(gcse, s);
       })();
     </script>
-
+    
 	</body>
 </html>
