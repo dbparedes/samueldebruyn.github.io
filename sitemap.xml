@@ -3,8 +3,23 @@
   
   <url>
     <loc>http://sa.muel.be/</loc>
-    <lastmod>2015-04-18T00:00:00+00:00</lastmod>
+    <lastmod>2015-06-27T18:13:15+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/</loc>
+    <lastmod>2015-06-27T18:13:15+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/</loc>
+    <lastmod>2015-06-27T18:13:06+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/</loc>
+    <lastmod>2015-06-27T17:55:40+02:00</lastmod>
   </url>
   
   <url>

