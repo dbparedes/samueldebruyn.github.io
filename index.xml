@@ -13,14 +13,14 @@
     
     <item>
       <title>LinkedIn</title>
-      <link>http://sa.muel.be/linkedin/</link>
+      <link>http://sa.muel.be/linkedin-nl/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/linkedin/</guid>
-      <description>You will be redirected to my LinkedIn page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
+      <guid>http://sa.muel.be/linkedin-nl/</guid>
+      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren..&lt;/a&gt;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://be.linkedin.com/in/samueldebruyn&#34;;
+window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
 &lt;/script&gt;</description>
     </item>
     
@@ -34,6 +34,19 @@ window.location = &#34;https://be.linkedin.com/in/samueldebruyn&#34;;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
 window.location = &#34;https://github.com/samueldebruyn&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>LinkedIn</title>
+      <link>http://sa.muel.be/linkedin/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/linkedin/</guid>
+      <description>You will be redirected to my LinkedIn page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://be.linkedin.com/in/samueldebruyn&#34;;
 &lt;/script&gt;</description>
     </item>
     
@@ -518,92 +531,6 @@ server 3.be.pool.ntp.org
 
 &lt;pre&gt;&lt;code&gt;sudo service ntpd restart
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Wake up your computer(s) with a simple email using a Raspberry Pi</title>
-      <link>http://sa.muel.be/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</link>
-      <pubDate>Sun, 22 Dec 2013 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</guid>
-      <description>
-
-&lt;h2 id=&#34;introduction:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;I have a &lt;a href=&#34;https://www.spotify.com/be-nl/get-spotify/go/premium/&#34;&gt;Spotify Premium subscription&lt;/a&gt; but I also have a few CDs which are not available on streaming services. I don&amp;rsquo;t like the whole process of syncing files, that&amp;rsquo;s why I took a Spotify subscription in the first place.  Google offers a solution with &lt;a href=&#34;https://play.google.com/about/music/&#34;&gt;Play Music&lt;/a&gt;: you can upload up to 20,000 songs to their servers for free and stream them to all of your devices. I didn&amp;rsquo;t use this because the Google Play Music app was too slow for my previous phone (&lt;a href=&#34;http://www.android.com/devices/detail/nexus-s&#34;&gt;Google Nexus S&lt;/a&gt;). So I decided to put my CDs on a computer and use that computer as a server with &lt;a href=&#34;http://www.tonido.com/tonidodesktop/&#34;&gt;Tonido&lt;/a&gt;. This way I could stream my music over the Internet to all of my devices. As a plus I could also put all my photos on this device so that I could show them to friends or family wherever I am.&lt;/p&gt;
-
-&lt;p&gt;Because this was just a standard computer this would cost a lot of electricity while I wouldn&amp;rsquo;t use it 90% of the time. I would only need it when I wanted to listen to a song I own which isn&amp;rsquo;t available on Spotify. That&amp;rsquo;s why I came up with this idea.&lt;/p&gt;
-
-&lt;p&gt;I want my computer to be available when I need it and to be in standby mode when I don&amp;rsquo;t need it. This way the computer boots up in a few seconds when I wake it up. I want to be able to wake it up from all over the world. I have a &lt;a href=&#34;http://www.raspberrypi.org/faqs#introWhatIs&#34;&gt;Raspberry Pi&lt;/a&gt; which is always on and &lt;a href=&#34;http://www.raspberrypi.org/faqs#power&#34;&gt;doesn&amp;rsquo;t require much power&lt;/a&gt;. So I created a way to send an &lt;strong&gt;email to a certain address which then wakes up my computer&lt;/strong&gt; within the minute.&lt;/p&gt;
-
-&lt;h2 id=&#34;requirements:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Requirements&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;working Raspberry Pi (or similar device with Linux and python) with a constant connection to the Internet&lt;/li&gt;
-&lt;li&gt;the computer you want to wake up and your Raspberry Pi need to be in the same local network&lt;/li&gt;
-&lt;li&gt;Email account (preferably Gmail or an unused mailbox)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;setup:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Setup&lt;/h2&gt;
-
-&lt;h3 id=&#34;on-the-computer:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;On the computer&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Make sure the computer goes to sleep when you don&amp;rsquo;t use it. In Windows you can find this setting by searching for &lt;em&gt;power&lt;/em&gt;. I have my computer set to go to sleep after 3 hours of inactivity. If you have trouble putting your computer to sleep you can analyze the problems &lt;a href=&#34;http://technet.microsoft.com/en-us/library/cc748940(v=ws.10&#34;&gt;using the powercfg command&lt;/a&gt;.aspx).&lt;/li&gt;
-&lt;li&gt;Make sure the computer wakes upon receiving a magic packet. This is a special type of TCP or UDP unicast packet that is processed by the BIOS and wakes up a computer. This also works if the computer is not in standby mode. You probably have to change &lt;a href=&#34;http://www.tomshardware.com/reviews/bios-beginners,1126-8.html&#34;&gt;a setting in your BIOS&lt;/a&gt; (press one of the F-buttons at boot time) and in your NIC&amp;rsquo;s settings. You can view your NIC&amp;rsquo;s settings in Windows using &lt;a href=&#34;http://windows.microsoft.com/en-us/windows-vista/open-device-manager&#34;&gt;Device Management&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://technet.microsoft.com/en-us/library/gg252549(v=ws.10&#34;&gt;Find the MAC address&lt;/a&gt;.aspx) of the connected network adapter.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;in-your-gmail-http-www-gmail-com-account:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;In your &lt;a href=&#34;http://www.gmail.com&#34;&gt;Gmail&lt;/a&gt; account&lt;/h3&gt;
-
-&lt;p&gt;Create a new filter for a specific email address. You can use &lt;em&gt;yourusername&lt;strong&gt;+anythingyouwant&lt;/strong&gt;@gmail.com&lt;/em&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Search for &lt;em&gt;to:theaddressyouchoose&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Click on the little arrow left to the search button&lt;/li&gt;
-&lt;li&gt;Click on the link to create a new filter in the pop-up that appears&lt;/li&gt;
-&lt;li&gt;Check the following options: skip inbox, mark as read, label &lt;em&gt;new label&lt;/em&gt;, never send to spam, never mark as important&lt;/li&gt;
-&lt;li&gt;Enable IMAP (Settings &amp;gt; Forwarding &amp;amp; POP/IMAP &amp;gt; Enable IMAP)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;on-your-raspberry-pi:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;On your Raspberry Pi&lt;/h3&gt;
-
-&lt;p&gt;I assume you know how to log in to your Raspberry Pi in command line, over SSH or directly. There is a lot of documentation &lt;a href=&#34;http://elinux.org/RPi_Remote_Access&#34;&gt;available&lt;/a&gt; on their website.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Install the &lt;a href=&#34;https://wiki.debian.org/WakeOnLan&#34;&gt;wakeonlan&lt;/a&gt; package using the following command:
-  &lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get -y install wakeonlan&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Use nano or another text editor to create the following file:
-  &lt;code&gt;wakeonlan 01:23:45:67:89:AB&lt;/code&gt;
-  &lt;em&gt;01:23:45:67:89:AB&lt;/em&gt; being the MAC address of the computer you want to wake up with your email. Name the file &lt;strong&gt;anynameyouwant&lt;/strong&gt;&lt;em&gt;.sh&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Create another file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;import imaplib
-import os
-mail = imaplib.IMAP4_SSL(&#39;imap.gmail.com&#39;)
-mail.login(&#39;YOUR USERNAME@gmail.com&#39;, &#39;YOUR PASSWORD&#39;)
-answer = mail.select(&#39;THE LABEL YOU CHOOSE&#39;)
-if int(answer[1][0]) &amp;gt; 0:
-  os.system(&#39;THE PATH TO THE FILE YOU CREATED IN STEP 2&#39;)
-  mail.store(&amp;quot;1:*&amp;quot;,&#39;+X-GM-LABELS&#39;, &#39;\\Trash&#39;)
-mail.close()
-mail.logout()
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Replace all the words in capitals and name the file &lt;strong&gt;anythingyouwant&lt;/strong&gt;&lt;em&gt;.py&lt;/em&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Use &lt;code&gt;crontab -e&lt;/code&gt; to edit the crontab file. Scroll to the bottom and add the following line:
-  &lt;code&gt;* * * * * /usr/bin/python PATH TO THE FILE YOU CREATED IN STEP 3&lt;/code&gt;&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Save the file using CTRL+X&lt;/p&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;done:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Done!&lt;/h2&gt;
-
-&lt;p&gt;Now you can send an email to the address you choose in the Gmail part above and your computer will wake up within the minute!&lt;/p&gt;
 </description>
     </item>
     
