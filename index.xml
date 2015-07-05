@@ -8,8 +8,47 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Sat, 27 Jun 2015 18:13:15 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 05 Jul 2015 16:08:03 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>LinkedIn</title>
+      <link>http://sa.muel.be/linkedin/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/linkedin/</guid>
+      <description>You will be redirected to my LinkedIn page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://be.linkedin.com/in/samueldebruyn&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>http://sa.muel.be/github/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/github/</guid>
+      <description>You will be redirected to my GitHub page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://github.com/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://github.com/samueldebruyn&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>http://sa.muel.be/twitter/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/twitter/</guid>
+      <description>You will be redirected to my Twitter page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://twitter.com/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://twitter.com/samueldebruyn&#34;;
+&lt;/script&gt;</description>
+    </item>
     
     <item>
       <title>Deobfuscated code from the WordPress hack</title>
@@ -566,94 +605,6 @@ mail.logout()
 
 &lt;p&gt;Now you can send an email to the address you choose in the Gmail part above and your computer will wake up within the minute!&lt;/p&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>Connecting Serviio with Telenet&#39;s Yelo TV</title>
-      <link>http://sa.muel.be/2013/connecting-serviio-with-telenets-yelo-tv/</link>
-      <pubDate>Mon, 09 Dec 2013 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2013/connecting-serviio-with-telenets-yelo-tv/</guid>
-      <description>
-
-&lt;h2 id=&#34;introduction:cbb446150464ea4f77ca50373417b3af&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;Recently Belgian ISP Telenet &lt;a href=&#34;http://snap.telenet.be/nieuw/artikel/yelo-tv-getest-en-gekeurd&#34;&gt;introduced&lt;/a&gt; &lt;a href=&#34;http://telenet.be/nl/yelo-tv&#34;&gt;Yelo TV&lt;/a&gt;. It&amp;rsquo;s the new brand for all of their efforts &lt;del&gt;to &lt;/del&gt;&lt;del&gt;innovate&lt;/del&gt; with television. Yelo TV includes a series of apps for almost every device (except for Windows Phone) and a &lt;a href=&#34;http://yelotv.be/&#34;&gt;website &lt;/a&gt;on which you can watch live television, watch recordings or schedule recordings. &lt;/p&gt;
-
-&lt;p&gt;During the coming weeks Telenet is also updating their &lt;a href=&#34;http://telenet.be/nl/digitale-tv&#34;&gt;DigiCorders&lt;/a&gt; to a new software version called Yelo TV. Most of the changes are in design but the new firmware will include a &lt;a href=&#34;http://en.wikipedia.org/wiki/Digital_Living_Network_Alliance&#34;&gt;DLNA&lt;/a&gt; renderer. This means that you can use any device with a DLNA server to stream music, photos and videos to a television connected to a Telenet DigiCorder.&lt;/p&gt;
-
-&lt;p&gt;I have a computer with &lt;a href=&#34;http://www.serviio.org/&#34;&gt;Serviio&lt;/a&gt; on it. Serviio is a free DLNA server (a Pro version with more features is available) and in my opinion it&amp;rsquo;s the best available. Serviio includes support for transcoding. This way Serviio will convert every media file in a format which the DLNA renderer is able to play if necessary.&lt;/p&gt;
-
-&lt;p&gt;DLNA has its advantages and disadvantages, one of the latter is difficulties to detect compatible media formats. That&amp;rsquo;s why Serviio uses &lt;em&gt;profiles&lt;/em&gt; which define the compatible media formats for each type of DLNA renderer.&lt;/p&gt;
-
-&lt;p&gt;There wasn&amp;rsquo;t one for Telenet Yelo TV yet so I wrote one. This profile will convert every incompatible media file so that you can stream it to your DigiCorder. You&amp;rsquo;ll need a fast computer to transcode files. This profile includes support for subtitles if you enabled it in Serviio&amp;rsquo;s Console.&lt;/p&gt;
-
-&lt;h3 id=&#34;update-plex:cbb446150464ea4f77ca50373417b3af&#34;&gt;Update: Plex&lt;/h3&gt;
-
-&lt;p&gt;I recently switched to Plex. A profile for Plex is available here:&lt;/p&gt;
-
-&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/5f6a7b3669706153f868.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;the-profile:cbb446150464ea4f77ca50373417b3af&#34;&gt;The profile:&lt;/h2&gt;
-
-&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/7944739.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;installation:cbb446150464ea4f77ca50373417b3af&#34;&gt;Installation&lt;/h2&gt;
-
-&lt;p&gt;This profile is included in Serviio 1.4 or newer. You don&amp;rsquo;t need to change anything.&lt;/p&gt;
-
-&lt;h2 id=&#34;nb-further-optimizations:cbb446150464ea4f77ca50373417b3af&#34;&gt;NB: Further optimizations&lt;/h2&gt;
-
-&lt;p&gt;Tips to get a &lt;strong&gt;higher video quality&lt;/strong&gt; (only works for videos that have to be transcoded because of incompatibility or that include subtitles):&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;For technical users only: you could force Serviio to always transcode videos, look at &lt;a href=&#34;http://www.serviio.org/index.php?option=com_content&amp;amp;view=article&amp;amp;id=24&#34;&gt;&lt;em&gt;forceVTranscoding&lt;/em&gt;&lt;/a&gt; and &lt;a href=&#34;http://www.serviio.org/index.php?option=com_content&amp;amp;view=article&amp;amp;id=16&#34;&gt;&lt;em&gt;alwaysEnableTranscoding&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>http://sa.muel.be/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/about/</guid>
-      <description>
-
-&lt;h2 id=&#34;who-am-i:862328fccd96fe2fc80a1d6febe1b62b&#34;&gt;Who am I?&lt;/h2&gt;
-
-&lt;p&gt;Hi there, you can call me Sam. I am an IT student by day and software development tinkerer by night. I&amp;rsquo;ll soon graduate so job offers are welcome. My resume is available on &lt;a href=&#34;http://linkedin.com/in/samueldebruyn&#34;&gt;LinkedIn&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-do-i-do:862328fccd96fe2fc80a1d6febe1b62b&#34;&gt;What do I do?&lt;/h2&gt;
-
-&lt;p&gt;When I&amp;rsquo;m not reading up on the newest programming languages, development frameworks etc. I&amp;rsquo;m probably busy playing with them. My interests lie in (RESTful) APIs and cross platform apps. I especially like building complete SaaS solutions.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-can-you-contact-me:862328fccd96fe2fc80a1d6febe1b62b&#34;&gt;How can you contact me?&lt;/h2&gt;
-
-&lt;p&gt;You should send me an email at &lt;a href=&#34;mailto:s@muel.be&#34;&gt;s@muel.be&lt;/a&gt; or a tweet at &lt;a href=&#34;https://twitter.com/intent/user?screen_name=SamuelDebruyn&#34;&gt;@SamuelDebruyn&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-about-a-nice-quote:862328fccd96fe2fc80a1d6febe1b62b&#34;&gt;How about a nice quote?&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Computer programming is an art,
-because it applies accumulated knowledge to the world,
-because it requires skill and ingenuity,
-and especially because it produces objects of beauty.
-A programmer who subconsciously views himself as an artist
-will enjoy what he does and will do it better.&lt;/p&gt;
-
-&lt;p&gt;&amp;ndash; &lt;cite&gt;Donald Knuth&lt;/cite&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Search results</title>
-      <link>http://sa.muel.be/search/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/search/</guid>
-      <description>&lt;gcse:searchresults-only linktarget=&#34;_parent&#34;&gt;&lt;/gcse:searchresults-only&gt;</description>
     </item>
     
   </channel>
