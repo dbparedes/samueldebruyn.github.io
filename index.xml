@@ -12,19 +12,6 @@
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>LinkedIn</title>
-      <link>http://sa.muel.be/linkedin-nl/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/linkedin-nl/</guid>
-      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren..&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
-&lt;/script&gt;</description>
-    </item>
-    
-    <item>
       <title>GitHub</title>
       <link>http://sa.muel.be/github/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
@@ -47,6 +34,19 @@ window.location = &#34;https://github.com/samueldebruyn&#34;;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
 window.location = &#34;https://be.linkedin.com/in/samueldebruyn&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>LinkedIn</title>
+      <link>http://sa.muel.be/linkedin-nl/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/linkedin-nl/</guid>
+      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
 &lt;/script&gt;</description>
     </item>
     
