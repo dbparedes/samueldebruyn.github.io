@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://sa.muel.be/</loc>
-    <lastmod>2015-07-05T16:08:03+02:00</lastmod>
+    <lastmod>2015-07-06T14:14:32+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sa.muel.be/2015/recovering-from-a-hacked-wordpress/</loc>
+    <lastmod>2015-07-06T14:14:32+02:00</lastmod>
   </url>
   
   <url>
@@ -13,12 +18,12 @@
   </url>
   
   <url>
-    <loc>http://sa.muel.be/linkedin/</loc>
+    <loc>http://sa.muel.be/linkedin-nl/</loc>
     <lastmod>2015-07-05T16:08:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://sa.muel.be/linkedin-nl/</loc>
+    <loc>http://sa.muel.be/linkedin/</loc>
     <lastmod>2015-07-05T16:08:03+02:00</lastmod>
   </url>
   
