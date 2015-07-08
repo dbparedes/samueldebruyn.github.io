@@ -7,16 +7,16 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-        <meta property="og:title" content=" About that time I dealt with a bunch of hackers on a WordPress &middot;  Samuel Debruyn" />
-        <meta name="twitter:title" content=" About that time I dealt with a bunch of hackers on a WordPress &middot;  Samuel Debruyn" />
-        <title> About that time I dealt with a bunch of hackers on a WordPress &middot;  Samuel Debruyn</title>
+        <meta property="og:title" content=" Recovering a hacked WordPress &middot;  Samuel Debruyn" />
+        <meta name="twitter:title" content=" Recovering a hacked WordPress &middot;  Samuel Debruyn" />
+        <title> Recovering a hacked WordPress &middot;  Samuel Debruyn</title>
         
         <meta property="og:site_name" content="Samuel Debruyn" />
         <meta property="og:locale " content="en-us" />
         
-        <meta property="og:url" content="http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/" />
-        <meta name="twitter:url" content="http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/" />
-        <link rel="canonical" href="http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/" />
+        <meta property="og:url" content="http://sa.muel.be/2015/recovering-a-hacked-wordpress/" />
+        <meta name="twitter:url" content="http://sa.muel.be/2015/recovering-a-hacked-wordpress/" />
+        <link rel="canonical" href="http://sa.muel.be/2015/recovering-a-hacked-wordpress/" />
         
         <meta name="description" content="personal website and blog of Samuel Debruyn" />
         <meta name="twitter:description" content="personal website and blog of Samuel Debruyn">
@@ -29,7 +29,7 @@
     
         <meta name="twitter:card" content="summary" />
         <meta property="og:type" content="article" />
-        <meta property="og:article:published_time" content="2015-06-27T17:55:40&#43;02:00" />
+        <meta property="og:article:published_time" content="2015-07-06T14:14:32&#43;02:00" />
         <meta property="og:article:section" content="post" />
         <meta property="og:article:author" content="http://sa.muel.be/about/" />
         
@@ -37,8 +37,8 @@
             { 
                 "@context": "http://schema.org",
                 "@type": "BlogPosting",
-                "headline": "About that time I dealt with a bunch of hackers on a WordPress",
-                "name": "About that time I dealt with a bunch of hackers on a WordPress",
+                "headline": "Recovering a hacked WordPress",
+                "name": "Recovering a hacked WordPress",
                 "author": {
                     "@type": "Person",
 "name": "Samuel Debruyn",
@@ -56,12 +56,12 @@
 		"https://github.com/SamuelDebruyn"
 	]
                 },
-                "datePublished": "2015-06-27",
+                "datePublished": "2015-07-06",
                 
-                "wordCount":  643 ,
+                "wordCount":  1258 ,
                 "articleSection": "post",
-                "timeRequired": "0:4:0",
-                "url": "http:\/\/sa.muel.be\/2015\/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress\/"
+                "timeRequired": "0:6:0",
+                "url": "http:\/\/sa.muel.be\/2015\/recovering-a-hacked-wordpress\/"
             }
         </script>
         
@@ -127,45 +127,152 @@
 
 <article class="post">
     <div class="post-stamp">
-        <time datetime="2015-06-27T17:55:40&#43;02:00">
-            27 Jun 2015
+        <time datetime="2015-07-06T14:14:32&#43;02:00">
+            6 Jul 2015
         </time>
     </div>
-    <h1 class="post-title">About that time I dealt with a bunch of hackers on a WordPress</h1>
-    <p>So yeah, that happened. I recently took over 2 WordPress installations hosted on a <a href="http://www.versio.uk/">Versio</a> shared hosting account. Versio suspended the account because it kept sending thousands of (spam) emails a day.</p>
+    <h1 class="post-title">Recovering a hacked WordPress</h1>
+    
 
-<p>You guessed it right, one of the WordPress installations was hacked. The previous administrator tried to delete the infected files and changed his passwords. It took them a week to regain full control of both the WordPress installations. Once they got into one of the WordPress setups, it was just a matter of navigating through the filesystem to find and infect the other WordPress installation.</p>
+<h2 id="introduction:f2974dd08b401ad9524c4d408196c0cd">Introduction</h2>
 
-<p>The intruders were very interested in this particular website because of the domain (TLD): <a href="http://asr.ac">asr.ac</a>. An academic domain has a high standing, isn&rsquo;t very cheap and a very rare treat for spammers. They were proud of their hack and left code injections in files called <em>indonesia.php</em>.</p>
+<p>A few weeks ago, I had to <a href="/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/">repair a hacked WordPress</a> installation.</p>
 
-<p>Then I took over. I managed tens of WordPress websites before and I had a lot more time to spare than the previous IT guy. I found out that the contact address for Versio and a bunch of other services was one of the .ac addresses, which was suspended. So we didn&rsquo;t even receive any warnings from Versio about abuse, the hackers had free play.</p>
+<p>A lot of the information I needed to successfully clean the WordPress completely of infected files was not centralized in a single guide. So I decided to write one and you are now reading it.</p>
 
-<p>Once I regained access to <a href="http://www.directadmin.com/">DirectAdmin</a> and Versio&rsquo;s customer panel, I immediately backed up both installations, including the databases. Exporting the content and importing it into a fresh WordPress installation was a no go since the <em>wp-content</em> directory was infected. The only option seemed to desinfect both WordPress installation and secure them.</p>
+<p>So, your website is hacked, what now? Let&rsquo;s go through the process of making sure that every infection is removed and it never happens again.</p>
 
-<p>Versio sent some notices with the files the hackers used to send out spam. They were all PHP files with obfuscated code injections in them.</p>
+<p>In this first part you&rsquo;ll recover from a hack. In a second part you&rsquo;ll learn how to harden the security. I&rsquo;ll publish <a href="/2015/hardening-your-wordpress-security/">the second part</a> a few weeks after the first part.</p>
 
-<p>Great, so I knew how they did it and what I had to look for. I simply deleted everything except for the <em>wp-content</em> directory and searched the <em>uploads</em> folder for code containing <em>eval(</em> or <em>decode(</em>. I then uploaded the default WordPress files and made sure everything worked again.</p>
+<p>This post is meant to be exhaustive and clear. If you have any suggestions or feel like something is missing or unclear, <a href="mailto:s@muel.be?subject=Suggestions%20for%20the%20post%20about%20recovering%20a%20Wordpress%20hack"><em>please</em> let me know</a>.</p>
 
-<p>The theme we used was an outdated premium theme so I replaced that with a more popular similar looking theme which was kept up to date.</p>
+<p>The WordPress version I used to write this post is 4.2.2.</p>
 
-<p>Finally I setup <a href="https://www.cloudflare.com/">CloudFlare</a> with secure settings and let them challenge visitors from Indonesia. I also installed the <a href="https://wordpress.org/plugins/sucuri-scanner/">Sucuri Security plugin</a> and let it scan all files twice a day for infections.</p>
+<h2 id="disabling-all-plugins-going-into-maintenance-mode:f2974dd08b401ad9524c4d408196c0cd">Disabling all plugins / going into maintenance mode</h2>
 
-<p>So that was all, right? Nope, a few days later they were back. This time they named their files something like <em>diff52.php</em> as this wouldn&rsquo;t look as suspicious as <em>indonesia.php</em>. CloudFlare also showed some blocked threats from Russia and Ukraine.</p>
+<p>The first thing you should do is avoiding further infections. <strong>Disable EVERY plugin</strong>. We&rsquo;ll reactivate them later on.</p>
 
-<p><a href="/addendum/2015/obfuscated-code-from-the-wordpress-hack/">This is an example of the code I found</a> and <a href="/addendum/2015/deobfuscated-code-from-the-wordpress-hack/">this is the deobfuscated version of it</a>.</p>
+<p>I&rsquo;d also put the website in maintenance mode. This requires, ironically, a plugin called <a href="https://wordpress.org/plugins/wp-maintenance-mode/">WP Maintenance Mode</a>. Install it, write a quick message for your visitors and enable it.</p>
 
-<p>I repeated the whole process but I kept wondering how they could get in. The only thing I didn&rsquo;t check were the plugins. A few days before I reinstalled them all using Sucuri Security so they didn&rsquo;t contain any infections. But they had to be the cause, right? I simply deactivated and removed all of them except for the ones I installed to secure the website. That did it. It&rsquo;s been a week and the hackers haven&rsquo;t been back since.</p>
+<h2 id="take-a-backup:f2974dd08b401ad9524c4d408196c0cd">Take a backup</h2>
 
-<p>What did I learn from all of this? When you&rsquo;re dealing with a hacked WordPress, <strong>always</strong> delete every plugin and non-default theme. The team behind WordPress releases security updates in a few hours after they find a leak. <a href="https://ma.ttias.be/in-defence-of-wordpress/">WordPress is quite secure</a>, it&rsquo;s the plugins and the themes that aren&rsquo;t. Themes and plugins used by a lot of people will probably get more security fixes than others. The more plugins or themes you have installed, the bigger the risk.</p>
+<p>Backup your complete WordPress folder and database. You can download all the files using FTP or SSH and export the database to SQL statements using something like <a href="http://www.phpmyadmin.net/home_page/index.php">phpMyAdmin</a> or the customer panel of your host (CPanel, DirectAdmin&hellip;). Don&rsquo;t store the backup on your webserver as the hackers could also infect this backup.</p>
 
-<p>PS: I repeated every step on the second WordPress installation since that one was infected too.</p>
+<h2 id="restore-the-original-wordpress-files:f2974dd08b401ad9524c4d408196c0cd">Restore the original WordPress files</h2>
 
-<p>PPS: I&rsquo;ll post a comprehensive guide to securing/hardening WordPress in a few weeks. A good starting point is <a href="https://codex.wordpress.org/FAQ_My_site_was_hacked">this guide</a>.</p>
+<p>Download <a href="https://wordpress.org/download/release-archive/">a fresh copy of the version of WordPress</a> you were using (which should always be the latest one). Unpack it and replace the directories <em>wp-admin</em> and <em>wp-includes</em> completely with the copy you just downloaded. Do the same with every file in the root folder and remove every file in your root that is not in the downloaded copy except for <em>wp-config.php</em>. The <strong>only folder left untouched should be <em>wp-content</em></strong>. WordPress also doesn&rsquo;t include the <em>wp-config.php</em> file so that should also be preserved (we&rsquo;ll inspect this file later on in this guide).</p>
+
+<h2 id="clearing-the-cache:f2974dd08b401ad9524c4d408196c0cd">Clearing the cache</h2>
+
+<p>Delete the folders <em>wp-content/cache</em> and <em>wp-content/plugins/widgets</em>. They will be automatically recreated.</p>
+
+<h2 id="regenerate-salts-and-hashes:f2974dd08b401ad9524c4d408196c0cd">Regenerate salts and hashes</h2>
+
+<p>The <em>wp-config.php</em> file contains a few hashes and salts to make sure that your cookies and sessions are unique and secure. As these could have been compromised, it&rsquo;s <strong>absolutely necessary</strong> to regenerate them. Open your <em>wp-config.php</em> file in a text editor and overwrite your new hashes with new ones. WordPress offers <a href="https://api.wordpress.org/secret-key/1.1/salt/">an online generator</a> so you can easily copy and paste them.</p>
+
+<h2 id="upgrade-to-the-latest-version:f2974dd08b401ad9524c4d408196c0cd">Upgrade to the latest version</h2>
+
+<p>If you&rsquo;re not on the latest version of WordPress, then update ASAP. I&rsquo;d recommend using <a href="https://codex.wordpress.org/Upgrading_WordPress_-_Extended_Instructions">these extended instructions</a> instead of the built-in updater, but the built-in updater should be fine for most infected websites.</p>
+
+<p><strong>Upgrade all your themes and plugins</strong> while you&rsquo;re at it.</p>
+
+<h2 id="restore-the-original-themes-and-plugins:f2974dd08b401ad9524c4d408196c0cd">Restore the original themes and plugins</h2>
+
+<p>In this step we&rsquo;re going to restore the original theme and plugin files like we did with the original WordPress files. Download the <a href="https://wordpress.org/themes/">themes</a> and <a href="https://wordpress.org/plugins/">plugins</a> from wordpress.org or from the website of the publisher of the plugin or theme (for premium/payed versions). All you need to do is unpack the files into their respective directories in <em>wp-content/themes</em> and <em>wp-content/plugins</em>. Make sure there are no other files than the ones you just replaced in both of these folders.</p>
+
+<p>NB: some plugins (e.g. plugins containing <a href="http://wpengineer.com/2500/wordpress-dropins/">drop-ins</a>) like <a href="https://wordpress.org/plugins/wp-super-cache/">WP Super Cache</a> also put PHP files in your <em>wp-content</em> directory.</p>
+
+<h2 id="search-and-delete-infections-in-your-files:f2974dd08b401ad9524c4d408196c0cd">Search and delete infections in your files</h2>
+
+<p>The only infected files left could be stored in the subfolders of <em>wp-content</em> that we haven&rsquo;t looked into yet.</p>
+
+<h3 id="languages:f2974dd08b401ad9524c4d408196c0cd">languages</h3>
+
+<p>If your WordPress is in English, you can safely delete the contents of the <em>languages</em> folder, otherwise you should download the translation in your language and put in the <em>wp-content/languages</em> while deleting everything else in it.</p>
+
+<h3 id="upgrade:f2974dd08b401ad9524c4d408196c0cd">upgrade</h3>
+
+<p>The folder <em>upgrade</em> in <em>wp-content</em> is used by WordPress&rsquo; built-in updater and should always be empty except for when you&rsquo;re updating of course.</p>
+
+<h3 id="uploads-and-other-folders:f2974dd08b401ad9524c4d408196c0cd">uploads and other folders</h3>
+
+<p>Next up: search every other folder in <em>wp-content</em> for PHP and server configuration files and delete files if you think they shouldn&rsquo;t be there. I suggest doing a case insensitive search for <em>*.php</em> and <em>.htaccess</em> and carefully inspecting the results.</p>
+
+<pre><code>find /path/to/wordpress/wp-content/uploads/ -iname &quot;*.php&quot; -or -iname &quot;.htaccess&quot;
+</code></pre>
+
+<p>You probably shouldn&rsquo;t have any PHP or .htaccess files in <em>wp-content/uploads/someyear/</em>.</p>
+
+<p>Finally search all the remaining files for typical code injections. PHP injections usually contain the functions <code>eval</code> and <code>base64_decode</code>.</p>
+
+<pre><code>egrep 'eval(|decode(' -r -H /path/to/wordpress/wp-content/
+</code></pre>
+
+<h2 id="search-and-delete-infections-in-your-database:f2974dd08b401ad9524c4d408196c0cd">Search and delete infections in your database</h2>
+
+<p>While most infections are usually to be found in the files, hackers could also insert executable and obfuscated code into your database. Most often these are XSS injections and WordPress should protect you against them. Still, it wouldn&rsquo;t hurt to scan your posts and comments for injected code.</p>
+
+<p>The easiest way is to connect to your database right away using something like the previously mentioned <em>phpMyAdmin</em> tool. Login, open the database and go to the SQL page so you can run some SQL commands. The select statements below will show you the posts and comments containing common injections. Use a <code>DELETE</code> query (be careful) or the <em>phpMyAdmin</em> GUI to completely delete the found posts and comments. Don&rsquo;t forget to change <code>wp_</code> to the prefix you use.</p>
+
+<pre><code>SELECT * FROM wp_posts WHERE post_content LIKE '%&lt;iframe%'
+UNION
+SELECT * FROM wp_posts WHERE post_content LIKE '%&lt;noscript%'
+UNION
+SELECT * FROM wp_posts WHERE post_content LIKE '%display:%'
+UNION
+SELECT * FROM wp_posts WHERE post_content LIKE '%&lt;?%'
+UNION
+SELECT * FROM wp_posts WHERE post_content LIKE '%&lt;?php%'
+</code></pre>
+
+<pre><code>SELECT * FROM wp_comments WHERE comment_content LIKE '%&lt;iframe%'
+UNION
+SELECT * FROM wp_comments WHERE comment_content LIKE '%&lt;noscript%'
+UNION
+SELECT * FROM wp_comments WHERE comment_content LIKE '%display:%'
+UNION
+SELECT * FROM wp_comments WHERE comment_content LIKE '%&lt;?%'
+UNION
+SELECT * FROM wp_comments WHERE comment_content LIKE '%&lt;?php%'
+</code></pre>
+
+<h2 id="using-exploit-scanner-and-sucuri-security-to-detect-further-infections:f2974dd08b401ad9524c4d408196c0cd">Using <em>Exploit Scanner</em> and <em>Sucuri Security</em> to detect further infections</h2>
+
+<p>Most code injections should be gone by now, but there are a few WordPress plugins available to detect everything that&rsquo;s left.</p>
+
+<p><a href="https://wordpress.org/plugins/exploit-scanner/">Exploit Scanner</a> scans your files for possible hidden infections. Its options allow you to also scan for iframes etc., but they cause a lot of false negatives.</p>
+
+<p><a href="https://wordpress.org/plugins/sucuri-scanner/">Sucuri Security</a> is a plugin I&rsquo;d really recommend for any WordPress installation, whether you were hacked or not. The plugin allows you to automatically scan for changed files, notify you about any administrative action, easily reinstall every plugin and theme after a hack&hellip;</p>
+
+<p>Take advantage of all possibilities of the free versions of both of them. They will make sure that your WordPress is clean and stays clean.</p>
+
+<h2 id="check-users-and-passwords:f2974dd08b401ad9524c4d408196c0cd">Check users and passwords</h2>
+
+<p>One of the last steps is to check if the hacker didn&rsquo;t create any new users. While you&rsquo;re at it, change the passwords of every user with more rights than a regular subscriber.</p>
+
+<h2 id="restoring-your-website-and-keeping-it-safe:f2974dd08b401ad9524c4d408196c0cd">Restoring your website and keeping it safe</h2>
+
+<p>Your WordPress should now be clean of infections and you can start restoring your website. Turn maintenance mode off and deactivate the <em>WP Maintenance Mode</em> plugin. Now activate all the other plugins you used one by one. Make sure to <strong>delete any plugin you don&rsquo;t really need</strong> and check if they are still being maintained/updated. I&rsquo;d also delete every inactive theme. This part of the guide is crucial since it was probably one of the plugins that was used to accomplish the hack.</p>
+
+<h2 id="harden-your-wordpress-security:f2974dd08b401ad9524c4d408196c0cd">Harden your WordPress Security</h2>
+
+<p>A few weeks after this post, I&rsquo;ll publish <a href="/2015/hardening-your-wordpress-security/">a follow-up guide</a> on improving the security on your WordPress website.</p>
+
+<h2 id="sources:f2974dd08b401ad9524c4d408196c0cd">Sources</h2>
+
+<ul>
+<li><a href="http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack">http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack</a></li>
+<li><a href="https://wordpress.org/plugins/sucuri-scanner/">https://wordpress.org/plugins/sucuri-scanner/</a></li>
+<li><a href="https://wordpress.org/plugins/exploit-scanner/">https://wordpress.org/plugins/exploit-scanner/</a></li>
+<li><a href="https://codex.wordpress.org/FAQ_My_site_was_hacked">https://codex.wordpress.org/FAQ_My_site_was_hacked</a></li>
+<li><a href="http://smackdown.blogsblogsblogs.com/2008/06/24/how-to-completely-clean-your-hacked-wordpress-installation/">http://smackdown.blogsblogsblogs.com/2008/06/24/how-to-completely-clean-your-hacked-wordpress-installation/</a></li>
+<li><a href="http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/">http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/</a></li>
+</ul>
 
     <div id="social-bar">
 	<ul class="rrssb-buttons clearfix">
       <li class="email">
-          <a href="mailto:?subject=About%20that%20time%20I%20dealt%20with%20a%20bunch%20of%20hackers%20on%20a%20WordPress&amp;body=http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/">
+          <a href="mailto:?subject=Recovering%20a%20hacked%20WordPress&amp;body=http://sa.muel.be/2015/recovering-a-hacked-wordpress/">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
@@ -175,7 +282,7 @@
           </a>
       </li>
 			<li class="twitter">
-          <a href="http://twitter.com/home?status=About%20that%20time%20I%20dealt%20with%20a%20bunch%20of%20hackers%20on%20a%20WordPress%20http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/" class="popup">
+          <a href="http://twitter.com/home?status=Recovering%20a%20hacked%20WordPress%20http://sa.muel.be/2015/recovering-a-hacked-wordpress/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
@@ -185,7 +292,7 @@
           </a>
       </li>
 			<li class="linkedin">
-          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&amp;title=About%20that%20time%20I%20dealt%20with%20a%20bunch%20of%20hackers%20on%20a%20WordPress&amp;summary=So%20yeah%2c%20that%20happened.%20I%20recently%20took%20over%202%20WordPress%20installations%20hosted%20on%20a%20Versio%20shared%20hosting%20account.%20Versio%20suspended%20the%20account%20because%20it%20kept%20sending%20thousands%20of%20%28spam%29%20emails%20a%20day.%20You%20guessed%20it%20right%2c%20one%20of%20the%20WordPress%20installations%20was%20hacked.%20The%20previous%20administrator%20tried%20to%20delete%20the%20infected%20files%20and%20changed%20his%20passwords.%20It%20took%20them%20a%20week%20to%20regain%20full%20control%20of%20both%20the%20WordPress%20installations.%20Once%20they%20got%20into%20one%20of%20the%20WordPress%20setups%2c%20it%20was%20just%20a%20matter%20of%20navigating%20through%20the%20filesystem%20to%20find%20and%20infect%20the%20other%20WordPress%20installation...." class="popup">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=http://sa.muel.be/2015/recovering-a-hacked-wordpress/&amp;title=Recovering%20a%20hacked%20WordPress&amp;summary=Introduction%20A%20few%20weeks%20ago%2c%20I%20had%20to%20repair%20a%20hacked%20WordPress%20installation.%20A%20lot%20of%20the%20information%20I%20needed%20to%20successfully%20clean%20the%20WordPress%20completely%20of%20infected%20files%20was%20not%20centralized%20in%20a%20single%20guide.%20So%20I%20decided%20to%20write%20one%20and%20you%20are%20now%20reading%20it.%20So%2c%20your%20website%20is%20hacked%2c%20what%20now%3f%20Let%26rsquo%3bs%20go%20through%20the%20process%20of%20making%20sure%20that%20every%20infection%20is%20removed%20and%20it%20never%20happens%20again...." class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
@@ -196,7 +303,7 @@
       </li>
       <li class="tumblr">
 					<script>
-						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/sa.muel.be\/2015\/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress\/') + '&amp;t=About that time I dealt with a bunch of hackers on a WordPress" class="popup">');
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('http:\/\/sa.muel.be\/2015\/recovering-a-hacked-wordpress\/') + '&amp;t=Recovering a hacked WordPress" class="popup">');
 					</script>
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
@@ -207,7 +314,7 @@
           <script>document.write('</a>');</script>
       </li>
       <li class="reddit">
-          <a href="http://www.reddit.com/submit?url=http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/">
+          <a href="http://www.reddit.com/submit?url=http://sa.muel.be/2015/recovering-a-hacked-wordpress/">
               <span class="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
 											<g>
@@ -222,7 +329,7 @@
           </a>
       </li>
       <li class="googleplus">
-          <a href="https://plus.google.com/share?url=http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/" class="popup">
+          <a href="https://plus.google.com/share?url=http://sa.muel.be/2015/recovering-a-hacked-wordpress/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <g>
@@ -235,7 +342,7 @@
           </a>
       </li>
       <li class="pocket">
-          <a href="https://getpocket.com/save?url=http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/"  class="popup">
+          <a href="https://getpocket.com/save?url=http://sa.muel.be/2015/recovering-a-hacked-wordpress/"  class="popup">
               <span class="icon">
                   <svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
                       <path d="M28.7817528,0.00172488695 C30.8117487,0.00431221738 31.9749312,1.12074529 31.9644402,3.10781507 C31.942147,6.67703739 32.1336065,10.2669583 31.8057648,13.8090137 C30.7147076,25.5813672 17.2181194,31.8996281 7.20714461,25.3808491 C2.71833574,22.4571656 0.196577202,18.3122624 0.0549495772,12.9357897 C-0.0342233715,9.5774348 0.00642900214,6.21519891 0.0300336062,2.85555035 C0.0405245414,1.1129833 1.21157517,0.0146615391 3.01995012,0.00819321302 C7.34746087,-0.00603710433 11.6775944,0.00431221738 16.0064164,0.00172488695 C20.2644248,0.00172488695 24.5237444,-0.00215610869 28.7817528,0.00172488695 L28.7817528,0.00172488695 Z M8.64885184,7.85611511 C7.38773662,7.99113854 6.66148108,8.42606978 6.29310958,9.33228474 C5.90114134,10.2969233 6.17774769,11.1421181 6.89875951,11.8276216 C9.35282156,14.161969 11.8108164,16.4924215 14.2976518,18.7943114 C15.3844131,19.7966007 16.5354102,19.7836177 17.6116843,18.7813283 C20.0185529,16.5495467 22.4070683,14.2982907 24.7824746,12.0327533 C25.9845979,10.8850542 26.1012707,9.56468083 25.1469132,8.60653379 C24.1361858,7.59255976 22.8449191,7.6743528 21.5890476,8.85191291 C19.9936451,10.3488554 18.3680912,11.8172352 16.8395462,13.3777945 C16.1342655,14.093159 15.7200114,14.0048744 15.0566806,13.3440386 C13.4599671,11.7484252 11.8081945,10.2060421 10.1262706,8.70001155 C9.65564653,8.27936164 9.00411403,8.05345704 8.64885184,7.85611511 L8.64885184,7.85611511 L8.64885184,7.85611511 Z"></path>
@@ -245,7 +352,7 @@
           </a>
       </li>
       <li class="facebook">
-          <a href="https://www.facebook.com/sharer/sharer.php?u=http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/" class="popup">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=http://sa.muel.be/2015/recovering-a-hacked-wordpress/" class="popup">
               <span class="icon">
                   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
                       <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
