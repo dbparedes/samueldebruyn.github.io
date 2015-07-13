@@ -8,8 +8,24 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Wed, 08 Jul 2015 14:50:29 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 13 Jul 2015 08:00:00 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Material-lite theme for hugo</title>
+      <link>http://sa.muel.be/2015/material-lite-theme-for-hugo/</link>
+      <pubDate>Mon, 13 Jul 2015 08:00:00 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/material-lite-theme-for-hugo/</guid>
+      <description>&lt;p&gt;Last week, &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;I wrote a post&lt;/a&gt; about how awesome &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt; is and why I switched from Jekyll to hugo.&lt;/p&gt;
+
+&lt;p&gt;Then, a few days later, Google released an awesome template called &lt;a href=&#34;http://getmdl.io&#34;&gt;Material Design Lite&lt;/a&gt;. It&amp;rsquo;s basically Google&amp;rsquo;s famous &lt;a href=&#34;https://www.google.com/design/spec/material-design/introduction.html&#34;&gt;Material Design&lt;/a&gt; in HTML, CSS and JavaScript instead of in &lt;a href=&#34;https://www.polymer-project.org&#34;&gt;Polymer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I was thinking about setting up another website for some side project and wanted to use material design. So I decided to write a material design theme for a simple hugo blog.&lt;/p&gt;
+
+&lt;p&gt;You can check it out at &lt;a href=&#34;https://github.com/SamuelDebruyn/hugo-material-lite&#34;&gt;https://github.com/SamuelDebruyn/hugo-material-lite&lt;/a&gt; (&lt;a href=&#34;http://materialexample.sa.muel.be&#34;&gt;demo&lt;/a&gt;) Enjoy!&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>An introduction to hugo, a static site generator</title>
@@ -21,7 +37,7 @@
 
 &lt;h2 id=&#34;a-good-blogging-platform:57055f3baf8c62a101a577dbb24c22b2&#34;&gt;A good blogging platform&lt;/h2&gt;
 
-&lt;p&gt;What makes a good blogging platform really good? Well, that depends on the blogger. Programmers would need different features than make-up bloggers. As a programmer I need to be able to easily integrate pieces of code with syntax highlighting in my posts and I&amp;rsquo;d prefer writing them in my favourite text/code editor instead of in a WYSIWYG editor.&lt;/p&gt;
+&lt;p&gt;What makes a good blogging platform really good? Well, that depends on the blogger. Programmers would need different features than make-up bloggers. As a programmer, I need to be able to easily integrate pieces of code with syntax highlighting in my posts and I&amp;rsquo;d prefer writing them in my favourite text/code editor instead of in a WYSIWYG editor.&lt;/p&gt;
 
 &lt;h2 id=&#34;jekyll:57055f3baf8c62a101a577dbb24c22b2&#34;&gt;Jekyll&lt;/h2&gt;
 
@@ -208,19 +224,6 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     </item>
     
     <item>
-      <title>LinkedIn</title>
-      <link>http://sa.muel.be/linkedin-nl/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/linkedin-nl/</guid>
-      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
-&lt;/script&gt;</description>
-    </item>
-    
-    <item>
       <title>GitHub</title>
       <link>http://sa.muel.be/github/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
@@ -230,6 +233,19 @@ window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
 window.location = &#34;https://github.com/samueldebruyn&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>LinkedIn</title>
+      <link>http://sa.muel.be/linkedin-nl/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/linkedin-nl/</guid>
+      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
 &lt;/script&gt;</description>
     </item>
     
@@ -542,58 +558,6 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;protected $fillable = array(&#39;email&#39;, &#39;password&#39;, &#39;activation_code&#39;, &#39;confirmed&#39;, &#39;reset_password&#39;, &#39;password_confirmation&#39;);
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Quick tips for problems with Windows Store and Windows 8 apps</title>
-      <link>http://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</link>
-      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</guid>
-      <description>
-
-&lt;p&gt;These are a few quick tips for when you&amp;rsquo;re experiencing problems with the Windows Store in Windows 8(.1)/9 and opening apps in Windows 8(.1)/9.&lt;/p&gt;
-
-&lt;h2 id=&#34;symptoms:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;Symptoms:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;clicking on a link to a Windows Store app shows a page telling you that the app could not be found&lt;/li&gt;
-&lt;li&gt;clicking on a tile in the Windows Store doesn&amp;rsquo;t do anything&lt;/li&gt;
-&lt;li&gt;the Windows Store doesn&amp;rsquo;t open&lt;/li&gt;
-&lt;li&gt;an installed app doesn&amp;rsquo;t open&lt;/li&gt;
-&lt;li&gt;an installed app tells you that you have to buy this app while you&amp;rsquo;ve already bought it&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;solutions:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;Solutions:&lt;/h2&gt;
-
-&lt;h3 id=&#34;for-problems-solely-related-to-the-windows-store:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;For problems solely related to the Windows Store&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Click on the Windows Store tile.&lt;/li&gt;
-&lt;li&gt;Touch the top of the screen and swipe it down (the gesture to close an app) and hold your mouse/finger at the bottom of the screen for at least 5 seconds.&lt;/li&gt;
-&lt;li&gt;After 5 seconds, release your mouse/finger.&lt;/li&gt;
-&lt;li&gt;Make sure you&amp;rsquo;re connected to the Internet.&lt;/li&gt;
-&lt;li&gt;Press R while holding the Windows key on your keyboard.&lt;/li&gt;
-&lt;li&gt;Type &lt;em&gt;wsreset&lt;/em&gt; and press enter.&lt;/li&gt;
-&lt;li&gt;The Windows Store should now pop up. Wait for it to load, this can take up to a minute.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;for-everything-else:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;For everything else&lt;/h3&gt;
-
-&lt;p&gt;Make sure you&amp;rsquo;ve done the above solution for problems related to the Windows Store.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Open the Windows Store.&lt;/li&gt;
-&lt;li&gt;Open the right charms bar (move your mouse to the bottom right corner of your screen).&lt;/li&gt;
-&lt;li&gt;Click on &lt;em&gt;app updates&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Press the &lt;em&gt;sync licenses&lt;/em&gt; button.&lt;/li&gt;
-&lt;li&gt;Press the &lt;em&gt;search updates&lt;/em&gt; button.&lt;/li&gt;
-&lt;li&gt;Now update all your apps.&lt;/li&gt;
-&lt;li&gt;Repeat this process once more if the problems persist.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;If this didn&amp;rsquo;t fix the problems you&amp;rsquo;re experiencing, you should &lt;a href=&#34;https://twitter.com/intent/tweet?text=@WindowsSupport%20&#34;&gt;contact Microsoft&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
