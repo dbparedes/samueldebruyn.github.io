@@ -8,8 +8,32 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Tue, 14 Jul 2015 12:45:28 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 15 Jul 2015 13:21:45 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Wercker step to validate hugo themes</title>
+      <link>http://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</link>
+      <pubDate>Wed, 15 Jul 2015 13:21:45 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</guid>
+      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;search/?q=hugo&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As I &lt;a href=&#34;2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
+
+&lt;p&gt;There wasn&amp;rsquo;t any, so I simply wrote a build step for &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The build step validates a hugo theme using &lt;a href=&#34;https://github.com/spf13/HugoBasicExample&#34;&gt;an example site&lt;/a&gt;. It also checks if you included some files required for a future hugo themes site.&lt;/p&gt;
+
+&lt;p&gt;The code for the build step is available at &lt;a href=&#34;https://github.com/SamuelDebruyn/wercker-step-hugo-theme-check&#34;&gt;https://github.com/SamuelDebruyn/wercker-step-hugo-theme-check&lt;/a&gt; and an example &lt;em&gt;wercker.yml&lt;/em&gt; configuration is included below.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;box: debian
+build:
+  steps:
+    - samueldebruyn/hugo-theme-check:
+        version: &amp;quot;0.14&amp;quot;
+        theme: material-lite
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Continuous integration with hugo and Wercker</title>
@@ -314,19 +338,6 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     </item>
     
     <item>
-      <title>LinkedIn</title>
-      <link>http://sa.muel.be/linkedin-nl/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/linkedin-nl/</guid>
-      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
-&lt;/script&gt;</description>
-    </item>
-    
-    <item>
       <title>GitHub</title>
       <link>http://sa.muel.be/github/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
@@ -349,6 +360,19 @@ window.location = &#34;https://github.com/samueldebruyn&#34;;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
 window.location = &#34;https://be.linkedin.com/in/samueldebruyn&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>LinkedIn</title>
+      <link>http://sa.muel.be/linkedin-nl/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/linkedin-nl/</guid>
+      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
 &lt;/script&gt;</description>
     </item>
     
@@ -585,39 +609,6 @@ adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Se
 &lt;/ol&gt;
 
 &lt;p&gt;I was surprised to find out about this possibility. This way you can try the new Windows &lt;em&gt;in full&lt;/em&gt; without compromising your production environment.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Queue for MessageDialog in Windows RT</title>
-      <link>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</link>
-      <pubDate>Wed, 20 Aug 2014 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</guid>
-      <description>&lt;p&gt;When I write Windows Store applications, I use MessageDialog a lot.
-It&amp;rsquo;s the easiest way to show a quick informative pop-up message or a question to the user.
-However, when you tend to use this quite often, you&amp;rsquo;ll probably run into a problem.&lt;/p&gt;
-
-&lt;p&gt;The Windows Runtime framework doesn&amp;rsquo;t allow you to stack MessageDialogs, queue them etc.
-So if you need to display one, you&amp;rsquo;ll have to make sure that no other MessageDialog is already open.
-Checking if there is an open MessageDialog is not that easy unless you keep references to all the MessageDialogs you create.
-There are a few cases in which this would be annoying.&lt;/p&gt;
-
-&lt;p&gt;The singleton class below will make sure that you can queue MessageDialogs and that this problem will never occur.&lt;/p&gt;
-
-&lt;p&gt;Instead of using&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;myDialog.ShowAsync()
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;use&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;MessageDialogQueue.PushMessageDialog(myDialog)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;The dialog will be displayed after all previous MessageDialogs are closed. Do this for all your MessageDialogs or you&amp;rsquo;ll still run into the problem I mentioned.&lt;/p&gt;
-
-&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/efaf5ae8e0af3ac2e0d9.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
     </item>
     
