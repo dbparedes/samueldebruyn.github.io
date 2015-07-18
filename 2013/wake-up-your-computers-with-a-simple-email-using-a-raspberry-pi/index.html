@@ -143,7 +143,7 @@
     <h1 class="post-title">Wake up your computer(s) with a simple email using a Raspberry Pi</h1>
     
 
-<h2 id="introduction:dbf9f36c9e2d4d6df9807892c287268d">Introduction</h2>
+<h2 id="introduction:4dbe74a959a15e10538c8aa162f12748">Introduction</h2>
 
 <p>I have a <a href="https://www.spotify.com/be-nl/get-spotify/go/premium/">Spotify Premium subscription</a> but I also have a few CDs which are not available on streaming services. I don&rsquo;t like the whole process of syncing files, that&rsquo;s why I took a Spotify subscription in the first place.  Google offers a solution with <a href="https://play.google.com/about/music/">Play Music</a>: you can upload up to 20,000 songs to their servers for free and stream them to all of your devices. I didn&rsquo;t use this because the Google Play Music app was too slow for my previous phone (<a href="http://www.android.com/devices/detail/nexus-s">Google Nexus S</a>). So I decided to put my CDs on a computer and use that computer as a server with <a href="http://www.tonido.com/tonidodesktop/">Tonido</a>. This way I could stream my music over the Internet to all of my devices. As a plus I could also put all my photos on this device so that I could show them to friends or family wherever I am.</p>
 
@@ -151,7 +151,7 @@
 
 <p>I want my computer to be available when I need it and to be in standby mode when I don&rsquo;t need it. This way the computer boots up in a few seconds when I wake it up. I want to be able to wake it up from all over the world. I have a <a href="http://www.raspberrypi.org/faqs#introWhatIs">Raspberry Pi</a> which is always on and <a href="http://www.raspberrypi.org/faqs#power">doesn&rsquo;t require much power</a>. So I created a way to send an <strong>email to a certain address which then wakes up my computer</strong> within the minute.</p>
 
-<h2 id="requirements:dbf9f36c9e2d4d6df9807892c287268d">Requirements</h2>
+<h2 id="requirements:4dbe74a959a15e10538c8aa162f12748">Requirements</h2>
 
 <ul>
 <li>working Raspberry Pi (or similar device with Linux and python) with a constant connection to the Internet</li>
@@ -159,9 +159,9 @@
 <li>Email account (preferably Gmail or an unused mailbox)</li>
 </ul>
 
-<h2 id="setup:dbf9f36c9e2d4d6df9807892c287268d">Setup</h2>
+<h2 id="setup:4dbe74a959a15e10538c8aa162f12748">Setup</h2>
 
-<h3 id="on-the-computer:dbf9f36c9e2d4d6df9807892c287268d">On the computer</h3>
+<h3 id="on-the-computer:4dbe74a959a15e10538c8aa162f12748">On the computer</h3>
 
 <ol>
 <li>Make sure the computer goes to sleep when you don&rsquo;t use it. In Windows you can find this setting by searching for <em>power</em>. I have my computer set to go to sleep after 3 hours of inactivity. If you have trouble putting your computer to sleep you can analyze the problems <a href="http://technet.microsoft.com/en-us/library/cc748940(v=ws.10">using the powercfg command</a>.aspx).</li>
@@ -169,7 +169,7 @@
 <li><a href="http://technet.microsoft.com/en-us/library/gg252549(v=ws.10">Find the MAC address</a>.aspx) of the connected network adapter.</li>
 </ol>
 
-<h3 id="in-your-gmail-http-www-gmail-com-account:dbf9f36c9e2d4d6df9807892c287268d">In your <a href="http://www.gmail.com">Gmail</a> account</h3>
+<h3 id="in-your-gmail-http-www-gmail-com-account:4dbe74a959a15e10538c8aa162f12748">In your <a href="http://www.gmail.com">Gmail</a> account</h3>
 
 <p>Create a new filter for a specific email address. You can use <em>yourusername<strong>+anythingyouwant</strong>@gmail.com</em></p>
 
@@ -181,7 +181,7 @@
 <li>Enable IMAP (Settings &gt; Forwarding &amp; POP/IMAP &gt; Enable IMAP)</li>
 </ol>
 
-<h3 id="on-your-raspberry-pi:dbf9f36c9e2d4d6df9807892c287268d">On your Raspberry Pi</h3>
+<h3 id="on-your-raspberry-pi:4dbe74a959a15e10538c8aa162f12748">On your Raspberry Pi</h3>
 
 <p>I assume you know how to log in to your Raspberry Pi in command line, over SSH or directly. There is a lot of documentation <a href="http://elinux.org/RPi_Remote_Access">available</a> on their website.</p>
 
@@ -215,7 +215,7 @@ mail.logout()
 <li><p>Save the file using CTRL+X</p></li>
 </ul>
 
-<h2 id="done:dbf9f36c9e2d4d6df9807892c287268d">Done!</h2>
+<h2 id="done:4dbe74a959a15e10538c8aa162f12748">Done!</h2>
 
 <p>Now you can send an email to the address you choose in the Gmail part above and your computer will wake up within the minute!</p>
 

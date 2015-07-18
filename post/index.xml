@@ -43,29 +43,29 @@ build:
       <guid>http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</guid>
       <description>
 
-&lt;h2 id=&#34;why:69c80089d05fdd2054b064aa7b5afcfe&#34;&gt;Why?&lt;/h2&gt;
+&lt;h2 id=&#34;why:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;Why?&lt;/h2&gt;
 
 &lt;p&gt;Who doesn&amp;rsquo;t love &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;? It&amp;rsquo;s the easiest way to create a simple website about a repository and you can even use &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; to start blogging.&lt;/p&gt;
 
 &lt;p&gt;As I recently switched from Jekyll to &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;, I needed a new way to enable continuous integration for my blog.&lt;/p&gt;
 
-&lt;h2 id=&#34;new-to-ci:69c80089d05fdd2054b064aa7b5afcfe&#34;&gt;New to CI?&lt;/h2&gt;
+&lt;h2 id=&#34;new-to-ci:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;New to CI?&lt;/h2&gt;
 
 &lt;p&gt;Continuous integration, or CI, means that your code is automatically built, tested and/or deployed after each push. Every time you push some commits to a remote repository, the code in that repository is being built.&lt;/p&gt;
 
 &lt;p&gt;I usually have a branch called &lt;em&gt;develop&lt;/em&gt; to which I push fresh code. Then a CI tool checks if that code builds properly and if it does, I merge it to my &lt;em&gt;master&lt;/em&gt; branch. It&amp;rsquo;s a lot like &lt;a href=&#34;https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow&#34;&gt;Git Flow&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;what-about-hugo-and-github-pages:69c80089d05fdd2054b064aa7b5afcfe&#34;&gt;What about hugo and GitHub Pages?&lt;/h2&gt;
+&lt;h2 id=&#34;what-about-hugo-and-github-pages:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;What about hugo and GitHub Pages?&lt;/h2&gt;
 
 &lt;p&gt;You could setup a CI tool to build your code after every push on every branch and deploy it to GitHub Pages after a successful build on your stable/&lt;em&gt;master&lt;/em&gt; branch.&lt;/p&gt;
 
-&lt;h2 id=&#34;in-comes-wercker:69c80089d05fdd2054b064aa7b5afcfe&#34;&gt;In comes Wercker&lt;/h2&gt;
+&lt;h2 id=&#34;in-comes-wercker:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;In comes Wercker&lt;/h2&gt;
 
 &lt;p&gt;I used to use &lt;a href=&#34;http://travis-ci.org&#34;&gt;Travis&lt;/a&gt; for all my CI needs, but then I came across &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt; in the &lt;a href=&#34;http://gohugo.io/tutorials/automated-deployments/&#34;&gt;hugo docs&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Wercker simplifies CI a lot and relies on &lt;a href=&#34;http://docker.com&#34;&gt;Docker&lt;/a&gt; for its build environments. It also allows you to deploy your builds to different environments (e.g. production, staging, testing&amp;hellip;) Hugo has a guide about how to set it up, but it&amp;rsquo;s a little bit outdated. I might just send a pull request with an update in a few days. Wercker also has a lot of documentation. So with the examples below, you should be able to easily walk through the setup.&lt;/p&gt;
 
-&lt;h3 id=&#34;setting-it-up:69c80089d05fdd2054b064aa7b5afcfe&#34;&gt;Setting it up&lt;/h3&gt;
+&lt;h3 id=&#34;setting-it-up:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;Setting it up&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Create a new Wercker app based on the repository containing your hugo source code and give Wercker access rights. You can leave everything else on the default settings. If you&amp;rsquo;d like a badge showing your build status, make sure your app is public.&lt;/li&gt;
@@ -115,7 +115,7 @@ deploy:
 &lt;p&gt;Push a commit with that file and Wercker should happily start building and deploying your code!&lt;/p&gt;&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;a-few-examples:69c80089d05fdd2054b064aa7b5afcfe&#34;&gt;A few examples&lt;/h3&gt;
+&lt;h3 id=&#34;a-few-examples:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;A few examples&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;the hugo source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;https://github.com/SamuelDebruyn/sa.muel.be-hugo&lt;/a&gt;&lt;/li&gt;
@@ -149,11 +149,11 @@ deploy:
       <guid>http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/</guid>
       <description>
 
-&lt;h2 id=&#34;a-good-blogging-platform:57055f3baf8c62a101a577dbb24c22b2&#34;&gt;A good blogging platform&lt;/h2&gt;
+&lt;h2 id=&#34;a-good-blogging-platform:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;A good blogging platform&lt;/h2&gt;
 
 &lt;p&gt;What makes a good blogging platform really good? Well, that depends on the blogger. Programmers would need different features than make-up bloggers. As a programmer, I need to be able to easily integrate pieces of code with syntax highlighting in my posts and I&amp;rsquo;d prefer writing them in my favourite text/code editor instead of in a WYSIWYG editor.&lt;/p&gt;
 
-&lt;h2 id=&#34;jekyll:57055f3baf8c62a101a577dbb24c22b2&#34;&gt;Jekyll&lt;/h2&gt;
+&lt;h2 id=&#34;jekyll:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Jekyll&lt;/h2&gt;
 
 &lt;p&gt;A static site generator like &lt;a href=&#34;http://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt; fulfils (almost) all my needs as a programmer/blogger:&lt;/p&gt;
 
@@ -172,7 +172,7 @@ deploy:
 &lt;li&gt;setting it up can be quite bothersome, again, especially on Windows&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;hugo:57055f3baf8c62a101a577dbb24c22b2&#34;&gt;Hugo&lt;/h2&gt;
+&lt;h2 id=&#34;hugo:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Hugo&lt;/h2&gt;
 
 &lt;p&gt;A few other static site generators &lt;a href=&#34;https://www.staticgen.com&#34;&gt;have sprung up&lt;/a&gt; since Jekyll&amp;rsquo;s success.&lt;/p&gt;
 
@@ -182,7 +182,7 @@ deploy:
 
 &lt;p&gt;I&amp;rsquo;ve successfully migrated my &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io/tree/5f5719a9d4519f8fbd4cdfffa2a10b3f066401ef&#34;&gt;Jekyll blog&lt;/a&gt; to &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;hugo&lt;/a&gt; and haven&amp;rsquo;t regretted it ever since.&lt;/p&gt;
 
-&lt;h2 id=&#34;disadvantages:57055f3baf8c62a101a577dbb24c22b2&#34;&gt;Disadvantages&lt;/h2&gt;
+&lt;h2 id=&#34;disadvantages:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Disadvantages&lt;/h2&gt;
 
 &lt;p&gt;One of the major disadvantages of hugo, or any static site generator for that matter, is integrating &lt;strong&gt;search&lt;/strong&gt;. You need some &lt;a href=&#34;http://discuss.gohugo.io/t/how-are-you-implementing-site-search/986/14&#34;&gt;JavaScript magic&lt;/a&gt; or a 3rd party search provider like &lt;a href=&#34;https://cse.google.com&#34;&gt;Google Custom Search Engine&lt;/a&gt; (which I went for).&lt;/p&gt;
 
@@ -200,7 +200,7 @@ deploy:
       <guid>http://sa.muel.be/2015/recovering-a-hacked-wordpress/</guid>
       <description>
 
-&lt;h2 id=&#34;introduction:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;A few weeks ago, I had to &lt;a href=&#34;http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;repair a hacked WordPress&lt;/a&gt; installation.&lt;/p&gt;
 
@@ -214,53 +214,53 @@ deploy:
 
 &lt;p&gt;The WordPress version I used to write this post is 4.2.2.&lt;/p&gt;
 
-&lt;h2 id=&#34;disabling-all-plugins-going-into-maintenance-mode:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Disabling all plugins / going into maintenance mode&lt;/h2&gt;
+&lt;h2 id=&#34;disabling-all-plugins-going-into-maintenance-mode:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Disabling all plugins / going into maintenance mode&lt;/h2&gt;
 
 &lt;p&gt;The first thing you should do is avoiding further infections. &lt;strong&gt;Disable EVERY plugin&lt;/strong&gt;. We&amp;rsquo;ll reactivate them later on.&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;d also put the website in maintenance mode. This requires, ironically, a plugin called &lt;a href=&#34;https://wordpress.org/plugins/wp-maintenance-mode/&#34;&gt;WP Maintenance Mode&lt;/a&gt;. Install it, write a quick message for your visitors and enable it.&lt;/p&gt;
 
-&lt;h2 id=&#34;take-a-backup:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Take a backup&lt;/h2&gt;
+&lt;h2 id=&#34;take-a-backup:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Take a backup&lt;/h2&gt;
 
 &lt;p&gt;Backup your complete WordPress folder and database. You can download all the files using FTP or SSH and export the database to SQL statements using something like &lt;a href=&#34;http://www.phpmyadmin.net/home_page/index.php&#34;&gt;phpMyAdmin&lt;/a&gt; or the customer panel of your host (CPanel, DirectAdmin&amp;hellip;). Don&amp;rsquo;t store the backup on your webserver as the hackers could also infect this backup.&lt;/p&gt;
 
-&lt;h2 id=&#34;restore-the-original-wordpress-files:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Restore the original WordPress files&lt;/h2&gt;
+&lt;h2 id=&#34;restore-the-original-wordpress-files:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restore the original WordPress files&lt;/h2&gt;
 
 &lt;p&gt;Download &lt;a href=&#34;https://wordpress.org/download/release-archive/&#34;&gt;a fresh copy of the version of WordPress&lt;/a&gt; you were using (which should always be the latest one). Unpack it and replace the directories &lt;em&gt;wp-admin&lt;/em&gt; and &lt;em&gt;wp-includes&lt;/em&gt; completely with the copy you just downloaded. Do the same with every file in the root folder and remove every file in your root that is not in the downloaded copy except for &lt;em&gt;wp-config.php&lt;/em&gt;. The &lt;strong&gt;only folder left untouched should be &lt;em&gt;wp-content&lt;/em&gt;&lt;/strong&gt;. WordPress also doesn&amp;rsquo;t include the &lt;em&gt;wp-config.php&lt;/em&gt; file so that should also be preserved (we&amp;rsquo;ll inspect this file later on in this guide).&lt;/p&gt;
 
-&lt;h2 id=&#34;clearing-the-cache:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Clearing the cache&lt;/h2&gt;
+&lt;h2 id=&#34;clearing-the-cache:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Clearing the cache&lt;/h2&gt;
 
 &lt;p&gt;Delete the folders &lt;em&gt;wp-content/cache&lt;/em&gt; and &lt;em&gt;wp-content/plugins/widgets&lt;/em&gt;. They will be automatically recreated.&lt;/p&gt;
 
-&lt;h2 id=&#34;regenerate-salts-and-hashes:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Regenerate salts and hashes&lt;/h2&gt;
+&lt;h2 id=&#34;regenerate-salts-and-hashes:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Regenerate salts and hashes&lt;/h2&gt;
 
 &lt;p&gt;The &lt;em&gt;wp-config.php&lt;/em&gt; file contains a few hashes and salts to make sure that your cookies and sessions are unique and secure. As these could have been compromised, it&amp;rsquo;s &lt;strong&gt;absolutely necessary&lt;/strong&gt; to regenerate them. Open your &lt;em&gt;wp-config.php&lt;/em&gt; file in a text editor and overwrite your new hashes with new ones. WordPress offers &lt;a href=&#34;https://api.wordpress.org/secret-key/1.1/salt/&#34;&gt;an online generator&lt;/a&gt; so you can easily copy and paste them.&lt;/p&gt;
 
-&lt;h2 id=&#34;upgrade-to-the-latest-version:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Upgrade to the latest version&lt;/h2&gt;
+&lt;h2 id=&#34;upgrade-to-the-latest-version:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Upgrade to the latest version&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re not on the latest version of WordPress, then update ASAP. I&amp;rsquo;d recommend using &lt;a href=&#34;https://codex.wordpress.org/Upgrading_WordPress_-_Extended_Instructions&#34;&gt;these extended instructions&lt;/a&gt; instead of the built-in updater, but the built-in updater should be fine for most infected websites.&lt;/p&gt;
 
 &lt;p&gt;&lt;strong&gt;Upgrade all your themes and plugins&lt;/strong&gt; while you&amp;rsquo;re at it.&lt;/p&gt;
 
-&lt;h2 id=&#34;restore-the-original-themes-and-plugins:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Restore the original themes and plugins&lt;/h2&gt;
+&lt;h2 id=&#34;restore-the-original-themes-and-plugins:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restore the original themes and plugins&lt;/h2&gt;
 
 &lt;p&gt;In this step we&amp;rsquo;re going to restore the original theme and plugin files like we did with the original WordPress files. Download the &lt;a href=&#34;https://wordpress.org/themes/&#34;&gt;themes&lt;/a&gt; and &lt;a href=&#34;https://wordpress.org/plugins/&#34;&gt;plugins&lt;/a&gt; from wordpress.org or from the website of the publisher of the plugin or theme (for premium/payed versions). All you need to do is unpack the files into their respective directories in &lt;em&gt;wp-content/themes&lt;/em&gt; and &lt;em&gt;wp-content/plugins&lt;/em&gt;. Make sure there are no other files than the ones you just replaced in both of these folders.&lt;/p&gt;
 
 &lt;p&gt;NB: some plugins (e.g. plugins containing &lt;a href=&#34;http://wpengineer.com/2500/wordpress-dropins/&#34;&gt;drop-ins&lt;/a&gt;) like &lt;a href=&#34;https://wordpress.org/plugins/wp-super-cache/&#34;&gt;WP Super Cache&lt;/a&gt; also put PHP files in your &lt;em&gt;wp-content&lt;/em&gt; directory.&lt;/p&gt;
 
-&lt;h2 id=&#34;search-and-delete-infections-in-your-files:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Search and delete infections in your files&lt;/h2&gt;
+&lt;h2 id=&#34;search-and-delete-infections-in-your-files:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Search and delete infections in your files&lt;/h2&gt;
 
 &lt;p&gt;The only infected files left could be stored in the subfolders of &lt;em&gt;wp-content&lt;/em&gt; that we haven&amp;rsquo;t looked into yet.&lt;/p&gt;
 
-&lt;h3 id=&#34;languages:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;languages&lt;/h3&gt;
+&lt;h3 id=&#34;languages:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;languages&lt;/h3&gt;
 
 &lt;p&gt;If your WordPress is in English, you can safely delete the contents of the &lt;em&gt;languages&lt;/em&gt; folder, otherwise you should download the translation in your language and put in the &lt;em&gt;wp-content/languages&lt;/em&gt; while deleting everything else in it.&lt;/p&gt;
 
-&lt;h3 id=&#34;upgrade:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;upgrade&lt;/h3&gt;
+&lt;h3 id=&#34;upgrade:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;upgrade&lt;/h3&gt;
 
 &lt;p&gt;The folder &lt;em&gt;upgrade&lt;/em&gt; in &lt;em&gt;wp-content&lt;/em&gt; is used by WordPress&amp;rsquo; built-in updater and should always be empty except for when you&amp;rsquo;re updating of course.&lt;/p&gt;
 
-&lt;h3 id=&#34;uploads-and-other-folders:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;uploads and other folders&lt;/h3&gt;
+&lt;h3 id=&#34;uploads-and-other-folders:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;uploads and other folders&lt;/h3&gt;
 
 &lt;p&gt;Next up: search every other folder in &lt;em&gt;wp-content&lt;/em&gt; for PHP and server configuration files and delete files if you think they shouldn&amp;rsquo;t be there. I suggest doing a case insensitive search for &lt;em&gt;*.php&lt;/em&gt; and &lt;em&gt;.htaccess&lt;/em&gt; and carefully inspecting the results.&lt;/p&gt;
 
@@ -274,7 +274,7 @@ deploy:
 &lt;pre&gt;&lt;code&gt;egrep &#39;eval(|decode(&#39; -r -H /path/to/wordpress/wp-content/
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;search-and-delete-infections-in-your-database:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Search and delete infections in your database&lt;/h2&gt;
+&lt;h2 id=&#34;search-and-delete-infections-in-your-database:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Search and delete infections in your database&lt;/h2&gt;
 
 &lt;p&gt;While most infections are usually to be found in the files, hackers could also insert executable and obfuscated code into your database. Most often these are XSS injections and WordPress should protect you against them. Still, it wouldn&amp;rsquo;t hurt to scan your posts and comments for injected code.&lt;/p&gt;
 
@@ -302,7 +302,7 @@ UNION
 SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;using-exploit-scanner-and-sucuri-security-to-detect-further-infections:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Using &lt;em&gt;Exploit Scanner&lt;/em&gt; and &lt;em&gt;Sucuri Security&lt;/em&gt; to detect further infections&lt;/h2&gt;
+&lt;h2 id=&#34;using-exploit-scanner-and-sucuri-security-to-detect-further-infections:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Using &lt;em&gt;Exploit Scanner&lt;/em&gt; and &lt;em&gt;Sucuri Security&lt;/em&gt; to detect further infections&lt;/h2&gt;
 
 &lt;p&gt;Most code injections should be gone by now, but there are a few WordPress plugins available to detect everything that&amp;rsquo;s left.&lt;/p&gt;
 
@@ -312,19 +312,19 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
 
 &lt;p&gt;Take advantage of all possibilities of the free versions of both of them. They will make sure that your WordPress is clean and stays clean.&lt;/p&gt;
 
-&lt;h2 id=&#34;check-users-and-passwords:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Check users and passwords&lt;/h2&gt;
+&lt;h2 id=&#34;check-users-and-passwords:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Check users and passwords&lt;/h2&gt;
 
 &lt;p&gt;One of the last steps is to check if the hacker didn&amp;rsquo;t create any new users. While you&amp;rsquo;re at it, change the passwords of every user with more rights than a regular subscriber.&lt;/p&gt;
 
-&lt;h2 id=&#34;restoring-your-website-and-keeping-it-safe:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Restoring your website and keeping it safe&lt;/h2&gt;
+&lt;h2 id=&#34;restoring-your-website-and-keeping-it-safe:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restoring your website and keeping it safe&lt;/h2&gt;
 
 &lt;p&gt;Your WordPress should now be clean of infections and you can start restoring your website. Turn maintenance mode off and deactivate the &lt;em&gt;WP Maintenance Mode&lt;/em&gt; plugin. Now activate all the other plugins you used one by one. Make sure to &lt;strong&gt;delete any plugin you don&amp;rsquo;t really need&lt;/strong&gt; and check if they are still being maintained/updated. I&amp;rsquo;d also delete every inactive theme. This part of the guide is crucial since it was probably one of the plugins that was used to accomplish the hack.&lt;/p&gt;
 
-&lt;h2 id=&#34;harden-your-wordpress-security:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Harden your WordPress Security&lt;/h2&gt;
+&lt;h2 id=&#34;harden-your-wordpress-security:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Harden your WordPress Security&lt;/h2&gt;
 
 &lt;p&gt;A few weeks after this post, I&amp;rsquo;ll publish &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;a follow-up guide&lt;/a&gt; on improving the security on your WordPress website.&lt;/p&gt;
 
-&lt;h2 id=&#34;sources:f2974dd08b401ad9524c4d408196c0cd&#34;&gt;Sources&lt;/h2&gt;
+&lt;h2 id=&#34;sources:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Sources&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack&#34;&gt;http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack&lt;/a&gt;&lt;/li&gt;
@@ -428,7 +428,7 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
       <guid>http://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</guid>
       <description>
 
-&lt;h2 id=&#34;why-i-downgraded-my-nexus-5:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;Why I downgraded my Nexus 5&lt;/h2&gt;
+&lt;h2 id=&#34;why-i-downgraded-my-nexus-5:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Why I downgraded my Nexus 5&lt;/h2&gt;
 
 &lt;p&gt;About a year ago Google released &lt;a href=&#34;http://developer.android.com/preview/index.html&#34;&gt;Android L Developer Preview&lt;/a&gt;. This preview of the upcoming Android Lollipop (5.0) release contained a lot of bugs and was definitely not &lt;em&gt;daily driver&lt;/em&gt; material.&lt;/p&gt;
 
@@ -448,11 +448,11 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
 
 &lt;p&gt;I considered downgrading while I was on Android 5.0.1, but I quickly delayed this decision when I heard about the upcoming 5.1 update that would fix this memory leak. However, when I started noticing the second memory leak, I had it. Time to go back to the latest stable version: Android 4.4.4 KitKat.&lt;/p&gt;
 
-&lt;h2 id=&#34;how-i-downgraded:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;How I downgraded&lt;/h2&gt;
+&lt;h2 id=&#34;how-i-downgraded:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;How I downgraded&lt;/h2&gt;
 
 &lt;p&gt;The downgrade was quite simple: I unlocked my phone and flashed the 4.4.4 &lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;factory image&lt;/a&gt;. The next thing I did was rooting my phone, which later turned out to be necessary.&lt;/p&gt;
 
-&lt;h2 id=&#34;and-then-it-all-started:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;And then it all started&lt;/h2&gt;
+&lt;h2 id=&#34;and-then-it-all-started:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;And then it all started&lt;/h2&gt;
 
 &lt;p&gt;One of the reasons why I downgraded, was that Android 4.4.4 has remarkably better battery life than Android Lollipop. So when my battery started draining at more than 20% an hour, I knew that something was wrong. Also, the notification about the system update was impossible to remove.&lt;/p&gt;
 
@@ -460,7 +460,7 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
 &lt;p&gt;Yes, Google, I know. Now let me go on with my life, I don’t want your update.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;digging-a-little-deeper:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;Digging a little deeper&lt;/h2&gt;
+&lt;h2 id=&#34;digging-a-little-deeper:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Digging a little deeper&lt;/h2&gt;
 
 &lt;p&gt;Android used to have a service called SystemUpdateService in the Google Services Framework (preinstalled system app) that would handle OS updates. It seems like this was replaced by Google Play Services. The &lt;a href=&#34;https://developer.android.com/google/play-services/index.html&#34;&gt;Google Play Services&lt;/a&gt; app is updated automatically via the Google &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.gms&#34;&gt;Play Store&lt;/a&gt;. This app contains another SystemUpdateService and disables the SystemUpdateService in the Google Services Framework mentioned earlier.&lt;/p&gt;
 
@@ -488,13 +488,13 @@ adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Re
 adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;wow-that-was-complicated:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;Wow, that was complicated&lt;/h2&gt;
+&lt;h2 id=&#34;wow-that-was-complicated:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Wow, that was complicated&lt;/h2&gt;
 
 &lt;p&gt;For power users this probably wasn’t a lot of work, but this is a real annoyance for regular users. But regular users don’t buy Nexus devices, don’t they?&lt;/p&gt;
 
 &lt;p&gt;For years, we all &lt;a href=&#34;http://www.google.com/trends/explore#q=android%20fragmentation&amp;amp;cmpt=q&#34;&gt;complained about fragmentation&lt;/a&gt; and a lack of OS updates. Today it has become impossible to ignore an OS update due to the immense battery drain and the frustrating persistent notification.&lt;/p&gt;
 
-&lt;h2 id=&#34;this-post-is-all-about-nexus-devices-what-about-my-device:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;This post is all about Nexus devices, what about my device?&lt;/h2&gt;
+&lt;h2 id=&#34;this-post-is-all-about-nexus-devices-what-about-my-device:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;This post is all about Nexus devices, what about my device?&lt;/h2&gt;
 
 &lt;p&gt;Most Android devices come with Google services like the Google Play Store. This means they also come with Google Play Services or the Google Services Framework or both. So, if you ever want to downgrade your Android device to a stock image, be sure to disable those pesky receivers…&lt;/p&gt;
 </description>
@@ -605,7 +605,7 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
 
 &lt;p&gt;These are a few quick tips for when you&amp;rsquo;re experiencing problems with the Windows Store in Windows 8(.1)/9 and opening apps in Windows 8(.1)/9.&lt;/p&gt;
 
-&lt;h2 id=&#34;symptoms:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;Symptoms:&lt;/h2&gt;
+&lt;h2 id=&#34;symptoms:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;Symptoms:&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;clicking on a link to a Windows Store app shows a page telling you that the app could not be found&lt;/li&gt;
@@ -615,9 +615,9 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
 &lt;li&gt;an installed app tells you that you have to buy this app while you&amp;rsquo;ve already bought it&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;solutions:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;Solutions:&lt;/h2&gt;
+&lt;h2 id=&#34;solutions:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;Solutions:&lt;/h2&gt;
 
-&lt;h3 id=&#34;for-problems-solely-related-to-the-windows-store:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;For problems solely related to the Windows Store&lt;/h3&gt;
+&lt;h3 id=&#34;for-problems-solely-related-to-the-windows-store:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;For problems solely related to the Windows Store&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Click on the Windows Store tile.&lt;/li&gt;
@@ -629,7 +629,7 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
 &lt;li&gt;The Windows Store should now pop up. Wait for it to load, this can take up to a minute.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;for-everything-else:624d99da7bd700dd62bc62c8bfbc6ad3&#34;&gt;For everything else&lt;/h3&gt;
+&lt;h3 id=&#34;for-everything-else:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;For everything else&lt;/h3&gt;
 
 &lt;p&gt;Make sure you&amp;rsquo;ve done the above solution for problems related to the Windows Store.&lt;/p&gt;
 
@@ -744,7 +744,7 @@ auth required pam_google_authenticator.so
 &lt;pre&gt;&lt;code&gt;sudo service ssh restart
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;ntp:6e32e61779277bb1314177f85388b247&#34;&gt;NTP&lt;/h2&gt;
+&lt;h2 id=&#34;ntp:a354de51d09f492e98f062205a9fe7ab&#34;&gt;NTP&lt;/h2&gt;
 
 &lt;p&gt;Ahtanu has &lt;a href=&#34;https://twitter.com/ahtanu/status/432092745348677632&#34;&gt;let me know&lt;/a&gt; via Twitter that you&amp;rsquo;d better make sure your device is properly configured as an NTP client. Most desktop Linux distributions have this already in order but here are the instructions for Debian-based distributions to make sure NTP is configured properly.&lt;/p&gt;
 
@@ -788,7 +788,7 @@ server 3.be.pool.ntp.org
       <guid>http://sa.muel.be/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</guid>
       <description>
 
-&lt;h2 id=&#34;introduction:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;I have a &lt;a href=&#34;https://www.spotify.com/be-nl/get-spotify/go/premium/&#34;&gt;Spotify Premium subscription&lt;/a&gt; but I also have a few CDs which are not available on streaming services. I don&amp;rsquo;t like the whole process of syncing files, that&amp;rsquo;s why I took a Spotify subscription in the first place.  Google offers a solution with &lt;a href=&#34;https://play.google.com/about/music/&#34;&gt;Play Music&lt;/a&gt;: you can upload up to 20,000 songs to their servers for free and stream them to all of your devices. I didn&amp;rsquo;t use this because the Google Play Music app was too slow for my previous phone (&lt;a href=&#34;http://www.android.com/devices/detail/nexus-s&#34;&gt;Google Nexus S&lt;/a&gt;). So I decided to put my CDs on a computer and use that computer as a server with &lt;a href=&#34;http://www.tonido.com/tonidodesktop/&#34;&gt;Tonido&lt;/a&gt;. This way I could stream my music over the Internet to all of my devices. As a plus I could also put all my photos on this device so that I could show them to friends or family wherever I am.&lt;/p&gt;
 
@@ -796,7 +796,7 @@ server 3.be.pool.ntp.org
 
 &lt;p&gt;I want my computer to be available when I need it and to be in standby mode when I don&amp;rsquo;t need it. This way the computer boots up in a few seconds when I wake it up. I want to be able to wake it up from all over the world. I have a &lt;a href=&#34;http://www.raspberrypi.org/faqs#introWhatIs&#34;&gt;Raspberry Pi&lt;/a&gt; which is always on and &lt;a href=&#34;http://www.raspberrypi.org/faqs#power&#34;&gt;doesn&amp;rsquo;t require much power&lt;/a&gt;. So I created a way to send an &lt;strong&gt;email to a certain address which then wakes up my computer&lt;/strong&gt; within the minute.&lt;/p&gt;
 
-&lt;h2 id=&#34;requirements:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Requirements&lt;/h2&gt;
+&lt;h2 id=&#34;requirements:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Requirements&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;working Raspberry Pi (or similar device with Linux and python) with a constant connection to the Internet&lt;/li&gt;
@@ -804,9 +804,9 @@ server 3.be.pool.ntp.org
 &lt;li&gt;Email account (preferably Gmail or an unused mailbox)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;setup:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Setup&lt;/h2&gt;
+&lt;h2 id=&#34;setup:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Setup&lt;/h2&gt;
 
-&lt;h3 id=&#34;on-the-computer:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;On the computer&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-computer:4dbe74a959a15e10538c8aa162f12748&#34;&gt;On the computer&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Make sure the computer goes to sleep when you don&amp;rsquo;t use it. In Windows you can find this setting by searching for &lt;em&gt;power&lt;/em&gt;. I have my computer set to go to sleep after 3 hours of inactivity. If you have trouble putting your computer to sleep you can analyze the problems &lt;a href=&#34;http://technet.microsoft.com/en-us/library/cc748940(v=ws.10&#34;&gt;using the powercfg command&lt;/a&gt;.aspx).&lt;/li&gt;
@@ -814,7 +814,7 @@ server 3.be.pool.ntp.org
 &lt;li&gt;&lt;a href=&#34;http://technet.microsoft.com/en-us/library/gg252549(v=ws.10&#34;&gt;Find the MAC address&lt;/a&gt;.aspx) of the connected network adapter.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;in-your-gmail-http-www-gmail-com-account:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;In your &lt;a href=&#34;http://www.gmail.com&#34;&gt;Gmail&lt;/a&gt; account&lt;/h3&gt;
+&lt;h3 id=&#34;in-your-gmail-http-www-gmail-com-account:4dbe74a959a15e10538c8aa162f12748&#34;&gt;In your &lt;a href=&#34;http://www.gmail.com&#34;&gt;Gmail&lt;/a&gt; account&lt;/h3&gt;
 
 &lt;p&gt;Create a new filter for a specific email address. You can use &lt;em&gt;yourusername&lt;strong&gt;+anythingyouwant&lt;/strong&gt;@gmail.com&lt;/em&gt;&lt;/p&gt;
 
@@ -826,7 +826,7 @@ server 3.be.pool.ntp.org
 &lt;li&gt;Enable IMAP (Settings &amp;gt; Forwarding &amp;amp; POP/IMAP &amp;gt; Enable IMAP)&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;on-your-raspberry-pi:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;On your Raspberry Pi&lt;/h3&gt;
+&lt;h3 id=&#34;on-your-raspberry-pi:4dbe74a959a15e10538c8aa162f12748&#34;&gt;On your Raspberry Pi&lt;/h3&gt;
 
 &lt;p&gt;I assume you know how to log in to your Raspberry Pi in command line, over SSH or directly. There is a lot of documentation &lt;a href=&#34;http://elinux.org/RPi_Remote_Access&#34;&gt;available&lt;/a&gt; on their website.&lt;/p&gt;
 
@@ -860,7 +860,7 @@ mail.logout()
 &lt;li&gt;&lt;p&gt;Save the file using CTRL+X&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;done:dbf9f36c9e2d4d6df9807892c287268d&#34;&gt;Done!&lt;/h2&gt;
+&lt;h2 id=&#34;done:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Done!&lt;/h2&gt;
 
 &lt;p&gt;Now you can send an email to the address you choose in the Gmail part above and your computer will wake up within the minute!&lt;/p&gt;
 </description>
