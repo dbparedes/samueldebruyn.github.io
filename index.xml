@@ -8,8 +8,22 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Wed, 15 Jul 2015 13:21:45 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 18 Jul 2015 16:06:12 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rood Fluweel Bali</title>
+      <link>http://sa.muel.be/portfolio/rood-fluweel/</link>
+      <pubDate>Sat, 18 Jul 2015 16:06:12 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/rood-fluweel/</guid>
+      <description>&lt;p&gt;Rood Fluweel Bali is a Windows Store app, designed for Windows 8.1 desktops and tablets. I made this app for &lt;a href=&#34;http://www.comm-it.be&#34;&gt;Comm-IT&lt;/a&gt; as part of a summer job.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.roodfluweel.be&#34;&gt;Rood Fluweel&lt;/a&gt; is a SaaS made on top of ASP.NET. It can manage ticketing, reservations, payments etc.&lt;/p&gt;
+
+&lt;p&gt;The goal of the Windows Store app is to make it easier to print and create tickets when a lot of people are coming through the entrance at once.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Wercker step to validate hugo themes</title>
@@ -338,6 +352,19 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     </item>
     
     <item>
+      <title>LinkedIn</title>
+      <link>http://sa.muel.be/linkedin-nl/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/linkedin-nl/</guid>
+      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
       <title>GitHub</title>
       <link>http://sa.muel.be/github/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
@@ -360,19 +387,6 @@ window.location = &#34;https://github.com/samueldebruyn&#34;;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
 window.location = &#34;https://be.linkedin.com/in/samueldebruyn&#34;;
-&lt;/script&gt;</description>
-    </item>
-    
-    <item>
-      <title>LinkedIn</title>
-      <link>http://sa.muel.be/linkedin-nl/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/linkedin-nl/</guid>
-      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
 &lt;/script&gt;</description>
     </item>
     
@@ -577,38 +591,6 @@ adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Se
 &lt;h2 id=&#34;this-post-is-all-about-nexus-devices-what-about-my-device:6c02c6a4dd61b566c2327f4a8035a1d9&#34;&gt;This post is all about Nexus devices, what about my device?&lt;/h2&gt;
 
 &lt;p&gt;Most Android devices come with Google services like the Google Play Store. This means they also come with Google Play Services or the Google Services Framework or both. So, if you ever want to downgrade your Android device to a stock image, be sure to disable those pesky receivers…&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Natively boot Windows 10 Technical Preview with a virtual HDD</title>
-      <link>http://sa.muel.be/2015/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/</link>
-      <pubDate>Sun, 25 Jan 2015 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/</guid>
-      <description>&lt;p&gt;A few days ago &lt;a href=&#34;https://insider.windows.com&#34;&gt;Microsoft released a new build for Windows 10&lt;/a&gt; and I wanted to give it a try. However, I didn&amp;rsquo;t want to resize my partitions or overwrite my Windows 8.1 partition.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Well, then install it in a VM!&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Then I wouldn&amp;rsquo;t have access to all of my RAM and CPU, so that wasn&amp;rsquo;t a solution either. However, I found the ideal solution.&lt;/p&gt;
-
-&lt;p&gt;Apparently you can &lt;strong&gt;install Windows in a virtual hard drive&lt;/strong&gt;. Let me guide you through:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Create a new VHD-file and remember the path to it. You can use &lt;em&gt;Disk Management&lt;/em&gt; (run &lt;code&gt;diskmgmt.msc&lt;/code&gt;) and click &lt;em&gt;Action&lt;/em&gt; and &lt;em&gt;Create VHD&lt;/em&gt;. I made it about 70 GB big with a dynamic size.&lt;/li&gt;
-&lt;li&gt;Boot into the Windows installation (use &lt;a href=&#34;https://rufus.akeo.ie/&#34;&gt;Rufus&lt;/a&gt; or something similar to create a bootable USB stick).&lt;/li&gt;
-&lt;li&gt;Select &lt;em&gt;Custom: Install Windows only (Advanced)&lt;/em&gt;, not an &lt;em&gt;Upgrade&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Now you have to select the partition on which you want to install Windows. Press &lt;em&gt;SHIFT+F10&lt;/em&gt; to open a command prompt instead.&lt;/li&gt;
-&lt;li&gt;Enter &lt;code&gt;diskpart&lt;/code&gt; to open the DiskPart utility.&lt;/li&gt;
-&lt;li&gt;In DiskPart enter &lt;code&gt;select vdisk file=C:\Windows10.vhd&lt;/code&gt; with the correct path to your VHD to select the VHD.&lt;/li&gt;
-&lt;li&gt;Now enter &lt;code&gt;attach vdisk&lt;/code&gt; and close the command prompt.&lt;/li&gt;
-&lt;li&gt;If you now press &lt;em&gt;Refresh&lt;/em&gt; you will see unallocated space on a newly added disk station, that is your virtual hard drive. Select it.&lt;/li&gt;
-&lt;li&gt;You can now continue installing Windows as usual.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I was surprised to find out about this possibility. This way you can try the new Windows &lt;em&gt;in full&lt;/em&gt; without compromising your production environment.&lt;/p&gt;
 </description>
     </item>
     

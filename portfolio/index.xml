@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Portfolios on Samuel Debruyn</title>
+    <link>http://sa.muel.be/portfolio/</link>
+    <description>Recent content in Portfolios on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Sat, 18 Jul 2015 16:06:12 +0200</lastBuildDate>
+    <atom:link href="http://sa.muel.be/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Rood Fluweel Bali</title>
+      <link>http://sa.muel.be/portfolio/rood-fluweel/</link>
+      <pubDate>Sat, 18 Jul 2015 16:06:12 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/rood-fluweel/</guid>
+      <description>&lt;p&gt;Rood Fluweel Bali is a Windows Store app, designed for Windows 8.1 desktops and tablets. I made this app for &lt;a href=&#34;http://www.comm-it.be&#34;&gt;Comm-IT&lt;/a&gt; as part of a summer job.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://www.roodfluweel.be&#34;&gt;Rood Fluweel&lt;/a&gt; is a SaaS made on top of ASP.NET. It can manage ticketing, reservations, payments etc.&lt;/p&gt;
+
+&lt;p&gt;The goal of the Windows Store app is to make it easier to print and create tickets when a lot of people are coming through the entrance at once.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
