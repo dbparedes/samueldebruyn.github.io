@@ -352,19 +352,6 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     </item>
     
     <item>
-      <title>GitHub</title>
-      <link>http://sa.muel.be/github/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/github/</guid>
-      <description>You will be redirected to my GitHub page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://github.com/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://github.com/samueldebruyn&#34;;
-&lt;/script&gt;</description>
-    </item>
-    
-    <item>
       <title>LinkedIn</title>
       <link>http://sa.muel.be/linkedin-nl/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
@@ -374,6 +361,19 @@ window.location = &#34;https://github.com/samueldebruyn&#34;;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
 window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>http://sa.muel.be/github/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/github/</guid>
+      <description>You will be redirected to my GitHub page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://github.com/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://github.com/samueldebruyn&#34;;
 &lt;/script&gt;</description>
     </item>
     
