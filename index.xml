@@ -8,8 +8,22 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Mon, 20 Jul 2015 12:03:38 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2015 13:45:55 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>B&amp;B Go Eun API</title>
+      <link>http://sa.muel.be/portfolio/bb-go-eun-api/</link>
+      <pubDate>Mon, 20 Jul 2015 13:45:55 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/bb-go-eun-api/</guid>
+      <description>&lt;p&gt;This API was made for the &lt;a href=&#34;http://sa.muel.be/portfolio/bb-go-eun/&#34;&gt;Android app B&amp;amp;B Go Eun&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;It is written in PHP and built on top of &lt;a href=&#34;http://cakephp.org/&#34;&gt;CakePHP&lt;/a&gt;. The API returns all results in JSON and is follows most the RESTful API design principles. It relies on a MySQL database for all of its data.&lt;/p&gt;
+
+&lt;p&gt;Since the assignment was graded in June 2014, it&amp;rsquo;s possible that the API is no longer available. The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/MI4API&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>this blog</title>
@@ -24,16 +38,55 @@
     </item>
     
     <item>
+      <title>B&amp;B Go Eun app</title>
+      <link>http://sa.muel.be/portfolio/bb-go-eun/</link>
+      <pubDate>Mon, 20 Jul 2015 12:03:24 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/bb-go-eun/</guid>
+      <description>
+
+&lt;p&gt;This Android app was a school project I made with &lt;a href=&#34;https://github.com/talipovdaniyar&#34;&gt;another student&lt;/a&gt;. We established several goals:&lt;/p&gt;
+
+&lt;h2 id=&#34;technical-requirements:fc46f81bf6fdf8b7e4084cd9b0161e8c&#34;&gt;Technical requirements:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We had to learn a lot about PHP and Android development.&lt;/li&gt;
+&lt;li&gt;The app had to connect with &lt;a href=&#34;http://sa.muel.be/portfolio/bb-go-eun-api/&#34;&gt;a (RESTful) API&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The API had to connect with a database.&lt;/li&gt;
+&lt;li&gt;The app had to be very simple so we could demonstrate the main goals (connection with API).&lt;/li&gt;
+&lt;li&gt;We had to made sure that everything worked fine and all known bugs were fixed.&lt;/li&gt;
+&lt;li&gt;We had to write a few pages of documentation for our lecturer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;functional-requirements:fc46f81bf6fdf8b7e4084cd9b0161e8c&#34;&gt;Functional requirements:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Show information about available rooms&lt;/li&gt;
+&lt;li&gt;Show contact information with links that open the diailer app, the email app, Google Maps&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Show promotions coupled to rooms&lt;/li&gt;
+&lt;li&gt;Show the breakfast menu&lt;/li&gt;
+&lt;li&gt;Show nearby points of interest in a predefined range, sorted by distance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The assignment included finding a real client and the client we chose was a friend who owns a B&amp;amp;B on AirBnB.&lt;/p&gt;
+
+&lt;p&gt;Since the assignment was graded in June 2014, it&amp;rsquo;s possible that the app is no longer available. The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/MI4App&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Go for Change</title>
       <link>http://sa.muel.be/portfolio/go-for-change/</link>
       <pubDate>Mon, 20 Jul 2015 12:03:00 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/portfolio/go-for-change/</guid>
-      <description>&lt;p&gt;Go For Change is an Android app I wrote in 2 weeks for a school project. It was actually part of another student&amp;rsquo;s internship, but since that student quit his internship, the client asked my lecturers if they knew another student who could finish the job. All I had was 2 weeks so I didn&amp;rsquo;t write any documentation and the code is quite messy.&lt;/p&gt;
+      <description>&lt;p&gt;Go For Change is an Android app I wrote for a school project. It was actually part of another student&amp;rsquo;s internship, but since that student quit his internship, the client asked my lecturers if they knew another student who could finish the job. All I had was 2 weeks so I didn&amp;rsquo;t write any documentation and the code is quite messy.&lt;/p&gt;
 
 &lt;p&gt;The application contains a questionnaire targeted to small business owners. The difficult part was the order of the questions. Some questions only had to be answered depending on the answers of previous questions and the client had to be able to change the questions, the possible answers and the order of the questions. I created a small SQLite database and a method to export the answered questions to a CSV file.&lt;/p&gt;
 
-&lt;p&gt;This application is only visible for test users.&lt;/p&gt;
+&lt;p&gt;This application is only visible in the Play Store for test users. The source is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/WePgoforchange&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since the assignment was graded in June 2014, it&amp;rsquo;s possible that the app is no longer available.&lt;/p&gt;
 </description>
     </item>
     
@@ -378,19 +431,6 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     </item>
     
     <item>
-      <title>GitHub</title>
-      <link>http://sa.muel.be/github/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/github/</guid>
-      <description>You will be redirected to my GitHub page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://github.com/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://github.com/samueldebruyn&#34;;
-&lt;/script&gt;</description>
-    </item>
-    
-    <item>
       <title>LinkedIn</title>
       <link>http://sa.muel.be/linkedin-nl/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
@@ -400,6 +440,19 @@ window.location = &#34;https://github.com/samueldebruyn&#34;;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
 window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>GitHub</title>
+      <link>http://sa.muel.be/github/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/github/</guid>
+      <description>You will be redirected to my GitHub page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://github.com/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://github.com/samueldebruyn&#34;;
 &lt;/script&gt;</description>
     </item>
     
@@ -440,58 +493,6 @@ window.location = &#34;https://twitter.com/samueldebruyn&#34;;
 &lt;p&gt;The following is the deobfuscated version of &lt;a href=&#34;http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/529d1c5252c990b4367a.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Obfuscated code from the WordPress hack</title>
-      <link>http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/</link>
-      <pubDate>Sat, 27 Jun 2015 18:13:06 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/</guid>
-      <description>&lt;p&gt;This page is part of the blogpost &lt;a href=&#34;http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;About that time I dealt with a bunch of hackers on a WordPress&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The following is an example of the code I found when one of the WordPress installations I managed was hacked. You can find the &lt;a href=&#34;http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/&#34;&gt;deobfuscated version right over here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/337140a35994618033ee.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>About that time I dealt with a bunch of hackers on a WordPress</title>
-      <link>http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/</link>
-      <pubDate>Sat, 27 Jun 2015 17:55:40 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/</guid>
-      <description>&lt;p&gt;So yeah, that happened. I recently took over 2 WordPress installations hosted on a &lt;a href=&#34;http://www.versio.uk/&#34;&gt;Versio&lt;/a&gt; shared hosting account. Versio suspended the account because it kept sending thousands of (spam) emails a day.&lt;/p&gt;
-
-&lt;p&gt;You guessed it right, one of the WordPress installations was hacked. The previous administrator tried to delete the infected files and changed his passwords. It took them a week to regain full control of both the WordPress installations. Once they got into one of the WordPress setups, it was just a matter of navigating through the filesystem to find and infect the other WordPress installation.&lt;/p&gt;
-
-&lt;p&gt;The intruders were very interested in this particular website because of the domain (TLD): &lt;a href=&#34;http://asr.ac&#34;&gt;asr.ac&lt;/a&gt;. An academic domain has a high standing, isn&amp;rsquo;t very cheap and a very rare treat for spammers. They were proud of their hack and left code injections in files called &lt;em&gt;indonesia.php&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Then I took over. I managed tens of WordPress websites before and I had a lot more time to spare than the previous IT guy. I found out that the contact address for Versio and a bunch of other services was one of the .ac addresses, which was suspended. So we didn&amp;rsquo;t even receive any warnings from Versio about abuse, the hackers had free play.&lt;/p&gt;
-
-&lt;p&gt;Once I regained access to &lt;a href=&#34;http://www.directadmin.com/&#34;&gt;DirectAdmin&lt;/a&gt; and Versio&amp;rsquo;s customer panel, I immediately backed up both installations, including the databases. Exporting the content and importing it into a fresh WordPress installation was a no go since the &lt;em&gt;wp-content&lt;/em&gt; directory was infected. The only option seemed to desinfect both WordPress installation and secure them.&lt;/p&gt;
-
-&lt;p&gt;Versio sent some notices with the files the hackers used to send out spam. They were all PHP files with obfuscated code injections in them.&lt;/p&gt;
-
-&lt;p&gt;Great, so I knew how they did it and what I had to look for. I simply deleted everything except for the &lt;em&gt;wp-content&lt;/em&gt; directory and searched the &lt;em&gt;uploads&lt;/em&gt; folder for code containing &lt;em&gt;eval(&lt;/em&gt; or &lt;em&gt;decode(&lt;/em&gt;. I then uploaded the default WordPress files and made sure everything worked again.&lt;/p&gt;
-
-&lt;p&gt;The theme we used was an outdated premium theme so I replaced that with a more popular similar looking theme which was kept up to date.&lt;/p&gt;
-
-&lt;p&gt;Finally I setup &lt;a href=&#34;https://www.cloudflare.com/&#34;&gt;CloudFlare&lt;/a&gt; with secure settings and let them challenge visitors from Indonesia. I also installed the &lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;Sucuri Security plugin&lt;/a&gt; and let it scan all files twice a day for infections.&lt;/p&gt;
-
-&lt;p&gt;So that was all, right? Nope, a few days later they were back. This time they named their files something like &lt;em&gt;diff52.php&lt;/em&gt; as this wouldn&amp;rsquo;t look as suspicious as &lt;em&gt;indonesia.php&lt;/em&gt;. CloudFlare also showed some blocked threats from Russia and Ukraine.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/&#34;&gt;This is an example of the code I found&lt;/a&gt; and &lt;a href=&#34;http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/&#34;&gt;this is the deobfuscated version of it&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I repeated the whole process but I kept wondering how they could get in. The only thing I didn&amp;rsquo;t check were the plugins. A few days before I reinstalled them all using Sucuri Security so they didn&amp;rsquo;t contain any infections. But they had to be the cause, right? I simply deactivated and removed all of them except for the ones I installed to secure the website. That did it. It&amp;rsquo;s been a week and the hackers haven&amp;rsquo;t been back since.&lt;/p&gt;
-
-&lt;p&gt;What did I learn from all of this? When you&amp;rsquo;re dealing with a hacked WordPress, &lt;strong&gt;always&lt;/strong&gt; delete every plugin and non-default theme. The team behind WordPress releases security updates in a few hours after they find a leak. &lt;a href=&#34;https://ma.ttias.be/in-defence-of-wordpress/&#34;&gt;WordPress is quite secure&lt;/a&gt;, it&amp;rsquo;s the plugins and the themes that aren&amp;rsquo;t. Themes and plugins used by a lot of people will probably get more security fixes than others. The more plugins or themes you have installed, the bigger the risk.&lt;/p&gt;
-
-&lt;p&gt;PS: I repeated every step on the second WordPress installation since that one was infected too.&lt;/p&gt;
-
-&lt;p&gt;PPS: I&amp;rsquo;ll post a comprehensive guide to securing/hardening WordPress in a few weeks. A good starting point is &lt;a href=&#34;https://codex.wordpress.org/FAQ_My_site_was_hacked&#34;&gt;this guide&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

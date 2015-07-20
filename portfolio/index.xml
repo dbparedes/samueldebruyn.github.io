@@ -8,18 +8,57 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Mon, 20 Jul 2015 12:03:38 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2015 13:45:55 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>this blog</title>
-      <link>http://sa.muel.be/portfolio/this-blog/</link>
-      <pubDate>Mon, 20 Jul 2015 12:03:38 +0200</pubDate>
+      <title>B&amp;B Go Eun API</title>
+      <link>http://sa.muel.be/portfolio/bb-go-eun-api/</link>
+      <pubDate>Mon, 20 Jul 2015 13:45:55 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/portfolio/this-blog/</guid>
-      <description>&lt;p&gt;This blog is made with &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;. I wrote a &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;blog post&lt;/a&gt; about it when I switched from &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+      <guid>http://sa.muel.be/portfolio/bb-go-eun-api/</guid>
+      <description>&lt;p&gt;This API was made for the &lt;a href=&#34;http://sa.muel.be/portfolio/bb-go-eun/&#34;&gt;Android app B&amp;amp;B Go Eun&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;It is written in PHP and built on top of &lt;a href=&#34;http://cakephp.org/&#34;&gt;CakePHP&lt;/a&gt;. The API returns all results in JSON and is follows most the RESTful API design principles. It relies on a MySQL database for all of its data.&lt;/p&gt;
+
+&lt;p&gt;Since the assignment was graded in June 2014, it&amp;rsquo;s possible that the API is no longer available. The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/MI4API&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>B&amp;B Go Eun app</title>
+      <link>http://sa.muel.be/portfolio/bb-go-eun/</link>
+      <pubDate>Mon, 20 Jul 2015 12:03:24 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/bb-go-eun/</guid>
+      <description>
+
+&lt;p&gt;This Android app was a school project I made with &lt;a href=&#34;https://github.com/talipovdaniyar&#34;&gt;another student&lt;/a&gt;. We established several goals:&lt;/p&gt;
+
+&lt;h2 id=&#34;technical-requirements:fc46f81bf6fdf8b7e4084cd9b0161e8c&#34;&gt;Technical requirements:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;We had to learn a lot about PHP and Android development.&lt;/li&gt;
+&lt;li&gt;The app had to connect with &lt;a href=&#34;http://sa.muel.be/portfolio/bb-go-eun-api/&#34;&gt;a (RESTful) API&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The API had to connect with a database.&lt;/li&gt;
+&lt;li&gt;The app had to be very simple so we could demonstrate the main goals (connection with API).&lt;/li&gt;
+&lt;li&gt;We had to made sure that everything worked fine and all known bugs were fixed.&lt;/li&gt;
+&lt;li&gt;We had to write a few pages of documentation for our lecturer.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;functional-requirements:fc46f81bf6fdf8b7e4084cd9b0161e8c&#34;&gt;Functional requirements:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Show information about available rooms&lt;/li&gt;
+&lt;li&gt;Show contact information with links that open the diailer app, the email app, Google Maps&amp;hellip;&lt;/li&gt;
+&lt;li&gt;Show promotions coupled to rooms&lt;/li&gt;
+&lt;li&gt;Show the breakfast menu&lt;/li&gt;
+&lt;li&gt;Show nearby points of interest in a predefined range, sorted by distance&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The assignment included finding a real client and the client we chose was a friend who owns a B&amp;amp;B on AirBnB.&lt;/p&gt;
+
+&lt;p&gt;Since the assignment was graded in June 2014, it&amp;rsquo;s possible that the app is no longer available. The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/MI4App&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
@@ -29,11 +68,13 @@
       <pubDate>Mon, 20 Jul 2015 12:03:00 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/portfolio/go-for-change/</guid>
-      <description>&lt;p&gt;Go For Change is an Android app I wrote in 2 weeks for a school project. It was actually part of another student&amp;rsquo;s internship, but since that student quit his internship, the client asked my lecturers if they knew another student who could finish the job. All I had was 2 weeks so I didn&amp;rsquo;t write any documentation and the code is quite messy.&lt;/p&gt;
+      <description>&lt;p&gt;Go For Change is an Android app I wrote for a school project. It was actually part of another student&amp;rsquo;s internship, but since that student quit his internship, the client asked my lecturers if they knew another student who could finish the job. All I had was 2 weeks so I didn&amp;rsquo;t write any documentation and the code is quite messy.&lt;/p&gt;
 
 &lt;p&gt;The application contains a questionnaire targeted to small business owners. The difficult part was the order of the questions. Some questions only had to be answered depending on the answers of previous questions and the client had to be able to change the questions, the possible answers and the order of the questions. I created a small SQLite database and a method to export the answered questions to a CSV file.&lt;/p&gt;
 
-&lt;p&gt;This application is only visible for test users.&lt;/p&gt;
+&lt;p&gt;This application is only visible in the Play Store for test users. The source is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/WePgoforchange&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Since the assignment was graded in June 2014, it&amp;rsquo;s possible that the app is no longer available.&lt;/p&gt;
 </description>
     </item>
     
@@ -48,6 +89,18 @@
 &lt;p&gt;&lt;a href=&#34;http://www.roodfluweel.be&#34;&gt;Rood Fluweel&lt;/a&gt; is a SaaS made on top of ASP.NET. It can manage ticketing, reservations, payments etc.&lt;/p&gt;
 
 &lt;p&gt;The goal of the Windows Store app is to make it easier to print and create tickets when a lot of people are coming through the entrance at once.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>this blog</title>
+      <link>http://sa.muel.be/portfolio/this-blog/</link>
+      <pubDate>Mon, 20 Jul 2015 12:03:38 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/this-blog/</guid>
+      <description>&lt;p&gt;This blog is made with &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;. I wrote a &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;blog post&lt;/a&gt; about it when I switched from &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     
