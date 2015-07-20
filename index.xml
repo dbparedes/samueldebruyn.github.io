@@ -8,8 +8,34 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Sat, 18 Jul 2015 16:06:12 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 20 Jul 2015 12:03:38 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>this blog</title>
+      <link>http://sa.muel.be/portfolio/this-blog/</link>
+      <pubDate>Mon, 20 Jul 2015 12:03:38 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/this-blog/</guid>
+      <description>&lt;p&gt;This blog is made with &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;. I wrote a &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;blog post&lt;/a&gt; about it when I switched from &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Go for Change</title>
+      <link>http://sa.muel.be/portfolio/go-for-change/</link>
+      <pubDate>Mon, 20 Jul 2015 12:03:00 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/go-for-change/</guid>
+      <description>&lt;p&gt;Go For Change is an Android app I wrote in 2 weeks for a school project. It was actually part of another student&amp;rsquo;s internship, but since that student quit his internship, the client asked my lecturers if they knew another student who could finish the job. All I had was 2 weeks so I didn&amp;rsquo;t write any documentation and the code is quite messy.&lt;/p&gt;
+
+&lt;p&gt;The application contains a questionnaire targeted to small business owners. The difficult part was the order of the questions. Some questions only had to be answered depending on the answers of previous questions and the client had to be able to change the questions, the possible answers and the order of the questions. I created a small SQLite database and a method to export the answered questions to a CSV file.&lt;/p&gt;
+
+&lt;p&gt;This application is only visible for test users.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Rood Fluweel Bali</title>
@@ -352,19 +378,6 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     </item>
     
     <item>
-      <title>LinkedIn</title>
-      <link>http://sa.muel.be/linkedin-nl/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/linkedin-nl/</guid>
-      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
-&lt;/script&gt;</description>
-    </item>
-    
-    <item>
       <title>GitHub</title>
       <link>http://sa.muel.be/github/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
@@ -374,6 +387,19 @@ window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
 window.location = &#34;https://github.com/samueldebruyn&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>LinkedIn</title>
+      <link>http://sa.muel.be/linkedin-nl/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/linkedin-nl/</guid>
+      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
 &lt;/script&gt;</description>
     </item>
     
@@ -466,131 +492,6 @@ window.location = &#34;https://twitter.com/samueldebruyn&#34;;
 &lt;p&gt;PS: I repeated every step on the second WordPress installation since that one was infected too.&lt;/p&gt;
 
 &lt;p&gt;PPS: I&amp;rsquo;ll post a comprehensive guide to securing/hardening WordPress in a few weeks. A good starting point is &lt;a href=&#34;https://codex.wordpress.org/FAQ_My_site_was_hacked&#34;&gt;this guide&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Geocoding addresses in Talend Open Studio for Data Integration</title>
-      <link>http://sa.muel.be/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</link>
-      <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</guid>
-      <description>&lt;p&gt;Last week I had to geocode the addresses in a dataset using Talend. Geocoding is adding coordinates to addresses. This way you can easily visualize your data on a map.&lt;/p&gt;
-
-&lt;p&gt;I experienced problems when I tried to download some plugins from Talend Exchange but I found &lt;a href=&#34;http://datacatalyst.blogspot.be/2011/01/custom-google-geocoder-using-talend.html&#34;&gt;this blog post&lt;/a&gt; about geocoding without the use of a plugin. The blogpost wasn&amp;rsquo;t very clear so I decided to write a step-by-step explanation which you can find below. In this guide, we will be using the &lt;a href=&#34;https://developers.google.com/maps/documentation/geocoding/&#34;&gt;Google Geocoding API&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Map your location dataset (with a &lt;em&gt;tMap&lt;/em&gt;) to 2 columns: an unique ID of your location and a concatenated string containing the location address. I used one of Talend&amp;rsquo;s built-in &lt;em&gt;StringHandling&lt;/em&gt;-functions.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  StringHandling.CHANGE(LOCATIONS.STREET_ADDRESS + LOCATIONS.POSTAL_CODE + LOCATIONS.CITY,&amp;quot; &amp;quot;,&amp;quot;+&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;My first column was called &lt;em&gt;LOCATION_ID&lt;/em&gt; and my second column was called &lt;em&gt;LOCATION_CONCAT_ADDRESS&lt;/em&gt;. Make sure to remember the name of your output. I named mine &lt;em&gt;LocConcatOut&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Next, connect your output from the &lt;em&gt;tMap&lt;/em&gt; to a &lt;em&gt;tFlowToIterate&lt;/em&gt; component to start processing all records one by one.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The output from the &lt;em&gt;tFlowToIterate&lt;/em&gt; has to be connected to a new &lt;em&gt;tFileInputJson&lt;/em&gt; component. You can change the number of parallel iterations to speed up the geocoding. In the &lt;em&gt;tFileInputJson&lt;/em&gt; component, check the &lt;em&gt;Use Url&lt;/em&gt; option and enter the following URL:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    https://maps.googleapis.com/maps/api/geocode/json?address= + ((String)globalMap.get(&amp;quot;LocConcatOut.LOCATION_CONCAT_ADDRESS&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Add &lt;code&gt;+ &amp;quot;&amp;amp;key=YourAPIkey&amp;quot;&lt;/code&gt; if you would like to use your own API key for the &lt;a href=&#34;https://developers.google.com/maps/documentation/geocoding/&#34;&gt;Google Geocoding API&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Edit the schema for this component and make sure it contains 2 columns: &lt;em&gt;LATITUDE&lt;/em&gt; and &lt;em&gt;LONGITUDE&lt;/em&gt;. Their type should be float, nullable.&lt;/p&gt;
-
-&lt;p&gt;In the mapping, &lt;em&gt;LATITUDE&lt;/em&gt; should be set to &lt;code&gt;&amp;quot;$.results[0].geometry.location.lat&amp;quot;&lt;/code&gt; and &lt;em&gt;LONGITUDE&lt;/em&gt; should be set to &lt;code&gt;&amp;quot;$.results[0].geometry.location.lng&amp;quot;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Now we&amp;rsquo;re going to map the coordinates back to the UIDs. Add another &lt;em&gt;tMap&lt;/em&gt; component at the end. Create a new output, map the 2 coordinates from the &lt;em&gt;tFileInputJson&lt;/em&gt; to identical columns in the new &lt;em&gt;tMap&lt;/em&gt; and create a new column with a primary key. Enter the following for the value of this key (my keys are integers):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    ((Integer)globalMap.get(&amp;quot;LocConcatOut.LOCATION_ID&amp;quot;)).intValue()
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Finally connect the output from the &lt;em&gt;tMap&lt;/em&gt; component to a &lt;em&gt;tBufferOutput&lt;/em&gt;. That ends the loop started with the &lt;em&gt;tFlowToIterate&lt;/em&gt; component.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The previously mentioned components should all be put in the same subjob. Use a trigger like &lt;em&gt;OnSubjobOk&lt;/em&gt; to start your next job after this one is completed. You can find all the location identifiers with their coordinates in the &lt;em&gt;tBufferInput&lt;/em&gt; component. This is easily mapped (joined) to the original locations dataset using a &lt;em&gt;tMap&lt;/em&gt;. Make sure to set the correct data types in the mapping (1 integer and 2 floats) for the &lt;em&gt;tBufferInput&lt;/em&gt; component.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I hope my guide is clear, but you can always &lt;a href=&#34;https://twitter.com/intent/tweet?text=@SamuelDebruyn%20&#34;&gt;tweet me&lt;/a&gt; with any further questions.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>How Google cripples outdated Android devices</title>
-      <link>http://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</link>
-      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</guid>
-      <description>
-
-&lt;h2 id=&#34;why-i-downgraded-my-nexus-5:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Why I downgraded my Nexus 5&lt;/h2&gt;
-
-&lt;p&gt;About a year ago Google released &lt;a href=&#34;http://developer.android.com/preview/index.html&#34;&gt;Android L Developer Preview&lt;/a&gt;. This preview of the upcoming Android Lollipop (5.0) release contained a lot of bugs and was definitely not &lt;em&gt;daily driver&lt;/em&gt; material.&lt;/p&gt;
-
-&lt;p&gt;When Google started updating Nexus devices to the &lt;a href=&#34;http://officialandroid.blogspot.be/2014/10/android-be-together-not-same.html&#34;&gt;final version of Android Lollipop&lt;/a&gt; last autumn, it was clear that not all bugs were gone. Users noticed several bugs of which the &lt;a href=&#34;https://code.google.com/p/android/issues/detail?id=79729&#34;&gt;memory leak on the Nexus 5&lt;/a&gt; was the worst. Power users had to reboot their device every 2 days and other users could go half a week without rebooting. Without a reboot, apps closed automatically a few seconds after opening and background services like Spotify shut down the moment you opened a memory intensive app.&lt;/p&gt;
-
-&lt;p&gt;The &lt;a href=&#34;http://www.androidpolice.com/2014/12/15/nexus-5-receive-android-5-0-1-today-according-sprint-t-mobile/&#34;&gt;Android 5.0.1 update&lt;/a&gt; came and went while fixing a few bugs, but the memory leak was still there. Apparently it had something to do with the fade out animation when you turned off your screen.&lt;/p&gt;
-
-&lt;p&gt;Then, a few weeks back, Google released Android 5.1. It contained some UI and functional improvements and the memory leak was gone, at last! But don’t start cheering too soon. &lt;a href=&#34;http://www.androidpolice.com/2015/03/15/google-android-5-1-memory-leak-has-been-fixed-internally-no-timeline-for-release-yet/&#34;&gt;Android 5.1 contained another memory leak&lt;/a&gt;. The Android developers already fixed it, but at the time of writing, they still don’t have a timeframe for a release of this fix. The rebooting went on, every other day.&lt;/p&gt;
-
-&lt;p&gt;What if you have a car accident and you need to call emergency services?&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Oh no, wait, I have to reboot my phone first.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;This drives me nuts. This seems a critical bug to me. A (smart)phone mustto be able to perform its most basic function all the time: calling.&lt;/p&gt;
-
-&lt;p&gt;I considered downgrading while I was on Android 5.0.1, but I quickly delayed this decision when I heard about the upcoming 5.1 update that would fix this memory leak. However, when I started noticing the second memory leak, I had it. Time to go back to the latest stable version: Android 4.4.4 KitKat.&lt;/p&gt;
-
-&lt;h2 id=&#34;how-i-downgraded:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;How I downgraded&lt;/h2&gt;
-
-&lt;p&gt;The downgrade was quite simple: I unlocked my phone and flashed the 4.4.4 &lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;factory image&lt;/a&gt;. The next thing I did was rooting my phone, which later turned out to be necessary.&lt;/p&gt;
-
-&lt;h2 id=&#34;and-then-it-all-started:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;And then it all started&lt;/h2&gt;
-
-&lt;p&gt;One of the reasons why I downgraded, was that Android 4.4.4 has remarkably better battery life than Android Lollipop. So when my battery started draining at more than 20% an hour, I knew that something was wrong. Also, the notification about the system update was impossible to remove.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Yes, Google, I know. Now let me go on with my life, I don’t want your update.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;digging-a-little-deeper:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Digging a little deeper&lt;/h2&gt;
-
-&lt;p&gt;Android used to have a service called SystemUpdateService in the Google Services Framework (preinstalled system app) that would handle OS updates. It seems like this was replaced by Google Play Services. The &lt;a href=&#34;https://developer.android.com/google/play-services/index.html&#34;&gt;Google Play Services&lt;/a&gt; app is updated automatically via the Google &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.gms&#34;&gt;Play Store&lt;/a&gt;. This app contains another SystemUpdateService and disables the SystemUpdateService in the Google Services Framework mentioned earlier.&lt;/p&gt;
-
-&lt;p&gt;This service seems to cause a &lt;a href=&#34;http://developer.android.com/reference/android/os/PowerManager.WakeLock.html&#34;&gt;wakelock&lt;/a&gt;, which makes sure that my Nexus 5 never goes to deep sleep. (Deep sleep is like a standby mode with very low power usage.) So there’s my battery drain. But how to stop it? Disabling this service doesn’t help at all. The notification disappears but the wakelock is still there.&lt;/p&gt;
-
-&lt;p&gt;Next step: Google and &lt;a href=&#34;http://forum.xda-developers.com/google-nexus-5/general/how-to-disable-ota-lollipop-wakelock-t2952845&#34;&gt;XDA&lt;/a&gt;. I found out about the 3 receivers that trigger this service. Disabling these receivers would make sure that SystemUpdateService never runs and the wakelock is gone.&lt;/p&gt;
-
-&lt;p&gt;The receivers are to be found in 3 categories:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;After startup (runs after booting your device, obviously)&lt;/li&gt;
-&lt;li&gt;Connectivity changed (runs when the status of your Wi-Fi or cellular data connections change)&lt;/li&gt;
-&lt;li&gt;Secret code entered (runs when you enter a secret code into the dialer)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;So yeah, it’s quite impossible to escape from this service. The commands I listed below correctly disable these receivers and related activities. It doesn’t disable the SystemUpdateService itself as this would cause wakelocks. Run them in a terminal on your device or on your PC connected with your phone over &lt;a href=&#34;http://developer.android.com/tools/help/adb.html&#34;&gt;ADB&lt;/a&gt;. Did I mention you need to be &lt;em&gt;rooted&lt;/em&gt; to run it?&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateActivity
-adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateService$ActiveReceiver
-adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateService$Receiver
-adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver
-adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateActivity
-adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdatePanoActivity
-adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Receiver
-adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;wow-that-was-complicated:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Wow, that was complicated&lt;/h2&gt;
-
-&lt;p&gt;For power users this probably wasn’t a lot of work, but this is a real annoyance for regular users. But regular users don’t buy Nexus devices, don’t they?&lt;/p&gt;
-
-&lt;p&gt;For years, we all &lt;a href=&#34;http://www.google.com/trends/explore#q=android%20fragmentation&amp;amp;cmpt=q&#34;&gt;complained about fragmentation&lt;/a&gt; and a lack of OS updates. Today it has become impossible to ignore an OS update due to the immense battery drain and the frustrating persistent notification.&lt;/p&gt;
-
-&lt;h2 id=&#34;this-post-is-all-about-nexus-devices-what-about-my-device:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;This post is all about Nexus devices, what about my device?&lt;/h2&gt;
-
-&lt;p&gt;Most Android devices come with Google services like the Google Play Store. This means they also come with Google Play Services or the Google Services Framework or both. So, if you ever want to downgrade your Android device to a stock image, be sure to disable those pesky receivers…&lt;/p&gt;
 </description>
     </item>
     
