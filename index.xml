@@ -8,8 +8,61 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Mon, 20 Jul 2015 13:45:55 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 21 Jul 2015 13:43:35 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Material Design Lite theme for hugo</title>
+      <link>http://sa.muel.be/portfolio/material-design-theme-for-hugo/</link>
+      <pubDate>Tue, 21 Jul 2015 13:43:35 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/material-design-theme-for-hugo/</guid>
+      <description>&lt;p&gt;As I wanted to learn more about &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt; while developing &lt;a href=&#34;http://sa.muel.be/portfolio/this-blog/&#34;&gt;this blog&lt;/a&gt;, I &lt;a href=&#34;http://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;created&lt;/a&gt; a new theme for hugo. It is mostly plain HTML, CSS and JavaScript, but it also contains some &lt;a href=&#34;http://golang.org/pkg/html/template/&#34;&gt;Go Templating&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The theme is based on the &lt;a href=&#34;http://www.getmdl.io/templates/index.html&#34;&gt;blog template&lt;/a&gt; from Google&amp;rsquo;s &lt;a href=&#34;http://www.getmdl.io/&#34;&gt;Material Design Lite&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/hugo-material-lite&#34;&gt;GitHub&lt;/a&gt; and I host &lt;a href=&#34;http://materialexample.sa.muel.be/&#34;&gt;a demo&lt;/a&gt; on GitHub Pages.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>SamShack</title>
+      <link>http://sa.muel.be/portfolio/samshack/</link>
+      <pubDate>Tue, 21 Jul 2015 13:26:51 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/samshack/</guid>
+      <description>
+
+&lt;p&gt;In January 2014 I had to develop a webshop in PHP for a school project. At the time we just learnt about MVC and the best framework for the job seemed &lt;a href=&#34;http://www.cakephp.org&#34;&gt;CakePHP&lt;/a&gt;. My webshop had responsive design and was very fast (high scores on PageSpeed and Yahoo YSlow).&lt;/p&gt;
+
+&lt;p&gt;The webshop itself is no longer available online, but the source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/MI4webshop&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;functional-requirements:8f252d2e6836bd8c7f9c98107e37888e&#34;&gt;Functional requirements&lt;/h2&gt;
+
+&lt;h3 id=&#34;configuration-panel:8f252d2e6836bd8c7f9c98107e37888e&#34;&gt;Configuration panel&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;CRUD actions for every kind of data&lt;/li&gt;
+&lt;li&gt;The administrator has to log in to be able to do anything&lt;/li&gt;
+&lt;li&gt;The administrator must be able to create other administrative user accounts&lt;/li&gt;
+&lt;li&gt;The administrator can view the ERD of the webshop&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;client-site:8f252d2e6836bd8c7f9c98107e37888e&#34;&gt;Client site&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Products have categories and can be sorted and filtered by category&lt;/li&gt;
+&lt;li&gt;Shopping cart which can be modified at any time&lt;/li&gt;
+&lt;li&gt;Shoppers have to create user accounts to buy anything&lt;/li&gt;
+&lt;li&gt;Only registered users can view the stock&lt;/li&gt;
+&lt;li&gt;The stock needs to automatically updated after a sale&lt;/li&gt;
+&lt;li&gt;Confirmation emails for all kinds of actions&lt;/li&gt;
+&lt;li&gt;Password reset mails&lt;/li&gt;
+&lt;li&gt;History of purchases&lt;/li&gt;
+&lt;li&gt;Personalized recommendations&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>B&amp;B Go Eun API</title>
@@ -431,19 +484,6 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     </item>
     
     <item>
-      <title>LinkedIn</title>
-      <link>http://sa.muel.be/linkedin-nl/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/linkedin-nl/</guid>
-      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
-&lt;/script&gt;</description>
-    </item>
-    
-    <item>
       <title>GitHub</title>
       <link>http://sa.muel.be/github/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
@@ -458,6 +498,19 @@ window.location = &#34;https://github.com/samueldebruyn&#34;;
     
     <item>
       <title>LinkedIn</title>
+      <link>http://sa.muel.be/linkedin-nl/</link>
+      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/linkedin-nl/</guid>
+      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
+
+&lt;script type=&#34;text/javascript&#34;&gt;
+window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
+&lt;/script&gt;</description>
+    </item>
+    
+    <item>
+      <title>LinkedIn</title>
       <link>http://sa.muel.be/linkedin/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
@@ -467,33 +520,6 @@ window.location = &#34;https://github.com/samueldebruyn&#34;;
 &lt;script type=&#34;text/javascript&#34;&gt;
 window.location = &#34;https://be.linkedin.com/in/samueldebruyn&#34;;
 &lt;/script&gt;</description>
-    </item>
-    
-    <item>
-      <title>Twitter</title>
-      <link>http://sa.muel.be/twitter/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/twitter/</guid>
-      <description>You will be redirected to my Twitter page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://twitter.com/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://twitter.com/samueldebruyn&#34;;
-&lt;/script&gt;</description>
-    </item>
-    
-    <item>
-      <title>Deobfuscated code from the WordPress hack</title>
-      <link>http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/</link>
-      <pubDate>Sat, 27 Jun 2015 18:13:15 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/</guid>
-      <description>&lt;p&gt;This page is part of the blogpost &lt;a href=&#34;http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;About that time I dealt with a bunch of hackers on a WordPress&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The following is the deobfuscated version of &lt;a href=&#34;http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/529d1c5252c990b4367a.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
     </item>
     
   </channel>
