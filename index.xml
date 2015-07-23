@@ -191,9 +191,9 @@
       <pubDate>Wed, 15 Jul 2015 13:21:45 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</guid>
-      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;search/?q=hugo&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;http://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;http://sa.muel.be/search/?q=hugo&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;As I &lt;a href=&#34;2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
+&lt;p&gt;As I &lt;a href=&#34;http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
 
 &lt;p&gt;There wasn&amp;rsquo;t any, so I simply wrote a build step for &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The build step validates a hugo theme using &lt;a href=&#34;https://github.com/spf13/HugoBasicExample&#34;&gt;an example site&lt;/a&gt;. It also checks if you included some files required for a future hugo themes site.&lt;/p&gt;
 
@@ -512,15 +512,15 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     </item>
     
     <item>
-      <title>LinkedIn</title>
-      <link>http://sa.muel.be/linkedin-nl/</link>
+      <title>GitHub</title>
+      <link>http://sa.muel.be/github/</link>
       <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/linkedin-nl/</guid>
-      <description>Je wordt doorgestuurd naar mijn LinkedIn-pagina... &lt;a rel=&#34;me&#34; href=&#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;&gt;Klik hier als dat niet zou gebeuren.&lt;/a&gt;
+      <guid>http://sa.muel.be/github/</guid>
+      <description>You will be redirected to my GitHub page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://github.com/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
 
 &lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://be.linkedin.com/in/samueldebruyn/nl&#34;;
+window.location = &#34;https://github.com/samueldebruyn&#34;;
 &lt;/script&gt;</description>
     </item>
     
