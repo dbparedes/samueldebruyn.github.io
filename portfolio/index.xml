@@ -8,8 +8,22 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Tue, 21 Jul 2015 21:17:21 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 23 Jul 2015 17:02:18 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RoboRally</title>
+      <link>http://sa.muel.be/portfolio/roborally/</link>
+      <pubDate>Thu, 23 Jul 2015 17:02:18 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/roborally/</guid>
+      <description>&lt;p&gt;RoboRally is a simple game written in Java, based on the board game &lt;a href=&#34;https://en.wikipedia.org/wiki/RoboRally&#34;&gt;RoboRally&lt;/a&gt; by &lt;a href=&#34;http://company.wizards.com/&#34;&gt;Wizards of the Coast&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;This game was a semester project in which a pair of students had to learn the basics of object oriented programming, source code control and extreme programming. The project was part of the course &lt;a href=&#34;https://onderwijsaanbod.kuleuven.be/syllabi/n/H01P1AN.htm#activetab=doelstellingen_idp2111760&#34;&gt;Object Oriented Programming&lt;/a&gt; by &lt;a href=&#34;https://distrinet.cs.kuleuven.be/people/eric&#34;&gt;Prof. E. Steegmans&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The code contains a lot of documentation; this project is really about the code and not about the game itself. Our final version is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/OGProborally&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>ASR.ac</title>
