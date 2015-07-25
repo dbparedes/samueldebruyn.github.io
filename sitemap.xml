@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://sa.muel.be/</loc>
-    <lastmod>2015-07-23T17:02:18+02:00</lastmod>
+    <lastmod>2015-07-25T17:01:17+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sa.muel.be/2015/wercker-step-to-minify-static-resources/</loc>
+    <lastmod>2015-07-25T17:01:17+02:00</lastmod>
   </url>
   
   <url>

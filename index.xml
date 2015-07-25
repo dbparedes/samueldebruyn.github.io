@@ -8,8 +8,22 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Thu, 23 Jul 2015 17:02:18 +0200</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2015 17:01:17 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Wercker step to minify static resources</title>
+      <link>http://sa.muel.be/2015/wercker-step-to-minify-static-resources/</link>
+      <pubDate>Sat, 25 Jul 2015 17:01:17 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/wercker-step-to-minify-static-resources/</guid>
+      <description>&lt;p&gt;I recently blogged a lot about &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;static websites&lt;/a&gt; and &lt;a href=&#34;http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;continuous integration&lt;/a&gt;. There was still one step missing in my continuous integration cycle: &lt;strong&gt;minification&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://wercker.com/&#34;&gt;Wercker&lt;/a&gt; is a great CI tool and it allows you to create custom build steps that can be reused in several projects. So I created a build step to minify HTML, CSS and JS files.&lt;/p&gt;
+
+&lt;p&gt;The build step is available at &lt;a href=&#34;https://github.com/SamuelDebruyn/wercker-step-minify&#34;&gt;https://github.com/SamuelDebruyn/wercker-step-minify&lt;/a&gt; and all you have to do is include &lt;code&gt;samueldebruyn/minify&lt;/code&gt; as a step in your &lt;em&gt;wercker.yml&lt;/em&gt; file.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>RoboRally</title>
@@ -509,19 +523,6 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
 &lt;li&gt;&lt;a href=&#34;http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/&#34;&gt;http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-    </item>
-    
-    <item>
-      <title>GitHub</title>
-      <link>http://sa.muel.be/github/</link>
-      <pubDate>Sun, 05 Jul 2015 16:08:03 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/github/</guid>
-      <description>You will be redirected to my GitHub page in a second... &lt;a rel=&#34;me&#34; href=&#34;https://github.com/samueldebruyn&#34;&gt;Click here if that doesn&#39;t happen.&lt;/a&gt;
-
-&lt;script type=&#34;text/javascript&#34;&gt;
-window.location = &#34;https://github.com/samueldebruyn&#34;;
-&lt;/script&gt;</description>
     </item>
     
   </channel>
