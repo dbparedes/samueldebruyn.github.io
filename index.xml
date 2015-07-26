@@ -8,8 +8,51 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Sat, 25 Jul 2015 17:01:17 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2015 22:23:17 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Big Bad Wolf</title>
+      <link>http://sa.muel.be/portfolio/big-bad-wolf/</link>
+      <pubDate>Sun, 26 Jul 2015 22:23:17 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/big-bad-wolf/</guid>
+      <description>&lt;p&gt;This is simple social media client written in C#. It was a school project we made in a team of 4 students. This was our first project in C# and the goal was to learn about&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Multi Document Interfaces (MDI) with Windows Forms&lt;/li&gt;
+&lt;li&gt;using &lt;a href=&#34;http://visualstudio.com&#34;&gt;Visual Studio Online&lt;/a&gt; (Team Foundation Services) to work with scrum, sprints&amp;hellip; The burndown chart was more important than the code or the finished application.&lt;/li&gt;
+&lt;li&gt;usage of APIs / working with SDKs&lt;/li&gt;
+&lt;li&gt;(an introduction to) async code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this social media client, you could connect your Facebook, Twitter and Instagram accounts and view all the posts in your timeline/activity feed in a single window. Every post had a background color matching the &lt;em&gt;theme&lt;/em&gt; of the social network it was published on.&lt;/p&gt;
+
+&lt;p&gt;I agree, the GUI was terrible and the code wasn&amp;rsquo;t much better. But we had to start &lt;em&gt;somewhere&lt;/em&gt;, right? I&amp;rsquo;ve made the source available on &lt;a href=&#34;https://github.com/SamuelDebruyn/BigBadWolf&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Penguin Planner</title>
+      <link>http://sa.muel.be/portfolio/penguin-planner/</link>
+      <pubDate>Sun, 26 Jul 2015 22:23:08 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/penguin-planner/</guid>
+      <description>&lt;p&gt;Penguin Planner is a school project we made in team of 4 students. The goal of the project was to learn about:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;layered applications (seperating data, business/domain, presentation&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;connecting an application to a database without using plain (T-)SQL&lt;/li&gt;
+&lt;li&gt;multilingual applications&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The idea of Penguin Planner was a replacement for a tool like &lt;a href=&#34;http://blackboard.com&#34;&gt;BlackBoard&lt;/a&gt;. It was a tool made for students and teachers. They had to be able to manage their courses, tasks, tests&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;We used &lt;a href=&#34;https://github.com/viperneo/winforms-modernui&#34;&gt;MetroFramework&lt;/a&gt; to bring the &lt;em&gt;Modern UI&lt;/em&gt; design to a Windows Forms application.&lt;/p&gt;
+
+&lt;p&gt;The application is written in C# and the complete source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/PenguinPlanner&#34;&gt;available on GitHub&lt;/a&gt;. You should be able to build the application after downloading the referenced nuget packages. However, you&amp;rsquo;d need to recreate the database and change the connection string to be able to run it.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Wercker step to minify static resources</title>
@@ -326,202 +369,6 @@ deploy:
 &lt;p&gt;I was thinking about setting up another website for some side project and wanted to use material design. So I decided to write a material design theme for a simple hugo blog.&lt;/p&gt;
 
 &lt;p&gt;You can check it out at &lt;a href=&#34;https://github.com/SamuelDebruyn/hugo-material-lite&#34;&gt;https://github.com/SamuelDebruyn/hugo-material-lite&lt;/a&gt; (&lt;a href=&#34;http://materialexample.sa.muel.be&#34;&gt;demo&lt;/a&gt;) Enjoy!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>An introduction to hugo, a static site generator</title>
-      <link>http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/</link>
-      <pubDate>Wed, 08 Jul 2015 14:50:29 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/</guid>
-      <description>
-
-&lt;h2 id=&#34;a-good-blogging-platform:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;A good blogging platform&lt;/h2&gt;
-
-&lt;p&gt;What makes a good blogging platform really good? Well, that depends on the blogger. Programmers would need different features than make-up bloggers. As a programmer, I need to be able to easily integrate pieces of code with syntax highlighting in my posts and I&amp;rsquo;d prefer writing them in my favourite text/code editor instead of in a WYSIWYG editor.&lt;/p&gt;
-
-&lt;h2 id=&#34;jekyll:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Jekyll&lt;/h2&gt;
-
-&lt;p&gt;A static site generator like &lt;a href=&#34;http://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt; fulfils (almost) all my needs as a programmer/blogger:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;posts are written in &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;Markdown&lt;/a&gt;, Textile, HTML&amp;hellip;&lt;/li&gt;
-&lt;li&gt;you don&amp;rsquo;t need to setup a database and any simple web server will do the job since all you have to host is a simple, static website&lt;/li&gt;
-&lt;li&gt;once setup, you don&amp;rsquo;t need to think about updates etc.&lt;/li&gt;
-&lt;li&gt;extremely developer friendly (e.g. publish a post using the command line) and open source&lt;/li&gt;
-&lt;li&gt;works great with source code control&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;However, after a while, you start to notice the little things that make Jekyll a lot less simple than it looks like.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;it&amp;rsquo;s written in Ruby and some of its dependencies aren&amp;rsquo;t (bug free) available on &lt;del&gt;all platforms&lt;/del&gt; Windows&lt;/li&gt;
-&lt;li&gt;setting it up can be quite bothersome, again, especially on Windows&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;hugo:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Hugo&lt;/h2&gt;
-
-&lt;p&gt;A few other static site generators &lt;a href=&#34;https://www.staticgen.com&#34;&gt;have sprung up&lt;/a&gt; since Jekyll&amp;rsquo;s success.&lt;/p&gt;
-
-&lt;p&gt;The one that caught my attention was &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;. It has all the goodness from Jekyll, but it&amp;rsquo;s way easier to setup. Hugo itself is written in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt;, but they build &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;executable binaries&lt;/a&gt; for a lot of platforms and architectures. So you don&amp;rsquo;t need to install anything else. Even compiling it yourself isn&amp;rsquo;t that hard.&lt;/p&gt;
-
-&lt;p&gt;The process of creating a new website is very similar to Jekyll. The &lt;code&gt;hugo&lt;/code&gt; command literally explains itself (&lt;code&gt;hugo help&lt;/code&gt;) and the &lt;a href=&#34;http://gohugo.io/overview/introduction/&#34;&gt;documentation&lt;/a&gt; on its website should suffice for most users.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;ve successfully migrated my &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io/tree/5f5719a9d4519f8fbd4cdfffa2a10b3f066401ef&#34;&gt;Jekyll blog&lt;/a&gt; to &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;hugo&lt;/a&gt; and haven&amp;rsquo;t regretted it ever since.&lt;/p&gt;
-
-&lt;h2 id=&#34;disadvantages:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Disadvantages&lt;/h2&gt;
-
-&lt;p&gt;One of the major disadvantages of hugo, or any static site generator for that matter, is integrating &lt;strong&gt;search&lt;/strong&gt;. You need some &lt;a href=&#34;http://discuss.gohugo.io/t/how-are-you-implementing-site-search/986/14&#34;&gt;JavaScript magic&lt;/a&gt; or a 3rd party search provider like &lt;a href=&#34;https://cse.google.com&#34;&gt;Google Custom Search Engine&lt;/a&gt; (which I went for).&lt;/p&gt;
-
-&lt;p&gt;The other dynamic part of an ordinary blog is &lt;strong&gt;the comment section&lt;/strong&gt;. Again, the easiest way to &lt;em&gt;fix&lt;/em&gt; this is relying on a 3rd party comments plugin like &lt;a href=&#34;https://disqus.com/&#34;&gt;Disqus&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Still, these two disadvantages are easily outweighed by the advantages of a static website. Your website will survive &lt;a href=&#34;https://en.wikipedia.org/wiki/Slashdot_effect&#34;&gt;slashdotting&lt;/a&gt; and the only required maintenance is literally making sure your web server stays online.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Recovering a hacked WordPress</title>
-      <link>http://sa.muel.be/2015/recovering-a-hacked-wordpress/</link>
-      <pubDate>Mon, 06 Jul 2015 14:14:32 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/recovering-a-hacked-wordpress/</guid>
-      <description>
-
-&lt;h2 id=&#34;introduction:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;A few weeks ago, I had to &lt;a href=&#34;http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;repair a hacked WordPress&lt;/a&gt; installation.&lt;/p&gt;
-
-&lt;p&gt;A lot of the information I needed to successfully clean the WordPress completely of infected files was not centralized in a single guide. So I decided to write one and you are now reading it.&lt;/p&gt;
-
-&lt;p&gt;So, your website is hacked, what now? Let&amp;rsquo;s go through the process of making sure that every infection is removed and it never happens again.&lt;/p&gt;
-
-&lt;p&gt;In this first part you&amp;rsquo;ll recover from a hack. In a second part you&amp;rsquo;ll learn how to harden the security. I&amp;rsquo;ll publish &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;the second part&lt;/a&gt; a few weeks after the first part.&lt;/p&gt;
-
-&lt;p&gt;This post is meant to be exhaustive and clear. If you have any suggestions or feel like something is missing or unclear, &lt;a href=&#34;mailto:s@muel.be?subject=Suggestions%20for%20the%20post%20about%20recovering%20a%20Wordpress%20hack&#34;&gt;&lt;em&gt;please&lt;/em&gt; let me know&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The WordPress version I used to write this post is 4.2.2.&lt;/p&gt;
-
-&lt;h2 id=&#34;disabling-all-plugins-going-into-maintenance-mode:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Disabling all plugins / going into maintenance mode&lt;/h2&gt;
-
-&lt;p&gt;The first thing you should do is avoiding further infections. &lt;strong&gt;Disable EVERY plugin&lt;/strong&gt;. We&amp;rsquo;ll reactivate them later on.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;d also put the website in maintenance mode. This requires, ironically, a plugin called &lt;a href=&#34;https://wordpress.org/plugins/wp-maintenance-mode/&#34;&gt;WP Maintenance Mode&lt;/a&gt;. Install it, write a quick message for your visitors and enable it.&lt;/p&gt;
-
-&lt;h2 id=&#34;take-a-backup:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Take a backup&lt;/h2&gt;
-
-&lt;p&gt;Backup your complete WordPress folder and database. You can download all the files using FTP or SSH and export the database to SQL statements using something like &lt;a href=&#34;http://www.phpmyadmin.net/home_page/index.php&#34;&gt;phpMyAdmin&lt;/a&gt; or the customer panel of your host (CPanel, DirectAdmin&amp;hellip;). Don&amp;rsquo;t store the backup on your webserver as the hackers could also infect this backup.&lt;/p&gt;
-
-&lt;h2 id=&#34;restore-the-original-wordpress-files:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restore the original WordPress files&lt;/h2&gt;
-
-&lt;p&gt;Download &lt;a href=&#34;https://wordpress.org/download/release-archive/&#34;&gt;a fresh copy of the version of WordPress&lt;/a&gt; you were using (which should always be the latest one). Unpack it and replace the directories &lt;em&gt;wp-admin&lt;/em&gt; and &lt;em&gt;wp-includes&lt;/em&gt; completely with the copy you just downloaded. Do the same with every file in the root folder and remove every file in your root that is not in the downloaded copy except for &lt;em&gt;wp-config.php&lt;/em&gt;. The &lt;strong&gt;only folder left untouched should be &lt;em&gt;wp-content&lt;/em&gt;&lt;/strong&gt;. WordPress also doesn&amp;rsquo;t include the &lt;em&gt;wp-config.php&lt;/em&gt; file so that should also be preserved (we&amp;rsquo;ll inspect this file later on in this guide).&lt;/p&gt;
-
-&lt;h2 id=&#34;clearing-the-cache:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Clearing the cache&lt;/h2&gt;
-
-&lt;p&gt;Delete the folders &lt;em&gt;wp-content/cache&lt;/em&gt; and &lt;em&gt;wp-content/plugins/widgets&lt;/em&gt;. They will be automatically recreated.&lt;/p&gt;
-
-&lt;h2 id=&#34;regenerate-salts-and-hashes:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Regenerate salts and hashes&lt;/h2&gt;
-
-&lt;p&gt;The &lt;em&gt;wp-config.php&lt;/em&gt; file contains a few hashes and salts to make sure that your cookies and sessions are unique and secure. As these could have been compromised, it&amp;rsquo;s &lt;strong&gt;absolutely necessary&lt;/strong&gt; to regenerate them. Open your &lt;em&gt;wp-config.php&lt;/em&gt; file in a text editor and overwrite your new hashes with new ones. WordPress offers &lt;a href=&#34;https://api.wordpress.org/secret-key/1.1/salt/&#34;&gt;an online generator&lt;/a&gt; so you can easily copy and paste them.&lt;/p&gt;
-
-&lt;h2 id=&#34;upgrade-to-the-latest-version:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Upgrade to the latest version&lt;/h2&gt;
-
-&lt;p&gt;If you&amp;rsquo;re not on the latest version of WordPress, then update ASAP. I&amp;rsquo;d recommend using &lt;a href=&#34;https://codex.wordpress.org/Upgrading_WordPress_-_Extended_Instructions&#34;&gt;these extended instructions&lt;/a&gt; instead of the built-in updater, but the built-in updater should be fine for most infected websites.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Upgrade all your themes and plugins&lt;/strong&gt; while you&amp;rsquo;re at it.&lt;/p&gt;
-
-&lt;h2 id=&#34;restore-the-original-themes-and-plugins:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restore the original themes and plugins&lt;/h2&gt;
-
-&lt;p&gt;In this step we&amp;rsquo;re going to restore the original theme and plugin files like we did with the original WordPress files. Download the &lt;a href=&#34;https://wordpress.org/themes/&#34;&gt;themes&lt;/a&gt; and &lt;a href=&#34;https://wordpress.org/plugins/&#34;&gt;plugins&lt;/a&gt; from wordpress.org or from the website of the publisher of the plugin or theme (for premium/payed versions). All you need to do is unpack the files into their respective directories in &lt;em&gt;wp-content/themes&lt;/em&gt; and &lt;em&gt;wp-content/plugins&lt;/em&gt;. Make sure there are no other files than the ones you just replaced in both of these folders.&lt;/p&gt;
-
-&lt;p&gt;NB: some plugins (e.g. plugins containing &lt;a href=&#34;http://wpengineer.com/2500/wordpress-dropins/&#34;&gt;drop-ins&lt;/a&gt;) like &lt;a href=&#34;https://wordpress.org/plugins/wp-super-cache/&#34;&gt;WP Super Cache&lt;/a&gt; also put PHP files in your &lt;em&gt;wp-content&lt;/em&gt; directory.&lt;/p&gt;
-
-&lt;h2 id=&#34;search-and-delete-infections-in-your-files:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Search and delete infections in your files&lt;/h2&gt;
-
-&lt;p&gt;The only infected files left could be stored in the subfolders of &lt;em&gt;wp-content&lt;/em&gt; that we haven&amp;rsquo;t looked into yet.&lt;/p&gt;
-
-&lt;h3 id=&#34;languages:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;languages&lt;/h3&gt;
-
-&lt;p&gt;If your WordPress is in English, you can safely delete the contents of the &lt;em&gt;languages&lt;/em&gt; folder, otherwise you should download the translation in your language and put in the &lt;em&gt;wp-content/languages&lt;/em&gt; while deleting everything else in it.&lt;/p&gt;
-
-&lt;h3 id=&#34;upgrade:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;upgrade&lt;/h3&gt;
-
-&lt;p&gt;The folder &lt;em&gt;upgrade&lt;/em&gt; in &lt;em&gt;wp-content&lt;/em&gt; is used by WordPress&amp;rsquo; built-in updater and should always be empty except for when you&amp;rsquo;re updating of course.&lt;/p&gt;
-
-&lt;h3 id=&#34;uploads-and-other-folders:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;uploads and other folders&lt;/h3&gt;
-
-&lt;p&gt;Next up: search every other folder in &lt;em&gt;wp-content&lt;/em&gt; for PHP and server configuration files and delete files if you think they shouldn&amp;rsquo;t be there. I suggest doing a case insensitive search for &lt;em&gt;*.php&lt;/em&gt; and &lt;em&gt;.htaccess&lt;/em&gt; and carefully inspecting the results.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;find /path/to/wordpress/wp-content/uploads/ -iname &amp;quot;*.php&amp;quot; -or -iname &amp;quot;.htaccess&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You probably shouldn&amp;rsquo;t have any PHP or .htaccess files in &lt;em&gt;wp-content/uploads/someyear/&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Finally search all the remaining files for typical code injections. PHP injections usually contain the functions &lt;code&gt;eval&lt;/code&gt; and &lt;code&gt;base64_decode&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;egrep &#39;eval(|decode(&#39; -r -H /path/to/wordpress/wp-content/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;search-and-delete-infections-in-your-database:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Search and delete infections in your database&lt;/h2&gt;
-
-&lt;p&gt;While most infections are usually to be found in the files, hackers could also insert executable and obfuscated code into your database. Most often these are XSS injections and WordPress should protect you against them. Still, it wouldn&amp;rsquo;t hurt to scan your posts and comments for injected code.&lt;/p&gt;
-
-&lt;p&gt;The easiest way is to connect to your database right away using something like the previously mentioned &lt;em&gt;phpMyAdmin&lt;/em&gt; tool. Login, open the database and go to the SQL page so you can run some SQL commands. The select statements below will show you the posts and comments containing common injections. Use a &lt;code&gt;DELETE&lt;/code&gt; query (be careful) or the &lt;em&gt;phpMyAdmin&lt;/em&gt; GUI to completely delete the found posts and comments. Don&amp;rsquo;t forget to change &lt;code&gt;wp_&lt;/code&gt; to the prefix you use.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;iframe%&#39;
-UNION
-SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;noscript%&#39;
-UNION
-SELECT * FROM wp_posts WHERE post_content LIKE &#39;%display:%&#39;
-UNION
-SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;?%&#39;
-UNION
-SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;?php%&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;iframe%&#39;
-UNION
-SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;noscript%&#39;
-UNION
-SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%display:%&#39;
-UNION
-SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?%&#39;
-UNION
-SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;using-exploit-scanner-and-sucuri-security-to-detect-further-infections:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Using &lt;em&gt;Exploit Scanner&lt;/em&gt; and &lt;em&gt;Sucuri Security&lt;/em&gt; to detect further infections&lt;/h2&gt;
-
-&lt;p&gt;Most code injections should be gone by now, but there are a few WordPress plugins available to detect everything that&amp;rsquo;s left.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://wordpress.org/plugins/exploit-scanner/&#34;&gt;Exploit Scanner&lt;/a&gt; scans your files for possible hidden infections. Its options allow you to also scan for iframes etc., but they cause a lot of false negatives.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;Sucuri Security&lt;/a&gt; is a plugin I&amp;rsquo;d really recommend for any WordPress installation, whether you were hacked or not. The plugin allows you to automatically scan for changed files, notify you about any administrative action, easily reinstall every plugin and theme after a hack&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Take advantage of all possibilities of the free versions of both of them. They will make sure that your WordPress is clean and stays clean.&lt;/p&gt;
-
-&lt;h2 id=&#34;check-users-and-passwords:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Check users and passwords&lt;/h2&gt;
-
-&lt;p&gt;One of the last steps is to check if the hacker didn&amp;rsquo;t create any new users. While you&amp;rsquo;re at it, change the passwords of every user with more rights than a regular subscriber.&lt;/p&gt;
-
-&lt;h2 id=&#34;restoring-your-website-and-keeping-it-safe:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restoring your website and keeping it safe&lt;/h2&gt;
-
-&lt;p&gt;Your WordPress should now be clean of infections and you can start restoring your website. Turn maintenance mode off and deactivate the &lt;em&gt;WP Maintenance Mode&lt;/em&gt; plugin. Now activate all the other plugins you used one by one. Make sure to &lt;strong&gt;delete any plugin you don&amp;rsquo;t really need&lt;/strong&gt; and check if they are still being maintained/updated. I&amp;rsquo;d also delete every inactive theme. This part of the guide is crucial since it was probably one of the plugins that was used to accomplish the hack.&lt;/p&gt;
-
-&lt;h2 id=&#34;harden-your-wordpress-security:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Harden your WordPress Security&lt;/h2&gt;
-
-&lt;p&gt;A few weeks after this post, I&amp;rsquo;ll publish &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;a follow-up guide&lt;/a&gt; on improving the security on your WordPress website.&lt;/p&gt;
-
-&lt;h2 id=&#34;sources:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Sources&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack&#34;&gt;http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;https://wordpress.org/plugins/sucuri-scanner/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://wordpress.org/plugins/exploit-scanner/&#34;&gt;https://wordpress.org/plugins/exploit-scanner/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://codex.wordpress.org/FAQ_My_site_was_hacked&#34;&gt;https://codex.wordpress.org/FAQ_My_site_was_hacked&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://smackdown.blogsblogsblogs.com/2008/06/24/how-to-completely-clean-your-hacked-wordpress-installation/&#34;&gt;http://smackdown.blogsblogsblogs.com/2008/06/24/how-to-completely-clean-your-hacked-wordpress-installation/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/&#34;&gt;http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

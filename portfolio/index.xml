@@ -8,8 +8,51 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Thu, 23 Jul 2015 17:02:18 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 26 Jul 2015 22:23:17 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Big Bad Wolf</title>
+      <link>http://sa.muel.be/portfolio/big-bad-wolf/</link>
+      <pubDate>Sun, 26 Jul 2015 22:23:17 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/big-bad-wolf/</guid>
+      <description>&lt;p&gt;This is simple social media client written in C#. It was a school project we made in a team of 4 students. This was our first project in C# and the goal was to learn about&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Multi Document Interfaces (MDI) with Windows Forms&lt;/li&gt;
+&lt;li&gt;using &lt;a href=&#34;http://visualstudio.com&#34;&gt;Visual Studio Online&lt;/a&gt; (Team Foundation Services) to work with scrum, sprints&amp;hellip; The burndown chart was more important than the code or the finished application.&lt;/li&gt;
+&lt;li&gt;usage of APIs / working with SDKs&lt;/li&gt;
+&lt;li&gt;(an introduction to) async code&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;With this social media client, you could connect your Facebook, Twitter and Instagram accounts and view all the posts in your timeline/activity feed in a single window. Every post had a background color matching the &lt;em&gt;theme&lt;/em&gt; of the social network it was published on.&lt;/p&gt;
+
+&lt;p&gt;I agree, the GUI was terrible and the code wasn&amp;rsquo;t much better. But we had to start &lt;em&gt;somewhere&lt;/em&gt;, right? I&amp;rsquo;ve made the source available on &lt;a href=&#34;https://github.com/SamuelDebruyn/BigBadWolf&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Penguin Planner</title>
+      <link>http://sa.muel.be/portfolio/penguin-planner/</link>
+      <pubDate>Sun, 26 Jul 2015 22:23:08 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/penguin-planner/</guid>
+      <description>&lt;p&gt;Penguin Planner is a school project we made in team of 4 students. The goal of the project was to learn about:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;layered applications (seperating data, business/domain, presentation&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;connecting an application to a database without using plain (T-)SQL&lt;/li&gt;
+&lt;li&gt;multilingual applications&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The idea of Penguin Planner was a replacement for a tool like &lt;a href=&#34;http://blackboard.com&#34;&gt;BlackBoard&lt;/a&gt;. It was a tool made for students and teachers. They had to be able to manage their courses, tasks, tests&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;We used &lt;a href=&#34;https://github.com/viperneo/winforms-modernui&#34;&gt;MetroFramework&lt;/a&gt; to bring the &lt;em&gt;Modern UI&lt;/em&gt; design to a Windows Forms application.&lt;/p&gt;
+
+&lt;p&gt;The application is written in C# and the complete source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/PenguinPlanner&#34;&gt;available on GitHub&lt;/a&gt;. You should be able to build the application after downloading the referenced nuget packages. However, you&amp;rsquo;d need to recreate the database and change the connection string to be able to run it.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>RoboRally</title>
