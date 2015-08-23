@@ -8,8 +8,87 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Sat, 25 Jul 2015 17:01:17 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 23 Aug 2015 22:30:51 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hardening your WordPress security</title>
+      <link>http://sa.muel.be/2015/hardening-your-wordpress-security/</link>
+      <pubDate>Sun, 23 Aug 2015 22:30:51 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/hardening-your-wordpress-security/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction:270325a472963f8dbe8695a68f29ae37&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This is the second part of a guide about &lt;a href=&#34;http://sa.muel.be/2015/recovering-a-hacked-wordpress/&#34;&gt;recovering a hacked WordPress&lt;/a&gt; and hardening your WordPress security.&lt;/p&gt;
+
+&lt;p&gt;In the previous part, I showed you how to get back up and running after your website has been hacked. In this part I&amp;rsquo;ll demonstrate how you can avoid being hacked by making your WordPress more secure. I always try to be exhaustive, but if you have any suggestions, corrections or feel like anything is missing, I would like you to &lt;a href=&#34;mailto:s@muel.be?subject=Suggestions%20for%20the%20post%20about%20securing%20Wordpress&#34;&gt;let me know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Even if you&amp;rsquo;re not hacked, I still advice you to read the first part too. It contains some information about how attackers work, what they try to achieve and how you can make sure they lose access to your website.&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;I planned on writing this guide a lot earlier and it&amp;rsquo;s been a while since I&amp;rsquo;ve looked at my WordPress websites (which is not a good practice&amp;hellip;) I&amp;rsquo;ll update this guide in about a month.&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;While this guide focusses on security, some measures could impact the performance of your website negatively while others should impact your performance positively. It&amp;rsquo;s up to you to consider which measures tips you should implement and which you shouldn&amp;rsquo;t.&lt;/p&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s get started, shall we?&lt;/p&gt;
+
+&lt;h2 id=&#34;consider-to-use-a-cloud-proxy:270325a472963f8dbe8695a68f29ae37&#34;&gt;Consider to use a cloud proxy&lt;/h2&gt;
+
+&lt;p&gt;Without a good CDN and caching strategy, it&amp;rsquo;s impossible to survive a DDoS attack. The easiest solution is a reverse cloud proxy like &lt;a href=&#34;http://www.cloudflare.com&#34;&gt;CloudFlare&lt;/a&gt;. CloudFlare caches your content and allows for very precise configuration. They will also keep your static files online if your server went offline. CloudFlare offers very good protection against malicious visitors and is awesome at detecting and mitigating DDoS attacks.&lt;/p&gt;
+
+&lt;p&gt;They offer &lt;a href=&#34;https://wordpress.org/plugins/cloudflare/&#34;&gt;a WordPress plugin&lt;/a&gt; that helps with the reverse proxying.&lt;/p&gt;
+
+&lt;h3 id=&#34;encryption:270325a472963f8dbe8695a68f29ae37&#34;&gt;Encryption&lt;/h3&gt;
+
+&lt;p&gt;CloudFlare, the tool I mentioned above, offers free server-client SSL. It isn&amp;rsquo;t as secure as full SSL (SSL from your server to Cloudflare&amp;rsquo;s servers and from CloudFlare&amp;rsquo;s servers to your visitor&amp;rsquo;s browsers), but it&amp;rsquo;s a lot safer than plain HTTP.&lt;/p&gt;
+
+&lt;h2 id=&#34;make-sure-the-web-servers-are-secure:270325a472963f8dbe8695a68f29ae37&#34;&gt;Make sure the web servers are secure&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;re on shared hosting, you don&amp;rsquo;t have much to say about this, but you can still take measures to ensure your management portal access is safe. Use very strong passwords to manage your web server, make sure everything (PHP, MySQL, Apache&amp;hellip;) is up to date, only allow database access from your web server (usually localhost)&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Another perspective to look at this is securing access to your files. Store your backups in a safe location, make sure that the WordPress folders and files have the right permissions (this changes sometimes, take a look at the &lt;a href=&#34;https://codex.wordpress.org/Changing_File_Permissions&#34;&gt;official website&lt;/a&gt; to find out which permissions you should use).&lt;/p&gt;
+
+&lt;h2 id=&#34;use-strong-authentication-and-authorisation:270325a472963f8dbe8695a68f29ae37&#34;&gt;Use strong authentication and authorisation&lt;/h2&gt;
+
+&lt;p&gt;Use strong passwords, make sure your wp-config.php is only stored on the webserver itself, consider using &lt;a href=&#34;https://wordpress.org/plugins/wordpress-2-step-verification/&#34;&gt;MFA&lt;/a&gt;&amp;hellip; There are a lot of ways to make sure that it isn&amp;rsquo;t too easy to get in.&lt;/p&gt;
+
+&lt;h2 id=&#34;consider-using-a-3rd-party-email-provider:270325a472963f8dbe8695a68f29ae37&#34;&gt;Consider using a 3rd party email provider&lt;/h2&gt;
+
+&lt;p&gt;Most hackers don&amp;rsquo;t even want to hack your website itself. Usually they&amp;rsquo;ll want to use your mail server (which is usually running on the same server) and domain to sell them to spammers. A third party email service like &lt;a href=&#34;http://mandrillapp.com/&#34;&gt;Mandrill&lt;/a&gt; or &lt;a href=&#34;https://sendgrid.com/&#34;&gt;SendGrid&lt;/a&gt; could come in handy to avoid such attacks. I recommend disabling the local mail server and creating SPF and DKIM records that only emails from your email provider. It&amp;rsquo;s quite easy to setup Mandrill with WordPress with &lt;a href=&#34;https://wordpress.org/plugins/wpmandrill/&#34;&gt;this Mandrill plugin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;always-use-the-latest-versions:270325a472963f8dbe8695a68f29ae37&#34;&gt;Always use the latest versions&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/&#34;&gt;PHP is a terrible programming language.&lt;/a&gt; It&amp;rsquo;s incredibly easy to write a lot of bugs and never notice them. If a plugin or theme is updated, install the update. Every possible fix for security issues is welcome.&lt;/p&gt;
+
+&lt;h2 id=&#34;uninstall-plugins-and-themes-you-don-t-need:270325a472963f8dbe8695a68f29ae37&#34;&gt;Uninstall plugins and themes you don&amp;rsquo;t need&lt;/h2&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t necessarily need a plugin or theme, uninstall it completely. Don&amp;rsquo;t even leave it deactivated. Hackers can run code in deactivated plugins without any hassle.&lt;/p&gt;
+
+&lt;h2 id=&#34;schedule-security-scans:270325a472963f8dbe8695a68f29ae37&#34;&gt;Schedule security scans&lt;/h2&gt;
+
+&lt;p&gt;While &lt;a href=&#34;https://wordpress.org/plugins/exploit-scanner/&#34;&gt;Exploit Scanner&lt;/a&gt; is perfectly capable of scanning a WordPress installation for (possible) exploits, you can&amp;rsquo;t use it to schedule automatic scans. &lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;Sucuri Security&lt;/a&gt; is definitely a must-have for every WordPress website. You can schedule automatic scans for modified files, notifications for about everything that happens on your website, thorough measures to further harden your website&amp;rsquo;s security&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;log-bad-behaviour:270325a472963f8dbe8695a68f29ae37&#34;&gt;Log bad behaviour&lt;/h2&gt;
+
+&lt;p&gt;There&amp;rsquo;s an awesome plugin called &lt;a href=&#34;https://wordpress.org/plugins/bad-behavior/&#34;&gt;Bad Behavior&lt;/a&gt; which logs malicious looking behaviour and notifies you if you want to. If you suspect a hacker is trying to get in, install this plugin. You can then use to automatically block some of his attempts.&lt;/p&gt;
+
+&lt;p&gt;If you notice some brute force attacks on your &lt;em&gt;wp-login.php&lt;/em&gt; page, consider installing &lt;a href=&#34;https://wordpress.org/plugins/limit-login-attempts/&#34;&gt;Limit Login Attempts&lt;/a&gt;. You can fine-tune its settings so that it&amp;rsquo;s not too hard on your users.&lt;/p&gt;
+
+&lt;h2 id=&#34;change-the-defaults:270325a472963f8dbe8695a68f29ae37&#34;&gt;Change the defaults&lt;/h2&gt;
+
+&lt;p&gt;WordPress allows you to change a lot of the default settings, here are a few things you could change to improve security by obscurity:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Store the &lt;em&gt;wp-config.php&lt;/em&gt; file a level higher than the root of your WordPress installation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codex.wordpress.org/Editing_wp-config.php#Moving_wp-content_folder&#34;&gt;Move the &lt;em&gt;wp-content&lt;/em&gt; folder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t use the &lt;code&gt;wp_&lt;/code&gt; table prefix&lt;/li&gt;
+&lt;li&gt;Use a different &lt;a href=&#34;https://wordpress.org/plugins/sf-move-login/&#34;&gt;login url&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Delete the user that was created during the initial setup and create a new one&lt;/li&gt;
+&lt;li&gt;Never use the username &lt;em&gt;admin&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Wercker step to minify static resources</title>
@@ -681,116 +760,6 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;The output is very clean and structured and the list of supported formats is endless. This way you can write everything in Markdown and convert your text to the desired format afterwards. I hope you&amp;rsquo;ll enjoy using pandoc as much as I do!&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Secure SSH access with 2-step authentication (extended)</title>
-      <link>http://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</link>
-      <pubDate>Sat, 08 Feb 2014 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</guid>
-      <description>
-
-&lt;p&gt;In this quick tutorial I&amp;rsquo;ll show you how to secure SSH access to your Linux server with 2-step authentication. Why did I call this post &amp;lsquo;extended&amp;rsquo;? Because I&amp;rsquo;ll show you how to add extra rules so you don&amp;rsquo;t have to use 2-step authentication from certain locations.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;m not going to explain &lt;a href=&#34;https://support.google.com/accounts/answer/180744&#34;&gt;what 2-step authentication is&lt;/a&gt;. You&amp;rsquo;ll need SSH or CLI access to your Linux device with root rights and a 2-step authentication app on your phone, tablet or PC:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&#34;&gt;Android&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/nl/app/google-authenticator/id388497605&#34;&gt;iOS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.windowsphone.com/en-us/store/app/authenticator/021dd79f-0598-e011-986b-78e7d1fa76f8&#34;&gt;Windows Phone&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://m.google.com/authenticator&#34;&gt;BlackBerry&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://www.howtogeek.com/129014/how-to-use-google-authenticator-and-other-two-factor-authentication-apps-without-a-smartphone/&#34;&gt;more&amp;hellip;.&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The PAM-module that we need is called &lt;em&gt;libpam-google-authenticator&lt;/em&gt; so on Debian/Ubuntu/&amp;hellip; you can use the following command to install this:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y libpam-google-authenticator
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next, run&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;google-authenticator
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;to set this up for your account. Do not use &lt;em&gt;sudo&lt;/em&gt; or something like that, use your own account!&lt;/p&gt;
-
-&lt;p&gt;Now open the file &lt;em&gt;/etc/pam.d/sshd&lt;/em&gt;, you &lt;a href=&#34;https://help.ubuntu.com/community/Nano&#34;&gt;can do this&lt;/a&gt; with&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/pam.d/sshd
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and add the following at the end of the file:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;auth [success=1 default=ignore] pam_access.so accessfile=/etc/security/access-local.conf
-auth required pam_google_authenticator.so
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now create the file &lt;em&gt;/etc/security/access-local.conf&lt;/em&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/security/access-local.conf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and add the following:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;+ : ALL : ????
-+ : ALL : LOCAL
-- : ALL : ALL
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Replace the &lt;em&gt;????&lt;/em&gt; with the subnet or the IP that should be allowed to access SSH without the second verification step. &lt;a href=&#34;http://linux.die.net/man/5/access.conf&#34;&gt;You could enter&lt;/a&gt; an IP like &lt;em&gt;192.168.0.5&lt;/em&gt; or a subnet like &lt;em&gt;192.168.0.0/24&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now edit the file &lt;em&gt;/etc/ssh/sshd_config&lt;/em&gt;:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/ssh/sshd_config
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and make sure it says&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;ChallengeResponseAuthentication yes
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;By default it says &lt;em&gt;no&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Now restart the SSH service and you should be good!&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service ssh restart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;ntp:a354de51d09f492e98f062205a9fe7ab&#34;&gt;NTP&lt;/h2&gt;
-
-&lt;p&gt;Ahtanu has &lt;a href=&#34;https://twitter.com/ahtanu/status/432092745348677632&#34;&gt;let me know&lt;/a&gt; via Twitter that you&amp;rsquo;d better make sure your device is properly configured as an NTP client. Most desktop Linux distributions have this already in order but here are the instructions for Debian-based distributions to make sure NTP is configured properly.&lt;/p&gt;
-
-&lt;p&gt;First, update or install the NTP client.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y ntp ntp-simple ntpdate
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Next, set the timezone and the date on your device:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo tzselect
-sudo date --set 2014-12-31
-sudo date --set 20:20:20
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now edit the file ntp.conf:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo nano /etc/ntp.conf
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;and make sure it has 2 NTP-servers:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;server 0.be.pool.ntp.org
-server 1.be.pool.ntp.org
-server 2.be.pool.ntp.org
-server 3.be.pool.ntp.org
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Eventually restart the NTP service:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;sudo service ntpd restart
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
