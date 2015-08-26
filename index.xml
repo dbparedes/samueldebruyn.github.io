@@ -8,8 +8,52 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Wed, 26 Aug 2015 07:51:16 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2015 18:55:47 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The right way to create Windows installation media</title>
+      <link>http://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</link>
+      <pubDate>Wed, 26 Aug 2015 18:55:47 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</guid>
+      <description>
+
+&lt;p&gt;There are several ways to create a USB stick to install Windows. Chances are you end up with an error during the installation or you (unknowingly) use the wrong partition layout for your HDD/SSD.&lt;/p&gt;
+
+&lt;h2 id=&#34;get-an-iso:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Get an ISO&lt;/h2&gt;
+
+&lt;p&gt;Which version of Windows do you want to install? This guide would work fine with Windows 7 or newer, but you can get an ISO for Windows 10 Home/Pro on &lt;a href=&#34;https://www.microsoft.com/en-us/software-download/windows10ISO&#34;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The problem with that page, however, is that it redirects you to a download of a media creation tool if you&amp;rsquo;re opening the page on a Windows PC. The media creation tool allows you to download an ISO image, but it &lt;a href=&#34;http://d.ibtimes.co.uk/en/full/1451630/windows-10-installation-errors.png&#34;&gt;doesn&amp;rsquo;t always work properly&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So fiddle with your user agent settings (the hard way)&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;or open it up on your smartphone, select the version of Windows you want to download and send the direct download to yourself (the easy way).&lt;/p&gt;
+
+&lt;h2 id=&#34;get-rufus:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Get Rufus&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rufus.akeo.ie/&#34;&gt;Rufus&lt;/a&gt; is a simple tool which allows you to easily create bootable USB sticks for any kind of operating system. Download it, you don&amp;rsquo;t have to install it.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-the-image:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Creating the image&lt;/h2&gt;
+
+&lt;p&gt;Now plug in your USB stick, fire up Rufus and point it to your USB stick (first dropdown list) and the ISO image (button next to the last dropdown list) you just downloaded. Now &lt;strong&gt;pay attention&lt;/strong&gt; to the next steps, because Rufus will delete everything on the USB stick/disk you select.&lt;/p&gt;
+
+&lt;p&gt;Select &lt;em&gt;GPT with UEFI&lt;/em&gt; for the partition layout.&lt;/p&gt;
+
+&lt;p&gt;Pick &lt;em&gt;FAT32&lt;/em&gt; as filesystem (no, NTFS will not work).&lt;/p&gt;
+
+&lt;p&gt;Leave the cluster size at its default (&lt;em&gt;4096 bytes&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Make sure the third checkmark next to &lt;em&gt;Create bootable disk with ISO image&lt;/em&gt; is checked.&lt;/p&gt;
+
+&lt;p&gt;Now all you have to do is press &lt;em&gt;Start&lt;/em&gt; :)&lt;/p&gt;
+
+&lt;h2 id=&#34;booting-the-image:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Booting the image&lt;/h2&gt;
+
+&lt;p&gt;This guide ends here, but if you don&amp;rsquo;t know how to boot your PC from the installation image you just created, consult the manual of your PC, BIOS or motherboard. &lt;em&gt;Usually you need to press one of the F-buttons while the logo of your motherboard&amp;rsquo;s manufacturer is displayed.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Experiences with Windows 10 on a new Dell XPS 13 (2015)</title>
@@ -450,30 +494,6 @@
 &lt;p&gt;&lt;a href=&#34;http://www.roodfluweel.be&#34;&gt;Rood Fluweel&lt;/a&gt; is a SaaS made on top of ASP.NET. It can manage ticketing, reservations, payments etc.&lt;/p&gt;
 
 &lt;p&gt;The goal of the Windows Store app is to make it easier to print and create tickets when a lot of people are coming through the entrance at once.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Wercker step to validate hugo themes</title>
-      <link>http://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</link>
-      <pubDate>Wed, 15 Jul 2015 13:21:45 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</guid>
-      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;http://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;http://sa.muel.be/search/?q=hugo&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;As I &lt;a href=&#34;http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
-
-&lt;p&gt;There wasn&amp;rsquo;t any, so I simply wrote a build step for &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The build step validates a hugo theme using &lt;a href=&#34;https://github.com/spf13/HugoBasicExample&#34;&gt;an example site&lt;/a&gt;. It also checks if you included some files required for a future hugo themes site.&lt;/p&gt;
-
-&lt;p&gt;The code for the build step is available at &lt;a href=&#34;https://github.com/SamuelDebruyn/wercker-step-hugo-theme-check&#34;&gt;https://github.com/SamuelDebruyn/wercker-step-hugo-theme-check&lt;/a&gt; and an example &lt;em&gt;wercker.yml&lt;/em&gt; configuration is included below.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;box: debian
-build:
-  steps:
-    - samueldebruyn/hugo-theme-check:
-        version: &amp;quot;0.14&amp;quot;
-        theme: material-lite
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

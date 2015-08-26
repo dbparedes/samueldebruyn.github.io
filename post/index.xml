@@ -8,8 +8,52 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Wed, 26 Aug 2015 07:51:16 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 26 Aug 2015 18:55:47 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The right way to create Windows installation media</title>
+      <link>http://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</link>
+      <pubDate>Wed, 26 Aug 2015 18:55:47 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</guid>
+      <description>
+
+&lt;p&gt;There are several ways to create a USB stick to install Windows. Chances are you end up with an error during the installation or you (unknowingly) use the wrong partition layout for your HDD/SSD.&lt;/p&gt;
+
+&lt;h2 id=&#34;get-an-iso:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Get an ISO&lt;/h2&gt;
+
+&lt;p&gt;Which version of Windows do you want to install? This guide would work fine with Windows 7 or newer, but you can get an ISO for Windows 10 Home/Pro on &lt;a href=&#34;https://www.microsoft.com/en-us/software-download/windows10ISO&#34;&gt;this page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The problem with that page, however, is that it redirects you to a download of a media creation tool if you&amp;rsquo;re opening the page on a Windows PC. The media creation tool allows you to download an ISO image, but it &lt;a href=&#34;http://d.ibtimes.co.uk/en/full/1451630/windows-10-installation-errors.png&#34;&gt;doesn&amp;rsquo;t always work properly&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;So fiddle with your user agent settings (the hard way)&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;or open it up on your smartphone, select the version of Windows you want to download and send the direct download to yourself (the easy way).&lt;/p&gt;
+
+&lt;h2 id=&#34;get-rufus:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Get Rufus&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://rufus.akeo.ie/&#34;&gt;Rufus&lt;/a&gt; is a simple tool which allows you to easily create bootable USB sticks for any kind of operating system. Download it, you don&amp;rsquo;t have to install it.&lt;/p&gt;
+
+&lt;h2 id=&#34;creating-the-image:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Creating the image&lt;/h2&gt;
+
+&lt;p&gt;Now plug in your USB stick, fire up Rufus and point it to your USB stick (first dropdown list) and the ISO image (button next to the last dropdown list) you just downloaded. Now &lt;strong&gt;pay attention&lt;/strong&gt; to the next steps, because Rufus will delete everything on the USB stick/disk you select.&lt;/p&gt;
+
+&lt;p&gt;Select &lt;em&gt;GPT with UEFI&lt;/em&gt; for the partition layout.&lt;/p&gt;
+
+&lt;p&gt;Pick &lt;em&gt;FAT32&lt;/em&gt; as filesystem (no, NTFS will not work).&lt;/p&gt;
+
+&lt;p&gt;Leave the cluster size at its default (&lt;em&gt;4096 bytes&lt;/em&gt;).&lt;/p&gt;
+
+&lt;p&gt;Make sure the third checkmark next to &lt;em&gt;Create bootable disk with ISO image&lt;/em&gt; is checked.&lt;/p&gt;
+
+&lt;p&gt;Now all you have to do is press &lt;em&gt;Start&lt;/em&gt; :)&lt;/p&gt;
+
+&lt;h2 id=&#34;booting-the-image:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Booting the image&lt;/h2&gt;
+
+&lt;p&gt;This guide ends here, but if you don&amp;rsquo;t know how to boot your PC from the installation image you just created, consult the manual of your PC, BIOS or motherboard. &lt;em&gt;Usually you need to press one of the F-buttons while the logo of your motherboard&amp;rsquo;s manufacturer is displayed.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Experiences with Windows 10 on a new Dell XPS 13 (2015)</title>
@@ -817,58 +861,6 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;protected $fillable = array(&#39;email&#39;, &#39;password&#39;, &#39;activation_code&#39;, &#39;confirmed&#39;, &#39;reset_password&#39;, &#39;password_confirmation&#39;);
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Quick tips for problems with Windows Store and Windows 8 apps</title>
-      <link>http://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</link>
-      <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</guid>
-      <description>
-
-&lt;p&gt;These are a few quick tips for when you&amp;rsquo;re experiencing problems with the Windows Store in Windows 8(.1)/9 and opening apps in Windows 8(.1)/9.&lt;/p&gt;
-
-&lt;h2 id=&#34;symptoms:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;Symptoms:&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;clicking on a link to a Windows Store app shows a page telling you that the app could not be found&lt;/li&gt;
-&lt;li&gt;clicking on a tile in the Windows Store doesn&amp;rsquo;t do anything&lt;/li&gt;
-&lt;li&gt;the Windows Store doesn&amp;rsquo;t open&lt;/li&gt;
-&lt;li&gt;an installed app doesn&amp;rsquo;t open&lt;/li&gt;
-&lt;li&gt;an installed app tells you that you have to buy this app while you&amp;rsquo;ve already bought it&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;solutions:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;Solutions:&lt;/h2&gt;
-
-&lt;h3 id=&#34;for-problems-solely-related-to-the-windows-store:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;For problems solely related to the Windows Store&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Click on the Windows Store tile.&lt;/li&gt;
-&lt;li&gt;Touch the top of the screen and swipe it down (the gesture to close an app) and hold your mouse/finger at the bottom of the screen for at least 5 seconds.&lt;/li&gt;
-&lt;li&gt;After 5 seconds, release your mouse/finger.&lt;/li&gt;
-&lt;li&gt;Make sure you&amp;rsquo;re connected to the Internet.&lt;/li&gt;
-&lt;li&gt;Press R while holding the Windows key on your keyboard.&lt;/li&gt;
-&lt;li&gt;Type &lt;em&gt;wsreset&lt;/em&gt; and press enter.&lt;/li&gt;
-&lt;li&gt;The Windows Store should now pop up. Wait for it to load, this can take up to a minute.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;for-everything-else:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;For everything else&lt;/h3&gt;
-
-&lt;p&gt;Make sure you&amp;rsquo;ve done the above solution for problems related to the Windows Store.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Open the Windows Store.&lt;/li&gt;
-&lt;li&gt;Open the right charms bar (move your mouse to the bottom right corner of your screen).&lt;/li&gt;
-&lt;li&gt;Click on &lt;em&gt;app updates&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Press the &lt;em&gt;sync licenses&lt;/em&gt; button.&lt;/li&gt;
-&lt;li&gt;Press the &lt;em&gt;search updates&lt;/em&gt; button.&lt;/li&gt;
-&lt;li&gt;Now update all your apps.&lt;/li&gt;
-&lt;li&gt;Repeat this process once more if the problems persist.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;If this didn&amp;rsquo;t fix the problems you&amp;rsquo;re experiencing, you should &lt;a href=&#34;https://twitter.com/intent/tweet?text=@WindowsSupport%20&#34;&gt;contact Microsoft&lt;/a&gt;.&lt;/p&gt;
 </description>
     </item>
     

@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://sa.muel.be/</loc>
-    <lastmod>2015-08-26T07:51:16+02:00</lastmod>
+    <lastmod>2015-08-26T18:55:47+02:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</loc>
+    <lastmod>2015-08-26T18:55:47+02:00</lastmod>
   </url>
   
   <url>
@@ -108,12 +113,12 @@
   </url>
   
   <url>
-    <loc>http://sa.muel.be/linkedin/</loc>
+    <loc>http://sa.muel.be/github/</loc>
     <lastmod>2015-07-05T16:08:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://sa.muel.be/github/</loc>
+    <loc>http://sa.muel.be/linkedin/</loc>
     <lastmod>2015-07-05T16:08:03+02:00</lastmod>
   </url>
   
