@@ -71,6 +71,10 @@
 
 &lt;p&gt;Sometimes the audio driver went berserk and the sound became very distorted. Disabling and enabling the Realtek HW audio codec usually fixed it temporarily, but it was finally fixed after installing a new version of the Realtek audio driver last week.&lt;/p&gt;
 
+&lt;h4 id=&#34;update:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Update&lt;/h4&gt;
+
+&lt;p&gt;This issue reappeared a few hours after publishing this post.&lt;/p&gt;
+
 &lt;h3 id=&#34;missing-settings-in-the-power-management-section-of-the-control-panel:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Missing settings in the power management section of the control panel&lt;/h3&gt;
 
 &lt;p&gt;Dell offers a great utility called &lt;a href=&#34;http://en.community.dell.com/techcenter/enterprise-client/w/wiki/7535.dell-command-power-manager&#34;&gt;Dell Command | Power&lt;/a&gt; which you should definitely install if you own a recent Dell laptop. You can optimize various settings that avoid battery wear (e.g. optimize the charging algorithm for a laptop that is often plugged into the charger or keep the laptop extra cool).&lt;/p&gt;
