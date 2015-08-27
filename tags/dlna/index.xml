@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Dlna on Samuel Debruyn</title>
+    <link>http://sa.muel.be/tags/dlna/</link>
+    <description>Recent content in Dlna on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Mon, 09 Dec 2013 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://sa.muel.be/tags/dlna/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Connecting Serviio with Telenet&#39;s Yelo TV</title>
+      <link>http://sa.muel.be/2013/connecting-serviio-with-telenets-yelo-tv/</link>
+      <pubDate>Mon, 09 Dec 2013 00:00:00 +0000</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2013/connecting-serviio-with-telenets-yelo-tv/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;Recently Belgian ISP Telenet &lt;a href=&#34;http://snap.telenet.be/nieuw/artikel/yelo-tv-getest-en-gekeurd&#34;&gt;introduced&lt;/a&gt; &lt;a href=&#34;http://telenet.be/nl/yelo-tv&#34;&gt;Yelo TV&lt;/a&gt;. It&amp;rsquo;s the new brand for all of their efforts &lt;del&gt;to &lt;/del&gt;&lt;del&gt;innovate&lt;/del&gt; with television. Yelo TV includes a series of apps for almost every device (except for Windows Phone) and a &lt;a href=&#34;http://yelotv.be/&#34;&gt;website &lt;/a&gt;on which you can watch live television, watch recordings or schedule recordings. &lt;/p&gt;
+
+&lt;p&gt;During the coming weeks Telenet is also updating their &lt;a href=&#34;http://telenet.be/nl/digitale-tv&#34;&gt;DigiCorders&lt;/a&gt; to a new software version called Yelo TV. Most of the changes are in design but the new firmware will include a &lt;a href=&#34;http://en.wikipedia.org/wiki/Digital_Living_Network_Alliance&#34;&gt;DLNA&lt;/a&gt; renderer. This means that you can use any device with a DLNA server to stream music, photos and videos to a television connected to a Telenet DigiCorder.&lt;/p&gt;
+
+&lt;p&gt;I have a computer with &lt;a href=&#34;http://www.serviio.org/&#34;&gt;Serviio&lt;/a&gt; on it. Serviio is a free DLNA server (a Pro version with more features is available) and in my opinion it&amp;rsquo;s the best available. Serviio includes support for transcoding. This way Serviio will convert every media file in a format which the DLNA renderer is able to play if necessary.&lt;/p&gt;
+
+&lt;p&gt;DLNA has its advantages and disadvantages, one of the latter is difficulties to detect compatible media formats. That&amp;rsquo;s why Serviio uses &lt;em&gt;profiles&lt;/em&gt; which define the compatible media formats for each type of DLNA renderer.&lt;/p&gt;
+
+&lt;p&gt;There wasn&amp;rsquo;t one for Telenet Yelo TV yet so I wrote one. This profile will convert every incompatible media file so that you can stream it to your DigiCorder. You&amp;rsquo;ll need a fast computer to transcode files. This profile includes support for subtitles if you enabled it in Serviio&amp;rsquo;s Console.&lt;/p&gt;
+
+&lt;h3 id=&#34;update-plex:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;Update: Plex&lt;/h3&gt;
+
+&lt;p&gt;I recently switched to Plex. A profile for Plex is available here:&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/5f6a7b3669706153f868.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;the-profile:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;The profile:&lt;/h2&gt;
+
+&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/7944739.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;h2 id=&#34;installation:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;Installation&lt;/h2&gt;
+
+&lt;p&gt;This profile is included in Serviio 1.4 or newer. You don&amp;rsquo;t need to change anything.&lt;/p&gt;
+
+&lt;h2 id=&#34;nb-further-optimizations:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;NB: Further optimizations&lt;/h2&gt;
+
+&lt;p&gt;Tips to get a &lt;strong&gt;higher video quality&lt;/strong&gt; (only works for videos that have to be transcoded because of incompatibility or that include subtitles):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;For technical users only: you could force Serviio to always transcode videos, look at &lt;a href=&#34;http://www.serviio.org/index.php?option=com_content&amp;amp;view=article&amp;amp;id=24&#34;&gt;&lt;em&gt;forceVTranscoding&lt;/em&gt;&lt;/a&gt; and &lt;a href=&#34;http://www.serviio.org/index.php?option=com_content&amp;amp;view=article&amp;amp;id=16&#34;&gt;&lt;em&gt;alwaysEnableTranscoding&lt;/em&gt;&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Security on Samuel Debruyn</title>
+    <link>http://sa.muel.be/tags/security/</link>
+    <description>Recent content in Security on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Sun, 23 Aug 2015 22:30:51 +0200</lastBuildDate>
+    <atom:link href="http://sa.muel.be/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hardening your WordPress security</title>
+      <link>http://sa.muel.be/2015/hardening-your-wordpress-security/</link>
+      <pubDate>Sun, 23 Aug 2015 22:30:51 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/hardening-your-wordpress-security/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction:270325a472963f8dbe8695a68f29ae37&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;This is the second part of a guide about &lt;a href=&#34;http://sa.muel.be/2015/recovering-a-hacked-wordpress/&#34;&gt;recovering a hacked WordPress&lt;/a&gt; and hardening your WordPress security.&lt;/p&gt;
+
+&lt;p&gt;In the previous part, I showed you how to get back up and running after your website has been hacked. In this part I&amp;rsquo;ll demonstrate how you can avoid being hacked by making your WordPress more secure. I always try to be exhaustive, but if you have any suggestions, corrections or feel like anything is missing, I would like you to &lt;a href=&#34;mailto:s@muel.be?subject=Suggestions%20for%20the%20post%20about%20securing%20Wordpress&#34;&gt;let me know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Even if you&amp;rsquo;re not hacked, I still advice you to read the first part too. It contains some information about how attackers work, what they try to achieve and how you can make sure they lose access to your website.&lt;/p&gt;
+
+&lt;p&gt;&lt;small&gt;I planned on writing this guide a lot earlier and it&amp;rsquo;s been a while since I&amp;rsquo;ve looked at my WordPress websites (which is not a good practice&amp;hellip;) I&amp;rsquo;ll update this guide in about a month.&lt;/small&gt;&lt;/p&gt;
+
+&lt;p&gt;While this guide focusses on security, some measures could impact the performance of your website negatively while others should impact your performance positively. It&amp;rsquo;s up to you to consider which measures tips you should implement and which you shouldn&amp;rsquo;t.&lt;/p&gt;
+
+&lt;p&gt;Now, let&amp;rsquo;s get started, shall we?&lt;/p&gt;
+
+&lt;h2 id=&#34;consider-to-use-a-cloud-proxy:270325a472963f8dbe8695a68f29ae37&#34;&gt;Consider to use a cloud proxy&lt;/h2&gt;
+
+&lt;p&gt;Without a good CDN and caching strategy, it&amp;rsquo;s impossible to survive a DDoS attack. The easiest solution is a reverse cloud proxy like &lt;a href=&#34;http://www.cloudflare.com&#34;&gt;CloudFlare&lt;/a&gt;. CloudFlare caches your content and allows for very precise configuration. They will also keep your static files online if your server went offline. CloudFlare offers very good protection against malicious visitors and is awesome at detecting and mitigating DDoS attacks.&lt;/p&gt;
+
+&lt;p&gt;They offer &lt;a href=&#34;https://wordpress.org/plugins/cloudflare/&#34;&gt;a WordPress plugin&lt;/a&gt; that helps with the reverse proxying.&lt;/p&gt;
+
+&lt;h3 id=&#34;encryption:270325a472963f8dbe8695a68f29ae37&#34;&gt;Encryption&lt;/h3&gt;
+
+&lt;p&gt;CloudFlare, the tool I mentioned above, offers free server-client SSL. It isn&amp;rsquo;t as secure as full SSL (SSL from your server to Cloudflare&amp;rsquo;s servers and from CloudFlare&amp;rsquo;s servers to your visitor&amp;rsquo;s browsers), but it&amp;rsquo;s a lot safer than plain HTTP.&lt;/p&gt;
+
+&lt;h2 id=&#34;make-sure-the-web-servers-are-secure:270325a472963f8dbe8695a68f29ae37&#34;&gt;Make sure the web servers are secure&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;re on shared hosting, you don&amp;rsquo;t have much to say about this, but you can still take measures to ensure your management portal access is safe. Use very strong passwords to manage your web server, make sure everything (PHP, MySQL, Apache&amp;hellip;) is up to date, only allow database access from your web server (usually localhost)&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Another perspective to look at this is securing access to your files. Store your backups in a safe location, make sure that the WordPress folders and files have the right permissions (this changes sometimes, take a look at the &lt;a href=&#34;https://codex.wordpress.org/Changing_File_Permissions&#34;&gt;official website&lt;/a&gt; to find out which permissions you should use).&lt;/p&gt;
+
+&lt;h2 id=&#34;use-strong-authentication-and-authorisation:270325a472963f8dbe8695a68f29ae37&#34;&gt;Use strong authentication and authorisation&lt;/h2&gt;
+
+&lt;p&gt;Use strong passwords, make sure your wp-config.php is only stored on the webserver itself, consider using &lt;a href=&#34;https://wordpress.org/plugins/wordpress-2-step-verification/&#34;&gt;MFA&lt;/a&gt;&amp;hellip; There are a lot of ways to make sure that it isn&amp;rsquo;t too easy to get in.&lt;/p&gt;
+
+&lt;h2 id=&#34;consider-using-a-3rd-party-email-provider:270325a472963f8dbe8695a68f29ae37&#34;&gt;Consider using a 3rd party email provider&lt;/h2&gt;
+
+&lt;p&gt;Most hackers don&amp;rsquo;t even want to hack your website itself. Usually they&amp;rsquo;ll want to use your mail server (which is usually running on the same server) and domain to sell them to spammers. A third party email service like &lt;a href=&#34;http://mandrillapp.com/&#34;&gt;Mandrill&lt;/a&gt; or &lt;a href=&#34;https://sendgrid.com/&#34;&gt;SendGrid&lt;/a&gt; could come in handy to avoid such attacks. I recommend disabling the local mail server and creating SPF and DKIM records that only emails from your email provider. It&amp;rsquo;s quite easy to setup Mandrill with WordPress with &lt;a href=&#34;https://wordpress.org/plugins/wpmandrill/&#34;&gt;this Mandrill plugin&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;always-use-the-latest-versions:270325a472963f8dbe8695a68f29ae37&#34;&gt;Always use the latest versions&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/&#34;&gt;PHP is a terrible programming language.&lt;/a&gt; It&amp;rsquo;s incredibly easy to write a lot of bugs and never notice them. If a plugin or theme is updated, install the update. Every possible fix for security issues is welcome.&lt;/p&gt;
+
+&lt;h2 id=&#34;uninstall-plugins-and-themes-you-don-t-need:270325a472963f8dbe8695a68f29ae37&#34;&gt;Uninstall plugins and themes you don&amp;rsquo;t need&lt;/h2&gt;
+
+&lt;p&gt;If you don&amp;rsquo;t necessarily need a plugin or theme, uninstall it completely. Don&amp;rsquo;t even leave it deactivated. Hackers can run code in deactivated plugins without any hassle.&lt;/p&gt;
+
+&lt;h2 id=&#34;schedule-security-scans:270325a472963f8dbe8695a68f29ae37&#34;&gt;Schedule security scans&lt;/h2&gt;
+
+&lt;p&gt;While &lt;a href=&#34;https://wordpress.org/plugins/exploit-scanner/&#34;&gt;Exploit Scanner&lt;/a&gt; is perfectly capable of scanning a WordPress installation for (possible) exploits, you can&amp;rsquo;t use it to schedule automatic scans. &lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;Sucuri Security&lt;/a&gt; is definitely a must-have for every WordPress website. You can schedule automatic scans for modified files, notifications for about everything that happens on your website, thorough measures to further harden your website&amp;rsquo;s security&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;log-bad-behaviour:270325a472963f8dbe8695a68f29ae37&#34;&gt;Log bad behaviour&lt;/h2&gt;
+
+&lt;p&gt;There&amp;rsquo;s an awesome plugin called &lt;a href=&#34;https://wordpress.org/plugins/bad-behavior/&#34;&gt;Bad Behavior&lt;/a&gt; which logs malicious looking behaviour and notifies you if you want to. If you suspect a hacker is trying to get in, install this plugin. You can then use to automatically block some of his attempts.&lt;/p&gt;
+
+&lt;p&gt;If you notice some brute force attacks on your &lt;em&gt;wp-login.php&lt;/em&gt; page, consider installing &lt;a href=&#34;https://wordpress.org/plugins/limit-login-attempts/&#34;&gt;Limit Login Attempts&lt;/a&gt;. You can fine-tune its settings so that it&amp;rsquo;s not too hard on your users.&lt;/p&gt;
+
+&lt;h2 id=&#34;change-the-defaults:270325a472963f8dbe8695a68f29ae37&#34;&gt;Change the defaults&lt;/h2&gt;
+
+&lt;p&gt;WordPress allows you to change a lot of the default settings, here are a few things you could change to improve security by obscurity:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Store the &lt;em&gt;wp-config.php&lt;/em&gt; file a level higher than the root of your WordPress installation&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codex.wordpress.org/Editing_wp-config.php#Moving_wp-content_folder&#34;&gt;Move the &lt;em&gt;wp-content&lt;/em&gt; folder&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Don&amp;rsquo;t use the &lt;code&gt;wp_&lt;/code&gt; table prefix&lt;/li&gt;
+&lt;li&gt;Use a different &lt;a href=&#34;https://wordpress.org/plugins/sf-move-login/&#34;&gt;login url&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Delete the user that was created during the initial setup and create a new one&lt;/li&gt;
+&lt;li&gt;Never use the username &lt;em&gt;admin&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Recovering a hacked WordPress</title>
+      <link>http://sa.muel.be/2015/recovering-a-hacked-wordpress/</link>
+      <pubDate>Mon, 06 Jul 2015 14:14:32 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/recovering-a-hacked-wordpress/</guid>
+      <description>
+
+&lt;h2 id=&#34;introduction:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Introduction&lt;/h2&gt;
+
+&lt;p&gt;A few weeks ago, I had to &lt;a href=&#34;http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;repair a hacked WordPress&lt;/a&gt; installation.&lt;/p&gt;
+
+&lt;p&gt;A lot of the information I needed to successfully clean the WordPress completely of infected files was not centralized in a single guide. So I decided to write one and you are now reading it.&lt;/p&gt;
+
+&lt;p&gt;So, your website is hacked, what now? Let&amp;rsquo;s go through the process of making sure that every infection is removed and it never happens again.&lt;/p&gt;
+
+&lt;p&gt;In this first part you&amp;rsquo;ll recover from a hack. In a second part you&amp;rsquo;ll learn how to harden the security. I&amp;rsquo;ll publish &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;the second part&lt;/a&gt; a few weeks after the first part.&lt;/p&gt;
+
+&lt;p&gt;This post is meant to be exhaustive and clear. If you have any suggestions or feel like something is missing or unclear, &lt;a href=&#34;mailto:s@muel.be?subject=Suggestions%20for%20the%20post%20about%20recovering%20a%20Wordpress%20hack&#34;&gt;&lt;em&gt;please&lt;/em&gt; let me know&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The WordPress version I used to write this post is 4.2.2.&lt;/p&gt;
+
+&lt;h2 id=&#34;disabling-all-plugins-going-into-maintenance-mode:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Disabling all plugins / going into maintenance mode&lt;/h2&gt;
+
+&lt;p&gt;The first thing you should do is avoiding further infections. &lt;strong&gt;Disable EVERY plugin&lt;/strong&gt;. We&amp;rsquo;ll reactivate them later on.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;d also put the website in maintenance mode. This requires, ironically, a plugin called &lt;a href=&#34;https://wordpress.org/plugins/wp-maintenance-mode/&#34;&gt;WP Maintenance Mode&lt;/a&gt;. Install it, write a quick message for your visitors and enable it.&lt;/p&gt;
+
+&lt;h2 id=&#34;take-a-backup:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Take a backup&lt;/h2&gt;
+
+&lt;p&gt;Backup your complete WordPress folder and database. You can download all the files using FTP or SSH and export the database to SQL statements using something like &lt;a href=&#34;http://www.phpmyadmin.net/home_page/index.php&#34;&gt;phpMyAdmin&lt;/a&gt; or the customer panel of your host (CPanel, DirectAdmin&amp;hellip;). Don&amp;rsquo;t store the backup on your webserver as the hackers could also infect this backup.&lt;/p&gt;
+
+&lt;h2 id=&#34;restore-the-original-wordpress-files:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restore the original WordPress files&lt;/h2&gt;
+
+&lt;p&gt;Download &lt;a href=&#34;https://wordpress.org/download/release-archive/&#34;&gt;a fresh copy of the version of WordPress&lt;/a&gt; you were using (which should always be the latest one). Unpack it and replace the directories &lt;em&gt;wp-admin&lt;/em&gt; and &lt;em&gt;wp-includes&lt;/em&gt; completely with the copy you just downloaded. Do the same with every file in the root folder and remove every file in your root that is not in the downloaded copy except for &lt;em&gt;wp-config.php&lt;/em&gt;. The &lt;strong&gt;only folder left untouched should be &lt;em&gt;wp-content&lt;/em&gt;&lt;/strong&gt;. WordPress also doesn&amp;rsquo;t include the &lt;em&gt;wp-config.php&lt;/em&gt; file so that should also be preserved (we&amp;rsquo;ll inspect this file later on in this guide).&lt;/p&gt;
+
+&lt;h2 id=&#34;clearing-the-cache:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Clearing the cache&lt;/h2&gt;
+
+&lt;p&gt;Delete the folders &lt;em&gt;wp-content/cache&lt;/em&gt; and &lt;em&gt;wp-content/plugins/widgets&lt;/em&gt;. They will be automatically recreated.&lt;/p&gt;
+
+&lt;h2 id=&#34;regenerate-salts-and-hashes:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Regenerate salts and hashes&lt;/h2&gt;
+
+&lt;p&gt;The &lt;em&gt;wp-config.php&lt;/em&gt; file contains a few hashes and salts to make sure that your cookies and sessions are unique and secure. As these could have been compromised, it&amp;rsquo;s &lt;strong&gt;absolutely necessary&lt;/strong&gt; to regenerate them. Open your &lt;em&gt;wp-config.php&lt;/em&gt; file in a text editor and overwrite your new hashes with new ones. WordPress offers &lt;a href=&#34;https://api.wordpress.org/secret-key/1.1/salt/&#34;&gt;an online generator&lt;/a&gt; so you can easily copy and paste them.&lt;/p&gt;
+
+&lt;h2 id=&#34;upgrade-to-the-latest-version:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Upgrade to the latest version&lt;/h2&gt;
+
+&lt;p&gt;If you&amp;rsquo;re not on the latest version of WordPress, then update ASAP. I&amp;rsquo;d recommend using &lt;a href=&#34;https://codex.wordpress.org/Upgrading_WordPress_-_Extended_Instructions&#34;&gt;these extended instructions&lt;/a&gt; instead of the built-in updater, but the built-in updater should be fine for most infected websites.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Upgrade all your themes and plugins&lt;/strong&gt; while you&amp;rsquo;re at it.&lt;/p&gt;
+
+&lt;h2 id=&#34;restore-the-original-themes-and-plugins:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restore the original themes and plugins&lt;/h2&gt;
+
+&lt;p&gt;In this step we&amp;rsquo;re going to restore the original theme and plugin files like we did with the original WordPress files. Download the &lt;a href=&#34;https://wordpress.org/themes/&#34;&gt;themes&lt;/a&gt; and &lt;a href=&#34;https://wordpress.org/plugins/&#34;&gt;plugins&lt;/a&gt; from wordpress.org or from the website of the publisher of the plugin or theme (for premium/payed versions). All you need to do is unpack the files into their respective directories in &lt;em&gt;wp-content/themes&lt;/em&gt; and &lt;em&gt;wp-content/plugins&lt;/em&gt;. Make sure there are no other files than the ones you just replaced in both of these folders.&lt;/p&gt;
+
+&lt;p&gt;NB: some plugins (e.g. plugins containing &lt;a href=&#34;http://wpengineer.com/2500/wordpress-dropins/&#34;&gt;drop-ins&lt;/a&gt;) like &lt;a href=&#34;https://wordpress.org/plugins/wp-super-cache/&#34;&gt;WP Super Cache&lt;/a&gt; also put PHP files in your &lt;em&gt;wp-content&lt;/em&gt; directory.&lt;/p&gt;
+
+&lt;h2 id=&#34;search-and-delete-infections-in-your-files:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Search and delete infections in your files&lt;/h2&gt;
+
+&lt;p&gt;The only infected files left could be stored in the subfolders of &lt;em&gt;wp-content&lt;/em&gt; that we haven&amp;rsquo;t looked into yet.&lt;/p&gt;
+
+&lt;h3 id=&#34;languages:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;languages&lt;/h3&gt;
+
+&lt;p&gt;If your WordPress is in English, you can safely delete the contents of the &lt;em&gt;languages&lt;/em&gt; folder, otherwise you should download the translation in your language and put in the &lt;em&gt;wp-content/languages&lt;/em&gt; while deleting everything else in it.&lt;/p&gt;
+
+&lt;h3 id=&#34;upgrade:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;upgrade&lt;/h3&gt;
+
+&lt;p&gt;The folder &lt;em&gt;upgrade&lt;/em&gt; in &lt;em&gt;wp-content&lt;/em&gt; is used by WordPress&amp;rsquo; built-in updater and should always be empty except for when you&amp;rsquo;re updating of course.&lt;/p&gt;
+
+&lt;h3 id=&#34;uploads-and-other-folders:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;uploads and other folders&lt;/h3&gt;
+
+&lt;p&gt;Next up: search every other folder in &lt;em&gt;wp-content&lt;/em&gt; for PHP and server configuration files and delete files if you think they shouldn&amp;rsquo;t be there. I suggest doing a case insensitive search for &lt;em&gt;*.php&lt;/em&gt; and &lt;em&gt;.htaccess&lt;/em&gt; and carefully inspecting the results.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;find /path/to/wordpress/wp-content/uploads/ -iname &amp;quot;*.php&amp;quot; -or -iname &amp;quot;.htaccess&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You probably shouldn&amp;rsquo;t have any PHP or .htaccess files in &lt;em&gt;wp-content/uploads/someyear/&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Finally search all the remaining files for typical code injections. PHP injections usually contain the functions &lt;code&gt;eval&lt;/code&gt; and &lt;code&gt;base64_decode&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;egrep &#39;eval(|decode(&#39; -r -H /path/to/wordpress/wp-content/
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;search-and-delete-infections-in-your-database:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Search and delete infections in your database&lt;/h2&gt;
+
+&lt;p&gt;While most infections are usually to be found in the files, hackers could also insert executable and obfuscated code into your database. Most often these are XSS injections and WordPress should protect you against them. Still, it wouldn&amp;rsquo;t hurt to scan your posts and comments for injected code.&lt;/p&gt;
+
+&lt;p&gt;The easiest way is to connect to your database right away using something like the previously mentioned &lt;em&gt;phpMyAdmin&lt;/em&gt; tool. Login, open the database and go to the SQL page so you can run some SQL commands. The select statements below will show you the posts and comments containing common injections. Use a &lt;code&gt;DELETE&lt;/code&gt; query (be careful) or the &lt;em&gt;phpMyAdmin&lt;/em&gt; GUI to completely delete the found posts and comments. Don&amp;rsquo;t forget to change &lt;code&gt;wp_&lt;/code&gt; to the prefix you use.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;iframe%&#39;
+UNION
+SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;noscript%&#39;
+UNION
+SELECT * FROM wp_posts WHERE post_content LIKE &#39;%display:%&#39;
+UNION
+SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;?%&#39;
+UNION
+SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;?php%&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;iframe%&#39;
+UNION
+SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;noscript%&#39;
+UNION
+SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%display:%&#39;
+UNION
+SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?%&#39;
+UNION
+SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;using-exploit-scanner-and-sucuri-security-to-detect-further-infections:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Using &lt;em&gt;Exploit Scanner&lt;/em&gt; and &lt;em&gt;Sucuri Security&lt;/em&gt; to detect further infections&lt;/h2&gt;
+
+&lt;p&gt;Most code injections should be gone by now, but there are a few WordPress plugins available to detect everything that&amp;rsquo;s left.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://wordpress.org/plugins/exploit-scanner/&#34;&gt;Exploit Scanner&lt;/a&gt; scans your files for possible hidden infections. Its options allow you to also scan for iframes etc., but they cause a lot of false negatives.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;Sucuri Security&lt;/a&gt; is a plugin I&amp;rsquo;d really recommend for any WordPress installation, whether you were hacked or not. The plugin allows you to automatically scan for changed files, notify you about any administrative action, easily reinstall every plugin and theme after a hack&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;Take advantage of all possibilities of the free versions of both of them. They will make sure that your WordPress is clean and stays clean.&lt;/p&gt;
+
+&lt;h2 id=&#34;check-users-and-passwords:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Check users and passwords&lt;/h2&gt;
+
+&lt;p&gt;One of the last steps is to check if the hacker didn&amp;rsquo;t create any new users. While you&amp;rsquo;re at it, change the passwords of every user with more rights than a regular subscriber.&lt;/p&gt;
+
+&lt;h2 id=&#34;restoring-your-website-and-keeping-it-safe:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restoring your website and keeping it safe&lt;/h2&gt;
+
+&lt;p&gt;Your WordPress should now be clean of infections and you can start restoring your website. Turn maintenance mode off and deactivate the &lt;em&gt;WP Maintenance Mode&lt;/em&gt; plugin. Now activate all the other plugins you used one by one. Make sure to &lt;strong&gt;delete any plugin you don&amp;rsquo;t really need&lt;/strong&gt; and check if they are still being maintained/updated. I&amp;rsquo;d also delete every inactive theme. This part of the guide is crucial since it was probably one of the plugins that was used to accomplish the hack.&lt;/p&gt;
+
+&lt;h2 id=&#34;harden-your-wordpress-security:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Harden your WordPress Security&lt;/h2&gt;
+
+&lt;p&gt;A few weeks after this post, I&amp;rsquo;ll publish &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;a follow-up guide&lt;/a&gt; on improving the security on your WordPress website.&lt;/p&gt;
+
+&lt;h2 id=&#34;sources:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Sources&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack&#34;&gt;http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;https://wordpress.org/plugins/sucuri-scanner/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://wordpress.org/plugins/exploit-scanner/&#34;&gt;https://wordpress.org/plugins/exploit-scanner/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://codex.wordpress.org/FAQ_My_site_was_hacked&#34;&gt;https://codex.wordpress.org/FAQ_My_site_was_hacked&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://smackdown.blogsblogsblogs.com/2008/06/24/how-to-completely-clean-your-hacked-wordpress-installation/&#34;&gt;http://smackdown.blogsblogsblogs.com/2008/06/24/how-to-completely-clean-your-hacked-wordpress-installation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/&#34;&gt;http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>About that time I dealt with a bunch of hackers on a WordPress</title>
+      <link>http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/</link>
+      <pubDate>Sat, 27 Jun 2015 17:55:40 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/</guid>
+      <description>&lt;p&gt;So yeah, that happened. I recently took over 2 WordPress installations hosted on a &lt;a href=&#34;http://www.versio.uk/&#34;&gt;Versio&lt;/a&gt; shared hosting account. Versio suspended the account because it kept sending thousands of (spam) emails a day.&lt;/p&gt;
+
+&lt;p&gt;You guessed it right, one of the WordPress installations was hacked. The previous administrator tried to delete the infected files and changed his passwords. It took them a week to regain full control of both the WordPress installations. Once they got into one of the WordPress setups, it was just a matter of navigating through the filesystem to find and infect the other WordPress installation.&lt;/p&gt;
+
+&lt;p&gt;The intruders were very interested in this particular website because of the domain (TLD): &lt;a href=&#34;http://asr.ac&#34;&gt;asr.ac&lt;/a&gt;. An academic domain has a high standing, isn&amp;rsquo;t very cheap and a very rare treat for spammers. They were proud of their hack and left code injections in files called &lt;em&gt;indonesia.php&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Then I took over. I managed tens of WordPress websites before and I had a lot more time to spare than the previous IT guy. I found out that the contact address for Versio and a bunch of other services was one of the .ac addresses, which was suspended. So we didn&amp;rsquo;t even receive any warnings from Versio about abuse, the hackers had free play.&lt;/p&gt;
+
+&lt;p&gt;Once I regained access to &lt;a href=&#34;http://www.directadmin.com/&#34;&gt;DirectAdmin&lt;/a&gt; and Versio&amp;rsquo;s customer panel, I immediately backed up both installations, including the databases. Exporting the content and importing it into a fresh WordPress installation was a no go since the &lt;em&gt;wp-content&lt;/em&gt; directory was infected. The only option seemed to desinfect both WordPress installation and secure them.&lt;/p&gt;
+
+&lt;p&gt;Versio sent some notices with the files the hackers used to send out spam. They were all PHP files with obfuscated code injections in them.&lt;/p&gt;
+
+&lt;p&gt;Great, so I knew how they did it and what I had to look for. I simply deleted everything except for the &lt;em&gt;wp-content&lt;/em&gt; directory and searched the &lt;em&gt;uploads&lt;/em&gt; folder for code containing &lt;em&gt;eval(&lt;/em&gt; or &lt;em&gt;decode(&lt;/em&gt;. I then uploaded the default WordPress files and made sure everything worked again.&lt;/p&gt;
+
+&lt;p&gt;The theme we used was an outdated premium theme so I replaced that with a more popular similar looking theme which was kept up to date.&lt;/p&gt;
+
+&lt;p&gt;Finally I setup &lt;a href=&#34;https://www.cloudflare.com/&#34;&gt;CloudFlare&lt;/a&gt; with secure settings and let them challenge visitors from Indonesia. I also installed the &lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;Sucuri Security plugin&lt;/a&gt; and let it scan all files twice a day for infections.&lt;/p&gt;
+
+&lt;p&gt;So that was all, right? Nope, a few days later they were back. This time they named their files something like &lt;em&gt;diff52.php&lt;/em&gt; as this wouldn&amp;rsquo;t look as suspicious as &lt;em&gt;indonesia.php&lt;/em&gt;. CloudFlare also showed some blocked threats from Russia and Ukraine.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/&#34;&gt;This is an example of the code I found&lt;/a&gt; and &lt;a href=&#34;http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/&#34;&gt;this is the deobfuscated version of it&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I repeated the whole process but I kept wondering how they could get in. The only thing I didn&amp;rsquo;t check were the plugins. A few days before I reinstalled them all using Sucuri Security so they didn&amp;rsquo;t contain any infections. But they had to be the cause, right? I simply deactivated and removed all of them except for the ones I installed to secure the website. That did it. It&amp;rsquo;s been a week and the hackers haven&amp;rsquo;t been back since.&lt;/p&gt;
+
+&lt;p&gt;What did I learn from all of this? When you&amp;rsquo;re dealing with a hacked WordPress, &lt;strong&gt;always&lt;/strong&gt; delete every plugin and non-default theme. The team behind WordPress releases security updates in a few hours after they find a leak. &lt;a href=&#34;https://ma.ttias.be/in-defence-of-wordpress/&#34;&gt;WordPress is quite secure&lt;/a&gt;, it&amp;rsquo;s the plugins and the themes that aren&amp;rsquo;t. Themes and plugins used by a lot of people will probably get more security fixes than others. The more plugins or themes you have installed, the bigger the risk.&lt;/p&gt;
+
+&lt;p&gt;PS: I repeated every step on the second WordPress installation since that one was infected too.&lt;/p&gt;
+
+&lt;p&gt;PPS: I&amp;rsquo;ll post a comprehensive guide to securing/hardening WordPress in a few weeks. A good starting point is &lt;a href=&#34;https://codex.wordpress.org/FAQ_My_site_was_hacked&#34;&gt;this guide&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Secure SSH access with 2-step authentication (extended)</title>
+      <link>http://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</link>
+      <pubDate>Sat, 08 Feb 2014 00:00:00 +0000</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</guid>
+      <description>
+
+&lt;p&gt;In this quick tutorial I&amp;rsquo;ll show you how to secure SSH access to your Linux server with 2-step authentication. Why did I call this post &amp;lsquo;extended&amp;rsquo;? Because I&amp;rsquo;ll show you how to add extra rules so you don&amp;rsquo;t have to use 2-step authentication from certain locations.&lt;/p&gt;
+
+&lt;p&gt;I&amp;rsquo;m not going to explain &lt;a href=&#34;https://support.google.com/accounts/answer/180744&#34;&gt;what 2-step authentication is&lt;/a&gt;. You&amp;rsquo;ll need SSH or CLI access to your Linux device with root rights and a 2-step authentication app on your phone, tablet or PC:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2&#34;&gt;Android&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://itunes.apple.com/nl/app/google-authenticator/id388497605&#34;&gt;iOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.windowsphone.com/en-us/store/app/authenticator/021dd79f-0598-e011-986b-78e7d1fa76f8&#34;&gt;Windows Phone&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://m.google.com/authenticator&#34;&gt;BlackBerry&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.howtogeek.com/129014/how-to-use-google-authenticator-and-other-two-factor-authentication-apps-without-a-smartphone/&#34;&gt;more&amp;hellip;.&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The PAM-module that we need is called &lt;em&gt;libpam-google-authenticator&lt;/em&gt; so on Debian/Ubuntu/&amp;hellip; you can use the following command to install this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y libpam-google-authenticator
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, run&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;google-authenticator
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;to set this up for your account. Do not use &lt;em&gt;sudo&lt;/em&gt; or something like that, use your own account!&lt;/p&gt;
+
+&lt;p&gt;Now open the file &lt;em&gt;/etc/pam.d/sshd&lt;/em&gt;, you &lt;a href=&#34;https://help.ubuntu.com/community/Nano&#34;&gt;can do this&lt;/a&gt; with&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/pam.d/sshd
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and add the following at the end of the file:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;auth [success=1 default=ignore] pam_access.so accessfile=/etc/security/access-local.conf
+auth required pam_google_authenticator.so
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now create the file &lt;em&gt;/etc/security/access-local.conf&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/security/access-local.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and add the following:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;+ : ALL : ????
++ : ALL : LOCAL
+- : ALL : ALL
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Replace the &lt;em&gt;????&lt;/em&gt; with the subnet or the IP that should be allowed to access SSH without the second verification step. &lt;a href=&#34;http://linux.die.net/man/5/access.conf&#34;&gt;You could enter&lt;/a&gt; an IP like &lt;em&gt;192.168.0.5&lt;/em&gt; or a subnet like &lt;em&gt;192.168.0.0/24&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now edit the file &lt;em&gt;/etc/ssh/sshd_config&lt;/em&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/ssh/sshd_config
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and make sure it says&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ChallengeResponseAuthentication yes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By default it says &lt;em&gt;no&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;Now restart the SSH service and you should be good!&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service ssh restart
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ntp:a354de51d09f492e98f062205a9fe7ab&#34;&gt;NTP&lt;/h2&gt;
+
+&lt;p&gt;Ahtanu has &lt;a href=&#34;https://twitter.com/ahtanu/status/432092745348677632&#34;&gt;let me know&lt;/a&gt; via Twitter that you&amp;rsquo;d better make sure your device is properly configured as an NTP client. Most desktop Linux distributions have this already in order but here are the instructions for Debian-based distributions to make sure NTP is configured properly.&lt;/p&gt;
+
+&lt;p&gt;First, update or install the NTP client.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo apt-get update &amp;amp;&amp;amp; sudo apt-get install -y ntp ntp-simple ntpdate
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Next, set the timezone and the date on your device:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo tzselect
+sudo date --set 2014-12-31
+sudo date --set 20:20:20
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now edit the file ntp.conf:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo nano /etc/ntp.conf
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and make sure it has 2 NTP-servers:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;server 0.be.pool.ntp.org
+server 1.be.pool.ntp.org
+server 2.be.pool.ntp.org
+server 3.be.pool.ntp.org
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Eventually restart the NTP service:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo service ntpd restart
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

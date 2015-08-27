@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google on Samuel Debruyn</title>
+    <link>http://sa.muel.be/tags/google/</link>
+    <description>Recent content in Google on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Mon, 13 Jul 2015 08:00:00 +0200</lastBuildDate>
+    <atom:link href="http://sa.muel.be/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Material-lite theme for hugo</title>
+      <link>http://sa.muel.be/2015/material-lite-theme-for-hugo/</link>
+      <pubDate>Mon, 13 Jul 2015 08:00:00 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/material-lite-theme-for-hugo/</guid>
+      <description>&lt;p&gt;Last week, &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;I wrote a post&lt;/a&gt; about how awesome &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt; is and why I switched from Jekyll to hugo.&lt;/p&gt;
+
+&lt;p&gt;Then, a few days later, Google released an awesome template called &lt;a href=&#34;http://getmdl.io&#34;&gt;Material Design Lite&lt;/a&gt;. It&amp;rsquo;s basically Google&amp;rsquo;s famous &lt;a href=&#34;https://www.google.com/design/spec/material-design/introduction.html&#34;&gt;Material Design&lt;/a&gt; in HTML, CSS and JavaScript instead of in &lt;a href=&#34;https://www.polymer-project.org&#34;&gt;Polymer&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I was thinking about setting up another website for some side project and wanted to use material design. So I decided to write a material design theme for a simple hugo blog.&lt;/p&gt;
+
+&lt;p&gt;You can check it out at &lt;a href=&#34;https://github.com/SamuelDebruyn/hugo-material-lite&#34;&gt;https://github.com/SamuelDebruyn/hugo-material-lite&lt;/a&gt; (&lt;a href=&#34;http://materialexample.sa.muel.be&#34;&gt;demo&lt;/a&gt;) Enjoy!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>How Google cripples outdated Android devices</title>
+      <link>http://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</link>
+      <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-i-downgraded-my-nexus-5:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Why I downgraded my Nexus 5&lt;/h2&gt;
+
+&lt;p&gt;About a year ago Google released &lt;a href=&#34;http://developer.android.com/preview/index.html&#34;&gt;Android L Developer Preview&lt;/a&gt;. This preview of the upcoming Android Lollipop (5.0) release contained a lot of bugs and was definitely not &lt;em&gt;daily driver&lt;/em&gt; material.&lt;/p&gt;
+
+&lt;p&gt;When Google started updating Nexus devices to the &lt;a href=&#34;http://officialandroid.blogspot.be/2014/10/android-be-together-not-same.html&#34;&gt;final version of Android Lollipop&lt;/a&gt; last autumn, it was clear that not all bugs were gone. Users noticed several bugs of which the &lt;a href=&#34;https://code.google.com/p/android/issues/detail?id=79729&#34;&gt;memory leak on the Nexus 5&lt;/a&gt; was the worst. Power users had to reboot their device every 2 days and other users could go half a week without rebooting. Without a reboot, apps closed automatically a few seconds after opening and background services like Spotify shut down the moment you opened a memory intensive app.&lt;/p&gt;
+
+&lt;p&gt;The &lt;a href=&#34;http://www.androidpolice.com/2014/12/15/nexus-5-receive-android-5-0-1-today-according-sprint-t-mobile/&#34;&gt;Android 5.0.1 update&lt;/a&gt; came and went while fixing a few bugs, but the memory leak was still there. Apparently it had something to do with the fade out animation when you turned off your screen.&lt;/p&gt;
+
+&lt;p&gt;Then, a few weeks back, Google released Android 5.1. It contained some UI and functional improvements and the memory leak was gone, at last! But don’t start cheering too soon. &lt;a href=&#34;http://www.androidpolice.com/2015/03/15/google-android-5-1-memory-leak-has-been-fixed-internally-no-timeline-for-release-yet/&#34;&gt;Android 5.1 contained another memory leak&lt;/a&gt;. The Android developers already fixed it, but at the time of writing, they still don’t have a timeframe for a release of this fix. The rebooting went on, every other day.&lt;/p&gt;
+
+&lt;p&gt;What if you have a car accident and you need to call emergency services?&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Oh no, wait, I have to reboot my phone first.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This drives me nuts. This seems a critical bug to me. A (smart)phone mustto be able to perform its most basic function all the time: calling.&lt;/p&gt;
+
+&lt;p&gt;I considered downgrading while I was on Android 5.0.1, but I quickly delayed this decision when I heard about the upcoming 5.1 update that would fix this memory leak. However, when I started noticing the second memory leak, I had it. Time to go back to the latest stable version: Android 4.4.4 KitKat.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-i-downgraded:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;How I downgraded&lt;/h2&gt;
+
+&lt;p&gt;The downgrade was quite simple: I unlocked my phone and flashed the 4.4.4 &lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;factory image&lt;/a&gt;. The next thing I did was rooting my phone, which later turned out to be necessary.&lt;/p&gt;
+
+&lt;h2 id=&#34;and-then-it-all-started:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;And then it all started&lt;/h2&gt;
+
+&lt;p&gt;One of the reasons why I downgraded, was that Android 4.4.4 has remarkably better battery life than Android Lollipop. So when my battery started draining at more than 20% an hour, I knew that something was wrong. Also, the notification about the system update was impossible to remove.&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Yes, Google, I know. Now let me go on with my life, I don’t want your update.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;digging-a-little-deeper:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Digging a little deeper&lt;/h2&gt;
+
+&lt;p&gt;Android used to have a service called SystemUpdateService in the Google Services Framework (preinstalled system app) that would handle OS updates. It seems like this was replaced by Google Play Services. The &lt;a href=&#34;https://developer.android.com/google/play-services/index.html&#34;&gt;Google Play Services&lt;/a&gt; app is updated automatically via the Google &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.gms&#34;&gt;Play Store&lt;/a&gt;. This app contains another SystemUpdateService and disables the SystemUpdateService in the Google Services Framework mentioned earlier.&lt;/p&gt;
+
+&lt;p&gt;This service seems to cause a &lt;a href=&#34;http://developer.android.com/reference/android/os/PowerManager.WakeLock.html&#34;&gt;wakelock&lt;/a&gt;, which makes sure that my Nexus 5 never goes to deep sleep. (Deep sleep is like a standby mode with very low power usage.) So there’s my battery drain. But how to stop it? Disabling this service doesn’t help at all. The notification disappears but the wakelock is still there.&lt;/p&gt;
+
+&lt;p&gt;Next step: Google and &lt;a href=&#34;http://forum.xda-developers.com/google-nexus-5/general/how-to-disable-ota-lollipop-wakelock-t2952845&#34;&gt;XDA&lt;/a&gt;. I found out about the 3 receivers that trigger this service. Disabling these receivers would make sure that SystemUpdateService never runs and the wakelock is gone.&lt;/p&gt;
+
+&lt;p&gt;The receivers are to be found in 3 categories:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;After startup (runs after booting your device, obviously)&lt;/li&gt;
+&lt;li&gt;Connectivity changed (runs when the status of your Wi-Fi or cellular data connections change)&lt;/li&gt;
+&lt;li&gt;Secret code entered (runs when you enter a secret code into the dialer)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So yeah, it’s quite impossible to escape from this service. The commands I listed below correctly disable these receivers and related activities. It doesn’t disable the SystemUpdateService itself as this would cause wakelocks. Run them in a terminal on your device or on your PC connected with your phone over &lt;a href=&#34;http://developer.android.com/tools/help/adb.html&#34;&gt;ADB&lt;/a&gt;. Did I mention you need to be &lt;em&gt;rooted&lt;/em&gt; to run it?&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateActivity
+adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateService$ActiveReceiver
+adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateService$Receiver
+adb shell su -c pm disable com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver
+adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateActivity
+adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdatePanoActivity
+adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Receiver
+adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;wow-that-was-complicated:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Wow, that was complicated&lt;/h2&gt;
+
+&lt;p&gt;For power users this probably wasn’t a lot of work, but this is a real annoyance for regular users. But regular users don’t buy Nexus devices, don’t they?&lt;/p&gt;
+
+&lt;p&gt;For years, we all &lt;a href=&#34;http://www.google.com/trends/explore#q=android%20fragmentation&amp;amp;cmpt=q&#34;&gt;complained about fragmentation&lt;/a&gt; and a lack of OS updates. Today it has become impossible to ignore an OS update due to the immense battery drain and the frustrating persistent notification.&lt;/p&gt;
+
+&lt;h2 id=&#34;this-post-is-all-about-nexus-devices-what-about-my-device:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;This post is all about Nexus devices, what about my device?&lt;/h2&gt;
+
+&lt;p&gt;Most Android devices come with Google services like the Google Play Store. This means they also come with Google Play Services or the Google Services Framework or both. So, if you ever want to downgrade your Android device to a stock image, be sure to disable those pesky receivers…&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

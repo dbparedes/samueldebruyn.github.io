@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windev on Samuel Debruyn</title>
+    <link>http://sa.muel.be/tags/windev/</link>
+    <description>Recent content in Windev on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Wed, 20 Aug 2014 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://sa.muel.be/tags/windev/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Queue for MessageDialog in Windows RT</title>
+      <link>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</link>
+      <pubDate>Wed, 20 Aug 2014 00:00:00 +0000</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</guid>
+      <description>&lt;p&gt;When I write Windows Store applications, I use MessageDialog a lot.
+It&amp;rsquo;s the easiest way to show a quick informative pop-up message or a question to the user.
+However, when you tend to use this quite often, you&amp;rsquo;ll probably run into a problem.&lt;/p&gt;
+
+&lt;p&gt;The Windows Runtime framework doesn&amp;rsquo;t allow you to stack MessageDialogs, queue them etc.
+So if you need to display one, you&amp;rsquo;ll have to make sure that no other MessageDialog is already open.
+Checking if there is an open MessageDialog is not that easy unless you keep references to all the MessageDialogs you create.
+There are a few cases in which this would be annoying.&lt;/p&gt;
+
+&lt;p&gt;The singleton class below will make sure that you can queue MessageDialogs and that this problem will never occur.&lt;/p&gt;
+
+&lt;p&gt;Instead of using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;myDialog.ShowAsync()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;use&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;MessageDialogQueue.PushMessageDialog(myDialog)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The dialog will be displayed after all previous MessageDialogs are closed. Do this for all your MessageDialogs or you&amp;rsquo;ll still run into the problem I mentioned.&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/efaf5ae8e0af3ac2e0d9.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
