@@ -83,12 +83,12 @@
     </item>
     
     <item>
-      <title>Material Design Lite theme for hugo</title>
+      <title>Material Design Lite theme for Hugo</title>
       <link>http://sa.muel.be/portfolio/material-design-theme-for-hugo/</link>
       <pubDate>Tue, 21 Jul 2015 13:43:35 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/portfolio/material-design-theme-for-hugo/</guid>
-      <description>&lt;p&gt;As I wanted to learn more about &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt; while developing &lt;a href=&#34;http://sa.muel.be/portfolio/this-blog/&#34;&gt;this blog&lt;/a&gt;, I &lt;a href=&#34;http://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;created&lt;/a&gt; a new theme for hugo. It is mostly plain HTML, CSS and JavaScript, but it also contains some &lt;a href=&#34;http://golang.org/pkg/html/template/&#34;&gt;Go Templating&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;As I wanted to learn more about &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; while developing &lt;a href=&#34;http://sa.muel.be/portfolio/this-blog/&#34;&gt;this blog&lt;/a&gt;, I &lt;a href=&#34;http://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;created&lt;/a&gt; a new theme for Hugo. It is mostly plain HTML, CSS and JavaScript, but it also contains some &lt;a href=&#34;http://golang.org/pkg/html/template/&#34;&gt;Go Templating&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The theme is based on the &lt;a href=&#34;http://www.getmdl.io/templates/index.html&#34;&gt;blog template&lt;/a&gt; from Google&amp;rsquo;s &lt;a href=&#34;http://www.getmdl.io/&#34;&gt;Material Design Lite&lt;/a&gt;.&lt;/p&gt;
 
@@ -155,7 +155,7 @@
       <pubDate>Mon, 20 Jul 2015 12:03:38 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/portfolio/this-blog/</guid>
-      <description>&lt;p&gt;This blog is made with &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;. I wrote a &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;blog post&lt;/a&gt; about it when I switched from &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;This blog is made with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. I wrote a &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;blog post&lt;/a&gt; about it when I switched from &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>

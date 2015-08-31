@@ -8,8 +8,44 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Wed, 26 Aug 2015 18:55:47 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 31 Aug 2015 18:56:39 +0200</lastBuildDate>
     <atom:link href="http://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker image for hugo builds (with Wercker)</title>
+      <link>http://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</link>
+      <pubDate>Mon, 31 Aug 2015 18:56:39 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</guid>
+      <description>
+
+&lt;p&gt;This blog is built with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, which allows me to use some great CI tools like &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The first part of writing a &lt;em&gt;wercker.yml&lt;/em&gt; is picking a build container.&lt;/p&gt;
+
+&lt;p&gt;A build container on Wercker is the environment in which your build or deploy steps run. Wercker used to build its own containers for that, but they&amp;rsquo;ve moved away from that approach to Docker containers. You can use all kinds of Docker containers, but most people just use one available publicly on &lt;a href=&#34;https://registry.hub.docker.com/&#34;&gt;Docker Hub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To deploy my website to &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub pages&lt;/a&gt;, all I need is Git. So that&amp;rsquo;s why I built &lt;a href=&#34;https://hub.docker.com/r/samueldebruyn/debian-git/&#34;&gt;this simple Docker container&lt;/a&gt; with Debian and Git.&lt;/p&gt;
+
+&lt;p&gt;Building this blog requires some more packages. Wercker doesn&amp;rsquo;t automatically pull in your Git submodules, so Git is also a necessity there. Another one is Hugo, to build the static website itself. Hugo doesn&amp;rsquo;t minimize your files, however. That&amp;rsquo;s why I also include &lt;a href=&#34;https://github.com/yui/yuicompressor&#34;&gt;YUI compressor&lt;/a&gt; (minifies *.js and *.css) and &lt;a href=&#34;https://github.com/kangax/html-minifier&#34;&gt;HTML minifier&lt;/a&gt; (like the name says, minifies HTML files). Finally, I&amp;rsquo;ve been experimenting with &lt;a href=&#34;https://github.com/gjtorikian/html-proofer&#34;&gt;HTML proofer&lt;/a&gt; to validate the generated HTML files and check them for dead links. All of these packages (and their dependencies) are available in my Docker container called &lt;a href=&#34;https://hub.docker.com/r/samueldebruyn/hugo-build/&#34;&gt;hugo-build&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;side-notes:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Side notes&lt;/h2&gt;
+
+&lt;h3 id=&#34;hugo-build:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;hugo-build&lt;/h3&gt;
+
+&lt;p&gt;The image is quite big. It needs Java for YUI compressor, Ruby for html-proofer and Node for html-minifier. Setting up the environment and storing the container each take about half a minute. If you have some suggestions on making the image smaller, please &lt;a href=&#34;https://github.com/SamuelDebruyn/docker-hugo-build&#34;&gt;submit an issue or a pull request&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The latest list of included packages is available in the &lt;a href=&#34;https://github.com/SamuelDebruyn/docker-hugo-build&#34;&gt;README file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The build often fails on a time-out while running &lt;code&gt;apt-get&lt;/code&gt;. It&amp;rsquo;s usually &lt;em&gt;fixed&lt;/em&gt; by running another build.&lt;/p&gt;
+
+&lt;h3 id=&#34;html-proofer:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;html-proofer&lt;/h3&gt;
+
+&lt;p&gt;html-proofer will often fail because it scans your website for dead links before your website is even published. I haven&amp;rsquo;t been able to work around this, but &lt;a href=&#34;https://github.com/gjtorikian/html-proofer/pull/178&#34;&gt;here&amp;rsquo;s an issue&lt;/a&gt; that&amp;rsquo;s keeping track of this.&lt;/p&gt;
+
+&lt;h3 id=&#34;example-wercker-yml-using-these-images:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Example &lt;em&gt;wercker.yml&lt;/em&gt; using these images&lt;/h3&gt;
+
+&lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The right way to create Windows installation media</title>
@@ -283,16 +319,16 @@
     </item>
     
     <item>
-      <title>Wercker step to validate hugo themes</title>
+      <title>Wercker step to validate Hugo themes</title>
       <link>http://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</link>
       <pubDate>Wed, 15 Jul 2015 13:21:45 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</guid>
-      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;http://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;http://sa.muel.be/search/?q=hugo&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
+      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;http://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;http://sa.muel.be/tags/hugo/&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;As I &lt;a href=&#34;http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
 
-&lt;p&gt;There wasn&amp;rsquo;t any, so I simply wrote a build step for &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The build step validates a hugo theme using &lt;a href=&#34;https://github.com/spf13/HugoBasicExample&#34;&gt;an example site&lt;/a&gt;. It also checks if you included some files required for a future hugo themes site.&lt;/p&gt;
+&lt;p&gt;There wasn&amp;rsquo;t any, so I simply wrote a build step for &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The build step validates a Hugo theme using &lt;a href=&#34;https://github.com/spf13/HugoBasicExample&#34;&gt;an example site&lt;/a&gt;. It also checks if you included some files required for a future Hugo themes site.&lt;/p&gt;
 
 &lt;p&gt;The code for the build step is available at &lt;a href=&#34;https://github.com/SamuelDebruyn/wercker-step-hugo-theme-check&#34;&gt;https://github.com/SamuelDebruyn/wercker-step-hugo-theme-check&lt;/a&gt; and an example &lt;em&gt;wercker.yml&lt;/em&gt; configuration is included below.&lt;/p&gt;
 
@@ -307,7 +343,7 @@ build:
     </item>
     
     <item>
-      <title>Continuous integration with hugo and Wercker</title>
+      <title>Continuous integration with Hugo and Wercker</title>
       <link>http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</link>
       <pubDate>Tue, 14 Jul 2015 12:45:28 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
@@ -318,7 +354,7 @@ build:
 
 &lt;p&gt;Who doesn&amp;rsquo;t love &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;? It&amp;rsquo;s the easiest way to create a simple website about a repository and you can even use &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; to start blogging.&lt;/p&gt;
 
-&lt;p&gt;As I recently switched from Jekyll to &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;, I needed a new way to enable continuous integration for my blog.&lt;/p&gt;
+&lt;p&gt;As I recently switched from Jekyll to &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, I needed a new way to enable continuous integration for my blog.&lt;/p&gt;
 
 &lt;h2 id=&#34;new-to-ci:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;New to CI?&lt;/h2&gt;
 
@@ -326,20 +362,20 @@ build:
 
 &lt;p&gt;I usually have a branch called &lt;em&gt;develop&lt;/em&gt; to which I push fresh code. Then a CI tool checks if that code builds properly and if it does, I merge it to my &lt;em&gt;master&lt;/em&gt; branch. It&amp;rsquo;s a lot like &lt;a href=&#34;https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow&#34;&gt;Git Flow&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;what-about-hugo-and-github-pages:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;What about hugo and GitHub Pages?&lt;/h2&gt;
+&lt;h2 id=&#34;what-about-hugo-and-github-pages:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;What about Hugo and GitHub Pages?&lt;/h2&gt;
 
 &lt;p&gt;You could setup a CI tool to build your code after every push on every branch and deploy it to GitHub Pages after a successful build on your stable/&lt;em&gt;master&lt;/em&gt; branch.&lt;/p&gt;
 
 &lt;h2 id=&#34;in-comes-wercker:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;In comes Wercker&lt;/h2&gt;
 
-&lt;p&gt;I used to use &lt;a href=&#34;http://travis-ci.org&#34;&gt;Travis&lt;/a&gt; for all my CI needs, but then I came across &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt; in the &lt;a href=&#34;http://gohugo.io/tutorials/automated-deployments/&#34;&gt;hugo docs&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;I used to use &lt;a href=&#34;http://travis-ci.org&#34;&gt;Travis&lt;/a&gt; for all my CI needs, but then I came across &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt; in the &lt;a href=&#34;http://gohugo.io/tutorials/automated-deployments/&#34;&gt;Hugo docs&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Wercker simplifies CI a lot and relies on &lt;a href=&#34;http://docker.com&#34;&gt;Docker&lt;/a&gt; for its build environments. It also allows you to deploy your builds to different environments (e.g. production, staging, testing&amp;hellip;) Hugo has a guide about how to set it up, but it&amp;rsquo;s a little bit outdated. I might just send a pull request with an update in a few days. Wercker also has a lot of documentation. So with the examples below, you should be able to easily walk through the setup.&lt;/p&gt;
 
 &lt;h3 id=&#34;setting-it-up:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;Setting it up&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Create a new Wercker app based on the repository containing your hugo source code and give Wercker access rights. You can leave everything else on the default settings. If you&amp;rsquo;d like a badge showing your build status, make sure your app is public.&lt;/li&gt;
+&lt;li&gt;Create a new Wercker app based on the repository containing your Hugo source code and give Wercker access rights. You can leave everything else on the default settings. If you&amp;rsquo;d like a badge showing your build status, make sure your app is public.&lt;/li&gt;
 &lt;li&gt;Next, edit your app settings and create a custom deploy target including a protected environment variable called &lt;code&gt;GIT_TOKEN&lt;/code&gt;.&lt;/li&gt;
 
 &lt;li&gt;&lt;p&gt;Finally, add a file called &lt;em&gt;wercker.yml&lt;/em&gt; to your repository with the code below. Change it to fit your needs.&lt;/p&gt;
@@ -376,7 +412,7 @@ deploy:
 &lt;p&gt;Obviously, you have to change the following variables:&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;code&gt;version&lt;/code&gt;: the hugo version you use&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;version&lt;/code&gt;: the Hugo version you use&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;theme&lt;/code&gt;: the theme you use&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;branch&lt;/code&gt;: the branch on GitHub Pages you wish to publish on (should be &lt;code&gt;master&lt;/code&gt; for personal/organization pages and &lt;code&gt;gh-pages&lt;/code&gt; for project pages)&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;repo&lt;/code&gt;: the repository you wish to publish your pages in (should be &lt;code&gt;username/username.github.io&lt;/code&gt; for personal/organization pages and &lt;code&gt;username/project-repo&lt;/code&gt; for project pages)&lt;/li&gt;
@@ -389,7 +425,7 @@ deploy:
 &lt;h3 id=&#34;a-few-examples:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;A few examples&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;the hugo source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;https://github.com/SamuelDebruyn/sa.muel.be-hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;the Hugo source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;https://github.com/SamuelDebruyn/sa.muel.be-hugo&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;the wercker app for this blog: &lt;a href=&#34;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&#34;&gt;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;the generated source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io&#34;&gt;https://github.com/SamuelDebruyn/samueldebruyn.github.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -397,23 +433,23 @@ deploy:
     </item>
     
     <item>
-      <title>Material-lite theme for hugo</title>
+      <title>Material-lite theme for Hugo</title>
       <link>http://sa.muel.be/2015/material-lite-theme-for-hugo/</link>
       <pubDate>Mon, 13 Jul 2015 08:00:00 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/2015/material-lite-theme-for-hugo/</guid>
-      <description>&lt;p&gt;Last week, &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;I wrote a post&lt;/a&gt; about how awesome &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt; is and why I switched from Jekyll to hugo.&lt;/p&gt;
+      <description>&lt;p&gt;Last week, &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;I wrote a post&lt;/a&gt; about how awesome &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is and why I switched from Jekyll to Hugo.&lt;/p&gt;
 
 &lt;p&gt;Then, a few days later, Google released an awesome template called &lt;a href=&#34;http://getmdl.io&#34;&gt;Material Design Lite&lt;/a&gt;. It&amp;rsquo;s basically Google&amp;rsquo;s famous &lt;a href=&#34;https://www.google.com/design/spec/material-design/introduction.html&#34;&gt;Material Design&lt;/a&gt; in HTML, CSS and JavaScript instead of in &lt;a href=&#34;https://www.polymer-project.org&#34;&gt;Polymer&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;I was thinking about setting up another website for some side project and wanted to use material design. So I decided to write a material design theme for a simple hugo blog.&lt;/p&gt;
+&lt;p&gt;I was thinking about setting up another website for some side project and wanted to use material design. So I decided to write a material design theme for a simple Hugo blog.&lt;/p&gt;
 
 &lt;p&gt;You can check it out at &lt;a href=&#34;https://github.com/SamuelDebruyn/hugo-material-lite&#34;&gt;https://github.com/SamuelDebruyn/hugo-material-lite&lt;/a&gt; (&lt;a href=&#34;http://materialexample.sa.muel.be&#34;&gt;demo&lt;/a&gt;) Enjoy!&lt;/p&gt;
 </description>
     </item>
     
     <item>
-      <title>An introduction to hugo, a static site generator</title>
+      <title>An introduction to Hugo, a static site generator</title>
       <link>http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/</link>
       <pubDate>Wed, 08 Jul 2015 14:50:29 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
@@ -447,15 +483,15 @@ deploy:
 
 &lt;p&gt;A few other static site generators &lt;a href=&#34;https://www.staticgen.com&#34;&gt;have sprung up&lt;/a&gt; since Jekyll&amp;rsquo;s success.&lt;/p&gt;
 
-&lt;p&gt;The one that caught my attention was &lt;a href=&#34;http://gohugo.io&#34;&gt;hugo&lt;/a&gt;. It has all the goodness from Jekyll, but it&amp;rsquo;s way easier to setup. Hugo itself is written in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt;, but they build &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;executable binaries&lt;/a&gt; for a lot of platforms and architectures. So you don&amp;rsquo;t need to install anything else. Even compiling it yourself isn&amp;rsquo;t that hard.&lt;/p&gt;
+&lt;p&gt;The one that caught my attention was &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. It has all the goodness from Jekyll, but it&amp;rsquo;s way easier to setup. Hugo itself is written in &lt;a href=&#34;http://golang.org&#34;&gt;Go&lt;/a&gt;, but they build &lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;executable binaries&lt;/a&gt; for a lot of platforms and architectures. So you don&amp;rsquo;t need to install anything else. Even compiling it yourself isn&amp;rsquo;t that hard.&lt;/p&gt;
 
 &lt;p&gt;The process of creating a new website is very similar to Jekyll. The &lt;code&gt;hugo&lt;/code&gt; command literally explains itself (&lt;code&gt;hugo help&lt;/code&gt;) and the &lt;a href=&#34;http://gohugo.io/overview/introduction/&#34;&gt;documentation&lt;/a&gt; on its website should suffice for most users.&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ve successfully migrated my &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io/tree/5f5719a9d4519f8fbd4cdfffa2a10b3f066401ef&#34;&gt;Jekyll blog&lt;/a&gt; to &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;hugo&lt;/a&gt; and haven&amp;rsquo;t regretted it ever since.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve successfully migrated my &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io/tree/5f5719a9d4519f8fbd4cdfffa2a10b3f066401ef&#34;&gt;Jekyll blog&lt;/a&gt; to &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;Hugo&lt;/a&gt; and haven&amp;rsquo;t regretted it ever since.&lt;/p&gt;
 
 &lt;h2 id=&#34;disadvantages:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Disadvantages&lt;/h2&gt;
 
-&lt;p&gt;One of the major disadvantages of hugo, or any static site generator for that matter, is integrating &lt;strong&gt;search&lt;/strong&gt;. You need some &lt;a href=&#34;http://discuss.gohugo.io/t/how-are-you-implementing-site-search/986/14&#34;&gt;JavaScript magic&lt;/a&gt; or a 3rd party search provider like &lt;a href=&#34;https://cse.google.com&#34;&gt;Google Custom Search Engine&lt;/a&gt; (which I went for).&lt;/p&gt;
+&lt;p&gt;One of the major disadvantages of Hugo, or any static site generator for that matter, is integrating &lt;strong&gt;search&lt;/strong&gt;. You need some &lt;a href=&#34;http://discuss.gohugo.io/t/how-are-you-implementing-site-search/986/14&#34;&gt;JavaScript magic&lt;/a&gt; or a 3rd party search provider like &lt;a href=&#34;https://cse.google.com&#34;&gt;Google Custom Search Engine&lt;/a&gt; (which I went for).&lt;/p&gt;
 
 &lt;p&gt;The other dynamic part of an ordinary blog is &lt;strong&gt;the comment section&lt;/strong&gt;. Again, the easiest way to &lt;em&gt;fix&lt;/em&gt; this is relying on a 3rd party comments plugin like &lt;a href=&#34;https://disqus.com/&#34;&gt;Disqus&lt;/a&gt;.&lt;/p&gt;
 
@@ -833,36 +869,6 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
 &lt;p&gt;The dialog will be displayed after all previous MessageDialogs are closed. Do this for all your MessageDialogs or you&amp;rsquo;ll still run into the problem I mentioned.&lt;/p&gt;
 
 &lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/efaf5ae8e0af3ac2e0d9.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Workaround for password confirmation with Laravel &amp; Ardent</title>
-      <link>http://sa.muel.be/2014/workaround-for-password-confirmation-with-laravel--ardent/</link>
-      <pubDate>Sat, 14 Jun 2014 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2014/workaround-for-password-confirmation-with-laravel--ardent/</guid>
-      <description>&lt;p&gt;While I was working on a website made with Laravel and Ardent I had to validate a password confirmation field for a user registration. This will not work if you follow the standard documentation.&lt;/p&gt;
-
-&lt;p&gt;This is how your &lt;a href=&#34;http://laravel.com/docs/validation&#34;&gt;validation rules&lt;/a&gt; in your &lt;a href=&#34;https://github.com/laravelbook/ardent&#34;&gt;Ardent&lt;/a&gt; model should look like (users only have an email address and a password):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public static $rules = array(
-  &#39;email&#39; =&amp;gt; &#39;required|email|max:100|unique:users&#39;,
-  &#39;password&#39; =&amp;gt; &#39;required|min:6|confirmed&#39;,
-);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Your model should also have the following line somewhere:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public $autoPurgeRedundantAttributes = true;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, if you follow the documentation and include every database field in the &lt;em&gt;fillable&lt;/em&gt; array, validation will always fail on the password confirmation.&lt;/p&gt;
-
-&lt;p&gt;The workaround is to include the password confirmation field in the fillable array, even if it isn&amp;rsquo;t a column in your database.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;protected $fillable = array(&#39;email&#39;, &#39;password&#39;, &#39;activation_code&#39;, &#39;confirmed&#39;, &#39;reset_password&#39;, &#39;password_confirmation&#39;);
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docker on Samuel Debruyn</title>
+    <link>http://sa.muel.be/tags/docker/</link>
+    <description>Recent content in Docker on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Mon, 31 Aug 2015 18:56:39 +0200</lastBuildDate>
+    <atom:link href="http://sa.muel.be/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Docker image for hugo builds (with Wercker)</title>
+      <link>http://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</link>
+      <pubDate>Mon, 31 Aug 2015 18:56:39 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</guid>
+      <description>
+
+&lt;p&gt;This blog is built with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, which allows me to use some great CI tools like &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The first part of writing a &lt;em&gt;wercker.yml&lt;/em&gt; is picking a build container.&lt;/p&gt;
+
+&lt;p&gt;A build container on Wercker is the environment in which your build or deploy steps run. Wercker used to build its own containers for that, but they&amp;rsquo;ve moved away from that approach to Docker containers. You can use all kinds of Docker containers, but most people just use one available publicly on &lt;a href=&#34;https://registry.hub.docker.com/&#34;&gt;Docker Hub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;To deploy my website to &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub pages&lt;/a&gt;, all I need is Git. So that&amp;rsquo;s why I built &lt;a href=&#34;https://hub.docker.com/r/samueldebruyn/debian-git/&#34;&gt;this simple Docker container&lt;/a&gt; with Debian and Git.&lt;/p&gt;
+
+&lt;p&gt;Building this blog requires some more packages. Wercker doesn&amp;rsquo;t automatically pull in your Git submodules, so Git is also a necessity there. Another one is Hugo, to build the static website itself. Hugo doesn&amp;rsquo;t minimize your files, however. That&amp;rsquo;s why I also include &lt;a href=&#34;https://github.com/yui/yuicompressor&#34;&gt;YUI compressor&lt;/a&gt; (minifies *.js and *.css) and &lt;a href=&#34;https://github.com/kangax/html-minifier&#34;&gt;HTML minifier&lt;/a&gt; (like the name says, minifies HTML files). Finally, I&amp;rsquo;ve been experimenting with &lt;a href=&#34;https://github.com/gjtorikian/html-proofer&#34;&gt;HTML proofer&lt;/a&gt; to validate the generated HTML files and check them for dead links. All of these packages (and their dependencies) are available in my Docker container called &lt;a href=&#34;https://hub.docker.com/r/samueldebruyn/hugo-build/&#34;&gt;hugo-build&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&#34;side-notes:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Side notes&lt;/h2&gt;
+
+&lt;h3 id=&#34;hugo-build:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;hugo-build&lt;/h3&gt;
+
+&lt;p&gt;The image is quite big. It needs Java for YUI compressor, Ruby for html-proofer and Node for html-minifier. Setting up the environment and storing the container each take about half a minute. If you have some suggestions on making the image smaller, please &lt;a href=&#34;https://github.com/SamuelDebruyn/docker-hugo-build&#34;&gt;submit an issue or a pull request&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The latest list of included packages is available in the &lt;a href=&#34;https://github.com/SamuelDebruyn/docker-hugo-build&#34;&gt;README file&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The build often fails on a time-out while running &lt;code&gt;apt-get&lt;/code&gt;. It&amp;rsquo;s usually &lt;em&gt;fixed&lt;/em&gt; by running another build.&lt;/p&gt;
+
+&lt;h3 id=&#34;html-proofer:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;html-proofer&lt;/h3&gt;
+
+&lt;p&gt;html-proofer will often fail because it scans your website for dead links before your website is even published. I haven&amp;rsquo;t been able to work around this, but &lt;a href=&#34;https://github.com/gjtorikian/html-proofer/pull/178&#34;&gt;here&amp;rsquo;s an issue&lt;/a&gt; that&amp;rsquo;s keeping track of this.&lt;/p&gt;
+
+&lt;h3 id=&#34;example-wercker-yml-using-these-images:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Example &lt;em&gt;wercker.yml&lt;/em&gt; using these images&lt;/h3&gt;
+
+&lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
