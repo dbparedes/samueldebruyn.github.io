@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>C# on Samuel Debruyn</title>
-    <link>http://sa.muel.be/tags/c/</link>
-    <description>Recent content in C# on Samuel Debruyn</description>
+    <title>Csharp on Samuel Debruyn</title>
+    <link>http://sa.muel.be/tags/csharp/</link>
+    <description>Recent content in Csharp on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Wed, 20 Aug 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://sa.muel.be/tags/c" rel="self" type="application/rss+xml" />
+    <atom:link href="http://sa.muel.be/tags/csharp/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Queue for MessageDialog in Windows RT</title>
