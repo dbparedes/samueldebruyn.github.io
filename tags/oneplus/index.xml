@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Oneplus on Samuel Debruyn</title>
+    <link>http://sa.muel.be/tags/oneplus/</link>
+    <description>Recent content in Oneplus on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Fri, 02 Oct 2015 15:34:19 +0200</lastBuildDate>
+    <atom:link href="http://sa.muel.be/tags/oneplus/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>How to get around OnePlus&#39;s horrible invite system</title>
+      <link>http://sa.muel.be/2015/how-to-get-around-onepluss-horrible-invite-system/</link>
+      <pubDate>Fri, 02 Oct 2015 15:34:19 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/how-to-get-around-onepluss-horrible-invite-system/</guid>
+      <description>&lt;p&gt;&lt;a href=&#34;https://oneplus.net/&#34;&gt;OnePlus&lt;/a&gt;, the company famous for its &lt;a href=&#34;https://www.google.be/search?q=oneplus+service+horror+story&#34;&gt;terrible service&lt;/a&gt; and its &lt;a href=&#34;http://www.androidpolice.com/2015/07/30/editorial-if-oneplus-will-basically-just-lie-with-marketing-slogans-we-have-no-reason-to-respect-them/&#34;&gt;miserable invite system&lt;/a&gt;, failed once again.&lt;/p&gt;
+
+&lt;p&gt;Back in August, when they were about to launch the OnePlus Two, the &lt;em&gt;2016 flagship killer&lt;/em&gt; which turned out be merely be a 2014 kind-of-flagship, they launched &lt;a href=&#34;https://oneplus.net/invites&#34;&gt;a waiting list&lt;/a&gt;. You can subscribe to this list and every time an invite is left unused, it&amp;rsquo;s sent to the next person on the list.&lt;/p&gt;
+
+&lt;p&gt;The list quickly grew to hundreds of thousands of people, but there was one catch: you could get higher on the list of someone else subscribed to the list with a URL you shared. All you needed to subscribe was a unique email address.&lt;/p&gt;
+
+&lt;p&gt;If you own a domain, you can set up a catch all address so that everything @yourdomain.tld arrives in your mailbox. And if you have Gmail account, everything with yourusername+somethingrandom@gmail.com arrives in your mailbox. So most people actually have an infinite amount of email address.&lt;/p&gt;
+
+&lt;p&gt;As I was interested in buying a OnePlus Two at the time, I subscribed with my email address and used about 100 other email addresses to get myself higher on the list. As this &lt;em&gt;trick&lt;/em&gt; was mentioned a lot on Reddit, I figured OnePlus would have &lt;em&gt;fixed&lt;/em&gt; this &lt;em&gt;bug&lt;/em&gt; in their invite system somehow.&lt;/p&gt;
+
+&lt;p&gt;Turns out, they didn&amp;rsquo;t. A few days ago, I started receiving tens of invites for a OnePlus Two. There was another catch: you can only use these invites with the address you used for the waiting list. It&amp;rsquo;s &lt;em&gt;impossible&lt;/em&gt; to share the invites.&lt;/p&gt;
+
+&lt;p&gt;Here&amp;rsquo;s the workaround:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Register a new OnePlus account with the email address that received the invite.&lt;/li&gt;
+&lt;li&gt;Confirm the account with an email you receive shortly after registration.&lt;/li&gt;
+&lt;li&gt;Claim the invite using the link in the first email you received.&lt;/li&gt;
+&lt;li&gt;Change the email address of the newly registered account to the one of the person that is going to use the invite. Note that is may not be linked to an existing OnePlus account.&lt;/li&gt;
+&lt;li&gt;The buyer will receive an email saying he has to confirm his/her account. The confirmation link doesn&amp;rsquo;t work.&lt;/li&gt;
+&lt;li&gt;The buyer should use &lt;em&gt;I forgot my password&lt;/em&gt; feature for OnePlus accounts.&lt;/li&gt;
+&lt;li&gt;The buyer receives another link to confirm his/her email address. This time the link works and (s)he can choose a new password.&lt;/li&gt;
+&lt;li&gt;The buyer can now sign in and use the invite.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I&amp;rsquo;m not buying a OnePlus Two after reading about the OnePlus service horror stories. Also, it really isn&amp;rsquo;t a flagship killer. It&amp;rsquo;s just a mid-budget smartphone like any other. You can get a way better smartphone for your money with the Moto X Play (Europe) or the Nexus 5X (US).&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
