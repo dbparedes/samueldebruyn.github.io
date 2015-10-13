@@ -12,7 +12,7 @@
     <atom:link href="http://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Run Docker on Hyper-V with Docker machine</title>
+      <title>Run Docker on Hyper-V with Docker Machine</title>
       <link>http://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</link>
       <pubDate>Sun, 11 Oct 2015 23:43:40 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
@@ -45,7 +45,7 @@
 
 &lt;h2 id=&#34;create-a-new-docker-machine-with-the-hyper-v-driver:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Create a new Docker Machine with the Hyper-V driver&lt;/h2&gt;
 
-&lt;p&gt;Now open an administrative command prompt (you need to be an administrator to create new virtual machines) and execute the following command to create a new Docker Machine named &lt;em&gt;boot2docker&lt;/em&gt;. Make sure to replace &lt;code&gt;My Internal Switch&lt;/code&gt; with the name of internal switch you created before. You can add &lt;code&gt;--hyper-v-memory xxxx&lt;/code&gt; before the name of the machine to change the default amount of memory (it&amp;rsquo;s dynamic) from 1024 to something else.&lt;/p&gt;
+&lt;p&gt;Now open an administrative command prompt (you need to be an administrator to create new virtual machines) and execute the following command to create a new Docker Machine named &lt;em&gt;boot2docker&lt;/em&gt;. Make sure to replace &lt;code&gt;My Internal Switch&lt;/code&gt; with the name of the internal switch you created before. You can add &lt;code&gt;--hyper-v-memory xxxx&lt;/code&gt; before the name of the machine to change the default amount of memory (it&amp;rsquo;s dynamic) from 1024 to something else.&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;docker-machine create --driver Hyper-V --hyper-v-virtual-switch &amp;quot;My Internal Switch&amp;quot; boot2docker
 &lt;/code&gt;&lt;/pre&gt;
