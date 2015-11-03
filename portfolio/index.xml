@@ -69,12 +69,12 @@
     </item>
     
     <item>
-      <title>ASR.ac</title>
+      <title>asr.ac</title>
       <link>http://sa.muel.be/portfolio/asr-ac/</link>
       <pubDate>Tue, 21 Jul 2015 21:17:21 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>http://sa.muel.be/portfolio/asr-ac/</guid>
-      <description>&lt;p&gt;In 2015 the General Student Council (ASR) Odisee elected me to be their IT manager. I become responsible for several services, one of which was their website.&lt;/p&gt;
+      <description>&lt;p&gt;In 2015 the General Student Council (ASR / GSC) Odisee elected me to be their IT manager. I became responsible for several services, one of which was their website.&lt;/p&gt;
 
 &lt;p&gt;The website is built with &lt;a href=&#34;http://wordpress.org&#34;&gt;WordPress&lt;/a&gt; and stored on a shared hosting account. I customized the theme and setup &lt;a href=&#34;https://www.cloudflare.com/&#34;&gt;CloudFlare&lt;/a&gt;. As the website was hacked in the months before I became the administrator, I had to &lt;a href=&#34;http://sa.muel.be/2015/recovering-a-hacked-wordpress/&#34;&gt;restore&lt;/a&gt; and &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;secure&lt;/a&gt; it.&lt;/p&gt;
 
