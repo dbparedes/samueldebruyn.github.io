@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tracking on Samuel Debruyn</title>
+    <link>http://sa.muel.be/tags/tracking/</link>
+    <description>Recent content in Tracking on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Wed, 18 Nov 2015 21:37:49 +0100</lastBuildDate>
+    <atom:link href="http://sa.muel.be/tags/tracking/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Tracking the trackers</title>
+      <link>http://sa.muel.be/2015/tracking-the-trackers/</link>
+      <pubDate>Wed, 18 Nov 2015 21:37:49 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/tracking-the-trackers/</guid>
+      <description>&lt;p&gt;Advertisements are the worst. We all hate them. They are a lame excuse for bad content for which their consumers aren&amp;rsquo;t willing to pay. To make them kind of tolerable, the advertisers started tracking us so they could deliver ads based on our interests.&lt;/p&gt;
+
+&lt;p&gt;As far as I&amp;rsquo;m concerned, I never gave my permission to track whatever I do online. I especially do not want the trackers to sell my data to third parties. I have nothing to hide, but they have nothing to know.&lt;/p&gt;
+
+&lt;p&gt;To make the web a little bit nicer, I installed &lt;a href=&#34;https://github.com/gorhill/uBlock&#34;&gt;uBlock Origin&lt;/a&gt; and &lt;a href=&#34;https://www.ghostery.com/&#34;&gt;Ghostery&lt;/a&gt;. My default search engine is &lt;a href=&#34;http://duckduckgo.com&#34;&gt;DuckDuckGo&lt;/a&gt; and I use Firefox with Do-Not-Track enabled without Flash Player. That basically covers the web browsing.&lt;/p&gt;
+
+&lt;p&gt;Now the other part. How do you avoid being tracked by signing up for a service? This week I received a survey from a market research company. I found out they got my data from my employer (I worked as a temporary employee and the HR company sold my data to their partners).&lt;/p&gt;
+
+&lt;p&gt;I use a different password for each service (thanks to &lt;a href=&#34;http://lastpass.com&#34;&gt;LastPass&lt;/a&gt;) and a unique email address thanks to a catch-all address on my domain name. That unique email address is really key here. It allows you to identify the company that sold your data to third parties. As an added bonus you can easily filter all emails to the compromised address so that it never even reaches your inbox.&lt;/p&gt;
+
+&lt;p&gt;Here are a few tips and tricks to start tracking the trackers if you don&amp;rsquo;t have your own domain name:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can put dots in your Gmail account wherever you want: firstnamelastname@gmail.com and f.i.r.s.t.name.last.n.a.me@gmail.com are directed to the same account&lt;/li&gt;
+&lt;li&gt;You can add a plus sign in your Gmail address and put whatever you want after that plus sign: firstnamelastname@gmail.com and firstnamelastname+crappyservice@gmail.com are equivalent. This trick also works on Outlook.com.&lt;/li&gt;
+&lt;li&gt;Outlook.com allows you to create several alias email addresses.&lt;/li&gt;
+&lt;li&gt;Both Outlook.com and Gmail have great filter rules to sort your email address based on the address you received it on.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The internet is beautiful. Don&amp;rsquo;t let the trackers ruin it.&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

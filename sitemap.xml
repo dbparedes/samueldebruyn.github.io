@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://sa.muel.be/</loc>
-    <lastmod>2015-10-11T23:43:40+02:00</lastmod>
+    <lastmod>2015-11-18T21:37:49+01:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sa.muel.be/2015/tracking-the-trackers/</loc>
+    <lastmod>2015-11-18T21:37:49+01:00</lastmod>
   </url>
   
   <url>
@@ -128,7 +133,7 @@
   </url>
   
   <url>
-    <loc>http://sa.muel.be/linkedin/</loc>
+    <loc>http://sa.muel.be/github/</loc>
     <lastmod>2015-07-05T16:08:03+02:00</lastmod>
   </url>
   
@@ -138,7 +143,7 @@
   </url>
   
   <url>
-    <loc>http://sa.muel.be/github/</loc>
+    <loc>http://sa.muel.be/linkedin/</loc>
     <lastmod>2015-07-05T16:08:03+02:00</lastmod>
   </url>
   

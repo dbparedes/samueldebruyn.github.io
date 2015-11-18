@@ -8,8 +8,37 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Sun, 11 Oct 2015 23:43:40 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 18 Nov 2015 21:37:49 +0100</lastBuildDate>
     <atom:link href="http://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Tracking the trackers</title>
+      <link>http://sa.muel.be/2015/tracking-the-trackers/</link>
+      <pubDate>Wed, 18 Nov 2015 21:37:49 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2015/tracking-the-trackers/</guid>
+      <description>&lt;p&gt;Advertisements are the worst. We all hate them. They are a lame excuse for bad content for which their consumers aren&amp;rsquo;t willing to pay. To make them kind of tolerable, the advertisers started tracking us so they could deliver ads based on our interests.&lt;/p&gt;
+
+&lt;p&gt;As far as I&amp;rsquo;m concerned, I never gave my permission to track whatever I do online. I especially do not want the trackers to sell my data to third parties. I have nothing to hide, but they have nothing to know.&lt;/p&gt;
+
+&lt;p&gt;To make the web a little bit nicer, I installed &lt;a href=&#34;https://github.com/gorhill/uBlock&#34;&gt;uBlock Origin&lt;/a&gt; and &lt;a href=&#34;https://www.ghostery.com/&#34;&gt;Ghostery&lt;/a&gt;. My default search engine is &lt;a href=&#34;http://duckduckgo.com&#34;&gt;DuckDuckGo&lt;/a&gt; and I use Firefox with Do-Not-Track enabled without Flash Player. That basically covers the web browsing.&lt;/p&gt;
+
+&lt;p&gt;Now the other part. How do you avoid being tracked by signing up for a service? This week I received a survey from a market research company. I found out they got my data from my employer (I worked as a temporary employee and the HR company sold my data to their partners).&lt;/p&gt;
+
+&lt;p&gt;I use a different password for each service (thanks to &lt;a href=&#34;http://lastpass.com&#34;&gt;LastPass&lt;/a&gt;) and a unique email address thanks to a catch-all address on my domain name. That unique email address is really key here. It allows you to identify the company that sold your data to third parties. As an added bonus you can easily filter all emails to the compromised address so that it never even reaches your inbox.&lt;/p&gt;
+
+&lt;p&gt;Here are a few tips and tricks to start tracking the trackers if you don&amp;rsquo;t have your own domain name:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;You can put dots in your Gmail account wherever you want: firstnamelastname@gmail.com and f.i.r.s.t.name.last.n.a.me@gmail.com are directed to the same account&lt;/li&gt;
+&lt;li&gt;You can add a plus sign in your Gmail address and put whatever you want after that plus sign: firstnamelastname@gmail.com and firstnamelastname+crappyservice@gmail.com are equivalent. This trick also works on Outlook.com.&lt;/li&gt;
+&lt;li&gt;Outlook.com allows you to create several alias email addresses.&lt;/li&gt;
+&lt;li&gt;Both Outlook.com and Gmail have great filter rules to sort your email address based on the address you received it on.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The internet is beautiful. Don&amp;rsquo;t let the trackers ruin it.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Run Docker on Hyper-V with Docker Machine</title>
@@ -803,51 +832,6 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
 &lt;p&gt;PS: I repeated every step on the second WordPress installation since that one was infected too.&lt;/p&gt;
 
 &lt;p&gt;PPS: I&amp;rsquo;ll post a comprehensive guide to securing/hardening WordPress in a few weeks. A good starting point is &lt;a href=&#34;https://codex.wordpress.org/FAQ_My_site_was_hacked&#34;&gt;this guide&lt;/a&gt;.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Geocoding addresses in Talend Open Studio for Data Integration</title>
-      <link>http://sa.muel.be/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</link>
-      <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</guid>
-      <description>&lt;p&gt;Last week I had to geocode the addresses in a dataset using Talend. Geocoding is adding coordinates to addresses. This way you can easily visualize your data on a map.&lt;/p&gt;
-
-&lt;p&gt;I experienced problems when I tried to download some plugins from Talend Exchange but I found &lt;a href=&#34;http://datacatalyst.blogspot.be/2011/01/custom-google-geocoder-using-talend.html&#34;&gt;this blog post&lt;/a&gt; about geocoding without the use of a plugin. The blogpost wasn&amp;rsquo;t very clear so I decided to write a step-by-step explanation which you can find below. In this guide, we will be using the &lt;a href=&#34;https://developers.google.com/maps/documentation/geocoding/&#34;&gt;Google Geocoding API&lt;/a&gt;.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Map your location dataset (with a &lt;em&gt;tMap&lt;/em&gt;) to 2 columns: an unique ID of your location and a concatenated string containing the location address. I used one of Talend&amp;rsquo;s built-in &lt;em&gt;StringHandling&lt;/em&gt;-functions.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;  StringHandling.CHANGE(LOCATIONS.STREET_ADDRESS + LOCATIONS.POSTAL_CODE + LOCATIONS.CITY,&amp;quot; &amp;quot;,&amp;quot;+&amp;quot;)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;My first column was called &lt;em&gt;LOCATION_ID&lt;/em&gt; and my second column was called &lt;em&gt;LOCATION_CONCAT_ADDRESS&lt;/em&gt;. Make sure to remember the name of your output. I named mine &lt;em&gt;LocConcatOut&lt;/em&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Next, connect your output from the &lt;em&gt;tMap&lt;/em&gt; to a &lt;em&gt;tFlowToIterate&lt;/em&gt; component to start processing all records one by one.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The output from the &lt;em&gt;tFlowToIterate&lt;/em&gt; has to be connected to a new &lt;em&gt;tFileInputJson&lt;/em&gt; component. You can change the number of parallel iterations to speed up the geocoding. In the &lt;em&gt;tFileInputJson&lt;/em&gt; component, check the &lt;em&gt;Use Url&lt;/em&gt; option and enter the following URL:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    https://maps.googleapis.com/maps/api/geocode/json?address= + ((String)globalMap.get(&amp;quot;LocConcatOut.LOCATION_CONCAT_ADDRESS&amp;quot;))
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Add &lt;code&gt;+ &amp;quot;&amp;amp;key=YourAPIkey&amp;quot;&lt;/code&gt; if you would like to use your own API key for the &lt;a href=&#34;https://developers.google.com/maps/documentation/geocoding/&#34;&gt;Google Geocoding API&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Edit the schema for this component and make sure it contains 2 columns: &lt;em&gt;LATITUDE&lt;/em&gt; and &lt;em&gt;LONGITUDE&lt;/em&gt;. Their type should be float, nullable.&lt;/p&gt;
-
-&lt;p&gt;In the mapping, &lt;em&gt;LATITUDE&lt;/em&gt; should be set to &lt;code&gt;&amp;quot;$.results[0].geometry.location.lat&amp;quot;&lt;/code&gt; and &lt;em&gt;LONGITUDE&lt;/em&gt; should be set to &lt;code&gt;&amp;quot;$.results[0].geometry.location.lng&amp;quot;&lt;/code&gt;.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Now we&amp;rsquo;re going to map the coordinates back to the UIDs. Add another &lt;em&gt;tMap&lt;/em&gt; component at the end. Create a new output, map the 2 coordinates from the &lt;em&gt;tFileInputJson&lt;/em&gt; to identical columns in the new &lt;em&gt;tMap&lt;/em&gt; and create a new column with a primary key. Enter the following for the value of this key (my keys are integers):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    ((Integer)globalMap.get(&amp;quot;LocConcatOut.LOCATION_ID&amp;quot;)).intValue()
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Finally connect the output from the &lt;em&gt;tMap&lt;/em&gt; component to a &lt;em&gt;tBufferOutput&lt;/em&gt;. That ends the loop started with the &lt;em&gt;tFlowToIterate&lt;/em&gt; component.&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;The previously mentioned components should all be put in the same subjob. Use a trigger like &lt;em&gt;OnSubjobOk&lt;/em&gt; to start your next job after this one is completed. You can find all the location identifiers with their coordinates in the &lt;em&gt;tBufferInput&lt;/em&gt; component. This is easily mapped (joined) to the original locations dataset using a &lt;em&gt;tMap&lt;/em&gt;. Make sure to set the correct data types in the mapping (1 integer and 2 floats) for the &lt;em&gt;tBufferInput&lt;/em&gt; component.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;I hope my guide is clear, but you can always &lt;a href=&#34;https://twitter.com/intent/tweet?text=@SamuelDebruyn%20&#34;&gt;tweet me&lt;/a&gt; with any further questions.&lt;/p&gt;
 </description>
     </item>
     
