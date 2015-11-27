@@ -8,8 +8,65 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Wed, 18 Nov 2015 21:37:49 +0100</lastBuildDate>
+    <lastBuildDate>Fri, 27 Nov 2015 19:56:21 +0100</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Cirqus demo</title>
+      <link>http://sa.muel.be/portfolio/cirqus-demo/</link>
+      <pubDate>Fri, 27 Nov 2015 19:56:21 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/cirqus-demo/</guid>
+      <description>
+
+&lt;p&gt;In my graduation year I had to demonstrate how you can implement the CQRS principle in .NET. I went looking for a few CQRS frameworks and I found &lt;a href=&#34;https://github.com/d60/Cirqus&#34;&gt;Cirqus&lt;/a&gt;. It&amp;rsquo;s the easiest way to get started with &lt;a href=&#34;http://martinfowler.com/bliki/CQRS.html&#34;&gt;CQRS&lt;/a&gt; and &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dn589792.aspx&#34;&gt;event sourcing&lt;/a&gt; in .NET.&lt;/p&gt;
+
+&lt;p&gt;I then developed this simple project which demonstrates the basic concepts of &lt;a href=&#34;http://dddcommunity.org/learning-ddd/what_is_ddd/&#34;&gt;domain driven design&lt;/a&gt;, CQRS and event sourcing using Cirqus.&lt;/p&gt;
+
+&lt;h2 id=&#34;domain:ed6c2b7a433a54340e9aa358e2099648&#34;&gt;Domain&lt;/h2&gt;
+
+&lt;p&gt;The project is about a hotel called &lt;em&gt;Oditel&lt;/em&gt; (our school was called &lt;em&gt;Odisee&lt;/em&gt;&amp;hellip;). There are 3 contexts with their aggregate roots:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Room&lt;/li&gt;
+&lt;li&gt;Customer&lt;/li&gt;
+&lt;li&gt;Booking&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The project has the following layers:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Domain: models and services (interfaces)&lt;/li&gt;
+&lt;li&gt;Infrastructure: everything related to Cirqus, implementations of the services&lt;/li&gt;
+&lt;li&gt;Presentation: this layer isn&amp;rsquo;t really a complete layer. It&amp;rsquo;s just a simple console app to demonstrate how the domain and infrastructure layers work.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The application and presentation layers are out of the scope of this project.&lt;/p&gt;
+
+&lt;p&gt;The console app goes through the followings steps:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create 4 rooms&lt;/li&gt;
+&lt;li&gt;Create 2 customers&lt;/li&gt;
+&lt;li&gt;Let a customer book 2 rooms&lt;/li&gt;
+&lt;li&gt;Remove the booking&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;extra-features:ed6c2b7a433a54340e9aa358e2099648&#34;&gt;Extra features&lt;/h2&gt;
+
+&lt;p&gt;The events and most important &lt;em&gt;views&lt;/em&gt; are stored in SQL Server (Local DB).&lt;/p&gt;
+
+&lt;p&gt;There is an extra view that keeps statistics of bookings per room per quarter. This view is rendered to &lt;strong&gt;MongoDB&lt;/strong&gt;, so you also need a local MongoDB server.&lt;/p&gt;
+
+&lt;p&gt;There are a few code diagrams to visualize how each layer interacts with the other layers.&lt;/p&gt;
+
+&lt;p&gt;I created 4 branches with the 4 steps you have to take when developing a domain driven designed project.&lt;/p&gt;
+
+&lt;h2 id=&#34;slides:ed6c2b7a433a54340e9aa358e2099648&#34;&gt;Slides&lt;/h2&gt;
+
+&lt;p&gt;With that demo also goes a presentation (in Dutch) which you can download &lt;a href=&#34;https://onedrive.live.com/redir?resid=B5240A36EC9AE039!485572&amp;amp;authkey=!AFa6VJYzeHPv4hI&amp;amp;ithint=file%2cpptx&#34;&gt;right here&lt;/a&gt;. Let me know if the link is broken (I tend to move my files in my OneDrive around quite a lot).&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Tracking the trackers</title>
@@ -553,45 +610,6 @@ docker-machine kill boot2docker
 &lt;p&gt;The theme is based on the &lt;a href=&#34;http://www.getmdl.io/templates/index.html&#34;&gt;blog template&lt;/a&gt; from Google&amp;rsquo;s &lt;a href=&#34;http://www.getmdl.io/&#34;&gt;Material Design Lite&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/hugo-material-lite&#34;&gt;GitHub&lt;/a&gt; and I host &lt;a href=&#34;http://materialexample.sa.muel.be/&#34;&gt;a demo&lt;/a&gt; on GitHub Pages.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>SamShack</title>
-      <link>http://sa.muel.be/portfolio/samshack/</link>
-      <pubDate>Tue, 21 Jul 2015 13:26:51 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/portfolio/samshack/</guid>
-      <description>
-
-&lt;p&gt;In January 2014 I had to develop a webshop in PHP for a school project. At the time we just learnt about MVC and the best framework for the job seemed &lt;a href=&#34;http://www.cakephp.org&#34;&gt;CakePHP&lt;/a&gt;. My webshop had responsive design and was very fast (high scores on PageSpeed and Yahoo YSlow).&lt;/p&gt;
-
-&lt;p&gt;The webshop itself is no longer available online, but the source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/MI4webshop&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;functional-requirements:8f252d2e6836bd8c7f9c98107e37888e&#34;&gt;Functional requirements&lt;/h2&gt;
-
-&lt;h3 id=&#34;configuration-panel:8f252d2e6836bd8c7f9c98107e37888e&#34;&gt;Configuration panel&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;CRUD actions for every kind of data&lt;/li&gt;
-&lt;li&gt;The administrator has to log in to be able to do anything&lt;/li&gt;
-&lt;li&gt;The administrator must be able to create other administrative user accounts&lt;/li&gt;
-&lt;li&gt;The administrator can view the ERD of the webshop&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;client-site:8f252d2e6836bd8c7f9c98107e37888e&#34;&gt;Client site&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Products have categories and can be sorted and filtered by category&lt;/li&gt;
-&lt;li&gt;Shopping cart which can be modified at any time&lt;/li&gt;
-&lt;li&gt;Shoppers have to create user accounts to buy anything&lt;/li&gt;
-&lt;li&gt;Only registered users can view the stock&lt;/li&gt;
-&lt;li&gt;The stock needs to automatically updated after a sale&lt;/li&gt;
-&lt;li&gt;Confirmation emails for all kinds of actions&lt;/li&gt;
-&lt;li&gt;Password reset mails&lt;/li&gt;
-&lt;li&gt;History of purchases&lt;/li&gt;
-&lt;li&gt;Personalized recommendations&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     
