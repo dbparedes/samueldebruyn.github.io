@@ -47,7 +47,7 @@
 
 &lt;p&gt;Now open an administrative command prompt (you need to be an administrator to create new virtual machines) and execute the following command to create a new Docker Machine named &lt;em&gt;boot2docker&lt;/em&gt;. Make sure to replace &lt;code&gt;My Internal Switch&lt;/code&gt; with the name of the internal switch you created before. You can add &lt;code&gt;--hyper-v-memory xxxx&lt;/code&gt; before the name of the machine to change the default amount of memory (it&amp;rsquo;s dynamic) from 1024 to something else.&lt;/p&gt;
 
-&lt;pre&gt;&lt;code&gt;docker-machine create --driver Hyper-V --hyper-v-virtual-switch &amp;quot;My Internal Switch&amp;quot; boot2docker
+&lt;pre&gt;&lt;code&gt;docker-machine create --driver hyperv --hyperv-virtual-switch &amp;quot;My Internal Switch&amp;quot; boot2docker
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;If all went well, you should get a message saying you still need to set the environment variables to connect to the machine. Running the following command will give you a few more commands to run which set the required variables.&lt;/p&gt;
