@@ -8,8 +8,22 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Fri, 27 Nov 2015 19:56:21 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 04 Feb 2016 19:41:02 +0100</lastBuildDate>
     <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Thesis: Cross-Platform mobile apps with Xamarin</title>
+      <link>http://sa.muel.be/portfolio/thesis/</link>
+      <pubDate>Thu, 04 Feb 2016 19:41:02 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/thesis/</guid>
+      <description>&lt;p&gt;In my graduation year I wrote a thesis about the project that I implemented during my internship at &lt;a href=&#34;http://www.realdolmen.com/&#34;&gt;RealDolmen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The project was about cross-platform development with &lt;a href=&#34;https://xamarin.com&#34;&gt;Xamarin&lt;/a&gt;. The customer, &lt;a href=&#34;https://education.realdolmen.com/en&#34;&gt;RealDolmen Education&lt;/a&gt;, asked for an app for Android, iOS and Windows PHone where users can browse through the offer of RealDolmen Education.&lt;/p&gt;
+
+&lt;p&gt;The thesis is in Dutch and consists of several analyses and project documentation like a PID. You can download it using the link above.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cirqus demo</title>
@@ -19,7 +33,7 @@
       <guid>http://sa.muel.be/portfolio/cirqus-demo/</guid>
       <description>
 
-&lt;p&gt;In my graduation year I had to demonstrate how you can implement the CQRS principle in .NET. I went looking for a few CQRS frameworks and I found &lt;a href=&#34;https://github.com/d60/Cirqus&#34;&gt;Cirqus&lt;/a&gt;. It&amp;rsquo;s the easiest way to get started with &lt;a href=&#34;http://martinfowler.com/bliki/CQRS.html&#34;&gt;CQRS&lt;/a&gt; and &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dn589792.aspx&#34;&gt;event sourcing&lt;/a&gt; in .NET.&lt;/p&gt;
+&lt;p&gt;In my graduation year I demonstrated how you can implement the CQRS principle in .NET. I went looking for a few CQRS frameworks and I found &lt;a href=&#34;https://github.com/d60/Cirqus&#34;&gt;Cirqus&lt;/a&gt;. It&amp;rsquo;s the easiest way to get started with &lt;a href=&#34;http://martinfowler.com/bliki/CQRS.html&#34;&gt;CQRS&lt;/a&gt; and &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dn589792.aspx&#34;&gt;event sourcing&lt;/a&gt; in .NET.&lt;/p&gt;
 
 &lt;p&gt;I then developed this simple project which demonstrates the basic concepts of &lt;a href=&#34;http://dddcommunity.org/learning-ddd/what_is_ddd/&#34;&gt;domain driven design&lt;/a&gt;, CQRS and event sourcing using Cirqus.&lt;/p&gt;
 
@@ -596,20 +610,6 @@ docker-machine kill boot2docker
 &lt;p&gt;The website is built with &lt;a href=&#34;http://wordpress.org&#34;&gt;WordPress&lt;/a&gt; and stored on a shared hosting account. I customized the theme and setup &lt;a href=&#34;https://www.cloudflare.com/&#34;&gt;CloudFlare&lt;/a&gt;. As the website was hacked in the months before I became the administrator, I had to &lt;a href=&#34;http://sa.muel.be/2015/recovering-a-hacked-wordpress/&#34;&gt;restore&lt;/a&gt; and &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;secure&lt;/a&gt; it.&lt;/p&gt;
 
 &lt;p&gt;I managed this website from June 2015 until July 2016.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Material Design Lite theme for Hugo</title>
-      <link>http://sa.muel.be/portfolio/material-design-theme-for-hugo/</link>
-      <pubDate>Tue, 21 Jul 2015 13:43:35 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/portfolio/material-design-theme-for-hugo/</guid>
-      <description>&lt;p&gt;As I wanted to learn more about &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; while developing &lt;a href=&#34;http://sa.muel.be/portfolio/this-blog/&#34;&gt;this blog&lt;/a&gt;, I &lt;a href=&#34;http://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;created&lt;/a&gt; a new theme for Hugo. It is mostly plain HTML, CSS and JavaScript, but it also contains some &lt;a href=&#34;http://golang.org/pkg/html/template/&#34;&gt;Go Templating&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The theme is based on the &lt;a href=&#34;http://www.getmdl.io/templates/index.html&#34;&gt;blog template&lt;/a&gt; from Google&amp;rsquo;s &lt;a href=&#34;http://www.getmdl.io/&#34;&gt;Material Design Lite&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/hugo-material-lite&#34;&gt;GitHub&lt;/a&gt; and I host &lt;a href=&#34;http://materialexample.sa.muel.be/&#34;&gt;a demo&lt;/a&gt; on GitHub Pages.&lt;/p&gt;
 </description>
     </item>
     

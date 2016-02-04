@@ -8,8 +8,22 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Fri, 27 Nov 2015 19:56:21 +0100</lastBuildDate>
+    <lastBuildDate>Thu, 04 Feb 2016 19:41:02 +0100</lastBuildDate>
     <atom:link href="http://sa.muel.be/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Thesis: Cross-Platform mobile apps with Xamarin</title>
+      <link>http://sa.muel.be/portfolio/thesis/</link>
+      <pubDate>Thu, 04 Feb 2016 19:41:02 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/portfolio/thesis/</guid>
+      <description>&lt;p&gt;In my graduation year I wrote a thesis about the project that I implemented during my internship at &lt;a href=&#34;http://www.realdolmen.com/&#34;&gt;RealDolmen&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The project was about cross-platform development with &lt;a href=&#34;https://xamarin.com&#34;&gt;Xamarin&lt;/a&gt;. The customer, &lt;a href=&#34;https://education.realdolmen.com/en&#34;&gt;RealDolmen Education&lt;/a&gt;, asked for an app for Android, iOS and Windows PHone where users can browse through the offer of RealDolmen Education.&lt;/p&gt;
+
+&lt;p&gt;The thesis is in Dutch and consists of several analyses and project documentation like a PID. You can download it using the link above.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Cirqus demo</title>
@@ -19,7 +33,7 @@
       <guid>http://sa.muel.be/portfolio/cirqus-demo/</guid>
       <description>
 
-&lt;p&gt;In my graduation year I had to demonstrate how you can implement the CQRS principle in .NET. I went looking for a few CQRS frameworks and I found &lt;a href=&#34;https://github.com/d60/Cirqus&#34;&gt;Cirqus&lt;/a&gt;. It&amp;rsquo;s the easiest way to get started with &lt;a href=&#34;http://martinfowler.com/bliki/CQRS.html&#34;&gt;CQRS&lt;/a&gt; and &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dn589792.aspx&#34;&gt;event sourcing&lt;/a&gt; in .NET.&lt;/p&gt;
+&lt;p&gt;In my graduation year I demonstrated how you can implement the CQRS principle in .NET. I went looking for a few CQRS frameworks and I found &lt;a href=&#34;https://github.com/d60/Cirqus&#34;&gt;Cirqus&lt;/a&gt;. It&amp;rsquo;s the easiest way to get started with &lt;a href=&#34;http://martinfowler.com/bliki/CQRS.html&#34;&gt;CQRS&lt;/a&gt; and &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dn589792.aspx&#34;&gt;event sourcing&lt;/a&gt; in .NET.&lt;/p&gt;
 
 &lt;p&gt;I then developed this simple project which demonstrates the basic concepts of &lt;a href=&#34;http://dddcommunity.org/learning-ddd/what_is_ddd/&#34;&gt;domain driven design&lt;/a&gt;, CQRS and event sourcing using Cirqus.&lt;/p&gt;
 
