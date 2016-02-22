@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows Rt on Samuel Debruyn</title>
+    <link>http://sa.muel.be/tags/windows-rt/</link>
+    <description>Recent content in Windows Rt on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Mon, 22 Feb 2016 18:59:37 +0100</lastBuildDate>
+    <atom:link href="http://sa.muel.be/tags/windows-rt/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Dependency injection with Autofac and MVVM Light in Xamarin</title>
+      <link>http://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
+      <pubDate>Mon, 22 Feb 2016 18:59:37 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
+      <description>
+
+&lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
+
+&lt;p&gt;A developer and his tools are inseparable. We all like &lt;a href=&#34;https://sites.google.com/site/unclebobconsultingllc/getting-a-solid-start&#34;&gt;SOLID&lt;/a&gt; and every (.NET) developer has his or her favourite dependency injection tool. There is &lt;a href=&#34;http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx&#34;&gt;a lot&lt;/a&gt; to choose from. I like Autofac because of the way it handles modules, the lifetime of a type and how it registers types.&lt;/p&gt;
+
+&lt;p&gt;At the moment I am working on an app for Android, iOS and Windows Phone with Xamarin and when you’re developing an app in C#, you’ll really want to use MVVM. You can either go the hard way and use the built-in classes, you can go the easy way and use a framework like &lt;a href=&#34;http://caliburnmicro.com/&#34;&gt;Caliburn Micro&lt;/a&gt; or you can go the comfortable way and use &lt;a href=&#34;http://mvvmlight.net&#34;&gt;MVVM Light&lt;/a&gt;. MVVM Light is a toolkit. It comes with everything you need and nothing more. It doesn’t force a pattern upon you, you can use the parts you like and safely ignore everything else. Want to get started with MVVM Light? Make sure to read &lt;a href=&#34;http://www.spikie.be/blog/category/MVVM-Light.aspx&#34;&gt;Nico’s practical guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;MVVM Light comes with an IoC container called SimpleIoC. And that’s what it is: a dead-simple IoC container. As I said: you don’t have to use the parts you don’t like. So let me replace SimpleIoC with my dependency injector of choice: Autofac.&lt;/p&gt;
+
+&lt;h2 id=&#34;architecture:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Architecture&lt;/h2&gt;
+
+&lt;p&gt;This is an overview of how I usually structure my solution:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Legend:
+* project
+  - namespace
+    + class/interface
+
+
+* MyApp (PCL)
+  - MyApp.Utilities
+    + MyApp.Utilities.ViewModelLocator
+    + MyApp.Utilities.CrossPlatformModule
+  - MyApp.ViewModels
+  - MyApp.Services
+    + MyApp.Services.ICrossPlatformService
+    + MyApp.Services.IPlatformSpecificService
+    + MyApp.Services.MyCrossPlatformServiceImplementation
+    + ...
+  - ...
+* MyApp.Android
+  - MyApp.Android.Utilities
+    + MyApp.Android.Utilities.PlatformModule
+  - MyApp.Android.Services
+    + MyApp.Android.Services.MyPlatformSpecificServiceImplementation
+    + ...
+  - ...
+  + App
+* MyApp.iOS
+  - MyApp.iOS.Utilities
+    + MyApp.iOS.Utilities.PlatformModule
+  - MyApp.iOS.Services
+    + MyApp.iOS.Services.MyPlatformSpecificServiceImplementation
+    + ...
+  - ...
+  + Main
+* MyApp.WindowsPhone
+  - MyApp.WindowsPhone.Utilities
+    + MyApp.WindowsPhone.Utilities.PlatformModule
+  - MyApp.WindowsPhone.Services
+    + MyApp.WindowsPhone.Services.MyPlatformSpecificServiceImplementation
+    + ...
+  - ...
+  + App
+* MyApp.UnitTests
+  - ...
+    + ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;where-to-put-what:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Where to put what?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Registrations of viewmodels and cross-platform service implementations: MyApp.Utilities.CrossPlatformModule&lt;/li&gt;
+&lt;li&gt;Registrations of platform-specific services: MyApp.Platform.Utilities.PlatformModule&lt;/li&gt;
+&lt;li&gt;Static properties referring to viewmodels: MyApp.Utilities.ViewModelLocator&lt;/li&gt;
+&lt;li&gt;Autofac initialization: MyApp.Utilities.ViewModelLocator&lt;/li&gt;
+&lt;li&gt;ViewModelLocator initialization: App/Main&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-it-all-ties-together:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;How it all ties together&lt;/h2&gt;
+
+&lt;p&gt;First off, you start by creating interfaces for all the services you need. Next up, you can start defining implementations for the services and put them in the correct namespaces.&lt;/p&gt;
+
+&lt;p&gt;When that&amp;rsquo;s done, it&amp;rsquo;s time to create our modules. Now, assembly scanning sometimes causes exceptions on certain platforms. Also, PCL&amp;rsquo;s don&amp;rsquo;t have the methods you&amp;rsquo;re used to from ASP.NET or other types of projects for assembly scanning. I know it makes things incredibly easy, but I&amp;rsquo;d advise against it for Xamarin projects. You&amp;rsquo;ll have to register type by type in the modules. Usually I create an array of types and throw them in &lt;code&gt;builder.RegisterTypes(types)&lt;/code&gt;. The platform-specific modules should contain registrations for the platform-specific services. Don&amp;rsquo;t forget the ones that come with Autofac by default.&lt;/p&gt;
+
+&lt;h3 id=&#34;example-of-a-platform-specific-service:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Example of a platform-specific service&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;using System;
+using Autofac;
+using MyApp.Android.Services;
+using GalaSoft.MvvmLight.Views;
+
+namespace MyApp.Android.Utilities
+{
+    public class PlatformModule : Module
+    {
+        protected override void Load(ContainerBuilder builder)
+        {
+            var navigationService = new NavigationService();
+            // navigationService setup...
+            builder.RegisterInstance(navigationService).AsImplementedInterfaces();
+            
+            Type[] types =
+            {
+                typeof (DialogService),
+                typeof (MyPlatformSpecificServiceImplementation)
+            };
+            builder.RegisterTypes(types).AsImplementedInterfaces();
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I think you get my point. The module in your PCL should contain all the cross-platform services and the ViewModels. Don&amp;rsquo;t forget to use &lt;code&gt;.SingleInstance()&lt;/code&gt; where you think it&amp;rsquo;s applicable (e.g. where you use &lt;code&gt;HttpClient&lt;/code&gt; or with some ViewModels).&lt;/p&gt;
+
+&lt;p&gt;When that&amp;rsquo;s done, it&amp;rsquo;s time to use a little bit of magic to make sure the right implementations are registered in the right platform. This can be a little bit tricky and it isn&amp;rsquo;t a very clean solution, but It Does The Job &amp;trade;.&lt;/p&gt;
+
+&lt;p&gt;Laurent, the creator of MVVM Light, gave &lt;a href=&#34;http://blog.galasoft.ch/posts/2014/10/my-xamarinevolve-talk-is-online-for-your-viewing-pleasure/&#34;&gt;a talk at Xamarin Evolve&lt;/a&gt; explaining how he makes it work on Android, iOS and Windows Phone. On Android, you make a singleton class called &lt;code&gt;App&lt;/code&gt; while you use the &lt;code&gt;Application&lt;/code&gt; and &lt;code&gt;App&lt;/code&gt; classes on Windows Phone and iOS.&lt;/p&gt;
+
+&lt;p&gt;But first, we need to create our &lt;code&gt;ViewModelLocator&lt;/code&gt;. Microsoft&amp;rsquo;s ServiceLocator and Autofac&amp;rsquo;s extra&amp;rsquo;s make things easier so all you need is &lt;code&gt;nuget Install-Package Autofac.Extras.CommonServiceLocator&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;public class ViewModelLocator
+{
+    // you only need this if you&#39;d like to use design-time data which is only supported on XAML-based platforms
+    static ViewModelLocator()
+    {
+        if (!ServiceLocator.IsLocationProviderSet)
+        {
+            RegisterServices(registerFakes: true);
+        }
+    }
+
+    public MyViewModel MyViewModel =&amp;gt; ServiceLocator.Current.GetInstance&amp;lt;MyViewModel&amp;gt;();
+
+    public static void RegisterServices(ContainerBuilder registrations = null, bool registerFakes = false)
+    {
+        var builder = new ContainerBuilder();
+
+        // you only need this if-clause if you&#39;d like to use design-time data which is only supported on XAML-based platforms
+        if (ViewModelBase.IsInDesignModeStatic || registerFakes)
+        {
+            builder.RegisterModule&amp;lt;FakeServiceModule&amp;gt;();
+        }
+        else
+        {
+            // just use this one if you don&#39;t use design-time data
+            builder.RegisterModule&amp;lt;CrossPlatformModule&amp;gt;();
+        }
+
+        var container = builder.Build();
+        registrations?.Update(container);
+
+        ServiceLocator.SetLocatorProvider(() =&amp;gt; new AutofacServiceLocator(container));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now in all of the mentioned app initializers mentioned above I have a method that looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;private static void RegisterServices()
+{
+    var builder = new ContainerBuilder();
+    builder.RegisterModule&amp;lt;PlatformModule&amp;gt;();
+    ViewModelLocator.RegisterServices(builder);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That method is then called at the moment I initialize the &lt;code&gt;ViewModelLocator&lt;/code&gt;. Laurent&amp;rsquo;s talk goes in depth on how to do that so I won&amp;rsquo;t cover that part.&lt;/p&gt;
+
+&lt;h2 id=&#34;servicelocator:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;ServiceLocator&lt;/h2&gt;
+
+&lt;p&gt;Whenever you need an instance of a registered type, you can use the &lt;code&gt;ServiceLocator&lt;/code&gt; like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var myService = ServiceLocator.Current.GetInstance&amp;lt;IMyService&amp;gt;();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You&amp;rsquo;ll only need this in the (usually empty) code-behind parts like activities (Android), ViewControllers (iOS) or the page classes (Windows Phone).&lt;/p&gt;
+
+&lt;h2 id=&#34;questions:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Questions?&lt;/h2&gt;
+
+&lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;http://sa.muel.be/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Queue for MessageDialog in Windows RT</title>
+      <link>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</link>
+      <pubDate>Wed, 20 Aug 2014 00:00:00 +0000</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</guid>
+      <description>&lt;p&gt;When I write Windows Store applications, I use MessageDialog a lot.
+It&amp;rsquo;s the easiest way to show a quick informative pop-up message or a question to the user.
+However, when you tend to use this quite often, you&amp;rsquo;ll probably run into a problem.&lt;/p&gt;
+
+&lt;p&gt;The Windows Runtime framework doesn&amp;rsquo;t allow you to stack MessageDialogs, queue them etc.
+So if you need to display one, you&amp;rsquo;ll have to make sure that no other MessageDialog is already open.
+Checking if there is an open MessageDialog is not that easy unless you keep references to all the MessageDialogs you create.
+There are a few cases in which this would be annoying.&lt;/p&gt;
+
+&lt;p&gt;The singleton class below will make sure that you can queue MessageDialogs and that this problem will never occur.&lt;/p&gt;
+
+&lt;p&gt;Instead of using&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;myDialog.ShowAsync()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;use&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;MessageDialogQueue.PushMessageDialog(myDialog)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The dialog will be displayed after all previous MessageDialogs are closed. Do this for all your MessageDialogs or you&amp;rsquo;ll still run into the problem I mentioned.&lt;/p&gt;
+
+&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/efaf5ae8e0af3ac2e0d9.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

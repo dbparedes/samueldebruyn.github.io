@@ -8,8 +8,189 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Tue, 16 Feb 2016 23:09:37 +0100</lastBuildDate>
+    <lastBuildDate>Mon, 22 Feb 2016 18:59:37 +0100</lastBuildDate>
     <atom:link href="http://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Dependency injection with Autofac and MVVM Light in Xamarin</title>
+      <link>http://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
+      <pubDate>Mon, 22 Feb 2016 18:59:37 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
+      <description>
+
+&lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
+
+&lt;p&gt;A developer and his tools are inseparable. We all like &lt;a href=&#34;https://sites.google.com/site/unclebobconsultingllc/getting-a-solid-start&#34;&gt;SOLID&lt;/a&gt; and every (.NET) developer has his or her favourite dependency injection tool. There is &lt;a href=&#34;http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx&#34;&gt;a lot&lt;/a&gt; to choose from. I like Autofac because of the way it handles modules, the lifetime of a type and how it registers types.&lt;/p&gt;
+
+&lt;p&gt;At the moment I am working on an app for Android, iOS and Windows Phone with Xamarin and when you’re developing an app in C#, you’ll really want to use MVVM. You can either go the hard way and use the built-in classes, you can go the easy way and use a framework like &lt;a href=&#34;http://caliburnmicro.com/&#34;&gt;Caliburn Micro&lt;/a&gt; or you can go the comfortable way and use &lt;a href=&#34;http://mvvmlight.net&#34;&gt;MVVM Light&lt;/a&gt;. MVVM Light is a toolkit. It comes with everything you need and nothing more. It doesn’t force a pattern upon you, you can use the parts you like and safely ignore everything else. Want to get started with MVVM Light? Make sure to read &lt;a href=&#34;http://www.spikie.be/blog/category/MVVM-Light.aspx&#34;&gt;Nico’s practical guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;MVVM Light comes with an IoC container called SimpleIoC. And that’s what it is: a dead-simple IoC container. As I said: you don’t have to use the parts you don’t like. So let me replace SimpleIoC with my dependency injector of choice: Autofac.&lt;/p&gt;
+
+&lt;h2 id=&#34;architecture:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Architecture&lt;/h2&gt;
+
+&lt;p&gt;This is an overview of how I usually structure my solution:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Legend:
+* project
+  - namespace
+    + class/interface
+
+
+* MyApp (PCL)
+  - MyApp.Utilities
+    + MyApp.Utilities.ViewModelLocator
+    + MyApp.Utilities.CrossPlatformModule
+  - MyApp.ViewModels
+  - MyApp.Services
+    + MyApp.Services.ICrossPlatformService
+    + MyApp.Services.IPlatformSpecificService
+    + MyApp.Services.MyCrossPlatformServiceImplementation
+    + ...
+  - ...
+* MyApp.Android
+  - MyApp.Android.Utilities
+    + MyApp.Android.Utilities.PlatformModule
+  - MyApp.Android.Services
+    + MyApp.Android.Services.MyPlatformSpecificServiceImplementation
+    + ...
+  - ...
+  + App
+* MyApp.iOS
+  - MyApp.iOS.Utilities
+    + MyApp.iOS.Utilities.PlatformModule
+  - MyApp.iOS.Services
+    + MyApp.iOS.Services.MyPlatformSpecificServiceImplementation
+    + ...
+  - ...
+  + Main
+* MyApp.WindowsPhone
+  - MyApp.WindowsPhone.Utilities
+    + MyApp.WindowsPhone.Utilities.PlatformModule
+  - MyApp.WindowsPhone.Services
+    + MyApp.WindowsPhone.Services.MyPlatformSpecificServiceImplementation
+    + ...
+  - ...
+  + App
+* MyApp.UnitTests
+  - ...
+    + ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;where-to-put-what:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Where to put what?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Registrations of viewmodels and cross-platform service implementations: MyApp.Utilities.CrossPlatformModule&lt;/li&gt;
+&lt;li&gt;Registrations of platform-specific services: MyApp.Platform.Utilities.PlatformModule&lt;/li&gt;
+&lt;li&gt;Static properties referring to viewmodels: MyApp.Utilities.ViewModelLocator&lt;/li&gt;
+&lt;li&gt;Autofac initialization: MyApp.Utilities.ViewModelLocator&lt;/li&gt;
+&lt;li&gt;ViewModelLocator initialization: App/Main&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-it-all-ties-together:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;How it all ties together&lt;/h2&gt;
+
+&lt;p&gt;First off, you start by creating interfaces for all the services you need. Next up, you can start defining implementations for the services and put them in the correct namespaces.&lt;/p&gt;
+
+&lt;p&gt;When that&amp;rsquo;s done, it&amp;rsquo;s time to create our modules. Now, assembly scanning sometimes causes exceptions on certain platforms. Also, PCL&amp;rsquo;s don&amp;rsquo;t have the methods you&amp;rsquo;re used to from ASP.NET or other types of projects for assembly scanning. I know it makes things incredibly easy, but I&amp;rsquo;d advise against it for Xamarin projects. You&amp;rsquo;ll have to register type by type in the modules. Usually I create an array of types and throw them in &lt;code&gt;builder.RegisterTypes(types)&lt;/code&gt;. The platform-specific modules should contain registrations for the platform-specific services. Don&amp;rsquo;t forget the ones that come with Autofac by default.&lt;/p&gt;
+
+&lt;h3 id=&#34;example-of-a-platform-specific-service:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Example of a platform-specific service&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;using System;
+using Autofac;
+using MyApp.Android.Services;
+using GalaSoft.MvvmLight.Views;
+
+namespace MyApp.Android.Utilities
+{
+    public class PlatformModule : Module
+    {
+        protected override void Load(ContainerBuilder builder)
+        {
+            var navigationService = new NavigationService();
+            // navigationService setup...
+            builder.RegisterInstance(navigationService).AsImplementedInterfaces();
+            
+            Type[] types =
+            {
+                typeof (DialogService),
+                typeof (MyPlatformSpecificServiceImplementation)
+            };
+            builder.RegisterTypes(types).AsImplementedInterfaces();
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I think you get my point. The module in your PCL should contain all the cross-platform services and the ViewModels. Don&amp;rsquo;t forget to use &lt;code&gt;.SingleInstance()&lt;/code&gt; where you think it&amp;rsquo;s applicable (e.g. where you use &lt;code&gt;HttpClient&lt;/code&gt; or with some ViewModels).&lt;/p&gt;
+
+&lt;p&gt;When that&amp;rsquo;s done, it&amp;rsquo;s time to use a little bit of magic to make sure the right implementations are registered in the right platform. This can be a little bit tricky and it isn&amp;rsquo;t a very clean solution, but It Does The Job &amp;trade;.&lt;/p&gt;
+
+&lt;p&gt;Laurent, the creator of MVVM Light, gave &lt;a href=&#34;http://blog.galasoft.ch/posts/2014/10/my-xamarinevolve-talk-is-online-for-your-viewing-pleasure/&#34;&gt;a talk at Xamarin Evolve&lt;/a&gt; explaining how he makes it work on Android, iOS and Windows Phone. On Android, you make a singleton class called &lt;code&gt;App&lt;/code&gt; while you use the &lt;code&gt;Application&lt;/code&gt; and &lt;code&gt;App&lt;/code&gt; classes on Windows Phone and iOS.&lt;/p&gt;
+
+&lt;p&gt;But first, we need to create our &lt;code&gt;ViewModelLocator&lt;/code&gt;. Microsoft&amp;rsquo;s ServiceLocator and Autofac&amp;rsquo;s extra&amp;rsquo;s make things easier so all you need is &lt;code&gt;nuget Install-Package Autofac.Extras.CommonServiceLocator&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;public class ViewModelLocator
+{
+    // you only need this if you&#39;d like to use design-time data which is only supported on XAML-based platforms
+    static ViewModelLocator()
+    {
+        if (!ServiceLocator.IsLocationProviderSet)
+        {
+            RegisterServices(registerFakes: true);
+        }
+    }
+
+    public MyViewModel MyViewModel =&amp;gt; ServiceLocator.Current.GetInstance&amp;lt;MyViewModel&amp;gt;();
+
+    public static void RegisterServices(ContainerBuilder registrations = null, bool registerFakes = false)
+    {
+        var builder = new ContainerBuilder();
+
+        // you only need this if-clause if you&#39;d like to use design-time data which is only supported on XAML-based platforms
+        if (ViewModelBase.IsInDesignModeStatic || registerFakes)
+        {
+            builder.RegisterModule&amp;lt;FakeServiceModule&amp;gt;();
+        }
+        else
+        {
+            // just use this one if you don&#39;t use design-time data
+            builder.RegisterModule&amp;lt;CrossPlatformModule&amp;gt;();
+        }
+
+        var container = builder.Build();
+        registrations?.Update(container);
+
+        ServiceLocator.SetLocatorProvider(() =&amp;gt; new AutofacServiceLocator(container));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now in all of the mentioned app initializers mentioned above I have a method that looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;private static void RegisterServices()
+{
+    var builder = new ContainerBuilder();
+    builder.RegisterModule&amp;lt;PlatformModule&amp;gt;();
+    ViewModelLocator.RegisterServices(builder);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That method is then called at the moment I initialize the &lt;code&gt;ViewModelLocator&lt;/code&gt;. Laurent&amp;rsquo;s talk goes in depth on how to do that so I won&amp;rsquo;t cover that part.&lt;/p&gt;
+
+&lt;h2 id=&#34;servicelocator:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;ServiceLocator&lt;/h2&gt;
+
+&lt;p&gt;Whenever you need an instance of a registered type, you can use the &lt;code&gt;ServiceLocator&lt;/code&gt; like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var myService = ServiceLocator.Current.GetInstance&amp;lt;IMyService&amp;gt;();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You&amp;rsquo;ll only need this in the (usually empty) code-behind parts like activities (Android), ViewControllers (iOS) or the page classes (Windows Phone).&lt;/p&gt;
+
+&lt;h2 id=&#34;questions:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Questions?&lt;/h2&gt;
+
+&lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;http://sa.muel.be/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Ethics of mobile banking (security)</title>
@@ -673,151 +854,6 @@ deploy:
 &lt;p&gt;The other dynamic part of an ordinary blog is &lt;strong&gt;the comment section&lt;/strong&gt;. Again, the easiest way to &lt;em&gt;fix&lt;/em&gt; this is relying on a 3rd party comments plugin like &lt;a href=&#34;https://disqus.com/&#34;&gt;Disqus&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Still, these two disadvantages are easily outweighed by the advantages of a static website. Your website will survive &lt;a href=&#34;https://en.wikipedia.org/wiki/Slashdot_effect&#34;&gt;slashdotting&lt;/a&gt; and the only required maintenance is literally making sure your web server stays online.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Recovering a hacked WordPress</title>
-      <link>http://sa.muel.be/2015/recovering-a-hacked-wordpress/</link>
-      <pubDate>Mon, 06 Jul 2015 14:14:32 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/recovering-a-hacked-wordpress/</guid>
-      <description>
-
-&lt;h2 id=&#34;introduction:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;A few weeks ago, I had to &lt;a href=&#34;http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;repair a hacked WordPress&lt;/a&gt; installation.&lt;/p&gt;
-
-&lt;p&gt;A lot of the information I needed to successfully clean the WordPress completely of infected files was not centralized in a single guide. So I decided to write one and you are now reading it.&lt;/p&gt;
-
-&lt;p&gt;So, your website is hacked, what now? Let&amp;rsquo;s go through the process of making sure that every infection is removed and it never happens again.&lt;/p&gt;
-
-&lt;p&gt;In this first part you&amp;rsquo;ll recover from a hack. In a second part you&amp;rsquo;ll learn how to harden the security. I&amp;rsquo;ll publish &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;the second part&lt;/a&gt; a few weeks after the first part.&lt;/p&gt;
-
-&lt;p&gt;This post is meant to be exhaustive and clear. If you have any suggestions or feel like something is missing or unclear, &lt;a href=&#34;mailto:s@muel.be?subject=Suggestions%20for%20the%20post%20about%20recovering%20a%20Wordpress%20hack&#34;&gt;&lt;em&gt;please&lt;/em&gt; let me know&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;The WordPress version I used to write this post is 4.2.2.&lt;/p&gt;
-
-&lt;h2 id=&#34;disabling-all-plugins-going-into-maintenance-mode:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Disabling all plugins / going into maintenance mode&lt;/h2&gt;
-
-&lt;p&gt;The first thing you should do is avoiding further infections. &lt;strong&gt;Disable EVERY plugin&lt;/strong&gt;. We&amp;rsquo;ll reactivate them later on.&lt;/p&gt;
-
-&lt;p&gt;I&amp;rsquo;d also put the website in maintenance mode. This requires, ironically, a plugin called &lt;a href=&#34;https://wordpress.org/plugins/wp-maintenance-mode/&#34;&gt;WP Maintenance Mode&lt;/a&gt;. Install it, write a quick message for your visitors and enable it.&lt;/p&gt;
-
-&lt;h2 id=&#34;take-a-backup:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Take a backup&lt;/h2&gt;
-
-&lt;p&gt;Backup your complete WordPress folder and database. You can download all the files using FTP or SSH and export the database to SQL statements using something like &lt;a href=&#34;http://www.phpmyadmin.net/home_page/index.php&#34;&gt;phpMyAdmin&lt;/a&gt; or the customer panel of your host (CPanel, DirectAdmin&amp;hellip;). Don&amp;rsquo;t store the backup on your webserver as the hackers could also infect this backup.&lt;/p&gt;
-
-&lt;h2 id=&#34;restore-the-original-wordpress-files:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restore the original WordPress files&lt;/h2&gt;
-
-&lt;p&gt;Download &lt;a href=&#34;https://wordpress.org/download/release-archive/&#34;&gt;a fresh copy of the version of WordPress&lt;/a&gt; you were using (which should always be the latest one). Unpack it and replace the directories &lt;em&gt;wp-admin&lt;/em&gt; and &lt;em&gt;wp-includes&lt;/em&gt; completely with the copy you just downloaded. Do the same with every file in the root folder and remove every file in your root that is not in the downloaded copy except for &lt;em&gt;wp-config.php&lt;/em&gt;. The &lt;strong&gt;only folder left untouched should be &lt;em&gt;wp-content&lt;/em&gt;&lt;/strong&gt;. WordPress also doesn&amp;rsquo;t include the &lt;em&gt;wp-config.php&lt;/em&gt; file so that should also be preserved (we&amp;rsquo;ll inspect this file later on in this guide).&lt;/p&gt;
-
-&lt;h2 id=&#34;clearing-the-cache:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Clearing the cache&lt;/h2&gt;
-
-&lt;p&gt;Delete the folders &lt;em&gt;wp-content/cache&lt;/em&gt; and &lt;em&gt;wp-content/plugins/widgets&lt;/em&gt;. They will be automatically recreated.&lt;/p&gt;
-
-&lt;h2 id=&#34;regenerate-salts-and-hashes:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Regenerate salts and hashes&lt;/h2&gt;
-
-&lt;p&gt;The &lt;em&gt;wp-config.php&lt;/em&gt; file contains a few hashes and salts to make sure that your cookies and sessions are unique and secure. As these could have been compromised, it&amp;rsquo;s &lt;strong&gt;absolutely necessary&lt;/strong&gt; to regenerate them. Open your &lt;em&gt;wp-config.php&lt;/em&gt; file in a text editor and overwrite your new hashes with new ones. WordPress offers &lt;a href=&#34;https://api.wordpress.org/secret-key/1.1/salt/&#34;&gt;an online generator&lt;/a&gt; so you can easily copy and paste them.&lt;/p&gt;
-
-&lt;h2 id=&#34;upgrade-to-the-latest-version:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Upgrade to the latest version&lt;/h2&gt;
-
-&lt;p&gt;If you&amp;rsquo;re not on the latest version of WordPress, then update ASAP. I&amp;rsquo;d recommend using &lt;a href=&#34;https://codex.wordpress.org/Upgrading_WordPress_-_Extended_Instructions&#34;&gt;these extended instructions&lt;/a&gt; instead of the built-in updater, but the built-in updater should be fine for most infected websites.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Upgrade all your themes and plugins&lt;/strong&gt; while you&amp;rsquo;re at it.&lt;/p&gt;
-
-&lt;h2 id=&#34;restore-the-original-themes-and-plugins:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restore the original themes and plugins&lt;/h2&gt;
-
-&lt;p&gt;In this step we&amp;rsquo;re going to restore the original theme and plugin files like we did with the original WordPress files. Download the &lt;a href=&#34;https://wordpress.org/themes/&#34;&gt;themes&lt;/a&gt; and &lt;a href=&#34;https://wordpress.org/plugins/&#34;&gt;plugins&lt;/a&gt; from wordpress.org or from the website of the publisher of the plugin or theme (for premium/payed versions). All you need to do is unpack the files into their respective directories in &lt;em&gt;wp-content/themes&lt;/em&gt; and &lt;em&gt;wp-content/plugins&lt;/em&gt;. Make sure there are no other files than the ones you just replaced in both of these folders.&lt;/p&gt;
-
-&lt;p&gt;NB: some plugins (e.g. plugins containing &lt;a href=&#34;http://wpengineer.com/2500/wordpress-dropins/&#34;&gt;drop-ins&lt;/a&gt;) like &lt;a href=&#34;https://wordpress.org/plugins/wp-super-cache/&#34;&gt;WP Super Cache&lt;/a&gt; also put PHP files in your &lt;em&gt;wp-content&lt;/em&gt; directory.&lt;/p&gt;
-
-&lt;h2 id=&#34;search-and-delete-infections-in-your-files:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Search and delete infections in your files&lt;/h2&gt;
-
-&lt;p&gt;The only infected files left could be stored in the subfolders of &lt;em&gt;wp-content&lt;/em&gt; that we haven&amp;rsquo;t looked into yet.&lt;/p&gt;
-
-&lt;h3 id=&#34;languages:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;languages&lt;/h3&gt;
-
-&lt;p&gt;If your WordPress is in English, you can safely delete the contents of the &lt;em&gt;languages&lt;/em&gt; folder, otherwise you should download the translation in your language and put in the &lt;em&gt;wp-content/languages&lt;/em&gt; while deleting everything else in it.&lt;/p&gt;
-
-&lt;h3 id=&#34;upgrade:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;upgrade&lt;/h3&gt;
-
-&lt;p&gt;The folder &lt;em&gt;upgrade&lt;/em&gt; in &lt;em&gt;wp-content&lt;/em&gt; is used by WordPress&amp;rsquo; built-in updater and should always be empty except for when you&amp;rsquo;re updating of course.&lt;/p&gt;
-
-&lt;h3 id=&#34;uploads-and-other-folders:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;uploads and other folders&lt;/h3&gt;
-
-&lt;p&gt;Next up: search every other folder in &lt;em&gt;wp-content&lt;/em&gt; for PHP and server configuration files and delete files if you think they shouldn&amp;rsquo;t be there. I suggest doing a case insensitive search for &lt;em&gt;*.php&lt;/em&gt; and &lt;em&gt;.htaccess&lt;/em&gt; and carefully inspecting the results.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;find /path/to/wordpress/wp-content/uploads/ -iname &amp;quot;*.php&amp;quot; -or -iname &amp;quot;.htaccess&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You probably shouldn&amp;rsquo;t have any PHP or .htaccess files in &lt;em&gt;wp-content/uploads/someyear/&lt;/em&gt;.&lt;/p&gt;
-
-&lt;p&gt;Finally search all the remaining files for typical code injections. PHP injections usually contain the functions &lt;code&gt;eval&lt;/code&gt; and &lt;code&gt;base64_decode&lt;/code&gt;.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;egrep &#39;eval(|decode(&#39; -r -H /path/to/wordpress/wp-content/
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;search-and-delete-infections-in-your-database:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Search and delete infections in your database&lt;/h2&gt;
-
-&lt;p&gt;While most infections are usually to be found in the files, hackers could also insert executable and obfuscated code into your database. Most often these are XSS injections and WordPress should protect you against them. Still, it wouldn&amp;rsquo;t hurt to scan your posts and comments for injected code.&lt;/p&gt;
-
-&lt;p&gt;The easiest way is to connect to your database right away using something like the previously mentioned &lt;em&gt;phpMyAdmin&lt;/em&gt; tool. Login, open the database and go to the SQL page so you can run some SQL commands. The select statements below will show you the posts and comments containing common injections. Use a &lt;code&gt;DELETE&lt;/code&gt; query (be careful) or the &lt;em&gt;phpMyAdmin&lt;/em&gt; GUI to completely delete the found posts and comments. Don&amp;rsquo;t forget to change &lt;code&gt;wp_&lt;/code&gt; to the prefix you use.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;iframe%&#39;
-UNION
-SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;noscript%&#39;
-UNION
-SELECT * FROM wp_posts WHERE post_content LIKE &#39;%display:%&#39;
-UNION
-SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;?%&#39;
-UNION
-SELECT * FROM wp_posts WHERE post_content LIKE &#39;%&amp;lt;?php%&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;pre&gt;&lt;code&gt;SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;iframe%&#39;
-UNION
-SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;noscript%&#39;
-UNION
-SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%display:%&#39;
-UNION
-SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?%&#39;
-UNION
-SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;using-exploit-scanner-and-sucuri-security-to-detect-further-infections:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Using &lt;em&gt;Exploit Scanner&lt;/em&gt; and &lt;em&gt;Sucuri Security&lt;/em&gt; to detect further infections&lt;/h2&gt;
-
-&lt;p&gt;Most code injections should be gone by now, but there are a few WordPress plugins available to detect everything that&amp;rsquo;s left.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://wordpress.org/plugins/exploit-scanner/&#34;&gt;Exploit Scanner&lt;/a&gt; scans your files for possible hidden infections. Its options allow you to also scan for iframes etc., but they cause a lot of false negatives.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;Sucuri Security&lt;/a&gt; is a plugin I&amp;rsquo;d really recommend for any WordPress installation, whether you were hacked or not. The plugin allows you to automatically scan for changed files, notify you about any administrative action, easily reinstall every plugin and theme after a hack&amp;hellip;&lt;/p&gt;
-
-&lt;p&gt;Take advantage of all possibilities of the free versions of both of them. They will make sure that your WordPress is clean and stays clean.&lt;/p&gt;
-
-&lt;h2 id=&#34;check-users-and-passwords:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Check users and passwords&lt;/h2&gt;
-
-&lt;p&gt;One of the last steps is to check if the hacker didn&amp;rsquo;t create any new users. While you&amp;rsquo;re at it, change the passwords of every user with more rights than a regular subscriber.&lt;/p&gt;
-
-&lt;h2 id=&#34;restoring-your-website-and-keeping-it-safe:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Restoring your website and keeping it safe&lt;/h2&gt;
-
-&lt;p&gt;Your WordPress should now be clean of infections and you can start restoring your website. Turn maintenance mode off and deactivate the &lt;em&gt;WP Maintenance Mode&lt;/em&gt; plugin. Now activate all the other plugins you used one by one. Make sure to &lt;strong&gt;delete any plugin you don&amp;rsquo;t really need&lt;/strong&gt; and check if they are still being maintained/updated. I&amp;rsquo;d also delete every inactive theme. This part of the guide is crucial since it was probably one of the plugins that was used to accomplish the hack.&lt;/p&gt;
-
-&lt;h2 id=&#34;harden-your-wordpress-security:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Harden your WordPress Security&lt;/h2&gt;
-
-&lt;p&gt;A few weeks after this post, I&amp;rsquo;ll publish &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;a follow-up guide&lt;/a&gt; on improving the security on your WordPress website.&lt;/p&gt;
-
-&lt;h2 id=&#34;sources:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Sources&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack&#34;&gt;http://wordpress.stackexchange.com/questions/19696/verifying-that-i-have-fully-removed-a-wordpress-hack&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;https://wordpress.org/plugins/sucuri-scanner/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://wordpress.org/plugins/exploit-scanner/&#34;&gt;https://wordpress.org/plugins/exploit-scanner/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://codex.wordpress.org/FAQ_My_site_was_hacked&#34;&gt;https://codex.wordpress.org/FAQ_My_site_was_hacked&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://smackdown.blogsblogsblogs.com/2008/06/24/how-to-completely-clean-your-hacked-wordpress-installation/&#34;&gt;http://smackdown.blogsblogsblogs.com/2008/06/24/how-to-completely-clean-your-hacked-wordpress-installation/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/&#34;&gt;http://z9.io/2008/06/08/did-your-wordpress-site-get-hacked/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://sa.muel.be/</loc>
-    <lastmod>2016-02-16T23:09:37+01:00</lastmod>
+    <lastmod>2016-02-22T18:59:37+01:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</loc>
+    <lastmod>2016-02-22T18:59:37+01:00</lastmod>
   </url>
   
   <url>
@@ -153,12 +158,12 @@
   </url>
   
   <url>
-    <loc>http://sa.muel.be/linkedin-nl/</loc>
+    <loc>http://sa.muel.be/linkedin/</loc>
     <lastmod>2015-07-05T16:08:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>http://sa.muel.be/linkedin/</loc>
+    <loc>http://sa.muel.be/linkedin-nl/</loc>
     <lastmod>2015-07-05T16:08:03+02:00</lastmod>
   </url>
   
@@ -193,7 +198,7 @@
   </url>
   
   <url>
-    <loc>http://sa.muel.be/2015/natively-boot-windows-10-technical-preview-with-a-virtual-hdd/</loc>
+    <loc>http://sa.muel.be/2015/natively-boot-windows-with-a-virtual-hdd/</loc>
     <lastmod>2015-01-25T00:00:00+00:00</lastmod>
   </url>
   
