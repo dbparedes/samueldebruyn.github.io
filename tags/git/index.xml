@@ -114,7 +114,7 @@ nano authorized_keys
 
 &lt;h2 id=&#34;configuring-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
 
-&lt;p&gt;Time to fire up Pageant and add the private key we created before. Aftwerwards, fire up PuTTY and configure it to connect to the Linux machine.&lt;/p&gt;
+&lt;p&gt;Time to fire up Pageant and add the private key we created before. Afterwards, fire up PuTTY and configure it to connect to the Linux machine.&lt;/p&gt;
 
 &lt;p&gt;You need to supply the following configuration options:&lt;/p&gt;
 
@@ -126,7 +126,7 @@ nano authorized_keys
 &lt;li&gt;Connection &amp;gt; SSH &amp;gt; Auth &amp;gt; Authentication methods &amp;gt; Attempt &amp;ldquo;keyboard-interactive&amp;rdquo; auth: should not be checked&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;Make sure to save the session (Session &amp;gt; Saved sessions - I saved it as &lt;em&gt;gituser&lt;/em&gt;). Then open the connection. PuTTY will warn you about the new host, so type &lt;code&gt;yes&lt;/code&gt; and press &lt;em&gt;Enter&lt;/em&gt; to confirm. You should now be succesfully connected to the Linux box using SSH. You can close the session if that&amp;rsquo;s the case, otherwise verify if you&amp;rsquo;ve followed every step in this guide correctly and if you can ping the Linux machine.&lt;/p&gt;
+&lt;p&gt;Make sure to save the session (Session &amp;gt; Saved sessions - I saved it as &lt;em&gt;gituser&lt;/em&gt;). Then open the connection. PuTTY will warn you about the new host, so type &lt;code&gt;yes&lt;/code&gt; and press &lt;em&gt;Enter&lt;/em&gt; to confirm. You should now be successfully connected to the Linux box using SSH. You can close the session if that&amp;rsquo;s the case, otherwise verify if you&amp;rsquo;ve followed every step in this guide correctly and if you can ping the Linux machine.&lt;/p&gt;
 
 &lt;p&gt;To create a new repository to use as a remote, open a Windows Command Prompt and type &lt;code&gt;plink name-of-the-saved-session ./initrepo.sh name-of-the-new-repo&lt;/code&gt;. To delete an existing repository, you can use &lt;code&gt;plink name-of-the-saved-session ./delrepo.sh name-of-the-existing-repo&lt;/code&gt;.&lt;/p&gt;
 
@@ -134,7 +134,7 @@ nano authorized_keys
 
 &lt;p&gt;Because we use Pageant for authentication, we need to load Pageant with the private key every time we boot up our Windows machine. This is the last part of the process we have to automate. Create a new shortcut to Pageant in the folder &lt;code&gt;%appdata%\Microsoft\Windows\Start Menu\Programs\Startup&lt;/code&gt;. Now add the keys to that shortcut as explained in &lt;a href=&#34;http://blog.shvetsov.com/2010/03/making-pageant-automatically-load-keys.html&#34;&gt;this guide&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;So this was my guide to setting up a Linux machine as a git repository server for Windows clients. You can now start comitting and pushing away! &lt;a href=&#34;https://twitter.com/SamuelDebruyn&#34;&gt;Let me know&lt;/a&gt; if you need help or if you&amp;rsquo;re stuck somewhere.&lt;/p&gt;
+&lt;p&gt;So this was my guide to setting up a Linux machine as a git repository server for Windows clients. You can now start committing and pushing away! &lt;a href=&#34;https://twitter.com/SamuelDebruyn&#34;&gt;Let me know&lt;/a&gt; if you need help or if you&amp;rsquo;re stuck somewhere.&lt;/p&gt;
 </description>
     </item>
     
