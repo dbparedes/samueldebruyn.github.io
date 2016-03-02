@@ -128,6 +128,13 @@ nano authorized_keys
 
 &lt;p&gt;Make sure to save the session (Session &amp;gt; Saved sessions - I saved it as &lt;em&gt;gituser&lt;/em&gt;). Then open the connection. PuTTY will warn you about the new host, so type &lt;code&gt;yes&lt;/code&gt; and press &lt;em&gt;Enter&lt;/em&gt; to confirm. You should now be successfully connected to the Linux box using SSH. You can close the session if that&amp;rsquo;s the case, otherwise verify if you&amp;rsquo;ve followed every step in this guide correctly and if you can ping the Linux machine.&lt;/p&gt;
 
+&lt;p&gt;To complete our setup, we need to make Plink the SSH agent for git. All you need to do is create a new environment variable called &lt;code&gt;GIT_SSH&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;System properties &amp;gt; Advanced system settings &amp;gt; Environment variables &amp;gt; System variables &amp;gt; New &amp;gt;
+Name: GIT_SSH
+Value: C:\Program Files (x86)\PuTTY\plink.exe
+&lt;/code&gt;&lt;/pre&gt;
+
 &lt;p&gt;To create a new repository to use as a remote, open a Windows Command Prompt and type &lt;code&gt;plink name-of-the-saved-session ./initrepo.sh name-of-the-new-repo&lt;/code&gt;. To delete an existing repository, you can use &lt;code&gt;plink name-of-the-saved-session ./delrepo.sh name-of-the-existing-repo&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;To add the repository you created as a remote to a git repository, use &lt;code&gt;git remote add how-you-want-to-name-the-remote ssh://address-of-the-linux-machine/~/name-of-the-repository.git&lt;/code&gt;. If you&amp;rsquo;re not using port 22 for SSH, put the port after the address, separated with colon.&lt;/p&gt;
