@@ -3,8 +3,13 @@
   
   <url>
     <loc>http://sa.muel.be/</loc>
-    <lastmod>2016-02-22T18:59:37+01:00</lastmod>
+    <lastmod>2016-03-02T14:40:08+01:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</loc>
+    <lastmod>2016-03-02T14:40:08+01:00</lastmod>
   </url>
   
   <url>

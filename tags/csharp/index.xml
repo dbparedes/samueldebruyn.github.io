@@ -228,7 +228,7 @@ There are a few cases in which this would be annoying.&lt;/p&gt;
 
 &lt;p&gt;The dialog will be displayed after all previous MessageDialogs are closed. Do this for all your MessageDialogs or you&amp;rsquo;ll still run into the problem I mentioned.&lt;/p&gt;
 
-&lt;p&gt;&lt;script src=&#34;https://gist.github.com/SamuelDebruyn/efaf5ae8e0af3ac2e0d9.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script src=&#34;//gist.github.com/SamuelDebruyn/efaf5ae8e0af3ac2e0d9.js&#34;&gt;&lt;/script&gt;
 </description>
     </item>
     

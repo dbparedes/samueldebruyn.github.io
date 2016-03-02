@@ -354,7 +354,7 @@ auth required pam_google_authenticator.so
 
 &lt;p&gt;Replace the &lt;em&gt;????&lt;/em&gt; with the subnet or the IP that should be allowed to access SSH without the second verification step. &lt;a href=&#34;http://linux.die.net/man/5/access.conf&#34;&gt;You could enter&lt;/a&gt; an IP like &lt;em&gt;192.168.0.5&lt;/em&gt; or a subnet like &lt;em&gt;192.168.0.0/24&lt;/em&gt;.&lt;/p&gt;
 
-&lt;p&gt;Now edit the file &lt;em&gt;/etc/ssh/sshd_config&lt;/em&gt;:&lt;/p&gt;
+&lt;p&gt;Now edit the file _/etc/ssh/sshd&lt;em&gt;config&lt;/em&gt;:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;sudo nano /etc/ssh/sshd_config
 &lt;/code&gt;&lt;/pre&gt;
