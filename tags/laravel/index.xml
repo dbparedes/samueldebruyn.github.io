@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Laravel on Samuel Debruyn</title>
-    <link>http://sa.muel.be/tags/laravel/</link>
+    <link>https://sa.muel.be/tags/laravel/</link>
     <description>Recent content in Laravel on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Sat, 14 Jun 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="http://sa.muel.be/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/tags/laravel/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Workaround for password confirmation with Laravel &amp; Ardent</title>
-      <link>http://sa.muel.be/2014/workaround-for-password-confirmation-with-laravel--ardent/</link>
+      <link>https://sa.muel.be/2014/workaround-for-password-confirmation-with-laravel--ardent/</link>
       <pubDate>Sat, 14 Jun 2014 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2014/workaround-for-password-confirmation-with-laravel--ardent/</guid>
+      <guid>https://sa.muel.be/2014/workaround-for-password-confirmation-with-laravel--ardent/</guid>
       <description>&lt;p&gt;While I was working on a website made with Laravel and Ardent I had to validate a password confirmation field for a user registration. This will not work if you follow the standard documentation.&lt;/p&gt;
 
 &lt;p&gt;This is how your &lt;a href=&#34;http://laravel.com/docs/validation&#34;&gt;validation rules&lt;/a&gt; in your &lt;a href=&#34;https://github.com/laravelbook/ardent&#34;&gt;Ardent&lt;/a&gt; model should look like (users only have an email address and a password):&lt;/p&gt;

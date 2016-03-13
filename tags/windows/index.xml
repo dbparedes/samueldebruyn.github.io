@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows on Samuel Debruyn</title>
-    <link>http://sa.muel.be/tags/windows/</link>
+    <link>https://sa.muel.be/tags/windows/</link>
     <description>Recent content in Windows on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Wed, 02 Mar 2016 14:40:08 +0100</lastBuildDate>
-    <atom:link href="http://sa.muel.be/tags/windows/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/tags/windows/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Setting up a Raspberry Pi as a git server for Windows clients</title>
-      <link>http://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</link>
+      <link>https://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</link>
       <pubDate>Wed, 02 Mar 2016 14:40:08 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</guid>
+      <guid>https://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</guid>
       <description>
 
 &lt;p&gt;Sometimes you&amp;rsquo;re not allowed or you don&amp;rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&amp;rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&amp;rsquo;ll automate everything from authentication to creating and deleting repositories.&lt;/p&gt;
@@ -147,10 +147,10 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
     
     <item>
       <title>Run Docker on Hyper-V with Docker Machine</title>
-      <link>http://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</link>
+      <link>https://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</link>
       <pubDate>Sun, 11 Oct 2015 23:43:40 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
+      <guid>https://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
       <description>
 
 &lt;p&gt;Docker is awesome, right? And thanks to &lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;boot2docker&lt;/a&gt; Windows users were no longer left out of the fun.&lt;/p&gt;
@@ -167,7 +167,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
 
 &lt;h2 id=&#34;setting-up-hyper-v-and-network-connections:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
 
-&lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;http://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;https://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Next, create a &lt;em&gt;Virtual Network Switch&lt;/em&gt;. Pick &lt;em&gt;internal&lt;/em&gt; as type.&lt;/p&gt;
 
@@ -211,10 +211,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>The right way to create Windows installation media</title>
-      <link>http://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</link>
+      <link>https://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</link>
       <pubDate>Wed, 26 Aug 2015 18:55:47 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</guid>
+      <guid>https://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</guid>
       <description>
 
 &lt;p&gt;There are several ways to create a USB stick to install Windows. Chances are you end up with an error during the installation or you (unknowingly) use the wrong partition layout for your HDD/SSD.&lt;/p&gt;
@@ -257,10 +257,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>Natively boot Windows with a virtual HDD</title>
-      <link>http://sa.muel.be/2015/natively-boot-windows-with-a-virtual-hdd/</link>
+      <link>https://sa.muel.be/2015/natively-boot-windows-with-a-virtual-hdd/</link>
       <pubDate>Sun, 25 Jan 2015 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/natively-boot-windows-with-a-virtual-hdd/</guid>
+      <guid>https://sa.muel.be/2015/natively-boot-windows-with-a-virtual-hdd/</guid>
       <description>&lt;p&gt;A few days ago &lt;a href=&#34;https://insider.windows.com&#34;&gt;Microsoft released a new build for Windows 10&lt;/a&gt; and I wanted to give it a try. However, I didn&amp;rsquo;t want to resize my partitions or overwrite my Windows 8.1 partition.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -289,10 +289,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>Quick tips for problems with Windows Store and Windows 8 apps</title>
-      <link>http://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</link>
+      <link>https://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</link>
       <pubDate>Sun, 23 Mar 2014 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</guid>
+      <guid>https://sa.muel.be/2014/quick-tips-for-problems-with-windows-store-and-windows-8-apps/</guid>
       <description>
 
 &lt;p&gt;These are a few quick tips for when you&amp;rsquo;re experiencing problems with the Windows Store in Windows 8(.1)/9 and opening apps in Windows 8(.1)/9.&lt;/p&gt;

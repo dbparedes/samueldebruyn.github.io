@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Git on Samuel Debruyn</title>
-    <link>http://sa.muel.be/tags/git/</link>
+    <link>https://sa.muel.be/tags/git/</link>
     <description>Recent content in Git on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Wed, 02 Mar 2016 14:40:08 +0100</lastBuildDate>
-    <atom:link href="http://sa.muel.be/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/tags/git/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Setting up a Raspberry Pi as a git server for Windows clients</title>
-      <link>http://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</link>
+      <link>https://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</link>
       <pubDate>Wed, 02 Mar 2016 14:40:08 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</guid>
+      <guid>https://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</guid>
       <description>
 
 &lt;p&gt;Sometimes you&amp;rsquo;re not allowed or you don&amp;rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&amp;rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&amp;rsquo;ll automate everything from authentication to creating and deleting repositories.&lt;/p&gt;

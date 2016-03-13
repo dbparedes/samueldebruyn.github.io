@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Samuel Debruyn</title>
-    <link>http://sa.muel.be/</link>
+    <link>https://sa.muel.be/</link>
     <description>Recent content on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Sun, 13 Mar 2016 12:28:43 +0100</lastBuildDate>
-    <atom:link href="http://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Kafkaesque experience you get when buying a Windows Phone flagship</title>
-      <link>http://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</link>
+      <link>https://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</link>
       <pubDate>Sun, 13 Mar 2016 12:28:43 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</guid>
+      <guid>https://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</guid>
       <description>&lt;p&gt;Last summer my LG Nexus 5 had become unusable. The power buttons showed serious signs of wear and sometimes put my phone in a reboot loop. The battery didn’t last longer than a few hours and the phone usually died on me with more than 30% battery remaining. &lt;a href=&#34;https://www.reddit.com/r/Nexus5/comments/2rpfuj/nexus_5_broken_power_button_keeps_rebooting/&#34;&gt;Apparently&lt;/a&gt;, these are normal problems for a one year old Nexus 5&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;I was growing tired of the energy draining and inconsistent Android platform, so I decided to get a Windows Phone. But which one? At the time Windows 10 Mobile &lt;a href=&#34;http://www.reuters.com/article/us-microsoft-windows-idUSKBN0JO2FY20141210&#34;&gt;should have been less than a month away&lt;/a&gt; so I limited my choice to &lt;a href=&#34;http://www.engadget.com/2015/08/03/lumia-windows-10-upgrade-list/&#34;&gt;the models&lt;/a&gt; that were going to get the upgrade at launch.&lt;/p&gt;
@@ -41,10 +41,10 @@
     
     <item>
       <title>Setting up a Raspberry Pi as a git server for Windows clients</title>
-      <link>http://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</link>
+      <link>https://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</link>
       <pubDate>Wed, 02 Mar 2016 14:40:08 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</guid>
+      <guid>https://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</guid>
       <description>
 
 &lt;p&gt;Sometimes you&amp;rsquo;re not allowed or you don&amp;rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&amp;rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&amp;rsquo;ll automate everything from authentication to creating and deleting repositories.&lt;/p&gt;
@@ -175,10 +175,10 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
     
     <item>
       <title>Dependency injection with Autofac and MVVM Light in Xamarin</title>
-      <link>http://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
+      <link>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
       <pubDate>Mon, 22 Feb 2016 18:59:37 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
+      <guid>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
       <description>
 
 &lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
@@ -363,10 +363,10 @@ var vm = factory(myVar);
     
     <item>
       <title>Ethics of mobile banking (security)</title>
-      <link>http://sa.muel.be/2016/ethics-of-mobile-banking-security/</link>
+      <link>https://sa.muel.be/2016/ethics-of-mobile-banking-security/</link>
       <pubDate>Tue, 16 Feb 2016 23:09:37 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2016/ethics-of-mobile-banking-security/</guid>
+      <guid>https://sa.muel.be/2016/ethics-of-mobile-banking-security/</guid>
       <description>&lt;p&gt;What comes to mind when you start brainstorming about security on a mobile device? Encryption? SSL? Access tokens? Multi-factor authentication? Those are all technical terms and they sure are important. But often, another important aspect of security is ignored: ethics.&lt;/p&gt;
 
 &lt;p&gt;It’s all about responsibilities. Say you work at one of the biggest banks in your country and you’re the team lead of a mobile app development team. What do you do when you notice that one of your latest mobile app users is an 80-year-old man who decides to pay with it? Do you smile because you’re happy that you’ve reached a wide audience? Or are you alarmed because you didn’t expect that kind of stereotype to use your app?&lt;/p&gt;
@@ -387,10 +387,10 @@ var vm = factory(myVar);
     
     <item>
       <title>Thesis: Cross-Platform mobile apps with Xamarin</title>
-      <link>http://sa.muel.be/portfolio/thesis/</link>
+      <link>https://sa.muel.be/portfolio/thesis/</link>
       <pubDate>Thu, 04 Feb 2016 19:41:02 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/portfolio/thesis/</guid>
+      <guid>https://sa.muel.be/portfolio/thesis/</guid>
       <description>&lt;p&gt;In my graduation year I wrote a thesis about the project that I implemented during my internship at &lt;a href=&#34;http://www.realdolmen.com/&#34;&gt;RealDolmen&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The project was about cross-platform development with &lt;a href=&#34;https://xamarin.com&#34;&gt;Xamarin&lt;/a&gt;. The customer, &lt;a href=&#34;https://education.realdolmen.com/en&#34;&gt;RealDolmen Education&lt;/a&gt;, asked for an app for Android, iOS and Windows PHone where users can browse through the offer of RealDolmen Education.&lt;/p&gt;
@@ -401,10 +401,10 @@ var vm = factory(myVar);
     
     <item>
       <title>Cirqus demo</title>
-      <link>http://sa.muel.be/portfolio/cirqus-demo/</link>
+      <link>https://sa.muel.be/portfolio/cirqus-demo/</link>
       <pubDate>Fri, 27 Nov 2015 19:56:21 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/portfolio/cirqus-demo/</guid>
+      <guid>https://sa.muel.be/portfolio/cirqus-demo/</guid>
       <description>
 
 &lt;p&gt;In my graduation year I demonstrated how you can implement the CQRS principle in .NET. I went looking for a few CQRS frameworks and I found &lt;a href=&#34;https://github.com/d60/Cirqus&#34;&gt;Cirqus&lt;/a&gt;. It&amp;rsquo;s the easiest way to get started with &lt;a href=&#34;http://martinfowler.com/bliki/CQRS.html&#34;&gt;CQRS&lt;/a&gt; and &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dn589792.aspx&#34;&gt;event sourcing&lt;/a&gt; in .NET.&lt;/p&gt;
@@ -458,10 +458,10 @@ var vm = factory(myVar);
     
     <item>
       <title>Tracking the trackers</title>
-      <link>http://sa.muel.be/2015/tracking-the-trackers/</link>
+      <link>https://sa.muel.be/2015/tracking-the-trackers/</link>
       <pubDate>Wed, 18 Nov 2015 21:37:49 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/tracking-the-trackers/</guid>
+      <guid>https://sa.muel.be/2015/tracking-the-trackers/</guid>
       <description>&lt;p&gt;Advertisements are the worst. We all hate them. They are a lame excuse for bad content for which their consumers aren&amp;rsquo;t willing to pay. To make them kind of tolerable, the advertisers started tracking us so they could deliver ads based on our interests.&lt;/p&gt;
 
 &lt;p&gt;As far as I&amp;rsquo;m concerned, I never gave my permission to track whatever I do online. I especially do not want the trackers to sell my data to third parties. I have nothing to hide, but they have nothing to know.&lt;/p&gt;
@@ -487,10 +487,10 @@ var vm = factory(myVar);
     
     <item>
       <title>Run Docker on Hyper-V with Docker Machine</title>
-      <link>http://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</link>
+      <link>https://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</link>
       <pubDate>Sun, 11 Oct 2015 23:43:40 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
+      <guid>https://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
       <description>
 
 &lt;p&gt;Docker is awesome, right? And thanks to &lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;boot2docker&lt;/a&gt; Windows users were no longer left out of the fun.&lt;/p&gt;
@@ -507,7 +507,7 @@ var vm = factory(myVar);
 
 &lt;h2 id=&#34;setting-up-hyper-v-and-network-connections:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
 
-&lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;http://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;https://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Next, create a &lt;em&gt;Virtual Network Switch&lt;/em&gt;. Pick &lt;em&gt;internal&lt;/em&gt; as type.&lt;/p&gt;
 
@@ -551,10 +551,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>How to fix common Hyper-V errors on Windows 10</title>
-      <link>http://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</link>
+      <link>https://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</link>
       <pubDate>Sun, 11 Oct 2015 22:38:46 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</guid>
+      <guid>https://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</guid>
       <description>&lt;p&gt;This short post is more of a note to myself for when I run into the same problem. I just wasted an hour on it so I guess that justifies it.&lt;/p&gt;
 
 &lt;p&gt;So, what happened? I wanted to check out the new &lt;a href=&#34;https://docs.docker.com/machine/&#34;&gt;Docker Machine&lt;/a&gt; with Hyper-V support, but the Hyper-V Manager told me it could not connect to my local computer.&lt;/p&gt;
@@ -574,10 +574,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>How to get around OnePlus&#39;s horrible invite system</title>
-      <link>http://sa.muel.be/2015/how-to-get-around-onepluss-horrible-invite-system/</link>
+      <link>https://sa.muel.be/2015/how-to-get-around-onepluss-horrible-invite-system/</link>
       <pubDate>Fri, 02 Oct 2015 15:34:19 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/how-to-get-around-onepluss-horrible-invite-system/</guid>
+      <guid>https://sa.muel.be/2015/how-to-get-around-onepluss-horrible-invite-system/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://oneplus.net/&#34;&gt;OnePlus&lt;/a&gt;, the company famous for its &lt;a href=&#34;https://www.google.be/search?q=oneplus+service+horror+story&#34;&gt;terrible service&lt;/a&gt; and its &lt;a href=&#34;http://www.androidpolice.com/2015/07/30/editorial-if-oneplus-will-basically-just-lie-with-marketing-slogans-we-have-no-reason-to-respect-them/&#34;&gt;miserable invite system&lt;/a&gt;, failed once again.&lt;/p&gt;
@@ -611,10 +611,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>Docker image for Hugo builds (with Wercker)</title>
-      <link>http://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</link>
+      <link>https://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</link>
       <pubDate>Mon, 31 Aug 2015 18:56:39 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</guid>
+      <guid>https://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</guid>
       <description>
 
 &lt;p&gt;This blog is built with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, which allows me to use some great CI tools like &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The first part of writing a &lt;em&gt;wercker.yml&lt;/em&gt; is picking a build container.&lt;/p&gt;
@@ -647,10 +647,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>The right way to create Windows installation media</title>
-      <link>http://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</link>
+      <link>https://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</link>
       <pubDate>Wed, 26 Aug 2015 18:55:47 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</guid>
+      <guid>https://sa.muel.be/2015/the-right-way-to-create-windows-installation-media/</guid>
       <description>
 
 &lt;p&gt;There are several ways to create a USB stick to install Windows. Chances are you end up with an error during the installation or you (unknowingly) use the wrong partition layout for your HDD/SSD.&lt;/p&gt;
@@ -693,15 +693,15 @@ docker-machine kill boot2docker
     
     <item>
       <title>Experiences with Windows 10 on a new Dell XPS 13 (2015)</title>
-      <link>http://sa.muel.be/2015/experiences-with-windows-10-on-a-new-dell-xps-13-2015/</link>
+      <link>https://sa.muel.be/2015/experiences-with-windows-10-on-a-new-dell-xps-13-2015/</link>
       <pubDate>Wed, 26 Aug 2015 07:51:16 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/experiences-with-windows-10-on-a-new-dell-xps-13-2015/</guid>
+      <guid>https://sa.muel.be/2015/experiences-with-windows-10-on-a-new-dell-xps-13-2015/</guid>
       <description>
 
 &lt;h2 id=&#34;ordering-a-new-workhorse:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Ordering a new workhorse&lt;/h2&gt;
 
-&lt;p&gt;Windows 10 RTM &lt;a href=&#34;http://sa.muel.be/img/post/dinoclippy.jpg&#34; title=&#34;awesome wallpaper&#34;&gt;has been out&lt;/a&gt; for about a month now after little less than a year of public &lt;a href=&#34;https://insider.windows.com/&#34; title=&#34;Insider program&#34;&gt;Insider preview&lt;/a&gt; builds. The motherboard of my old, trusty, Asus laptop was slowly dying and the Dell XPS 13&amp;rsquo;s thinness and battery life looked very attractive. I decided to go for it and order a &lt;a href=&#34;http://www.dell.com/us/p/xps-13-9343-laptop/&#34; title=&#34;Dell XPS 13&#34;&gt;Dell XPS 13 (2015)&lt;/a&gt;, without the touch screen. I hate dirty fingerprints on a screen and the better battery life of the version without the touch screen seemed like a better deal. I also ordered a &lt;a href=&#34;http://accessories.us.dell.com/sna/productdetail.aspx?c=us&amp;amp;l=en&amp;amp;s=dhs&amp;amp;cs=19&amp;amp;sku=470-abhh&#34; title=&#34;Dell adapter&#34;&gt;USB 3 -&amp;gt; HDMI/VGA/Ethernet/USB 2 adapter&lt;/a&gt; from Dell.&lt;/p&gt;
+&lt;p&gt;Windows 10 RTM &lt;a href=&#34;https://sa.muel.be/img/post/dinoclippy.jpg&#34; title=&#34;awesome wallpaper&#34;&gt;has been out&lt;/a&gt; for about a month now after little less than a year of public &lt;a href=&#34;https://insider.windows.com/&#34; title=&#34;Insider program&#34;&gt;Insider preview&lt;/a&gt; builds. The motherboard of my old, trusty, Asus laptop was slowly dying and the Dell XPS 13&amp;rsquo;s thinness and battery life looked very attractive. I decided to go for it and order a &lt;a href=&#34;http://www.dell.com/us/p/xps-13-9343-laptop/&#34; title=&#34;Dell XPS 13&#34;&gt;Dell XPS 13 (2015)&lt;/a&gt;, without the touch screen. I hate dirty fingerprints on a screen and the better battery life of the version without the touch screen seemed like a better deal. I also ordered a &lt;a href=&#34;http://accessories.us.dell.com/sna/productdetail.aspx?c=us&amp;amp;l=en&amp;amp;s=dhs&amp;amp;cs=19&amp;amp;sku=470-abhh&#34; title=&#34;Dell adapter&#34;&gt;USB 3 -&amp;gt; HDMI/VGA/Ethernet/USB 2 adapter&lt;/a&gt; from Dell.&lt;/p&gt;
 
 &lt;p&gt;While Dell&amp;rsquo;s website tells you they will ship it in about 4 business days, it took nearly 3 weeks until UPS rang my bell with a shipment from China. By the way, Dell Belgium&amp;rsquo;s sales support is terrible. They offer support by phone and chat, but they will tell you on both channels that you have to send them an email. The Belgian support department was very abrupt and impolite. They can&amp;rsquo;t tell you why it looks like your laptop is sitting in an UPS storage facility in China without moving for about a week.&lt;/p&gt;
 
@@ -825,15 +825,15 @@ docker-machine kill boot2docker
     
     <item>
       <title>Hardening your WordPress security</title>
-      <link>http://sa.muel.be/2015/hardening-your-wordpress-security/</link>
+      <link>https://sa.muel.be/2015/hardening-your-wordpress-security/</link>
       <pubDate>Sun, 23 Aug 2015 22:30:51 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/hardening-your-wordpress-security/</guid>
+      <guid>https://sa.muel.be/2015/hardening-your-wordpress-security/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:270325a472963f8dbe8695a68f29ae37&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;This is the second part of a guide about &lt;a href=&#34;http://sa.muel.be/2015/recovering-a-hacked-wordpress/&#34;&gt;recovering a hacked WordPress&lt;/a&gt; and hardening your WordPress security.&lt;/p&gt;
+&lt;p&gt;This is the second part of a guide about &lt;a href=&#34;https://sa.muel.be/2015/recovering-a-hacked-wordpress/&#34;&gt;recovering a hacked WordPress&lt;/a&gt; and hardening your WordPress security.&lt;/p&gt;
 
 &lt;p&gt;In the previous part, I showed you how to get back up and running after your website has been hacked. In this part I&amp;rsquo;ll demonstrate how you can avoid being hacked by making your WordPress more secure. I always try to be exhaustive, but if you have any suggestions, corrections or feel like anything is missing, I would like you to &lt;a href=&#34;mailto:s@muel.be?subject=Suggestions%20for%20the%20post%20about%20securing%20Wordpress&#34;&gt;let me know&lt;/a&gt;.&lt;/p&gt;
 
@@ -904,10 +904,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>Big Bad Wolf</title>
-      <link>http://sa.muel.be/portfolio/big-bad-wolf/</link>
+      <link>https://sa.muel.be/portfolio/big-bad-wolf/</link>
       <pubDate>Sun, 26 Jul 2015 22:23:17 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/portfolio/big-bad-wolf/</guid>
+      <guid>https://sa.muel.be/portfolio/big-bad-wolf/</guid>
       <description>&lt;p&gt;This is simple social media client written in C#. It was a school project we made in a team of 4 students. This was our first project in C# and the goal was to learn about&lt;/p&gt;
 
 &lt;ul&gt;

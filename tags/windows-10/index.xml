@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows 10 on Samuel Debruyn</title>
-    <link>http://sa.muel.be/tags/windows-10/</link>
+    <link>https://sa.muel.be/tags/windows-10/</link>
     <description>Recent content in Windows 10 on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Sun, 13 Mar 2016 12:28:43 +0100</lastBuildDate>
-    <atom:link href="http://sa.muel.be/tags/windows-10/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/tags/windows-10/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>The Kafkaesque experience you get when buying a Windows Phone flagship</title>
-      <link>http://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</link>
+      <link>https://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</link>
       <pubDate>Sun, 13 Mar 2016 12:28:43 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</guid>
+      <guid>https://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</guid>
       <description>&lt;p&gt;Last summer my LG Nexus 5 had become unusable. The power buttons showed serious signs of wear and sometimes put my phone in a reboot loop. The battery didn’t last longer than a few hours and the phone usually died on me with more than 30% battery remaining. &lt;a href=&#34;https://www.reddit.com/r/Nexus5/comments/2rpfuj/nexus_5_broken_power_button_keeps_rebooting/&#34;&gt;Apparently&lt;/a&gt;, these are normal problems for a one year old Nexus 5&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;I was growing tired of the energy draining and inconsistent Android platform, so I decided to get a Windows Phone. But which one? At the time Windows 10 Mobile &lt;a href=&#34;http://www.reuters.com/article/us-microsoft-windows-idUSKBN0JO2FY20141210&#34;&gt;should have been less than a month away&lt;/a&gt; so I limited my choice to &lt;a href=&#34;http://www.engadget.com/2015/08/03/lumia-windows-10-upgrade-list/&#34;&gt;the models&lt;/a&gt; that were going to get the upgrade at launch.&lt;/p&gt;
@@ -41,10 +41,10 @@
     
     <item>
       <title>How to fix common Hyper-V errors on Windows 10</title>
-      <link>http://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</link>
+      <link>https://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</link>
       <pubDate>Sun, 11 Oct 2015 22:38:46 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</guid>
+      <guid>https://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</guid>
       <description>&lt;p&gt;This short post is more of a note to myself for when I run into the same problem. I just wasted an hour on it so I guess that justifies it.&lt;/p&gt;
 
 &lt;p&gt;So, what happened? I wanted to check out the new &lt;a href=&#34;https://docs.docker.com/machine/&#34;&gt;Docker Machine&lt;/a&gt; with Hyper-V support, but the Hyper-V Manager told me it could not connect to my local computer.&lt;/p&gt;
@@ -64,15 +64,15 @@
     
     <item>
       <title>Experiences with Windows 10 on a new Dell XPS 13 (2015)</title>
-      <link>http://sa.muel.be/2015/experiences-with-windows-10-on-a-new-dell-xps-13-2015/</link>
+      <link>https://sa.muel.be/2015/experiences-with-windows-10-on-a-new-dell-xps-13-2015/</link>
       <pubDate>Wed, 26 Aug 2015 07:51:16 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/experiences-with-windows-10-on-a-new-dell-xps-13-2015/</guid>
+      <guid>https://sa.muel.be/2015/experiences-with-windows-10-on-a-new-dell-xps-13-2015/</guid>
       <description>
 
 &lt;h2 id=&#34;ordering-a-new-workhorse:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Ordering a new workhorse&lt;/h2&gt;
 
-&lt;p&gt;Windows 10 RTM &lt;a href=&#34;http://sa.muel.be/img/post/dinoclippy.jpg&#34; title=&#34;awesome wallpaper&#34;&gt;has been out&lt;/a&gt; for about a month now after little less than a year of public &lt;a href=&#34;https://insider.windows.com/&#34; title=&#34;Insider program&#34;&gt;Insider preview&lt;/a&gt; builds. The motherboard of my old, trusty, Asus laptop was slowly dying and the Dell XPS 13&amp;rsquo;s thinness and battery life looked very attractive. I decided to go for it and order a &lt;a href=&#34;http://www.dell.com/us/p/xps-13-9343-laptop/&#34; title=&#34;Dell XPS 13&#34;&gt;Dell XPS 13 (2015)&lt;/a&gt;, without the touch screen. I hate dirty fingerprints on a screen and the better battery life of the version without the touch screen seemed like a better deal. I also ordered a &lt;a href=&#34;http://accessories.us.dell.com/sna/productdetail.aspx?c=us&amp;amp;l=en&amp;amp;s=dhs&amp;amp;cs=19&amp;amp;sku=470-abhh&#34; title=&#34;Dell adapter&#34;&gt;USB 3 -&amp;gt; HDMI/VGA/Ethernet/USB 2 adapter&lt;/a&gt; from Dell.&lt;/p&gt;
+&lt;p&gt;Windows 10 RTM &lt;a href=&#34;https://sa.muel.be/img/post/dinoclippy.jpg&#34; title=&#34;awesome wallpaper&#34;&gt;has been out&lt;/a&gt; for about a month now after little less than a year of public &lt;a href=&#34;https://insider.windows.com/&#34; title=&#34;Insider program&#34;&gt;Insider preview&lt;/a&gt; builds. The motherboard of my old, trusty, Asus laptop was slowly dying and the Dell XPS 13&amp;rsquo;s thinness and battery life looked very attractive. I decided to go for it and order a &lt;a href=&#34;http://www.dell.com/us/p/xps-13-9343-laptop/&#34; title=&#34;Dell XPS 13&#34;&gt;Dell XPS 13 (2015)&lt;/a&gt;, without the touch screen. I hate dirty fingerprints on a screen and the better battery life of the version without the touch screen seemed like a better deal. I also ordered a &lt;a href=&#34;http://accessories.us.dell.com/sna/productdetail.aspx?c=us&amp;amp;l=en&amp;amp;s=dhs&amp;amp;cs=19&amp;amp;sku=470-abhh&#34; title=&#34;Dell adapter&#34;&gt;USB 3 -&amp;gt; HDMI/VGA/Ethernet/USB 2 adapter&lt;/a&gt; from Dell.&lt;/p&gt;
 
 &lt;p&gt;While Dell&amp;rsquo;s website tells you they will ship it in about 4 business days, it took nearly 3 weeks until UPS rang my bell with a shipment from China. By the way, Dell Belgium&amp;rsquo;s sales support is terrible. They offer support by phone and chat, but they will tell you on both channels that you have to send them an email. The Belgian support department was very abrupt and impolite. They can&amp;rsquo;t tell you why it looks like your laptop is sitting in an UPS storage facility in China without moving for about a week.&lt;/p&gt;
 

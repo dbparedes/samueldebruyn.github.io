@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ci on Samuel Debruyn</title>
-    <link>http://sa.muel.be/tags/ci/</link>
+    <link>https://sa.muel.be/tags/ci/</link>
     <description>Recent content in Ci on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Mon, 31 Aug 2015 18:56:39 +0200</lastBuildDate>
-    <atom:link href="http://sa.muel.be/tags/ci/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/tags/ci/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Docker image for Hugo builds (with Wercker)</title>
-      <link>http://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</link>
+      <link>https://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</link>
       <pubDate>Mon, 31 Aug 2015 18:56:39 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</guid>
+      <guid>https://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</guid>
       <description>
 
 &lt;p&gt;This blog is built with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, which allows me to use some great CI tools like &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The first part of writing a &lt;em&gt;wercker.yml&lt;/em&gt; is picking a build container.&lt;/p&gt;
@@ -49,11 +49,11 @@
     
     <item>
       <title>Wercker step to minify static resources</title>
-      <link>http://sa.muel.be/2015/wercker-step-to-minify-static-resources/</link>
+      <link>https://sa.muel.be/2015/wercker-step-to-minify-static-resources/</link>
       <pubDate>Sat, 25 Jul 2015 17:01:17 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/wercker-step-to-minify-static-resources/</guid>
-      <description>&lt;p&gt;I recently blogged a lot about &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;static websites&lt;/a&gt; and &lt;a href=&#34;http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;continuous integration&lt;/a&gt;. There was still one step missing in my continuous integration cycle: &lt;strong&gt;minification&lt;/strong&gt;.&lt;/p&gt;
+      <guid>https://sa.muel.be/2015/wercker-step-to-minify-static-resources/</guid>
+      <description>&lt;p&gt;I recently blogged a lot about &lt;a href=&#34;https://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;static websites&lt;/a&gt; and &lt;a href=&#34;https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;continuous integration&lt;/a&gt;. There was still one step missing in my continuous integration cycle: &lt;strong&gt;minification&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://wercker.com/&#34;&gt;Wercker&lt;/a&gt; is a great CI tool and it allows you to create custom build steps that can be reused in several projects. So I created a build step to minify HTML, CSS and JS files.&lt;/p&gt;
 
@@ -63,13 +63,13 @@
     
     <item>
       <title>Wercker step to validate Hugo themes</title>
-      <link>http://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</link>
+      <link>https://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</link>
       <pubDate>Wed, 15 Jul 2015 13:21:45 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</guid>
-      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;http://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;http://sa.muel.be/tags/hugo/&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</guid>
+      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;https://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;https://sa.muel.be/tags/hugo/&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;As I &lt;a href=&#34;http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
+&lt;p&gt;As I &lt;a href=&#34;https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
 
 &lt;p&gt;There wasn&amp;rsquo;t any, so I simply wrote a build step for &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The build step validates a Hugo theme using &lt;a href=&#34;https://github.com/spf13/HugoBasicExample&#34;&gt;an example site&lt;/a&gt;. It also checks if you included some files required for a future Hugo themes site.&lt;/p&gt;
 
@@ -87,10 +87,10 @@ build:
     
     <item>
       <title>Continuous integration with Hugo and Wercker</title>
-      <link>http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</link>
+      <link>https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</link>
       <pubDate>Tue, 14 Jul 2015 12:45:28 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</guid>
+      <guid>https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</guid>
       <description>
 
 &lt;h2 id=&#34;why:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;Why?&lt;/h2&gt;

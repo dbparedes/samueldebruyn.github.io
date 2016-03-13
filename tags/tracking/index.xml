@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tracking on Samuel Debruyn</title>
-    <link>http://sa.muel.be/tags/tracking/</link>
+    <link>https://sa.muel.be/tags/tracking/</link>
     <description>Recent content in Tracking on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Wed, 18 Nov 2015 21:37:49 +0100</lastBuildDate>
-    <atom:link href="http://sa.muel.be/tags/tracking/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/tags/tracking/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Tracking the trackers</title>
-      <link>http://sa.muel.be/2015/tracking-the-trackers/</link>
+      <link>https://sa.muel.be/2015/tracking-the-trackers/</link>
       <pubDate>Wed, 18 Nov 2015 21:37:49 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/tracking-the-trackers/</guid>
+      <guid>https://sa.muel.be/2015/tracking-the-trackers/</guid>
       <description>&lt;p&gt;Advertisements are the worst. We all hate them. They are a lame excuse for bad content for which their consumers aren&amp;rsquo;t willing to pay. To make them kind of tolerable, the advertisers started tracking us so they could deliver ads based on our interests.&lt;/p&gt;
 
 &lt;p&gt;As far as I&amp;rsquo;m concerned, I never gave my permission to track whatever I do online. I especially do not want the trackers to sell my data to third parties. I have nothing to hide, but they have nothing to know.&lt;/p&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Security on Samuel Debruyn</title>
-    <link>http://sa.muel.be/tags/security/</link>
+    <link>https://sa.muel.be/tags/security/</link>
     <description>Recent content in Security on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Tue, 16 Feb 2016 23:09:37 +0100</lastBuildDate>
-    <atom:link href="http://sa.muel.be/tags/security/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/tags/security/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ethics of mobile banking (security)</title>
-      <link>http://sa.muel.be/2016/ethics-of-mobile-banking-security/</link>
+      <link>https://sa.muel.be/2016/ethics-of-mobile-banking-security/</link>
       <pubDate>Tue, 16 Feb 2016 23:09:37 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2016/ethics-of-mobile-banking-security/</guid>
+      <guid>https://sa.muel.be/2016/ethics-of-mobile-banking-security/</guid>
       <description>&lt;p&gt;What comes to mind when you start brainstorming about security on a mobile device? Encryption? SSL? Access tokens? Multi-factor authentication? Those are all technical terms and they sure are important. But often, another important aspect of security is ignored: ethics.&lt;/p&gt;
 
 &lt;p&gt;It’s all about responsibilities. Say you work at one of the biggest banks in your country and you’re the team lead of a mobile app development team. What do you do when you notice that one of your latest mobile app users is an 80-year-old man who decides to pay with it? Do you smile because you’re happy that you’ve reached a wide audience? Or are you alarmed because you didn’t expect that kind of stereotype to use your app?&lt;/p&gt;
@@ -37,15 +37,15 @@
     
     <item>
       <title>Hardening your WordPress security</title>
-      <link>http://sa.muel.be/2015/hardening-your-wordpress-security/</link>
+      <link>https://sa.muel.be/2015/hardening-your-wordpress-security/</link>
       <pubDate>Sun, 23 Aug 2015 22:30:51 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/hardening-your-wordpress-security/</guid>
+      <guid>https://sa.muel.be/2015/hardening-your-wordpress-security/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:270325a472963f8dbe8695a68f29ae37&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;This is the second part of a guide about &lt;a href=&#34;http://sa.muel.be/2015/recovering-a-hacked-wordpress/&#34;&gt;recovering a hacked WordPress&lt;/a&gt; and hardening your WordPress security.&lt;/p&gt;
+&lt;p&gt;This is the second part of a guide about &lt;a href=&#34;https://sa.muel.be/2015/recovering-a-hacked-wordpress/&#34;&gt;recovering a hacked WordPress&lt;/a&gt; and hardening your WordPress security.&lt;/p&gt;
 
 &lt;p&gt;In the previous part, I showed you how to get back up and running after your website has been hacked. In this part I&amp;rsquo;ll demonstrate how you can avoid being hacked by making your WordPress more secure. I always try to be exhaustive, but if you have any suggestions, corrections or feel like anything is missing, I would like you to &lt;a href=&#34;mailto:s@muel.be?subject=Suggestions%20for%20the%20post%20about%20securing%20Wordpress&#34;&gt;let me know&lt;/a&gt;.&lt;/p&gt;
 
@@ -116,21 +116,21 @@
     
     <item>
       <title>Recovering a hacked WordPress</title>
-      <link>http://sa.muel.be/2015/recovering-a-hacked-wordpress/</link>
+      <link>https://sa.muel.be/2015/recovering-a-hacked-wordpress/</link>
       <pubDate>Mon, 06 Jul 2015 14:14:32 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/recovering-a-hacked-wordpress/</guid>
+      <guid>https://sa.muel.be/2015/recovering-a-hacked-wordpress/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Introduction&lt;/h2&gt;
 
-&lt;p&gt;A few weeks ago, I had to &lt;a href=&#34;http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;repair a hacked WordPress&lt;/a&gt; installation.&lt;/p&gt;
+&lt;p&gt;A few weeks ago, I had to &lt;a href=&#34;https://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;repair a hacked WordPress&lt;/a&gt; installation.&lt;/p&gt;
 
 &lt;p&gt;A lot of the information I needed to successfully clean the WordPress completely of infected files was not centralized in a single guide. So I decided to write one and you are now reading it.&lt;/p&gt;
 
 &lt;p&gt;So, your website is hacked, what now? Let&amp;rsquo;s go through the process of making sure that every infection is removed and it never happens again.&lt;/p&gt;
 
-&lt;p&gt;In this first part you&amp;rsquo;ll recover from a hack. In a second part you&amp;rsquo;ll learn how to harden the security. I&amp;rsquo;ll publish &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;the second part&lt;/a&gt; a few weeks after the first part.&lt;/p&gt;
+&lt;p&gt;In this first part you&amp;rsquo;ll recover from a hack. In a second part you&amp;rsquo;ll learn how to harden the security. I&amp;rsquo;ll publish &lt;a href=&#34;https://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;the second part&lt;/a&gt; a few weeks after the first part.&lt;/p&gt;
 
 &lt;p&gt;This post is meant to be exhaustive and clear. If you have any suggestions or feel like something is missing or unclear, &lt;a href=&#34;mailto:s@muel.be?subject=Suggestions%20for%20the%20post%20about%20recovering%20a%20Wordpress%20hack&#34;&gt;&lt;em&gt;please&lt;/em&gt; let me know&lt;/a&gt;.&lt;/p&gt;
 
@@ -244,7 +244,7 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
 
 &lt;h2 id=&#34;harden-your-wordpress-security:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Harden your WordPress Security&lt;/h2&gt;
 
-&lt;p&gt;A few weeks after this post, I&amp;rsquo;ll publish &lt;a href=&#34;http://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;a follow-up guide&lt;/a&gt; on improving the security on your WordPress website.&lt;/p&gt;
+&lt;p&gt;A few weeks after this post, I&amp;rsquo;ll publish &lt;a href=&#34;https://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;a follow-up guide&lt;/a&gt; on improving the security on your WordPress website.&lt;/p&gt;
 
 &lt;h2 id=&#34;sources:b271d4e596dc01ff609a631b1dcbeb8c&#34;&gt;Sources&lt;/h2&gt;
 
@@ -261,10 +261,10 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     
     <item>
       <title>About that time I dealt with a bunch of hackers on a WordPress</title>
-      <link>http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/</link>
+      <link>https://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/</link>
       <pubDate>Sat, 27 Jun 2015 17:55:40 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/</guid>
+      <guid>https://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/</guid>
       <description>&lt;p&gt;So yeah, that happened. I recently took over 2 WordPress installations hosted on a &lt;a href=&#34;http://www.versio.uk/&#34;&gt;Versio&lt;/a&gt; shared hosting account. Versio suspended the account because it kept sending thousands of (spam) emails a day.&lt;/p&gt;
 
 &lt;p&gt;You guessed it right, one of the WordPress installations was hacked. The previous administrator tried to delete the infected files and changed his passwords. It took them a week to regain full control of both the WordPress installations. Once they got into one of the WordPress setups, it was just a matter of navigating through the filesystem to find and infect the other WordPress installation.&lt;/p&gt;
@@ -285,7 +285,7 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
 
 &lt;p&gt;So that was all, right? Nope, a few days later they were back. This time they named their files something like &lt;em&gt;diff52.php&lt;/em&gt; as this wouldn&amp;rsquo;t look as suspicious as &lt;em&gt;indonesia.php&lt;/em&gt;. CloudFlare also showed some blocked threats from Russia and Ukraine.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/&#34;&gt;This is an example of the code I found&lt;/a&gt; and &lt;a href=&#34;http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/&#34;&gt;this is the deobfuscated version of it&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/&#34;&gt;This is an example of the code I found&lt;/a&gt; and &lt;a href=&#34;https://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/&#34;&gt;this is the deobfuscated version of it&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I repeated the whole process but I kept wondering how they could get in. The only thing I didn&amp;rsquo;t check were the plugins. A few days before I reinstalled them all using Sucuri Security so they didn&amp;rsquo;t contain any infections. But they had to be the cause, right? I simply deactivated and removed all of them except for the ones I installed to secure the website. That did it. It&amp;rsquo;s been a week and the hackers haven&amp;rsquo;t been back since.&lt;/p&gt;
 
@@ -299,10 +299,10 @@ SELECT * FROM wp_comments WHERE comment_content LIKE &#39;%&amp;lt;?php%&#39;
     
     <item>
       <title>Secure SSH access with 2-step authentication (extended)</title>
-      <link>http://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</link>
+      <link>https://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</link>
       <pubDate>Sat, 08 Feb 2014 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</guid>
+      <guid>https://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</guid>
       <description>
 
 &lt;p&gt;In this quick tutorial I&amp;rsquo;ll show you how to secure SSH access to your Linux server with 2-step authentication. Why did I call this post &amp;lsquo;extended&amp;rsquo;? Because I&amp;rsquo;ll show you how to add extra rules so you don&amp;rsquo;t have to use 2-step authentication from certain locations.&lt;/p&gt;

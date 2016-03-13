@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Windows Rt on Samuel Debruyn</title>
-    <link>http://sa.muel.be/tags/windows-rt/</link>
+    <link>https://sa.muel.be/tags/windows-rt/</link>
     <description>Recent content in Windows Rt on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Mon, 22 Feb 2016 18:59:37 +0100</lastBuildDate>
-    <atom:link href="http://sa.muel.be/tags/windows-rt/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/tags/windows-rt/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Dependency injection with Autofac and MVVM Light in Xamarin</title>
-      <link>http://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
+      <link>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
       <pubDate>Mon, 22 Feb 2016 18:59:37 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
+      <guid>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
       <description>
 
 &lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
@@ -201,10 +201,10 @@ var vm = factory(myVar);
     
     <item>
       <title>Queue for MessageDialog in Windows RT</title>
-      <link>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</link>
+      <link>https://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</link>
       <pubDate>Wed, 20 Aug 2014 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</guid>
+      <guid>https://sa.muel.be/2014/queue-for-messagedialog-in-windows-rt/</guid>
       <description>&lt;p&gt;When I write Windows Store applications, I use MessageDialog a lot.
 It&amp;rsquo;s the easiest way to show a quick informative pop-up message or a question to the user.
 However, when you tend to use this quite often, you&amp;rsquo;ll probably run into a problem.&lt;/p&gt;

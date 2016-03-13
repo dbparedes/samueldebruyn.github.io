@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Addendums on Samuel Debruyn</title>
-    <link>http://sa.muel.be/addendum/</link>
+    <link>https://sa.muel.be/addendum/</link>
     <description>Recent content in Addendums on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Sat, 27 Jun 2015 18:13:15 +0200</lastBuildDate>
-    <atom:link href="http://sa.muel.be/addendum/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://sa.muel.be/addendum/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Deobfuscated code from the WordPress hack</title>
-      <link>http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/</link>
+      <link>https://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/</link>
       <pubDate>Sat, 27 Jun 2015 18:13:15 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/</guid>
-      <description>&lt;p&gt;This page is part of the blogpost &lt;a href=&#34;http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;About that time I dealt with a bunch of hackers on a WordPress&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/</guid>
+      <description>&lt;p&gt;This page is part of the blogpost &lt;a href=&#34;https://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;About that time I dealt with a bunch of hackers on a WordPress&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The following is the deobfuscated version of &lt;a href=&#34;http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The following is the deobfuscated version of &lt;a href=&#34;https://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;script src=&#34;//gist.github.com/SamuelDebruyn/529d1c5252c990b4367a.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
@@ -27,13 +27,13 @@
     
     <item>
       <title>Obfuscated code from the WordPress hack</title>
-      <link>http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/</link>
+      <link>https://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/</link>
       <pubDate>Sat, 27 Jun 2015 18:13:06 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/</guid>
-      <description>&lt;p&gt;This page is part of the blogpost &lt;a href=&#34;http://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;About that time I dealt with a bunch of hackers on a WordPress&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://sa.muel.be/addendum/2015/obfuscated-code-from-the-wordpress-hack/</guid>
+      <description>&lt;p&gt;This page is part of the blogpost &lt;a href=&#34;https://sa.muel.be/2015/about-that-time-i-dealt-with-a-bunch-of-hackers-on-a-wordpress/&#34;&gt;About that time I dealt with a bunch of hackers on a WordPress&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The following is an example of the code I found when one of the WordPress installations I managed was hacked. You can find the &lt;a href=&#34;http://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/&#34;&gt;deobfuscated version right over here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The following is an example of the code I found when one of the WordPress installations I managed was hacked. You can find the &lt;a href=&#34;https://sa.muel.be/addendum/2015/deobfuscated-code-from-the-wordpress-hack/&#34;&gt;deobfuscated version right over here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;&lt;script src=&#34;//gist.github.com/SamuelDebruyn/337140a35994618033ee.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
 </description>
