@@ -8,8 +8,36 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Wed, 02 Mar 2016 14:40:08 +0100</lastBuildDate>
+    <lastBuildDate>Sun, 13 Mar 2016 12:28:43 +0100</lastBuildDate>
     <atom:link href="http://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>The Kafkaesque experience you get when buying a Windows Phone flagship</title>
+      <link>http://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</link>
+      <pubDate>Sun, 13 Mar 2016 12:28:43 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>http://sa.muel.be/2016/the-kafkaesque-experience-you-get-when-buying-a-windows-phone-flagship/</guid>
+      <description>&lt;p&gt;Last summer my LG Nexus 5 had become unusable. The power buttons showed serious signs of wear and sometimes put my phone in a reboot loop. The battery didn’t last longer than a few hours and the phone usually died on me with more than 30% battery remaining. &lt;a href=&#34;https://www.reddit.com/r/Nexus5/comments/2rpfuj/nexus_5_broken_power_button_keeps_rebooting/&#34;&gt;Apparently&lt;/a&gt;, these are normal problems for a one year old Nexus 5&amp;hellip;&lt;/p&gt;
+
+&lt;p&gt;I was growing tired of the energy draining and inconsistent Android platform, so I decided to get a Windows Phone. But which one? At the time Windows 10 Mobile &lt;a href=&#34;http://www.reuters.com/article/us-microsoft-windows-idUSKBN0JO2FY20141210&#34;&gt;should have been less than a month away&lt;/a&gt; so I limited my choice to &lt;a href=&#34;http://www.engadget.com/2015/08/03/lumia-windows-10-upgrade-list/&#34;&gt;the models&lt;/a&gt; that were going to get the upgrade at launch.&lt;/p&gt;
+
+&lt;p&gt;The x30 series were already about a year old, but Microsoft decided to not launch a flagship phone on the x40 series. The ‘best’ new phone was a Lumia 640 XL but that phone wasn’t meant to be a flagship so I figured the Lumia 930 was my best choice and went for it.&lt;/p&gt;
+
+&lt;p&gt;I was well aware of Windows Phone’s famous app gap. A lot of Android &amp;amp; iOS apps don’t have Windows Phone counterparts but nonetheless I found everything I needed in the Windows Store. However, as Windows Phone’s market share further declined, &lt;a href=&#34;http://www.theverge.com/2015/10/23/9602350/microsoft-windows-phone-app-removal-windows-store&#34;&gt;so did the apps&lt;/a&gt;. A lot of companies stopped updating their apps or simply removed them from the store. Some of them even replaced their native apps with crappy hybrid apps.&lt;/p&gt;
+
+&lt;p&gt;But hey, Windows 10 Mobile was coming. At least, that’s what most of us thought before Microsoft pushed the launch back &lt;a href=&#34;http://www.winbeta.org/news/windows-10-mobile-release-delayed-february-says-internal-microsoft-email&#34;&gt;a couple of times&lt;/a&gt;. I didn’t want a less-than-optimal experience so I didn’t become a Windows insider. Today, the latest Windows 10 Mobile Insider Preview still isn’t where it should be in terms of quality as quite some Lumia 930 users &lt;a href=&#34;http://www.neowin.net/news/hands-on-with-windows-10-mobile-insider-preview-build-10586122&#34;&gt;are reporting&lt;/a&gt; that video recording is still broken in the latest build on the slow and release preview rings. They can only record video without audio. That&amp;rsquo;s just one of the &lt;a href=&#34;https://www.reddit.com/r/windowsphone/comments/49qx7e/w10m_build_10586164_indepth_look_at_problems/&#34;&gt;numerous issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Most app developers did become Windows Mobile insider and started developing Universal Windows Platform apps. That’s great and all but you can’t install those on Windows Phone 8.1.&lt;/p&gt;
+
+&lt;p&gt;So while the app gap is increasing due to companies discontinuing their apps, new apps aren’t even available because Microsoft still hasn’t released Windows 10 Mobile. Going to the Insider previews also doesn’t seem to be a viable option for me as I’d like my videos to have audio. I bought a flagship phone because I wanted a flagship experience, not a buggy one.&lt;/p&gt;
+
+&lt;p&gt;Microsoft’s latest flagships, the Lumia 950 and 950 XL, are chock-full of bugs, random reboots and dropped calls (usually if you connect the device to a Bluetooth headset or car). I don’t have to give you all the details as &lt;a href=&#34;http://herebedragons.io/re-windows-phone-is-dead/&#34;&gt;Jan already did&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Don’t come telling me Windows Phone isn’t dead. It’s been &lt;a href=&#34;https://www.thurrott.com/mobile/64327/dead-whats-next-for-the-windows-phone-fan&#34;&gt;kind of dead&lt;/a&gt; for a while now. Microsoft kept it alive (and kept &lt;a href=&#34;http://www.theverge.com/2015/4/27/8503353/microsoft-nokia-acquisition-troubles&#34;&gt;losing money&lt;/a&gt; on it) and that was fine. You could still get a flagship phone and Microsoft made sure you’d get a flagship experience. The app gap has always been there, but it wasn’t that big of a deal. That isn’t the case anymore today. You can’t get a decent Windows Phone/Mobile device today. You’d have to live with the bugs, apps becoming unsupported or unusable…&lt;/p&gt;
+
+&lt;p&gt;I’m not moving to another platform today. But I can assure you I’ll never buy a Windows phone again. I’ll keep using my trusty Lumia 930 until it’s falling apart. And until that time comes, I’ll keep enjoying Windows Phone 8’s clean interface, the amazing battery life and camera quality, the outstanding stability of the OS (huge contrast compared to Windows 10 Mobile) and the beautiful display.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Setting up a Raspberry Pi as a git server for Windows clients</title>
@@ -928,22 +956,6 @@ deploy:
 &lt;li&gt;the wercker app for this blog: &lt;a href=&#34;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&#34;&gt;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;the generated source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io&#34;&gt;https://github.com/SamuelDebruyn/samueldebruyn.github.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Material-lite theme for Hugo</title>
-      <link>http://sa.muel.be/2015/material-lite-theme-for-hugo/</link>
-      <pubDate>Mon, 13 Jul 2015 08:00:00 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>http://sa.muel.be/2015/material-lite-theme-for-hugo/</guid>
-      <description>&lt;p&gt;Last week, &lt;a href=&#34;http://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;I wrote a post&lt;/a&gt; about how awesome &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is and why I switched from Jekyll to Hugo.&lt;/p&gt;
-
-&lt;p&gt;Then, a few days later, Google released an awesome template called &lt;a href=&#34;http://getmdl.io&#34;&gt;Material Design Lite&lt;/a&gt;. It&amp;rsquo;s basically Google&amp;rsquo;s famous &lt;a href=&#34;https://www.google.com/design/spec/material-design/introduction.html&#34;&gt;Material Design&lt;/a&gt; in HTML, CSS and JavaScript instead of in &lt;a href=&#34;https://www.polymer-project.org&#34;&gt;Polymer&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I was thinking about setting up another website for some side project and wanted to use material design. So I decided to write a material design theme for a simple Hugo blog.&lt;/p&gt;
-
-&lt;p&gt;You can check it out at &lt;a href=&#34;https://github.com/SamuelDebruyn/hugo-material-lite&#34;&gt;https://github.com/SamuelDebruyn/hugo-material-lite&lt;/a&gt; (&lt;a href=&#34;http://materialexample.sa.muel.be&#34;&gt;demo&lt;/a&gt;) Enjoy!&lt;/p&gt;
 </description>
     </item>
     
