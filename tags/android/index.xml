@@ -8,8 +8,75 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Mon, 22 Feb 2016 18:59:37 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 22 Mar 2016 20:02:53 +0100</lastBuildDate>
     <atom:link href="https://sa.muel.be/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Fix common binding errors with MVVM Light on Xamarin</title>
+      <link>https://sa.muel.be/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</link>
+      <pubDate>Tue, 22 Mar 2016 20:02:53 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>https://sa.muel.be/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</guid>
+      <description>
+
+&lt;p&gt;There isn&amp;rsquo;t much documentation available for &lt;a href=&#34;http://www.mvvmlight.net/&#34;&gt;MVVM Light&lt;/a&gt; when it comes to Xamarin.Android and Xamarin.iOS. There are several overloads for the &lt;code&gt;SetBinding&lt;/code&gt; method and using the wrong overload causes &lt;code&gt;TargetInvocationException&lt;/code&gt; or &lt;code&gt;TargetException&lt;/code&gt; like &lt;a href=&#34;http://stackoverflow.com/q/35197870/1592358&#34;&gt;this one&lt;/a&gt;. It&amp;rsquo;s also possible that your bindings don&amp;rsquo;t update anymore after you set one binding using an incorrect syntax.&lt;/p&gt;
+
+&lt;h2 id=&#34;correct-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Correct binding&lt;/h2&gt;
+
+&lt;p&gt;You can only bind on properties, not on fields. You can use the new C# 6 syntax if you like (&lt;code&gt;public TextView TextView =&amp;gt; ...&lt;/code&gt;). They don&amp;rsquo;t always have to be &lt;code&gt;public&lt;/code&gt; but it sure helps making them &lt;code&gt;public&lt;/code&gt; either way. The easiest way to create a new view property on Android is with the &lt;code&gt;mvvmdroidelement&lt;/code&gt; snippet provided by &lt;a href=&#34;https://visualstudiogallery.msdn.microsoft.com/ee36692d-ed3f-4888-b904-281aaaeac529&#34;&gt;this extension&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should put your bindings in your views and make sure to respect the lifecycle of the platform you&amp;rsquo;re using. Also, always keep a reference to your binding so it doesn&amp;rsquo;t get garbage collected. I usually Store a list with all my bindings in my view.&lt;/p&gt;
+
+&lt;h3 id=&#34;android-activities:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android activities&lt;/h3&gt;
+
+&lt;p&gt;First create your layout in the &lt;code&gt;OnCreate&lt;/code&gt; method, create and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;h3 id=&#34;android-fragments:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android fragments&lt;/h3&gt;
+
+&lt;p&gt;The layout can be set up in &lt;code&gt;OnCreateView&lt;/code&gt;. Use the &lt;code&gt;OnViewCreated&lt;/code&gt; method to set and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;h3 id=&#34;ios-viewcontrollers:23b1deac65cc2dd0071a356815b311c9&#34;&gt;iOS ViewControllers&lt;/h3&gt;
+
+&lt;p&gt;Initialize everything in the &lt;code&gt;ViewDidLoad&lt;/code&gt; method. Then use the &lt;code&gt;ViewWillAppear&lt;/code&gt; method to set and store the bindings. In some rare cases it helps calling &lt;code&gt;ForceUpdateValueFromSourceToTarget&lt;/code&gt; in &lt;code&gt;ViewDidAppear&lt;/code&gt;. Bindings should be detached using &lt;code&gt;Detach()&lt;/code&gt; on the binding in &lt;code&gt;ViewWillDisappear&lt;/code&gt;. You can use &lt;code&gt;DidReceiveMemoryWarning&lt;/code&gt; to clean up or dispose some references.&lt;/p&gt;
+
+&lt;h3 id=&#34;static-view-models:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Static view models&lt;/h3&gt;
+
+&lt;p&gt;To avoid the mentioned &lt;code&gt;TargetException&lt;/code&gt;, I&amp;rsquo;d recommend setting up a static view model locator as &lt;a href=&#34;http://blog.galasoft.ch/posts/2014/10/my-xamarinevolve-talk-is-online-for-your-viewing-pleasure/&#34;&gt;Laurent Bugnion explained&lt;/a&gt; and using the view models on that locator. Injecting a view model in your view to bind on, usually causes the &lt;code&gt;TargetException&lt;/code&gt;, so try to use the view models defined in the locator.&lt;/p&gt;
+
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view?&lt;/h3&gt;
+
+&lt;p&gt;Then use this one:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.OneWay)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view-model:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view model?&lt;/h3&gt;
+
+&lt;p&gt;Then use the following overload:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;two-way-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Two-way binding&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.TwoWay)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;binding-to-a-target-type-different-from-the-source-type:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Binding to a target type different from the source type&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay).ConvertSourceToTarget(ConversionMethod)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also use a lambda, but that&amp;rsquo;s harder to debug.&lt;/p&gt;
+
+&lt;h3 id=&#34;just-binding-to-a-source-and-updating-the-view-yourself:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Just binding to a source and updating the view yourself&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel).WhenSourceChanges(MyUpdateMethod)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I guess this should cover all cases. I wrote this post using MVVM Light v5.2, but v5.3 or v6 is in the works (probably to be released at Xamarin Evolve 2016), so your mileage may vary with these newer versions.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Dependency injection with Autofac and MVVM Light in Xamarin</title>

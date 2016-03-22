@@ -8,8 +8,75 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Sun, 13 Mar 2016 12:28:43 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 22 Mar 2016 20:02:53 +0100</lastBuildDate>
     <atom:link href="https://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Fix common binding errors with MVVM Light on Xamarin</title>
+      <link>https://sa.muel.be/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</link>
+      <pubDate>Tue, 22 Mar 2016 20:02:53 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>https://sa.muel.be/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</guid>
+      <description>
+
+&lt;p&gt;There isn&amp;rsquo;t much documentation available for &lt;a href=&#34;http://www.mvvmlight.net/&#34;&gt;MVVM Light&lt;/a&gt; when it comes to Xamarin.Android and Xamarin.iOS. There are several overloads for the &lt;code&gt;SetBinding&lt;/code&gt; method and using the wrong overload causes &lt;code&gt;TargetInvocationException&lt;/code&gt; or &lt;code&gt;TargetException&lt;/code&gt; like &lt;a href=&#34;http://stackoverflow.com/q/35197870/1592358&#34;&gt;this one&lt;/a&gt;. It&amp;rsquo;s also possible that your bindings don&amp;rsquo;t update anymore after you set one binding using an incorrect syntax.&lt;/p&gt;
+
+&lt;h2 id=&#34;correct-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Correct binding&lt;/h2&gt;
+
+&lt;p&gt;You can only bind on properties, not on fields. You can use the new C# 6 syntax if you like (&lt;code&gt;public TextView TextView =&amp;gt; ...&lt;/code&gt;). They don&amp;rsquo;t always have to be &lt;code&gt;public&lt;/code&gt; but it sure helps making them &lt;code&gt;public&lt;/code&gt; either way. The easiest way to create a new view property on Android is with the &lt;code&gt;mvvmdroidelement&lt;/code&gt; snippet provided by &lt;a href=&#34;https://visualstudiogallery.msdn.microsoft.com/ee36692d-ed3f-4888-b904-281aaaeac529&#34;&gt;this extension&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should put your bindings in your views and make sure to respect the lifecycle of the platform you&amp;rsquo;re using. Also, always keep a reference to your binding so it doesn&amp;rsquo;t get garbage collected. I usually Store a list with all my bindings in my view.&lt;/p&gt;
+
+&lt;h3 id=&#34;android-activities:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android activities&lt;/h3&gt;
+
+&lt;p&gt;First create your layout in the &lt;code&gt;OnCreate&lt;/code&gt; method, create and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;h3 id=&#34;android-fragments:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android fragments&lt;/h3&gt;
+
+&lt;p&gt;The layout can be set up in &lt;code&gt;OnCreateView&lt;/code&gt;. Use the &lt;code&gt;OnViewCreated&lt;/code&gt; method to set and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;h3 id=&#34;ios-viewcontrollers:23b1deac65cc2dd0071a356815b311c9&#34;&gt;iOS ViewControllers&lt;/h3&gt;
+
+&lt;p&gt;Initialize everything in the &lt;code&gt;ViewDidLoad&lt;/code&gt; method. Then use the &lt;code&gt;ViewWillAppear&lt;/code&gt; method to set and store the bindings. In some rare cases it helps calling &lt;code&gt;ForceUpdateValueFromSourceToTarget&lt;/code&gt; in &lt;code&gt;ViewDidAppear&lt;/code&gt;. Bindings should be detached using &lt;code&gt;Detach()&lt;/code&gt; on the binding in &lt;code&gt;ViewWillDisappear&lt;/code&gt;. You can use &lt;code&gt;DidReceiveMemoryWarning&lt;/code&gt; to clean up or dispose some references.&lt;/p&gt;
+
+&lt;h3 id=&#34;static-view-models:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Static view models&lt;/h3&gt;
+
+&lt;p&gt;To avoid the mentioned &lt;code&gt;TargetException&lt;/code&gt;, I&amp;rsquo;d recommend setting up a static view model locator as &lt;a href=&#34;http://blog.galasoft.ch/posts/2014/10/my-xamarinevolve-talk-is-online-for-your-viewing-pleasure/&#34;&gt;Laurent Bugnion explained&lt;/a&gt; and using the view models on that locator. Injecting a view model in your view to bind on, usually causes the &lt;code&gt;TargetException&lt;/code&gt;, so try to use the view models defined in the locator.&lt;/p&gt;
+
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view?&lt;/h3&gt;
+
+&lt;p&gt;Then use this one:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.OneWay)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view-model:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view model?&lt;/h3&gt;
+
+&lt;p&gt;Then use the following overload:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;two-way-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Two-way binding&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.TwoWay)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;binding-to-a-target-type-different-from-the-source-type:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Binding to a target type different from the source type&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay).ConvertSourceToTarget(ConversionMethod)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also use a lambda, but that&amp;rsquo;s harder to debug.&lt;/p&gt;
+
+&lt;h3 id=&#34;just-binding-to-a-source-and-updating-the-view-yourself:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Just binding to a source and updating the view yourself&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel).WhenSourceChanges(MyUpdateMethod)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I guess this should cover all cases. I wrote this post using MVVM Light v5.2, but v5.3 or v6 is in the works (probably to be released at Xamarin Evolve 2016), so your mileage may vary with these newer versions.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>The Kafkaesque experience you get when buying a Windows Phone flagship</title>
@@ -866,96 +933,6 @@ build:
         version: &amp;quot;0.14&amp;quot;
         theme: material-lite
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Continuous integration with Hugo and Wercker</title>
-      <link>https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</link>
-      <pubDate>Tue, 14 Jul 2015 12:45:28 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</guid>
-      <description>
-
-&lt;h2 id=&#34;why:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;Why?&lt;/h2&gt;
-
-&lt;p&gt;Who doesn&amp;rsquo;t love &lt;a href=&#34;https://pages.github.com/&#34;&gt;GitHub Pages&lt;/a&gt;? It&amp;rsquo;s the easiest way to create a simple website about a repository and you can even use &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt; to start blogging.&lt;/p&gt;
-
-&lt;p&gt;As I recently switched from Jekyll to &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, I needed a new way to enable continuous integration for my blog.&lt;/p&gt;
-
-&lt;h2 id=&#34;new-to-ci:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;New to CI?&lt;/h2&gt;
-
-&lt;p&gt;Continuous integration, or CI, means that your code is automatically built, tested and/or deployed after each push. Every time you push some commits to a remote repository, the code in that repository is being built.&lt;/p&gt;
-
-&lt;p&gt;I usually have a branch called &lt;em&gt;develop&lt;/em&gt; to which I push fresh code. Then a CI tool checks if that code builds properly and if it does, I merge it to my &lt;em&gt;master&lt;/em&gt; branch. It&amp;rsquo;s a lot like &lt;a href=&#34;https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow&#34;&gt;Git Flow&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2 id=&#34;what-about-hugo-and-github-pages:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;What about Hugo and GitHub Pages?&lt;/h2&gt;
-
-&lt;p&gt;You could setup a CI tool to build your code after every push on every branch and deploy it to GitHub Pages after a successful build on your stable/&lt;em&gt;master&lt;/em&gt; branch.&lt;/p&gt;
-
-&lt;h2 id=&#34;in-comes-wercker:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;In comes Wercker&lt;/h2&gt;
-
-&lt;p&gt;I used to use &lt;a href=&#34;http://travis-ci.org&#34;&gt;Travis&lt;/a&gt; for all my CI needs, but then I came across &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt; in the &lt;a href=&#34;http://gohugo.io/tutorials/automated-deployments/&#34;&gt;Hugo docs&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Wercker simplifies CI a lot and relies on &lt;a href=&#34;http://docker.com&#34;&gt;Docker&lt;/a&gt; for its build environments. It also allows you to deploy your builds to different environments (e.g. production, staging, testing&amp;hellip;) Hugo has a guide about how to set it up, but it&amp;rsquo;s a little bit outdated. I might just send a pull request with an update in a few days. Wercker also has a lot of documentation. So with the examples below, you should be able to easily walk through the setup.&lt;/p&gt;
-
-&lt;h3 id=&#34;setting-it-up:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;Setting it up&lt;/h3&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Create a new Wercker app based on the repository containing your Hugo source code and give Wercker access rights. You can leave everything else on the default settings. If you&amp;rsquo;d like a badge showing your build status, make sure your app is public.&lt;/li&gt;
-&lt;li&gt;Next, edit your app settings and create a custom deploy target including a protected environment variable called &lt;code&gt;GIT_TOKEN&lt;/code&gt;.&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;Finally, add a file called &lt;em&gt;wercker.yml&lt;/em&gt; to your repository with the code below. Change it to fit your needs.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;box: debian
-build:
-  steps:
-    - script:
-        name: install git
-        code: |
-          apt-get update &amp;amp;&amp;amp; apt-get install git -y
-    - script:
-        name: initialize git submodules
-        code: |
-            git submodule update --init --recursive
-    - arjen/hugo-build:
-        version: &amp;quot;0.14&amp;quot;
-        theme: crisp
-deploy:
-  steps:
-    - script:
-        name: install git
-        code: |
-          apt-get update &amp;amp;&amp;amp; apt-get install git -y
-    - leipert/git-push:
-        gh_oauth: $GIT_TOKEN
-        basedir: public
-        clean_removed_files: true
-        branch: master
-        repo: SamuelDebruyn/samueldebruyn.github.io
-        gh_pages_domain: sa.muel.be
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Obviously, you have to change the following variables:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;version&lt;/code&gt;: the Hugo version you use&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;theme&lt;/code&gt;: the theme you use&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;branch&lt;/code&gt;: the branch on GitHub Pages you wish to publish on (should be &lt;code&gt;master&lt;/code&gt; for personal/organization pages and &lt;code&gt;gh-pages&lt;/code&gt; for project pages)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;repo&lt;/code&gt;: the repository you wish to publish your pages in (should be &lt;code&gt;username/username.github.io&lt;/code&gt; for personal/organization pages and &lt;code&gt;username/project-repo&lt;/code&gt; for project pages)&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;gh_pages_domain&lt;/code&gt;: a custom CNAME (optional, &lt;a href=&#34;https://help.github.com/articles/setting-up-a-custom-domain-with-github-pages/&#34;&gt;read more&lt;/a&gt;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Push a commit with that file and Wercker should happily start building and deploying your code!&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&#34;a-few-examples:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;A few examples&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;the Hugo source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;https://github.com/SamuelDebruyn/sa.muel.be-hugo&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;the wercker app for this blog: &lt;a href=&#34;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&#34;&gt;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;the generated source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io&#34;&gt;https://github.com/SamuelDebruyn/samueldebruyn.github.io&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

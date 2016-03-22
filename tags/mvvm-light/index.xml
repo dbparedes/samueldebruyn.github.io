@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mvvm Light on Samuel Debruyn</title>
+    <link>https://sa.muel.be/tags/mvvm-light/</link>
+    <description>Recent content in Mvvm Light on Samuel Debruyn</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
+    <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
+    <lastBuildDate>Tue, 22 Mar 2016 20:02:53 +0100</lastBuildDate>
+    <atom:link href="https://sa.muel.be/tags/mvvm-light/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Fix common binding errors with MVVM Light on Xamarin</title>
+      <link>https://sa.muel.be/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</link>
+      <pubDate>Tue, 22 Mar 2016 20:02:53 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>https://sa.muel.be/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</guid>
+      <description>
+
+&lt;p&gt;There isn&amp;rsquo;t much documentation available for &lt;a href=&#34;http://www.mvvmlight.net/&#34;&gt;MVVM Light&lt;/a&gt; when it comes to Xamarin.Android and Xamarin.iOS. There are several overloads for the &lt;code&gt;SetBinding&lt;/code&gt; method and using the wrong overload causes &lt;code&gt;TargetInvocationException&lt;/code&gt; or &lt;code&gt;TargetException&lt;/code&gt; like &lt;a href=&#34;http://stackoverflow.com/q/35197870/1592358&#34;&gt;this one&lt;/a&gt;. It&amp;rsquo;s also possible that your bindings don&amp;rsquo;t update anymore after you set one binding using an incorrect syntax.&lt;/p&gt;
+
+&lt;h2 id=&#34;correct-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Correct binding&lt;/h2&gt;
+
+&lt;p&gt;You can only bind on properties, not on fields. You can use the new C# 6 syntax if you like (&lt;code&gt;public TextView TextView =&amp;gt; ...&lt;/code&gt;). They don&amp;rsquo;t always have to be &lt;code&gt;public&lt;/code&gt; but it sure helps making them &lt;code&gt;public&lt;/code&gt; either way. The easiest way to create a new view property on Android is with the &lt;code&gt;mvvmdroidelement&lt;/code&gt; snippet provided by &lt;a href=&#34;https://visualstudiogallery.msdn.microsoft.com/ee36692d-ed3f-4888-b904-281aaaeac529&#34;&gt;this extension&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You should put your bindings in your views and make sure to respect the lifecycle of the platform you&amp;rsquo;re using. Also, always keep a reference to your binding so it doesn&amp;rsquo;t get garbage collected. I usually Store a list with all my bindings in my view.&lt;/p&gt;
+
+&lt;h3 id=&#34;android-activities:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android activities&lt;/h3&gt;
+
+&lt;p&gt;First create your layout in the &lt;code&gt;OnCreate&lt;/code&gt; method, create and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;h3 id=&#34;android-fragments:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android fragments&lt;/h3&gt;
+
+&lt;p&gt;The layout can be set up in &lt;code&gt;OnCreateView&lt;/code&gt;. Use the &lt;code&gt;OnViewCreated&lt;/code&gt; method to set and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
+
+&lt;h3 id=&#34;ios-viewcontrollers:23b1deac65cc2dd0071a356815b311c9&#34;&gt;iOS ViewControllers&lt;/h3&gt;
+
+&lt;p&gt;Initialize everything in the &lt;code&gt;ViewDidLoad&lt;/code&gt; method. Then use the &lt;code&gt;ViewWillAppear&lt;/code&gt; method to set and store the bindings. In some rare cases it helps calling &lt;code&gt;ForceUpdateValueFromSourceToTarget&lt;/code&gt; in &lt;code&gt;ViewDidAppear&lt;/code&gt;. Bindings should be detached using &lt;code&gt;Detach()&lt;/code&gt; on the binding in &lt;code&gt;ViewWillDisappear&lt;/code&gt;. You can use &lt;code&gt;DidReceiveMemoryWarning&lt;/code&gt; to clean up or dispose some references.&lt;/p&gt;
+
+&lt;h3 id=&#34;static-view-models:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Static view models&lt;/h3&gt;
+
+&lt;p&gt;To avoid the mentioned &lt;code&gt;TargetException&lt;/code&gt;, I&amp;rsquo;d recommend setting up a static view model locator as &lt;a href=&#34;http://blog.galasoft.ch/posts/2014/10/my-xamarinevolve-talk-is-online-for-your-viewing-pleasure/&#34;&gt;Laurent Bugnion explained&lt;/a&gt; and using the view models on that locator. Injecting a view model in your view to bind on, usually causes the &lt;code&gt;TargetException&lt;/code&gt;, so try to use the view models defined in the locator.&lt;/p&gt;
+
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view?&lt;/h3&gt;
+
+&lt;p&gt;Then use this one:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.OneWay)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view-model:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view model?&lt;/h3&gt;
+
+&lt;p&gt;Then use the following overload:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;two-way-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Two-way binding&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.TwoWay)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;binding-to-a-target-type-different-from-the-source-type:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Binding to a target type different from the source type&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay).ConvertSourceToTarget(ConversionMethod)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You can also use a lambda, but that&amp;rsquo;s harder to debug.&lt;/p&gt;
+
+&lt;h3 id=&#34;just-binding-to-a-source-and-updating-the-view-yourself:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Just binding to a source and updating the view yourself&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel).WhenSourceChanges(MyUpdateMethod)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I guess this should cover all cases. I wrote this post using MVVM Light v5.2, but v5.3 or v6 is in the works (probably to be released at Xamarin Evolve 2016), so your mileage may vary with these newer versions.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dependency injection with Autofac and MVVM Light in Xamarin</title>
+      <link>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
+      <pubDate>Mon, 22 Feb 2016 18:59:37 +0100</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
+      <description>
+
+&lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
+
+&lt;p&gt;A developer and his tools are inseparable. We all like &lt;a href=&#34;https://sites.google.com/site/unclebobconsultingllc/getting-a-solid-start&#34;&gt;SOLID&lt;/a&gt; and every (.NET) developer has his or her favourite dependency injection tool. There is &lt;a href=&#34;http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx&#34;&gt;a lot&lt;/a&gt; to choose from. I like Autofac because of the way it handles modules, the lifetime of a type and how it registers types.&lt;/p&gt;
+
+&lt;p&gt;At the moment I am working on an app for Android, iOS and Windows Phone with Xamarin and when you’re developing an app in C#, you’ll really want to use MVVM. You can either go the hard way and use the built-in classes, you can go the easy way and use a framework like &lt;a href=&#34;http://caliburnmicro.com/&#34;&gt;Caliburn Micro&lt;/a&gt; or you can go the comfortable way and use &lt;a href=&#34;http://mvvmlight.net&#34;&gt;MVVM Light&lt;/a&gt;. MVVM Light is a toolkit. It comes with everything you need and nothing more. It doesn’t force a pattern upon you, you can use the parts you like and safely ignore everything else. Want to get started with MVVM Light? Make sure to read &lt;a href=&#34;http://www.spikie.be/blog/category/MVVM-Light.aspx&#34;&gt;Nico’s practical guide&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;MVVM Light comes with an IoC container called SimpleIoC. And that’s what it is: a dead-simple IoC container. As I said: you don’t have to use the parts you don’t like. So let me replace SimpleIoC with my dependency injector of choice: Autofac.&lt;/p&gt;
+
+&lt;h2 id=&#34;architecture:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Architecture&lt;/h2&gt;
+
+&lt;p&gt;This is an overview of how I usually structure my solution:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Legend:
+* project
+  - namespace
+    + class/interface
+
+
+* MyApp (PCL)
+  - MyApp.Utilities
+    + MyApp.Utilities.ViewModelLocator
+    + MyApp.Utilities.CrossPlatformModule
+  - MyApp.ViewModels
+  - MyApp.Services
+    + MyApp.Services.ICrossPlatformService
+    + MyApp.Services.IPlatformSpecificService
+    + MyApp.Services.MyCrossPlatformServiceImplementation
+    + ...
+  - ...
+* MyApp.Android
+  - MyApp.Android.Utilities
+    + MyApp.Android.Utilities.PlatformModule
+  - MyApp.Android.Services
+    + MyApp.Android.Services.MyPlatformSpecificServiceImplementation
+    + ...
+  - ...
+  + App
+* MyApp.iOS
+  - MyApp.iOS.Utilities
+    + MyApp.iOS.Utilities.PlatformModule
+  - MyApp.iOS.Services
+    + MyApp.iOS.Services.MyPlatformSpecificServiceImplementation
+    + ...
+  - ...
+  + Main
+* MyApp.WindowsPhone
+  - MyApp.WindowsPhone.Utilities
+    + MyApp.WindowsPhone.Utilities.PlatformModule
+  - MyApp.WindowsPhone.Services
+    + MyApp.WindowsPhone.Services.MyPlatformSpecificServiceImplementation
+    + ...
+  - ...
+  + App
+* MyApp.UnitTests
+  - ...
+    + ...
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;where-to-put-what:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Where to put what?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Registrations of viewmodels and cross-platform service implementations: MyApp.Utilities.CrossPlatformModule&lt;/li&gt;
+&lt;li&gt;Registrations of platform-specific services: MyApp.Platform.Utilities.PlatformModule&lt;/li&gt;
+&lt;li&gt;Static properties referring to viewmodels: MyApp.Utilities.ViewModelLocator&lt;/li&gt;
+&lt;li&gt;Autofac initialization: MyApp.Utilities.ViewModelLocator&lt;/li&gt;
+&lt;li&gt;ViewModelLocator initialization: App/Main&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;how-it-all-ties-together:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;How it all ties together&lt;/h2&gt;
+
+&lt;p&gt;First off, you start by creating interfaces for all the services you need. Next up, you can start defining implementations for the services and put them in the correct namespaces.&lt;/p&gt;
+
+&lt;p&gt;When that&amp;rsquo;s done, it&amp;rsquo;s time to create our modules. Now, assembly scanning sometimes causes exceptions on certain platforms. Also, PCL&amp;rsquo;s don&amp;rsquo;t have the methods you&amp;rsquo;re used to from ASP.NET or other types of projects for assembly scanning. I know it makes things incredibly easy, but I&amp;rsquo;d advise against it for Xamarin projects. You&amp;rsquo;ll have to register type by type in the modules. Usually I create an array of types and throw them in &lt;code&gt;builder.RegisterTypes(types)&lt;/code&gt;. The platform-specific modules should contain registrations for the platform-specific services. Don&amp;rsquo;t forget the ones that come with Autofac by default.&lt;/p&gt;
+
+&lt;h3 id=&#34;example-of-a-platform-specific-service:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Example of a platform-specific service&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;using System;
+using Autofac;
+using MyApp.Android.Services;
+using GalaSoft.MvvmLight.Views;
+
+namespace MyApp.Android.Utilities
+{
+    public class PlatformModule : Module
+    {
+        protected override void Load(ContainerBuilder builder)
+        {
+            var navigationService = new NavigationService();
+            // navigationService setup...
+            builder.RegisterInstance(navigationService).AsImplementedInterfaces();
+            
+            Type[] types =
+            {
+                typeof (DialogService),
+                typeof (MyPlatformSpecificServiceImplementation)
+            };
+            builder.RegisterTypes(types).AsImplementedInterfaces();
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I think you get my point. The module in your PCL should contain all the cross-platform services and the ViewModels. Don&amp;rsquo;t forget to use &lt;code&gt;.SingleInstance()&lt;/code&gt; where you think it&amp;rsquo;s applicable (e.g. where you use &lt;code&gt;HttpClient&lt;/code&gt; or with some ViewModels).&lt;/p&gt;
+
+&lt;p&gt;When that&amp;rsquo;s done, it&amp;rsquo;s time to use a little bit of magic to make sure the right implementations are registered in the right platform. This can be a little bit tricky and it isn&amp;rsquo;t a very clean solution, but It Does The Job &amp;trade;.&lt;/p&gt;
+
+&lt;p&gt;Laurent, the creator of MVVM Light, gave &lt;a href=&#34;http://blog.galasoft.ch/posts/2014/10/my-xamarinevolve-talk-is-online-for-your-viewing-pleasure/&#34;&gt;a talk at Xamarin Evolve&lt;/a&gt; explaining how he makes it work on Android, iOS and Windows Phone. On Android, you make a singleton class called &lt;code&gt;App&lt;/code&gt; while you use the &lt;code&gt;Application&lt;/code&gt; and &lt;code&gt;App&lt;/code&gt; classes on Windows Phone and iOS.&lt;/p&gt;
+
+&lt;p&gt;But first, we need to create our &lt;code&gt;ViewModelLocator&lt;/code&gt;. Microsoft&amp;rsquo;s ServiceLocator and Autofac&amp;rsquo;s extra&amp;rsquo;s make things easier so all you need is &lt;code&gt;nuget Install-Package Autofac.Extras.CommonServiceLocator&lt;/code&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;public class ViewModelLocator
+{
+    // you only need this if you&#39;d like to use design-time data which is only supported on XAML-based platforms
+    static ViewModelLocator()
+    {
+        if (!ServiceLocator.IsLocationProviderSet)
+        {
+            RegisterServices(registerFakes: true);
+        }
+    }
+
+    public MyViewModel MyViewModel =&amp;gt; ServiceLocator.Current.GetInstance&amp;lt;MyViewModel&amp;gt;();
+
+    public static void RegisterServices(ContainerBuilder registrations = null, bool registerFakes = false)
+    {
+        var builder = new ContainerBuilder();
+
+        // you only need this if-clause if you&#39;d like to use design-time data which is only supported on XAML-based platforms
+        if (ViewModelBase.IsInDesignModeStatic || registerFakes)
+        {
+            builder.RegisterModule&amp;lt;FakeServiceModule&amp;gt;();
+        }
+        else
+        {
+            // just use this one if you don&#39;t use design-time data
+            builder.RegisterModule&amp;lt;CrossPlatformModule&amp;gt;();
+        }
+
+        var container = builder.Build();
+        registrations?.Update(container);
+
+        ServiceLocator.SetLocatorProvider(() =&amp;gt; new AutofacServiceLocator(container));
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now in all of the mentioned app initializers mentioned above I have a method that looks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;private static void RegisterServices()
+{
+    var builder = new ContainerBuilder();
+    builder.RegisterModule&amp;lt;PlatformModule&amp;gt;();
+    ViewModelLocator.RegisterServices(builder);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;That method is then called at the moment I initialize the &lt;code&gt;ViewModelLocator&lt;/code&gt;. Laurent&amp;rsquo;s talk goes in depth on how to do that so I won&amp;rsquo;t cover that part.&lt;/p&gt;
+
+&lt;h2 id=&#34;servicelocator:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;ServiceLocator&lt;/h2&gt;
+
+&lt;p&gt;Whenever you need an instance of a registered type, you can use the &lt;code&gt;ServiceLocator&lt;/code&gt; like so:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var myService = ServiceLocator.Current.GetInstance&amp;lt;IMyService&amp;gt;();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;You&amp;rsquo;ll only need this in the (usually empty) code-behind parts like activities (Android), ViewControllers (iOS) or the page classes (Windows Phone).&lt;/p&gt;
+
+&lt;p&gt;You can even use &lt;a href=&#34;http://docs.autofac.org/en/latest/advanced/delegate-factories.html&#34;&gt;factories&lt;/a&gt; as long as you register them.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var myVar = &amp;quot;some required constructor parameter for e.g. a ViewModel&amp;quot;;
+var factory = ServiceLocator.Current.GetInstance&amp;lt;MyViewModelRequiringAParameter.Factory&amp;gt;();
+var vm = factory(myVar);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;questions:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Questions?&lt;/h2&gt;
+
+&lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;http://sa.muel.be/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
