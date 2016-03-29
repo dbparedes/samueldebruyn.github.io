@@ -8,8 +8,44 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Tue, 22 Mar 2016 20:02:53 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 29 Mar 2016 08:25:38 +0200</lastBuildDate>
     <atom:link href="https://sa.muel.be/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Android update distribution is getting worse</title>
+      <link>https://sa.muel.be/2016/android-update-distribution-is-getting-worse/</link>
+      <pubDate>Tue, 29 Mar 2016 08:25:38 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>https://sa.muel.be/2016/android-update-distribution-is-getting-worse/</guid>
+      <description>
+
+&lt;h2 id=&#34;why-it-matters:92b9b84b290dc2d0c46bb8b15456fc42&#34;&gt;Why it matters&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;Click on the images in this post to view a larger, more detailed version.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A few days ago, when Google released the &lt;a href=&#34;https://developer.android.com/preview/index.html&#34;&gt;Android N Developer Preview&lt;/a&gt;, I was reading some articles about the famous &lt;em&gt;Android fragmentation problem&lt;/em&gt;. By now, we all know why it matters and why it doesn&amp;rsquo;t.&lt;/p&gt;
+
+&lt;p&gt;In my opinion, it&amp;rsquo;s quite overrated. Developers are used to programming against the support libraries instead of the &lt;em&gt;true&lt;/em&gt; Android API. It would be nice if Google could &lt;em&gt;fix&lt;/em&gt; this annoyance, but it&amp;rsquo;s clearly not limiting developers.&lt;/p&gt;
+
+&lt;p&gt;So why does it still matter? It matters to the end users. If you buy an expensive flagship phone, you expect it to receive new features through updates just like your PC does. It doesn&amp;rsquo;t make sense to provide updates for devices with outdated hardware, but most recent phones can last a few years before their hardware becomes outdated. However, their software can&amp;rsquo;t. Most phones are updated for a year or two and are then ignored as its manufacturers want you to buy its newest product.&lt;/p&gt;
+
+&lt;h2 id=&#34;how-bad-is-it:92b9b84b290dc2d0c46bb8b15456fc42&#34;&gt;How bad is it?&lt;/h2&gt;
+
+&lt;p&gt;The Android version with slowest adoption ever is still Android Honeycomb. That&amp;rsquo;s quite normal. Android Honeycomb only ever rolled out to the tablet market which was very young at the time. However, the version with the second to worst adoption rate is Android Marshmallow, Google&amp;rsquo;s latest release. The versions before it didn&amp;rsquo;t do much better. The situation seems to be getting worse and worse.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://sa.muel.be/img/post/2016-android/adoption_rate_by_time_large.png&#34;&gt;&lt;img src=&#34;https://sa.muel.be/img/post/2016-android/adoption_rate_by_time_small.png&#34; alt=&#34;Version adoption rate&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This brings the Android version landscape today to this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://sa.muel.be/img/post/2016-android/version_distribution_large.png&#34;&gt;&lt;img src=&#34;https://sa.muel.be/img/post/2016-android/version_distribution_small.png&#34; alt=&#34;Android version distribution&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;One thing that I personally find interesting is the highest adoption rate an Android version ever reached. Both Android Froyo and Android Gingerbread each once were on more than 60% of the active Android devices, but recent versions never reached such a high penetration into the ecosystem. Okay, there were less Android devices at the time so it was easier to get them updated. But regardless of the highest adoption a version ever reached, it&amp;rsquo;s still important to look at time it took the version to reach that adoption rate. Likewise, it has its ups and downs, but it seems to be getting worse overall.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&#34;https://sa.muel.be/img/post/2016-android/highest_adoption_by_version_large.png&#34;&gt;&lt;img src=&#34;https://sa.muel.be/img/post/2016-android/highest_adoption_by_version_small.png&#34; alt=&#34;Android version distribution&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;This is something Google has to fix. Microsoft &lt;a href=&#34;http://www.neowin.net/news/there-will-be-no-second-wave-of-windows-10-mobile-upgrades-for-lumia-devices&#34;&gt;made&lt;/a&gt; the same mistake &lt;a href=&#34;http://www.neowin.net/news/there-will-be-no-second-wave-of-windows-10-mobile-upgrades-for-lumia-devices&#34;&gt;a couple of times&lt;/a&gt; and is now &lt;a href=&#34;http://360.here.com/2016/03/15/important-information-about-here-apps-on-windows-phone/&#34;&gt;paying the price&lt;/a&gt; for it.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Fix common binding errors with MVVM Light on Xamarin</title>
@@ -909,30 +945,6 @@ docker-machine kill boot2docker
 &lt;p&gt;&lt;a href=&#34;http://wercker.com/&#34;&gt;Wercker&lt;/a&gt; is a great CI tool and it allows you to create custom build steps that can be reused in several projects. So I created a build step to minify HTML, CSS and JS files.&lt;/p&gt;
 
 &lt;p&gt;The build step is available at &lt;a href=&#34;https://github.com/SamuelDebruyn/wercker-step-minify&#34;&gt;https://github.com/SamuelDebruyn/wercker-step-minify&lt;/a&gt; and all you have to do is include &lt;code&gt;samueldebruyn/minify&lt;/code&gt; as a step in your &lt;em&gt;wercker.yml&lt;/em&gt; file.&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Wercker step to validate Hugo themes</title>
-      <link>https://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</link>
-      <pubDate>Wed, 15 Jul 2015 13:21:45 +0200</pubDate>
-      <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</guid>
-      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;https://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;https://sa.muel.be/tags/hugo/&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;As I &lt;a href=&#34;https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
-
-&lt;p&gt;There wasn&amp;rsquo;t any, so I simply wrote a build step for &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The build step validates a Hugo theme using &lt;a href=&#34;https://github.com/spf13/HugoBasicExample&#34;&gt;an example site&lt;/a&gt;. It also checks if you included some files required for a future Hugo themes site.&lt;/p&gt;
-
-&lt;p&gt;The code for the build step is available at &lt;a href=&#34;https://github.com/SamuelDebruyn/wercker-step-hugo-theme-check&#34;&gt;https://github.com/SamuelDebruyn/wercker-step-hugo-theme-check&lt;/a&gt; and an example &lt;em&gt;wercker.yml&lt;/em&gt; configuration is included below.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;box: debian
-build:
-  steps:
-    - samueldebruyn/hugo-theme-check:
-        version: &amp;quot;0.14&amp;quot;
-        theme: material-lite
-&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     
