@@ -1,5 +1,5 @@
 {
-	"name": "sa.muel.be",
+	"name": "Chips 'n' Cookies",
 	"icons": [
 		{
 			"src": "{{ .Site.BaseURL }}icons\/android-chrome-36x36.png",
@@ -38,6 +38,6 @@
 			"density": "4.0"
 		}
 	],
-	"start_url": "http:\/\/sa.muel.be",
+	"start_url": "https:\/\/chipsncookies.com",
 	"display": "standalone"
 }

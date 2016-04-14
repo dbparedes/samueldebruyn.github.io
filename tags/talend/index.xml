@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Talend on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/talend/</link>
+    <link>https://chipsncookies.com/tags/talend/</link>
     <description>Recent content in Talend on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Sat, 18 Apr 2015 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/talend/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/talend/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Geocoding addresses in Talend Open Studio for Data Integration</title>
-      <link>https://sa.muel.be/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</link>
+      <link>https://chipsncookies.com/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</link>
       <pubDate>Sat, 18 Apr 2015 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</guid>
+      <guid>https://chipsncookies.com/2015/geocoding-addresses-in-talend-open-studio-for-data-integration/</guid>
       <description>&lt;p&gt;Last week I had to geocode the addresses in a dataset using Talend. Geocoding is adding coordinates to addresses. This way you can easily visualize your data on a map.&lt;/p&gt;
 
 &lt;p&gt;I experienced problems when I tried to download some plugins from Talend Exchange but I found &lt;a href=&#34;http://datacatalyst.blogspot.be/2011/01/custom-google-geocoder-using-talend.html&#34;&gt;this blog post&lt;/a&gt; about geocoding without the use of a plugin. The blogpost wasn&amp;rsquo;t very clear so I decided to write a step-by-step explanation which you can find below. In this guide, we will be using the &lt;a href=&#34;https://developers.google.com/maps/documentation/geocoding/&#34;&gt;Google Geocoding API&lt;/a&gt;.&lt;/p&gt;

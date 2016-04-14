@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jekyll on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/jekyll/</link>
+    <link>https://chipsncookies.com/tags/jekyll/</link>
     <description>Recent content in Jekyll on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Wed, 08 Jul 2015 14:50:29 +0200</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/jekyll/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>An introduction to Hugo, a static site generator</title>
-      <link>https://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/</link>
+      <link>https://chipsncookies.com/2015/an-introduction-to-hugo-a-static-site-generator/</link>
       <pubDate>Wed, 08 Jul 2015 14:50:29 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/</guid>
+      <guid>https://chipsncookies.com/2015/an-introduction-to-hugo-a-static-site-generator/</guid>
       <description>
 
 &lt;h2 id=&#34;a-good-blogging-platform:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;A good blogging platform&lt;/h2&gt;

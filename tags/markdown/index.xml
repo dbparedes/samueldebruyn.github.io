@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Markdown on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/markdown/</link>
+    <link>https://chipsncookies.com/tags/markdown/</link>
     <description>Recent content in Markdown on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Mon, 10 Feb 2014 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/markdown/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Using markdown to create any document (pdf, docx...)</title>
-      <link>https://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../</link>
+      <link>https://chipsncookies.com/2014/using-markdown-to-create-any-document-pdf-docx.../</link>
       <pubDate>Mon, 10 Feb 2014 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2014/using-markdown-to-create-any-document-pdf-docx.../</guid>
+      <guid>https://chipsncookies.com/2014/using-markdown-to-create-any-document-pdf-docx.../</guid>
       <description>&lt;p&gt;A few weeks ago I had to submit the contents of a GitHub repository to my teacher for grading. I wanted to use my readme.md-file while my teacher asked for a Word or a PDF document. Then I discovered this amazing program which converts Markdown to any desirable format!&lt;/p&gt;
 
 &lt;p&gt;Almost every programmer knows Markdown, right? The Markdown syntax is widely used on &lt;a href=&#34;https://github.com/&#34;&gt;GitHub&lt;/a&gt; and in &lt;a href=&#34;https://github.com/github/markup/blob/master/README.md&#34;&gt;readme-files&lt;/a&gt;.  Markdown was developed by &lt;a href=&#34;http://daringfireball.net/projects/markdown/&#34;&gt;John Gruber&lt;/a&gt; and Aaron Swartz as a tool to convert plain text files in the syntactic language with the same name to HTML.&lt;/p&gt;

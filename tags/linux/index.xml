@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Linux on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/linux/</link>
+    <link>https://chipsncookies.com/tags/linux/</link>
     <description>Recent content in Linux on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Wed, 02 Mar 2016 14:40:08 +0100</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/linux/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/linux/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Setting up a Raspberry Pi as a git server for Windows clients</title>
-      <link>https://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</link>
+      <link>https://chipsncookies.com/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</link>
       <pubDate>Wed, 02 Mar 2016 14:40:08 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</guid>
+      <guid>https://chipsncookies.com/2016/setting-up-a-raspberry-pi-as-a-git-server-for-windows-clients/</guid>
       <description>
 
 &lt;p&gt;Sometimes you&amp;rsquo;re not allowed or you don&amp;rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&amp;rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&amp;rsquo;ll automate everything from authentication to creating and deleting repositories.&lt;/p&gt;
@@ -147,10 +147,10 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
     
     <item>
       <title>Secure SSH access with 2-step authentication (extended)</title>
-      <link>https://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</link>
+      <link>https://chipsncookies.com/2014/secure-ssh-access-with-2-step-authentication-extended/</link>
       <pubDate>Sat, 08 Feb 2014 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2014/secure-ssh-access-with-2-step-authentication-extended/</guid>
+      <guid>https://chipsncookies.com/2014/secure-ssh-access-with-2-step-authentication-extended/</guid>
       <description>
 
 &lt;p&gt;In this quick tutorial I&amp;rsquo;ll show you how to secure SSH access to your Linux server with 2-step authentication. Why did I call this post &amp;lsquo;extended&amp;rsquo;? Because I&amp;rsquo;ll show you how to add extra rules so you don&amp;rsquo;t have to use 2-step authentication from certain locations.&lt;/p&gt;
@@ -257,10 +257,10 @@ server 3.be.pool.ntp.org
     
     <item>
       <title>Wake up your computer(s) with a simple email using a Raspberry Pi</title>
-      <link>https://sa.muel.be/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</link>
+      <link>https://chipsncookies.com/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</link>
       <pubDate>Sun, 22 Dec 2013 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</guid>
+      <guid>https://chipsncookies.com/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Introduction&lt;/h2&gt;

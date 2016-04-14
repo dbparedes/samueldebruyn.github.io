@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Android on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/android/</link>
+    <link>https://chipsncookies.com/tags/android/</link>
     <description>Recent content in Android on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Tue, 29 Mar 2016 08:25:38 +0200</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/android/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/android/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Android update distribution is getting worse</title>
-      <link>https://sa.muel.be/2016/android-update-distribution-is-getting-worse/</link>
+      <link>https://chipsncookies.com/2016/android-update-distribution-is-getting-worse/</link>
       <pubDate>Tue, 29 Mar 2016 08:25:38 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2016/android-update-distribution-is-getting-worse/</guid>
+      <guid>https://chipsncookies.com/2016/android-update-distribution-is-getting-worse/</guid>
       <description>
 
 &lt;h2 id=&#34;why-it-matters:92b9b84b290dc2d0c46bb8b15456fc42&#34;&gt;Why it matters&lt;/h2&gt;
@@ -33,15 +33,15 @@
 
 &lt;p&gt;The Android version with slowest adoption ever is still Android Honeycomb. That&amp;rsquo;s quite normal. Android Honeycomb only ever rolled out to the tablet market which was very young at the time. However, the version with the second to worst adoption rate is Android Marshmallow, Google&amp;rsquo;s latest release. The versions before it didn&amp;rsquo;t do much better. The situation seems to be getting worse and worse.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://sa.muel.be/img/post/2016-android/adoption_rate_by_time_large.png&#34;&gt;&lt;img src=&#34;https://sa.muel.be/img/post/2016-android/adoption_rate_by_time_small.png&#34; alt=&#34;Version adoption rate&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chipsncookies.com/img/post/2016-android/adoption_rate_by_time_large.png&#34;&gt;&lt;img src=&#34;https://chipsncookies.com/img/post/2016-android/adoption_rate_by_time_small.png&#34; alt=&#34;Version adoption rate&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This brings the Android version landscape today to this:&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://sa.muel.be/img/post/2016-android/version_distribution_large.png&#34;&gt;&lt;img src=&#34;https://sa.muel.be/img/post/2016-android/version_distribution_small.png&#34; alt=&#34;Android version distribution&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chipsncookies.com/img/post/2016-android/version_distribution_large.png&#34;&gt;&lt;img src=&#34;https://chipsncookies.com/img/post/2016-android/version_distribution_small.png&#34; alt=&#34;Android version distribution&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;One thing that I personally find interesting is the highest adoption rate an Android version ever reached. Both Android Froyo and Android Gingerbread each once were on more than 60% of the active Android devices, but recent versions never reached such a high penetration into the ecosystem. Okay, there were less Android devices at the time so it was easier to get them updated. But regardless of the highest adoption a version ever reached, it&amp;rsquo;s still important to look at time it took the version to reach that adoption rate. Likewise, it has its ups and downs, but it seems to be getting worse overall.&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&#34;https://sa.muel.be/img/post/2016-android/highest_adoption_by_version_large.png&#34;&gt;&lt;img src=&#34;https://sa.muel.be/img/post/2016-android/highest_adoption_by_version_small.png&#34; alt=&#34;Android version distribution&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://chipsncookies.com/img/post/2016-android/highest_adoption_by_version_large.png&#34;&gt;&lt;img src=&#34;https://chipsncookies.com/img/post/2016-android/highest_adoption_by_version_small.png&#34; alt=&#34;Android version distribution&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;This is something Google has to fix. Microsoft &lt;a href=&#34;http://www.neowin.net/news/there-will-be-no-second-wave-of-windows-10-mobile-upgrades-for-lumia-devices&#34;&gt;made&lt;/a&gt; the same mistake &lt;a href=&#34;http://www.neowin.net/news/there-will-be-no-second-wave-of-windows-10-mobile-upgrades-for-lumia-devices&#34;&gt;a couple of times&lt;/a&gt; and is now &lt;a href=&#34;http://360.here.com/2016/03/15/important-information-about-here-apps-on-windows-phone/&#34;&gt;paying the price&lt;/a&gt; for it.&lt;/p&gt;
 </description>
@@ -49,10 +49,10 @@
     
     <item>
       <title>Fix common binding errors with MVVM Light on Xamarin</title>
-      <link>https://sa.muel.be/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</link>
+      <link>https://chipsncookies.com/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</link>
       <pubDate>Tue, 22 Mar 2016 20:02:53 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</guid>
+      <guid>https://chipsncookies.com/2016/fix-common-binding-errors-with-mvvm-light-on-xamarin/</guid>
       <description>
 
 &lt;p&gt;There isn&amp;rsquo;t much documentation available for &lt;a href=&#34;http://www.mvvmlight.net/&#34;&gt;MVVM Light&lt;/a&gt; when it comes to Xamarin.Android and Xamarin.iOS. There are several overloads for the &lt;code&gt;SetBinding&lt;/code&gt; method and using the wrong overload causes &lt;code&gt;TargetInvocationException&lt;/code&gt; or &lt;code&gt;TargetException&lt;/code&gt; like &lt;a href=&#34;http://stackoverflow.com/q/35197870/1592358&#34;&gt;this one&lt;/a&gt;. It&amp;rsquo;s also possible that your bindings don&amp;rsquo;t update anymore after you set one binding using an incorrect syntax.&lt;/p&gt;
@@ -116,10 +116,10 @@
     
     <item>
       <title>Dependency injection with Autofac and MVVM Light in Xamarin</title>
-      <link>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
+      <link>https://chipsncookies.com/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
       <pubDate>Mon, 22 Feb 2016 18:59:37 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
+      <guid>https://chipsncookies.com/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
       <description>
 
 &lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
@@ -298,16 +298,16 @@ var vm = factory(myVar);
 
 &lt;h2 id=&#34;questions:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Questions?&lt;/h2&gt;
 
-&lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;http://sa.muel.be/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;https://chipsncookies.com/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     
     <item>
       <title>How to get around OnePlus&#39;s horrible invite system</title>
-      <link>https://sa.muel.be/2015/how-to-get-around-onepluss-horrible-invite-system/</link>
+      <link>https://chipsncookies.com/2015/how-to-get-around-onepluss-horrible-invite-system/</link>
       <pubDate>Fri, 02 Oct 2015 15:34:19 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/how-to-get-around-onepluss-horrible-invite-system/</guid>
+      <guid>https://chipsncookies.com/2015/how-to-get-around-onepluss-horrible-invite-system/</guid>
       <description>
 
 &lt;p&gt;&lt;a href=&#34;https://oneplus.net/&#34;&gt;OnePlus&lt;/a&gt;, the company famous for its &lt;a href=&#34;https://www.google.be/search?q=oneplus+service+horror+story&#34;&gt;terrible service&lt;/a&gt; and its &lt;a href=&#34;http://www.androidpolice.com/2015/07/30/editorial-if-oneplus-will-basically-just-lie-with-marketing-slogans-we-have-no-reason-to-respect-them/&#34;&gt;miserable invite system&lt;/a&gt;, failed once again.&lt;/p&gt;
@@ -341,10 +341,10 @@ var vm = factory(myVar);
     
     <item>
       <title>How Google cripples outdated Android devices</title>
-      <link>https://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</link>
+      <link>https://chipsncookies.com/2015/how-google-cripples-outdated-android-devices/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</guid>
+      <guid>https://chipsncookies.com/2015/how-google-cripples-outdated-android-devices/</guid>
       <description>
 
 &lt;h2 id=&#34;why-i-downgraded-my-nexus-5:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Why I downgraded my Nexus 5&lt;/h2&gt;

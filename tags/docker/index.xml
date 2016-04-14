@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Docker on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/docker/</link>
+    <link>https://chipsncookies.com/tags/docker/</link>
     <description>Recent content in Docker on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Sun, 11 Oct 2015 23:43:40 +0200</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Run Docker on Hyper-V with Docker Machine</title>
-      <link>https://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</link>
+      <link>https://chipsncookies.com/2015/run-docker-on-hyper-v-with-docker-machine/</link>
       <pubDate>Sun, 11 Oct 2015 23:43:40 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
+      <guid>https://chipsncookies.com/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
       <description>
 
 &lt;p&gt;Docker is awesome, right? And thanks to &lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;boot2docker&lt;/a&gt; Windows users were no longer left out of the fun.&lt;/p&gt;
@@ -33,7 +33,7 @@
 
 &lt;h2 id=&#34;setting-up-hyper-v-and-network-connections:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
 
-&lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;https://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;https://chipsncookies.com/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Next, create a &lt;em&gt;Virtual Network Switch&lt;/em&gt;. Pick &lt;em&gt;internal&lt;/em&gt; as type.&lt;/p&gt;
 
@@ -77,10 +77,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>How to fix common Hyper-V errors on Windows 10</title>
-      <link>https://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</link>
+      <link>https://chipsncookies.com/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</link>
       <pubDate>Sun, 11 Oct 2015 22:38:46 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</guid>
+      <guid>https://chipsncookies.com/2015/how-to-fix-common-hyper-v-errors-on-windows-10/</guid>
       <description>&lt;p&gt;This short post is more of a note to myself for when I run into the same problem. I just wasted an hour on it so I guess that justifies it.&lt;/p&gt;
 
 &lt;p&gt;So, what happened? I wanted to check out the new &lt;a href=&#34;https://docs.docker.com/machine/&#34;&gt;Docker Machine&lt;/a&gt; with Hyper-V support, but the Hyper-V Manager told me it could not connect to my local computer.&lt;/p&gt;
@@ -100,10 +100,10 @@ docker-machine kill boot2docker
     
     <item>
       <title>Docker image for Hugo builds (with Wercker)</title>
-      <link>https://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</link>
+      <link>https://chipsncookies.com/2015/docker-image-for-hugo-builds-with-wercker/</link>
       <pubDate>Mon, 31 Aug 2015 18:56:39 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</guid>
+      <guid>https://chipsncookies.com/2015/docker-image-for-hugo-builds-with-wercker/</guid>
       <description>
 
 &lt;p&gt;This blog is built with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, which allows me to use some great CI tools like &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The first part of writing a &lt;em&gt;wercker.yml&lt;/em&gt; is picking a build container.&lt;/p&gt;

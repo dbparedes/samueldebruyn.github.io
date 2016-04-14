@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Portfolios on Samuel Debruyn</title>
-    <link>https://sa.muel.be/portfolio/</link>
+    <link>https://chipsncookies.com/portfolio/</link>
     <description>Recent content in Portfolios on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Thu, 04 Feb 2016 19:41:02 +0100</lastBuildDate>
-    <atom:link href="https://sa.muel.be/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/portfolio/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Thesis: Cross-Platform mobile apps with Xamarin</title>
-      <link>https://sa.muel.be/portfolio/thesis/</link>
+      <link>https://chipsncookies.com/portfolio/thesis/</link>
       <pubDate>Thu, 04 Feb 2016 19:41:02 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/thesis/</guid>
+      <guid>https://chipsncookies.com/portfolio/thesis/</guid>
       <description>&lt;p&gt;In my graduation year I wrote a thesis about the project that I implemented during my internship at &lt;a href=&#34;http://www.realdolmen.com/&#34;&gt;RealDolmen&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The project was about cross-platform development with &lt;a href=&#34;https://xamarin.com&#34;&gt;Xamarin&lt;/a&gt;. The customer, &lt;a href=&#34;https://education.realdolmen.com/en&#34;&gt;RealDolmen Education&lt;/a&gt;, asked for an app for Android, iOS and Windows PHone where users can browse through the offer of RealDolmen Education.&lt;/p&gt;
@@ -27,10 +27,10 @@
     
     <item>
       <title>Cirqus demo</title>
-      <link>https://sa.muel.be/portfolio/cirqus-demo/</link>
+      <link>https://chipsncookies.com/portfolio/cirqus-demo/</link>
       <pubDate>Fri, 27 Nov 2015 19:56:21 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/cirqus-demo/</guid>
+      <guid>https://chipsncookies.com/portfolio/cirqus-demo/</guid>
       <description>
 
 &lt;p&gt;In my graduation year I demonstrated how you can implement the CQRS principle in .NET. I went looking for a few CQRS frameworks and I found &lt;a href=&#34;https://github.com/d60/Cirqus&#34;&gt;Cirqus&lt;/a&gt;. It&amp;rsquo;s the easiest way to get started with &lt;a href=&#34;http://martinfowler.com/bliki/CQRS.html&#34;&gt;CQRS&lt;/a&gt; and &lt;a href=&#34;https://msdn.microsoft.com/en-us/library/dn589792.aspx&#34;&gt;event sourcing&lt;/a&gt; in .NET.&lt;/p&gt;
@@ -84,10 +84,10 @@
     
     <item>
       <title>Big Bad Wolf</title>
-      <link>https://sa.muel.be/portfolio/big-bad-wolf/</link>
+      <link>https://chipsncookies.com/portfolio/big-bad-wolf/</link>
       <pubDate>Sun, 26 Jul 2015 22:23:17 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/big-bad-wolf/</guid>
+      <guid>https://chipsncookies.com/portfolio/big-bad-wolf/</guid>
       <description>&lt;p&gt;This is simple social media client written in C#. It was a school project we made in a team of 4 students. This was our first project in C# and the goal was to learn about&lt;/p&gt;
 
 &lt;ul&gt;
@@ -105,10 +105,10 @@
     
     <item>
       <title>Penguin Planner</title>
-      <link>https://sa.muel.be/portfolio/penguin-planner/</link>
+      <link>https://chipsncookies.com/portfolio/penguin-planner/</link>
       <pubDate>Sun, 26 Jul 2015 22:23:08 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/penguin-planner/</guid>
+      <guid>https://chipsncookies.com/portfolio/penguin-planner/</guid>
       <description>&lt;p&gt;Penguin Planner is a school project we made in team of 4 students. The goal of the project was to learn about:&lt;/p&gt;
 
 &lt;ul&gt;
@@ -127,10 +127,10 @@
     
     <item>
       <title>RoboRally</title>
-      <link>https://sa.muel.be/portfolio/roborally/</link>
+      <link>https://chipsncookies.com/portfolio/roborally/</link>
       <pubDate>Thu, 23 Jul 2015 17:02:18 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/roborally/</guid>
+      <guid>https://chipsncookies.com/portfolio/roborally/</guid>
       <description>&lt;p&gt;RoboRally is a simple game written in Java, based on the board game &lt;a href=&#34;https://en.wikipedia.org/wiki/RoboRally&#34;&gt;RoboRally&lt;/a&gt; by &lt;a href=&#34;http://company.wizards.com/&#34;&gt;Wizards of the Coast&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;This game was a semester project in which a pair of students had to learn the basics of object oriented programming, source code control and extreme programming. The project was part of the course &lt;a href=&#34;https://onderwijsaanbod.kuleuven.be/syllabi/n/H01P1AN.htm#activetab=doelstellingen_idp2111760&#34;&gt;Object Oriented Programming&lt;/a&gt; by &lt;a href=&#34;https://distrinet.cs.kuleuven.be/people/eric&#34;&gt;Prof. E. Steegmans&lt;/a&gt;.&lt;/p&gt;
@@ -141,13 +141,13 @@
     
     <item>
       <title>asr.ac</title>
-      <link>https://sa.muel.be/portfolio/asr-ac/</link>
+      <link>https://chipsncookies.com/portfolio/asr-ac/</link>
       <pubDate>Tue, 21 Jul 2015 21:17:21 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/asr-ac/</guid>
+      <guid>https://chipsncookies.com/portfolio/asr-ac/</guid>
       <description>&lt;p&gt;In 2015 the General Student Council (ASR / GSC) Odisee elected me to be their IT manager. I became responsible for several services, one of which was their website.&lt;/p&gt;
 
-&lt;p&gt;The website is built with &lt;a href=&#34;http://wordpress.org&#34;&gt;WordPress&lt;/a&gt; and stored on a shared hosting account. I customized the theme and setup &lt;a href=&#34;https://www.cloudflare.com/&#34;&gt;CloudFlare&lt;/a&gt;. As the website was hacked in the months before I became the administrator, I had to &lt;a href=&#34;https://sa.muel.be/2015/recovering-a-hacked-wordpress/&#34;&gt;restore&lt;/a&gt; and &lt;a href=&#34;https://sa.muel.be/2015/hardening-your-wordpress-security/&#34;&gt;secure&lt;/a&gt; it.&lt;/p&gt;
+&lt;p&gt;The website is built with &lt;a href=&#34;http://wordpress.org&#34;&gt;WordPress&lt;/a&gt; and stored on a shared hosting account. I customized the theme and setup &lt;a href=&#34;https://www.cloudflare.com/&#34;&gt;CloudFlare&lt;/a&gt;. As the website was hacked in the months before I became the administrator, I had to &lt;a href=&#34;https://chipsncookies.com/2015/recovering-a-hacked-wordpress/&#34;&gt;restore&lt;/a&gt; and &lt;a href=&#34;https://chipsncookies.com/2015/hardening-your-wordpress-security/&#34;&gt;secure&lt;/a&gt; it.&lt;/p&gt;
 
 &lt;p&gt;I managed this website from June 2015 until July 2016.&lt;/p&gt;
 </description>
@@ -155,11 +155,11 @@
     
     <item>
       <title>Material Design Lite theme for Hugo</title>
-      <link>https://sa.muel.be/portfolio/material-design-theme-for-hugo/</link>
+      <link>https://chipsncookies.com/portfolio/material-design-theme-for-hugo/</link>
       <pubDate>Tue, 21 Jul 2015 13:43:35 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/material-design-theme-for-hugo/</guid>
-      <description>&lt;p&gt;As I wanted to learn more about &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; while developing &lt;a href=&#34;https://sa.muel.be/portfolio/this-blog/&#34;&gt;this blog&lt;/a&gt;, I &lt;a href=&#34;https://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;created&lt;/a&gt; a new theme for Hugo. It is mostly plain HTML, CSS and JavaScript, but it also contains some &lt;a href=&#34;http://golang.org/pkg/html/template/&#34;&gt;Go Templating&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://chipsncookies.com/portfolio/material-design-theme-for-hugo/</guid>
+      <description>&lt;p&gt;As I wanted to learn more about &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; while developing &lt;a href=&#34;https://chipsncookies.com/portfolio/this-blog/&#34;&gt;this blog&lt;/a&gt;, I &lt;a href=&#34;https://chipsncookies.com/2015/material-lite-theme-for-hugo/&#34;&gt;created&lt;/a&gt; a new theme for Hugo. It is mostly plain HTML, CSS and JavaScript, but it also contains some &lt;a href=&#34;http://golang.org/pkg/html/template/&#34;&gt;Go Templating&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The theme is based on the &lt;a href=&#34;http://www.getmdl.io/templates/index.html&#34;&gt;blog template&lt;/a&gt; from Google&amp;rsquo;s &lt;a href=&#34;http://www.getmdl.io/&#34;&gt;Material Design Lite&lt;/a&gt;.&lt;/p&gt;
 
@@ -169,10 +169,10 @@
     
     <item>
       <title>SamShack</title>
-      <link>https://sa.muel.be/portfolio/samshack/</link>
+      <link>https://chipsncookies.com/portfolio/samshack/</link>
       <pubDate>Tue, 21 Jul 2015 13:26:51 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/samshack/</guid>
+      <guid>https://chipsncookies.com/portfolio/samshack/</guid>
       <description>
 
 &lt;p&gt;In January 2014 I had to develop a webshop in PHP for a school project. At the time we just learnt about MVC and the best framework for the job seemed &lt;a href=&#34;http://www.cakephp.org&#34;&gt;CakePHP&lt;/a&gt;. My webshop had responsive design and was very fast (high scores on PageSpeed and Yahoo YSlow).&lt;/p&gt;
@@ -208,11 +208,11 @@
     
     <item>
       <title>B&amp;B Go Eun API</title>
-      <link>https://sa.muel.be/portfolio/bb-go-eun-api/</link>
+      <link>https://chipsncookies.com/portfolio/bb-go-eun-api/</link>
       <pubDate>Mon, 20 Jul 2015 13:45:55 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/bb-go-eun-api/</guid>
-      <description>&lt;p&gt;This API was made for the &lt;a href=&#34;https://sa.muel.be/portfolio/bb-go-eun/&#34;&gt;Android app B&amp;amp;B Go Eun&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://chipsncookies.com/portfolio/bb-go-eun-api/</guid>
+      <description>&lt;p&gt;This API was made for the &lt;a href=&#34;https://chipsncookies.com/portfolio/bb-go-eun/&#34;&gt;Android app B&amp;amp;B Go Eun&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;It is written in PHP and built on top of &lt;a href=&#34;http://cakephp.org/&#34;&gt;CakePHP&lt;/a&gt;. The API returns all results in JSON and is follows most the RESTful API design principles. It relies on a MySQL database for all of its data.&lt;/p&gt;
 
@@ -222,11 +222,11 @@
     
     <item>
       <title>this blog</title>
-      <link>https://sa.muel.be/portfolio/this-blog/</link>
+      <link>https://chipsncookies.com/portfolio/this-blog/</link>
       <pubDate>Mon, 20 Jul 2015 12:03:38 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/this-blog/</guid>
-      <description>&lt;p&gt;This blog is made with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. I wrote a &lt;a href=&#34;https://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;blog post&lt;/a&gt; about it when I switched from &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://chipsncookies.com/portfolio/this-blog/</guid>
+      <description>&lt;p&gt;This blog is made with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;. I wrote a &lt;a href=&#34;https://chipsncookies.com/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;blog post&lt;/a&gt; about it when I switched from &lt;a href=&#34;http://jekyllrb.com/&#34;&gt;Jekyll&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;The source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 </description>
@@ -234,10 +234,10 @@
     
     <item>
       <title>B&amp;B Go Eun app</title>
-      <link>https://sa.muel.be/portfolio/bb-go-eun/</link>
+      <link>https://chipsncookies.com/portfolio/bb-go-eun/</link>
       <pubDate>Mon, 20 Jul 2015 12:03:24 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/bb-go-eun/</guid>
+      <guid>https://chipsncookies.com/portfolio/bb-go-eun/</guid>
       <description>
 
 &lt;p&gt;This Android app was a school project I made with &lt;a href=&#34;https://github.com/talipovdaniyar&#34;&gt;another student&lt;/a&gt;. We established several goals:&lt;/p&gt;
@@ -246,7 +246,7 @@
 
 &lt;ul&gt;
 &lt;li&gt;We had to learn a lot about PHP and Android development.&lt;/li&gt;
-&lt;li&gt;The app had to connect with &lt;a href=&#34;https://sa.muel.be/portfolio/bb-go-eun-api/&#34;&gt;a (RESTful) API&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;The app had to connect with &lt;a href=&#34;https://chipsncookies.com/portfolio/bb-go-eun-api/&#34;&gt;a (RESTful) API&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;The API had to connect with a database.&lt;/li&gt;
 &lt;li&gt;The app had to be very simple so we could demonstrate the main goals (connection with API).&lt;/li&gt;
 &lt;li&gt;We had to made sure that everything worked fine and all known bugs were fixed.&lt;/li&gt;
@@ -271,10 +271,10 @@
     
     <item>
       <title>Go for Change</title>
-      <link>https://sa.muel.be/portfolio/go-for-change/</link>
+      <link>https://chipsncookies.com/portfolio/go-for-change/</link>
       <pubDate>Mon, 20 Jul 2015 12:03:00 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/go-for-change/</guid>
+      <guid>https://chipsncookies.com/portfolio/go-for-change/</guid>
       <description>&lt;p&gt;Go For Change is an Android app I wrote for a school project. It was actually part of another student&amp;rsquo;s internship, but since that student quit his internship, the client asked my lecturers if they knew another student who could finish the job. All I had was 2 weeks so I didn&amp;rsquo;t write any documentation and the code is quite messy.&lt;/p&gt;
 
 &lt;p&gt;The application contains a questionnaire targeted to small business owners. The difficult part was the order of the questions. Some questions only had to be answered depending on the answers of previous questions and the client had to be able to change the questions, the possible answers and the order of the questions. I created a small SQLite database and a method to export the answered questions to a CSV file.&lt;/p&gt;
@@ -287,10 +287,10 @@
     
     <item>
       <title>Rood Fluweel Bali</title>
-      <link>https://sa.muel.be/portfolio/rood-fluweel/</link>
+      <link>https://chipsncookies.com/portfolio/rood-fluweel/</link>
       <pubDate>Sat, 18 Jul 2015 16:06:12 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/portfolio/rood-fluweel/</guid>
+      <guid>https://chipsncookies.com/portfolio/rood-fluweel/</guid>
       <description>&lt;p&gt;Rood Fluweel Bali is a Windows Store app, designed for Windows 8.1 desktops and tablets. I made this app for &lt;a href=&#34;http://www.comm-it.be&#34;&gt;Comm-IT&lt;/a&gt; as part of a summer job.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://www.roodfluweel.be&#34;&gt;Rood Fluweel&lt;/a&gt; is a SaaS made on top of ASP.NET. It can manage ticketing, reservations, payments etc.&lt;/p&gt;

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Ethics on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/ethics/</link>
+    <link>https://chipsncookies.com/tags/ethics/</link>
     <description>Recent content in Ethics on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Tue, 16 Feb 2016 23:09:37 +0100</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/ethics/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/ethics/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Ethics of mobile banking (security)</title>
-      <link>https://sa.muel.be/2016/ethics-of-mobile-banking-security/</link>
+      <link>https://chipsncookies.com/2016/ethics-of-mobile-banking-security/</link>
       <pubDate>Tue, 16 Feb 2016 23:09:37 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2016/ethics-of-mobile-banking-security/</guid>
+      <guid>https://chipsncookies.com/2016/ethics-of-mobile-banking-security/</guid>
       <description>&lt;p&gt;What comes to mind when you start brainstorming about security on a mobile device? Encryption? SSL? Access tokens? Multi-factor authentication? Those are all technical terms and they sure are important. But often, another important aspect of security is ignored: ethics.&lt;/p&gt;
 
 &lt;p&gt;It’s all about responsibilities. Say you work at one of the biggest banks in your country and you’re the team lead of a mobile app development team. What do you do when you notice that one of your latest mobile app users is an 80-year-old man who decides to pay with it? Do you smile because you’re happy that you’ve reached a wide audience? Or are you alarmed because you didn’t expect that kind of stereotype to use your app?&lt;/p&gt;

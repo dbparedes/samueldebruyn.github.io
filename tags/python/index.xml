@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Python on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/python/</link>
+    <link>https://chipsncookies.com/tags/python/</link>
     <description>Recent content in Python on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Sun, 22 Dec 2013 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/python/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Wake up your computer(s) with a simple email using a Raspberry Pi</title>
-      <link>https://sa.muel.be/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</link>
+      <link>https://chipsncookies.com/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</link>
       <pubDate>Sun, 22 Dec 2013 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</guid>
+      <guid>https://chipsncookies.com/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</guid>
       <description>
 
 &lt;h2 id=&#34;introduction:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Introduction&lt;/h2&gt;

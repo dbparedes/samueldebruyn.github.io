@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Autofac on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/autofac/</link>
+    <link>https://chipsncookies.com/tags/autofac/</link>
     <description>Recent content in Autofac on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Mon, 22 Feb 2016 18:59:37 +0100</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/autofac/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/autofac/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Dependency injection with Autofac and MVVM Light in Xamarin</title>
-      <link>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
+      <link>https://chipsncookies.com/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</link>
       <pubDate>Mon, 22 Feb 2016 18:59:37 +0100</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
+      <guid>https://chipsncookies.com/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
       <description>
 
 &lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
@@ -195,7 +195,7 @@ var vm = factory(myVar);
 
 &lt;h2 id=&#34;questions:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Questions?&lt;/h2&gt;
 
-&lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;http://sa.muel.be/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;https://chipsncookies.com/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
 </description>
     </item>
     

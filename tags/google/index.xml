@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Google on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/google/</link>
+    <link>https://chipsncookies.com/tags/google/</link>
     <description>Recent content in Google on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Mon, 13 Jul 2015 08:00:00 +0200</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/google/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Material-lite theme for Hugo</title>
-      <link>https://sa.muel.be/2015/material-lite-theme-for-hugo/</link>
+      <link>https://chipsncookies.com/2015/material-lite-theme-for-hugo/</link>
       <pubDate>Mon, 13 Jul 2015 08:00:00 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/material-lite-theme-for-hugo/</guid>
-      <description>&lt;p&gt;Last week, &lt;a href=&#34;https://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;I wrote a post&lt;/a&gt; about how awesome &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is and why I switched from Jekyll to Hugo.&lt;/p&gt;
+      <guid>https://chipsncookies.com/2015/material-lite-theme-for-hugo/</guid>
+      <description>&lt;p&gt;Last week, &lt;a href=&#34;https://chipsncookies.com/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;I wrote a post&lt;/a&gt; about how awesome &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is and why I switched from Jekyll to Hugo.&lt;/p&gt;
 
 &lt;p&gt;Then, a few days later, Google released an awesome template called &lt;a href=&#34;http://getmdl.io&#34;&gt;Material Design Lite&lt;/a&gt;. It&amp;rsquo;s basically Google&amp;rsquo;s famous &lt;a href=&#34;https://www.google.com/design/spec/material-design/introduction.html&#34;&gt;Material Design&lt;/a&gt; in HTML, CSS and JavaScript instead of in &lt;a href=&#34;https://www.polymer-project.org&#34;&gt;Polymer&lt;/a&gt;.&lt;/p&gt;
 
@@ -29,10 +29,10 @@
     
     <item>
       <title>How Google cripples outdated Android devices</title>
-      <link>https://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</link>
+      <link>https://chipsncookies.com/2015/how-google-cripples-outdated-android-devices/</link>
       <pubDate>Mon, 23 Mar 2015 00:00:00 +0000</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/how-google-cripples-outdated-android-devices/</guid>
+      <guid>https://chipsncookies.com/2015/how-google-cripples-outdated-android-devices/</guid>
       <description>
 
 &lt;h2 id=&#34;why-i-downgraded-my-nexus-5:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Why I downgraded my Nexus 5&lt;/h2&gt;

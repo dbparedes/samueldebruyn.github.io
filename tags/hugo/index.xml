@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Samuel Debruyn</title>
-    <link>https://sa.muel.be/tags/hugo/</link>
+    <link>https://chipsncookies.com/tags/hugo/</link>
     <description>Recent content in Hugo on Samuel Debruyn</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
     <lastBuildDate>Mon, 31 Aug 2015 18:56:39 +0200</lastBuildDate>
-    <atom:link href="https://sa.muel.be/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://chipsncookies.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Docker image for Hugo builds (with Wercker)</title>
-      <link>https://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</link>
+      <link>https://chipsncookies.com/2015/docker-image-for-hugo-builds-with-wercker/</link>
       <pubDate>Mon, 31 Aug 2015 18:56:39 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/docker-image-for-hugo-builds-with-wercker/</guid>
+      <guid>https://chipsncookies.com/2015/docker-image-for-hugo-builds-with-wercker/</guid>
       <description>
 
 &lt;p&gt;This blog is built with &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, which allows me to use some great CI tools like &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The first part of writing a &lt;em&gt;wercker.yml&lt;/em&gt; is picking a build container.&lt;/p&gt;
@@ -49,13 +49,13 @@
     
     <item>
       <title>Wercker step to validate Hugo themes</title>
-      <link>https://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</link>
+      <link>https://chipsncookies.com/2015/wercker-step-to-validate-hugo-themes/</link>
       <pubDate>Wed, 15 Jul 2015 13:21:45 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/wercker-step-to-validate-hugo-themes/</guid>
-      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;https://sa.muel.be/2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;https://sa.muel.be/tags/hugo/&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
+      <guid>https://chipsncookies.com/2015/wercker-step-to-validate-hugo-themes/</guid>
+      <description>&lt;p&gt;So last week, I created &lt;a href=&#34;https://chipsncookies.com/2015/material-lite-theme-for-hugo/&#34;&gt;a material design theme&lt;/a&gt; for &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt;, a static site generator which I&amp;rsquo;m &lt;a href=&#34;https://chipsncookies.com/tags/hugo/&#34;&gt;quite fond of&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;As I &lt;a href=&#34;https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
+&lt;p&gt;As I &lt;a href=&#34;https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/&#34;&gt;discovered Wercker&lt;/a&gt;, an awesome CI tool, I went looking for a way to automatically validate themes.&lt;/p&gt;
 
 &lt;p&gt;There wasn&amp;rsquo;t any, so I simply wrote a build step for &lt;a href=&#34;http://wercker.com&#34;&gt;Wercker&lt;/a&gt;. The build step validates a Hugo theme using &lt;a href=&#34;https://github.com/spf13/HugoBasicExample&#34;&gt;an example site&lt;/a&gt;. It also checks if you included some files required for a future Hugo themes site.&lt;/p&gt;
 
@@ -73,10 +73,10 @@ build:
     
     <item>
       <title>Continuous integration with Hugo and Wercker</title>
-      <link>https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</link>
+      <link>https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/</link>
       <pubDate>Tue, 14 Jul 2015 12:45:28 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/continuous-integration-with-hugo-and-wercker/</guid>
+      <guid>https://chipsncookies.com/2015/continuous-integration-with-hugo-and-wercker/</guid>
       <description>
 
 &lt;h2 id=&#34;why:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;Why?&lt;/h2&gt;
@@ -135,7 +135,7 @@ deploy:
         clean_removed_files: true
         branch: master
         repo: SamuelDebruyn/samueldebruyn.github.io
-        gh_pages_domain: sa.muel.be
+        gh_pages_domain: chipsncookies.com
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Obviously, you have to change the following variables:&lt;/p&gt;
@@ -163,11 +163,11 @@ deploy:
     
     <item>
       <title>Material-lite theme for Hugo</title>
-      <link>https://sa.muel.be/2015/material-lite-theme-for-hugo/</link>
+      <link>https://chipsncookies.com/2015/material-lite-theme-for-hugo/</link>
       <pubDate>Mon, 13 Jul 2015 08:00:00 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/material-lite-theme-for-hugo/</guid>
-      <description>&lt;p&gt;Last week, &lt;a href=&#34;https://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;I wrote a post&lt;/a&gt; about how awesome &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is and why I switched from Jekyll to Hugo.&lt;/p&gt;
+      <guid>https://chipsncookies.com/2015/material-lite-theme-for-hugo/</guid>
+      <description>&lt;p&gt;Last week, &lt;a href=&#34;https://chipsncookies.com/2015/an-introduction-to-hugo-a-static-site-generator/&#34;&gt;I wrote a post&lt;/a&gt; about how awesome &lt;a href=&#34;http://gohugo.io&#34;&gt;Hugo&lt;/a&gt; is and why I switched from Jekyll to Hugo.&lt;/p&gt;
 
 &lt;p&gt;Then, a few days later, Google released an awesome template called &lt;a href=&#34;http://getmdl.io&#34;&gt;Material Design Lite&lt;/a&gt;. It&amp;rsquo;s basically Google&amp;rsquo;s famous &lt;a href=&#34;https://www.google.com/design/spec/material-design/introduction.html&#34;&gt;Material Design&lt;/a&gt; in HTML, CSS and JavaScript instead of in &lt;a href=&#34;https://www.polymer-project.org&#34;&gt;Polymer&lt;/a&gt;.&lt;/p&gt;
 
@@ -179,10 +179,10 @@ deploy:
     
     <item>
       <title>An introduction to Hugo, a static site generator</title>
-      <link>https://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/</link>
+      <link>https://chipsncookies.com/2015/an-introduction-to-hugo-a-static-site-generator/</link>
       <pubDate>Wed, 08 Jul 2015 14:50:29 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
-      <guid>https://sa.muel.be/2015/an-introduction-to-hugo-a-static-site-generator/</guid>
+      <guid>https://chipsncookies.com/2015/an-introduction-to-hugo-a-static-site-generator/</guid>
       <description>
 
 &lt;h2 id=&#34;a-good-blogging-platform:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;A good blogging platform&lt;/h2&gt;
