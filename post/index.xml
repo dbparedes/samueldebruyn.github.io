@@ -673,7 +673,7 @@ docker-machine kill boot2docker
 
 &lt;h3 id=&#34;example-wercker-yml-using-these-images:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Example &lt;em&gt;wercker.yml&lt;/em&gt; using these images&lt;/h3&gt;
 
-&lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
+&lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/chipsncookies-site&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
 </description>
     </item>
     

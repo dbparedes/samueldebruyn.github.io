@@ -43,7 +43,7 @@
 
 &lt;h3 id=&#34;example-wercker-yml-using-these-images:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Example &lt;em&gt;wercker.yml&lt;/em&gt; using these images&lt;/h3&gt;
 
-&lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
+&lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/chipsncookies-site&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
 </description>
     </item>
     
@@ -154,7 +154,7 @@ deploy:
 &lt;h3 id=&#34;a-few-examples:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;A few examples&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;the Hugo source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;https://github.com/SamuelDebruyn/sa.muel.be-hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;the Hugo source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/chipsncookies-site&#34;&gt;https://github.com/SamuelDebruyn/chipsncookies-site&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;the wercker app for this blog: &lt;a href=&#34;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&#34;&gt;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;the generated source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io&#34;&gt;https://github.com/SamuelDebruyn/samueldebruyn.github.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
@@ -216,7 +216,7 @@ deploy:
 
 &lt;p&gt;The process of creating a new website is very similar to Jekyll. The &lt;code&gt;hugo&lt;/code&gt; command literally explains itself (&lt;code&gt;hugo help&lt;/code&gt;) and the &lt;a href=&#34;http://gohugo.io/overview/introduction/&#34;&gt;documentation&lt;/a&gt; on its website should suffice for most users.&lt;/p&gt;
 
-&lt;p&gt;I&amp;rsquo;ve successfully migrated my &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io/tree/5f5719a9d4519f8fbd4cdfffa2a10b3f066401ef&#34;&gt;Jekyll blog&lt;/a&gt; to &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;Hugo&lt;/a&gt; and haven&amp;rsquo;t regretted it ever since.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;ve successfully migrated my &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io/tree/5f5719a9d4519f8fbd4cdfffa2a10b3f066401ef&#34;&gt;Jekyll blog&lt;/a&gt; to &lt;a href=&#34;https://github.com/SamuelDebruyn/chipsncookies-site&#34;&gt;Hugo&lt;/a&gt; and haven&amp;rsquo;t regretted it ever since.&lt;/p&gt;
 
 &lt;h2 id=&#34;disadvantages:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Disadvantages&lt;/h2&gt;
 

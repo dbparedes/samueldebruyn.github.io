@@ -43,7 +43,7 @@
 
 &lt;h3 id=&#34;example-wercker-yml-using-these-images:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Example &lt;em&gt;wercker.yml&lt;/em&gt; using these images&lt;/h3&gt;
 
-&lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
+&lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/chipsncookies-site&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
 </description>
     </item>
     
@@ -168,7 +168,7 @@ deploy:
 &lt;h3 id=&#34;a-few-examples:bd381cc8b449e1516244ba8b37d0246b&#34;&gt;A few examples&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;the Hugo source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/sa.muel.be-hugo&#34;&gt;https://github.com/SamuelDebruyn/sa.muel.be-hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;the Hugo source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/chipsncookies-site&#34;&gt;https://github.com/SamuelDebruyn/chipsncookies-site&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;the wercker app for this blog: &lt;a href=&#34;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&#34;&gt;https://app.wercker.com/#applications/5586dcbdaf7de9c51b02b0d5&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;the generated source code for this blog: &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io&#34;&gt;https://github.com/SamuelDebruyn/samueldebruyn.github.io&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
