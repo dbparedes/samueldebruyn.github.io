@@ -8,8 +8,18 @@
     <language>en-us</language>
     <managingEditor>s@muel.be (Samuel Debruyn)</managingEditor>
     <webMaster>s@muel.be (Samuel Debruyn)</webMaster>
-    <lastBuildDate>Thu, 04 Feb 2016 19:41:02 +0100</lastBuildDate>
+    <lastBuildDate>Tue, 26 Apr 2016 20:56:28 +0200</lastBuildDate>
     <atom:link href="https://chipsncookies.com/portfolio/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>RealDolmen Education app</title>
+      <link>https://chipsncookies.com/portfolio/realdolmen-education/</link>
+      <pubDate>Tue, 26 Apr 2016 20:56:28 +0200</pubDate>
+      <author>s@muel.be (Samuel Debruyn)</author>
+      <guid>https://chipsncookies.com/portfolio/realdolmen-education/</guid>
+      <description>&lt;p&gt;This is the project I implemented during my internship in my graduation year. As I am currently working on documentation for this project, I&amp;rsquo;ll soon update this page with more details.&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Thesis: Cross-Platform mobile apps with Xamarin</title>
@@ -22,6 +32,8 @@
 &lt;p&gt;The project was about cross-platform development with &lt;a href=&#34;https://xamarin.com&#34;&gt;Xamarin&lt;/a&gt;. The customer, &lt;a href=&#34;https://education.realdolmen.com/en&#34;&gt;RealDolmen Education&lt;/a&gt;, asked for an app for Android, iOS and Windows PHone where users can browse through the offer of RealDolmen Education.&lt;/p&gt;
 
 &lt;p&gt;The thesis is in Dutch and consists of several analyses and project documentation like a PID. You can download it using the link above.&lt;/p&gt;
+
+&lt;p&gt;The project itself is &lt;a href=&#34;{{ relref &amp;quot;portfolio/realdolmen-education.md&amp;quot; }}&#34;&gt;also available&lt;/a&gt; on GitHub.&lt;/p&gt;
 </description>
     </item>
     
