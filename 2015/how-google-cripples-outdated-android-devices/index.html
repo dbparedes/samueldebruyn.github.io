@@ -107,7 +107,7 @@
         <meta name="msapplication-TileImage" content="https://chipsncookies.com/icons/mstile-144x144.png">
         <meta name="msapplication-config" content="https://chipsncookies.com/icons/browserconfig.xml">
         <meta name="theme-color" content="#2c3e50">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
 
         <link href="https://chipsncookies.com/post/index.xml" rel="alternate" type="application/rss+xml" title="RSS &middot; Samuel Debruyn" />
     
@@ -760,23 +760,23 @@ footer a:hover
             <h6 class="sitetaglisttitle">Tags</h6>
 <ul class="sitetaglist">
   
-    <li><a href="/tags/hugo">hugo (5)</a></li>
-  
     <li><a href="/tags/android">android (5)</a></li>
   
-    <li><a href="/tags/windows">windows (5)</a></li>
+    <li><a href="/tags/hugo">hugo (5)</a></li>
   
     <li><a href="/tags/security">security (5)</a></li>
   
-    <li><a href="/tags/wercker">wercker (4)</a></li>
+    <li><a href="/tags/windows">windows (5)</a></li>
   
     <li><a href="/tags/ci">ci (4)</a></li>
   
-    <li><a href="/tags/windows-10">windows-10 (3)</a></li>
+    <li><a href="/tags/wercker">wercker (4)</a></li>
+  
+    <li><a href="/tags/csharp">csharp (3)</a></li>
+  
+    <li><a href="/tags/docker">docker (3)</a></li>
   
     <li><a href="/tags/linux">linux (3)</a></li>
-  
-    <li><a href="/tags/wordpress">wordpress (3)</a></li>
   
 </ul>
             			<form class="uk-search" action="https://chipsncookies.com/search/">
@@ -805,7 +805,7 @@ footer a:hover
     <h1 class="post-title">How Google cripples outdated Android devices</h1>
     
 
-<h2 id="why-i-downgraded-my-nexus-5:c209b0e2d2354aad9e56c75e001a618a">Why I downgraded my Nexus 5</h2>
+<h2 id="why-i-downgraded-my-nexus-5">Why I downgraded my Nexus 5</h2>
 
 <p>About a year ago Google released <a href="http://developer.android.com/preview/index.html">Android L Developer Preview</a>. This preview of the upcoming Android Lollipop (5.0) release contained a lot of bugs and was definitely not <em>daily driver</em> material.</p>
 
@@ -825,11 +825,11 @@ footer a:hover
 
 <p>I considered downgrading while I was on Android 5.0.1, but I quickly delayed this decision when I heard about the upcoming 5.1 update that would fix this memory leak. However, when I started noticing the second memory leak, I had it. Time to go back to the latest stable version: Android 4.4.4 KitKat.</p>
 
-<h2 id="how-i-downgraded:c209b0e2d2354aad9e56c75e001a618a">How I downgraded</h2>
+<h2 id="how-i-downgraded">How I downgraded</h2>
 
 <p>The downgrade was quite simple: I unlocked my phone and flashed the 4.4.4 <a href="https://developers.google.com/android/nexus/images">factory image</a>. The next thing I did was rooting my phone, which later turned out to be necessary.</p>
 
-<h2 id="and-then-it-all-started:c209b0e2d2354aad9e56c75e001a618a">And then it all started</h2>
+<h2 id="and-then-it-all-started">And then it all started</h2>
 
 <p>One of the reasons why I downgraded, was that Android 4.4.4 has remarkably better battery life than Android Lollipop. So when my battery started draining at more than 20% an hour, I knew that something was wrong. Also, the notification about the system update was impossible to remove.</p>
 
@@ -837,7 +837,7 @@ footer a:hover
 <p>Yes, Google, I know. Now let me go on with my life, I don’t want your update.</p>
 </blockquote>
 
-<h2 id="digging-a-little-deeper:c209b0e2d2354aad9e56c75e001a618a">Digging a little deeper</h2>
+<h2 id="digging-a-little-deeper">Digging a little deeper</h2>
 
 <p>Android used to have a service called SystemUpdateService in the Google Services Framework (preinstalled system app) that would handle OS updates. It seems like this was replaced by Google Play Services. The <a href="https://developer.android.com/google/play-services/index.html">Google Play Services</a> app is updated automatically via the Google <a href="https://play.google.com/store/apps/details?id=com.google.android.gms">Play Store</a>. This app contains another SystemUpdateService and disables the SystemUpdateService in the Google Services Framework mentioned earlier.</p>
 
@@ -865,13 +865,13 @@ adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Re
 adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
 </code></pre>
 
-<h2 id="wow-that-was-complicated:c209b0e2d2354aad9e56c75e001a618a">Wow, that was complicated</h2>
+<h2 id="wow-that-was-complicated">Wow, that was complicated</h2>
 
 <p>For power users this probably wasn’t a lot of work, but this is a real annoyance for regular users. But regular users don’t buy Nexus devices, don’t they?</p>
 
 <p>For years, we all <a href="http://www.google.com/trends/explore#q=android%20fragmentation&amp;cmpt=q">complained about fragmentation</a> and a lack of OS updates. Today it has become impossible to ignore an OS update due to the immense battery drain and the frustrating persistent notification.</p>
 
-<h2 id="this-post-is-all-about-nexus-devices-what-about-my-device:c209b0e2d2354aad9e56c75e001a618a">This post is all about Nexus devices, what about my device?</h2>
+<h2 id="this-post-is-all-about-nexus-devices-what-about-my-device">This post is all about Nexus devices, what about my device?</h2>
 
 <p>Most Android devices come with Google services like the Google Play Store. This means they also come with Google Play Services or the Google Services Framework or both. So, if you ever want to downgrade your Android device to a stock image, be sure to disable those pesky receivers…</p>
 

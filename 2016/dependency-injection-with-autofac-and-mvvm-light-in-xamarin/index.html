@@ -107,7 +107,7 @@
         <meta name="msapplication-TileImage" content="https://chipsncookies.com/icons/mstile-144x144.png">
         <meta name="msapplication-config" content="https://chipsncookies.com/icons/browserconfig.xml">
         <meta name="theme-color" content="#2c3e50">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
 
         <link href="https://chipsncookies.com/post/index.xml" rel="alternate" type="application/rss+xml" title="RSS &middot; Samuel Debruyn" />
     
@@ -760,21 +760,21 @@ footer a:hover
             <h6 class="sitetaglisttitle">Tags</h6>
 <ul class="sitetaglist">
   
-    <li><a href="/tags/security">security (5)</a></li>
+    <li><a href="/tags/android">android (5)</a></li>
   
     <li><a href="/tags/hugo">hugo (5)</a></li>
   
-    <li><a href="/tags/android">android (5)</a></li>
+    <li><a href="/tags/security">security (5)</a></li>
   
     <li><a href="/tags/windows">windows (5)</a></li>
   
-    <li><a href="/tags/wercker">wercker (4)</a></li>
-  
     <li><a href="/tags/ci">ci (4)</a></li>
   
-    <li><a href="/tags/windows-10">windows-10 (3)</a></li>
+    <li><a href="/tags/wercker">wercker (4)</a></li>
   
-    <li><a href="/tags/wordpress">wordpress (3)</a></li>
+    <li><a href="/tags/csharp">csharp (3)</a></li>
+  
+    <li><a href="/tags/docker">docker (3)</a></li>
   
     <li><a href="/tags/linux">linux (3)</a></li>
   
@@ -819,7 +819,7 @@ footer a:hover
     <h1 class="post-title">Dependency injection with Autofac and MVVM Light in Xamarin</h1>
     
 
-<h2 id="you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716">You gotta have MVVM</h2>
+<h2 id="you-gotta-have-mvvm">You gotta have MVVM</h2>
 
 <p>A developer and his tools are inseparable. We all like <a href="https://sites.google.com/site/unclebobconsultingllc/getting-a-solid-start">SOLID</a> and every (.NET) developer has his or her favourite dependency injection tool. There is <a href="http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx">a lot</a> to choose from. I like Autofac because of the way it handles modules, the lifetime of a type and how it registers types.</p>
 
@@ -827,7 +827,7 @@ footer a:hover
 
 <p>MVVM Light comes with an IoC container called SimpleIoC. And that’s what it is: a dead-simple IoC container. As I said: you don’t have to use the parts you don’t like. So let me replace SimpleIoC with my dependency injector of choice: Autofac.</p>
 
-<h2 id="architecture:f1db64e8f93e80bfb3bc20ca2a851716">Architecture</h2>
+<h2 id="architecture">Architecture</h2>
 
 <p>This is an overview of how I usually structure my solution:</p>
 
@@ -877,7 +877,7 @@ footer a:hover
     + ...
 </code></pre>
 
-<h3 id="where-to-put-what:f1db64e8f93e80bfb3bc20ca2a851716">Where to put what?</h3>
+<h3 id="where-to-put-what">Where to put what?</h3>
 
 <ul>
 <li>Registrations of viewmodels and cross-platform service implementations: MyApp.Utilities.CrossPlatformModule</li>
@@ -887,13 +887,13 @@ footer a:hover
 <li>ViewModelLocator initialization: App/Main</li>
 </ul>
 
-<h2 id="how-it-all-ties-together:f1db64e8f93e80bfb3bc20ca2a851716">How it all ties together</h2>
+<h2 id="how-it-all-ties-together">How it all ties together</h2>
 
 <p>First off, you start by creating interfaces for all the services you need. Next up, you can start defining implementations for the services and put them in the correct namespaces.</p>
 
 <p>When that&rsquo;s done, it&rsquo;s time to create our modules. Now, assembly scanning sometimes causes exceptions on certain platforms. Also, PCL&rsquo;s don&rsquo;t have the methods you&rsquo;re used to from ASP.NET or other types of projects for assembly scanning. I know it makes things incredibly easy, but I&rsquo;d advise against it for Xamarin projects. You&rsquo;ll have to register type by type in the modules. Usually I create an array of types and throw them in <code>builder.RegisterTypes(types)</code>. The platform-specific modules should contain registrations for the platform-specific services. Don&rsquo;t forget the ones that come with Autofac by default.</p>
 
-<h3 id="example-of-a-platform-specific-service:f1db64e8f93e80bfb3bc20ca2a851716">Example of a platform-specific service</h3>
+<h3 id="example-of-a-platform-specific-service">Example of a platform-specific service</h3>
 
 <pre><code class="language-CSharp">using System;
 using Autofac;
@@ -977,7 +977,7 @@ namespace MyApp.Android.Utilities
 
 <p>That method is then called at the moment I initialize the <code>ViewModelLocator</code>. Laurent&rsquo;s talk goes in depth on how to do that so I won&rsquo;t cover that part.</p>
 
-<h2 id="servicelocator:f1db64e8f93e80bfb3bc20ca2a851716">ServiceLocator</h2>
+<h2 id="servicelocator">ServiceLocator</h2>
 
 <p>Whenever you need an instance of a registered type, you can use the <code>ServiceLocator</code> like so:</p>
 
@@ -993,7 +993,7 @@ var factory = ServiceLocator.Current.GetInstance&lt;MyViewModelRequiringAParamet
 var vm = factory(myVar);
 </code></pre>
 
-<h2 id="questions:f1db64e8f93e80bfb3bc20ca2a851716">Questions?</h2>
+<h2 id="questions">Questions?</h2>
 
 <p>Questions? Tips/suggestions? <a href="/about/">Let me know!</a></p>
 

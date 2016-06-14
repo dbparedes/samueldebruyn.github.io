@@ -17,7 +17,13 @@
       <pubDate>Tue, 26 Apr 2016 20:56:28 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>https://chipsncookies.com/portfolio/realdolmen-education/</guid>
-      <description>&lt;p&gt;This is the project I implemented during my internship in my graduation year. As I am currently working on documentation for this project, I&amp;rsquo;ll soon update this page with more details.&lt;/p&gt;
+      <description>&lt;p&gt;This is the project I implemented during my internship in my graduation year. RealDolmen Education is the training department of RealDolmen, a Belgian IT consultancy firm. During my internship I made an app using Xamarin (native) for Android, iOS and Windows Phone for RealDolmen Education.&lt;/p&gt;
+
+&lt;p&gt;The app shows you the courses they offer by the (sub)category they belong to and allows you to search for a course. You can view the details of the course, subscribe to it, give feedback on a session you attended and submit questions to the instructor.&lt;/p&gt;
+
+&lt;p&gt;This project was implemented in the second semester of my final year. In the first semester I &lt;a href=&#34;{{ relref &amp;quot;portfolio/thesis.md&amp;quot; }}&#34;&gt;prepared the implementation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can browse through the code using the link above or &lt;a href=&#34;https://chipsncookies.com/attachments/internship.pdf&#34;&gt;read the documentation&lt;/a&gt; (in Dutch).&lt;/p&gt;
 </description>
     </item>
     
@@ -49,7 +55,7 @@
 
 &lt;p&gt;I then developed this simple project which demonstrates the basic concepts of &lt;a href=&#34;http://dddcommunity.org/learning-ddd/what_is_ddd/&#34;&gt;domain driven design&lt;/a&gt;, CQRS and event sourcing using Cirqus.&lt;/p&gt;
 
-&lt;h2 id=&#34;domain:ed6c2b7a433a54340e9aa358e2099648&#34;&gt;Domain&lt;/h2&gt;
+&lt;h2 id=&#34;domain&#34;&gt;Domain&lt;/h2&gt;
 
 &lt;p&gt;The project is about a hotel called &lt;em&gt;Oditel&lt;/em&gt; (our school was called &lt;em&gt;Odisee&lt;/em&gt;&amp;hellip;). There are 3 contexts with their aggregate roots:&lt;/p&gt;
 
@@ -78,7 +84,7 @@
 &lt;li&gt;Remove the booking&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;extra-features:ed6c2b7a433a54340e9aa358e2099648&#34;&gt;Extra features&lt;/h2&gt;
+&lt;h2 id=&#34;extra-features&#34;&gt;Extra features&lt;/h2&gt;
 
 &lt;p&gt;The events and most important &lt;em&gt;views&lt;/em&gt; are stored in SQL Server (Local DB).&lt;/p&gt;
 
@@ -88,7 +94,7 @@
 
 &lt;p&gt;I created 4 branches with the 4 steps you have to take when developing a domain driven designed project.&lt;/p&gt;
 
-&lt;h2 id=&#34;slides:ed6c2b7a433a54340e9aa358e2099648&#34;&gt;Slides&lt;/h2&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
 
 &lt;p&gt;With that demo also goes a presentation (in Dutch) which you can download &lt;a href=&#34;https://onedrive.live.com/redir?resid=B5240A36EC9AE039!485572&amp;amp;authkey=!AFa6VJYzeHPv4hI&amp;amp;ithint=file%2cpptx&#34;&gt;right here&lt;/a&gt;. Let me know if the link is broken (I tend to move my files in my OneDrive around quite a lot).&lt;/p&gt;
 </description>
@@ -191,9 +197,9 @@
 
 &lt;p&gt;The webshop itself is no longer available online, but the source code is available on &lt;a href=&#34;https://github.com/SamuelDebruyn/MI4webshop&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;functional-requirements:8f252d2e6836bd8c7f9c98107e37888e&#34;&gt;Functional requirements&lt;/h2&gt;
+&lt;h2 id=&#34;functional-requirements&#34;&gt;Functional requirements&lt;/h2&gt;
 
-&lt;h3 id=&#34;configuration-panel:8f252d2e6836bd8c7f9c98107e37888e&#34;&gt;Configuration panel&lt;/h3&gt;
+&lt;h3 id=&#34;configuration-panel&#34;&gt;Configuration panel&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;CRUD actions for every kind of data&lt;/li&gt;
@@ -202,7 +208,7 @@
 &lt;li&gt;The administrator can view the ERD of the webshop&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;client-site:8f252d2e6836bd8c7f9c98107e37888e&#34;&gt;Client site&lt;/h3&gt;
+&lt;h3 id=&#34;client-site&#34;&gt;Client site&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Products have categories and can be sorted and filtered by category&lt;/li&gt;
@@ -254,7 +260,7 @@
 
 &lt;p&gt;This Android app was a school project I made with &lt;a href=&#34;https://github.com/talipovdaniyar&#34;&gt;another student&lt;/a&gt;. We established several goals:&lt;/p&gt;
 
-&lt;h2 id=&#34;technical-requirements:fc46f81bf6fdf8b7e4084cd9b0161e8c&#34;&gt;Technical requirements:&lt;/h2&gt;
+&lt;h2 id=&#34;technical-requirements&#34;&gt;Technical requirements:&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;We had to learn a lot about PHP and Android development.&lt;/li&gt;
@@ -265,7 +271,7 @@
 &lt;li&gt;We had to write a few pages of documentation for our lecturer.&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;functional-requirements:fc46f81bf6fdf8b7e4084cd9b0161e8c&#34;&gt;Functional requirements:&lt;/h2&gt;
+&lt;h2 id=&#34;functional-requirements&#34;&gt;Functional requirements:&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Show information about available rooms&lt;/li&gt;

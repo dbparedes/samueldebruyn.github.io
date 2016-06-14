@@ -21,9 +21,9 @@
 
 &lt;p&gt;Sometimes you&amp;rsquo;re not allowed or you don&amp;rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&amp;rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&amp;rsquo;ll automate everything from authentication to creating and deleting repositories.&lt;/p&gt;
 
-&lt;h2 id=&#34;installation-of-the-prerequisites:7d26ad02477b183361c06277d4fafc51&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
+&lt;h2 id=&#34;installation-of-the-prerequisites&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
 
-&lt;h3 id=&#34;on-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Windows clients&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-windows-clients&#34;&gt;On the Windows clients&lt;/h3&gt;
 
 &lt;p&gt;On your Windows clients, you&amp;rsquo;ll need PuTTY, Pageant, Plink, PuTTYgen and Git Bash. The installers are very straightforward.&lt;/p&gt;
 
@@ -45,7 +45,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 &lt;li&gt;Use Windows&amp;rsquo; default console window&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;on-the-raspberry-pi-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-raspberry-pi-linux-server&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
 
 &lt;p&gt;You&amp;rsquo;ll need ssh and git. On Debian-based systems, you can install them with the command below:&lt;/p&gt;
 
@@ -54,7 +54,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 
 &lt;p&gt;I&amp;rsquo;d recommend to &lt;a href=&#34;http://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/&#34;&gt;setup SSH&lt;/a&gt; and PuTTY for your personal user account and use that to perform the tasks in this guide.&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-the-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;Setting up the Linux server&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-the-linux-server&#34;&gt;Setting up the Linux server&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re using a Raspberry Pi, I&amp;rsquo;d suggest not using your SD card to store your git repositories. Instead, use an external hard drive or a USB drive. I&amp;rsquo;m not going to explain how to mount a USB drive, as there are already &lt;a href=&#34;http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/&#34;&gt;a lot of guides&lt;/a&gt; explaining this.&lt;/p&gt;
 
@@ -112,7 +112,7 @@ nano authorized_keys
 
 &lt;p&gt;This concludes the setup on our Linux box.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuring-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-the-windows-clients&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
 
 &lt;p&gt;Time to fire up Pageant and add the private key we created before. Afterwards, fire up PuTTY and configure it to connect to the Linux machine.&lt;/p&gt;
 

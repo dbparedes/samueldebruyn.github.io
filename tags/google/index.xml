@@ -35,7 +35,7 @@
       <guid>https://chipsncookies.com/2015/how-google-cripples-outdated-android-devices/</guid>
       <description>
 
-&lt;h2 id=&#34;why-i-downgraded-my-nexus-5:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Why I downgraded my Nexus 5&lt;/h2&gt;
+&lt;h2 id=&#34;why-i-downgraded-my-nexus-5&#34;&gt;Why I downgraded my Nexus 5&lt;/h2&gt;
 
 &lt;p&gt;About a year ago Google released &lt;a href=&#34;http://developer.android.com/preview/index.html&#34;&gt;Android L Developer Preview&lt;/a&gt;. This preview of the upcoming Android Lollipop (5.0) release contained a lot of bugs and was definitely not &lt;em&gt;daily driver&lt;/em&gt; material.&lt;/p&gt;
 
@@ -55,11 +55,11 @@
 
 &lt;p&gt;I considered downgrading while I was on Android 5.0.1, but I quickly delayed this decision when I heard about the upcoming 5.1 update that would fix this memory leak. However, when I started noticing the second memory leak, I had it. Time to go back to the latest stable version: Android 4.4.4 KitKat.&lt;/p&gt;
 
-&lt;h2 id=&#34;how-i-downgraded:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;How I downgraded&lt;/h2&gt;
+&lt;h2 id=&#34;how-i-downgraded&#34;&gt;How I downgraded&lt;/h2&gt;
 
 &lt;p&gt;The downgrade was quite simple: I unlocked my phone and flashed the 4.4.4 &lt;a href=&#34;https://developers.google.com/android/nexus/images&#34;&gt;factory image&lt;/a&gt;. The next thing I did was rooting my phone, which later turned out to be necessary.&lt;/p&gt;
 
-&lt;h2 id=&#34;and-then-it-all-started:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;And then it all started&lt;/h2&gt;
+&lt;h2 id=&#34;and-then-it-all-started&#34;&gt;And then it all started&lt;/h2&gt;
 
 &lt;p&gt;One of the reasons why I downgraded, was that Android 4.4.4 has remarkably better battery life than Android Lollipop. So when my battery started draining at more than 20% an hour, I knew that something was wrong. Also, the notification about the system update was impossible to remove.&lt;/p&gt;
 
@@ -67,7 +67,7 @@
 &lt;p&gt;Yes, Google, I know. Now let me go on with my life, I don’t want your update.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;h2 id=&#34;digging-a-little-deeper:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Digging a little deeper&lt;/h2&gt;
+&lt;h2 id=&#34;digging-a-little-deeper&#34;&gt;Digging a little deeper&lt;/h2&gt;
 
 &lt;p&gt;Android used to have a service called SystemUpdateService in the Google Services Framework (preinstalled system app) that would handle OS updates. It seems like this was replaced by Google Play Services. The &lt;a href=&#34;https://developer.android.com/google/play-services/index.html&#34;&gt;Google Play Services&lt;/a&gt; app is updated automatically via the Google &lt;a href=&#34;https://play.google.com/store/apps/details?id=com.google.android.gms&#34;&gt;Play Store&lt;/a&gt;. This app contains another SystemUpdateService and disables the SystemUpdateService in the Google Services Framework mentioned earlier.&lt;/p&gt;
 
@@ -95,13 +95,13 @@ adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$Re
 adb shell su -c pm disable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;wow-that-was-complicated:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;Wow, that was complicated&lt;/h2&gt;
+&lt;h2 id=&#34;wow-that-was-complicated&#34;&gt;Wow, that was complicated&lt;/h2&gt;
 
 &lt;p&gt;For power users this probably wasn’t a lot of work, but this is a real annoyance for regular users. But regular users don’t buy Nexus devices, don’t they?&lt;/p&gt;
 
 &lt;p&gt;For years, we all &lt;a href=&#34;http://www.google.com/trends/explore#q=android%20fragmentation&amp;amp;cmpt=q&#34;&gt;complained about fragmentation&lt;/a&gt; and a lack of OS updates. Today it has become impossible to ignore an OS update due to the immense battery drain and the frustrating persistent notification.&lt;/p&gt;
 
-&lt;h2 id=&#34;this-post-is-all-about-nexus-devices-what-about-my-device:c209b0e2d2354aad9e56c75e001a618a&#34;&gt;This post is all about Nexus devices, what about my device?&lt;/h2&gt;
+&lt;h2 id=&#34;this-post-is-all-about-nexus-devices-what-about-my-device&#34;&gt;This post is all about Nexus devices, what about my device?&lt;/h2&gt;
 
 &lt;p&gt;Most Android devices come with Google services like the Google Play Store. This means they also come with Google Play Services or the Google Services Framework or both. So, if you ever want to downgrade your Android device to a stock image, be sure to disable those pesky receivers…&lt;/p&gt;
 </description>

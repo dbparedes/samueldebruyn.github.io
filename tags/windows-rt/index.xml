@@ -19,7 +19,7 @@
       <guid>https://chipsncookies.com/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
       <description>
 
-&lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
+&lt;h2 id=&#34;you-gotta-have-mvvm&#34;&gt;You gotta have MVVM&lt;/h2&gt;
 
 &lt;p&gt;A developer and his tools are inseparable. We all like &lt;a href=&#34;https://sites.google.com/site/unclebobconsultingllc/getting-a-solid-start&#34;&gt;SOLID&lt;/a&gt; and every (.NET) developer has his or her favourite dependency injection tool. There is &lt;a href=&#34;http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx&#34;&gt;a lot&lt;/a&gt; to choose from. I like Autofac because of the way it handles modules, the lifetime of a type and how it registers types.&lt;/p&gt;
 
@@ -27,7 +27,7 @@
 
 &lt;p&gt;MVVM Light comes with an IoC container called SimpleIoC. And that’s what it is: a dead-simple IoC container. As I said: you don’t have to use the parts you don’t like. So let me replace SimpleIoC with my dependency injector of choice: Autofac.&lt;/p&gt;
 
-&lt;h2 id=&#34;architecture:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Architecture&lt;/h2&gt;
+&lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
 
 &lt;p&gt;This is an overview of how I usually structure my solution:&lt;/p&gt;
 
@@ -77,7 +77,7 @@
     + ...
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;where-to-put-what:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Where to put what?&lt;/h3&gt;
+&lt;h3 id=&#34;where-to-put-what&#34;&gt;Where to put what?&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Registrations of viewmodels and cross-platform service implementations: MyApp.Utilities.CrossPlatformModule&lt;/li&gt;
@@ -87,13 +87,13 @@
 &lt;li&gt;ViewModelLocator initialization: App/Main&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;how-it-all-ties-together:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;How it all ties together&lt;/h2&gt;
+&lt;h2 id=&#34;how-it-all-ties-together&#34;&gt;How it all ties together&lt;/h2&gt;
 
 &lt;p&gt;First off, you start by creating interfaces for all the services you need. Next up, you can start defining implementations for the services and put them in the correct namespaces.&lt;/p&gt;
 
 &lt;p&gt;When that&amp;rsquo;s done, it&amp;rsquo;s time to create our modules. Now, assembly scanning sometimes causes exceptions on certain platforms. Also, PCL&amp;rsquo;s don&amp;rsquo;t have the methods you&amp;rsquo;re used to from ASP.NET or other types of projects for assembly scanning. I know it makes things incredibly easy, but I&amp;rsquo;d advise against it for Xamarin projects. You&amp;rsquo;ll have to register type by type in the modules. Usually I create an array of types and throw them in &lt;code&gt;builder.RegisterTypes(types)&lt;/code&gt;. The platform-specific modules should contain registrations for the platform-specific services. Don&amp;rsquo;t forget the ones that come with Autofac by default.&lt;/p&gt;
 
-&lt;h3 id=&#34;example-of-a-platform-specific-service:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Example of a platform-specific service&lt;/h3&gt;
+&lt;h3 id=&#34;example-of-a-platform-specific-service&#34;&gt;Example of a platform-specific service&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;using System;
 using Autofac;
@@ -177,7 +177,7 @@ namespace MyApp.Android.Utilities
 
 &lt;p&gt;That method is then called at the moment I initialize the &lt;code&gt;ViewModelLocator&lt;/code&gt;. Laurent&amp;rsquo;s talk goes in depth on how to do that so I won&amp;rsquo;t cover that part.&lt;/p&gt;
 
-&lt;h2 id=&#34;servicelocator:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;ServiceLocator&lt;/h2&gt;
+&lt;h2 id=&#34;servicelocator&#34;&gt;ServiceLocator&lt;/h2&gt;
 
 &lt;p&gt;Whenever you need an instance of a registered type, you can use the &lt;code&gt;ServiceLocator&lt;/code&gt; like so:&lt;/p&gt;
 
@@ -193,7 +193,7 @@ var factory = ServiceLocator.Current.GetInstance&amp;lt;MyViewModelRequiringAPar
 var vm = factory(myVar);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;questions:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Questions?&lt;/h2&gt;
+&lt;h2 id=&#34;questions&#34;&gt;Questions?&lt;/h2&gt;
 
 &lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;https://chipsncookies.com/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
 </description>

@@ -107,7 +107,7 @@
         <meta name="msapplication-TileImage" content="https://chipsncookies.com/icons/mstile-144x144.png">
         <meta name="msapplication-config" content="https://chipsncookies.com/icons/browserconfig.xml">
         <meta name="theme-color" content="#2c3e50">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
 
         <link href="https://chipsncookies.com/post/index.xml" rel="alternate" type="application/rss+xml" title="RSS &middot; Samuel Debruyn" />
     
@@ -760,23 +760,23 @@ footer a:hover
             <h6 class="sitetaglisttitle">Tags</h6>
 <ul class="sitetaglist">
   
-    <li><a href="/tags/hugo">hugo (5)</a></li>
-  
     <li><a href="/tags/android">android (5)</a></li>
   
-    <li><a href="/tags/windows">windows (5)</a></li>
+    <li><a href="/tags/hugo">hugo (5)</a></li>
   
     <li><a href="/tags/security">security (5)</a></li>
   
-    <li><a href="/tags/wercker">wercker (4)</a></li>
+    <li><a href="/tags/windows">windows (5)</a></li>
   
     <li><a href="/tags/ci">ci (4)</a></li>
   
-    <li><a href="/tags/virtualization">virtualization (3)</a></li>
+    <li><a href="/tags/wercker">wercker (4)</a></li>
+  
+    <li><a href="/tags/csharp">csharp (3)</a></li>
   
     <li><a href="/tags/docker">docker (3)</a></li>
   
-    <li><a href="/tags/xamarin">xamarin (3)</a></li>
+    <li><a href="/tags/linux">linux (3)</a></li>
   
 </ul>
             			<form class="uk-search" action="https://chipsncookies.com/search/">
@@ -805,19 +805,19 @@ footer a:hover
     <h1 class="post-title">Experiences with Windows 10 on a new Dell XPS 13 (2015)</h1>
     
 
-<h2 id="ordering-a-new-workhorse:b79f60f580df3e0f9ebbeafe51282028">Ordering a new workhorse</h2>
+<h2 id="ordering-a-new-workhorse">Ordering a new workhorse</h2>
 
 <p>Windows 10 RTM <a href="/img/post/dinoclippy.jpg" title="awesome wallpaper">has been out</a> for about a month now after little less than a year of public <a href="https://insider.windows.com/" title="Insider program">Insider preview</a> builds. The motherboard of my old, trusty, Asus laptop was slowly dying and the Dell XPS 13&rsquo;s thinness and battery life looked very attractive. I decided to go for it and order a <a href="http://www.dell.com/us/p/xps-13-9343-laptop/" title="Dell XPS 13">Dell XPS 13 (2015)</a>, without the touch screen. I hate dirty fingerprints on a screen and the better battery life of the version without the touch screen seemed like a better deal. I also ordered a <a href="http://accessories.us.dell.com/sna/productdetail.aspx?c=us&amp;l=en&amp;s=dhs&amp;cs=19&amp;sku=470-abhh" title="Dell adapter">USB 3 -&gt; HDMI/VGA/Ethernet/USB 2 adapter</a> from Dell.</p>
 
 <p>While Dell&rsquo;s website tells you they will ship it in about 4 business days, it took nearly 3 weeks until UPS rang my bell with a shipment from China. By the way, Dell Belgium&rsquo;s sales support is terrible. They offer support by phone and chat, but they will tell you on both channels that you have to send them an email. The Belgian support department was very abrupt and impolite. They can&rsquo;t tell you why it looks like your laptop is sitting in an UPS storage facility in China without moving for about a week.</p>
 
-<h2 id="first-steps:b79f60f580df3e0f9ebbeafe51282028">First steps</h2>
+<h2 id="first-steps">First steps</h2>
 
 <p>The first thing I did after unpacking everything, was booting it up and installing <a href="https://www.runtime.org/driveimage-xml.htm" title="DriveImage XML">DriveImage XML</a> to create a complete image of every partition so it would be easy to restore if something ever went <a href="http://d.ibtimes.co.uk/en/full/1451630/windows-10-installation-errors.png" title="Something happened">terribly wrong</a>. Windows also comes with <a href="http://windows.microsoft.com/en-us/windows-8/create-usb-recovery-drive">a tool</a> to create system recovery images on USB sticks etc. This tool copies the recovery partition to a USB stick, together with Windows recovery tools.</p>
 
 <p>On a side note: a lot of programs like DriveImage XML looked very blurry on the XPS 13&rsquo;s 1080p screen.</p>
 
-<h2 id="so-many-windows-10s:b79f60f580df3e0f9ebbeafe51282028">So many Windows 10s!</h2>
+<h2 id="so-many-windows-10s">So many Windows 10s!</h2>
 
 <p>If I&rsquo;d <a href="http://winsupersite.com/windows-10/windows-10-upgrade-paths" title="Windows 10 upgrade path">simply upgrade</a> the Windows 8.1 installation that shipped with the XPS 13, I&rsquo;d get the most basic version of Windows 10. This edition doesn&rsquo;t suffice for most software developers. I signed in to <a href="https://www.dreamspark.com/" title="Microsoft Dreamspark">Microsoft Dreamspark</a> and got the free Windows 10 Education Edition I&rsquo;m entitled to as an IT student. I had the choice of installing the Enterprise or the Education edition. The Education edition comes with <a href="http://wincom.blob.core.windows.net/documents/Win10EditionsCompareTable_FINAL.pdf" title="Feature comparison">more features</a> than the Home/Pro Edition and I figured the Enterprise edition wouldn&rsquo;t be as easy to install outside of a domain.</p>
 
@@ -825,7 +825,7 @@ footer a:hover
 
 <p>Usually, they ask you to sign in to a Microsoft account and offer you to restore the apps and settings from another machine on which you&rsquo;re signed in. Apparently that&rsquo;s not the case if you picked the Education edition: sign in with a domain account or create a local user account. I could link my local account to a Microsoft account after the initial setup, but my desktop now shows a white watermark in the bottom right corner saying <em>Windows 10 Education</em> (which is impossible to remove <a href="http://superuser.com/questions/947231/how-can-i-remove-the-windows-10-education-watermark-from-my-dreamspark-license" title="Get rid of the watermark">without changing some HEX values</a> in the registry&hellip;)</p>
 
-<h2 id="the-first-boot:b79f60f580df3e0f9ebbeafe51282028">The first boot</h2>
+<h2 id="the-first-boot">The first boot</h2>
 
 <p>The blurriness was back. About every non-modern app looked blurry. Probably driver issues, right? Dell&rsquo;s <a href="http://www.dell.com/learn/us/en/19/campaigns/windows-upgrade-offer">support site</a> says that the XPS 13 is ready for Windows 10. Okay&hellip; But the driver section doesn&rsquo;t even have a graphics driver. I installed all the available Windows 10 drivers and some Windows 8 drivers which weren&rsquo;t available in the Windows 10 section. I found drivers for the Intel HD 5500 and some other Intel components on Intel&rsquo;s website and Realtek&rsquo;s website has Windows 10 drivers for SD card reader and the audio chip.</p>
 
@@ -833,7 +833,7 @@ footer a:hover
 
 <p>The installation of the audio driver just failed completely. The first step of the installation uninstalls your existing driver and asks you to reboot. The second step should install the new driver, but after a reboot the installation process started over. I stopped trying after 4 attempts as audio seemed to be working fine.</p>
 
-<h2 id="the-blurriness-is-here-to-stay:b79f60f580df3e0f9ebbeafe51282028">The blurriness (is here to stay)</h2>
+<h2 id="the-blurriness-is-here-to-stay">The blurriness (is here to stay)</h2>
 
 <p>It was still there. I fiddled a little bit with the Intel HD Graphics Control Panel and enabled some settings that should improve the quality of textures. That was a bad choice. If you enable most settings in the <em>3D</em> section of the control panel, textures in modern apps will look very dark and the Windows 10 start menu becomes one dark grey mess. <strong>Disable all settings in the <em>3D</em> section of the Intel HD Graphics Control Panel on Windows 10</strong>.</p>
 
@@ -843,37 +843,37 @@ footer a:hover
 
 <p>I concluded that most Windows applications simply aren&rsquo;t built with high DPI screens in mind. It&rsquo;s <a href="https://retinamacapps.com/">the retina story</a> of the new Macs all over again.</p>
 
-<h2 id="some-issues-i-worked-around-or-fixed:b79f60f580df3e0f9ebbeafe51282028">Some issues I worked around or fixed</h2>
+<h2 id="some-issues-i-worked-around-or-fixed">Some issues I worked around or fixed</h2>
 
-<h3 id="the-failing-touchpad-driver-update:b79f60f580df3e0f9ebbeafe51282028">The failing touchpad driver update</h3>
+<h3 id="the-failing-touchpad-driver-update">The failing touchpad driver update</h3>
 
 <p>Windows 10 tried to install an update for the touchpad driver and kept on failing. This was <a href="http://en.community.dell.com/support-forums/laptop/f/3518/t/19643591">a known issue</a> you could safely ignore. Microsoft offers a utility to hide some specific updates.</p>
 
-<h3 id="the-dell-adapter:b79f60f580df3e0f9ebbeafe51282028">The Dell adapter</h3>
+<h3 id="the-dell-adapter">The Dell adapter</h3>
 
 <p>Installing and plugging in the Dell adapter I bought, gave me BSoDs and a lot of other crap. Installing a <a href="http://www.displaylink.com/downloads/downloads.php" title="DisplayLink drivers">recent driver from DisplayLink</a>, its manufacturer, fixed it.</p>
 
-<h3 id="distorted-sound:b79f60f580df3e0f9ebbeafe51282028">Distorted sound</h3>
+<h3 id="distorted-sound">Distorted sound</h3>
 
 <p>Sometimes the audio driver went berserk and the sound became very distorted. Disabling and enabling the Realtek HW audio codec usually fixed it temporarily, but it was finally fixed after installing a new version of the Realtek audio driver last week.</p>
 
-<h4 id="update:b79f60f580df3e0f9ebbeafe51282028">Update</h4>
+<h4 id="update">Update</h4>
 
 <p>This issue reappeared a few hours after publishing this post.</p>
 
-<h3 id="missing-settings-in-the-power-management-section-of-the-control-panel:b79f60f580df3e0f9ebbeafe51282028">Missing settings in the power management section of the control panel</h3>
+<h3 id="missing-settings-in-the-power-management-section-of-the-control-panel">Missing settings in the power management section of the control panel</h3>
 
 <p>Dell offers a great utility called <a href="http://en.community.dell.com/techcenter/enterprise-client/w/wiki/7535.dell-command-power-manager">Dell Command | Power</a> which you should definitely install if you own a recent Dell laptop. You can optimize various settings that avoid battery wear (e.g. optimize the charging algorithm for a laptop that is often plugged into the charger or keep the laptop extra cool).</p>
 
 <p>You can also use <a href="http://www.eightforums.com/tutorials/54127-power-options-add-remove-wireless-adapter-settings.html">this trick</a> to enable some settings in the control panel that were hidden by the manufacturer of your device.</p>
 
-<h3 id="slow-wi-fi:b79f60f580df3e0f9ebbeafe51282028">Slow Wi-Fi</h3>
+<h3 id="slow-wi-fi">Slow Wi-Fi</h3>
 
 <p>The latest version of the Wi-Fi driver that&rsquo;s available on Intel&rsquo;s website fixed an issue where I would experience a very slow Wi-Fi connection from time to time.</p>
 
-<h2 id="some-issues-i-still-experience:b79f60f580df3e0f9ebbeafe51282028">Some issues I still experience</h2>
+<h2 id="some-issues-i-still-experience">Some issues I still experience</h2>
 
-<h3 id="sleep-hibernate-coma:b79f60f580df3e0f9ebbeafe51282028">Sleep, hibernate, COMA</h3>
+<h3 id="sleep-hibernate-coma">Sleep, hibernate, COMA</h3>
 
 <p>Usually, when I close the lid of my XPS 13, the laptop immediately goes to sleep. When I open it up again, everything is back up and running in less than a second. So far, so good.</p>
 
@@ -889,39 +889,39 @@ footer a:hover
 
 <p>The only action that gets my laptop out of its coma is holding the power button down for a few seconds, then it starts booting up again.</p>
 
-<h3 id="crazy-multi-monitor-dpi-issues:b79f60f580df3e0f9ebbeafe51282028">Crazy multi-monitor DPI issues</h3>
+<h3 id="crazy-multi-monitor-dpi-issues">Crazy multi-monitor DPI issues</h3>
 
 <p>If you want to see Windows from a new perspective, connect an external monitor with a different DPI scaling than the one on your laptop screen. All sorts of crazy things start to happen. I suspect the issue above is related to this one. Windows rarely gets it right on the first try. Sometimes it uses the higher DPI scaling on both monitors. It never picks the default DPI scaling (100%) for both monitors. A reboot usually fixes most of my issues, but they often reappear when I resume the machine from sleep.</p>
 
 <p>I am seriously considering buying an extra monitor just so I could use the same DPI scaling on both screens&hellip; Rebooting Windows doesn&rsquo;t take more than 10 seconds, but you still have to close all your programs.</p>
 
-<h2 id="a-quick-review:b79f60f580df3e0f9ebbeafe51282028">A quick review</h2>
+<h2 id="a-quick-review">A quick review</h2>
 
-<h3 id="the-battery-life:b79f60f580df3e0f9ebbeafe51282028">The battery life</h3>
+<h3 id="the-battery-life">The battery life</h3>
 
 <p>Dell promises 10+ hours of battery life with this laptop. I never even got close. You&rsquo;d probably only get this with your laptop on the lowest brightness setting in flight mode. I usually get up to 8 hours with light usage (browsing, reading&hellip;) and up to 4 hours with heavy usage (running multiple instances of Visual Studio and building about every 15 minutes).</p>
 
 <p>I&rsquo;m quite happy with the battery life, it&rsquo;s not as good as expected, but still a lot better than what you get from most other (non-Apple) laptops.</p>
 
-<h3 id="the-screen:b79f60f580df3e0f9ebbeafe51282028">The screen</h3>
+<h3 id="the-screen">The screen</h3>
 
 <p>Software developers need to start thinking about high DPI screens. I didn&rsquo;t even get the 4K screen. I love the thin bezels and the screen looks very good except in direct sunlight.</p>
 
-<h3 id="the-touchpad:b79f60f580df3e0f9ebbeafe51282028">The touchpad</h3>
+<h3 id="the-touchpad">The touchpad</h3>
 
 <p>I highly recommend playing a little bit with the settings. A lot of people seem to be complaining about some kind of lag or delay. You can adjust this delay in the settings. I&rsquo;ve put it on the shortest delay, but haven&rsquo;t disabled the delay completely.</p>
 
 <p>The touchpad works fine; it registers everything I want it to.</p>
 
-<h3 id="the-keyboard:b79f60f580df3e0f9ebbeafe51282028">The keyboard</h3>
+<h3 id="the-keyboard">The keyboard</h3>
 
 <p>The keys are very thin but typing is very comfortable. The backspace and the FN buttons are placed awkwardly (especially if you use multiple desktops in Windows 10), but I got used to it.</p>
 
-<h3 id="performance:b79f60f580df3e0f9ebbeafe51282028">Performance</h3>
+<h3 id="performance">Performance</h3>
 
 <p>The performance really depends on the configuration you pick. I picked the Intel i7-5600U with 8 GB of RAM. I would have loved a 16 GB configuration and all you can upgrade is the SSD. It isn&rsquo;t as fast as the quad core i7 with Hyper Threading I used to have, but the difference is hardly noticeable.</p>
 
-<h2 id="conclusion:b79f60f580df3e0f9ebbeafe51282028">Conclusion</h2>
+<h2 id="conclusion">Conclusion</h2>
 
 <p>I&rsquo;m very happy with my XPS 13. The battery is great, it almost never gets hot and it&rsquo;s very small and lightweight being a 13-inch laptop. Microsoft, Dell and their partners seem to be working hard on fixing driver issues and making Windows 10 a very pleasant experience.</p>
 

@@ -19,7 +19,7 @@
       <guid>https://chipsncookies.com/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
       <description>
 
-&lt;p&gt;Docker is awesome, right? And thanks to &lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;boot2docker&lt;/a&gt; Windows users were no longer left out of the fun.&lt;/p&gt;
+&lt;p&gt;Docker is awesome, right? And thanks to [boot2docker](&lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;http://boot2docker.io/(http://boot2docker.io/&lt;/a&gt;) Windows users were no longer left out of the fun.&lt;/p&gt;
 
 &lt;p&gt;Still, setting everything up could be a PITA and you had to install Oracle VirtualBox to use it as Docker containers were actually run inside of a VM (which was the purpose of boot2docker). If you use Hyper-V regularly, you&amp;rsquo;ll notice that you can&amp;rsquo;t have it both ways. Scott Hanselman &lt;a href=&#34;http://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx&#34;&gt;figured out a way&lt;/a&gt; to make switching between the two a little bit less painful, but you still had to reboot your machine if you wanted to use VirtualBox.&lt;/p&gt;
 
@@ -31,7 +31,7 @@
 
 &lt;p&gt;So how do you install Docker Machine on Windows with Hyper-V? Here we go.&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-hyper-v-and-network-connections:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-hyper-v-and-network-connections&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
 
 &lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;https://chipsncookies.com/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
 
@@ -39,11 +39,11 @@
 
 &lt;p&gt;Then go to your Network Connections, open the properties of your active internet connection and share the connection with the newly created virtual network switch. This will make sure that the IP of the boot2docker VM never changes and it still has internet access.&lt;/p&gt;
 
-&lt;h2 id=&#34;download-and-install-docker-machine:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Download and &lt;em&gt;install&lt;/em&gt; Docker Machine&lt;/h2&gt;
+&lt;h2 id=&#34;download-and-install-docker-machine&#34;&gt;Download and &lt;em&gt;install&lt;/em&gt; Docker Machine&lt;/h2&gt;
 
 &lt;p&gt;You don&amp;rsquo;t need Docker Toolbox if you&amp;rsquo;re not going to use Oracle VirtualBox. Just download the latest version of Docker Machine from &lt;a href=&#34;https://github.com/docker/machine/releases/&#34;&gt;GitHub&lt;/a&gt;, rename it to &lt;code&gt;docker-machine.exe&lt;/code&gt; and put it in your &lt;em&gt;PATH&lt;/em&gt;. That&amp;rsquo;s all there is to it.&lt;/p&gt;
 
-&lt;h2 id=&#34;create-a-new-docker-machine-with-the-hyper-v-driver:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Create a new Docker Machine with the Hyper-V driver&lt;/h2&gt;
+&lt;h2 id=&#34;create-a-new-docker-machine-with-the-hyper-v-driver&#34;&gt;Create a new Docker Machine with the Hyper-V driver&lt;/h2&gt;
 
 &lt;p&gt;Now open an administrative command prompt (you need to be an administrator to create new virtual machines) and execute the following command to create a new Docker Machine named &lt;em&gt;boot2docker&lt;/em&gt;. Make sure to replace &lt;code&gt;My Internal Switch&lt;/code&gt; with the name of the internal switch you created before. You can add &lt;code&gt;--hyper-v-memory xxxx&lt;/code&gt; before the name of the machine to change the default amount of memory (it&amp;rsquo;s dynamic) from 1024 to something else.&lt;/p&gt;
 
@@ -55,7 +55,7 @@
 &lt;pre&gt;&lt;code&gt;docker-machine env --shell cmd boot2docker
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;connect-to-your-boot2docker-instance:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Connect to your boot2docker instance&lt;/h2&gt;
+&lt;h2 id=&#34;connect-to-your-boot2docker-instance&#34;&gt;Connect to your boot2docker instance&lt;/h2&gt;
 
 &lt;p&gt;You can now connect to your newly created boot2docker instance with the following command as it should already be running:&lt;/p&gt;
 

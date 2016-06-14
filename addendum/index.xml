@@ -21,7 +21,7 @@
 
 &lt;p&gt;The following is the deobfuscated version of &lt;a href=&#34;https://chipsncookies.com/addendum/2015/obfuscated-code-from-the-wordpress-hack/&#34;&gt;this&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;script src=&#34;//gist.github.com/SamuelDebruyn/529d1c5252c990b4367a.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script src=&#34;//gist.github.com/SamuelDebruyn/529d1c5252c990b4367a.js&#34;&gt;&lt;/script&gt;
 </description>
     </item>
     
@@ -35,7 +35,7 @@
 
 &lt;p&gt;The following is an example of the code I found when one of the WordPress installations I managed was hacked. You can find the &lt;a href=&#34;https://chipsncookies.com/addendum/2015/deobfuscated-code-from-the-wordpress-hack/&#34;&gt;deobfuscated version right over here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;&lt;script src=&#34;//gist.github.com/SamuelDebruyn/337140a35994618033ee.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;script src=&#34;//gist.github.com/SamuelDebruyn/337140a35994618033ee.js&#34;&gt;&lt;/script&gt;
 </description>
     </item>
     

@@ -19,7 +19,7 @@
       <guid>https://chipsncookies.com/2013/connecting-serviio-with-telenets-yelo-tv/</guid>
       <description>
 
-&lt;h2 id=&#34;introduction:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;Recently Belgian ISP Telenet &lt;a href=&#34;http://snap.telenet.be/nieuw/artikel/yelo-tv-getest-en-gekeurd&#34;&gt;introduced&lt;/a&gt; &lt;a href=&#34;http://telenet.be/nl/yelo-tv&#34;&gt;Yelo TV&lt;/a&gt;. It&amp;rsquo;s the new brand for all of their efforts &lt;del&gt;to &lt;/del&gt;&lt;del&gt;innovate&lt;/del&gt; with television. Yelo TV includes a series of apps for almost every device (except for Windows Phone) and a &lt;a href=&#34;http://yelotv.be/&#34;&gt;website &lt;/a&gt;on which you can watch live television, watch recordings or schedule recordings. &lt;/p&gt;
 
@@ -31,21 +31,21 @@
 
 &lt;p&gt;There wasn&amp;rsquo;t one for Telenet Yelo TV yet so I wrote one. This profile will convert every incompatible media file so that you can stream it to your DigiCorder. You&amp;rsquo;ll need a fast computer to transcode files. This profile includes support for subtitles if you enabled it in Serviio&amp;rsquo;s Console.&lt;/p&gt;
 
-&lt;h3 id=&#34;update-plex:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;Update: Plex&lt;/h3&gt;
+&lt;h3 id=&#34;update-plex&#34;&gt;Update: Plex&lt;/h3&gt;
 
 &lt;p&gt;I recently switched to Plex. A profile for Plex is available here:&lt;/p&gt;
 
 &lt;script src=&#34;//gist.github.com/SamuelDebruyn/5f6a7b3669706153f868.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;the-profile:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;The profile:&lt;/h2&gt;
+&lt;h2 id=&#34;the-profile&#34;&gt;The profile:&lt;/h2&gt;
 
 &lt;script src=&#34;//gist.github.com/SamuelDebruyn/7944739.js&#34;&gt;&lt;/script&gt;
 
-&lt;h2 id=&#34;installation:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;Installation&lt;/h2&gt;
+&lt;h2 id=&#34;installation&#34;&gt;Installation&lt;/h2&gt;
 
 &lt;p&gt;This profile is included in Serviio 1.4 or newer. You don&amp;rsquo;t need to change anything.&lt;/p&gt;
 
-&lt;h2 id=&#34;nb-further-optimizations:b51950e0fd28b0621af121c1b434e3cb&#34;&gt;NB: Further optimizations&lt;/h2&gt;
+&lt;h2 id=&#34;nb-further-optimizations&#34;&gt;NB: Further optimizations&lt;/h2&gt;
 
 &lt;p&gt;Tips to get a &lt;strong&gt;higher video quality&lt;/strong&gt; (only works for videos that have to be transcoded because of incompatibility or that include subtitles):&lt;/p&gt;
 

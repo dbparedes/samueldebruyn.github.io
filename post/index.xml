@@ -29,7 +29,7 @@
 
 &lt;p&gt;This would probably also be a good time to thank all the people at &lt;a href=&#34;http://odisee.be&#34;&gt;Odisee&lt;/a&gt;. My fellow students, the lecturers, the staff, everybody at the ASR (student council)&amp;hellip; The past three years have been a great adventure with lots of interesting and great experiences. On my first day, I didn&amp;rsquo;t know anyone and while I had some knowledge about software development (doesn&amp;rsquo;t seem much compared with where I am today), I didn&amp;rsquo;t have any real experience. That isn&amp;rsquo;t the case anymore today. I&amp;rsquo;ve learned so much on a lot of different levels. My work at the student council also contributed to this. There are too many people I&amp;rsquo;d like to thank, so I&amp;rsquo;m not even going to try to list them all. Thank you, to all of you.&lt;/p&gt;
 
-&lt;h3 id=&#34;so-what-s-next:9d346d20a62aaf861999f2ffeb5c0c74&#34;&gt;So&amp;hellip; what&amp;rsquo;s next?&lt;/h3&gt;
+&lt;h3 id=&#34;so-what-s-next&#34;&gt;So&amp;hellip; what&amp;rsquo;s next?&lt;/h3&gt;
 
 &lt;p&gt;On May 9th, I&amp;rsquo;m starting as a Xamarin developer at &lt;a href=&#34;http://cozmos.be/&#34;&gt;Cozmos&lt;/a&gt;. They&amp;rsquo;re an awesome company with awesome people and they make awesome mobile apps. Awesome, right? They have the best Xamarin developers in Belgium, so I&amp;rsquo;m really looking forward to learning from and working with them.&lt;/p&gt;
 
@@ -47,7 +47,7 @@
       <guid>https://chipsncookies.com/2016/android-update-distribution-is-getting-worse/</guid>
       <description>
 
-&lt;h2 id=&#34;why-it-matters:92b9b84b290dc2d0c46bb8b15456fc42&#34;&gt;Why it matters&lt;/h2&gt;
+&lt;h2 id=&#34;why-it-matters&#34;&gt;Why it matters&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;Click on the images in this post to view a larger, more detailed version.&lt;/em&gt;&lt;/p&gt;
 
@@ -57,7 +57,7 @@
 
 &lt;p&gt;So why does it still matter? It matters to the end users. If you buy an expensive flagship phone, you expect it to receive new features through updates just like your PC does. It doesn&amp;rsquo;t make sense to provide updates for devices with outdated hardware, but most recent phones can last a few years before their hardware becomes outdated. However, their software can&amp;rsquo;t. Most phones are updated for a year or two and are then ignored as its manufacturers want you to buy its newest product.&lt;/p&gt;
 
-&lt;h2 id=&#34;how-bad-is-it:92b9b84b290dc2d0c46bb8b15456fc42&#34;&gt;How bad is it?&lt;/h2&gt;
+&lt;h2 id=&#34;how-bad-is-it&#34;&gt;How bad is it?&lt;/h2&gt;
 
 &lt;p&gt;The Android version with slowest adoption ever is still Android Honeycomb. That&amp;rsquo;s quite normal. Android Honeycomb only ever rolled out to the tablet market which was very young at the time. However, the version with the second to worst adoption rate is Android Marshmallow, Google&amp;rsquo;s latest release. The versions before it didn&amp;rsquo;t do much better. The situation seems to be getting worse and worse.&lt;/p&gt;
 
@@ -85,55 +85,55 @@
 
 &lt;p&gt;There isn&amp;rsquo;t much documentation available for &lt;a href=&#34;http://www.mvvmlight.net/&#34;&gt;MVVM Light&lt;/a&gt; when it comes to Xamarin.Android and Xamarin.iOS. There are several overloads for the &lt;code&gt;SetBinding&lt;/code&gt; method and using the wrong overload causes &lt;code&gt;TargetInvocationException&lt;/code&gt; or &lt;code&gt;TargetException&lt;/code&gt; like &lt;a href=&#34;http://stackoverflow.com/q/35197870/1592358&#34;&gt;this one&lt;/a&gt;. It&amp;rsquo;s also possible that your bindings don&amp;rsquo;t update anymore after you set one binding using an incorrect syntax.&lt;/p&gt;
 
-&lt;h2 id=&#34;correct-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Correct binding&lt;/h2&gt;
+&lt;h2 id=&#34;correct-binding&#34;&gt;Correct binding&lt;/h2&gt;
 
 &lt;p&gt;You can only bind on properties, not on fields. You can use the new C# 6 syntax if you like (&lt;code&gt;public TextView TextView =&amp;gt; ...&lt;/code&gt;). They don&amp;rsquo;t always have to be &lt;code&gt;public&lt;/code&gt; but it sure helps making them &lt;code&gt;public&lt;/code&gt; either way. The easiest way to create a new view property on Android is with the &lt;code&gt;mvvmdroidelement&lt;/code&gt; snippet provided by &lt;a href=&#34;https://visualstudiogallery.msdn.microsoft.com/ee36692d-ed3f-4888-b904-281aaaeac529&#34;&gt;this extension&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;You should put your bindings in your views and make sure to respect the lifecycle of the platform you&amp;rsquo;re using. Also, always keep a reference to your binding so it doesn&amp;rsquo;t get garbage collected. I usually Store a list with all my bindings in my view.&lt;/p&gt;
 
-&lt;h3 id=&#34;android-activities:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android activities&lt;/h3&gt;
+&lt;h3 id=&#34;android-activities&#34;&gt;Android activities&lt;/h3&gt;
 
 &lt;p&gt;First create your layout in the &lt;code&gt;OnCreate&lt;/code&gt; method, create and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
 
-&lt;h3 id=&#34;android-fragments:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android fragments&lt;/h3&gt;
+&lt;h3 id=&#34;android-fragments&#34;&gt;Android fragments&lt;/h3&gt;
 
 &lt;p&gt;The layout can be set up in &lt;code&gt;OnCreateView&lt;/code&gt;. Use the &lt;code&gt;OnViewCreated&lt;/code&gt; method to set and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
 
-&lt;h3 id=&#34;ios-viewcontrollers:23b1deac65cc2dd0071a356815b311c9&#34;&gt;iOS ViewControllers&lt;/h3&gt;
+&lt;h3 id=&#34;ios-viewcontrollers&#34;&gt;iOS ViewControllers&lt;/h3&gt;
 
 &lt;p&gt;Initialize everything in the &lt;code&gt;ViewDidLoad&lt;/code&gt; method. Then use the &lt;code&gt;ViewWillAppear&lt;/code&gt; method to set and store the bindings. In some rare cases it helps calling &lt;code&gt;ForceUpdateValueFromSourceToTarget&lt;/code&gt; in &lt;code&gt;ViewDidAppear&lt;/code&gt;. Bindings should be detached using &lt;code&gt;Detach()&lt;/code&gt; on the binding in &lt;code&gt;ViewWillDisappear&lt;/code&gt;. You can use &lt;code&gt;DidReceiveMemoryWarning&lt;/code&gt; to clean up or dispose some references.&lt;/p&gt;
 
-&lt;h3 id=&#34;static-view-models:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Static view models&lt;/h3&gt;
+&lt;h3 id=&#34;static-view-models&#34;&gt;Static view models&lt;/h3&gt;
 
 &lt;p&gt;To avoid the mentioned &lt;code&gt;TargetException&lt;/code&gt;, I&amp;rsquo;d recommend setting up a static view model locator as &lt;a href=&#34;http://blog.galasoft.ch/posts/2014/10/my-xamarinevolve-talk-is-online-for-your-viewing-pleasure/&#34;&gt;Laurent Bugnion explained&lt;/a&gt; and using the view models on that locator. Injecting a view model in your view to bind on, usually causes the &lt;code&gt;TargetException&lt;/code&gt;, so try to use the view models defined in the locator.&lt;/p&gt;
 
-&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view?&lt;/h3&gt;
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view&#34;&gt;Is the source of your binding a property in your view?&lt;/h3&gt;
 
 &lt;p&gt;Then use this one:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.OneWay)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view-model:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view model?&lt;/h3&gt;
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view-model&#34;&gt;Is the source of your binding a property in your view model?&lt;/h3&gt;
 
 &lt;p&gt;Then use the following overload:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;two-way-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Two-way binding&lt;/h3&gt;
+&lt;h3 id=&#34;two-way-binding&#34;&gt;Two-way binding&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.TwoWay)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;binding-to-a-target-type-different-from-the-source-type:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Binding to a target type different from the source type&lt;/h3&gt;
+&lt;h3 id=&#34;binding-to-a-target-type-different-from-the-source-type&#34;&gt;Binding to a target type different from the source type&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay).ConvertSourceToTarget(ConversionMethod)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;You can also use a lambda, but that&amp;rsquo;s harder to debug.&lt;/p&gt;
 
-&lt;h3 id=&#34;just-binding-to-a-source-and-updating-the-view-yourself:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Just binding to a source and updating the view yourself&lt;/h3&gt;
+&lt;h3 id=&#34;just-binding-to-a-source-and-updating-the-view-yourself&#34;&gt;Just binding to a source and updating the view yourself&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel).WhenSourceChanges(MyUpdateMethod)
 &lt;/code&gt;&lt;/pre&gt;
@@ -180,9 +180,9 @@
 
 &lt;p&gt;Sometimes you&amp;rsquo;re not allowed or you don&amp;rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&amp;rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&amp;rsquo;ll automate everything from authentication to creating and deleting repositories.&lt;/p&gt;
 
-&lt;h2 id=&#34;installation-of-the-prerequisites:7d26ad02477b183361c06277d4fafc51&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
+&lt;h2 id=&#34;installation-of-the-prerequisites&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
 
-&lt;h3 id=&#34;on-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Windows clients&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-windows-clients&#34;&gt;On the Windows clients&lt;/h3&gt;
 
 &lt;p&gt;On your Windows clients, you&amp;rsquo;ll need PuTTY, Pageant, Plink, PuTTYgen and Git Bash. The installers are very straightforward.&lt;/p&gt;
 
@@ -204,7 +204,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 &lt;li&gt;Use Windows&amp;rsquo; default console window&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;on-the-raspberry-pi-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-raspberry-pi-linux-server&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
 
 &lt;p&gt;You&amp;rsquo;ll need ssh and git. On Debian-based systems, you can install them with the command below:&lt;/p&gt;
 
@@ -213,7 +213,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 
 &lt;p&gt;I&amp;rsquo;d recommend to &lt;a href=&#34;http://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/&#34;&gt;setup SSH&lt;/a&gt; and PuTTY for your personal user account and use that to perform the tasks in this guide.&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-the-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;Setting up the Linux server&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-the-linux-server&#34;&gt;Setting up the Linux server&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re using a Raspberry Pi, I&amp;rsquo;d suggest not using your SD card to store your git repositories. Instead, use an external hard drive or a USB drive. I&amp;rsquo;m not going to explain how to mount a USB drive, as there are already &lt;a href=&#34;http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/&#34;&gt;a lot of guides&lt;/a&gt; explaining this.&lt;/p&gt;
 
@@ -271,7 +271,7 @@ nano authorized_keys
 
 &lt;p&gt;This concludes the setup on our Linux box.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuring-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-the-windows-clients&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
 
 &lt;p&gt;Time to fire up Pageant and add the private key we created before. Afterwards, fire up PuTTY and configure it to connect to the Linux machine.&lt;/p&gt;
 
@@ -312,7 +312,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
       <guid>https://chipsncookies.com/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
       <description>
 
-&lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
+&lt;h2 id=&#34;you-gotta-have-mvvm&#34;&gt;You gotta have MVVM&lt;/h2&gt;
 
 &lt;p&gt;A developer and his tools are inseparable. We all like &lt;a href=&#34;https://sites.google.com/site/unclebobconsultingllc/getting-a-solid-start&#34;&gt;SOLID&lt;/a&gt; and every (.NET) developer has his or her favourite dependency injection tool. There is &lt;a href=&#34;http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx&#34;&gt;a lot&lt;/a&gt; to choose from. I like Autofac because of the way it handles modules, the lifetime of a type and how it registers types.&lt;/p&gt;
 
@@ -320,7 +320,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
 
 &lt;p&gt;MVVM Light comes with an IoC container called SimpleIoC. And that’s what it is: a dead-simple IoC container. As I said: you don’t have to use the parts you don’t like. So let me replace SimpleIoC with my dependency injector of choice: Autofac.&lt;/p&gt;
 
-&lt;h2 id=&#34;architecture:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Architecture&lt;/h2&gt;
+&lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
 
 &lt;p&gt;This is an overview of how I usually structure my solution:&lt;/p&gt;
 
@@ -370,7 +370,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
     + ...
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;where-to-put-what:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Where to put what?&lt;/h3&gt;
+&lt;h3 id=&#34;where-to-put-what&#34;&gt;Where to put what?&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Registrations of viewmodels and cross-platform service implementations: MyApp.Utilities.CrossPlatformModule&lt;/li&gt;
@@ -380,13 +380,13 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
 &lt;li&gt;ViewModelLocator initialization: App/Main&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;how-it-all-ties-together:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;How it all ties together&lt;/h2&gt;
+&lt;h2 id=&#34;how-it-all-ties-together&#34;&gt;How it all ties together&lt;/h2&gt;
 
 &lt;p&gt;First off, you start by creating interfaces for all the services you need. Next up, you can start defining implementations for the services and put them in the correct namespaces.&lt;/p&gt;
 
 &lt;p&gt;When that&amp;rsquo;s done, it&amp;rsquo;s time to create our modules. Now, assembly scanning sometimes causes exceptions on certain platforms. Also, PCL&amp;rsquo;s don&amp;rsquo;t have the methods you&amp;rsquo;re used to from ASP.NET or other types of projects for assembly scanning. I know it makes things incredibly easy, but I&amp;rsquo;d advise against it for Xamarin projects. You&amp;rsquo;ll have to register type by type in the modules. Usually I create an array of types and throw them in &lt;code&gt;builder.RegisterTypes(types)&lt;/code&gt;. The platform-specific modules should contain registrations for the platform-specific services. Don&amp;rsquo;t forget the ones that come with Autofac by default.&lt;/p&gt;
 
-&lt;h3 id=&#34;example-of-a-platform-specific-service:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Example of a platform-specific service&lt;/h3&gt;
+&lt;h3 id=&#34;example-of-a-platform-specific-service&#34;&gt;Example of a platform-specific service&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;using System;
 using Autofac;
@@ -470,7 +470,7 @@ namespace MyApp.Android.Utilities
 
 &lt;p&gt;That method is then called at the moment I initialize the &lt;code&gt;ViewModelLocator&lt;/code&gt;. Laurent&amp;rsquo;s talk goes in depth on how to do that so I won&amp;rsquo;t cover that part.&lt;/p&gt;
 
-&lt;h2 id=&#34;servicelocator:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;ServiceLocator&lt;/h2&gt;
+&lt;h2 id=&#34;servicelocator&#34;&gt;ServiceLocator&lt;/h2&gt;
 
 &lt;p&gt;Whenever you need an instance of a registered type, you can use the &lt;code&gt;ServiceLocator&lt;/code&gt; like so:&lt;/p&gt;
 
@@ -486,7 +486,7 @@ var factory = ServiceLocator.Current.GetInstance&amp;lt;MyViewModelRequiringAPar
 var vm = factory(myVar);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;questions:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Questions?&lt;/h2&gt;
+&lt;h2 id=&#34;questions&#34;&gt;Questions?&lt;/h2&gt;
 
 &lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;https://chipsncookies.com/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -553,7 +553,7 @@ var vm = factory(myVar);
       <guid>https://chipsncookies.com/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
       <description>
 
-&lt;p&gt;Docker is awesome, right? And thanks to &lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;boot2docker&lt;/a&gt; Windows users were no longer left out of the fun.&lt;/p&gt;
+&lt;p&gt;Docker is awesome, right? And thanks to [boot2docker](&lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;http://boot2docker.io/(http://boot2docker.io/&lt;/a&gt;) Windows users were no longer left out of the fun.&lt;/p&gt;
 
 &lt;p&gt;Still, setting everything up could be a PITA and you had to install Oracle VirtualBox to use it as Docker containers were actually run inside of a VM (which was the purpose of boot2docker). If you use Hyper-V regularly, you&amp;rsquo;ll notice that you can&amp;rsquo;t have it both ways. Scott Hanselman &lt;a href=&#34;http://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx&#34;&gt;figured out a way&lt;/a&gt; to make switching between the two a little bit less painful, but you still had to reboot your machine if you wanted to use VirtualBox.&lt;/p&gt;
 
@@ -565,7 +565,7 @@ var vm = factory(myVar);
 
 &lt;p&gt;So how do you install Docker Machine on Windows with Hyper-V? Here we go.&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-hyper-v-and-network-connections:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-hyper-v-and-network-connections&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
 
 &lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;https://chipsncookies.com/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
 
@@ -573,11 +573,11 @@ var vm = factory(myVar);
 
 &lt;p&gt;Then go to your Network Connections, open the properties of your active internet connection and share the connection with the newly created virtual network switch. This will make sure that the IP of the boot2docker VM never changes and it still has internet access.&lt;/p&gt;
 
-&lt;h2 id=&#34;download-and-install-docker-machine:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Download and &lt;em&gt;install&lt;/em&gt; Docker Machine&lt;/h2&gt;
+&lt;h2 id=&#34;download-and-install-docker-machine&#34;&gt;Download and &lt;em&gt;install&lt;/em&gt; Docker Machine&lt;/h2&gt;
 
 &lt;p&gt;You don&amp;rsquo;t need Docker Toolbox if you&amp;rsquo;re not going to use Oracle VirtualBox. Just download the latest version of Docker Machine from &lt;a href=&#34;https://github.com/docker/machine/releases/&#34;&gt;GitHub&lt;/a&gt;, rename it to &lt;code&gt;docker-machine.exe&lt;/code&gt; and put it in your &lt;em&gt;PATH&lt;/em&gt;. That&amp;rsquo;s all there is to it.&lt;/p&gt;
 
-&lt;h2 id=&#34;create-a-new-docker-machine-with-the-hyper-v-driver:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Create a new Docker Machine with the Hyper-V driver&lt;/h2&gt;
+&lt;h2 id=&#34;create-a-new-docker-machine-with-the-hyper-v-driver&#34;&gt;Create a new Docker Machine with the Hyper-V driver&lt;/h2&gt;
 
 &lt;p&gt;Now open an administrative command prompt (you need to be an administrator to create new virtual machines) and execute the following command to create a new Docker Machine named &lt;em&gt;boot2docker&lt;/em&gt;. Make sure to replace &lt;code&gt;My Internal Switch&lt;/code&gt; with the name of the internal switch you created before. You can add &lt;code&gt;--hyper-v-memory xxxx&lt;/code&gt; before the name of the machine to change the default amount of memory (it&amp;rsquo;s dynamic) from 1024 to something else.&lt;/p&gt;
 
@@ -589,7 +589,7 @@ var vm = factory(myVar);
 &lt;pre&gt;&lt;code&gt;docker-machine env --shell cmd boot2docker
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;connect-to-your-boot2docker-instance:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Connect to your boot2docker instance&lt;/h2&gt;
+&lt;h2 id=&#34;connect-to-your-boot2docker-instance&#34;&gt;Connect to your boot2docker instance&lt;/h2&gt;
 
 &lt;p&gt;You can now connect to your newly created boot2docker instance with the following command as it should already be running:&lt;/p&gt;
 
@@ -652,7 +652,7 @@ docker-machine kill boot2docker
 
 &lt;p&gt;Turns out, they didn&amp;rsquo;t. A few days ago, I started receiving tens of invites for a OnePlus Two. There was another catch: you can only use these invites with the address you used for the waiting list. It&amp;rsquo;s &lt;em&gt;impossible&lt;/em&gt; to share the invites.&lt;/p&gt;
 
-&lt;h2 id=&#34;here-s-the-workaround:2a147718c3e2bf306b7baa94f84231a6&#34;&gt;Here&amp;rsquo;s the workaround:&lt;/h2&gt;
+&lt;h2 id=&#34;here-s-the-workaround&#34;&gt;Here&amp;rsquo;s the workaround:&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Register a new OnePlus account with the email address that received the invite.&lt;/li&gt;
@@ -685,9 +685,9 @@ docker-machine kill boot2docker
 
 &lt;p&gt;Building this blog requires some more packages. Wercker doesn&amp;rsquo;t automatically pull in your Git submodules, so Git is also a necessity there. Another one is Hugo, to build the static website itself. Hugo doesn&amp;rsquo;t minimize your files, however. That&amp;rsquo;s why I also include &lt;a href=&#34;https://github.com/yui/yuicompressor&#34;&gt;YUI compressor&lt;/a&gt; (minifies *.js and *.css) and &lt;a href=&#34;https://github.com/kangax/html-minifier&#34;&gt;HTML minifier&lt;/a&gt; (like the name says, minifies HTML files). Finally, I&amp;rsquo;ve been experimenting with &lt;a href=&#34;https://github.com/gjtorikian/html-proofer&#34;&gt;HTML proofer&lt;/a&gt; to validate the generated HTML files and check them for dead links. All of these packages (and their dependencies) are available in my Docker container called &lt;a href=&#34;https://hub.docker.com/r/samueldebruyn/hugo-build/&#34;&gt;hugo-build&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;side-notes:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Side notes&lt;/h2&gt;
+&lt;h2 id=&#34;side-notes&#34;&gt;Side notes&lt;/h2&gt;
 
-&lt;h3 id=&#34;hugo-build:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;hugo-build&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-build&#34;&gt;hugo-build&lt;/h3&gt;
 
 &lt;p&gt;The image is quite big. It needs Java for YUI compressor, Ruby for html-proofer and Node for html-minifier. Setting up the environment and storing the container each take about half a minute. If you have some suggestions on making the image smaller, please &lt;a href=&#34;https://github.com/SamuelDebruyn/docker-hugo-build&#34;&gt;submit an issue or a pull request&lt;/a&gt;.&lt;/p&gt;
 
@@ -695,11 +695,11 @@ docker-machine kill boot2docker
 
 &lt;p&gt;The build often fails on a time-out while running &lt;code&gt;apt-get&lt;/code&gt;. It&amp;rsquo;s usually &lt;em&gt;fixed&lt;/em&gt; by running another build.&lt;/p&gt;
 
-&lt;h3 id=&#34;html-proofer:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;html-proofer&lt;/h3&gt;
+&lt;h3 id=&#34;html-proofer&#34;&gt;html-proofer&lt;/h3&gt;
 
 &lt;p&gt;html-proofer will often fail because it scans your website for dead links before your website is even published. I haven&amp;rsquo;t been able to work around this, but &lt;a href=&#34;https://github.com/gjtorikian/html-proofer/pull/178&#34;&gt;here&amp;rsquo;s an issue&lt;/a&gt; that&amp;rsquo;s keeping track of this.&lt;/p&gt;
 
-&lt;h3 id=&#34;example-wercker-yml-using-these-images:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Example &lt;em&gt;wercker.yml&lt;/em&gt; using these images&lt;/h3&gt;
+&lt;h3 id=&#34;example-wercker-yml-using-these-images&#34;&gt;Example &lt;em&gt;wercker.yml&lt;/em&gt; using these images&lt;/h3&gt;
 
 &lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/chipsncookies-site&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
 </description>
@@ -715,7 +715,7 @@ docker-machine kill boot2docker
 
 &lt;p&gt;There are several ways to create a USB stick to install Windows. Chances are you end up with an error during the installation or you (unknowingly) use the wrong partition layout for your HDD/SSD.&lt;/p&gt;
 
-&lt;h2 id=&#34;get-an-iso:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Get an ISO&lt;/h2&gt;
+&lt;h2 id=&#34;get-an-iso&#34;&gt;Get an ISO&lt;/h2&gt;
 
 &lt;p&gt;Which version of Windows do you want to install? This guide would work fine with Windows Vista or newer, but you can get an ISO for Windows 10 Home/Pro on &lt;a href=&#34;https://www.microsoft.com/en-us/software-download/windows10ISO&#34;&gt;this page&lt;/a&gt;.&lt;/p&gt;
 
@@ -725,11 +725,11 @@ docker-machine kill boot2docker
 
 &lt;p&gt;or open it up on your smartphone/tablet, select the version of Windows you want to download and send the direct download link to yourself (the easy way).&lt;/p&gt;
 
-&lt;h2 id=&#34;get-rufus:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Get Rufus&lt;/h2&gt;
+&lt;h2 id=&#34;get-rufus&#34;&gt;Get Rufus&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://rufus.akeo.ie/&#34;&gt;Rufus&lt;/a&gt; is a simple tool which lets you easily create bootable USB sticks for any kind of operating system. All you have to do is download it. Rufus doesn&amp;rsquo;t require an installation.&lt;/p&gt;
 
-&lt;h2 id=&#34;creating-the-image:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Creating the image&lt;/h2&gt;
+&lt;h2 id=&#34;creating-the-image&#34;&gt;Creating the image&lt;/h2&gt;
 
 &lt;p&gt;Now plug in your USB stick, fire up Rufus and point it to your USB stick (first dropdown list) and the ISO image (button next to the last dropdown list) you just downloaded. &lt;strong&gt;Pay attention&lt;/strong&gt; to the next steps, because Rufus will delete everything on the USB stick/disk you select.&lt;/p&gt;
 
@@ -743,7 +743,7 @@ docker-machine kill boot2docker
 
 &lt;p&gt;Now all you have to do is press &lt;em&gt;Start&lt;/em&gt; and wait a few minutes (depends on the speed of your USB device, could take about 15 minutes).&lt;/p&gt;
 
-&lt;h2 id=&#34;booting-the-image:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Booting the image&lt;/h2&gt;
+&lt;h2 id=&#34;booting-the-image&#34;&gt;Booting the image&lt;/h2&gt;
 
 &lt;p&gt;This guide ends here, but if you don&amp;rsquo;t know how to boot your PC from the installation image you just created, consult the manual of your PC, BIOS or motherboard. &lt;em&gt;Usually you need to press one of the F-buttons while the logo of your motherboard&amp;rsquo;s manufacturer is displayed.&lt;/em&gt;&lt;/p&gt;
 
@@ -759,19 +759,19 @@ docker-machine kill boot2docker
       <guid>https://chipsncookies.com/2015/experiences-with-windows-10-on-a-new-dell-xps-13-2015/</guid>
       <description>
 
-&lt;h2 id=&#34;ordering-a-new-workhorse:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Ordering a new workhorse&lt;/h2&gt;
+&lt;h2 id=&#34;ordering-a-new-workhorse&#34;&gt;Ordering a new workhorse&lt;/h2&gt;
 
 &lt;p&gt;Windows 10 RTM &lt;a href=&#34;https://chipsncookies.com/img/post/dinoclippy.jpg&#34; title=&#34;awesome wallpaper&#34;&gt;has been out&lt;/a&gt; for about a month now after little less than a year of public &lt;a href=&#34;https://insider.windows.com/&#34; title=&#34;Insider program&#34;&gt;Insider preview&lt;/a&gt; builds. The motherboard of my old, trusty, Asus laptop was slowly dying and the Dell XPS 13&amp;rsquo;s thinness and battery life looked very attractive. I decided to go for it and order a &lt;a href=&#34;http://www.dell.com/us/p/xps-13-9343-laptop/&#34; title=&#34;Dell XPS 13&#34;&gt;Dell XPS 13 (2015)&lt;/a&gt;, without the touch screen. I hate dirty fingerprints on a screen and the better battery life of the version without the touch screen seemed like a better deal. I also ordered a &lt;a href=&#34;http://accessories.us.dell.com/sna/productdetail.aspx?c=us&amp;amp;l=en&amp;amp;s=dhs&amp;amp;cs=19&amp;amp;sku=470-abhh&#34; title=&#34;Dell adapter&#34;&gt;USB 3 -&amp;gt; HDMI/VGA/Ethernet/USB 2 adapter&lt;/a&gt; from Dell.&lt;/p&gt;
 
 &lt;p&gt;While Dell&amp;rsquo;s website tells you they will ship it in about 4 business days, it took nearly 3 weeks until UPS rang my bell with a shipment from China. By the way, Dell Belgium&amp;rsquo;s sales support is terrible. They offer support by phone and chat, but they will tell you on both channels that you have to send them an email. The Belgian support department was very abrupt and impolite. They can&amp;rsquo;t tell you why it looks like your laptop is sitting in an UPS storage facility in China without moving for about a week.&lt;/p&gt;
 
-&lt;h2 id=&#34;first-steps:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;First steps&lt;/h2&gt;
+&lt;h2 id=&#34;first-steps&#34;&gt;First steps&lt;/h2&gt;
 
 &lt;p&gt;The first thing I did after unpacking everything, was booting it up and installing &lt;a href=&#34;https://www.runtime.org/driveimage-xml.htm&#34; title=&#34;DriveImage XML&#34;&gt;DriveImage XML&lt;/a&gt; to create a complete image of every partition so it would be easy to restore if something ever went &lt;a href=&#34;http://d.ibtimes.co.uk/en/full/1451630/windows-10-installation-errors.png&#34; title=&#34;Something happened&#34;&gt;terribly wrong&lt;/a&gt;. Windows also comes with &lt;a href=&#34;http://windows.microsoft.com/en-us/windows-8/create-usb-recovery-drive&#34;&gt;a tool&lt;/a&gt; to create system recovery images on USB sticks etc. This tool copies the recovery partition to a USB stick, together with Windows recovery tools.&lt;/p&gt;
 
 &lt;p&gt;On a side note: a lot of programs like DriveImage XML looked very blurry on the XPS 13&amp;rsquo;s 1080p screen.&lt;/p&gt;
 
-&lt;h2 id=&#34;so-many-windows-10s:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;So many Windows 10s!&lt;/h2&gt;
+&lt;h2 id=&#34;so-many-windows-10s&#34;&gt;So many Windows 10s!&lt;/h2&gt;
 
 &lt;p&gt;If I&amp;rsquo;d &lt;a href=&#34;http://winsupersite.com/windows-10/windows-10-upgrade-paths&#34; title=&#34;Windows 10 upgrade path&#34;&gt;simply upgrade&lt;/a&gt; the Windows 8.1 installation that shipped with the XPS 13, I&amp;rsquo;d get the most basic version of Windows 10. This edition doesn&amp;rsquo;t suffice for most software developers. I signed in to &lt;a href=&#34;https://www.dreamspark.com/&#34; title=&#34;Microsoft Dreamspark&#34;&gt;Microsoft Dreamspark&lt;/a&gt; and got the free Windows 10 Education Edition I&amp;rsquo;m entitled to as an IT student. I had the choice of installing the Enterprise or the Education edition. The Education edition comes with &lt;a href=&#34;http://wincom.blob.core.windows.net/documents/Win10EditionsCompareTable_FINAL.pdf&#34; title=&#34;Feature comparison&#34;&gt;more features&lt;/a&gt; than the Home/Pro Edition and I figured the Enterprise edition wouldn&amp;rsquo;t be as easy to install outside of a domain.&lt;/p&gt;
 
@@ -779,7 +779,7 @@ docker-machine kill boot2docker
 
 &lt;p&gt;Usually, they ask you to sign in to a Microsoft account and offer you to restore the apps and settings from another machine on which you&amp;rsquo;re signed in. Apparently that&amp;rsquo;s not the case if you picked the Education edition: sign in with a domain account or create a local user account. I could link my local account to a Microsoft account after the initial setup, but my desktop now shows a white watermark in the bottom right corner saying &lt;em&gt;Windows 10 Education&lt;/em&gt; (which is impossible to remove &lt;a href=&#34;http://superuser.com/questions/947231/how-can-i-remove-the-windows-10-education-watermark-from-my-dreamspark-license&#34; title=&#34;Get rid of the watermark&#34;&gt;without changing some HEX values&lt;/a&gt; in the registry&amp;hellip;)&lt;/p&gt;
 
-&lt;h2 id=&#34;the-first-boot:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;The first boot&lt;/h2&gt;
+&lt;h2 id=&#34;the-first-boot&#34;&gt;The first boot&lt;/h2&gt;
 
 &lt;p&gt;The blurriness was back. About every non-modern app looked blurry. Probably driver issues, right? Dell&amp;rsquo;s &lt;a href=&#34;http://www.dell.com/learn/us/en/19/campaigns/windows-upgrade-offer&#34;&gt;support site&lt;/a&gt; says that the XPS 13 is ready for Windows 10. Okay&amp;hellip; But the driver section doesn&amp;rsquo;t even have a graphics driver. I installed all the available Windows 10 drivers and some Windows 8 drivers which weren&amp;rsquo;t available in the Windows 10 section. I found drivers for the Intel HD 5500 and some other Intel components on Intel&amp;rsquo;s website and Realtek&amp;rsquo;s website has Windows 10 drivers for SD card reader and the audio chip.&lt;/p&gt;
 
@@ -787,7 +787,7 @@ docker-machine kill boot2docker
 
 &lt;p&gt;The installation of the audio driver just failed completely. The first step of the installation uninstalls your existing driver and asks you to reboot. The second step should install the new driver, but after a reboot the installation process started over. I stopped trying after 4 attempts as audio seemed to be working fine.&lt;/p&gt;
 
-&lt;h2 id=&#34;the-blurriness-is-here-to-stay:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;The blurriness (is here to stay)&lt;/h2&gt;
+&lt;h2 id=&#34;the-blurriness-is-here-to-stay&#34;&gt;The blurriness (is here to stay)&lt;/h2&gt;
 
 &lt;p&gt;It was still there. I fiddled a little bit with the Intel HD Graphics Control Panel and enabled some settings that should improve the quality of textures. That was a bad choice. If you enable most settings in the &lt;em&gt;3D&lt;/em&gt; section of the control panel, textures in modern apps will look very dark and the Windows 10 start menu becomes one dark grey mess. &lt;strong&gt;Disable all settings in the &lt;em&gt;3D&lt;/em&gt; section of the Intel HD Graphics Control Panel on Windows 10&lt;/strong&gt;.&lt;/p&gt;
 
@@ -797,37 +797,37 @@ docker-machine kill boot2docker
 
 &lt;p&gt;I concluded that most Windows applications simply aren&amp;rsquo;t built with high DPI screens in mind. It&amp;rsquo;s &lt;a href=&#34;https://retinamacapps.com/&#34;&gt;the retina story&lt;/a&gt; of the new Macs all over again.&lt;/p&gt;
 
-&lt;h2 id=&#34;some-issues-i-worked-around-or-fixed:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Some issues I worked around or fixed&lt;/h2&gt;
+&lt;h2 id=&#34;some-issues-i-worked-around-or-fixed&#34;&gt;Some issues I worked around or fixed&lt;/h2&gt;
 
-&lt;h3 id=&#34;the-failing-touchpad-driver-update:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;The failing touchpad driver update&lt;/h3&gt;
+&lt;h3 id=&#34;the-failing-touchpad-driver-update&#34;&gt;The failing touchpad driver update&lt;/h3&gt;
 
 &lt;p&gt;Windows 10 tried to install an update for the touchpad driver and kept on failing. This was &lt;a href=&#34;http://en.community.dell.com/support-forums/laptop/f/3518/t/19643591&#34;&gt;a known issue&lt;/a&gt; you could safely ignore. Microsoft offers a utility to hide some specific updates.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-dell-adapter:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;The Dell adapter&lt;/h3&gt;
+&lt;h3 id=&#34;the-dell-adapter&#34;&gt;The Dell adapter&lt;/h3&gt;
 
 &lt;p&gt;Installing and plugging in the Dell adapter I bought, gave me BSoDs and a lot of other crap. Installing a &lt;a href=&#34;http://www.displaylink.com/downloads/downloads.php&#34; title=&#34;DisplayLink drivers&#34;&gt;recent driver from DisplayLink&lt;/a&gt;, its manufacturer, fixed it.&lt;/p&gt;
 
-&lt;h3 id=&#34;distorted-sound:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Distorted sound&lt;/h3&gt;
+&lt;h3 id=&#34;distorted-sound&#34;&gt;Distorted sound&lt;/h3&gt;
 
 &lt;p&gt;Sometimes the audio driver went berserk and the sound became very distorted. Disabling and enabling the Realtek HW audio codec usually fixed it temporarily, but it was finally fixed after installing a new version of the Realtek audio driver last week.&lt;/p&gt;
 
-&lt;h4 id=&#34;update:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Update&lt;/h4&gt;
+&lt;h4 id=&#34;update&#34;&gt;Update&lt;/h4&gt;
 
 &lt;p&gt;This issue reappeared a few hours after publishing this post.&lt;/p&gt;
 
-&lt;h3 id=&#34;missing-settings-in-the-power-management-section-of-the-control-panel:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Missing settings in the power management section of the control panel&lt;/h3&gt;
+&lt;h3 id=&#34;missing-settings-in-the-power-management-section-of-the-control-panel&#34;&gt;Missing settings in the power management section of the control panel&lt;/h3&gt;
 
 &lt;p&gt;Dell offers a great utility called &lt;a href=&#34;http://en.community.dell.com/techcenter/enterprise-client/w/wiki/7535.dell-command-power-manager&#34;&gt;Dell Command | Power&lt;/a&gt; which you should definitely install if you own a recent Dell laptop. You can optimize various settings that avoid battery wear (e.g. optimize the charging algorithm for a laptop that is often plugged into the charger or keep the laptop extra cool).&lt;/p&gt;
 
 &lt;p&gt;You can also use &lt;a href=&#34;http://www.eightforums.com/tutorials/54127-power-options-add-remove-wireless-adapter-settings.html&#34;&gt;this trick&lt;/a&gt; to enable some settings in the control panel that were hidden by the manufacturer of your device.&lt;/p&gt;
 
-&lt;h3 id=&#34;slow-wi-fi:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Slow Wi-Fi&lt;/h3&gt;
+&lt;h3 id=&#34;slow-wi-fi&#34;&gt;Slow Wi-Fi&lt;/h3&gt;
 
 &lt;p&gt;The latest version of the Wi-Fi driver that&amp;rsquo;s available on Intel&amp;rsquo;s website fixed an issue where I would experience a very slow Wi-Fi connection from time to time.&lt;/p&gt;
 
-&lt;h2 id=&#34;some-issues-i-still-experience:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Some issues I still experience&lt;/h2&gt;
+&lt;h2 id=&#34;some-issues-i-still-experience&#34;&gt;Some issues I still experience&lt;/h2&gt;
 
-&lt;h3 id=&#34;sleep-hibernate-coma:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Sleep, hibernate, COMA&lt;/h3&gt;
+&lt;h3 id=&#34;sleep-hibernate-coma&#34;&gt;Sleep, hibernate, COMA&lt;/h3&gt;
 
 &lt;p&gt;Usually, when I close the lid of my XPS 13, the laptop immediately goes to sleep. When I open it up again, everything is back up and running in less than a second. So far, so good.&lt;/p&gt;
 
@@ -843,39 +843,39 @@ docker-machine kill boot2docker
 
 &lt;p&gt;The only action that gets my laptop out of its coma is holding the power button down for a few seconds, then it starts booting up again.&lt;/p&gt;
 
-&lt;h3 id=&#34;crazy-multi-monitor-dpi-issues:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Crazy multi-monitor DPI issues&lt;/h3&gt;
+&lt;h3 id=&#34;crazy-multi-monitor-dpi-issues&#34;&gt;Crazy multi-monitor DPI issues&lt;/h3&gt;
 
 &lt;p&gt;If you want to see Windows from a new perspective, connect an external monitor with a different DPI scaling than the one on your laptop screen. All sorts of crazy things start to happen. I suspect the issue above is related to this one. Windows rarely gets it right on the first try. Sometimes it uses the higher DPI scaling on both monitors. It never picks the default DPI scaling (100%) for both monitors. A reboot usually fixes most of my issues, but they often reappear when I resume the machine from sleep.&lt;/p&gt;
 
 &lt;p&gt;I am seriously considering buying an extra monitor just so I could use the same DPI scaling on both screens&amp;hellip; Rebooting Windows doesn&amp;rsquo;t take more than 10 seconds, but you still have to close all your programs.&lt;/p&gt;
 
-&lt;h2 id=&#34;a-quick-review:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;A quick review&lt;/h2&gt;
+&lt;h2 id=&#34;a-quick-review&#34;&gt;A quick review&lt;/h2&gt;
 
-&lt;h3 id=&#34;the-battery-life:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;The battery life&lt;/h3&gt;
+&lt;h3 id=&#34;the-battery-life&#34;&gt;The battery life&lt;/h3&gt;
 
 &lt;p&gt;Dell promises 10+ hours of battery life with this laptop. I never even got close. You&amp;rsquo;d probably only get this with your laptop on the lowest brightness setting in flight mode. I usually get up to 8 hours with light usage (browsing, reading&amp;hellip;) and up to 4 hours with heavy usage (running multiple instances of Visual Studio and building about every 15 minutes).&lt;/p&gt;
 
 &lt;p&gt;I&amp;rsquo;m quite happy with the battery life, it&amp;rsquo;s not as good as expected, but still a lot better than what you get from most other (non-Apple) laptops.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-screen:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;The screen&lt;/h3&gt;
+&lt;h3 id=&#34;the-screen&#34;&gt;The screen&lt;/h3&gt;
 
 &lt;p&gt;Software developers need to start thinking about high DPI screens. I didn&amp;rsquo;t even get the 4K screen. I love the thin bezels and the screen looks very good except in direct sunlight.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-touchpad:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;The touchpad&lt;/h3&gt;
+&lt;h3 id=&#34;the-touchpad&#34;&gt;The touchpad&lt;/h3&gt;
 
 &lt;p&gt;I highly recommend playing a little bit with the settings. A lot of people seem to be complaining about some kind of lag or delay. You can adjust this delay in the settings. I&amp;rsquo;ve put it on the shortest delay, but haven&amp;rsquo;t disabled the delay completely.&lt;/p&gt;
 
 &lt;p&gt;The touchpad works fine; it registers everything I want it to.&lt;/p&gt;
 
-&lt;h3 id=&#34;the-keyboard:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;The keyboard&lt;/h3&gt;
+&lt;h3 id=&#34;the-keyboard&#34;&gt;The keyboard&lt;/h3&gt;
 
 &lt;p&gt;The keys are very thin but typing is very comfortable. The backspace and the FN buttons are placed awkwardly (especially if you use multiple desktops in Windows 10), but I got used to it.&lt;/p&gt;
 
-&lt;h3 id=&#34;performance:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Performance&lt;/h3&gt;
+&lt;h3 id=&#34;performance&#34;&gt;Performance&lt;/h3&gt;
 
 &lt;p&gt;The performance really depends on the configuration you pick. I picked the Intel i7-5600U with 8 GB of RAM. I would have loved a 16 GB configuration and all you can upgrade is the SSD. It isn&amp;rsquo;t as fast as the quad core i7 with Hyper Threading I used to have, but the difference is hardly noticeable.&lt;/p&gt;
 
-&lt;h2 id=&#34;conclusion:b79f60f580df3e0f9ebbeafe51282028&#34;&gt;Conclusion&lt;/h2&gt;
+&lt;h2 id=&#34;conclusion&#34;&gt;Conclusion&lt;/h2&gt;
 
 &lt;p&gt;I&amp;rsquo;m very happy with my XPS 13. The battery is great, it almost never gets hot and it&amp;rsquo;s very small and lightweight being a 13-inch laptop. Microsoft, Dell and their partners seem to be working hard on fixing driver issues and making Windows 10 a very pleasant experience.&lt;/p&gt;
 
@@ -891,7 +891,7 @@ docker-machine kill boot2docker
       <guid>https://chipsncookies.com/2015/hardening-your-wordpress-security/</guid>
       <description>
 
-&lt;h2 id=&#34;introduction:270325a472963f8dbe8695a68f29ae37&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;This is the second part of a guide about &lt;a href=&#34;https://chipsncookies.com/2015/recovering-a-hacked-wordpress/&#34;&gt;recovering a hacked WordPress&lt;/a&gt; and hardening your WordPress security.&lt;/p&gt;
 
@@ -905,49 +905,49 @@ docker-machine kill boot2docker
 
 &lt;p&gt;Now, let&amp;rsquo;s get started, shall we?&lt;/p&gt;
 
-&lt;h2 id=&#34;consider-to-use-a-cloud-proxy:270325a472963f8dbe8695a68f29ae37&#34;&gt;Consider to use a cloud proxy&lt;/h2&gt;
+&lt;h2 id=&#34;consider-to-use-a-cloud-proxy&#34;&gt;Consider to use a cloud proxy&lt;/h2&gt;
 
 &lt;p&gt;Without a good CDN and caching strategy, it&amp;rsquo;s impossible to survive a DDoS attack. The easiest solution is a reverse cloud proxy like &lt;a href=&#34;http://www.cloudflare.com&#34;&gt;CloudFlare&lt;/a&gt;. CloudFlare caches your content and allows for very precise configuration. They will also keep your static files online if your server went offline. CloudFlare offers very good protection against malicious visitors and is awesome at detecting and mitigating DDoS attacks.&lt;/p&gt;
 
 &lt;p&gt;They offer &lt;a href=&#34;https://wordpress.org/plugins/cloudflare/&#34;&gt;a WordPress plugin&lt;/a&gt; that helps with the reverse proxying.&lt;/p&gt;
 
-&lt;h3 id=&#34;encryption:270325a472963f8dbe8695a68f29ae37&#34;&gt;Encryption&lt;/h3&gt;
+&lt;h3 id=&#34;encryption&#34;&gt;Encryption&lt;/h3&gt;
 
 &lt;p&gt;CloudFlare, the tool I mentioned above, offers free server-client SSL. It isn&amp;rsquo;t as secure as full SSL (SSL from your server to Cloudflare&amp;rsquo;s servers and from CloudFlare&amp;rsquo;s servers to your visitor&amp;rsquo;s browsers), but it&amp;rsquo;s a lot safer than plain HTTP.&lt;/p&gt;
 
-&lt;h2 id=&#34;make-sure-the-web-servers-are-secure:270325a472963f8dbe8695a68f29ae37&#34;&gt;Make sure the web servers are secure&lt;/h2&gt;
+&lt;h2 id=&#34;make-sure-the-web-servers-are-secure&#34;&gt;Make sure the web servers are secure&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re on shared hosting, you don&amp;rsquo;t have much to say about this, but you can still take measures to ensure your management portal access is safe. Use very strong passwords to manage your web server, make sure everything (PHP, MySQL, Apache&amp;hellip;) is up to date, only allow database access from your web server (usually localhost)&amp;hellip;&lt;/p&gt;
 
 &lt;p&gt;Another perspective to look at this is securing access to your files. Store your backups in a safe location, make sure that the WordPress folders and files have the right permissions (this changes sometimes, take a look at the &lt;a href=&#34;https://codex.wordpress.org/Changing_File_Permissions&#34;&gt;official website&lt;/a&gt; to find out which permissions you should use).&lt;/p&gt;
 
-&lt;h2 id=&#34;use-strong-authentication-and-authorisation:270325a472963f8dbe8695a68f29ae37&#34;&gt;Use strong authentication and authorisation&lt;/h2&gt;
+&lt;h2 id=&#34;use-strong-authentication-and-authorisation&#34;&gt;Use strong authentication and authorisation&lt;/h2&gt;
 
 &lt;p&gt;Use strong passwords, make sure your wp-config.php is only stored on the webserver itself, consider using &lt;a href=&#34;https://wordpress.org/plugins/wordpress-2-step-verification/&#34;&gt;MFA&lt;/a&gt;&amp;hellip; There are a lot of ways to make sure that it isn&amp;rsquo;t too easy to get in.&lt;/p&gt;
 
-&lt;h2 id=&#34;consider-using-a-3rd-party-email-provider:270325a472963f8dbe8695a68f29ae37&#34;&gt;Consider using a 3rd party email provider&lt;/h2&gt;
+&lt;h2 id=&#34;consider-using-a-3rd-party-email-provider&#34;&gt;Consider using a 3rd party email provider&lt;/h2&gt;
 
 &lt;p&gt;Most hackers don&amp;rsquo;t even want to hack your website itself. Usually they&amp;rsquo;ll want to use your mail server (which is usually running on the same server) and domain to sell them to spammers. A third party email service like &lt;a href=&#34;http://mandrillapp.com/&#34;&gt;Mandrill&lt;/a&gt; or &lt;a href=&#34;https://sendgrid.com/&#34;&gt;SendGrid&lt;/a&gt; could come in handy to avoid such attacks. I recommend disabling the local mail server and creating SPF and DKIM records that only emails from your email provider. It&amp;rsquo;s quite easy to setup Mandrill with WordPress with &lt;a href=&#34;https://wordpress.org/plugins/wpmandrill/&#34;&gt;this Mandrill plugin&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;always-use-the-latest-versions:270325a472963f8dbe8695a68f29ae37&#34;&gt;Always use the latest versions&lt;/h2&gt;
+&lt;h2 id=&#34;always-use-the-latest-versions&#34;&gt;Always use the latest versions&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/&#34;&gt;PHP is a terrible programming language.&lt;/a&gt; It&amp;rsquo;s incredibly easy to write a lot of bugs and never notice them. If a plugin or theme is updated, install the update. Every possible fix for security issues is welcome.&lt;/p&gt;
 
-&lt;h2 id=&#34;uninstall-plugins-and-themes-you-don-t-need:270325a472963f8dbe8695a68f29ae37&#34;&gt;Uninstall plugins and themes you don&amp;rsquo;t need&lt;/h2&gt;
+&lt;h2 id=&#34;uninstall-plugins-and-themes-you-don-t-need&#34;&gt;Uninstall plugins and themes you don&amp;rsquo;t need&lt;/h2&gt;
 
 &lt;p&gt;If you don&amp;rsquo;t necessarily need a plugin or theme, uninstall it completely. Don&amp;rsquo;t even leave it deactivated. Hackers can run code in deactivated plugins without any hassle.&lt;/p&gt;
 
-&lt;h2 id=&#34;schedule-security-scans:270325a472963f8dbe8695a68f29ae37&#34;&gt;Schedule security scans&lt;/h2&gt;
+&lt;h2 id=&#34;schedule-security-scans&#34;&gt;Schedule security scans&lt;/h2&gt;
 
 &lt;p&gt;While &lt;a href=&#34;https://wordpress.org/plugins/exploit-scanner/&#34;&gt;Exploit Scanner&lt;/a&gt; is perfectly capable of scanning a WordPress installation for (possible) exploits, you can&amp;rsquo;t use it to schedule automatic scans. &lt;a href=&#34;https://wordpress.org/plugins/sucuri-scanner/&#34;&gt;Sucuri Security&lt;/a&gt; is definitely a must-have for every WordPress website. You can schedule automatic scans for modified files, notifications for about everything that happens on your website, thorough measures to further harden your website&amp;rsquo;s security&amp;hellip;&lt;/p&gt;
 
-&lt;h2 id=&#34;log-bad-behaviour:270325a472963f8dbe8695a68f29ae37&#34;&gt;Log bad behaviour&lt;/h2&gt;
+&lt;h2 id=&#34;log-bad-behaviour&#34;&gt;Log bad behaviour&lt;/h2&gt;
 
 &lt;p&gt;There&amp;rsquo;s an awesome plugin called &lt;a href=&#34;https://wordpress.org/plugins/bad-behavior/&#34;&gt;Bad Behavior&lt;/a&gt; which logs malicious looking behaviour and notifies you if you want to. If you suspect a hacker is trying to get in, install this plugin. You can then use to automatically block some of his attempts.&lt;/p&gt;
 
 &lt;p&gt;If you notice some brute force attacks on your &lt;em&gt;wp-login.php&lt;/em&gt; page, consider installing &lt;a href=&#34;https://wordpress.org/plugins/limit-login-attempts/&#34;&gt;Limit Login Attempts&lt;/a&gt;. You can fine-tune its settings so that it&amp;rsquo;s not too hard on your users.&lt;/p&gt;
 
-&lt;h2 id=&#34;change-the-defaults:270325a472963f8dbe8695a68f29ae37&#34;&gt;Change the defaults&lt;/h2&gt;
+&lt;h2 id=&#34;change-the-defaults&#34;&gt;Change the defaults&lt;/h2&gt;
 
 &lt;p&gt;WordPress allows you to change a lot of the default settings, here are a few things you could change to improve security by obscurity:&lt;/p&gt;
 

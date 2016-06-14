@@ -29,7 +29,7 @@
 
 &lt;p&gt;This would probably also be a good time to thank all the people at &lt;a href=&#34;http://odisee.be&#34;&gt;Odisee&lt;/a&gt;. My fellow students, the lecturers, the staff, everybody at the ASR (student council)&amp;hellip; The past three years have been a great adventure with lots of interesting and great experiences. On my first day, I didn&amp;rsquo;t know anyone and while I had some knowledge about software development (doesn&amp;rsquo;t seem much compared with where I am today), I didn&amp;rsquo;t have any real experience. That isn&amp;rsquo;t the case anymore today. I&amp;rsquo;ve learned so much on a lot of different levels. My work at the student council also contributed to this. There are too many people I&amp;rsquo;d like to thank, so I&amp;rsquo;m not even going to try to list them all. Thank you, to all of you.&lt;/p&gt;
 
-&lt;h3 id=&#34;so-what-s-next:9d346d20a62aaf861999f2ffeb5c0c74&#34;&gt;So&amp;hellip; what&amp;rsquo;s next?&lt;/h3&gt;
+&lt;h3 id=&#34;so-what-s-next&#34;&gt;So&amp;hellip; what&amp;rsquo;s next?&lt;/h3&gt;
 
 &lt;p&gt;On May 9th, I&amp;rsquo;m starting as a Xamarin developer at &lt;a href=&#34;http://cozmos.be/&#34;&gt;Cozmos&lt;/a&gt;. They&amp;rsquo;re an awesome company with awesome people and they make awesome mobile apps. Awesome, right? They have the best Xamarin developers in Belgium, so I&amp;rsquo;m really looking forward to learning from and working with them.&lt;/p&gt;
 
@@ -45,7 +45,13 @@
       <pubDate>Tue, 26 Apr 2016 20:56:28 +0200</pubDate>
       <author>s@muel.be (Samuel Debruyn)</author>
       <guid>https://chipsncookies.com/portfolio/realdolmen-education/</guid>
-      <description>&lt;p&gt;This is the project I implemented during my internship in my graduation year. As I am currently working on documentation for this project, I&amp;rsquo;ll soon update this page with more details.&lt;/p&gt;
+      <description>&lt;p&gt;This is the project I implemented during my internship in my graduation year. RealDolmen Education is the training department of RealDolmen, a Belgian IT consultancy firm. During my internship I made an app using Xamarin (native) for Android, iOS and Windows Phone for RealDolmen Education.&lt;/p&gt;
+
+&lt;p&gt;The app shows you the courses they offer by the (sub)category they belong to and allows you to search for a course. You can view the details of the course, subscribe to it, give feedback on a session you attended and submit questions to the instructor.&lt;/p&gt;
+
+&lt;p&gt;This project was implemented in the second semester of my final year. In the first semester I &lt;a href=&#34;{{ relref &amp;quot;portfolio/thesis.md&amp;quot; }}&#34;&gt;prepared the implementation&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can browse through the code using the link above or &lt;a href=&#34;https://chipsncookies.com/attachments/internship.pdf&#34;&gt;read the documentation&lt;/a&gt; (in Dutch).&lt;/p&gt;
 </description>
     </item>
     
@@ -57,7 +63,7 @@
       <guid>https://chipsncookies.com/2016/android-update-distribution-is-getting-worse/</guid>
       <description>
 
-&lt;h2 id=&#34;why-it-matters:92b9b84b290dc2d0c46bb8b15456fc42&#34;&gt;Why it matters&lt;/h2&gt;
+&lt;h2 id=&#34;why-it-matters&#34;&gt;Why it matters&lt;/h2&gt;
 
 &lt;p&gt;&lt;em&gt;Click on the images in this post to view a larger, more detailed version.&lt;/em&gt;&lt;/p&gt;
 
@@ -67,7 +73,7 @@
 
 &lt;p&gt;So why does it still matter? It matters to the end users. If you buy an expensive flagship phone, you expect it to receive new features through updates just like your PC does. It doesn&amp;rsquo;t make sense to provide updates for devices with outdated hardware, but most recent phones can last a few years before their hardware becomes outdated. However, their software can&amp;rsquo;t. Most phones are updated for a year or two and are then ignored as its manufacturers want you to buy its newest product.&lt;/p&gt;
 
-&lt;h2 id=&#34;how-bad-is-it:92b9b84b290dc2d0c46bb8b15456fc42&#34;&gt;How bad is it?&lt;/h2&gt;
+&lt;h2 id=&#34;how-bad-is-it&#34;&gt;How bad is it?&lt;/h2&gt;
 
 &lt;p&gt;The Android version with slowest adoption ever is still Android Honeycomb. That&amp;rsquo;s quite normal. Android Honeycomb only ever rolled out to the tablet market which was very young at the time. However, the version with the second to worst adoption rate is Android Marshmallow, Google&amp;rsquo;s latest release. The versions before it didn&amp;rsquo;t do much better. The situation seems to be getting worse and worse.&lt;/p&gt;
 
@@ -95,55 +101,55 @@
 
 &lt;p&gt;There isn&amp;rsquo;t much documentation available for &lt;a href=&#34;http://www.mvvmlight.net/&#34;&gt;MVVM Light&lt;/a&gt; when it comes to Xamarin.Android and Xamarin.iOS. There are several overloads for the &lt;code&gt;SetBinding&lt;/code&gt; method and using the wrong overload causes &lt;code&gt;TargetInvocationException&lt;/code&gt; or &lt;code&gt;TargetException&lt;/code&gt; like &lt;a href=&#34;http://stackoverflow.com/q/35197870/1592358&#34;&gt;this one&lt;/a&gt;. It&amp;rsquo;s also possible that your bindings don&amp;rsquo;t update anymore after you set one binding using an incorrect syntax.&lt;/p&gt;
 
-&lt;h2 id=&#34;correct-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Correct binding&lt;/h2&gt;
+&lt;h2 id=&#34;correct-binding&#34;&gt;Correct binding&lt;/h2&gt;
 
 &lt;p&gt;You can only bind on properties, not on fields. You can use the new C# 6 syntax if you like (&lt;code&gt;public TextView TextView =&amp;gt; ...&lt;/code&gt;). They don&amp;rsquo;t always have to be &lt;code&gt;public&lt;/code&gt; but it sure helps making them &lt;code&gt;public&lt;/code&gt; either way. The easiest way to create a new view property on Android is with the &lt;code&gt;mvvmdroidelement&lt;/code&gt; snippet provided by &lt;a href=&#34;https://visualstudiogallery.msdn.microsoft.com/ee36692d-ed3f-4888-b904-281aaaeac529&#34;&gt;this extension&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;You should put your bindings in your views and make sure to respect the lifecycle of the platform you&amp;rsquo;re using. Also, always keep a reference to your binding so it doesn&amp;rsquo;t get garbage collected. I usually Store a list with all my bindings in my view.&lt;/p&gt;
 
-&lt;h3 id=&#34;android-activities:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android activities&lt;/h3&gt;
+&lt;h3 id=&#34;android-activities&#34;&gt;Android activities&lt;/h3&gt;
 
 &lt;p&gt;First create your layout in the &lt;code&gt;OnCreate&lt;/code&gt; method, create and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
 
-&lt;h3 id=&#34;android-fragments:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Android fragments&lt;/h3&gt;
+&lt;h3 id=&#34;android-fragments&#34;&gt;Android fragments&lt;/h3&gt;
 
 &lt;p&gt;The layout can be set up in &lt;code&gt;OnCreateView&lt;/code&gt;. Use the &lt;code&gt;OnViewCreated&lt;/code&gt; method to set and store the bindings and activate/update the view model if necessary. Call &lt;code&gt;Detach()&lt;/code&gt; on every binding in the &lt;code&gt;OnDestroy&lt;/code&gt; method.&lt;/p&gt;
 
-&lt;h3 id=&#34;ios-viewcontrollers:23b1deac65cc2dd0071a356815b311c9&#34;&gt;iOS ViewControllers&lt;/h3&gt;
+&lt;h3 id=&#34;ios-viewcontrollers&#34;&gt;iOS ViewControllers&lt;/h3&gt;
 
 &lt;p&gt;Initialize everything in the &lt;code&gt;ViewDidLoad&lt;/code&gt; method. Then use the &lt;code&gt;ViewWillAppear&lt;/code&gt; method to set and store the bindings. In some rare cases it helps calling &lt;code&gt;ForceUpdateValueFromSourceToTarget&lt;/code&gt; in &lt;code&gt;ViewDidAppear&lt;/code&gt;. Bindings should be detached using &lt;code&gt;Detach()&lt;/code&gt; on the binding in &lt;code&gt;ViewWillDisappear&lt;/code&gt;. You can use &lt;code&gt;DidReceiveMemoryWarning&lt;/code&gt; to clean up or dispose some references.&lt;/p&gt;
 
-&lt;h3 id=&#34;static-view-models:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Static view models&lt;/h3&gt;
+&lt;h3 id=&#34;static-view-models&#34;&gt;Static view models&lt;/h3&gt;
 
 &lt;p&gt;To avoid the mentioned &lt;code&gt;TargetException&lt;/code&gt;, I&amp;rsquo;d recommend setting up a static view model locator as &lt;a href=&#34;http://blog.galasoft.ch/posts/2014/10/my-xamarinevolve-talk-is-online-for-your-viewing-pleasure/&#34;&gt;Laurent Bugnion explained&lt;/a&gt; and using the view models on that locator. Injecting a view model in your view to bind on, usually causes the &lt;code&gt;TargetException&lt;/code&gt;, so try to use the view models defined in the locator.&lt;/p&gt;
 
-&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view?&lt;/h3&gt;
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view&#34;&gt;Is the source of your binding a property in your view?&lt;/h3&gt;
 
 &lt;p&gt;Then use this one:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.OneWay)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view-model:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Is the source of your binding a property in your view model?&lt;/h3&gt;
+&lt;h3 id=&#34;is-the-source-of-your-binding-a-property-in-your-view-model&#34;&gt;Is the source of your binding a property in your view model?&lt;/h3&gt;
 
 &lt;p&gt;Then use the following overload:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;two-way-binding:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Two-way binding&lt;/h3&gt;
+&lt;h3 id=&#34;two-way-binding&#34;&gt;Two-way binding&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;this.SetBinding(() =&amp;gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.TwoWay)
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;binding-to-a-target-type-different-from-the-source-type:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Binding to a target type different from the source type&lt;/h3&gt;
+&lt;h3 id=&#34;binding-to-a-target-type-different-from-the-source-type&#34;&gt;Binding to a target type different from the source type&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&amp;gt; Path.To.Property.On.Your.View, BindingMode.OneWay).ConvertSourceToTarget(ConversionMethod)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;You can also use a lambda, but that&amp;rsquo;s harder to debug.&lt;/p&gt;
 
-&lt;h3 id=&#34;just-binding-to-a-source-and-updating-the-view-yourself:23b1deac65cc2dd0071a356815b311c9&#34;&gt;Just binding to a source and updating the view yourself&lt;/h3&gt;
+&lt;h3 id=&#34;just-binding-to-a-source-and-updating-the-view-yourself&#34;&gt;Just binding to a source and updating the view yourself&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code&gt;App.Locator.MyViewModel.SetBinding(() =&amp;gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel).WhenSourceChanges(MyUpdateMethod)
 &lt;/code&gt;&lt;/pre&gt;
@@ -190,9 +196,9 @@
 
 &lt;p&gt;Sometimes you&amp;rsquo;re not allowed or you don&amp;rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&amp;rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&amp;rsquo;ll automate everything from authentication to creating and deleting repositories.&lt;/p&gt;
 
-&lt;h2 id=&#34;installation-of-the-prerequisites:7d26ad02477b183361c06277d4fafc51&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
+&lt;h2 id=&#34;installation-of-the-prerequisites&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
 
-&lt;h3 id=&#34;on-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Windows clients&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-windows-clients&#34;&gt;On the Windows clients&lt;/h3&gt;
 
 &lt;p&gt;On your Windows clients, you&amp;rsquo;ll need PuTTY, Pageant, Plink, PuTTYgen and Git Bash. The installers are very straightforward.&lt;/p&gt;
 
@@ -214,7 +220,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 &lt;li&gt;Use Windows&amp;rsquo; default console window&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;on-the-raspberry-pi-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-raspberry-pi-linux-server&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
 
 &lt;p&gt;You&amp;rsquo;ll need ssh and git. On Debian-based systems, you can install them with the command below:&lt;/p&gt;
 
@@ -223,7 +229,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 
 &lt;p&gt;I&amp;rsquo;d recommend to &lt;a href=&#34;http://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/&#34;&gt;setup SSH&lt;/a&gt; and PuTTY for your personal user account and use that to perform the tasks in this guide.&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-the-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;Setting up the Linux server&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-the-linux-server&#34;&gt;Setting up the Linux server&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re using a Raspberry Pi, I&amp;rsquo;d suggest not using your SD card to store your git repositories. Instead, use an external hard drive or a USB drive. I&amp;rsquo;m not going to explain how to mount a USB drive, as there are already &lt;a href=&#34;http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/&#34;&gt;a lot of guides&lt;/a&gt; explaining this.&lt;/p&gt;
 
@@ -281,7 +287,7 @@ nano authorized_keys
 
 &lt;p&gt;This concludes the setup on our Linux box.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuring-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-the-windows-clients&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
 
 &lt;p&gt;Time to fire up Pageant and add the private key we created before. Afterwards, fire up PuTTY and configure it to connect to the Linux machine.&lt;/p&gt;
 
@@ -322,7 +328,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
       <guid>https://chipsncookies.com/2016/dependency-injection-with-autofac-and-mvvm-light-in-xamarin/</guid>
       <description>
 
-&lt;h2 id=&#34;you-gotta-have-mvvm:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;You gotta have MVVM&lt;/h2&gt;
+&lt;h2 id=&#34;you-gotta-have-mvvm&#34;&gt;You gotta have MVVM&lt;/h2&gt;
 
 &lt;p&gt;A developer and his tools are inseparable. We all like &lt;a href=&#34;https://sites.google.com/site/unclebobconsultingllc/getting-a-solid-start&#34;&gt;SOLID&lt;/a&gt; and every (.NET) developer has his or her favourite dependency injection tool. There is &lt;a href=&#34;http://www.hanselman.com/blog/ListOfNETDependencyInjectionContainersIOC.aspx&#34;&gt;a lot&lt;/a&gt; to choose from. I like Autofac because of the way it handles modules, the lifetime of a type and how it registers types.&lt;/p&gt;
 
@@ -330,7 +336,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
 
 &lt;p&gt;MVVM Light comes with an IoC container called SimpleIoC. And that’s what it is: a dead-simple IoC container. As I said: you don’t have to use the parts you don’t like. So let me replace SimpleIoC with my dependency injector of choice: Autofac.&lt;/p&gt;
 
-&lt;h2 id=&#34;architecture:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Architecture&lt;/h2&gt;
+&lt;h2 id=&#34;architecture&#34;&gt;Architecture&lt;/h2&gt;
 
 &lt;p&gt;This is an overview of how I usually structure my solution:&lt;/p&gt;
 
@@ -380,7 +386,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
     + ...
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h3 id=&#34;where-to-put-what:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Where to put what?&lt;/h3&gt;
+&lt;h3 id=&#34;where-to-put-what&#34;&gt;Where to put what?&lt;/h3&gt;
 
 &lt;ul&gt;
 &lt;li&gt;Registrations of viewmodels and cross-platform service implementations: MyApp.Utilities.CrossPlatformModule&lt;/li&gt;
@@ -390,13 +396,13 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
 &lt;li&gt;ViewModelLocator initialization: App/Main&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;how-it-all-ties-together:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;How it all ties together&lt;/h2&gt;
+&lt;h2 id=&#34;how-it-all-ties-together&#34;&gt;How it all ties together&lt;/h2&gt;
 
 &lt;p&gt;First off, you start by creating interfaces for all the services you need. Next up, you can start defining implementations for the services and put them in the correct namespaces.&lt;/p&gt;
 
 &lt;p&gt;When that&amp;rsquo;s done, it&amp;rsquo;s time to create our modules. Now, assembly scanning sometimes causes exceptions on certain platforms. Also, PCL&amp;rsquo;s don&amp;rsquo;t have the methods you&amp;rsquo;re used to from ASP.NET or other types of projects for assembly scanning. I know it makes things incredibly easy, but I&amp;rsquo;d advise against it for Xamarin projects. You&amp;rsquo;ll have to register type by type in the modules. Usually I create an array of types and throw them in &lt;code&gt;builder.RegisterTypes(types)&lt;/code&gt;. The platform-specific modules should contain registrations for the platform-specific services. Don&amp;rsquo;t forget the ones that come with Autofac by default.&lt;/p&gt;
 
-&lt;h3 id=&#34;example-of-a-platform-specific-service:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Example of a platform-specific service&lt;/h3&gt;
+&lt;h3 id=&#34;example-of-a-platform-specific-service&#34;&gt;Example of a platform-specific service&lt;/h3&gt;
 
 &lt;pre&gt;&lt;code class=&#34;language-CSharp&#34;&gt;using System;
 using Autofac;
@@ -480,7 +486,7 @@ namespace MyApp.Android.Utilities
 
 &lt;p&gt;That method is then called at the moment I initialize the &lt;code&gt;ViewModelLocator&lt;/code&gt;. Laurent&amp;rsquo;s talk goes in depth on how to do that so I won&amp;rsquo;t cover that part.&lt;/p&gt;
 
-&lt;h2 id=&#34;servicelocator:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;ServiceLocator&lt;/h2&gt;
+&lt;h2 id=&#34;servicelocator&#34;&gt;ServiceLocator&lt;/h2&gt;
 
 &lt;p&gt;Whenever you need an instance of a registered type, you can use the &lt;code&gt;ServiceLocator&lt;/code&gt; like so:&lt;/p&gt;
 
@@ -496,7 +502,7 @@ var factory = ServiceLocator.Current.GetInstance&amp;lt;MyViewModelRequiringAPar
 var vm = factory(myVar);
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;questions:f1db64e8f93e80bfb3bc20ca2a851716&#34;&gt;Questions?&lt;/h2&gt;
+&lt;h2 id=&#34;questions&#34;&gt;Questions?&lt;/h2&gt;
 
 &lt;p&gt;Questions? Tips/suggestions? &lt;a href=&#34;https://chipsncookies.com/about/&#34;&gt;Let me know!&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -554,7 +560,7 @@ var vm = factory(myVar);
 
 &lt;p&gt;I then developed this simple project which demonstrates the basic concepts of &lt;a href=&#34;http://dddcommunity.org/learning-ddd/what_is_ddd/&#34;&gt;domain driven design&lt;/a&gt;, CQRS and event sourcing using Cirqus.&lt;/p&gt;
 
-&lt;h2 id=&#34;domain:ed6c2b7a433a54340e9aa358e2099648&#34;&gt;Domain&lt;/h2&gt;
+&lt;h2 id=&#34;domain&#34;&gt;Domain&lt;/h2&gt;
 
 &lt;p&gt;The project is about a hotel called &lt;em&gt;Oditel&lt;/em&gt; (our school was called &lt;em&gt;Odisee&lt;/em&gt;&amp;hellip;). There are 3 contexts with their aggregate roots:&lt;/p&gt;
 
@@ -583,7 +589,7 @@ var vm = factory(myVar);
 &lt;li&gt;Remove the booking&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;extra-features:ed6c2b7a433a54340e9aa358e2099648&#34;&gt;Extra features&lt;/h2&gt;
+&lt;h2 id=&#34;extra-features&#34;&gt;Extra features&lt;/h2&gt;
 
 &lt;p&gt;The events and most important &lt;em&gt;views&lt;/em&gt; are stored in SQL Server (Local DB).&lt;/p&gt;
 
@@ -593,7 +599,7 @@ var vm = factory(myVar);
 
 &lt;p&gt;I created 4 branches with the 4 steps you have to take when developing a domain driven designed project.&lt;/p&gt;
 
-&lt;h2 id=&#34;slides:ed6c2b7a433a54340e9aa358e2099648&#34;&gt;Slides&lt;/h2&gt;
+&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
 
 &lt;p&gt;With that demo also goes a presentation (in Dutch) which you can download &lt;a href=&#34;https://onedrive.live.com/redir?resid=B5240A36EC9AE039!485572&amp;amp;authkey=!AFa6VJYzeHPv4hI&amp;amp;ithint=file%2cpptx&#34;&gt;right here&lt;/a&gt;. Let me know if the link is broken (I tend to move my files in my OneDrive around quite a lot).&lt;/p&gt;
 </description>
@@ -636,7 +642,7 @@ var vm = factory(myVar);
       <guid>https://chipsncookies.com/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
       <description>
 
-&lt;p&gt;Docker is awesome, right? And thanks to &lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;boot2docker&lt;/a&gt; Windows users were no longer left out of the fun.&lt;/p&gt;
+&lt;p&gt;Docker is awesome, right? And thanks to [boot2docker](&lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;http://boot2docker.io/(http://boot2docker.io/&lt;/a&gt;) Windows users were no longer left out of the fun.&lt;/p&gt;
 
 &lt;p&gt;Still, setting everything up could be a PITA and you had to install Oracle VirtualBox to use it as Docker containers were actually run inside of a VM (which was the purpose of boot2docker). If you use Hyper-V regularly, you&amp;rsquo;ll notice that you can&amp;rsquo;t have it both ways. Scott Hanselman &lt;a href=&#34;http://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx&#34;&gt;figured out a way&lt;/a&gt; to make switching between the two a little bit less painful, but you still had to reboot your machine if you wanted to use VirtualBox.&lt;/p&gt;
 
@@ -648,7 +654,7 @@ var vm = factory(myVar);
 
 &lt;p&gt;So how do you install Docker Machine on Windows with Hyper-V? Here we go.&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-hyper-v-and-network-connections:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-hyper-v-and-network-connections&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
 
 &lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;https://chipsncookies.com/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
 
@@ -656,11 +662,11 @@ var vm = factory(myVar);
 
 &lt;p&gt;Then go to your Network Connections, open the properties of your active internet connection and share the connection with the newly created virtual network switch. This will make sure that the IP of the boot2docker VM never changes and it still has internet access.&lt;/p&gt;
 
-&lt;h2 id=&#34;download-and-install-docker-machine:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Download and &lt;em&gt;install&lt;/em&gt; Docker Machine&lt;/h2&gt;
+&lt;h2 id=&#34;download-and-install-docker-machine&#34;&gt;Download and &lt;em&gt;install&lt;/em&gt; Docker Machine&lt;/h2&gt;
 
 &lt;p&gt;You don&amp;rsquo;t need Docker Toolbox if you&amp;rsquo;re not going to use Oracle VirtualBox. Just download the latest version of Docker Machine from &lt;a href=&#34;https://github.com/docker/machine/releases/&#34;&gt;GitHub&lt;/a&gt;, rename it to &lt;code&gt;docker-machine.exe&lt;/code&gt; and put it in your &lt;em&gt;PATH&lt;/em&gt;. That&amp;rsquo;s all there is to it.&lt;/p&gt;
 
-&lt;h2 id=&#34;create-a-new-docker-machine-with-the-hyper-v-driver:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Create a new Docker Machine with the Hyper-V driver&lt;/h2&gt;
+&lt;h2 id=&#34;create-a-new-docker-machine-with-the-hyper-v-driver&#34;&gt;Create a new Docker Machine with the Hyper-V driver&lt;/h2&gt;
 
 &lt;p&gt;Now open an administrative command prompt (you need to be an administrator to create new virtual machines) and execute the following command to create a new Docker Machine named &lt;em&gt;boot2docker&lt;/em&gt;. Make sure to replace &lt;code&gt;My Internal Switch&lt;/code&gt; with the name of the internal switch you created before. You can add &lt;code&gt;--hyper-v-memory xxxx&lt;/code&gt; before the name of the machine to change the default amount of memory (it&amp;rsquo;s dynamic) from 1024 to something else.&lt;/p&gt;
 
@@ -672,7 +678,7 @@ var vm = factory(myVar);
 &lt;pre&gt;&lt;code&gt;docker-machine env --shell cmd boot2docker
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;connect-to-your-boot2docker-instance:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Connect to your boot2docker instance&lt;/h2&gt;
+&lt;h2 id=&#34;connect-to-your-boot2docker-instance&#34;&gt;Connect to your boot2docker instance&lt;/h2&gt;
 
 &lt;p&gt;You can now connect to your newly created boot2docker instance with the following command as it should already be running:&lt;/p&gt;
 
@@ -735,7 +741,7 @@ docker-machine kill boot2docker
 
 &lt;p&gt;Turns out, they didn&amp;rsquo;t. A few days ago, I started receiving tens of invites for a OnePlus Two. There was another catch: you can only use these invites with the address you used for the waiting list. It&amp;rsquo;s &lt;em&gt;impossible&lt;/em&gt; to share the invites.&lt;/p&gt;
 
-&lt;h2 id=&#34;here-s-the-workaround:2a147718c3e2bf306b7baa94f84231a6&#34;&gt;Here&amp;rsquo;s the workaround:&lt;/h2&gt;
+&lt;h2 id=&#34;here-s-the-workaround&#34;&gt;Here&amp;rsquo;s the workaround:&lt;/h2&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Register a new OnePlus account with the email address that received the invite.&lt;/li&gt;
@@ -768,9 +774,9 @@ docker-machine kill boot2docker
 
 &lt;p&gt;Building this blog requires some more packages. Wercker doesn&amp;rsquo;t automatically pull in your Git submodules, so Git is also a necessity there. Another one is Hugo, to build the static website itself. Hugo doesn&amp;rsquo;t minimize your files, however. That&amp;rsquo;s why I also include &lt;a href=&#34;https://github.com/yui/yuicompressor&#34;&gt;YUI compressor&lt;/a&gt; (minifies *.js and *.css) and &lt;a href=&#34;https://github.com/kangax/html-minifier&#34;&gt;HTML minifier&lt;/a&gt; (like the name says, minifies HTML files). Finally, I&amp;rsquo;ve been experimenting with &lt;a href=&#34;https://github.com/gjtorikian/html-proofer&#34;&gt;HTML proofer&lt;/a&gt; to validate the generated HTML files and check them for dead links. All of these packages (and their dependencies) are available in my Docker container called &lt;a href=&#34;https://hub.docker.com/r/samueldebruyn/hugo-build/&#34;&gt;hugo-build&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h2 id=&#34;side-notes:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Side notes&lt;/h2&gt;
+&lt;h2 id=&#34;side-notes&#34;&gt;Side notes&lt;/h2&gt;
 
-&lt;h3 id=&#34;hugo-build:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;hugo-build&lt;/h3&gt;
+&lt;h3 id=&#34;hugo-build&#34;&gt;hugo-build&lt;/h3&gt;
 
 &lt;p&gt;The image is quite big. It needs Java for YUI compressor, Ruby for html-proofer and Node for html-minifier. Setting up the environment and storing the container each take about half a minute. If you have some suggestions on making the image smaller, please &lt;a href=&#34;https://github.com/SamuelDebruyn/docker-hugo-build&#34;&gt;submit an issue or a pull request&lt;/a&gt;.&lt;/p&gt;
 
@@ -778,11 +784,11 @@ docker-machine kill boot2docker
 
 &lt;p&gt;The build often fails on a time-out while running &lt;code&gt;apt-get&lt;/code&gt;. It&amp;rsquo;s usually &lt;em&gt;fixed&lt;/em&gt; by running another build.&lt;/p&gt;
 
-&lt;h3 id=&#34;html-proofer:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;html-proofer&lt;/h3&gt;
+&lt;h3 id=&#34;html-proofer&#34;&gt;html-proofer&lt;/h3&gt;
 
 &lt;p&gt;html-proofer will often fail because it scans your website for dead links before your website is even published. I haven&amp;rsquo;t been able to work around this, but &lt;a href=&#34;https://github.com/gjtorikian/html-proofer/pull/178&#34;&gt;here&amp;rsquo;s an issue&lt;/a&gt; that&amp;rsquo;s keeping track of this.&lt;/p&gt;
 
-&lt;h3 id=&#34;example-wercker-yml-using-these-images:32cb3da98bb2342bbc176f65d9a11aa9&#34;&gt;Example &lt;em&gt;wercker.yml&lt;/em&gt; using these images&lt;/h3&gt;
+&lt;h3 id=&#34;example-wercker-yml-using-these-images&#34;&gt;Example &lt;em&gt;wercker.yml&lt;/em&gt; using these images&lt;/h3&gt;
 
 &lt;p&gt;My blog uses these images to build and deploy automatically through Wercker. The source code is &lt;a href=&#34;https://github.com/SamuelDebruyn/chipsncookies-site&#34;&gt;publicly available&lt;/a&gt; on GitHub.&lt;/p&gt;
 </description>

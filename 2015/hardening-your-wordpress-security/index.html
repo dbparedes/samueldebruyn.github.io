@@ -107,7 +107,7 @@
         <meta name="msapplication-TileImage" content="https://chipsncookies.com/icons/mstile-144x144.png">
         <meta name="msapplication-config" content="https://chipsncookies.com/icons/browserconfig.xml">
         <meta name="theme-color" content="#2c3e50">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
 
         <link href="https://chipsncookies.com/post/index.xml" rel="alternate" type="application/rss+xml" title="RSS &middot; Samuel Debruyn" />
     
@@ -760,23 +760,23 @@ footer a:hover
             <h6 class="sitetaglisttitle">Tags</h6>
 <ul class="sitetaglist">
   
-    <li><a href="/tags/windows">windows (5)</a></li>
+    <li><a href="/tags/android">android (5)</a></li>
   
     <li><a href="/tags/hugo">hugo (5)</a></li>
   
-    <li><a href="/tags/android">android (5)</a></li>
-  
     <li><a href="/tags/security">security (5)</a></li>
+  
+    <li><a href="/tags/windows">windows (5)</a></li>
   
     <li><a href="/tags/ci">ci (4)</a></li>
   
     <li><a href="/tags/wercker">wercker (4)</a></li>
   
-    <li><a href="/tags/windows-10">windows-10 (3)</a></li>
+    <li><a href="/tags/csharp">csharp (3)</a></li>
+  
+    <li><a href="/tags/docker">docker (3)</a></li>
   
     <li><a href="/tags/linux">linux (3)</a></li>
-  
-    <li><a href="/tags/wordpress">wordpress (3)</a></li>
   
 </ul>
             			<form class="uk-search" action="https://chipsncookies.com/search/">
@@ -805,7 +805,7 @@ footer a:hover
     <h1 class="post-title">Hardening your WordPress security</h1>
     
 
-<h2 id="introduction:270325a472963f8dbe8695a68f29ae37">Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 
 <p>This is the second part of a guide about <a href="/2015/recovering-a-hacked-wordpress/">recovering a hacked WordPress</a> and hardening your WordPress security.</p>
 
@@ -819,49 +819,49 @@ footer a:hover
 
 <p>Now, let&rsquo;s get started, shall we?</p>
 
-<h2 id="consider-to-use-a-cloud-proxy:270325a472963f8dbe8695a68f29ae37">Consider to use a cloud proxy</h2>
+<h2 id="consider-to-use-a-cloud-proxy">Consider to use a cloud proxy</h2>
 
 <p>Without a good CDN and caching strategy, it&rsquo;s impossible to survive a DDoS attack. The easiest solution is a reverse cloud proxy like <a href="http://www.cloudflare.com">CloudFlare</a>. CloudFlare caches your content and allows for very precise configuration. They will also keep your static files online if your server went offline. CloudFlare offers very good protection against malicious visitors and is awesome at detecting and mitigating DDoS attacks.</p>
 
 <p>They offer <a href="https://wordpress.org/plugins/cloudflare/">a WordPress plugin</a> that helps with the reverse proxying.</p>
 
-<h3 id="encryption:270325a472963f8dbe8695a68f29ae37">Encryption</h3>
+<h3 id="encryption">Encryption</h3>
 
 <p>CloudFlare, the tool I mentioned above, offers free server-client SSL. It isn&rsquo;t as secure as full SSL (SSL from your server to Cloudflare&rsquo;s servers and from CloudFlare&rsquo;s servers to your visitor&rsquo;s browsers), but it&rsquo;s a lot safer than plain HTTP.</p>
 
-<h2 id="make-sure-the-web-servers-are-secure:270325a472963f8dbe8695a68f29ae37">Make sure the web servers are secure</h2>
+<h2 id="make-sure-the-web-servers-are-secure">Make sure the web servers are secure</h2>
 
 <p>If you&rsquo;re on shared hosting, you don&rsquo;t have much to say about this, but you can still take measures to ensure your management portal access is safe. Use very strong passwords to manage your web server, make sure everything (PHP, MySQL, Apache&hellip;) is up to date, only allow database access from your web server (usually localhost)&hellip;</p>
 
 <p>Another perspective to look at this is securing access to your files. Store your backups in a safe location, make sure that the WordPress folders and files have the right permissions (this changes sometimes, take a look at the <a href="https://codex.wordpress.org/Changing_File_Permissions">official website</a> to find out which permissions you should use).</p>
 
-<h2 id="use-strong-authentication-and-authorisation:270325a472963f8dbe8695a68f29ae37">Use strong authentication and authorisation</h2>
+<h2 id="use-strong-authentication-and-authorisation">Use strong authentication and authorisation</h2>
 
 <p>Use strong passwords, make sure your wp-config.php is only stored on the webserver itself, consider using <a href="https://wordpress.org/plugins/wordpress-2-step-verification/">MFA</a>&hellip; There are a lot of ways to make sure that it isn&rsquo;t too easy to get in.</p>
 
-<h2 id="consider-using-a-3rd-party-email-provider:270325a472963f8dbe8695a68f29ae37">Consider using a 3rd party email provider</h2>
+<h2 id="consider-using-a-3rd-party-email-provider">Consider using a 3rd party email provider</h2>
 
 <p>Most hackers don&rsquo;t even want to hack your website itself. Usually they&rsquo;ll want to use your mail server (which is usually running on the same server) and domain to sell them to spammers. A third party email service like <a href="http://mandrillapp.com/">Mandrill</a> or <a href="https://sendgrid.com/">SendGrid</a> could come in handy to avoid such attacks. I recommend disabling the local mail server and creating SPF and DKIM records that only emails from your email provider. It&rsquo;s quite easy to setup Mandrill with WordPress with <a href="https://wordpress.org/plugins/wpmandrill/">this Mandrill plugin</a>.</p>
 
-<h2 id="always-use-the-latest-versions:270325a472963f8dbe8695a68f29ae37">Always use the latest versions</h2>
+<h2 id="always-use-the-latest-versions">Always use the latest versions</h2>
 
 <p><a href="http://eev.ee/blog/2012/04/09/php-a-fractal-of-bad-design/">PHP is a terrible programming language.</a> It&rsquo;s incredibly easy to write a lot of bugs and never notice them. If a plugin or theme is updated, install the update. Every possible fix for security issues is welcome.</p>
 
-<h2 id="uninstall-plugins-and-themes-you-don-t-need:270325a472963f8dbe8695a68f29ae37">Uninstall plugins and themes you don&rsquo;t need</h2>
+<h2 id="uninstall-plugins-and-themes-you-don-t-need">Uninstall plugins and themes you don&rsquo;t need</h2>
 
 <p>If you don&rsquo;t necessarily need a plugin or theme, uninstall it completely. Don&rsquo;t even leave it deactivated. Hackers can run code in deactivated plugins without any hassle.</p>
 
-<h2 id="schedule-security-scans:270325a472963f8dbe8695a68f29ae37">Schedule security scans</h2>
+<h2 id="schedule-security-scans">Schedule security scans</h2>
 
 <p>While <a href="https://wordpress.org/plugins/exploit-scanner/">Exploit Scanner</a> is perfectly capable of scanning a WordPress installation for (possible) exploits, you can&rsquo;t use it to schedule automatic scans. <a href="https://wordpress.org/plugins/sucuri-scanner/">Sucuri Security</a> is definitely a must-have for every WordPress website. You can schedule automatic scans for modified files, notifications for about everything that happens on your website, thorough measures to further harden your website&rsquo;s security&hellip;</p>
 
-<h2 id="log-bad-behaviour:270325a472963f8dbe8695a68f29ae37">Log bad behaviour</h2>
+<h2 id="log-bad-behaviour">Log bad behaviour</h2>
 
 <p>There&rsquo;s an awesome plugin called <a href="https://wordpress.org/plugins/bad-behavior/">Bad Behavior</a> which logs malicious looking behaviour and notifies you if you want to. If you suspect a hacker is trying to get in, install this plugin. You can then use to automatically block some of his attempts.</p>
 
 <p>If you notice some brute force attacks on your <em>wp-login.php</em> page, consider installing <a href="https://wordpress.org/plugins/limit-login-attempts/">Limit Login Attempts</a>. You can fine-tune its settings so that it&rsquo;s not too hard on your users.</p>
 
-<h2 id="change-the-defaults:270325a472963f8dbe8695a68f29ae37">Change the defaults</h2>
+<h2 id="change-the-defaults">Change the defaults</h2>
 
 <p>WordPress allows you to change a lot of the default settings, here are a few things you could change to improve security by obscurity:</p>
 

@@ -21,9 +21,9 @@
 
 &lt;p&gt;Sometimes you&amp;rsquo;re not allowed or you don&amp;rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&amp;rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&amp;rsquo;ll automate everything from authentication to creating and deleting repositories.&lt;/p&gt;
 
-&lt;h2 id=&#34;installation-of-the-prerequisites:7d26ad02477b183361c06277d4fafc51&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
+&lt;h2 id=&#34;installation-of-the-prerequisites&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
 
-&lt;h3 id=&#34;on-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Windows clients&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-windows-clients&#34;&gt;On the Windows clients&lt;/h3&gt;
 
 &lt;p&gt;On your Windows clients, you&amp;rsquo;ll need PuTTY, Pageant, Plink, PuTTYgen and Git Bash. The installers are very straightforward.&lt;/p&gt;
 
@@ -45,7 +45,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 &lt;li&gt;Use Windows&amp;rsquo; default console window&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;on-the-raspberry-pi-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-raspberry-pi-linux-server&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
 
 &lt;p&gt;You&amp;rsquo;ll need ssh and git. On Debian-based systems, you can install them with the command below:&lt;/p&gt;
 
@@ -54,7 +54,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 
 &lt;p&gt;I&amp;rsquo;d recommend to &lt;a href=&#34;http://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/&#34;&gt;setup SSH&lt;/a&gt; and PuTTY for your personal user account and use that to perform the tasks in this guide.&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-the-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;Setting up the Linux server&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-the-linux-server&#34;&gt;Setting up the Linux server&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re using a Raspberry Pi, I&amp;rsquo;d suggest not using your SD card to store your git repositories. Instead, use an external hard drive or a USB drive. I&amp;rsquo;m not going to explain how to mount a USB drive, as there are already &lt;a href=&#34;http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/&#34;&gt;a lot of guides&lt;/a&gt; explaining this.&lt;/p&gt;
 
@@ -112,7 +112,7 @@ nano authorized_keys
 
 &lt;p&gt;This concludes the setup on our Linux box.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuring-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-the-windows-clients&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
 
 &lt;p&gt;Time to fire up Pageant and add the private key we created before. Afterwards, fire up PuTTY and configure it to connect to the Linux machine.&lt;/p&gt;
 
@@ -219,7 +219,7 @@ auth required pam_google_authenticator.so
 &lt;pre&gt;&lt;code&gt;sudo service ssh restart
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;ntp:a354de51d09f492e98f062205a9fe7ab&#34;&gt;NTP&lt;/h2&gt;
+&lt;h2 id=&#34;ntp&#34;&gt;NTP&lt;/h2&gt;
 
 &lt;p&gt;Ahtanu has &lt;a href=&#34;https://twitter.com/ahtanu/status/432092745348677632&#34;&gt;let me know&lt;/a&gt; via Twitter that you&amp;rsquo;d better make sure your device is properly configured as an NTP client. Most desktop Linux distributions have this already in order but here are the instructions for Debian-based distributions to make sure NTP is configured properly.&lt;/p&gt;
 
@@ -263,7 +263,7 @@ server 3.be.pool.ntp.org
       <guid>https://chipsncookies.com/2013/wake-up-your-computers-with-a-simple-email-using-a-raspberry-pi/</guid>
       <description>
 
-&lt;h2 id=&#34;introduction:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Introduction&lt;/h2&gt;
+&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
 
 &lt;p&gt;I have a &lt;a href=&#34;https://www.spotify.com/premium/&#34;&gt;Spotify Premium subscription&lt;/a&gt; but I also have a few CDs which are not available on streaming services. I don&amp;rsquo;t like the whole process of syncing files, that&amp;rsquo;s why I took a Spotify subscription in the first place.  Google offers a solution with &lt;a href=&#34;https://play.google.com/about/music/&#34;&gt;Play Music&lt;/a&gt;: you can upload up to 20,000 songs to their servers for free and stream them to all of your devices. I didn&amp;rsquo;t use this because the Google Play Music app was too slow for my previous phone (&lt;a href=&#34;http://www.android.com/devices/detail/nexus-s&#34;&gt;Google Nexus S&lt;/a&gt;). So I decided to put my CDs on a computer and use that computer as a server with &lt;a href=&#34;http://www.tonido.com/tonidodesktop/&#34;&gt;Tonido&lt;/a&gt;. This way I could stream my music over the Internet to all of my devices. As a plus I could also put all my photos on this device so that I could show them to friends or family wherever I am.&lt;/p&gt;
 
@@ -271,7 +271,7 @@ server 3.be.pool.ntp.org
 
 &lt;p&gt;I want my computer to be available when I need it and to be in standby mode when I don&amp;rsquo;t need it. This way the computer boots up in a few seconds when I wake it up. I want to be able to wake it up from all over the world. I have a &lt;a href=&#34;http://www.raspberrypi.org/faqs#introWhatIs&#34;&gt;Raspberry Pi&lt;/a&gt; which is always on and &lt;a href=&#34;http://www.raspberrypi.org/faqs#power&#34;&gt;doesn&amp;rsquo;t require much power&lt;/a&gt;. So I created a way to send an &lt;strong&gt;email to a certain address which then wakes up my computer&lt;/strong&gt; within the minute.&lt;/p&gt;
 
-&lt;h2 id=&#34;requirements:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Requirements&lt;/h2&gt;
+&lt;h2 id=&#34;requirements&#34;&gt;Requirements&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;working Raspberry Pi (or similar device with Linux and python) with a constant connection to the Internet&lt;/li&gt;
@@ -279,17 +279,17 @@ server 3.be.pool.ntp.org
 &lt;li&gt;Email account (preferably Gmail or an unused mailbox)&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;setup:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Setup&lt;/h2&gt;
+&lt;h2 id=&#34;setup&#34;&gt;Setup&lt;/h2&gt;
 
-&lt;h3 id=&#34;on-the-computer:4dbe74a959a15e10538c8aa162f12748&#34;&gt;On the computer&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-computer&#34;&gt;On the computer&lt;/h3&gt;
 
 &lt;ol&gt;
-&lt;li&gt;Make sure the computer goes to sleep when you don&amp;rsquo;t use it. In Windows you can find this setting by searching for &lt;em&gt;power&lt;/em&gt;. I have my computer set to go to sleep after 3 hours of inactivity. If you have trouble putting your computer to sleep you can analyze the problems &lt;a href=&#34;http://technet.microsoft.com/en-us/library/cc748940(v=ws.10&#34;&gt;using the powercfg command&lt;/a&gt;.aspx).&lt;/li&gt;
+&lt;li&gt;Make sure the computer goes to sleep when you don&amp;rsquo;t use it. In Windows you can find this setting by searching for &lt;em&gt;power&lt;/em&gt;. I have my computer set to go to sleep after 3 hours of inactivity. If you have trouble putting your computer to sleep you can analyze the problems &lt;a href=&#34;http://technet.microsoft.com/en-us/library/cc748940(v=ws.10).aspx&#34;&gt;using the powercfg command&lt;/a&gt;.&lt;/li&gt;
 &lt;li&gt;Make sure the computer wakes upon receiving a magic packet. This is a special type of TCP or UDP unicast packet that is processed by the BIOS and wakes up a computer. This also works if the computer is not in standby mode. You probably have to change &lt;a href=&#34;http://www.tomshardware.com/reviews/bios-beginners,1126-8.html&#34;&gt;a setting in your BIOS&lt;/a&gt; (press one of the F-buttons at boot time) and in your NIC&amp;rsquo;s settings. You can view your NIC&amp;rsquo;s settings in Windows using &lt;a href=&#34;http://windows.microsoft.com/en-us/windows-vista/open-device-manager&#34;&gt;Device Management&lt;/a&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://technet.microsoft.com/en-us/library/gg252549(v=ws.10&#34;&gt;Find the MAC address&lt;/a&gt;.aspx) of the connected network adapter.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://technet.microsoft.com/en-us/library/gg252549(v=ws.10).aspx&#34;&gt;Find the MAC address&lt;/a&gt; of the connected network adapter.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;in-your-gmail-http-www-gmail-com-account:4dbe74a959a15e10538c8aa162f12748&#34;&gt;In your &lt;a href=&#34;http://www.gmail.com&#34;&gt;Gmail&lt;/a&gt; account&lt;/h3&gt;
+&lt;h3 id=&#34;in-your-gmail-http-www-gmail-com-account&#34;&gt;In your &lt;a href=&#34;http://www.gmail.com&#34;&gt;Gmail&lt;/a&gt; account&lt;/h3&gt;
 
 &lt;p&gt;Create a new filter for a specific email address. You can use *yourusername&lt;strong&gt;+anythingyouwant&lt;/strong&gt;@gmail.com*&lt;/p&gt;
 
@@ -301,7 +301,7 @@ server 3.be.pool.ntp.org
 &lt;li&gt;Enable IMAP (Settings &amp;gt; Forwarding &amp;amp; POP/IMAP &amp;gt; Enable IMAP)&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;on-your-raspberry-pi:4dbe74a959a15e10538c8aa162f12748&#34;&gt;On your Raspberry Pi&lt;/h3&gt;
+&lt;h3 id=&#34;on-your-raspberry-pi&#34;&gt;On your Raspberry Pi&lt;/h3&gt;
 
 &lt;p&gt;I assume you know how to log in to your Raspberry Pi in command line, over SSH or directly. There is a lot of documentation &lt;a href=&#34;http://elinux.org/RPi_Remote_Access&#34;&gt;available&lt;/a&gt; on their website.&lt;/p&gt;
 
@@ -335,7 +335,7 @@ mail.logout()
 &lt;li&gt;&lt;p&gt;Save the file using CTRL+X&lt;/p&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;done:4dbe74a959a15e10538c8aa162f12748&#34;&gt;Done!&lt;/h2&gt;
+&lt;h2 id=&#34;done&#34;&gt;Done!&lt;/h2&gt;
 
 &lt;p&gt;Now you can send an email to the address you choose in the Gmail part above and your computer will wake up within the minute!&lt;/p&gt;
 </description>

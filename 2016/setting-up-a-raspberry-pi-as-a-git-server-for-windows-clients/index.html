@@ -107,7 +107,7 @@
         <meta name="msapplication-TileImage" content="https://chipsncookies.com/icons/mstile-144x144.png">
         <meta name="msapplication-config" content="https://chipsncookies.com/icons/browserconfig.xml">
         <meta name="theme-color" content="#2c3e50">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
 
         <link href="https://chipsncookies.com/post/index.xml" rel="alternate" type="application/rss+xml" title="RSS &middot; Samuel Debruyn" />
     
@@ -760,23 +760,23 @@ footer a:hover
             <h6 class="sitetaglisttitle">Tags</h6>
 <ul class="sitetaglist">
   
-    <li><a href="/tags/windows">windows (5)</a></li>
+    <li><a href="/tags/android">android (5)</a></li>
   
     <li><a href="/tags/hugo">hugo (5)</a></li>
   
-    <li><a href="/tags/android">android (5)</a></li>
-  
     <li><a href="/tags/security">security (5)</a></li>
   
-    <li><a href="/tags/wercker">wercker (4)</a></li>
+    <li><a href="/tags/windows">windows (5)</a></li>
   
     <li><a href="/tags/ci">ci (4)</a></li>
   
-    <li><a href="/tags/windows-10">windows-10 (3)</a></li>
+    <li><a href="/tags/wercker">wercker (4)</a></li>
+  
+    <li><a href="/tags/csharp">csharp (3)</a></li>
+  
+    <li><a href="/tags/docker">docker (3)</a></li>
   
     <li><a href="/tags/linux">linux (3)</a></li>
-  
-    <li><a href="/tags/wordpress">wordpress (3)</a></li>
   
 </ul>
             			<form class="uk-search" action="https://chipsncookies.com/search/">
@@ -809,9 +809,9 @@ footer a:hover
 
 <p>Sometimes you&rsquo;re not allowed or you don&rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&rsquo;ll automate everything from authentication to creating and deleting repositories.</p>
 
-<h2 id="installation-of-the-prerequisites:7d26ad02477b183361c06277d4fafc51">Installation of the prerequisites</h2>
+<h2 id="installation-of-the-prerequisites">Installation of the prerequisites</h2>
 
-<h3 id="on-the-windows-clients:7d26ad02477b183361c06277d4fafc51">On the Windows clients</h3>
+<h3 id="on-the-windows-clients">On the Windows clients</h3>
 
 <p>On your Windows clients, you&rsquo;ll need PuTTY, Pageant, Plink, PuTTYgen and Git Bash. The installers are very straightforward.</p>
 
@@ -833,7 +833,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 <li>Use Windows&rsquo; default console window</li>
 </ul>
 
-<h3 id="on-the-raspberry-pi-linux-server:7d26ad02477b183361c06277d4fafc51">On the Raspberry Pi / Linux server</h3>
+<h3 id="on-the-raspberry-pi-linux-server">On the Raspberry Pi / Linux server</h3>
 
 <p>You&rsquo;ll need ssh and git. On Debian-based systems, you can install them with the command below:</p>
 
@@ -842,7 +842,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 
 <p>I&rsquo;d recommend to <a href="http://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/">setup SSH</a> and PuTTY for your personal user account and use that to perform the tasks in this guide.</p>
 
-<h2 id="setting-up-the-linux-server:7d26ad02477b183361c06277d4fafc51">Setting up the Linux server</h2>
+<h2 id="setting-up-the-linux-server">Setting up the Linux server</h2>
 
 <p>If you&rsquo;re using a Raspberry Pi, I&rsquo;d suggest not using your SD card to store your git repositories. Instead, use an external hard drive or a USB drive. I&rsquo;m not going to explain how to mount a USB drive, as there are already <a href="http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/">a lot of guides</a> explaining this.</p>
 
@@ -900,7 +900,7 @@ nano authorized_keys
 
 <p>This concludes the setup on our Linux box.</p>
 
-<h2 id="configuring-the-windows-clients:7d26ad02477b183361c06277d4fafc51">Configuring the Windows clients</h2>
+<h2 id="configuring-the-windows-clients">Configuring the Windows clients</h2>
 
 <p>Time to fire up Pageant and add the private key we created before. Afterwards, fire up PuTTY and configure it to connect to the Linux machine.</p>
 

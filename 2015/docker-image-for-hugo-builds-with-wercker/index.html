@@ -107,7 +107,7 @@
         <meta name="msapplication-TileImage" content="https://chipsncookies.com/icons/mstile-144x144.png">
         <meta name="msapplication-config" content="https://chipsncookies.com/icons/browserconfig.xml">
         <meta name="theme-color" content="#2c3e50">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
 
         <link href="https://chipsncookies.com/post/index.xml" rel="alternate" type="application/rss+xml" title="RSS &middot; Samuel Debruyn" />
     
@@ -760,23 +760,23 @@ footer a:hover
             <h6 class="sitetaglisttitle">Tags</h6>
 <ul class="sitetaglist">
   
-    <li><a href="/tags/hugo">hugo (5)</a></li>
-  
     <li><a href="/tags/android">android (5)</a></li>
   
-    <li><a href="/tags/windows">windows (5)</a></li>
+    <li><a href="/tags/hugo">hugo (5)</a></li>
   
     <li><a href="/tags/security">security (5)</a></li>
   
-    <li><a href="/tags/wercker">wercker (4)</a></li>
+    <li><a href="/tags/windows">windows (5)</a></li>
   
     <li><a href="/tags/ci">ci (4)</a></li>
   
-    <li><a href="/tags/windows-10">windows-10 (3)</a></li>
+    <li><a href="/tags/wercker">wercker (4)</a></li>
+  
+    <li><a href="/tags/csharp">csharp (3)</a></li>
+  
+    <li><a href="/tags/docker">docker (3)</a></li>
   
     <li><a href="/tags/linux">linux (3)</a></li>
-  
-    <li><a href="/tags/wordpress">wordpress (3)</a></li>
   
 </ul>
             			<form class="uk-search" action="https://chipsncookies.com/search/">
@@ -819,9 +819,9 @@ footer a:hover
 
 <p>Building this blog requires some more packages. Wercker doesn&rsquo;t automatically pull in your Git submodules, so Git is also a necessity there. Another one is Hugo, to build the static website itself. Hugo doesn&rsquo;t minimize your files, however. That&rsquo;s why I also include <a href="https://github.com/yui/yuicompressor">YUI compressor</a> (minifies *.js and *.css) and <a href="https://github.com/kangax/html-minifier">HTML minifier</a> (like the name says, minifies HTML files). Finally, I&rsquo;ve been experimenting with <a href="https://github.com/gjtorikian/html-proofer">HTML proofer</a> to validate the generated HTML files and check them for dead links. All of these packages (and their dependencies) are available in my Docker container called <a href="https://hub.docker.com/r/samueldebruyn/hugo-build/">hugo-build</a>.</p>
 
-<h2 id="side-notes:32cb3da98bb2342bbc176f65d9a11aa9">Side notes</h2>
+<h2 id="side-notes">Side notes</h2>
 
-<h3 id="hugo-build:32cb3da98bb2342bbc176f65d9a11aa9">hugo-build</h3>
+<h3 id="hugo-build">hugo-build</h3>
 
 <p>The image is quite big. It needs Java for YUI compressor, Ruby for html-proofer and Node for html-minifier. Setting up the environment and storing the container each take about half a minute. If you have some suggestions on making the image smaller, please <a href="https://github.com/SamuelDebruyn/docker-hugo-build">submit an issue or a pull request</a>.</p>
 
@@ -829,11 +829,11 @@ footer a:hover
 
 <p>The build often fails on a time-out while running <code>apt-get</code>. It&rsquo;s usually <em>fixed</em> by running another build.</p>
 
-<h3 id="html-proofer:32cb3da98bb2342bbc176f65d9a11aa9">html-proofer</h3>
+<h3 id="html-proofer">html-proofer</h3>
 
 <p>html-proofer will often fail because it scans your website for dead links before your website is even published. I haven&rsquo;t been able to work around this, but <a href="https://github.com/gjtorikian/html-proofer/pull/178">here&rsquo;s an issue</a> that&rsquo;s keeping track of this.</p>
 
-<h3 id="example-wercker-yml-using-these-images:32cb3da98bb2342bbc176f65d9a11aa9">Example <em>wercker.yml</em> using these images</h3>
+<h3 id="example-wercker-yml-using-these-images">Example <em>wercker.yml</em> using these images</h3>
 
 <p>My blog uses these images to build and deploy automatically through Wercker. The source code is <a href="https://github.com/SamuelDebruyn/chipsncookies-site">publicly available</a> on GitHub.</p>
 

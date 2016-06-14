@@ -19,11 +19,11 @@
       <guid>https://chipsncookies.com/2015/an-introduction-to-hugo-a-static-site-generator/</guid>
       <description>
 
-&lt;h2 id=&#34;a-good-blogging-platform:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;A good blogging platform&lt;/h2&gt;
+&lt;h2 id=&#34;a-good-blogging-platform&#34;&gt;A good blogging platform&lt;/h2&gt;
 
 &lt;p&gt;What makes a good blogging platform really good? Well, that depends on the blogger. Programmers would need different features than make-up bloggers. As a programmer, I need to be able to easily integrate pieces of code with syntax highlighting in my posts and I&amp;rsquo;d prefer writing them in my favourite text/code editor instead of in a WYSIWYG editor.&lt;/p&gt;
 
-&lt;h2 id=&#34;jekyll:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Jekyll&lt;/h2&gt;
+&lt;h2 id=&#34;jekyll&#34;&gt;Jekyll&lt;/h2&gt;
 
 &lt;p&gt;A static site generator like &lt;a href=&#34;http://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt; fulfils (almost) all my needs as a programmer/blogger:&lt;/p&gt;
 
@@ -42,7 +42,7 @@
 &lt;li&gt;setting it up can be quite bothersome, again, especially on Windows&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;hugo:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Hugo&lt;/h2&gt;
+&lt;h2 id=&#34;hugo&#34;&gt;Hugo&lt;/h2&gt;
 
 &lt;p&gt;A few other static site generators &lt;a href=&#34;https://www.staticgen.com&#34;&gt;have sprung up&lt;/a&gt; since Jekyll&amp;rsquo;s success.&lt;/p&gt;
 
@@ -52,7 +52,7 @@
 
 &lt;p&gt;I&amp;rsquo;ve successfully migrated my &lt;a href=&#34;https://github.com/SamuelDebruyn/samueldebruyn.github.io/tree/5f5719a9d4519f8fbd4cdfffa2a10b3f066401ef&#34;&gt;Jekyll blog&lt;/a&gt; to &lt;a href=&#34;https://github.com/SamuelDebruyn/chipsncookies-site&#34;&gt;Hugo&lt;/a&gt; and haven&amp;rsquo;t regretted it ever since.&lt;/p&gt;
 
-&lt;h2 id=&#34;disadvantages:a34406b09f2f50ebfd1f011b1ed64076&#34;&gt;Disadvantages&lt;/h2&gt;
+&lt;h2 id=&#34;disadvantages&#34;&gt;Disadvantages&lt;/h2&gt;
 
 &lt;p&gt;One of the major disadvantages of Hugo, or any static site generator for that matter, is integrating &lt;strong&gt;search&lt;/strong&gt;. You need some &lt;a href=&#34;http://discuss.gohugo.io/t/how-are-you-implementing-site-search/986/14&#34;&gt;JavaScript magic&lt;/a&gt; or a 3rd party search provider like &lt;a href=&#34;https://cse.google.com&#34;&gt;Google Custom Search Engine&lt;/a&gt; (which I went for).&lt;/p&gt;
 

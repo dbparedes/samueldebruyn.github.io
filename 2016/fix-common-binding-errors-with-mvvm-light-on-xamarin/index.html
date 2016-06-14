@@ -107,7 +107,7 @@
         <meta name="msapplication-TileImage" content="https://chipsncookies.com/icons/mstile-144x144.png">
         <meta name="msapplication-config" content="https://chipsncookies.com/icons/browserconfig.xml">
         <meta name="theme-color" content="#2c3e50">
-        <meta name="generator" content="Hugo 0.15" />
+        <meta name="generator" content="Hugo 0.16" />
 
         <link href="https://chipsncookies.com/post/index.xml" rel="alternate" type="application/rss+xml" title="RSS &middot; Samuel Debruyn" />
     
@@ -762,21 +762,21 @@ footer a:hover
   
     <li><a href="/tags/android">android (5)</a></li>
   
-    <li><a href="/tags/windows">windows (5)</a></li>
-  
     <li><a href="/tags/hugo">hugo (5)</a></li>
   
     <li><a href="/tags/security">security (5)</a></li>
+  
+    <li><a href="/tags/windows">windows (5)</a></li>
   
     <li><a href="/tags/ci">ci (4)</a></li>
   
     <li><a href="/tags/wercker">wercker (4)</a></li>
   
-    <li><a href="/tags/windows-10">windows-10 (3)</a></li>
+    <li><a href="/tags/csharp">csharp (3)</a></li>
+  
+    <li><a href="/tags/docker">docker (3)</a></li>
   
     <li><a href="/tags/linux">linux (3)</a></li>
-  
-    <li><a href="/tags/wordpress">wordpress (3)</a></li>
   
 </ul>
             			<form class="uk-search" action="https://chipsncookies.com/search/">
@@ -815,55 +815,55 @@ footer a:hover
 
 <p>There isn&rsquo;t much documentation available for <a href="http://www.mvvmlight.net/">MVVM Light</a> when it comes to Xamarin.Android and Xamarin.iOS. There are several overloads for the <code>SetBinding</code> method and using the wrong overload causes <code>TargetInvocationException</code> or <code>TargetException</code> like <a href="http://stackoverflow.com/q/35197870/1592358">this one</a>. It&rsquo;s also possible that your bindings don&rsquo;t update anymore after you set one binding using an incorrect syntax.</p>
 
-<h2 id="correct-binding:23b1deac65cc2dd0071a356815b311c9">Correct binding</h2>
+<h2 id="correct-binding">Correct binding</h2>
 
 <p>You can only bind on properties, not on fields. You can use the new C# 6 syntax if you like (<code>public TextView TextView =&gt; ...</code>). They don&rsquo;t always have to be <code>public</code> but it sure helps making them <code>public</code> either way. The easiest way to create a new view property on Android is with the <code>mvvmdroidelement</code> snippet provided by <a href="https://visualstudiogallery.msdn.microsoft.com/ee36692d-ed3f-4888-b904-281aaaeac529">this extension</a>.</p>
 
 <p>You should put your bindings in your views and make sure to respect the lifecycle of the platform you&rsquo;re using. Also, always keep a reference to your binding so it doesn&rsquo;t get garbage collected. I usually Store a list with all my bindings in my view.</p>
 
-<h3 id="android-activities:23b1deac65cc2dd0071a356815b311c9">Android activities</h3>
+<h3 id="android-activities">Android activities</h3>
 
 <p>First create your layout in the <code>OnCreate</code> method, create and store the bindings and activate/update the view model if necessary. Call <code>Detach()</code> on every binding in the <code>OnDestroy</code> method.</p>
 
-<h3 id="android-fragments:23b1deac65cc2dd0071a356815b311c9">Android fragments</h3>
+<h3 id="android-fragments">Android fragments</h3>
 
 <p>The layout can be set up in <code>OnCreateView</code>. Use the <code>OnViewCreated</code> method to set and store the bindings and activate/update the view model if necessary. Call <code>Detach()</code> on every binding in the <code>OnDestroy</code> method.</p>
 
-<h3 id="ios-viewcontrollers:23b1deac65cc2dd0071a356815b311c9">iOS ViewControllers</h3>
+<h3 id="ios-viewcontrollers">iOS ViewControllers</h3>
 
 <p>Initialize everything in the <code>ViewDidLoad</code> method. Then use the <code>ViewWillAppear</code> method to set and store the bindings. In some rare cases it helps calling <code>ForceUpdateValueFromSourceToTarget</code> in <code>ViewDidAppear</code>. Bindings should be detached using <code>Detach()</code> on the binding in <code>ViewWillDisappear</code>. You can use <code>DidReceiveMemoryWarning</code> to clean up or dispose some references.</p>
 
-<h3 id="static-view-models:23b1deac65cc2dd0071a356815b311c9">Static view models</h3>
+<h3 id="static-view-models">Static view models</h3>
 
 <p>To avoid the mentioned <code>TargetException</code>, I&rsquo;d recommend setting up a static view model locator as <a href="http://blog.galasoft.ch/posts/2014/10/my-xamarinevolve-talk-is-online-for-your-viewing-pleasure/">Laurent Bugnion explained</a> and using the view models on that locator. Injecting a view model in your view to bind on, usually causes the <code>TargetException</code>, so try to use the view models defined in the locator.</p>
 
-<h3 id="is-the-source-of-your-binding-a-property-in-your-view:23b1deac65cc2dd0071a356815b311c9">Is the source of your binding a property in your view?</h3>
+<h3 id="is-the-source-of-your-binding-a-property-in-your-view">Is the source of your binding a property in your view?</h3>
 
 <p>Then use this one:</p>
 
 <pre><code>this.SetBinding(() =&gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.OneWay)
 </code></pre>
 
-<h3 id="is-the-source-of-your-binding-a-property-in-your-view-model:23b1deac65cc2dd0071a356815b311c9">Is the source of your binding a property in your view model?</h3>
+<h3 id="is-the-source-of-your-binding-a-property-in-your-view-model">Is the source of your binding a property in your view model?</h3>
 
 <p>Then use the following overload:</p>
 
 <pre><code>App.Locator.MyViewModel.SetBinding(() =&gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&gt; Path.To.Property.On.Your.View, BindingMode.OneWay)
 </code></pre>
 
-<h3 id="two-way-binding:23b1deac65cc2dd0071a356815b311c9">Two-way binding</h3>
+<h3 id="two-way-binding">Two-way binding</h3>
 
 <pre><code>this.SetBinding(() =&gt; Path.To.Property.On.Your.View, App.Locator.MyViewModel, () =&gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, BindingMode.TwoWay)
 </code></pre>
 
-<h3 id="binding-to-a-target-type-different-from-the-source-type:23b1deac65cc2dd0071a356815b311c9">Binding to a target type different from the source type</h3>
+<h3 id="binding-to-a-target-type-different-from-the-source-type">Binding to a target type different from the source type</h3>
 
 <pre><code>App.Locator.MyViewModel.SetBinding(() =&gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel, this, () =&gt; Path.To.Property.On.Your.View, BindingMode.OneWay).ConvertSourceToTarget(ConversionMethod)
 </code></pre>
 
 <p>You can also use a lambda, but that&rsquo;s harder to debug.</p>
 
-<h3 id="just-binding-to-a-source-and-updating-the-view-yourself:23b1deac65cc2dd0071a356815b311c9">Just binding to a source and updating the view yourself</h3>
+<h3 id="just-binding-to-a-source-and-updating-the-view-yourself">Just binding to a source and updating the view yourself</h3>
 
 <pre><code>App.Locator.MyViewModel.SetBinding(() =&gt; App.Locator.MyViewModel.Path.To.Property.On.Your.ViewModel).WhenSourceChanges(MyUpdateMethod)
 </code></pre>

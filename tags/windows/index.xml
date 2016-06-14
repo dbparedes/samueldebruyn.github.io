@@ -21,9 +21,9 @@
 
 &lt;p&gt;Sometimes you&amp;rsquo;re not allowed or you don&amp;rsquo;t want to publish source code on GitHub, Bitbucket etc. In this post, I&amp;rsquo;ll explain how you can set up a Raspberry Pi (or any other Linux server) as a git repository server and how you can configure Windows clients for that server. We&amp;rsquo;ll automate everything from authentication to creating and deleting repositories.&lt;/p&gt;
 
-&lt;h2 id=&#34;installation-of-the-prerequisites:7d26ad02477b183361c06277d4fafc51&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
+&lt;h2 id=&#34;installation-of-the-prerequisites&#34;&gt;Installation of the prerequisites&lt;/h2&gt;
 
-&lt;h3 id=&#34;on-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Windows clients&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-windows-clients&#34;&gt;On the Windows clients&lt;/h3&gt;
 
 &lt;p&gt;On your Windows clients, you&amp;rsquo;ll need PuTTY, Pageant, Plink, PuTTYgen and Git Bash. The installers are very straightforward.&lt;/p&gt;
 
@@ -45,7 +45,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 &lt;li&gt;Use Windows&amp;rsquo; default console window&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&#34;on-the-raspberry-pi-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
+&lt;h3 id=&#34;on-the-raspberry-pi-linux-server&#34;&gt;On the Raspberry Pi / Linux server&lt;/h3&gt;
 
 &lt;p&gt;You&amp;rsquo;ll need ssh and git. On Debian-based systems, you can install them with the command below:&lt;/p&gt;
 
@@ -54,7 +54,7 @@ Windows 8.1 or earlier: the directories in the Path variable are separated with 
 
 &lt;p&gt;I&amp;rsquo;d recommend to &lt;a href=&#34;http://www.cyberciti.biz/faq/debian-linux-install-openssh-sshd-server/&#34;&gt;setup SSH&lt;/a&gt; and PuTTY for your personal user account and use that to perform the tasks in this guide.&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-the-linux-server:7d26ad02477b183361c06277d4fafc51&#34;&gt;Setting up the Linux server&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-the-linux-server&#34;&gt;Setting up the Linux server&lt;/h2&gt;
 
 &lt;p&gt;If you&amp;rsquo;re using a Raspberry Pi, I&amp;rsquo;d suggest not using your SD card to store your git repositories. Instead, use an external hard drive or a USB drive. I&amp;rsquo;m not going to explain how to mount a USB drive, as there are already &lt;a href=&#34;http://www.raspberrypi-spy.co.uk/2014/05/how-to-mount-a-usb-flash-disk-on-the-raspberry-pi/&#34;&gt;a lot of guides&lt;/a&gt; explaining this.&lt;/p&gt;
 
@@ -112,7 +112,7 @@ nano authorized_keys
 
 &lt;p&gt;This concludes the setup on our Linux box.&lt;/p&gt;
 
-&lt;h2 id=&#34;configuring-the-windows-clients:7d26ad02477b183361c06277d4fafc51&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
+&lt;h2 id=&#34;configuring-the-windows-clients&#34;&gt;Configuring the Windows clients&lt;/h2&gt;
 
 &lt;p&gt;Time to fire up Pageant and add the private key we created before. Afterwards, fire up PuTTY and configure it to connect to the Linux machine.&lt;/p&gt;
 
@@ -153,7 +153,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
       <guid>https://chipsncookies.com/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
       <description>
 
-&lt;p&gt;Docker is awesome, right? And thanks to &lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;boot2docker&lt;/a&gt; Windows users were no longer left out of the fun.&lt;/p&gt;
+&lt;p&gt;Docker is awesome, right? And thanks to [boot2docker](&lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;http://boot2docker.io/(http://boot2docker.io/&lt;/a&gt;) Windows users were no longer left out of the fun.&lt;/p&gt;
 
 &lt;p&gt;Still, setting everything up could be a PITA and you had to install Oracle VirtualBox to use it as Docker containers were actually run inside of a VM (which was the purpose of boot2docker). If you use Hyper-V regularly, you&amp;rsquo;ll notice that you can&amp;rsquo;t have it both ways. Scott Hanselman &lt;a href=&#34;http://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx&#34;&gt;figured out a way&lt;/a&gt; to make switching between the two a little bit less painful, but you still had to reboot your machine if you wanted to use VirtualBox.&lt;/p&gt;
 
@@ -165,7 +165,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
 
 &lt;p&gt;So how do you install Docker Machine on Windows with Hyper-V? Here we go.&lt;/p&gt;
 
-&lt;h2 id=&#34;setting-up-hyper-v-and-network-connections:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
+&lt;h2 id=&#34;setting-up-hyper-v-and-network-connections&#34;&gt;Setting up Hyper-V and network connections&lt;/h2&gt;
 
 &lt;p&gt;Make sure the Hyper-V role is installed on your computer and the &lt;em&gt;Hyper-V Manager&lt;/em&gt; works fine. &lt;a href=&#34;https://chipsncookies.com/2015/how-to-fix-common-hyper-v-errors-on-windows-10/&#34;&gt;I still had to fix a small issue on Windows 10&lt;/a&gt;.&lt;/p&gt;
 
@@ -173,11 +173,11 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
 
 &lt;p&gt;Then go to your Network Connections, open the properties of your active internet connection and share the connection with the newly created virtual network switch. This will make sure that the IP of the boot2docker VM never changes and it still has internet access.&lt;/p&gt;
 
-&lt;h2 id=&#34;download-and-install-docker-machine:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Download and &lt;em&gt;install&lt;/em&gt; Docker Machine&lt;/h2&gt;
+&lt;h2 id=&#34;download-and-install-docker-machine&#34;&gt;Download and &lt;em&gt;install&lt;/em&gt; Docker Machine&lt;/h2&gt;
 
 &lt;p&gt;You don&amp;rsquo;t need Docker Toolbox if you&amp;rsquo;re not going to use Oracle VirtualBox. Just download the latest version of Docker Machine from &lt;a href=&#34;https://github.com/docker/machine/releases/&#34;&gt;GitHub&lt;/a&gt;, rename it to &lt;code&gt;docker-machine.exe&lt;/code&gt; and put it in your &lt;em&gt;PATH&lt;/em&gt;. That&amp;rsquo;s all there is to it.&lt;/p&gt;
 
-&lt;h2 id=&#34;create-a-new-docker-machine-with-the-hyper-v-driver:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Create a new Docker Machine with the Hyper-V driver&lt;/h2&gt;
+&lt;h2 id=&#34;create-a-new-docker-machine-with-the-hyper-v-driver&#34;&gt;Create a new Docker Machine with the Hyper-V driver&lt;/h2&gt;
 
 &lt;p&gt;Now open an administrative command prompt (you need to be an administrator to create new virtual machines) and execute the following command to create a new Docker Machine named &lt;em&gt;boot2docker&lt;/em&gt;. Make sure to replace &lt;code&gt;My Internal Switch&lt;/code&gt; with the name of the internal switch you created before. You can add &lt;code&gt;--hyper-v-memory xxxx&lt;/code&gt; before the name of the machine to change the default amount of memory (it&amp;rsquo;s dynamic) from 1024 to something else.&lt;/p&gt;
 
@@ -189,7 +189,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
 &lt;pre&gt;&lt;code&gt;docker-machine env --shell cmd boot2docker
 &lt;/code&gt;&lt;/pre&gt;
 
-&lt;h2 id=&#34;connect-to-your-boot2docker-instance:cf9e56839475a0b7dfa86493bb900f82&#34;&gt;Connect to your boot2docker instance&lt;/h2&gt;
+&lt;h2 id=&#34;connect-to-your-boot2docker-instance&#34;&gt;Connect to your boot2docker instance&lt;/h2&gt;
 
 &lt;p&gt;You can now connect to your newly created boot2docker instance with the following command as it should already be running:&lt;/p&gt;
 
@@ -219,7 +219,7 @@ docker-machine kill boot2docker
 
 &lt;p&gt;There are several ways to create a USB stick to install Windows. Chances are you end up with an error during the installation or you (unknowingly) use the wrong partition layout for your HDD/SSD.&lt;/p&gt;
 
-&lt;h2 id=&#34;get-an-iso:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Get an ISO&lt;/h2&gt;
+&lt;h2 id=&#34;get-an-iso&#34;&gt;Get an ISO&lt;/h2&gt;
 
 &lt;p&gt;Which version of Windows do you want to install? This guide would work fine with Windows Vista or newer, but you can get an ISO for Windows 10 Home/Pro on &lt;a href=&#34;https://www.microsoft.com/en-us/software-download/windows10ISO&#34;&gt;this page&lt;/a&gt;.&lt;/p&gt;
 
@@ -229,11 +229,11 @@ docker-machine kill boot2docker
 
 &lt;p&gt;or open it up on your smartphone/tablet, select the version of Windows you want to download and send the direct download link to yourself (the easy way).&lt;/p&gt;
 
-&lt;h2 id=&#34;get-rufus:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Get Rufus&lt;/h2&gt;
+&lt;h2 id=&#34;get-rufus&#34;&gt;Get Rufus&lt;/h2&gt;
 
 &lt;p&gt;&lt;a href=&#34;http://rufus.akeo.ie/&#34;&gt;Rufus&lt;/a&gt; is a simple tool which lets you easily create bootable USB sticks for any kind of operating system. All you have to do is download it. Rufus doesn&amp;rsquo;t require an installation.&lt;/p&gt;
 
-&lt;h2 id=&#34;creating-the-image:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Creating the image&lt;/h2&gt;
+&lt;h2 id=&#34;creating-the-image&#34;&gt;Creating the image&lt;/h2&gt;
 
 &lt;p&gt;Now plug in your USB stick, fire up Rufus and point it to your USB stick (first dropdown list) and the ISO image (button next to the last dropdown list) you just downloaded. &lt;strong&gt;Pay attention&lt;/strong&gt; to the next steps, because Rufus will delete everything on the USB stick/disk you select.&lt;/p&gt;
 
@@ -247,7 +247,7 @@ docker-machine kill boot2docker
 
 &lt;p&gt;Now all you have to do is press &lt;em&gt;Start&lt;/em&gt; and wait a few minutes (depends on the speed of your USB device, could take about 15 minutes).&lt;/p&gt;
 
-&lt;h2 id=&#34;booting-the-image:3801f6e2347d9f00533e49d882bdd246&#34;&gt;Booting the image&lt;/h2&gt;
+&lt;h2 id=&#34;booting-the-image&#34;&gt;Booting the image&lt;/h2&gt;
 
 &lt;p&gt;This guide ends here, but if you don&amp;rsquo;t know how to boot your PC from the installation image you just created, consult the manual of your PC, BIOS or motherboard. &lt;em&gt;Usually you need to press one of the F-buttons while the logo of your motherboard&amp;rsquo;s manufacturer is displayed.&lt;/em&gt;&lt;/p&gt;
 
@@ -297,7 +297,7 @@ docker-machine kill boot2docker
 
 &lt;p&gt;These are a few quick tips for when you&amp;rsquo;re experiencing problems with the Windows Store in Windows 8(.1)/9 and opening apps in Windows 8(.1)/9.&lt;/p&gt;
 
-&lt;h2 id=&#34;symptoms:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;Symptoms:&lt;/h2&gt;
+&lt;h2 id=&#34;symptoms&#34;&gt;Symptoms:&lt;/h2&gt;
 
 &lt;ul&gt;
 &lt;li&gt;clicking on a link to a Windows Store app shows a page telling you that the app could not be found&lt;/li&gt;
@@ -307,9 +307,9 @@ docker-machine kill boot2docker
 &lt;li&gt;an installed app tells you that you have to buy this app while you&amp;rsquo;ve already bought it&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;solutions:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;Solutions:&lt;/h2&gt;
+&lt;h2 id=&#34;solutions&#34;&gt;Solutions:&lt;/h2&gt;
 
-&lt;h3 id=&#34;for-problems-solely-related-to-the-windows-store:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;For problems solely related to the Windows Store&lt;/h3&gt;
+&lt;h3 id=&#34;for-problems-solely-related-to-the-windows-store&#34;&gt;For problems solely related to the Windows Store&lt;/h3&gt;
 
 &lt;ol&gt;
 &lt;li&gt;Click on the Windows Store tile.&lt;/li&gt;
@@ -321,7 +321,7 @@ docker-machine kill boot2docker
 &lt;li&gt;The Windows Store should now pop up. Wait for it to load, this can take up to a minute.&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h3 id=&#34;for-everything-else:40f56d73b16e3fbc11574f09247e3ed7&#34;&gt;For everything else&lt;/h3&gt;
+&lt;h3 id=&#34;for-everything-else&#34;&gt;For everything else&lt;/h3&gt;
 
 &lt;p&gt;Make sure you&amp;rsquo;ve done the above solution for problems related to the Windows Store.&lt;/p&gt;
 
