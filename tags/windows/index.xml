@@ -153,7 +153,7 @@ Value: C:\Program Files (x86)\PuTTY\plink.exe
       <guid>https://chipsncookies.com/2015/run-docker-on-hyper-v-with-docker-machine/</guid>
       <description>
 
-&lt;p&gt;Docker is awesome, right? And thanks to [boot2docker](&lt;a href=&#34;http://boot2docker.io/(http://boot2docker.io/&#34;&gt;http://boot2docker.io/(http://boot2docker.io/&lt;/a&gt;) Windows users were no longer left out of the fun.&lt;/p&gt;
+&lt;p&gt;Docker is awesome, right? And thanks to &lt;a href=&#34;http://boot2docker.io&#34;&gt;boot2docker&lt;/a&gt; Windows users were no longer left out of the fun.&lt;/p&gt;
 
 &lt;p&gt;Still, setting everything up could be a PITA and you had to install Oracle VirtualBox to use it as Docker containers were actually run inside of a VM (which was the purpose of boot2docker). If you use Hyper-V regularly, you&amp;rsquo;ll notice that you can&amp;rsquo;t have it both ways. Scott Hanselman &lt;a href=&#34;http://www.hanselman.com/blog/SwitchEasilyBetweenVirtualBoxAndHyperVWithABCDEditBootEntryInWindows81.aspx&#34;&gt;figured out a way&lt;/a&gt; to make switching between the two a little bit less painful, but you still had to reboot your machine if you wanted to use VirtualBox.&lt;/p&gt;
 
