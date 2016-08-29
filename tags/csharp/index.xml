@@ -68,14 +68,14 @@
 &lt;p&gt;A binding project consist of three parts:&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;A native reference (either an .a file or a .framework file)&lt;/li&gt;
+&lt;li&gt;A native reference (either a .a file or a .framework file)&lt;/li&gt;
 &lt;li&gt;The &lt;em&gt;StructsAndEnums.cs&lt;/em&gt; file containing all the used enums&lt;/li&gt;
 &lt;li&gt;The &lt;em&gt;ApiDefinitions.cs&lt;/em&gt; file containing all the definitions of the classes used in the iOS framework/library&lt;/li&gt;
 &lt;/ol&gt;
 
 &lt;p&gt;The API definitions are a list of interfaces with methods decorated with attributes. The attributes tell Xamarin how it should generate the C# API that is bound to the native code. There should be at least one interface with the name of the project itself (or the name of the umbrella header).&lt;/p&gt;
 
-&lt;p&gt;The following sections describe how to generate both files using Objective Sharpie from easiest to most difficult approach. In most cases, you can try multiple approaches. So if one of them doesn&amp;rsquo;t properly generate the API definitions for you, just move on and try another one. You&amp;rsquo;d be surprised how much of a difference they can make, even if the framework and the CocoaPod contain the same files. I strongly recommmend to read through every approach.&lt;/p&gt;
+&lt;p&gt;The following sections describe how to generate both files using Objective Sharpie from easiest to most difficult approach. In most cases, you can try multiple approaches. So if one of them doesn&amp;rsquo;t properly generate the API definitions for you, just move on and try another one. You&amp;rsquo;d be surprised how much of a difference they can make, even if the framework and the CocoaPod contain the same files. I strongly recommend to read through every approach.&lt;/p&gt;
 
 &lt;h3 id=&#34;when-the-project-is-available-as-cocoapod-https-cocoapods-org-recommended-approach&#34;&gt;When the project is available as &lt;a href=&#34;https://cocoapods.org&#34;&gt;CocoaPod&lt;/a&gt; (recommended approach)&lt;/h3&gt;
 
