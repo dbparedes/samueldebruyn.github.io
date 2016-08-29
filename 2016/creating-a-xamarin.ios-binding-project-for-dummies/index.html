@@ -1,0 +1,1213 @@
+
+<!DOCTYPE html>
+<html lang="en-us">
+
+
+
+
+    
+
+
+    
+        
+    
+
+
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <meta property="og:title" content="Creating a Xamarin.iOS binding project for dummies · Samuel Debruyn" />
+        <meta name="twitter:title" content="Creating a Xamarin.iOS binding project for dummies · Samuel Debruyn" />
+        <title>Creating a Xamarin.iOS binding project for dummies · Samuel Debruyn</title>
+        
+        <meta property="og:site_name" content="Samuel Debruyn" />
+        <meta property="og:locale " content="en-us" />
+        
+        <meta property="og:url" content="https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/" />
+        <meta name="twitter:url" content="https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/" />
+        <link rel="canonical" href="https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/" />
+        
+        <meta name="description" content="What you need Experience with Xamarin.iOS Xamarin Studio for Mac An empty binding project (just create a new project in Xamarin Studio) A very short intro to Objective-C for C# developers Oh god, Obj-C, the most incomprehensible programming language in the app dev world. You simply can&rsquo;t create an iOS binding project without some very basic knowledge of Obj-C. So here goes, an intro to Obj-C for C# developers. When you&rsquo;re developing a bindings library, you&rsquo;ll get the iOS project in one of the following forms: a .a file (static library) - basically like a .DLL a .framework file (Cocoa Touch framework) - basically like a .DLL with some resources a CocoaPod - just like NuGet source code with project file (containing a .xcodeproj file) - like source code including .csproj and .sln files source code without project file - just like a bunch of .cs files&hellip; Obj-C projects have .h files and .m files." />
+        <meta name="twitter:description" content="What you need Experience with Xamarin.iOS Xamarin Studio for Mac An empty binding project (just create a new project in Xamarin Studio) A very short intro to Objective-C for C# developers Oh god, Obj-C, the most incomprehensible programming language in the app dev world. You simply can&rsquo;t create an iOS binding project without some very basic knowledge of Obj-C. So here goes, an intro to Obj-C for C# developers. When you&rsquo;re developing a bindings library, you&rsquo;ll get the iOS project in one of the following forms: a .a file (static library) - basically like a .DLL a .framework file (Cocoa Touch framework) - basically like a .DLL with some resources a CocoaPod - just like NuGet source code with project file (containing a .xcodeproj file) - like source code including .csproj and .sln files source code without project file - just like a bunch of .cs files&hellip; Obj-C projects have .h files and .m files." />
+        <meta property="og:description" content="What you need Experience with Xamarin.iOS Xamarin Studio for Mac An empty binding project (just create a new project in Xamarin Studio) A very short intro to Objective-C for C# developers Oh god, Obj-C, the most incomprehensible programming language in the app dev world. You simply can&rsquo;t create an iOS binding project without some very basic knowledge of Obj-C. So here goes, an intro to Obj-C for C# developers. When you&rsquo;re developing a bindings library, you&rsquo;ll get the iOS project in one of the following forms: a .a file (static library) - basically like a .DLL a .framework file (Cocoa Touch framework) - basically like a .DLL with some resources a CocoaPod - just like NuGet source code with project file (containing a .xcodeproj file) - like source code including .csproj and .sln files source code without project file - just like a bunch of .cs files&hellip; Obj-C projects have .h files and .m files." />
+        
+        <meta name="twitter:site" content="@SamuelDebruyn" />
+        <meta name="twitter:creator" content="@SamuelDebruyn" />
+
+    
+    
+           
+            <meta name="twitter:card" content="summary" />
+        
+        
+        <meta property="og:type" content="article" />
+        <meta property="og:article:published_time" content="2016-08-29T11:10:40&#43;02:00" />
+        <meta property="og:article:section" content="post" />
+        <meta property="og:article:author" content="https://chipsncookies.com/about/" />
+        
+        <script type="application/ld+json">
+            { 
+                "@context": "http://schema.org",
+                "@type": "BlogPosting",
+                "headline": "Creating a Xamarin.iOS binding project for dummies",
+                "name": "Creating a Xamarin.iOS binding project for dummies",
+                "author": {
+                    "@type": "Person",
+"name": "Samuel Debruyn",
+"birthDate": "1992-04-11",
+"email": "s@muel.be",
+"nationality": "BE",
+"gender": "male",
+"givenName": "Samuel",
+"familyName": "Debruyn",
+"url": "https:\/\/chipsncookies.com\/",
+"sameAs":
+	[
+		"https://twitter.com/SamuelDebruyn",
+		"https://be.linkedin.com/in/samueldebruyn",
+		"https://github.com/SamuelDebruyn"
+	]
+                },
+                "datePublished": "2016-08-29",
+                "description": "What you need Experience with Xamarin.iOS Xamarin Studio for Mac An empty binding project (just create a new project in Xamarin Studio) A very short intro to Objective-C for C# developers Oh god, Obj-C, the most incomprehensible programming language in the app dev world. You simply can\x26rsquo;t create an iOS binding project without some very basic knowledge of Obj-C. So here goes, an intro to Obj-C for C# developers. When you\x26rsquo;re developing a bindings library, you\x26rsquo;ll get the iOS project in one of the following forms: a .a file (static library) - basically like a .DLL a .framework file (Cocoa Touch framework) - basically like a .DLL with some resources a CocoaPod - just like NuGet source code with project file (containing a .xcodeproj file) - like source code including .csproj and .sln files source code without project file - just like a bunch of .cs files\x26hellip; Obj-C projects have .h files and .m files.",
+                "wordCount":  2252 ,
+                "articleSection": "post",
+                "timeRequired": "0:11:0",
+                "url": "https:\/\/chipsncookies.com\/2016\/creating-a-xamarin.ios-binding-project-for-dummies\/"
+            }
+        </script>
+        
+    
+ 
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="320" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        
+        <link rel="apple-touch-icon" sizes="57x57" href="https://chipsncookies.com/icons/apple-touch-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="https://chipsncookies.com/icons/apple-touch-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="https://chipsncookies.com/icons/apple-touch-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="https://chipsncookies.com/icons/apple-touch-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="https://chipsncookies.com/icons/apple-touch-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="https://chipsncookies.com/icons/apple-touch-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="https://chipsncookies.com/icons/apple-touch-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="https://chipsncookies.com/icons/apple-touch-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="https://chipsncookies.com/icons/apple-touch-icon-180x180.png">
+        <link rel="icon" type="image/png" href="https://chipsncookies.com/icons/favicon-32x32.png" sizes="32x32">
+        <link rel="icon" type="image/png" href="https://chipsncookies.com/icons/favicon-194x194.png" sizes="194x194">
+        <link rel="icon" type="image/png" href="https://chipsncookies.com/icons/favicon-96x96.png" sizes="96x96">
+        <link rel="icon" type="image/png" href="https://chipsncookies.com/icons/android-chrome-192x192.png" sizes="192x192">
+        <link rel="icon" type="image/png" href="https://chipsncookies.com/icons/favicon-16x16.png" sizes="16x16">
+        <link rel="manifest" href="https://chipsncookies.com/icons/manifest.json">
+        <link rel="shortcut icon" href="https://chipsncookies.com/icons/favicon.ico">
+        <meta name="apple-mobile-web-app-title" content="Chips 'n' Cookies">
+        <meta name="application-name" content="Chips 'n' Cookies">
+        <meta name="msapplication-TileColor" content="#2c3e50">
+        <meta name="msapplication-TileImage" content="https://chipsncookies.com/icons/mstile-144x144.png">
+        <meta name="msapplication-config" content="https://chipsncookies.com/icons/browserconfig.xml">
+        <meta name="theme-color" content="#2c3e50">
+        <meta name="generator" content="Hugo 0.16" />
+
+        <link href="https://chipsncookies.com/post/index.xml" rel="alternate" type="application/rss+xml" title="RSS &middot; Samuel Debruyn" />
+    
+    <style>
+*
+{
+	padding: 0;
+	margin: 0;
+}
+
+body,html
+{
+	font-size: 1em;
+	line-height: 1.65em;
+	font-family: "Lato",sans-serif;
+	font-weight: 300;
+	color: #34495e;
+	background-color: #ecf0f1;
+}
+
+html
+{
+	height: 100%;
+}
+
+body
+{
+	padding: 2em 2.5em 1em 20em;
+}
+
+header
+{
+	border-right: 1px #bdc3c7 solid;
+	padding: 2em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 13.5em;
+	background-color: #2c3e50;
+	color: #ecf0f1;
+}
+
+#content
+{
+	display: block;
+	width: 100%;
+}
+
+footer
+{
+	padding: 1em 0 2.5em;
+	font-size: .8em;
+	line-height: 1.5em;
+	color: #95a5a6;
+}
+
+article
+{
+	border-bottom: .1em #bdc3c7 solid;
+	padding-bottom: 1.7em;
+	max-width: 56em;
+}
+
+h4,h5,h6,hr,p
+{
+	margin-top: .9em;
+	margin-bottom: .9em;
+}
+
+h1,h2,h3,h4,h5,h6
+{
+	font-family: "Oswald","Lato",sans-serif;
+	font-weight: 400!important;
+}
+
+h1
+{
+	font-size: 2.5em;
+	line-height: 1.1em;
+	margin-top: .6em;
+	margin-bottom: .6em;
+}
+
+h2
+{
+	font-size: 1.9em;
+	line-height: 1.2em;
+	margin-top: .7em;
+	margin-bottom: .7em;
+}
+
+h3
+{
+	font-size: 1.4em;
+	line-height: 1.3em;
+	margin-top: .8em;
+	margin-bottom: .8em;
+}
+
+h4
+{
+	font-size: 1.3em;
+}
+
+h5
+{
+	font-size: 1.2em;
+}
+
+h6
+{
+	font-size: 1.1em;
+}
+
+iframe,img
+{
+	max-width: 100%;
+}
+
+a
+{
+	font-weight: 700;
+	text-decoration: none;
+	color: #e74c3c;
+}
+
+a:hover
+{
+	text-decoration: underline;
+}
+
+h1 a,h2 a,h3 a,h4 a,h5 a,h6 a
+{
+	font-weight: 400;
+}
+
+strong
+{
+	font-weight: 700;
+}
+
+blockquote
+{
+	border-left: .4em solid #bdc3c7;
+	padding-left: 1.2em;
+	font-size: 1.3em;
+}
+
+hr
+{
+	border: 0;
+	height: 1px;
+	background: #bdc3c7;
+}
+
+ol,ul
+{
+	margin-left: 3em;
+}
+
+code
+{
+	font-size: 1.1em;
+	background: #bdc3c7;
+}
+
+pre
+{
+	font-size: .8em;
+	line-height: 2em;
+	background: #bdc3c7;
+	padding: 1em;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre;
+	white-space: -moz-pre-wrap;
+	white-space: pre-wrap;
+}
+
+input
+{
+	font-size: 1em;
+	padding: .3em;
+}
+
+header h1
+{
+	font-size: 1.9em;
+	margin-top: .8em;
+	margin-bottom: .6em;
+}
+
+header a
+{
+	color: #1abc9c;
+}
+
+header h1 a:hover
+{
+	text-decoration: none;
+}
+
+header #logo img
+{
+	width: 9em;
+	height: 9em;
+	border-radius: 4.5em;
+	-moz-border-radius: 4.5em;
+	-webkit-border-radius: 4.5em;
+	border: 0;
+}
+
+#follow-icons
+{
+	font-size: .7em;
+	margin-top: -.7em;
+	margin-bottom: 1.5em;
+}
+
+#follow-icons a
+{
+	color: #ccc;
+	margin-right: 0.5em;
+}
+
+#follow-icons span
+{
+	vertical-align: top;
+	margin-left: -.15em;
+	margin-right: -.15em;
+}
+
+#follow-icons span .fa-stack-1x
+{
+	font-size: 1.05em;
+	line-height: 1.9em;
+}
+
+header h6
+{
+	margin-top: .5em;
+}
+
+article span.post-stamp
+{
+	color: #888;
+}
+
+h1.post-title
+{
+	margin-top: .35em;
+	margin-bottom: .6em;
+}
+
+h3.post-title
+{
+	margin-top: .4em;
+	padding-bottom: .9em;
+	border-bottom: 1px solid #bdc3c7;
+	font-size: 1.2em;
+	color: #34495e;
+	font-family: "Lato",sans-serif;
+	font-weight: 700!important;
+}
+
+.sitetaglist
+{
+	list-style-type: none;
+	display: block;
+	margin-left: 0;
+	text-align: center;
+	margin-bottom: 1.25em;
+	font-size: 0.8em;
+}
+
+.sitetaglist li
+{
+	display: inline;
+}
+
+.sitetaglisttitle
+{
+	margin-bottom: .3em;
+}
+
+h3.post-title>time
+{
+	font-family: "Lato",sans-serif;
+	font-weight: 300!important;
+	font-size: .9em;
+}
+
+.post-title .feature-star
+{
+	font-size: .9em;
+}
+
+.feature-star,.separator
+{
+	color: #ccc;
+}
+
+.taglist { color: #ccc }
+
+.taglist a {
+    background-color: #ccc;
+    color: #fff;
+    display: inline-block;
+    line-height: 1.5em;
+    padding: .3em .6em;
+    vertical-align: 20%;
+    font-size: .5em;
+    font-weight: 700!important;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    border-radius: .25em;
+    -moz-border-radius: .25em;
+    -webkit-border-radius: .25em;
+}
+
+#social-bar
+{
+	margin-top: 1.5em;
+	background-color: #bdc3c7;
+	padding: .5em;
+}
+
+.pagination
+{
+	margin-bottom: 1em;
+}
+
+footer a
+{
+	font-weight: 300;
+	color: #95a5a6;
+	text-decoration: underline;
+}
+
+footer a:hover
+{
+	color: #7f8c8d;
+	text-decoration: none;
+}
+
+.uk-search
+{
+	display: inline-block;
+	position: relative;
+	margin: 0;
+}
+
+.uk-search:before
+{
+	content: "\f002";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.87em;
+	line-height: 2.5em;
+	text-align: center;
+	font-family: FontAwesome;
+	font-size: 0.87em;
+	color: #1abc9c;
+}
+
+.uk-search-field::-moz-focus-inner
+{
+	border: 0;
+	padding: 0;
+}
+
+.uk-search-field::-webkit-search-cancel-button,.uk-search-field::-webkit-search-decoration
+{
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.uk-search-field::-ms-clear
+{
+	display: none;
+}
+
+.uk-search-field::-moz-placeholder
+{
+	opacity: 1;
+}
+
+.uk-search-field
+{
+	font-family: "Oswald","Lato",sans-serif;
+	color: #ecf0f1;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 11.25em;
+	height: 1.87em;
+	padding: 0 0 0 1.87em;
+	border: 0;
+	background: rgba(0,0,0,0);
+	transition: all linear .2s;
+	-o-transition: all linear .2s;
+	-moz-transition: all linear .2s;
+	-webkit-transition: all linear .2s;
+	vertical-align: middle;
+}
+
+.uk-search-field:-ms-input-placeholder
+{
+	color: #95a5a6!important;
+}
+
+.uk-search-field::-moz-placeholder
+{
+	color: #95a5a6;
+}
+
+.uk-search-field::-webkit-input-placeholder
+{
+	color: #95a5a6;
+}
+
+.uk-search-field:focus
+{
+	outline: 0;
+}
+
+.uk-search-field:focus,.uk-search.uk-active .uk-search-field
+{
+	width: 11.25em;
+}
+
+.gs-image-box,.gsc-above-wrapper-area,.gsc-cursor-box,.gsc-url-bottom,.gsc-thumbnail,.gs-per-result-labels
+{
+	display: none!important;
+	visibility: hidden!important;
+}
+
+.gsc-control-cse,.gsc-results
+{
+	font: inherit!important;
+	background: inherit!important;
+	border: inherit!important;
+	padding: inherit!important;
+	margin: inherit!important;
+}
+
+.gsc-result
+{
+	border: inherit!important;
+	background: inherit!important;
+	padding: inherit!important;
+}
+
+.gs-title
+{
+	font-family: "Lato",sans-serif!important;
+	color: #e74c3c!important;
+	text-decoration: none!important;
+	height: inherit!important;
+	overflow: inherit!important;
+}
+
+.gs-snippet
+{
+	color: inherit!important;
+	font-family: "Lato",sans-serif!important;
+	height: inherit!important;
+	overflow: inherit!important;
+}
+
+@media only screen and (min-width:1281px)
+{
+	body,html
+	{
+		font-size: 1.1em;
+	};
+}
+
+@media only screen and (max-width:800px)
+{
+	body
+	{
+		padding: 0;
+	}
+
+	header
+	{
+		border-right: 0;
+		border-bottom: 1px #bdc3c7 solid;
+		position: relative;
+		height: auto;
+		width: auto;
+		text-align: center;
+		padding-bottom: 1em;
+	}
+
+	#content
+	{
+		margin-left: 0;
+		padding: 2em 2em 1em;
+		width: auto;
+	}
+
+	footer
+	{
+		padding: 0 2.5em 2em;
+	};
+}
+
+@media only screen and (max-width:31.25em)
+{
+	#content,header
+	{
+		padding: 1.2em 1.2em .6em;
+	}
+
+	footer
+	{
+		padding: 0 1.5em 1.2em;
+	}
+
+	ol,ul
+	{
+		margin-left: 2em;
+	};
+}
+
+.section
+{
+	clear: both;
+	padding: 0;
+	margin: 0;
+}
+
+.col
+{
+	display: block;
+	float: left;
+	margin: 1% 0 1% 1.6%;
+}
+
+.col:first-child
+{
+	margin-left: 0;
+}
+
+.group:before,.group:after
+{
+	content: "";
+	display: table;
+}
+
+.group:after
+{
+	clear: both;
+}
+
+.group
+{
+	zoom: 1;
+}
+
+.span_3_of_3
+{
+	width: 100%;
+}
+
+.span_2_of_3
+{
+	width: 66.13%;
+}
+
+.span_1_of_3
+{
+	width: 32.26%;
+}
+
+@media only screen and (max-width: 480px)
+{
+	.col
+	{
+		margin: 1% 0;
+	}
+
+	.span_3_of_3,.span_2_of_3,.span_1_of_3
+	{
+		width: 100%;
+	};
+}
+
+@media only screen and (max-height: 550px)
+{
+	.sitetaglist, .sitetaglisttitle
+	{
+		display: none;
+		visibility: hidden;
+	}
+}
+
+.portfoliobox
+{
+	text-align: center;
+	margin-bottom: 1em;
+}
+
+.portfoliobox img
+{
+	max-height: 10em;
+}
+
+.portfoliobox h4
+{
+	margin-top: 0;
+}
+
+.portfolio-meta
+{
+	margin-bottom: .5em;
+}
+
+.portfolio-meta > *
+{
+	display: block;
+}
+
+.portfolio-tag
+{
+	font-weight: 600;
+}
+</style>
+    </head>
+    <body>
+        <header id="header">
+            <a id="logo" href="https://chipsncookies.com/"><img src="https://chipsncookies.com/avatar.jpg" alt="Samuel Debruyn" /></a>
+            <h1><a href="https://chipsncookies.com/">Samuel Debruyn</a></h1>
+
+            <div id="follow-icons">
+	<a href="https://chipsncookies.com/twitter" rel="me"><i class="fa fa-twitter fa-2x"></i></a>
+	<a href="https://chipsncookies.com/linkedin" rel="me"><i class="fa fa-linkedin fa-2x"></i></a>
+	<a href="https://chipsncookies.com/github" rel="me"><i class="fa fa-github fa-2x"></i></a>
+	<a href="http://stackoverflow.com/users/1592358/samueldebruyn" rel="me"><i class="fa fa-stack-overflow fa-2x"></i></a>
+	<a href="https://chipsncookies.com/post/index.xml" rel="me"><i class="fa fa-rss fa-2x"></i></a> 
+</div>  
+            <h6><a href="https://chipsncookies.com/">Blog</a></h6>
+<h6><a href="https://chipsncookies.com/portfolio">Portfolio</a></h6>
+<h6><a rel="prerender" href="https://chipsncookies.com/about">About me</a></h6>
+            <h6 class="sitetaglisttitle">Tags</h6>
+<ul class="sitetaglist">
+  
+    <li><a href="/tags/android">android (5)</a></li>
+  
+    <li><a href="/tags/hugo">hugo (5)</a></li>
+  
+    <li><a href="/tags/security">security (5)</a></li>
+  
+    <li><a href="/tags/windows">windows (5)</a></li>
+  
+    <li><a href="/tags/ci">ci (4)</a></li>
+  
+    <li><a href="/tags/csharp">csharp (4)</a></li>
+  
+    <li><a href="/tags/wercker">wercker (4)</a></li>
+  
+    <li><a href="/tags/xamarin">xamarin (4)</a></li>
+  
+    <li><a href="/tags/docker">docker (3)</a></li>
+  
+</ul>
+            			<form class="uk-search" action="https://chipsncookies.com/search/">
+                <input class="uk-search-field" id="q" name="q" type="search" placeholder="search..." />
+            </form>
+            
+        </header>
+<main id="content">
+
+<article class="post">
+    <div class="post-stamp">
+        <time datetime="2016-08-29T11:10:40&#43;02:00">
+            29 Aug 2016
+        </time>
+        <span class="taglist">
+        
+        &middot; 
+            
+                <a href="https://chipsncookies.com/tags/xamarin/">Xamarin</a>
+            
+                <a href="https://chipsncookies.com/tags/ios/">iOS</a>
+            
+                <a href="https://chipsncookies.com/tags/csharp/">CSharp</a>
+            
+                <a href="https://chipsncookies.com/tags/objective-c/">Objective-C</a>
+            
+        
+        </span>
+    </div>
+    <h1 class="post-title">Creating a Xamarin.iOS binding project for dummies</h1>
+    
+
+<h2 id="what-you-need">What you need</h2>
+
+<ul>
+<li>Experience with Xamarin.iOS</li>
+<li>Xamarin Studio for Mac</li>
+<li>An empty binding project (just create a new project in Xamarin Studio)</li>
+</ul>
+
+<h2 id="a-very-short-intro-to-objective-c-for-c-developers">A very short intro to Objective-C for C# developers</h2>
+
+<p>Oh god, Obj-C, the most incomprehensible programming language in the app dev world. You simply can&rsquo;t create an iOS binding project without some very basic knowledge of Obj-C. So here goes, an intro to Obj-C for C# developers.</p>
+
+<p>When you&rsquo;re developing a bindings library, you&rsquo;ll get the iOS project in one of the following forms:</p>
+
+<ul>
+<li>a .a file (static library) - basically like a .DLL</li>
+<li>a .framework file (Cocoa Touch framework) - basically like a .DLL with some resources</li>
+<li>a CocoaPod - just like NuGet</li>
+<li>source code with project file (containing a .xcodeproj file) - like source code including .csproj and .sln files</li>
+<li>source code without project file - just like a bunch of .cs files&hellip;</li>
+</ul>
+
+<p>Obj-C projects have .h files and .m files. The headers (.h files) describe something like a class. You could think of them like interfaces. The models (.m files) are the implementations. Each .h file has one .m file. Except for those files, every project usually has an <em>info.plist</em> file describing project settings (names, supported architectures&hellip;) and a <em>MyProject.xcodeproj</em> file (this is actually a directory containing multiple configuration files) describing the build settings etc.</p>
+
+<p>Now, there are a few concepts in the programming language itself which you should be familiar with:</p>
+
+<h3 id="protocols">Protocols</h3>
+
+<p>Protocols are like interfaces or abstract classes. The main difference between C# interfaces and protocols are the optional methods. The protocol defines optional methods that the models may or may not implement. Each class in Obj-C can implement multiple protocols just like a C# class can implement multiple interfaces. Protocols are usually translated in C# as abstract classes. Note that when you&rsquo;re overriding from a protocol, the base method could have no implementation if the original Obj-C method was optional. This means that you generally should avoid calling the base methods. When in doubt, consult <a href="https://developer.apple.com/reference/">the Apple developer documentation</a>.</p>
+
+<h3 id="umbrella-headers">Umbrella headers</h3>
+
+<p>Each iOS framework or library has one header that is the umbrella header for that project. It contains references to all the other headers in that project and defines the base functionality for that library. The umbrella header should have the same name as the project itself. This header is essential for our binding project. Sometimes, you&rsquo;ll have to modify this header to include references to other relevant headers in the project for the bindings to work properly. When that&rsquo;s the case, you just have to add <code>#import &quot;AnotherHeader.h&quot;</code> statements at the top of the file, just like the <code>using</code> statement in C#.</p>
+
+<p>It may be useful to browse through <a href="https://developer.xamarin.com/guides/ios/application_fundamentals/delegates,_protocols,_and_events/">this documentation page</a> at Xamarin.com.</p>
+
+<h3 id="static-libraries-and-frameworks">Static libraries and frameworks</h3>
+
+<p>When you want to distribute something in the .NET world, you usually just create a class library and distribute its source code or the compiled version (DLL). There are two types of libraries in the iOS world.</p>
+
+<p>Cocoa Touch Static Libraries are just like the class libraries you know in .NET. The other kind, frameworks, are about the same but they also contain the headers (most of the time just the umbrella header) and media resources (like a NuGet package).</p>
+
+<h2 id="getting-started-with-your-binding-project">Getting started with your binding project</h2>
+
+<p>To create a binding project for iOS, you&rsquo;ll need the Objective Sharpie tool. The latest version is available at <a href="https://developer.xamarin.com/guides/cross-platform/macios/binding/objective-sharpie/getting-started/">Xamarin&rsquo;s website</a> and if you already have the tool installed, you can use the <code>sharpie update</code> command to make sure you have the latest version.</p>
+
+<p>A binding project consist of three parts:</p>
+
+<ol>
+<li>A native reference (either an .a file or a .framework file)</li>
+<li>The <em>StructsAndEnums.cs</em> file containing all the used enums</li>
+<li>The <em>ApiDefinitions.cs</em> file containing all the definitions of the classes used in the iOS framework/library</li>
+</ol>
+
+<p>The API definitions are a list of interfaces with methods decorated with attributes. The attributes tell Xamarin how it should generate the C# API that is bound to the native code. There should be at least one interface with the name of the project itself (or the name of the umbrella header).</p>
+
+<p>The following sections describe how to generate both files using Objective Sharpie from easiest to most difficult approach. In most cases, you can try multiple approaches. So if one of them doesn&rsquo;t properly generate the API definitions for you, just move on and try another one. You&rsquo;d be surprised how much of a difference they can make, even if the framework and the CocoaPod contain the same files. I strongly recommmend to read through every approach.</p>
+
+<h3 id="when-the-project-is-available-as-cocoapod-https-cocoapods-org-recommended-approach">When the project is available as <a href="https://cocoapods.org">CocoaPod</a> (recommended approach)</h3>
+
+<p>.NET developers are usually familiar with NuGet packages. They always contain a bunch of .dll files and define dependencies and compatible project types. CocoaPods consist of either compiled code, either source code. To generate the API definitions from a CocoaPod, use the following commands in an empty directory:</p>
+
+<pre><code>sharpie pod init ios MyCocoaPod
+sharpie pod bind -n MyNamespace
+</code></pre>
+
+<p>The CocoaPod is downloaded to the <em>Pods</em> directory. When you browse through its files, you&rsquo;ll quickly notice if it contains just the source code or also a binary file (without extension), a framework or a static library (.a file).</p>
+
+<h3 id="when-the-project-is-available-as-a-framework-file">When the project is available as a .framework file</h3>
+
+<p>When your project is supplied as a framework, simply open the framework and verify if it has a compiled binary file inside. If it has one, read the part above about the binary file below. Otherwise, use the source code to create the binary yourself as documented below.</p>
+
+<p>Alternatively, the following command may also do the job, this doesn&rsquo;t always work though.</p>
+
+<pre><code>sharpie bind -o OutputDirectory -sdk iphoneos9.3 -n MyNamespace MyFramework.framework
+</code></pre>
+
+<h2 id="inspecting-the-binary-file-without-extension-or-a-file-and-generating-api-definitions">Inspecting the binary file (without extension or .a file) and generating api definitions</h2>
+
+<p>What you have to verify is the architecture. The iOS simulator has the <code>i386 x86_64</code> architectures and iPhones and iPads have the <code>armv7 arm64</code> and possibly <code>armv7s</code> (only useful on iPhone 5/5c) architectures. You can use the <code>lipo</code> command to verify the architectures of a binary like so:</p>
+
+<pre><code>lipo -info MyFramework.framework/MyFramework
+lipo -info Pods/MySDK/MySDK.framework/MySDK
+lipo -info JustABinary.a
+</code></pre>
+
+<p>If you want to debug your app in the iOS simulator, you <em>need</em>  the simulator architectures. But make sure to remove these architectures <strong>when you submit your app to the App Store</strong> as Apple could deny your app if it includes simulator bytecode. The command to remove these architectures is the following:</p>
+
+<pre><code>lipo -remove i386 x86_64 -output Path/To/Binary/File Path/To/Binary/File
+</code></pre>
+
+<p>Note that you can&rsquo;t access the binary file after you&rsquo;ve created the bindings. This means that you possibly could have to create two versions of the binding project. One with the simulator architectures and one without them. The only difference would be the referenced file in the native references. This can easily be fully automated with MSBuild targets or in your continuous integration process.</p>
+
+<p>If the binary file doesn&rsquo;t include the architectures you require, try to build it yourself as documented below.</p>
+
+<p>Now, if you have a binary, regardless of its architectures, you can use it to generate the necessary API definitions. This is what the Xamarin tooling uses to build the bindings itself.</p>
+
+<h2 id="building-the-binary-file-yourself">Building the binary file yourself</h2>
+
+<p>If you don&rsquo;t have a binary file or if your binary file doesn&rsquo;t support all the architectures you need, you end up building one yourself. This is the hardest part of the binding process but it&rsquo;s well documented on <a href="https://developer.xamarin.com/guides/ios/advanced_topics/binding_objective-c/walkthrough/#Creating_A_Static_Library">Xamarin&rsquo;s website</a>. The Xamarin guide describes how to create a static library, but I found it easier to create a framework instead. I used Xcode 7 for this part, but the minimum is Xcode 6.</p>
+
+<p>If the source code already contains an Xcode project, you&rsquo;re golden. Just open the Xcode project and try to build it. If not, continue&hellip;</p>
+
+<p>Create a new Xcode project and choose <em>iOS &gt; Framework &amp; Library &gt; Cocoa Touch Framework</em>. Now you basically have to put all the files from the source code in this project. You can&rsquo;t replace the header that Xcode created by default, so just copy paste the code from the header in the sources into the one that Xcode created. Try to build the project. Sometimes the linking goes wrong and you have to fix the links between the .h and the .m files yourself.</p>
+
+<h3 id="creating-the-binary-for-multiple-architectures">Creating the binary for multiple architectures</h3>
+
+<p>As mentioned before, you&rsquo;ll probably need a binary that contains the following architectures: <code>i386 x86_64 armv7 arvmv64</code> and you can use the <code>lipo -info mybinary</code> command to inspect the supported architectures. Your binary probably won&rsquo;t contain all of them, so you can use the commands below to combine build and combine multiple binaries:</p>
+
+<h4 id="build-for-arm-devices">Build for ARM devices</h4>
+
+<pre><code>/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild ONLY_ACTIVE_ARCH=NO -project XcodeProject.xproj -target NameOfTheProject -sdk iphoneos -configuration Release clean build
+</code></pre>
+
+<h4 id="build-for-simulator">Build for simulator</h4>
+
+<pre><code>/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild ONLY_ACTIVE_ARCH=NO -project XcodeProject.xproj -target NameOfTheProject -sdk iphonesimulator -configuration Release clean build
+</code></pre>
+
+<h4 id="combine-both-binaries-into-one">Combine both binaries into one</h4>
+
+<pre><code>lipo -create -output PathToCombinedFile PathToARMBinary PathToSimulatorBinary
+</code></pre>
+
+<h4 id="makefile-which-does-everything-for-you">Makefile which does everything for you</h4>
+
+<p>This Makefile also generates the binding definitions (described below) and is used for Cocoa Touch Frameworks.</p>
+
+<pre><code>XBUILD=/Applications/Xcode.app/Contents/Developer/usr/bin/xcodebuild
+PROJECT_ROOT=PathToProject
+PROJECT=$(PROJECT_ROOT)/NameOfXcodeProject.xcodeproj
+TARGET=NameOfTheProject
+BINDING_PROJECT=NamespaceOfTheBindings
+
+all: $(TARGET).framework
+
+$(TARGET)-simulator.framework:
+	$(XBUILD) ONLY_ACTIVE_ARCH=NO -project $(PROJECT) -target $(TARGET) -sdk iphonesimulator -configuration Release clean build
+	mv $(PROJECT_ROOT)/build/Release-iphonesimulator/$(TARGET).framework $(TARGET)-simulator.framework
+
+$(TARGET)-iphone.framework:
+	$(XBUILD) ONLY_ACTIVE_ARCH=NO -project $(PROJECT) -target $(TARGET) -sdk iphoneos -configuration Release clean build
+	mv $(PROJECT_ROOT)/build/Release-iphoneos/$(TARGET).framework $(TARGET)-iphone.framework
+
+$(TARGET).framework: $(TARGET)-simulator.framework $(TARGET)-iphone.framework $(BINDING_PROJECT)/Generated_ApiDefinitions.cs
+	cp -R $(TARGET)-iphone.framework ./$(TARGET).framework
+	rm ./$(TARGET).framework/$(TARGET)
+	lipo -create -output $(TARGET).framework/$(TARGET) $(TARGET)-iphone.framework/$(TARGET) $(TARGET)-simulator.framework/$(TARGET)
+
+$(BINDING_PROJECT)/Generated_ApiDefinitions.cs:
+	 sharpie bind -p Generated_ -n $(BINDING_PROJECT) -o $(BINDING_PROJECT) $(PROJECT)
+
+clean:
+	rm -rf *.framework
+	rm $(BINDING_PROJECT)/Generated_ApiDefinitions.cs
+	rm $(BINDING_PROJECT)/Generated_StructsAndEnums.cs
+</code></pre>
+
+<h2 id="generating-the-bindings-from-the-binary-file">Generating the bindings from the binary file</h2>
+
+<p>Generating the API definitions from a binary is as simply as running a single command.</p>
+
+<pre><code>sharpie bind -o OutputDirectory -sdk iphoneos9.3 -n MyNamespace MyBinaryFile.a
+sharpie bind -o OutputDirectory -sdk iphoneos9.3 -n MyNamespace MyBinaryFile
+sharpie bind -o OutputDirectory -sdk iphoneos9.3 -n MyNamespace MyXcodeProject.xcodeproj
+</code></pre>
+
+<p>There will probably be a few warnings in the output, but if you got some errors, you need to choose a different approach or take a look at the Objective-C source code.</p>
+
+<h2 id="fixing-the-generated-definitions">Fixing the generated definitions</h2>
+
+<p>I haven&rsquo;t done a binding project where the definitions Objective Sharpie generated were perfect. Most of the binding definition syntax is documented on <a href="https://developer.xamarin.com/guides/cross-platform/macios/binding/binding-types-reference/">Xamarin&rsquo;s website</a>.</p>
+
+<p>First, let&rsquo;s make sure you get the point of these files. The <em>StructsAndEnums.cs</em> file is just a collection of enums used in the project. The <em>ApiDefinitions.cs</em> file is the keystone. This file contains a list of interfaces which are used by the Xamarin tooling to create implementations that call the native binary/framework. All we have to do is define the C# interface which is going to be available in our binding and which native method should be used for each C# method/property. A binding project generates a DLL just like any other .NET library.</p>
+
+<h3 id="fixing-the-enums">Fixing the enums</h3>
+
+<p>You may find the enumerations to be decorated with the <code>[Native]</code> attribute. This means that it refers to an enum used in the native code. Just make sure that the underlying type of this enum is <code>long</code>. You&rsquo;ll also notice that Objective Sharpie generates enums where the underlying type is <code>uint</code> which is technically impossible. I usually make the underlying type <code>byte</code> unless it has some values defined which don&rsquo;t fit in a byte (0-255).</p>
+
+<pre><code>[Native]
+public enum ExampleEnum: long
+{
+    Value1,
+    Value2
+}
+</code></pre>
+
+<h3 id="enums-or-interfaces-decorated-with-the-verify-inferredfrommemberprefix-attribute">Enums or interfaces decorated with the <code>[Verify(InferredFromMemberPrefix)]</code> attribute</h3>
+
+<p>Remove the attribute and verify the name of the interfaces or enum. The name could not be determined by Objective Sharpie and you&rsquo;re probably better of naming it yourself.</p>
+
+<h3 id="interfaces-decorated-with-category">Interfaces decorated with <code>[Category]</code></h3>
+
+<p>This is a list of extension methods. Make sure the class only contains methods (no properties) as they will all be made static. You can easily replace a property by a method by writing the method yourself and decorating it with the <code>[Export(&quot;nameOfNativeMethod:&quot;)]</code> attribute.</p>
+
+<h3 id="the-partial-constants-interface">The partial constants interface</h3>
+
+<p>Usually you&rsquo;ll find a couple of these in the definitions and they&rsquo;re all marked by the <code>[ConstantsInterfaceAssociation]</code> attribute. Remove the attribute and put all the constants in a single interface decorated with <code>[Static]</code>. The constants themselves have the <code>[Field]</code> attribute.</p>
+
+<h3 id="interfaces-with-protocol-model">Interfaces with <code>[Protocol, Model]</code></h3>
+
+<p>This generates an implementation and an interface. However, you have to declare the interface yourself. So if the native protocol would be called <code>AmazingService</code>, you&rsquo;d have to add an interface called <code>IAmazingService</code>.</p>
+
+<h4 id="before">Before</h4>
+
+<pre><code>[Protocol, Model]
+[BaseType(typeof(NSObject))]
+interface AmazingService
+{
+    a few methods...
+}
+</code></pre>
+
+<h4 id="after">After</h4>
+
+<pre><code>public interface IAmazingService {}
+
+[Protocol, Model]
+[BaseType(typeof(NSObject))]
+interface AmazingService: IAmazingService
+{
+    some methods...
+}
+</code></pre>
+
+<h3 id="interfaces-decorated-with-verify-methodtoproperty">Interfaces decorated with <code>[Verify(MethodToProperty)]</code></h3>
+
+<p>It&rsquo;s up to you to decide if the bindings should contain properties or methods. Often, you can replace a method with a getter and or you can combine two methods and replace them with a getter and setter. Objective Sharpie also tries to do this for you and marks them with the aforementioned attribute. You can safely remove the attribute and ignore it unless they&rsquo;re part of an interface which is marked with the <code>[Category]</code> attribute.</p>
+
+<h3 id="methods-marked-with-verify-stronglytypednsarray">Methods marked with <code>[Verify(StronglyTypedNSArray)]</code></h3>
+
+<p>Objective Sharpie couldn&rsquo;t determine the type of the array passed in/out this method/property and used <code>NSObject</code> as the type. Replace it with a more specific type or let it be and remove the attribute.</p>
+
+<h3 id="other-verify-attributes">Other <code>[Verify]</code> attributes</h3>
+
+<p>Run the command <code>sharpie verify-docs</code> for the latest docs on the <code>[Verify]</code> attributes you&rsquo;ll find. You have to remove all these attributes before you can compile your binding project.</p>
+
+<h2 id="congrats">Congrats</h2>
+
+<p>You&rsquo;re no longer a dummy and I hope you have a working binding project. If you&rsquo;re having trouble generating the required binary file, I suggest you contact an iOS developer. If you have some issues with your binding project, send me <a href="https://twitter.com/SamuelDebruyn">a tweet</a> and I&rsquo;ll get in touch ;)</p>
+
+    <div id="social-bar">
+	<ul class="rrssb-buttons clearfix">
+      <li class="email">
+          <a href="mailto:?subject=Creating%20a%20Xamarin.iOS%20binding%20project%20for%20dummies&amp;body=https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/" data-proofer-ignore>
+              <span class="icon">
+                  <svg version="1.1" id="btn-mail" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <path transform="scale(0.014,-0.014) translate(0,-1670)" d="M1792 826v-794q0 -66 -47 -113t-113 -47h-1472q-66 0 -113 47t-47 113v794q44 -49 101 -87q362 -246 497 -345q57 -42 92.5 -65.5t94.5 -48t110 -24.5h1h1q51 0 110 24.5t94.5 48t92.5 65.5q170 123 498 345q57 39 100 87zM1792 1120q0 -79 -49 -151t-122 -123 q-376 -261 -468 -325q-10 -7 -42.5 -30.5t-54 -38t-52 -32.5t-57.5 -27t-50 -9h-1h-1q-23 0 -50 9t-57.5 27t-52 32.5t-54 38t-42.5 30.5q-91 64 -262 182.5t-205 142.5q-62 42 -117 115.5t-55 136.5q0 78 41.5 130t118.5 52h1472q65 0 112.5 -47t47.5 -113z"/>
+                  </svg>
+              </span>
+              <span class="text">Email</span>
+          </a>
+      </li>
+			<li class="twitter">
+          <a href="http://twitter.com/home?status=Creating%20a%20Xamarin.iOS%20binding%20project%20for%20dummies%20https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/" class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="btn-tw" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+		                  <path d="M24.253,8.756C24.689,17.08,18.297,24.182,9.97,24.62c-3.122,0.162-6.219-0.646-8.861-2.32 c2.703,0.179,5.376-0.648,7.508-2.321c-2.072-0.247-3.818-1.661-4.489-3.638c0.801,0.128,1.62,0.076,2.399-0.155 C4.045,15.72,2.215,13.6,2.115,11.077c0.688,0.275,1.426,0.407,2.168,0.386c-2.135-1.65-2.729-4.621-1.394-6.965 C5.575,7.816,9.54,9.84,13.803,10.071c-0.842-2.739,0.694-5.64,3.434-6.482c2.018-0.623,4.212,0.044,5.546,1.683 c1.186-0.213,2.318-0.662,3.329-1.317c-0.385,1.256-1.247,2.312-2.399,2.942c1.048-0.106,2.069-0.394,3.019-0.851 C26.275,7.229,25.39,8.196,24.253,8.756z"/>
+                  </svg>
+              </span>
+              <span class="text">Twitter</span>
+          </a>
+      </li>
+			<li class="linkedin">
+          <a href="http://www.linkedin.com/shareArticle?mini=true&amp;url=https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/&amp;title=Creating%20a%20Xamarin.iOS%20binding%20project%20for%20dummies&amp;summary=What%20you%20need%20Experience%20with%20Xamarin.iOS%20Xamarin%20Studio%20for%20Mac%20An%20empty%20binding%20project%20%28just%20create%20a%20new%20project%20in%20Xamarin%20Studio%29%20A%20very%20short%20intro%20to%20Objective-C%20for%20C%23%20developers%20Oh%20god%2c%20Obj-C%2c%20the%20most%20incomprehensible%20programming%20language%20in%20the%20app%20dev%20world.%20You%20simply%20can%26rsquo%3bt%20create%20an%20iOS%20binding%20project%20without%20some%20very%20basic%20knowledge%20of%20Obj-C.%20So%20here%20goes%2c%20an%20intro%20to%20Obj-C%20for%20C%23%20developers.%20When%20you%26rsquo%3bre%20developing%20a%20bindings%20library%2c%20you%26rsquo%3bll%20get%20the%20iOS%20project%20in%20one%20of%20the%20following%20forms%3a%20a%20.a%20file%20%28static%20library%29%20-%20basically%20like%20a%20.DLL%20a%20.framework%20file%20%28Cocoa%20Touch%20framework%29%20-%20basically%20like%20a%20.DLL%20with%20some%20resources%20a%20CocoaPod%20-%20just%20like%20NuGet%20source%20code%20with%20project%20file%20%28containing%20a%20.xcodeproj%20file%29%20-%20like%20source%20code%20including%20.csproj%20and%20.sln%20files%20source%20code%20without%20project%20file%20-%20just%20like%20a%20bunch%20of%20.cs%20files%26hellip%3b%20Obj-C%20projects%20have%20.h%20files%20and%20.m%20files...." class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="btn-li" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <path d="M25.424,15.887v8.447h-4.896v-7.882c0-1.979-0.709-3.331-2.48-3.331c-1.354,0-2.158,0.911-2.514,1.803 c-0.129,0.315-0.162,0.753-0.162,1.194v8.216h-4.899c0,0,0.066-13.349,0-14.731h4.899v2.088c-0.01,0.016-0.023,0.032-0.033,0.048 h0.033V11.69c0.65-1.002,1.812-2.435,4.414-2.435C23.008,9.254,25.424,11.361,25.424,15.887z M5.348,2.501 c-1.676,0-2.772,1.092-2.772,2.539c0,1.421,1.066,2.538,2.717,2.546h0.032c1.709,0,2.771-1.132,2.771-2.546 C8.054,3.593,7.019,2.501,5.343,2.501H5.348z M2.867,24.334h4.897V9.603H2.867V24.334z"/>
+                  </svg>
+              </span>
+              <span class="text">LinkedIn</span>
+          </a>
+      </li>
+      <li class="tumblr">
+					<script>
+						document.write('<a href="http://www.tumblr.com/share?v=3&amp;u=' + encodeURIComponent('https:\/\/chipsncookies.com\/2016\/creating-a-xamarin.ios-binding-project-for-dummies\/') + '&amp;t=Creating a Xamarin.iOS binding project for dummies" class="popup">');
+					</script>
+              <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+											<path d="M18.02 21.842c-2.029 0.052-2.422-1.396-2.439-2.446v-7.294h4.729V7.874h-4.71V1.592c0 0-3.653 0-3.714 0 s-0.167 0.053-0.182 0.186c-0.218 1.935-1.144 5.33-4.988 6.688v3.637h2.927v7.677c0 2.8 1.7 6.7 7.3 6.6 c1.863-0.03 3.934-0.795 4.392-1.453l-1.22-3.539C19.595 21.6 18.7 21.8 18 21.842z"/>
+									</svg>
+              </span>
+              <span class="text">Tumblr</span>
+          <script>document.write('</a>');</script>
+      </li>
+      <li class="reddit">
+          <a href="http://www.reddit.com/submit?url=https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/">
+              <span class="icon">
+                  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+											<g>
+													<path d="M11.794 15.316c0-1.029-0.835-1.895-1.866-1.895c-1.03 0-1.893 0.865-1.893 1.895s0.863 1.9 1.9 1.9 C10.958 17.2 11.8 16.3 11.8 15.316z"/>
+													<path d="M18.1 13.422c-1.029 0-1.895 0.864-1.895 1.895c0 1 0.9 1.9 1.9 1.865c1.031 0 1.869-0.836 1.869-1.865 C19.969 14.3 19.1 13.4 18.1 13.422z"/>
+													<path d="M17.527 19.791c-0.678 0.678-1.826 1.006-3.514 1.006c-0.004 0-0.009 0-0.014 0c-0.004 0-0.01 0-0.015 0 c-1.686 0-2.834-0.328-3.51-1.005c-0.264-0.265-0.693-0.265-0.958 0c-0.264 0.265-0.264 0.7 0 1 c0.943 0.9 2.4 1.4 4.5 1.402c0.005 0 0 0 0 0c0.005 0 0 0 0 0c2.066 0 3.527-0.459 4.47-1.402 c0.265-0.264 0.265-0.693 0.002-0.958C18.221 19.5 17.8 19.5 17.5 19.791z"/>
+													<path d="M27.707 13.267c0-1.785-1.453-3.237-3.236-3.237c-0.793 0-1.518 0.287-2.082 0.761c-2.039-1.295-4.646-2.069-7.438-2.219 l1.483-4.691l4.062 0.956c0.071 1.4 1.3 2.6 2.7 2.555c1.488 0 2.695-1.208 2.695-2.695C25.881 3.2 24.7 2 23.2 2 c-1.059 0-1.979 0.616-2.42 1.508l-4.633-1.091c-0.344-0.081-0.693 0.118-0.803 0.455l-1.793 5.7 C10.548 8.6 7.7 9.4 5.6 10.75C5.006 10.3 4.3 10 3.5 10.029c-1.785 0-3.237 1.452-3.237 3.2 c0 1.1 0.6 2.1 1.4 2.69c-0.04 0.272-0.061 0.551-0.061 0.831c0 2.3 1.3 4.4 3.7 5.9 c2.299 1.5 5.3 2.3 8.6 2.325c3.228 0 6.271-0.825 8.571-2.325c2.387-1.56 3.7-3.66 3.7-5.917 c0-0.26-0.016-0.514-0.051-0.768C27.088 15.5 27.7 14.4 27.7 13.267z M23.186 3.355c0.74 0 1.3 0.6 1.3 1.3 c0 0.738-0.6 1.34-1.34 1.34s-1.342-0.602-1.342-1.34C21.844 4 22.4 3.4 23.2 3.355z M1.648 13.3 c0-1.038 0.844-1.882 1.882-1.882c0.31 0 0.6 0.1 0.9 0.209c-1.049 0.868-1.813 1.861-2.26 2.9 C1.832 14.2 1.6 13.8 1.6 13.267z M21.773 21.57c-2.082 1.357-4.863 2.105-7.831 2.105c-2.967 0-5.747-0.748-7.828-2.105 c-1.991-1.301-3.088-3-3.088-4.782c0-1.784 1.097-3.484 3.088-4.784c2.081-1.358 4.861-2.106 7.828-2.106 c2.967 0 5.7 0.7 7.8 2.106c1.99 1.3 3.1 3 3.1 4.784C24.859 18.6 23.8 20.3 21.8 21.57z M25.787 14.6 c-0.432-1.084-1.191-2.095-2.244-2.977c0.273-0.156 0.59-0.245 0.928-0.245c1.035 0 1.9 0.8 1.9 1.9 C26.354 13.8 26.1 14.3 25.8 14.605z"/>
+											</g>
+									</svg>
+              </span>
+              <span class="text">Reddit</span>
+          </a>
+      </li>
+      <li class="googleplus">
+          <a href="https://plus.google.com/share?url=https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/" class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="btn-gp" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <g>
+                          <path d="M14.703,15.854l-1.219-0.948c-0.372-0.308-0.88-0.715-0.88-1.459c0-0.748,0.508-1.223,0.95-1.663 c1.42-1.119,2.839-2.309,2.839-4.817c0-2.58-1.621-3.937-2.399-4.581h2.097l2.202-1.383h-6.67c-1.83,0-4.467,0.433-6.398,2.027 C3.768,4.287,3.059,6.018,3.059,7.576c0,2.634,2.022,5.328,5.604,5.328c0.339,0,0.71-0.033,1.083-0.068 c-0.167,0.408-0.336,0.748-0.336,1.324c0,1.04,0.551,1.685,1.011,2.297c-1.524,0.104-4.37,0.273-6.467,1.562 c-1.998,1.188-2.605,2.916-2.605,4.137c0,2.512,2.358,4.84,7.289,4.84c5.822,0,8.904-3.223,8.904-6.41 c0.008-2.327-1.359-3.489-2.829-4.731H14.703z M10.269,11.951c-2.912,0-4.231-3.765-4.231-6.037c0-0.884,0.168-1.797,0.744-2.511 c0.543-0.679,1.489-1.12,2.372-1.12c2.807,0,4.256,3.798,4.256,6.242c0,0.612-0.067,1.694-0.845,2.478 c-0.537,0.55-1.438,0.948-2.295,0.951V11.951z M10.302,25.609c-3.621,0-5.957-1.732-5.957-4.142c0-2.408,2.165-3.223,2.911-3.492 c1.421-0.479,3.25-0.545,3.555-0.545c0.338,0,0.52,0,0.766,0.034c2.574,1.838,3.706,2.757,3.706,4.479 c-0.002,2.073-1.736,3.665-4.982,3.649L10.302,25.609z"/>
+                          <polygon points="23.254,11.89 23.254,8.521 21.569,8.521 21.569,11.89 18.202,11.89 18.202,13.604 21.569,13.604 21.569,17.004 23.254,17.004 23.254,13.604 26.653,13.604 26.653,11.89"/>
+                      </g>
+                  </svg>
+              </span>
+              <span class="text">Google+</span>
+          </a>
+      </li>
+      <li class="pocket">
+          <a href="https://getpocket.com/save?url=https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/"  class="popup">
+              <span class="icon">
+                  <svg width="32px" height="28px" viewBox="0 0 32 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <path d="M28.7817528,0.00172488695 C30.8117487,0.00431221738 31.9749312,1.12074529 31.9644402,3.10781507 C31.942147,6.67703739 32.1336065,10.2669583 31.8057648,13.8090137 C30.7147076,25.5813672 17.2181194,31.8996281 7.20714461,25.3808491 C2.71833574,22.4571656 0.196577202,18.3122624 0.0549495772,12.9357897 C-0.0342233715,9.5774348 0.00642900214,6.21519891 0.0300336062,2.85555035 C0.0405245414,1.1129833 1.21157517,0.0146615391 3.01995012,0.00819321302 C7.34746087,-0.00603710433 11.6775944,0.00431221738 16.0064164,0.00172488695 C20.2644248,0.00172488695 24.5237444,-0.00215610869 28.7817528,0.00172488695 L28.7817528,0.00172488695 Z M8.64885184,7.85611511 C7.38773662,7.99113854 6.66148108,8.42606978 6.29310958,9.33228474 C5.90114134,10.2969233 6.17774769,11.1421181 6.89875951,11.8276216 C9.35282156,14.161969 11.8108164,16.4924215 14.2976518,18.7943114 C15.3844131,19.7966007 16.5354102,19.7836177 17.6116843,18.7813283 C20.0185529,16.5495467 22.4070683,14.2982907 24.7824746,12.0327533 C25.9845979,10.8850542 26.1012707,9.56468083 25.1469132,8.60653379 C24.1361858,7.59255976 22.8449191,7.6743528 21.5890476,8.85191291 C19.9936451,10.3488554 18.3680912,11.8172352 16.8395462,13.3777945 C16.1342655,14.093159 15.7200114,14.0048744 15.0566806,13.3440386 C13.4599671,11.7484252 11.8081945,10.2060421 10.1262706,8.70001155 C9.65564653,8.27936164 9.00411403,8.05345704 8.64885184,7.85611511 L8.64885184,7.85611511 L8.64885184,7.85611511 Z"></path>
+                  </svg>
+              </span>
+              <span class="text">Pocket</span>
+          </a>
+      </li>
+      <li class="facebook">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://chipsncookies.com/2016/creating-a-xamarin.ios-binding-project-for-dummies/" class="popup">
+              <span class="icon">
+                  <svg version="1.1" id="btn-fb" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="28px" height="28px" viewBox="0 0 28 28" enable-background="new 0 0 28 28" xml:space="preserve">
+                      <path d="M27.825,4.783c0-2.427-2.182-4.608-4.608-4.608H4.783c-2.422,0-4.608,2.182-4.608,4.608v18.434 c0,2.427,2.181,4.608,4.608,4.608H14V17.379h-3.379v-4.608H14v-1.795c0-3.089,2.335-5.885,5.192-5.885h3.718v4.608h-3.726 c-0.408,0-0.884,0.492-0.884,1.236v1.836h4.609v4.608h-4.609v10.446h4.916c2.422,0,4.608-2.188,4.608-4.608V4.783z"/>
+                  </svg>
+              </span>
+              <span class="text">Facebook</span>
+          </a>
+      </li>      
+  </ul>
+</div>
+
+    <div>
+  <h5>About the author</h5>
+    <p>Samuel Debruyn is a C# developer who builds mobile (cross platform) apps with Xamarin. He likes to experiment with all kinds of programming languages and software frameworks. <a href="https://chipsncookies.com/about">More info</a></p>
+</div>
+</article>  
+
+</main>
+		<footer id="footer">
+			<p id="footer-message">&copy; Samuel Debruyn. All rights reserved. Source code available on <a href="https://github.com/SamuelDebruyn/samueldebruyn.github.io" target="_blank">GitHub</a>.</p>
+		</footer>
+
+    <script>
+      (function(c,f){asyncLoader=function(i,h){i.foreach(function(k,j){e(j,d(j),h)});if(typeof h.callback=="function"){var g=setInterval(function(){if(f.readyState==="complete"){clearInterval(g);h.callback()}},10)}};var d=function(g){var h=g.split(".");return h[h.length-1]},e=function(h,i,g){switch(i){case"js":a(h,g);break;case"css":b(h);break;default:break}},a=function(i,h){var g=document.createElement("script");g.type="text/javascript";g.async=true;g.src=i;document.getElementsByTagName("head")[0].appendChild(g)},b=function(g){var h=document.createElement("link");h.type="text/css";h.rel="stylesheet";h.href=g;document.getElementsByTagName("head")[0].appendChild(h)};Array.prototype.foreach=function(h){for(var g=0;g<this.length;g++){h(g,this[g])}}})(this,document);
+
+      var WebFontConfig={google:{families:["Lato:300italic,700italic,300,400,700","Oswald","PT Sans:400,700"]}};
+      asyncLoader([
+        "//netdna.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.css",
+        "//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js",
+        "//cdnjs.cloudflare.com/ajax/libs/webfont/1.5.16/webfontloader.js",
+        "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/highlight.min.js"
+      ],{
+        callback:function(){
+          asyncLoader([
+            "https:\/\/chipsncookies.com\/css/rrssb.css",
+            "https:\/\/chipsncookies.com\/js/gist.min.js", 
+            "https:\/\/chipsncookies.com\/js/rrssb.min.js",
+            "//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.5/styles/default.min.css"
+          ], { callback:function() {
+              hljs.initHighlighting();
+              
+              
+                var isMobile = window.matchMedia("only screen and (max-width: 800px)");
+                if(isMobile.matches) {
+                    $("html, body").animate({scrollTop: $('#content').offset().top }, 500);
+                }
+              
+          }});
+        }
+      });
+
+      (function() {
+        var cx = '008574538854808371368:vdbkljdpip8';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+            '//cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+      })();
+    </script>
+    
+    
+<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-51718684-1', 'auto');
+ga('send', 'pageview');
+</script>
+
+    
+	</body>
+</html>
